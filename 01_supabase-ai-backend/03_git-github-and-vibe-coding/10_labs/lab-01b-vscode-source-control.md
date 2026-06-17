@@ -156,6 +156,63 @@ git remote -v
 출력이 없으면 아직 GitHub 저장소와 연결되지 않은 상태입니다.
 출력이 있다면 `origin` 주소가 GitHub 저장소 주소인지 확인합니다.
 
+## 11. GitLens로 변경 이력 확인
+
+이번 단계는 선택 실습입니다. GitLens가 설치되어 있으면 진행하고, 설치되어 있지 않으면 강사 안내에 따라 건너뛰어도 됩니다.
+
+### 11-1. GitLens 설치 확인
+
+VS Code에서 Extensions 화면을 엽니다.
+
+```text
+Ctrl + Shift + X
+```
+
+검색창에 아래 이름을 입력합니다.
+
+```text
+GitLens
+```
+
+`GitLens - Git supercharged`가 설치되어 있으면 그대로 진행합니다. 설치되어 있지 않다면 Install을 클릭합니다.
+
+터미널로 설치하려면 아래 명령을 사용할 수도 있습니다.
+
+```powershell
+code --install-extension eamodio.gitlens
+```
+
+### 11-2. 파일 이력 확인
+
+`learning-log.md` 파일을 열고 아래 순서로 확인합니다.
+
+```text
+1. 파일 편집 화면에서 마우스 오른쪽 버튼을 클릭합니다.
+2. GitLens 메뉴를 찾습니다.
+3. Open File History 또는 Show File History를 클릭합니다.
+4. 현재 파일에 어떤 커밋 이력이 있는지 확인합니다.
+```
+
+명령 팔레트를 사용할 수도 있습니다.
+
+```text
+Ctrl + Shift + P
+-> GitLens: Open File History
+```
+
+### 11-3. 확인할 내용
+
+GitLens 화면에서 아래 내용을 찾아봅니다.
+
+```text
+방금 만든 커밋 메시지가 보이는가?
+커밋에 포함된 파일 이름이 보이는가?
+파일의 어느 부분이 변경되었는지 확인할 수 있는가?
+특정 줄을 클릭했을 때 마지막 변경 정보가 보이는가?
+```
+
+GitLens는 Git을 대신 수행하는 도구가 아니라 Git 이력을 보기 쉽게 도와주는 도구입니다. 커밋 전 보안 점검과 push는 여전히 직접 확인해야 합니다.
+
 ## 정리 질문
 
 1. VS Code Source Control은 터미널의 어떤 Git 명령과 비슷한가요?
@@ -164,3 +221,4 @@ git remote -v
 4. Commit과 Push는 무엇이 다른가요?
 5. Publish Branch와 Sync Changes는 언제 보이나요?
 6. GitHub에 올리면 안 되는 파일은 무엇인가요?
+7. GitLens로 확인할 수 있는 Git 정보는 무엇인가요?

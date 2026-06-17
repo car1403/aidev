@@ -290,7 +290,90 @@ Gemini API key, OpenAI API key, Upstash Redis token이 들어가지 않았는가
 커밋 메시지가 무엇을 바꿨는지 설명하는가?
 ```
 
-## 12. 자주 만나는 상황
+## 12. GitLens 설치와 활용
+
+GitLens는 VS Code에서 Git 변경 이력을 더 쉽게 볼 수 있게 해 주는 확장 프로그램입니다.
+
+VS Code의 기본 Source Control만으로도 stage, commit, push, pull을 할 수 있습니다. GitLens는 여기에 파일별 변경 이력, 커밋 상세 정보, 특정 줄을 누가 언제 수정했는지 확인하는 기능을 추가해 줍니다.
+
+### 설치 방법
+
+VS Code 화면에서 설치합니다.
+
+```text
+1. 왼쪽 Extensions 아이콘을 클릭합니다.
+2. 검색창에 GitLens를 입력합니다.
+3. GitLens - Git supercharged를 선택합니다.
+4. Install을 클릭합니다.
+```
+
+터미널에서 설치할 수도 있습니다.
+
+```powershell
+code --install-extension eamodio.gitlens
+```
+
+설치 후 VS Code가 다시 로드되면 왼쪽 메뉴나 Source Control 주변에 GitLens 관련 메뉴가 보일 수 있습니다.
+
+### 수업에서 사용할 GitLens 기능
+
+처음에는 아래 기능만 사용합니다.
+
+| 기능 | 초보자용 설명 | 언제 사용하나요? |
+| --- | --- | --- |
+| Current Line Blame | 현재 커서가 있는 줄을 마지막으로 수정한 커밋 정보를 보여줍니다. | 특정 줄이 언제 바뀌었는지 확인할 때 |
+| File History | 현재 파일의 변경 이력을 보여줍니다. | README나 Python 파일이 어떻게 바뀌었는지 확인할 때 |
+| Commit Details | 커밋 하나에 포함된 변경 파일과 메시지를 보여줍니다. | 커밋 내용을 복습하거나 코드 리뷰할 때 |
+| Compare with Previous | 이전 버전과 현재 파일을 비교합니다. | 내가 무엇을 바꿨는지 다시 확인할 때 |
+
+### 파일 변경 이력 확인 흐름
+
+예를 들어 `learning-log.md` 파일의 변경 이력을 확인하려면 아래 순서로 진행합니다.
+
+```text
+1. learning-log.md 파일을 엽니다.
+2. 파일 편집 화면에서 마우스 오른쪽 버튼을 클릭합니다.
+3. GitLens 메뉴를 찾습니다.
+4. Open File History 또는 Show File History를 선택합니다.
+5. 커밋 목록을 클릭해 어떤 변경이 있었는지 확인합니다.
+```
+
+명령 팔레트에서도 실행할 수 있습니다.
+
+```text
+Ctrl + Shift + P
+-> GitLens: Open File History
+```
+
+### 라인별 변경 정보 확인
+
+파일 안의 특정 줄을 클릭하면 GitLens가 해당 줄의 마지막 변경 정보를 보여줄 수 있습니다.
+
+확인할 내용:
+
+```text
+어떤 커밋에서 바뀌었는가?
+커밋 메시지는 무엇인가?
+언제 바뀌었는가?
+어떤 파일 변경과 함께 커밋되었는가?
+```
+
+이 기능은 "왜 이 코드가 이렇게 되어 있지?"라는 질문이 생겼을 때 유용합니다.
+
+### GitLens 사용 시 주의할 점
+
+GitLens는 Git 이력을 보기 쉽게 해 주는 도구입니다. 코드를 자동으로 저장하거나 GitHub에 올리는 도구가 아닙니다.
+
+```text
+GitLens로 이력을 본다.
+Source Control로 변경 파일을 확인한다.
+직접 커밋 메시지를 작성한다.
+민감정보가 없는지 확인한 뒤 push한다.
+```
+
+또한 GitLens가 보여주는 이력 안에 `.env`, API key, token이 보인다면 이미 과거 커밋에 민감정보가 들어갔을 가능성이 있습니다. 이 경우 혼자 push하지 말고 강사에게 바로 알려야 합니다.
+
+## 13. 자주 만나는 상황
 
 ### Source Control에 파일이 너무 많이 보이는 경우
 
@@ -343,7 +426,7 @@ GitHub에 내 PC에 없는 최신 커밋이 있을 수 있습니다.
 4. 충돌이 나면 강사에게 화면을 보여주고 해결
 ```
 
-## 13. 수업 권장 방식
+## 14. 수업 권장 방식
 
 처음에는 아래 순서로 진행합니다.
 
@@ -359,7 +442,7 @@ GitHub에 내 PC에 없는 최신 커밋이 있을 수 있습니다.
 9. Push 또는 Sync Changes 실행
 ```
 
-## 14. 수업용 전체 실습 흐름
+## 15. 수업용 전체 실습 흐름
 
 아래 흐름은 VS Code 화면 중심으로 진행하는 전체 GitHub 연동 실습입니다.
 
@@ -368,12 +451,13 @@ GitHub에 내 PC에 없는 최신 커밋이 있을 수 있습니다.
 2. Source Control을 연다.
 3. practice-files/learning-log.md를 수정한다.
 4. Source Control에서 변경 파일을 클릭해 diff를 본다.
-5. 파일 옆 + 버튼으로 stage한다.
-6. 메시지 입력 칸에 docs: update Git learning log를 작성한다.
-7. Commit을 누른다.
-8. 왼쪽 아래 브랜치 이름을 확인한다.
-9. Publish Branch 또는 Sync Changes 버튼이 보이는지 확인한다.
-10. GitHub 로그인이 필요하면 로그인한다.
-11. Push 또는 Sync Changes로 GitHub에 올린다.
-12. GitHub 웹사이트에서 커밋이 올라갔는지 확인한다.
+5. GitLens가 설치되어 있다면 Open File History로 파일 변경 이력을 확인한다.
+6. 파일 옆 + 버튼으로 stage한다.
+7. 메시지 입력 칸에 docs: update Git learning log를 작성한다.
+8. Commit을 누른다.
+9. 왼쪽 아래 브랜치 이름을 확인한다.
+10. Publish Branch 또는 Sync Changes 버튼이 보이는지 확인한다.
+11. GitHub 로그인이 필요하면 로그인한다.
+12. Push 또는 Sync Changes로 GitHub에 올린다.
+13. GitHub 웹사이트에서 커밋이 올라갔는지 확인한다.
 ```

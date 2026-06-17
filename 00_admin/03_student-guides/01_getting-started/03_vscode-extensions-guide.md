@@ -364,20 +364,47 @@ GitHub Actions
 
 ## 12. 선택 확장
 
-아래 확장은 편의 기능입니다.
+아래 확장은 필수는 아니지만 수업을 따라갈 때 도움이 되는 편의 기능입니다. 처음에는 필수 확장부터 설치하고, 해당 단원에 들어갈 때 필요한 확장을 추가로 설치합니다.
 
-```text
-Error Lens:
-오류 메시지를 코드 줄 옆에 바로 표시
+### Git 실습에서 유용한 확장
 
-Material Icon Theme:
-파일 아이콘을 보기 좋게 표시
+| 확장 | 검색 이름 | 역할 |
+| --- | --- | --- |
+| GitLens | `GitLens - Git supercharged` | Git 변경 이력, 파일 이력, 커밋 정보, 라인별 수정 정보를 확인합니다. |
+| GitHub Pull Requests | `GitHub Pull Requests and Issues` | VS Code 안에서 Pull Request와 Issue를 확인합니다. 팀 프로젝트와 코드 리뷰 실습에서 유용합니다. |
 
-GitLens:
-Git 변경 이력 확인
+GitLens 설치 명령:
+
+```powershell
+code --install-extension eamodio.gitlens
 ```
 
-처음에는 너무 많은 확장을 설치하기보다 필수 확장부터 설치합니다.
+GitLens는 처음부터 모든 기능을 사용할 필요가 없습니다. 수업에서는 아래 기능만 먼저 사용합니다.
+
+```text
+파일 변경 이력 보기
+커밋 상세 정보 보기
+특정 줄이 언제 바뀌었는지 확인하기
+이전 버전과 현재 버전 비교하기
+```
+
+### 코드 작성에서 유용한 확장
+
+| 확장 | 검색 이름 | 역할 |
+| --- | --- | --- |
+| Error Lens | `Error Lens` | 오류 메시지를 코드 줄 옆에 바로 표시합니다. |
+| Material Icon Theme | `Material Icon Theme` | 파일 아이콘을 보기 좋게 표시해 폴더 구조를 파악하기 쉽게 합니다. |
+| indent-rainbow | `indent-rainbow` | 들여쓰기 깊이를 색상으로 구분해 Python 블록 구조를 보기 쉽게 합니다. |
+| Todo Tree | `Todo Tree` | `TODO`, `FIXME` 같은 주석을 모아서 보여줍니다. |
+
+### 환경 파일과 설정 파일을 볼 때 유용한 확장
+
+| 확장 | 검색 이름 | 역할 |
+| --- | --- | --- |
+| DotENV | `DotENV` | `.env` 파일을 보기 좋게 표시합니다. 단, 실제 API key는 GitHub에 올리면 안 됩니다. |
+| YAML | `YAML` | Docker Compose, GitHub Actions 같은 YAML 파일을 작성할 때 문법 도움을 줍니다. |
+
+처음에는 너무 많은 확장을 설치하기보다 필수 확장부터 설치합니다. Git 단원에 들어가면 GitLens를 추가하고, API 실습에 들어가면 REST Client 또는 Thunder Client를 추가하는 방식이 좋습니다.
 
 ## 13. 설치 확인
 
@@ -409,6 +436,13 @@ Markdown Preview Github Styling
 Markdown PDF
 ```
 
+Git/GitHub 단원에 들어갈 때는 아래 확장을 추가로 설치하는 것을 권장합니다.
+
+```text
+GitLens
+GitHub Pull Requests and Issues
+```
+
 추가로 API 실습을 바로 진행한다면 아래 중 하나를 설치합니다.
 
 ```text
@@ -428,4 +462,5 @@ Thunder Client
 [ ] README.md를 Ctrl + Shift + V로 Preview로 열 수 있다.
 [ ] Markdown PDF를 설치했다.
 [ ] README.md를 PDF로 내보내는 방법을 알고 있다.
+[ ] Git/GitHub 단원에서 GitLens를 설치하고 파일 변경 이력을 확인할 수 있다.
 ```
