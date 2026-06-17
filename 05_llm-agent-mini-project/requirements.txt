@@ -1,0 +1,16 @@
+# 05_llm-agent-mini-project common dependencies
+
+openai
+python-dotenv
+httpx
+pydantic
+langgraph
+langchain
+langchain-openai
+langchain-core
+streamlit
+
+# Optional package for teams that connect to local pgvector PostgreSQL.
+# PostgreSQL itself is not installed by pip. It runs through Docker as
+# explained in SETUP.md.
+psycopg[binary]

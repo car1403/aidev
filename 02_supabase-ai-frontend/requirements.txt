@@ -1,0 +1,12 @@
+# Course dependency list for 02_supabase-ai-frontend.
+# 01/02: Streamlit screens, UI components, tables, charts, and CSV examples.
+# 03/04/05: Streamlit calls the Supabase-first FastAPI backend in 01_supabase-ai-backend.
+# fastapi/uvicorn/pydantic are kept only for small reference sample APIs used during lessons.
+
+streamlit==1.41.1             # Main framework for Python frontend screens.
+pandas==2.2.3                 # Tables, charts, CSV upload, and dashboard examples.
+httpx==0.28.1                 # HTTP client for calling FastAPI backend APIs.
+python-dotenv==1.0.1          # Loads API_BASE_URL from .env.
+fastapi==0.115.6              # Reference sample APIs used in some lessons.
+uvicorn==0.32.1               # Runs reference FastAPI sample APIs.
+pydantic==2.10.4              # Request/response models for reference sample APIs.

@@ -1,0 +1,17 @@
+# 04_llm-agent-orchestration common practice dependencies
+#
+# This file is for students who want one shared environment for the whole
+# course. The recommended class flow still uses per-section virtual
+# environments as explained in SETUP.md.
+
+openai
+python-dotenv
+httpx
+pydantic
+langchain
+langchain-openai
+langchain-core
+langchain-text-splitters
+langgraph
+psycopg[binary]
+streamlit
