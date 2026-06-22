@@ -1,4 +1,4 @@
-# 05. venv and pip Guide
+﻿# 05. venv and pip Guide
 
 `.venv`는 프로젝트별 Python 실행 환경입니다.
 
@@ -55,7 +55,7 @@ Python 프로젝트마다 필요한 패키지가 다를 수 있습니다.
 
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
-python -m venv.venv
+python -m venv .venv
 ```
 
 이미 `.venv` 폴더가 있다면 다시 만들 필요는 없습니다.
@@ -258,7 +258,7 @@ __pycache__
 
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
@@ -277,14 +277,14 @@ pip install requests
 
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```

@@ -1,4 +1,4 @@
-# SETUP
+﻿# SETUP
 
 이 문서는 `99_final-frontend-project`를 로컬 PC에서 실행하는 방법을 안내합니다.
 
@@ -30,7 +30,7 @@ cd C:\aidev\02_supabase-ai-frontend
 
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
-C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv.venv
+C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```

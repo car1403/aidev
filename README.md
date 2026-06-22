@@ -1,4 +1,4 @@
-# AI Development Course
+﻿# AI Development Course
 
 이 저장소는 Python 기초부터 Supabase 기반 AI 서비스, LLM Agent, Docker 기반 운영, AI Workflow 자동화까지 단계적으로 학습하기 위한 실습형 강의 저장소입니다.
 
@@ -146,7 +146,7 @@ Workflow Ops Assistant
 
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```

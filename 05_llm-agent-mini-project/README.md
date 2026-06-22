@@ -1,4 +1,4 @@
-# 05_llm-agent-mini-project
+﻿# 05_llm-agent-mini-project
 
 `04_llm-agent-orchestration` 과정에서 배운 Prompt, Function Calling, Tool Use, RAG, Memory, LangGraph를 하나의 팀 미니 프로젝트로 구현하는 과정입니다.
 
@@ -241,7 +241,7 @@ PowerShell 기준 기본 흐름은 다음과 같습니다.
 
 ```powershell
 cd C:\aidev\05_llm-agent-mini-project
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python --version
 pip install -r requirements.txt

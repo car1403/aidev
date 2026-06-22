@@ -1,4 +1,4 @@
-# 03_local-streamlit
+﻿# 03_local-streamlit
 
 Streamlit 앱을 로컬 Python 환경에서 실행하는 실습입니다.
 
@@ -6,7 +6,7 @@ Streamlit 앱을 로컬 Python 환경에서 실행하는 실습입니다.
 
 ```powershell
 cd C:\aidev\03_supabase-ai-mini-project\01_local-dev-basic\03_local-streamlit\frontend
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 streamlit run app.py --server.port 8501

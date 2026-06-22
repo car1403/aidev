@@ -1,4 +1,4 @@
-# 06_multi-agent-service-ops
+﻿# 06_multi-agent-service-ops
 
 이 과정은 **Multi-Agent 기반 AI 서비스를 실제 운영 가능한 형태로 구성하는 방법**을 학습하는 과정입니다.
 
@@ -358,7 +358,7 @@ PowerShell 기준 기본 흐름:
 
 ```powershell
 cd C:\aidev\06_multi-agent-service-ops
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python --version
 pip install -r requirements.txt

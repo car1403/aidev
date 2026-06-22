@@ -1,4 +1,4 @@
-# Sample Schedule Agent
+﻿# Sample Schedule Agent
 
 이 샘플은 04 과정에서 배운 LangGraph, Tool, State, Streamlit을 하나로 연결한 수업용 일정 조정 Agent 예제입니다.
 
@@ -27,7 +27,7 @@ sample-schedule-agent
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\99_agent-mini-project\sample-schedule-agent
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 Copy-Item.env.example.env

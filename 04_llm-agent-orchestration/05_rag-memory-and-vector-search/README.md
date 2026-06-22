@@ -1,4 +1,4 @@
-# 05 RAG Memory and Vector Search
+﻿# 05 RAG Memory and Vector Search
 
 이 단원은 Agent가 외부 문서와 이전 대화 정보를 활용하는 방법을 학습합니다. 핵심은 문서를 embedding으로 변환하고, pgvector에 저장한 뒤, 질문과 관련 있는 정보를 검색해 LLM 응답에 연결하는 것입니다.
 
@@ -43,7 +43,7 @@
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\05_rag-memory-and-vector-search
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install openai python-dotenv psycopg[binary] langchain-text-splitters
 Copy-Item.env.example.env

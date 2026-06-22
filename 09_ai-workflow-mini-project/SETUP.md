@@ -1,4 +1,4 @@
-# SETUP
+﻿# SETUP
 
 `09_ai-workflow-mini-project` 과정의 실습 환경 설정 문서입니다.
 
@@ -79,7 +79,7 @@ PowerShell을 다시 열었는가?
 만약 `.venv`가 없다면 한 번만 생성합니다.
 
 ```powershell
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 

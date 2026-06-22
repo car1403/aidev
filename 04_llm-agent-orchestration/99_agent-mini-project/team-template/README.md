@@ -1,4 +1,4 @@
-# Team Template
+﻿# Team Template
 
 이 폴더는 프로젝트 팀이 최종 Agent 미니 프로젝트를 시작할 때 사용하는 템플릿입니다.
 
@@ -27,7 +27,7 @@ team-template
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\99_agent-mini-project\team-template
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r.\backend\requirements.txt
 python.\backend\graph.py

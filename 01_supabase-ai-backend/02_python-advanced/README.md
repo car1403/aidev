@@ -1,4 +1,4 @@
-# 02_python-advanced
+﻿# 02_python-advanced
 
 `01_python-basic`을 마친 뒤, 파이썬 코드를 더 구조적으로 작성하는 방법을 배우는 과정입니다.
 
@@ -82,7 +82,7 @@ HTTP API와 외부 데이터
 
 ```powershell
 cd C:\aidev\02_python-advanced
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python --version
 pip install -r requirements.txt

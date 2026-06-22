@@ -1,4 +1,4 @@
-# SETUP
+﻿# SETUP
 
 `08_ai-workflow-automation` 과정의 실습 환경을 준비하는 문서입니다.
 
@@ -98,7 +98,7 @@ Python 명령이 동작하지 않으면 다음을 확인합니다.
 만약 `.venv`가 없다면 한 번만 생성합니다.
 
 ```powershell
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 

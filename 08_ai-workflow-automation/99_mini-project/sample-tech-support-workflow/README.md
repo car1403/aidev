@@ -1,4 +1,4 @@
-# Sample Tech Support Workflow
+﻿# Sample Tech Support Workflow
 
 수업용 샘플 기술 지원 자동화 워크플로우입니다.
 
@@ -29,7 +29,7 @@ sample-tech-support-workflow
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\99_mini-project\sample-tech-support-workflow
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 Copy-Item.env.example.env

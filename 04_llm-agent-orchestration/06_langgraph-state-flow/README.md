@@ -1,4 +1,4 @@
-# 06 LangGraph State Flow
+﻿# 06 LangGraph State Flow
 
 이 단원은 Agent 실행 흐름을 LangGraph의 State, Node, Edge 구조로 설계하는 방법을 학습합니다.
 
@@ -38,7 +38,7 @@
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\06_langgraph-state-flow
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install langgraph langchain langchain-openai langchain-core openai python-dotenv
 Copy-Item.env.example.env

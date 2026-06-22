@@ -1,4 +1,4 @@
-# SETUP
+﻿# SETUP
 
 `03_supabase-ai-mini-project` 실행 환경 설정 안내입니다.
 
@@ -23,7 +23,7 @@ Get-Location
 ## 2. 가상환경 만들기
 
 ```powershell
-C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv.venv
+C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv .venv
 ```
 
 이미 `.venv`가 있다면 다시 만들 필요가 없습니다.

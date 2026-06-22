@@ -1,4 +1,4 @@
-# 06. Markdown Preview Guide
+﻿# 06. Markdown Preview Guide
 
 `README.md` 같은 `.md` 파일은 Markdown 문서입니다.
 
@@ -179,7 +179,7 @@ PowerShell 명령어 예시:
 
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
@@ -244,7 +244,7 @@ Preview에서는 표 형태로 보입니다.
 | 단계 | 작업 | 명령어 |
 | --- | --- | --- |
 | 1 | 폴더 이동 | `cd C:\aidev\01_supabase-ai-backend` |
-| 2 | 가상환경 생성 | `python -m venv.venv` |
+| 2 | 가상환경 생성 | `python -m venv .venv` |
 | 3 | 가상환경 활성화 | `.\.venv\Scripts\Activate.ps1` |
 ```
 
@@ -417,7 +417,7 @@ project/
 ## 4. 설치 방법
 
 ```powershell
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```

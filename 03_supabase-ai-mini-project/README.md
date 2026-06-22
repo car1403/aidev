@@ -1,4 +1,4 @@
-# 03_supabase-ai-mini-project
+﻿# 03_supabase-ai-mini-project
 
 이 과정은 `01_supabase-ai-backend`와 `02_supabase-ai-frontend`에서 배운 내용을 연결해, Supabase 기반 AI 미니 프로젝트를 완성하는 수업입니다.
 
@@ -300,7 +300,7 @@ PowerShell 기준 기본 흐름은 다음과 같습니다.
 
 ```powershell
 cd C:\aidev\03_supabase-ai-mini-project
-C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv.venv
+C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python --version
 pip install -r requirements.txt

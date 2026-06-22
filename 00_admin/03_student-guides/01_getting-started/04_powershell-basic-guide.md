@@ -1,4 +1,4 @@
-# 04. PowerShell Basic Guide
+﻿# 04. PowerShell Basic Guide
 
 PowerShell은 Windows에서 명령어를 실행하는 터미널입니다.
 
@@ -114,7 +114,7 @@ Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 ```powershell
 python --version
 pip --version
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 uvicorn main:app --reload

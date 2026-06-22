@@ -1,4 +1,4 @@
-# 08. Codex Install and Login Guide
+﻿# 08. Codex Install and Login Guide
 
 이 문서는 수업에서 Codex를 사용할 때 필요한 설치와 로그인 안내입니다.
 
@@ -242,7 +242,7 @@ pip로 Python 패키지 설치
 
 ```powershell
 python --version
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 python main.py

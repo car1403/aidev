@@ -1,4 +1,4 @@
-# SETUP
+﻿# SETUP
 
 `06_multi-agent-service-ops` 실행 환경 설정 문서입니다.
 
@@ -34,7 +34,7 @@ cd C:\aidev\06_multi-agent-service-ops
 처음이라면 아래 순서로 만듭니다.
 
 ```powershell
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python --version
 pip install -r requirements.txt

@@ -1,4 +1,4 @@
-# 99_mini-project
+﻿# 99_mini-project
 
 08 과정에서 학습한 AI Workflow 개념, AIPP, n8n, Dify, 운영/품질 관점을 통합하는 미니 프로젝트입니다.
 
@@ -48,7 +48,7 @@
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\99_mini-project\sample-tech-support-workflow
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 Copy-Item.env.example.env

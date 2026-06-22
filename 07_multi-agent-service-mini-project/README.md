@@ -1,4 +1,4 @@
-# 07_multi-agent-service-mini-project
+﻿# 07_multi-agent-service-mini-project
 
 `06_multi-agent-service-ops` 과정에서 학습한 Multi-Agent 협업, Docker Compose, AI 보안/가드레일, Auto Healing, Observability를 하나의 미니 프로젝트로 구현하는 과정입니다.
 
@@ -246,7 +246,7 @@ PowerShell 기준 기본 흐름은 다음과 같습니다.
 
 ```powershell
 cd C:\aidev\07_multi-agent-service-mini-project
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python --version
 pip install -r requirements.txt

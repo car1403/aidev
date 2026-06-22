@@ -1,4 +1,4 @@
-# 04 Function Calling and Tool Use
+﻿# 04 Function Calling and Tool Use
 
 이 단원은 LLM이 직접 답변만 생성하는 것이 아니라, 필요한 도구를 선택하고 Python 함수나 외부 API를 호출하는 구조를 학습합니다.
 
@@ -34,7 +34,7 @@ Agent를 만들 때 중요한 것은 “모델이 모든 것을 혼자 처리하
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\04_function-calling-and-tool-use
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install openai python-dotenv httpx pydantic
 Copy-Item.env.example.env

@@ -1,4 +1,4 @@
-# 03. Free Deployment Guide
+﻿# 03. Free Deployment Guide
 
 이 문서는 초보자가 무료 배포 서비스를 활용해 개인화 AI 챗봇 서비스를 외부에서 접속 가능한 형태로 올려보는 최종 실습 가이드입니다.
 
@@ -192,7 +192,7 @@ def health():
 
 ```powershell
 cd C:\aidev\deploy-practice\backend
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
@@ -285,7 +285,7 @@ frontend/requirements.txt
 
 ```powershell
 cd C:\aidev\deploy-practice\frontend
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 streamlit run app.py

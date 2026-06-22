@@ -1,4 +1,4 @@
-# SETUP
+﻿# SETUP
 
 `07_multi-agent-service-mini-project` 실행 환경 설정 안내입니다.
 
@@ -34,7 +34,7 @@ AWS 배포 체크리스트와 최종 확장 설계
 처음이라면 아래 순서로 만듭니다.
 
 ```powershell
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python --version
 pip install -r requirements.txt

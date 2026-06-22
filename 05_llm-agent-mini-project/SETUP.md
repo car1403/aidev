@@ -1,4 +1,4 @@
-# SETUP
+﻿# SETUP
 
 `05_llm-agent-mini-project` 실행 환경 설정 안내입니다.
 
@@ -76,7 +76,7 @@ wsl --list --verbose
 ## 2. 가상환경 만들기
 
 ```powershell
-python -m venv.venv
+python -m venv .venv
 ```
 
 ## 3. 가상환경 활성화

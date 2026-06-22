@@ -1,4 +1,4 @@
-# SETUP
+﻿# SETUP
 
 `02_python-advanced` 실행 환경 설정 안내입니다.
 
@@ -18,7 +18,7 @@ pip --version
 ## 3. 가상환경 만들기
 
 ```powershell
-python -m venv.venv
+python -m venv .venv
 ```
 
 ## 4. 가상환경 활성화

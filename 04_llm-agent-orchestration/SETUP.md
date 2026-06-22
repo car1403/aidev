@@ -1,4 +1,4 @@
-# SETUP
+﻿# SETUP
 
 `04_llm-agent-orchestration` 과정의 환경 설정 안내입니다.
 
@@ -116,7 +116,7 @@ docker rm 컨테이너ID
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\01_llm-api-and-prompt-basics
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install openai python-dotenv httpx
 ```
@@ -125,7 +125,7 @@ pip install openai python-dotenv httpx
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```

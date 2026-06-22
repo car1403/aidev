@@ -1,4 +1,4 @@
-# 09. AI Workflow Mini Project
+﻿# 09. AI Workflow Mini Project
 
 이 과정은 `08_ai-workflow-automation`에서 배운 AIPP, n8n, Dify, RAG, Tool, API 연동, 운영 품질 관리 내용을 하나의 팀 미니 프로젝트로 정리하는 단계입니다.
 
@@ -100,7 +100,7 @@ PowerShell에서 아래 명령을 순서대로 실행합니다.
 
 ```powershell
 cd C:\aidev\09_ai-workflow-mini-project\02_instructor-sample-project
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```

@@ -1,4 +1,4 @@
-# 02 Advanced Prompting and Reasoning
+﻿# 02 Advanced Prompting and Reasoning
 
 이 단원은 프롬프트를 더 안정적으로 설계하는 방법을 학습합니다. 단순히 질문을 던지는 수준을 넘어 역할, 지시문, 맥락, 출력 형식을 명확히 나누어 LLM 응답 품질을 개선합니다.
 
@@ -33,7 +33,7 @@
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\02_advanced-prompting-and-reasoning
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install openai python-dotenv pydantic
 Copy-Item.env.example.env

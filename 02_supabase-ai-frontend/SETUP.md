@@ -1,4 +1,4 @@
-# SETUP
+﻿# SETUP
 
 `02_supabase-ai-frontend` 과정의 개발 환경 설정 문서입니다.
 
@@ -33,7 +33,7 @@ C:\aidev\02_supabase-ai-frontend
 각 과정 폴더는 자기 폴더 안에 `.venv`를 둡니다. 이 과정에서는 `02_supabase-ai-frontend\.venv` 하나를 사용합니다.
 
 ```powershell
-C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv.venv
+C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv .venv
 ```
 
 이미 `.venv`가 있다면 이 단계는 다시 실행하지 않아도 됩니다.

@@ -1,4 +1,4 @@
-# 04_llm-agent-orchestration
+﻿# 04_llm-agent-orchestration
 
 이 과정은 LLM Agent를 만들기 위한 오케스트레이션 수업입니다.
 
@@ -143,7 +143,7 @@ OpenAI API Key가 아직 없으면 OpenAI 호출 실습은 건너뛰고, Docker/
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\01_llm-api-and-prompt-basics
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install openai python-dotenv httpx
 ```
@@ -152,7 +152,7 @@ pip install openai python-dotenv httpx
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```

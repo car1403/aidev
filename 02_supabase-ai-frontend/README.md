@@ -1,4 +1,4 @@
-# 02_supabase-ai-frontend
+﻿# 02_supabase-ai-frontend
 
 ## SSE 스트리밍 학습 위치 안내
 
@@ -168,7 +168,7 @@ Streamlit 프론트엔드
 
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
-C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv.venv
+C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python --version
 pip install -r requirements.txt

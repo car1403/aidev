@@ -1,4 +1,4 @@
-# 01_python-basic
+﻿# 01_python-basic
 
 파이썬을 처음 배우는 사람을 위한 기초 과정입니다.
 
@@ -78,7 +78,7 @@ PowerShell에서 아래 순서로 실행합니다.
 
 ```powershell
 cd C:\aidev\01_python-basic
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python --version
 pip install -r requirements.txt

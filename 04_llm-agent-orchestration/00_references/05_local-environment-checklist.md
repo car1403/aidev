@@ -1,4 +1,4 @@
-# 05 Local Environment Checklist
+﻿# 05 Local Environment Checklist
 
 이 과정은 Python, Docker, OpenAI API, Streamlit, LangGraph 등을 사용합니다.
 
@@ -22,7 +22,7 @@ Python 3.11 이상
 각 단원 폴더에서 가상 환경을 만드는 방식을 권장합니다.
 
 ```powershell
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```

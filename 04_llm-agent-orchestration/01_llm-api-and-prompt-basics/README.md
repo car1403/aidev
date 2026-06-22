@@ -1,4 +1,4 @@
-# 01 LLM API and Prompt Basics
+﻿# 01 LLM API and Prompt Basics
 
 이 단원은 04 과정의 첫 번째 실습입니다. 클라우드 LLM인 OpenAI API와 Docker/Ollama로 실행하는 로컬 Llama를 비교하면서 LLM 호출 방식의 차이를 이해합니다.
 
@@ -33,7 +33,7 @@
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\01_llm-api-and-prompt-basics
-python -m venv.venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install openai python-dotenv httpx
 Copy-Item.env.example.env
