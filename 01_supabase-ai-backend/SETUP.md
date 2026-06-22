@@ -12,6 +12,22 @@
 - Redis는 로컬 설치나 Docker 실행이 아니라 Upstash Redis를 사용합니다.
 - Docker, Docker Compose, 로컬 PostgreSQL/Redis 운영, AWS 배포는 `C:\aidev\06_multi-agent-service-ops`에서 다룹니다.
 
+## 공통 개발 환경 안내 문서
+
+이 `SETUP.md`는 `01_supabase-ai-backend` 과정을 바로 실행하기 위한 순서를 중심으로 정리한 문서입니다. Python 설치, VS Code 설치, 확장 프로그램, PowerShell 사용법, `.venv`, `pip`, Markdown 문서 보기, Codex 로그인처럼 더 구체적인 준비 방법은 아래 공통 안내 문서를 참고합니다.
+
+| 필요한 내용 | 참고 문서 |
+| --- | --- |
+| Python 설치와 버전 확인 | [`../00_admin/03_student-guides/01_getting-started/01_python-install-guide.md`](../00_admin/03_student-guides/01_getting-started/01_python-install-guide.md) |
+| VS Code 설치 | [`../00_admin/03_student-guides/01_getting-started/02_vscode-install-guide.md`](../00_admin/03_student-guides/01_getting-started/02_vscode-install-guide.md) |
+| VS Code 확장 프로그램 설치 | [`../00_admin/03_student-guides/01_getting-started/03_vscode-extensions-guide.md`](../00_admin/03_student-guides/01_getting-started/03_vscode-extensions-guide.md) |
+| PowerShell 기본 사용법 | [`../00_admin/03_student-guides/01_getting-started/04_powershell-basic-guide.md`](../00_admin/03_student-guides/01_getting-started/04_powershell-basic-guide.md) |
+| `.venv`, `pip`, `requirements.txt` 사용법 | [`../00_admin/03_student-guides/01_getting-started/05_venv-and-pip-guide.md`](../00_admin/03_student-guides/01_getting-started/05_venv-and-pip-guide.md) |
+| Markdown 미리보기와 문서 작성법 | [`../00_admin/03_student-guides/01_getting-started/06_markdown-preview-guide.md`](../00_admin/03_student-guides/01_getting-started/06_markdown-preview-guide.md) |
+| 첫 실행 전 점검표 | [`../00_admin/03_student-guides/01_getting-started/07_first-run-checklist.md`](../00_admin/03_student-guides/01_getting-started/07_first-run-checklist.md) |
+| Codex 설치와 로그인 | [`../00_admin/03_student-guides/01_getting-started/08_codex-install-and-login-guide.md`](../00_admin/03_student-guides/01_getting-started/08_codex-install-and-login-guide.md) |
+| OpenAI 계정과 결제 안내 | [`../00_admin/03_student-guides/01_getting-started/09_openai-account-billing-guide.md`](../00_admin/03_student-guides/01_getting-started/09_openai-account-billing-guide.md) |
+
 ## 1. 작업 위치로 이동
 
 PowerShell을 열고 과정 폴더로 이동합니다.
