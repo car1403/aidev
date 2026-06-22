@@ -4,6 +4,24 @@ Python, FastAPI, Supabase, Gemini API를 중심으로 AI 백엔드 개발을 학
 
 이 과정은 이미지 기준의 **웹 서비스 기초 및 AI 백엔드 개발** 중에서 백엔드에 해당하는 내용을 담당합니다. 화면 UI, SSE 스트리밍 통합, 최종 배포는 `02_supabase-ai-frontend`, `03_supabase-ai-mini-project`, `06_multi-agent-service-ops`와 역할을 나누어 진행합니다.
 
+## Supabase를 먼저 사용하는 이유
+
+Supabase는 PostgreSQL 데이터베이스를 기반으로 인증, 데이터 API, 파일 저장소, 권한 관리 기능을 함께 제공하는 백엔드 플랫폼입니다. 직접 서버를 설치하지 않아도 웹 브라우저에서 프로젝트를 만들고, 테이블을 설계하고, 데이터를 저장하고, 로그인 기능을 실습할 수 있습니다.
+
+이 과정에서 Supabase를 먼저 사용하는 이유는 백엔드 개발의 핵심 흐름을 빠르게 이해하기 위해서입니다. 처음부터 데이터베이스 서버 설치, 네트워크 설정, 운영 환경 구성까지 함께 다루면 Python, FastAPI, API 설계, 인증, 데이터 저장 흐름을 익히기 전에 환경 설정에서 막히기 쉽습니다.
+
+따라서 01 과정에서는 다음 흐름에 집중합니다.
+
+1. FastAPI에서 요청을 받습니다.
+2. Pydantic으로 요청 데이터를 검증합니다.
+3. Gemini API를 호출해 AI 응답을 만듭니다.
+4. Supabase에 사용자 정보, 대화 이력, 서비스 로그를 저장합니다.
+5. Supabase Auth와 RLS로 사용자별 데이터 접근을 제어합니다.
+
+즉, Supabase는 이 과정에서 “설치 부담을 줄여 주는 학습용 백엔드 기반” 역할을 합니다. 덕분에 데이터베이스와 인증을 실제 서비스처럼 사용하면서도, 초반에는 백엔드 코드 작성과 데이터 흐름 이해에 더 많은 시간을 사용할 수 있습니다.
+
+이후 과정에서는 실제 노트북 로컬 환경에 직접 설치해서 다루는 방식으로 확장합니다. `04_llm-agent-orchestration`에서는 Docker Desktop을 이용해 PostgreSQL과 pgvector 같은 구성 요소를 실행하고, `06_multi-agent-service-ops`에서는 Docker Compose, Redis, AWS, GitHub Actions를 다루며 서비스 운영 환경을 학습합니다. 정리하면 01~03은 Supabase 기반으로 빠르게 개발 흐름을 익히고, 04 이후에는 로컬 설치와 운영 환경 구성까지 단계적으로 확장합니다.
+
 ## 과정 목표
 
 - AI 리터러시와 Vibe Coding의 기본 태도를 이해합니다.
@@ -131,7 +149,7 @@ uvicorn solution:app --reload
 
 ## Supabase, Upstash Redis, Docker 학습 기준
 
-이 과정은 Supabase를 기준으로 진행합니다. Supabase는 데이터베이스, 인증, API 기능을 관리형 서비스로 제공하므로 초반에는 서버 운영보다 백엔드 개발 흐름에 집중할 수 있습니다.
+이 과정은 Supabase를 기준으로 진행합니다. Supabase는 데이터베이스, 인증, API 기능을 관리형 서비스로 제공하므로 초반에는 서버 운영보다 백엔드 개발 흐름에 집중할 수 있습니다. PostgreSQL, pgvector, Redis, Docker 같은 로컬 설치형 환경은 이후 과정에서 실제 노트북에 설치하고 실행하면서 다룹니다.
 
 Redis는 로컬에 직접 설치하거나 Docker로 실행하지 않고, 관리형 Redis 서비스인 Upstash Redis를 사용합니다. 이렇게 하면 초보자는 Redis 서버 운영보다 캐시, TTL, 세션 보조, 요청 제한 같은 백엔드 기능의 의미를 먼저 이해할 수 있습니다.
 

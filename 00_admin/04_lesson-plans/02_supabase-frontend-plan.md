@@ -1,4 +1,4 @@
-# 02. Supabase Frontend Plan
+﻿# 02. Supabase Frontend Plan
 
 대상 폴더:
 
@@ -42,7 +42,7 @@ Streamlit Community Cloud 배포 흐름을 선택 실습으로 이해한다.
 9. 선택 실습: Streamlit Community Cloud 배포 흐름 소개
 ```
 
-## 강조할 점
+## 핵심 확인 사항
 
 ```text
 프론트엔드는 Supabase에 직접 service role key로 접근하지 않습니다.

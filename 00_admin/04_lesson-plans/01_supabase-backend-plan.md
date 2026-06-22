@@ -1,4 +1,4 @@
-# 01. Supabase Backend Plan
+﻿# 01. Supabase Backend Plan
 
 대상 폴더:
 
@@ -47,7 +47,7 @@ Redis와 Upstash의 역할을 이해한다.
 11. 대화 이력과 로그 저장 구조
 ```
 
-## 강조할 점
+## 핵심 확인 사항
 
 ```text
 service role key는 서버에서만 사용합니다.

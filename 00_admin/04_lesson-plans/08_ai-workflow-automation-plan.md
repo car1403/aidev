@@ -1,4 +1,4 @@
-# 08. AI Workflow Automation Plan
+﻿# 08. AI Workflow Automation Plan
 
 대상 폴더:
 
@@ -29,7 +29,7 @@ Workflow 운영 품질 기준을 작성한다.
 8. Workflow Ops Assistant
 ```
 
-## 강조할 점
+## 핵심 확인 사항
 
 ```text
 08은 코드를 많이 작성하기보다 업무 흐름을 노드와 데이터 흐름으로 설계하는 능력이 중요합니다.

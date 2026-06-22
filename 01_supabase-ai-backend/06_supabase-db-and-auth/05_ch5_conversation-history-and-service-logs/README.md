@@ -1,4 +1,4 @@
-# 05_ch5_conversation-history-and-service-logs
+﻿# 05_ch5_conversation-history-and-service-logs
 
 이 단원은 Supabase에 사용자 대화 이력과 서비스 로그를 저장하는 구조를 설계합니다.
 
@@ -70,7 +70,7 @@ cd C:\aidev\01_supabase-ai-backend
 python.\06_supabase-db-and-auth\05_ch5_conversation-history-and-service-logs\01_insert_conversation_and_log.py
 ```
 
-## 수업에서 강조할 점
+## 핵심 확인 사항
 
 - 대화방 자체는 `conversations`에 저장합니다.
 - 대화방 안의 질문/답변은 `messages`에 여러 행으로 저장합니다.

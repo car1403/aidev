@@ -1,11 +1,11 @@
-# 01. Team Formation Guide
+﻿# 01. Team Formation Guide
 
 팀 구성 안내입니다.
 
-## 권장 팀 규모
+## 팀 구성
 
 ```text
-2~4명
+4~5명
 ```
 
 ## 역할 예시

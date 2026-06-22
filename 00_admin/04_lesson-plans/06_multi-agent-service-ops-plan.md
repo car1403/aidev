@@ -1,4 +1,4 @@
-# 06. Multi Agent Service Ops Plan
+﻿# 06. Multi Agent Service Ops Plan
 
 대상 폴더:
 
@@ -29,7 +29,7 @@ GitHub Actions CI/CD를 이해한다.
 8. AI 보안과 Guardrail
 ```
 
-## 강조할 점
+## 핵심 확인 사항
 
 ```text
 06은 운영 과정입니다.

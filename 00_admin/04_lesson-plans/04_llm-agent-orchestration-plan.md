@@ -1,4 +1,4 @@
-# 04. LLM Agent Orchestration Plan
+﻿# 04. LLM Agent Orchestration Plan
 
 대상 폴더:
 
@@ -38,7 +38,7 @@ LangGraph 기반 Agent 상태 흐름을 이해한다.
 8. LangGraph Node/Edge/State
 ```
 
-## 강조할 점
+## 핵심 확인 사항
 
 ```text
 04부터 Docker를 사용합니다.
