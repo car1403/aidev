@@ -1,4 +1,4 @@
-.venv/
+﻿.venv/
 __pycache__/
 *.pyc
 *.pyo
@@ -13,3 +13,6 @@ __pycache__/
 students.txt
 student_records.txt
 sample.txt
+
+# VS Code 개인 설정
+.vscode/

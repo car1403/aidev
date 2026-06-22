@@ -11,3 +11,6 @@ __pycache__/
 
 .streamlit/secrets.toml
 *.log
+
+# VS Code 개인 설정
+.vscode/

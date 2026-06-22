@@ -1,5 +1,8 @@
-.venv/
+﻿.venv/
 __pycache__/
 *.pyc
 .env
 .DS_Store
+
+# VS Code 개인 설정
+.vscode/

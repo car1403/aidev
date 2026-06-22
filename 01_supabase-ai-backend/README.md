@@ -42,10 +42,11 @@ Supabase는 PostgreSQL 데이터베이스를 기반으로 인증, 데이터 API,
 
 1. `SETUP.md`를 보고 `01_supabase-ai-backend` 폴더에 `.venv`를 만듭니다.
 2. PowerShell에서 `.venv`를 활성화합니다.
-3. `pip install -r requirements.txt`로 공통 패키지를 설치합니다.
-4. `00_references`를 읽고 수업 전체 방향과 API key 보안 기준을 확인합니다.
-5. `01_python-basic`부터 순서대로 예제 파일을 실행합니다.
-6. 각 단원의 `10_labs`는 수업 중 실습으로, `20_assignments`는 개인 과제로 진행합니다.
+3. `python -m pip install --upgrade pip`로 `pip`를 최신 버전으로 올립니다.
+4. `pip install -r requirements.txt`로 공통 패키지를 설치합니다.
+5. `00_references`를 읽고 수업 전체 방향과 API key 보안 기준을 확인합니다.
+6. `01_python-basic`부터 순서대로 예제 파일을 실행합니다.
+7. 각 단원의 `10_labs`는 수업 중 실습으로, `20_assignments`는 개인 과제로 진행합니다.
 
 이 과정에서는 각 단원마다 `.venv`를 따로 만들지 않고, `01_supabase-ai-backend` 최상위의 `.venv` 하나를 사용합니다.
 
@@ -112,9 +113,10 @@ PowerShell 기준 기본 흐름은 다음과 같습니다.
 
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
-C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv.venv
+C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python --version
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
@@ -239,6 +241,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 ```powershell
 .\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 

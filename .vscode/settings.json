@@ -1,0 +1,13 @@
+{
+  "terminal.integrated.profiles.windows": {
+    "PowerShell (venv auto)": {
+      "source": "PowerShell",
+      "args": [
+        "-NoExit",
+        "-Command",
+        "if (Test-Path '.\\.venv\\Scripts\\Activate.ps1') { & '.\\.venv\\Scripts\\Activate.ps1' }"
+      ]
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell (venv auto)"
+}
