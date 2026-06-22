@@ -65,7 +65,7 @@ streamlit run .\05_state-session-and-data\04_ch4_user-data-and-conversation-hist
 - 메시지 저장 후 다시 조회했을 때 목록이 변경되는가?
 - 사용자별 데이터가 섞이지 않는 구조를 설명할 수 있는가?
 
-## 수업 참여자가 꼭 기억할 점
+## 핵심 요약
 
 - 사용자별 데이터 접근 제어는 백엔드와 Supabase RLS가 담당합니다.
 - Streamlit은 token을 보관하고 API를 호출하는 화면 역할을 합니다.

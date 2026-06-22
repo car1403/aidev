@@ -41,7 +41,7 @@ cd C:\aidev\03_supabase-ai-mini-project\99_team-projects\supabase-team-template\
 streamlit run streaming_app.py --server.port 8502
 ```
 
-## 수업 참여자가 확인할 것
+## 확인 요약
 
 ```text
 [ ] 응답이 한 번에 표시되지 않고 조금씩 누적되는가?

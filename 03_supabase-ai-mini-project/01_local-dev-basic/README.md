@@ -30,7 +30,7 @@ Streamlit: streamlit run으로 로컬 실행
 .env: Supabase URL/key와 API_BASE_URL 관리
 ```
 
-## 수업 참여자가 꼭 기억할 점
+## 핵심 요약
 
 - Supabase 테이블은 Supabase 화면 또는 SQL Editor에서 준비합니다.
 - FastAPI는 Supabase에 저장/조회 요청을 보냅니다.

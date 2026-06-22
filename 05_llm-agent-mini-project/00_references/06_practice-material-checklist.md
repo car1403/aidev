@@ -4,7 +4,7 @@
 
 ## 현재 구성
 
-| 위치 | 역할 | 수업 참여자가 해야 할 일 |
+| 위치 | 역할 | 실행 항목 |
 | --- | --- | --- |
 | `01_local-dev-basic` | Python, LangGraph, Streamlit 실행 확인 | 개발 환경과 기본 실행 흐름 확인 |
 | `02_instructor-sample-project` | 수업 중 함께 실행하는 일정 조정 에이전트 | 샘플 Agent 흐름 실행 및 코드 읽기 |
