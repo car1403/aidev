@@ -36,17 +36,17 @@ Tool 실행 권한
 
 ```text
 Input Guardrail:
-  - prompt injection 문구 탐지
-  - 개인정보 포함 여부 확인
+ - prompt injection 문구 탐지
+ - 개인정보 포함 여부 확인
 
 Tool Guardrail:
-  - Agent 역할별 허용 Tool 확인
-  - 위험 Tool 실행 전 승인 필요
+ - Agent 역할별 허용 Tool 확인
+ - 위험 Tool 실행 전 승인 필요
 
 Output Guardrail:
-  - 응답에 API Key, 비밀번호, 개인정보 포함 여부 확인
-  - JSON Schema 형식 검증
-  - 정책 위반 시 fallback 응답 반환
+ - 응답에 API Key, 비밀번호, 개인정보 포함 여부 확인
+ - JSON Schema 형식 검증
+ - 정책 위반 시 fallback 응답 반환
 ```
 
 ## 팀 프로젝트 적용 양식
@@ -67,11 +67,11 @@ Tool 권한 검증 기준:
 
 ```text
 if 위험 입력:
-    block
+ block
 elif 민감 정보 포함:
-    redact
+ redact
 else:
-    allow
+ allow
 ```
 
 이후 실제 Guardrails AI 또는 유사 검증 도구를 붙일 때는 같은 기준을 라이브러리 설정이나 Validator로 옮깁니다.

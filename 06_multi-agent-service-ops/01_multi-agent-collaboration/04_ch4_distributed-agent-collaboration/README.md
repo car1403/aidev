@@ -1,4 +1,4 @@
-﻿# 04_ch4_distributed-agent-collaboration
+# 04_ch4_distributed-agent-collaboration
 
 분산 협업 구조를 흉내 내며 Agent 간 결과를 통합하는 방법을 학습합니다.
 
@@ -21,5 +21,5 @@ monitor: 실행 상태와 로그 표시
 ## 실행
 
 ```powershell
-python .\04_ch4_distributed-agent-collaboration\01_distributed-agent-collaboration.py
+python.\04_ch4_distributed-agent-collaboration\01_distributed-agent-collaboration.py
 ```

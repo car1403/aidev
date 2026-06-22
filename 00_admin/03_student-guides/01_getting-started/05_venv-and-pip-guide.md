@@ -4,7 +4,7 @@
 
 수업에서는 과정 폴더마다 최상위에 `.venv`를 하나 만들고, 그 안에 필요한 Python 패키지를 설치합니다.
 
-## 1. 왜 .venv를 사용하나요?
+## 1. 왜.venv를 사용하나요?
 
 Python 프로젝트마다 필요한 패키지가 다를 수 있습니다.
 
@@ -21,7 +21,7 @@ Python 프로젝트마다 필요한 패키지가 다를 수 있습니다.
 
 모든 패키지를 PC 전체에 섞어서 설치하면 버전 충돌이 생길 수 있습니다. 그래서 과정마다 `.venv`를 따로 사용합니다.
 
-## 2. 과정별 .venv 기준
+## 2. 과정별.venv 기준
 
 하위 실습 폴더마다 `.venv`를 만들지 않습니다.
 
@@ -44,23 +44,23 @@ Python 프로젝트마다 필요한 패키지가 다를 수 있습니다.
 중요한 기준은 다음과 같습니다.
 
 ```text
-01_supabase-ai-backend 아래의 01_python-basic 같은 하위 폴더마다 .venv를 만들지 않습니다.
-02_supabase-ai-frontend 아래의 각 실습 폴더마다 .venv를 만들지 않습니다.
-03~09도 과정 폴더 최상위에 .venv 하나만 사용합니다.
+01_supabase-ai-backend 아래의 01_python-basic 같은 하위 폴더마다.venv를 만들지 않습니다.
+02_supabase-ai-frontend 아래의 각 실습 폴더마다.venv를 만들지 않습니다.
+03~09도 과정 폴더 최상위에.venv 하나만 사용합니다.
 ```
 
-## 3. .venv 만들기
+## 3..venv 만들기
 
 예를 들어 01 과정에서 가상환경을 만들려면 PowerShell에서 아래처럼 실행합니다.
 
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
-python -m venv .venv
+python -m venv.venv
 ```
 
 이미 `.venv` 폴더가 있다면 다시 만들 필요는 없습니다.
 
-## 4. .venv 활성화
+## 4..venv 활성화
 
 Windows PowerShell에서는 아래 명령으로 `.venv`를 활성화합니다.
 
@@ -160,7 +160,7 @@ pip show fastapi
 
 설치되어 있으면 버전, 위치, 설명이 표시됩니다. 설치되어 있지 않으면 아무 정보도 나오지 않거나 경고가 표시됩니다.
 
-## 9. .venv 비활성화
+## 9..venv 비활성화
 
 작업이 끝나면 가상환경을 비활성화할 수 있습니다.
 
@@ -231,7 +231,7 @@ python -m pip install -r requirements.txt
 python -m pip install fastapi
 ```
 
-## 11. .venv를 GitHub에 올리면 안 되는 이유
+## 11..venv를 GitHub에 올리면 안 되는 이유
 
 `.venv`는 개인 PC의 실행 환경입니다. 용량이 크고, 다른 사람 PC에서는 그대로 쓰기 어렵습니다.
 
@@ -258,7 +258,7 @@ __pycache__
 
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
@@ -277,14 +277,14 @@ pip install requests
 
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
@@ -296,11 +296,11 @@ pip install -r requirements.txt
 아래 항목을 확인합니다.
 
 ```text
-[ ] 과정 폴더 최상위에서 .venv를 만들었다.
-[ ] .venv를 활성화했다.
+[ ] 과정 폴더 최상위에서.venv를 만들었다.
+[ ].venv를 활성화했다.
 [ ] PowerShell 앞에 (.venv)가 보인다.
 [ ] requirements.txt로 패키지를 한 번에 설치할 수 있다.
 [ ] pip install 패키지이름으로 패키지를 하나씩 설치할 수 있다.
 [ ] pip list로 설치된 패키지를 확인할 수 있다.
-[ ] .venv 폴더를 GitHub에 올리면 안 된다는 것을 이해했다.
+[ ].venv 폴더를 GitHub에 올리면 안 된다는 것을 이해했다.
 ```

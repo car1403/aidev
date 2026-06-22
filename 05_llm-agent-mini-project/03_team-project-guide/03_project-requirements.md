@@ -53,17 +53,17 @@ docs/agent-test-report.md
 
 ```python
 class AgentState(TypedDict):
-    user_request: str
-    intent: str
-    required_tools: list[str]
-    tools_called: list[str]
-    tool_results: dict
-    error_count: int
-    iteration: int
-    memory_summary: str
-    decision_reason: str
-    reflection_notes: list[str]
-    final_answer: str
+ user_request: str
+ intent: str
+ required_tools: list[str]
+ tools_called: list[str]
+ tool_results: dict
+ error_count: int
+ iteration: int
+ memory_summary: str
+ decision_reason: str
+ reflection_notes: list[str]
+ final_answer: str
 ```
 
 팀 프로젝트에 맞게 필드를 줄이거나 늘릴 수 있지만, 왜 필요한지 설명해야 합니다.

@@ -14,8 +14,8 @@ LLM API는 보통 message 목록을 사용해 대화를 표현합니다.
 
 ```python
 messages = [
-    {"role": "system", "content": "You are a helpful backend tutor."},
-    {"role": "user", "content": "FastAPI가 무엇인가요?"},
+ {"role": "system", "content": "You are a helpful backend tutor."},
+ {"role": "user", "content": "FastAPI가 무엇인가요?"},
 ]
 ```
 
@@ -23,10 +23,10 @@ messages = [
 
 ```python
 messages = [
-    {"role": "system", "content": "You are a helpful backend tutor."},
-    {"role": "user", "content": "FastAPI가 무엇인가요?"},
-    {"role": "assistant", "content": "Python 웹 API 프레임워크입니다."},
-    {"role": "user", "content": "그럼 Swagger는 어떤 역할인가요?"},
+ {"role": "system", "content": "You are a helpful backend tutor."},
+ {"role": "user", "content": "FastAPI가 무엇인가요?"},
+ {"role": "assistant", "content": "Python 웹 API 프레임워크입니다."},
+ {"role": "user", "content": "그럼 Swagger는 어떤 역할인가요?"},
 ]
 ```
 

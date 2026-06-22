@@ -15,5 +15,5 @@ set
 ## 실행
 
 ```powershell
-python .\05_data-structures-basic\01_list_dict.py
+python.\05_data-structures-basic\01_list_dict.py
 ```

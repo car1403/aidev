@@ -83,10 +83,10 @@ AIPP Tool 노드로 외부 시스템 조회를 수행한다.
 
 ```json
 {
-  "category": "login",
-  "priority": "high",
-  "answer": "먼저 비밀번호 만료 여부와 계정 잠금 상태를 확인해 주세요.",
-  "next_action": "notify_ops"
+ "category": "login",
+ "priority": "high",
+ "answer": "먼저 비밀번호 만료 여부와 계정 잠금 상태를 확인해 주세요.",
+ "next_action": "notify_ops"
 }
 ```
 

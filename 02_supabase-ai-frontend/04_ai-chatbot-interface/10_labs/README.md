@@ -1,4 +1,4 @@
-﻿# 10_labs
+# 10_labs
 
 수업 중 함께 진행하는 챗봇 UI 실습입니다.
 
@@ -13,7 +13,7 @@ lab-03-backend-chat-client.py
 ## 실행 예시
 
 ```powershell
-streamlit run .\04_ai-chatbot-interface\10_labs\lab-01-basic-chat-page.py
+streamlit run.\04_ai-chatbot-interface\10_labs\lab-01-basic-chat-page.py
 ```
 
 ## 실습 기준

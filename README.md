@@ -43,7 +43,7 @@ AIPP, n8n, Dify 같은 AI Workflow 도구를 실습하고 싶은 경우
 4. VS Code 확장 설치
 5. Markdown Preview 사용법 확인
 6. PowerShell 기본 명령 확인
-7. 과정 폴더 최상위에 .venv 만들기
+7. 과정 폴더 최상위에.venv 만들기
 8. requirements.txt 설치
 9. 예제 Python 파일 실행
 10. 오류가 나오면 README와 troubleshooting 문서 확인
@@ -146,7 +146,7 @@ Workflow Ops Assistant
 
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```

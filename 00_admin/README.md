@@ -56,9 +56,9 @@
 |-- 01_curriculum-overview
 |-- 02_class-operation
 |-- 03_student-guides
-|   |-- 01_getting-started
-|   |-- 02_how-to-study
-|   `-- 03_submission-guide
+| |-- 01_getting-started
+| |-- 02_how-to-study
+| `-- 03_submission-guide
 |-- 04_lesson-plans
 |-- 05_checklists
 |-- 06_rubrics-and-evaluation
@@ -96,8 +96,8 @@
 4. Codex를 사용할 경우 설치와 로그인을 확인한다.
 5. OpenAI 계정과 결제 방식의 차이를 이해한다.
 6. PowerShell에서 현재 폴더 위치를 확인한다.
-7. 과정 폴더 최상위에 .venv를 만든다.
-8. .venv를 활성화한다.
+7. 과정 폴더 최상위에.venv를 만든다.
+8..venv를 활성화한다.
 9. requirements.txt를 설치한다.
 10. 예제 파일 하나를 실행한다.
 11. 오류가 나오면 오류 메시지를 복사해 원인을 확인한다.

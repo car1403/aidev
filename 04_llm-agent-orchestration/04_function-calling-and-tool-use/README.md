@@ -16,40 +16,40 @@ Agent를 만들 때 중요한 것은 “모델이 모든 것을 혼자 처리하
 
 ```text
 04_function-calling-and-tool-use
-├─ .env.example
+├─.env.example
 ├─ 01_ch1_function-calling-basic
-│  ├─ 01_simple-calculator-tool.py
-│  └─ 02_learning-log-summary-tool.py
+│ ├─ 01_simple-calculator-tool.py
+│ └─ 02_learning-log-summary-tool.py
 ├─ 02_ch2_tool-use-with-external-api
-│  ├─ 01_mock-weather-tool.py
-│  └─ 02_http-api-tool-wrapper.py
+│ ├─ 01_mock-weather-tool.py
+│ └─ 02_http-api-tool-wrapper.py
 ├─ 03_ch3_multi-tool-orchestration
-│  ├─ 01_multi-tool-router.py
-│  └─ 02_manual-tool-selection-flow.py
+│ ├─ 01_multi-tool-router.py
+│ └─ 02_manual-tool-selection-flow.py
 └─ 04_ch4_mcp-concept-and-optional-practice
-   └─ 01_mcp-concept-summary.py
+ └─ 01_mcp-concept-summary.py
 ```
 
 ## 실습 시작 순서
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\04_function-calling-and-tool-use
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install openai python-dotenv httpx pydantic
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 ```
 
 ## 실행 순서
 
 ```powershell
-python .\01_ch1_function-calling-basic\01_simple-calculator-tool.py
-python .\01_ch1_function-calling-basic\02_learning-log-summary-tool.py
-python .\02_ch2_tool-use-with-external-api\01_mock-weather-tool.py
-python .\02_ch2_tool-use-with-external-api\02_http-api-tool-wrapper.py
-python .\03_ch3_multi-tool-orchestration\01_multi-tool-router.py
-python .\03_ch3_multi-tool-orchestration\02_manual-tool-selection-flow.py
-python .\04_ch4_mcp-concept-and-optional-practice\01_mcp-concept-summary.py
+python.\01_ch1_function-calling-basic\01_simple-calculator-tool.py
+python.\01_ch1_function-calling-basic\02_learning-log-summary-tool.py
+python.\02_ch2_tool-use-with-external-api\01_mock-weather-tool.py
+python.\02_ch2_tool-use-with-external-api\02_http-api-tool-wrapper.py
+python.\03_ch3_multi-tool-orchestration\01_multi-tool-router.py
+python.\03_ch3_multi-tool-orchestration\02_manual-tool-selection-flow.py
+python.\04_ch4_mcp-concept-and-optional-practice\01_mcp-concept-summary.py
 ```
 
 ## 수업 중 확인 질문

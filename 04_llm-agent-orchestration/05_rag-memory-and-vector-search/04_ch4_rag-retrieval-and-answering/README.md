@@ -14,10 +14,10 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\05_rag-memory-and-vector-search
 .\.venv\Scripts\Activate.ps1
-python .\04_ch4_rag-retrieval-and-answering\01_retrieve-context.py
-python .\04_ch4_rag-retrieval-and-answering\02_rag-answer.py
-python .\04_ch4_rag-retrieval-and-answering\03_hybrid-search-rrf.py
-python .\04_ch4_rag-retrieval-and-answering\04_rag-quality-evaluation.py
+python.\04_ch4_rag-retrieval-and-answering\01_retrieve-context.py
+python.\04_ch4_rag-retrieval-and-answering\02_rag-answer.py
+python.\04_ch4_rag-retrieval-and-answering\03_hybrid-search-rrf.py
+python.\04_ch4_rag-retrieval-and-answering\04_rag-quality-evaluation.py
 ```
 
 ## 확인 질문

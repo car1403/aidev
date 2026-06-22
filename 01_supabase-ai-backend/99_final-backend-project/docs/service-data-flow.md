@@ -33,5 +33,5 @@ POST /qa 요청
 -> generate_mock_answer 함수로 답변 생성
 -> qa_items 테이블에 question/answer/model 저장
 -> service_logs 테이블에 qa.created 로그 저장
--> {"item": ...} 응답 반환
+-> {"item":...} 응답 반환
 ```

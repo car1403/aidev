@@ -1,4 +1,4 @@
-﻿# Lab 04. Distributed Collaboration
+# Lab 04. Distributed Collaboration
 
 ## 목표
 
@@ -7,7 +7,7 @@
 ## 실습
 
 ```powershell
-python .\04_ch4_distributed-agent-collaboration\01_distributed-agent-collaboration.py
+python.\04_ch4_distributed-agent-collaboration\01_distributed-agent-collaboration.py
 ```
 
 ## 확인 질문

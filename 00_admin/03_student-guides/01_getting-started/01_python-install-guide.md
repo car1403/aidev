@@ -37,7 +37,7 @@ pip --version
 정상 예시:
 
 ```text
-pip 24.x from ...
+pip 24.x from...
 ```
 
 ## 3. Python 설치 방법

@@ -23,8 +23,8 @@ SSE 기반 실시간 응답 스트리밍을 통합 실습으로 다룬다.
 [ ] 03_supabase-ai-mini-project\.venv 준비
 [ ] requirements.txt 설치
 [ ] Supabase 프로젝트 준비
-[ ] .env에 Supabase URL/key 입력
-[ ] .env에 Gemini API Key 입력
+[ ].env에 Supabase URL/key 입력
+[ ].env에 Gemini API Key 입력
 [ ] 선택 배포 실습 시 Render, Upstash, Streamlit Community Cloud 계정 준비
 [ ] FastAPI와 Streamlit을 각각 실행할 PowerShell 준비
 ```

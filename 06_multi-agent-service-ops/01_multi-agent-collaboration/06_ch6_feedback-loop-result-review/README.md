@@ -15,20 +15,20 @@ Agent 실행 결과를 검증하고, 품질이 낮거나 실패한 경우 재시
 Agent 실행
 -> 결과 검증
 -> 품질 기준 통과
-   -> 최종 응답
+ -> 최종 응답
 -> 품질 기준 실패
-   -> 피드백 생성
-   -> 재시도
-   -> 다시 검증
+ -> 피드백 생성
+ -> 재시도
+ -> 다시 검증
 -> 반복 실패
-   -> 사람 검토 또는 fallback
+ -> 사람 검토 또는 fallback
 ```
 
 ## 실행 예제
 
 ```powershell
 cd C:\aidev\06_multi-agent-service-ops\01_multi-agent-collaboration
-python .\06_ch6_feedback-loop-result-review\01_feedback_loop_result_review.py
+python.\06_ch6_feedback-loop-result-review\01_feedback_loop_result_review.py
 ```
 
 ## 운영 관점

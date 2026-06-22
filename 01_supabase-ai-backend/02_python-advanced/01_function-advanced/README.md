@@ -16,7 +16,7 @@ filter
 ## 실행
 
 ```powershell
-python .\01_function-advanced\01_args_kwargs.py
-python .\01_function-advanced\02_lambda_map_filter.py
-python .\01_function-advanced\03_recursive_basic.py
+python.\01_function-advanced\01_args_kwargs.py
+python.\01_function-advanced\02_lambda_map_filter.py
+python.\01_function-advanced\03_recursive_basic.py
 ```

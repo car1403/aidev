@@ -13,8 +13,8 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\02_advanced-prompting-and-reasoning
 .\.venv\Scripts\Activate.ps1
-python .\04_ch4_prompt-safety-and-evaluation\01_prompt-injection-defense.py
-python .\04_ch4_prompt-safety-and-evaluation\02_prompt-version-evaluation.py
+python.\04_ch4_prompt-safety-and-evaluation\01_prompt-injection-defense.py
+python.\04_ch4_prompt-safety-and-evaluation\02_prompt-version-evaluation.py
 ```
 
 ## 확인 질문

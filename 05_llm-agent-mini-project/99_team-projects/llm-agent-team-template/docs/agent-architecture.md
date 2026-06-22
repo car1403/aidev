@@ -117,7 +117,7 @@ State 설계 시 주의할 점:
 - 같은 값을 `intent`, `decision_reason`, `final_answer`에 반복해서 저장하지 않습니다.
 - Tool 결과 원본은 `tool_results`에 두고, 화면에 보여줄 문장은 `final_answer`에서만 관리합니다.
 - 재시도 횟수는 `error_count`와 `iteration`처럼 목적을 나누어 관리합니다.
-- 타입 힌트를 사용해 수업 참여자가 State 구조를 빠르게 확인할 수 있게 합니다.
+- 타입 힌트를 사용해 직접 State 구조를 빠르게 확인할 수 있게 합니다.
 
 ## 8. Fallback Strategy
 

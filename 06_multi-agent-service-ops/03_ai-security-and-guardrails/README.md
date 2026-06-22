@@ -1,4 +1,4 @@
-﻿# 03 AI Security and Guardrails
+# 03 AI Security and Guardrails
 
 이 단원은 AI 서비스와 Multi-Agent 시스템에서 필요한 보안과 가드레일을 학습합니다.
 
@@ -72,10 +72,10 @@ Agent가 권한 없는 Tool을 실행함
 ## 실행 예제
 
 ```powershell
-python .\01_ch1_prompt-injection-defense\01_prompt-injection-filter.py
-python .\02_ch2_policy-based-response-validation\01_policy-response-validator.py
-python .\03_ch3_tool-permission-control\01_tool-permission-control.py
-python .\04_ch4_multi-agent-access-control\01_multi-agent-access-control.py
+python.\01_ch1_prompt-injection-defense\01_prompt-injection-filter.py
+python.\02_ch2_policy-based-response-validation\01_policy-response-validator.py
+python.\03_ch3_tool-permission-control\01_tool-permission-control.py
+python.\04_ch4_multi-agent-access-control\01_multi-agent-access-control.py
 ```
 
 ## 추가 Lab

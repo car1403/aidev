@@ -13,8 +13,8 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\05_rag-memory-and-vector-search
 .\.venv\Scripts\Activate.ps1
-python .\03_ch3_document-chunking-and-indexing\01_split-sample-document.py
-python .\03_ch3_document-chunking-and-indexing\02_index-document-chunks.py
+python.\03_ch3_document-chunking-and-indexing\01_split-sample-document.py
+python.\03_ch3_document-chunking-and-indexing\02_index-document-chunks.py
 ```
 
 ## 확인 질문

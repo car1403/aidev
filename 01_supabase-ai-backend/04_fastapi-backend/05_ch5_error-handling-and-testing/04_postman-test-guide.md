@@ -1,4 +1,4 @@
-﻿# Postman 테스트
+# Postman 테스트
 
 ## GET 요청
 
@@ -16,8 +16,8 @@ Body는 `raw`와 `JSON`을 선택합니다.
 
 ```json
 {
-  "name": "Keyboard",
-  "price": 30000
+ "name": "Keyboard",
+ "price": 30000
 }
 ```
 

@@ -26,10 +26,10 @@ Webhook Trigger
 
 ```json
 {
-  "ticket_id": "N8N-3001",
-  "title": "AI 서비스 응답 지연",
-  "message": "프리미엄 고객인데 AI 응답이 너무 느립니다.",
-  "customer_tier": "premium"
+ "ticket_id": "N8N-3001",
+ "title": "AI 서비스 응답 지연",
+ "message": "프리미엄 고객인데 AI 응답이 너무 느립니다.",
+ "customer_tier": "premium"
 }
 ```
 

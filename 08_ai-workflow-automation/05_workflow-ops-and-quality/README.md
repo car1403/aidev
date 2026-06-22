@@ -108,7 +108,7 @@ Workflow 실행
 ```
 
 여기서 `Workflow 실행 흐름 최적화`는 단순히 서버 자원을 늘리는 일이 아닙니다.
-수업 참여자는 실행 로그를 보고 오래 걸리는 노드, 반복 호출이 많은 노드, 실패가 자주 발생하는 노드, 불필요하게 비용이 큰 API 호출을 찾아 워크플로우 순서와 조건을 개선하는 연습을 하게 됩니다.
+실행 로그를 보고 오래 걸리는 노드, 반복 호출이 많은 노드, 실패가 자주 발생하는 노드, 불필요하게 비용이 큰 API 호출을 찾아 워크플로우 순서와 조건을 개선하는 연습을 하게 됩니다.
 
 ## 실행 준비
 
@@ -126,14 +126,14 @@ pip install -r requirements.txt
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\05_workflow-ops-and-quality
-python .\01_ch1_version-and-cost-management\01_version_cost_tracker.py
-python .\02_ch2_error-handling-and-exception-flow\01_exception_flow_runner.py
-python .\03_ch3_log-analysis-and-improvement\01_workflow_log_analyzer.py
-python .\04_ch4_data-quality-validation\01_data_quality_validator.py
-python .\05_ch5_workflow-ops-assistant\01_workflow_ops_assistant.py
-python .\06_ch6_prompt-injection-and-security-filters\01_prompt_injection_security_filter.py
-python .\07_ch7_resource-scaling-template-ops\01_resource_scaling_template_ops.py
-python .\08_ch8_multi-agent-workflow-ops\01_multi_agent_workflow_ops.py
+python.\01_ch1_version-and-cost-management\01_version_cost_tracker.py
+python.\02_ch2_error-handling-and-exception-flow\01_exception_flow_runner.py
+python.\03_ch3_log-analysis-and-improvement\01_workflow_log_analyzer.py
+python.\04_ch4_data-quality-validation\01_data_quality_validator.py
+python.\05_ch5_workflow-ops-assistant\01_workflow_ops_assistant.py
+python.\06_ch6_prompt-injection-and-security-filters\01_prompt_injection_security_filter.py
+python.\07_ch7_resource-scaling-template-ops\01_resource_scaling_template_ops.py
+python.\08_ch8_multi-agent-workflow-ops\01_multi_agent_workflow_ops.py
 ```
 
 ## 이후 과정과의 연결

@@ -38,7 +38,7 @@ User Input
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\01_workflow-concepts
-python .\04_ch4_rag-data-processing-nodes\01_rag_data_processing_nodes.py
+python.\04_ch4_rag-data-processing-nodes\01_rag_data_processing_nodes.py
 ```
 
 ## 수업 질문

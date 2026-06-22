@@ -1,4 +1,4 @@
-﻿# 09 Common Errors for Beginners
+# 09 Common Errors for Beginners
 
 06 과정에서 자주 만나는 오류와 확인 방법입니다.
 
@@ -51,18 +51,18 @@ docker compose down
 
 또는 다른 포트를 사용합니다.
 
-## .env 파일 없음
+##.env 파일 없음
 
 증상:
 
 ```text
-env file .env not found
+env file.env not found
 ```
 
 해결:
 
 ```powershell
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 ```
 
 ## Python 패키지 없음
@@ -93,7 +93,7 @@ pip install -r requirements.txt
 
 ```powershell
 cd C:\aidev\06_multi-agent-service-ops\02_service-deployment-and-automation\02_ch2_docker-compose-multi-service
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 docker compose config
 ```
 
@@ -109,7 +109,7 @@ docker compose config
 해결:
 
 ```powershell
-docker build --no-cache -t aidev-agent-backend:local .
+docker build --no-cache -t aidev-agent-backend:local.
 ```
 
 ## GitHub Actions가 실행되지 않음

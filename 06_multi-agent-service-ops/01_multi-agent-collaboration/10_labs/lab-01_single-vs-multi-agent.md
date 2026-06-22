@@ -1,4 +1,4 @@
-﻿# Lab 01. Single Agent vs Multi-Agent
+# Lab 01. Single Agent vs Multi-Agent
 
 ## 목표
 
@@ -7,7 +7,7 @@
 ## 실습
 
 ```powershell
-python .\01_ch1_single-vs-multi-agent\01_single-agent-vs-multi-agent.py
+python.\01_ch1_single-vs-multi-agent\01_single-agent-vs-multi-agent.py
 ```
 
 ## 확인 질문

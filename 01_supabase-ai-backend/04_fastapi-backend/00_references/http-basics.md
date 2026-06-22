@@ -1,13 +1,13 @@
-﻿# HTTP 기초
+# HTTP 기초
 
 ## 주요 Method
 
 ```text
-GET     데이터 조회
-POST    데이터 생성
-PUT     전체 수정
-PATCH   일부 수정
-DELETE  삭제
+GET 데이터 조회
+POST 데이터 생성
+PUT 전체 수정
+PATCH 일부 수정
+DELETE 삭제
 ```
 
 ## URL 구성

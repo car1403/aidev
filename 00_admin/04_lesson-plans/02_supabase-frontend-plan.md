@@ -24,7 +24,7 @@ Streamlit Community Cloud 배포 흐름을 선택 실습으로 이해한다.
 [ ] 02_supabase-ai-frontend\.venv 준비
 [ ] requirements.txt 설치
 [ ] 01_supabase-ai-backend 서버 실행 가능 여부 확인
-[ ] .env의 API_BASE_URL 확인
+[ ].env의 API_BASE_URL 확인
 [ ] 배포 선택 실습 시 Streamlit Community Cloud 계정 확인
 ```
 

@@ -1,4 +1,4 @@
-﻿# 01_streamlit-basic
+# 01_streamlit-basic
 
 Streamlit을 사용해 Python 코드만으로 간단한 웹 화면을 만드는 첫 번째 단원입니다.
 
@@ -42,7 +42,7 @@ Streamlit을 사용해 Python 코드만으로 간단한 웹 화면을 만드는 
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
 .\.venv\Scripts\Activate.ps1
-streamlit run .\01_streamlit-basic\01_ch1_streamlit-project-setup\01_hello-streamlit.py
+streamlit run.\01_streamlit-basic\01_ch1_streamlit-project-setup\01_hello-streamlit.py
 ```
 
 아직 `02_supabase-ai-frontend` 가상 환경을 만들지 않았다면 다음 패키지가 필요합니다.

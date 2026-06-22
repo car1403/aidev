@@ -1,4 +1,4 @@
-﻿# Python PostgreSQL 연결
+# Python PostgreSQL 연결
 
 이 과정에서는 `psycopg`를 사용해 PostgreSQL에 연결합니다.
 
@@ -15,11 +15,11 @@ import psycopg
 
 
 conn = psycopg.connect(
-    host="localhost",
-    port=5432,
-    dbname="aidev_db",
-    user="aidev",
-    password="aidev1234",
+ host="localhost",
+ port=5432,
+ dbname="aidev_db",
+ user="aidev",
+ password="aidev1234",
 )
 ```
 

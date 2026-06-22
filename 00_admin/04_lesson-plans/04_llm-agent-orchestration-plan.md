@@ -20,7 +20,7 @@ LangGraph 기반 Agent 상태 흐름을 이해한다.
 ```text
 [ ] Docker Desktop 설치 확인
 [ ] Docker 실행 확인
-[ ] Python .venv 준비
+[ ] Python.venv 준비
 [ ] Llama 또는 LLM 실행 방법 확인
 [ ] PostgreSQL/pgvector 컨테이너 실행 준비
 ```

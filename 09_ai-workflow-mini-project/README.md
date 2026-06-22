@@ -2,7 +2,7 @@
 
 이 과정은 `08_ai-workflow-automation`에서 배운 AIPP, n8n, Dify, RAG, Tool, API 연동, 운영 품질 관리 내용을 하나의 팀 미니 프로젝트로 정리하는 단계입니다.
 
-수업 참여자는 실제 기업에서 사용할 수 있는 기술 지원 자동화 시나리오를 정하고, 노코드 또는 로코드 도구를 활용해 워크플로우를 설계하고, 실행 결과를 검증합니다.
+실제 기업에서 사용할 수 있는 기술 지원 자동화 시나리오를 정하고, 노코드 또는 로코드 도구를 활용해 워크플로우를 설계하고, 실행 결과를 검증합니다.
 
 ## 프로젝트 주제
 
@@ -61,16 +61,16 @@
 
 ```text
 09_ai-workflow-mini-project/
-  README.md
-  SETUP.md
-  00_references/
-  01_local-dev-basic/
-  02_instructor-sample-project/
-  03_team-project-guide/
-  04_ai-workflow-project-practice/
-  05_ai-workflow-sample-assets/
-  99_team-projects/
-    ai-workflow-team-template/
+ README.md
+ SETUP.md
+ 00_references/
+ 01_local-dev-basic/
+ 02_instructor-sample-project/
+ 03_team-project-guide/
+ 04_ai-workflow-project-practice/
+ 05_ai-workflow-sample-assets/
+ 99_team-projects/
+ ai-workflow-team-template/
 ```
 
 | 폴더 | 수업에서 사용하는 방식 |
@@ -85,7 +85,7 @@
 
 ## 실습 시작 순서
 
-처음 진행하는 수업 참여자는 아래 순서대로 따라오면 됩니다.
+처음 진행하는 아래 순서대로 따라오면 됩니다.
 
 1. `SETUP.md`를 열고 Python, VS Code, 가상환경, 실행 명령을 확인합니다.
 2. `01_local-dev-basic`에서 로컬 실행 환경을 점검합니다.
@@ -100,7 +100,7 @@ PowerShell에서 아래 명령을 순서대로 실행합니다.
 
 ```powershell
 cd C:\aidev\09_ai-workflow-mini-project\02_instructor-sample-project
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
@@ -169,6 +169,6 @@ presentation/final-presentation.md
 
 ## 수업 운영 메모
 
-이 과정은 완성도 높은 상용 서비스를 만드는 것이 1차 목표가 아닙니다. 더 중요한 것은 수업 참여자가 AI 워크플로우를 업무 흐름으로 해석하고, 노드 구조와 데이터 흐름을 설명하며, 실행 결과를 검증하는 경험을 갖는 것입니다.
+이 과정은 완성도 높은 상용 서비스를 만드는 것이 1차 목표가 아닙니다. 더 중요한 것은 직접 AI 워크플로우를 업무 흐름으로 해석하고, 노드 구조와 데이터 흐름을 설명하며, 실행 결과를 검증하는 경험을 갖는 것입니다.
 
 수업 진행에서는 먼저 샘플 프로젝트를 실행해 전체 흐름을 보여준 뒤, 팀별로 도구를 선택하게 하고, 문서 작성과 간단한 시연을 병행하도록 안내하면 좋습니다.

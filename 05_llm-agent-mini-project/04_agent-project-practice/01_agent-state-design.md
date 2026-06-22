@@ -1,14 +1,14 @@
-﻿# 01 Agent State Design
+# 01 Agent State Design
 
 아래 형식으로 팀 프로젝트의 State를 설계합니다.
 
 ```python
 class AgentState(TypedDict):
-    user_request: str
-    intent: str
-    tool_results: list[dict]
-    context: str
-    final_answer: str
+ user_request: str
+ intent: str
+ tool_results: list[dict]
+ context: str
+ final_answer: str
 ```
 
 ## 작성할 것

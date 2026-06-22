@@ -19,7 +19,7 @@
 
 ## UI 테스트
 
-- [ ] `streamlit run .\frontend\streamlit_app.py --server.port 8601`가 실행됩니다.
+- [ ] `streamlit run.\frontend\streamlit_app.py --server.port 8601`가 실행됩니다.
 - [ ] 입력창에 요청을 넣을 수 있습니다.
 - [ ] 결과 메시지가 화면에 표시됩니다.
 - [ ] 오류 메시지가 사용자에게 이해 가능한 형태로 표시됩니다.

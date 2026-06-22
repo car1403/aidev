@@ -21,6 +21,6 @@
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\05_llm-api-integration\03_single-turn-call\01_mock_single_turn.py
-python .\05_llm-api-integration\03_single-turn-call\03_gemini_rest_single_turn.py
+python.\05_llm-api-integration\03_single-turn-call\01_mock_single_turn.py
+python.\05_llm-api-integration\03_single-turn-call\03_gemini_rest_single_turn.py
 ```

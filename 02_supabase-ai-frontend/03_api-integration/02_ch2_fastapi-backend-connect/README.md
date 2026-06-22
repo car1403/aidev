@@ -44,7 +44,7 @@ uvicorn backend-integration-sample:app --reload --host 127.0.0.1 --port 8000
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
 .\.venv\Scripts\Activate.ps1
-streamlit run .\03_api-integration\02_ch2_fastapi-backend-connect\02_fastapi-message-client.py
+streamlit run.\03_api-integration\02_ch2_fastapi-backend-connect\02_fastapi-message-client.py
 ```
 
 ## 확인할 내용

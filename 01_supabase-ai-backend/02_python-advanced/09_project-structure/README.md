@@ -10,15 +10,15 @@ project
 ├─ requirements.txt
 ├─ main.py
 ├─ app
-│  ├─ __init__.py
-│  ├─ models.py
-│  ├─ services.py
-│  └─ storage.py
+│ ├─ __init__.py
+│ ├─ models.py
+│ ├─ services.py
+│ └─ storage.py
 └─ tests
 ```
 
 ## 실행
 
 ```powershell
-python .\09_project-structure\sample_project\main.py
+python.\09_project-structure\sample_project\main.py
 ```

@@ -1,4 +1,4 @@
-﻿# 01_ch1_logging-and-event-history
+# 01_ch1_logging-and-event-history
 
 서비스 실행 이벤트를 구조화해서 기록하는 방법을 학습합니다.
 
@@ -21,5 +21,5 @@
 ```powershell
 cd C:\aidev\06_multi-agent-service-ops\05_observability-and-ops-dashboard
 ..\.venv\Scripts\Activate.ps1
-python .\01_ch1_logging-and-event-history\01_event-history-logger.py
+python.\01_ch1_logging-and-event-history\01_event-history-logger.py
 ```

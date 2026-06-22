@@ -5,6 +5,6 @@
 ## 실행
 
 ```powershell
-python .\08_testing-code-quality\01_assert_basic.py
-python -m pytest .\08_testing-code-quality
+python.\08_testing-code-quality\01_assert_basic.py
+python -m pytest.\08_testing-code-quality
 ```

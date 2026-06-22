@@ -1,4 +1,4 @@
-﻿# 04 Docker Compose and Service Ops
+# 04 Docker Compose and Service Ops
 
 Docker Compose는 여러 컨테이너 서비스를 하나의 파일로 실행하는 도구입니다.
 
@@ -23,7 +23,7 @@ monitor
 ## 기본 실행 흐름
 
 ```powershell
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 docker compose config
 docker compose up --build
 ```

@@ -2,7 +2,7 @@
 
 ## Local Docker Compose
 
-- [ ] `Copy-Item .env.example .env` 실행
+- [ ] `Copy-Item.env.example.env` 실행
 - [ ] `docker compose config` 통과
 - [ ] `docker compose up --build` 실행 성공
 - [ ] backend `/health` 확인

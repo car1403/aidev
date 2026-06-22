@@ -1,6 +1,6 @@
 # 09. Common Errors For Beginners
 
-## .venv 활성화가 안 됨
+##.venv 활성화가 안 됨
 
 증상:
 

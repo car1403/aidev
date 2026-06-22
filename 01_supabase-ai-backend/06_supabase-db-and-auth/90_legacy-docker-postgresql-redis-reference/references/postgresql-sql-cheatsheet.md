@@ -1,14 +1,14 @@
-﻿# PostgreSQL SQL 요약
+# PostgreSQL SQL 요약
 
 ## 테이블 생성
 
 ```sql
 CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
-    email TEXT UNIQUE NOT NULL,
-    name TEXT NOT NULL,
-    password_hash TEXT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+ id SERIAL PRIMARY KEY,
+ email TEXT UNIQUE NOT NULL,
+ name TEXT NOT NULL,
+ password_hash TEXT NOT NULL,
+ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
 

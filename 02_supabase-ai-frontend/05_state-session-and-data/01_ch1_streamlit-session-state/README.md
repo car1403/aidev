@@ -1,4 +1,4 @@
-﻿# 01_ch1_streamlit-session-state
+# 01_ch1_streamlit-session-state
 
 Streamlit의 `st.session_state` 기본 사용법을 학습합니다.
 
@@ -24,7 +24,7 @@ Streamlit은 버튼 클릭이나 입력 변경이 있을 때마다 Python 파일
 
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
-streamlit run .\05_state-session-and-data\01_ch1_streamlit-session-state\01_counter-state.py
+streamlit run.\05_state-session-and-data\01_ch1_streamlit-session-state\01_counter-state.py
 ```
 
 ## 확인할 내용

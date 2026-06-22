@@ -8,7 +8,7 @@
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\03_n8n-ai-workflow
-python .\04_ch4_loop-forkjoin-data-transform\01_loop_forkjoin_transform.py
+python.\04_ch4_loop-forkjoin-data-transform\01_loop_forkjoin_transform.py
 ```
 
 ## 작성할 내용

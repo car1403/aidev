@@ -5,5 +5,5 @@
 ## 실행
 
 ```powershell
-python .\02_module-package-venv\01_use_custom_module.py
+python.\02_module-package-venv\01_use_custom_module.py
 ```

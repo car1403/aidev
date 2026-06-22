@@ -1,4 +1,4 @@
-﻿# 02_ch2_health-check-retry-restart
+# 02_ch2_health-check-retry-restart
 
 Health Check, Retry, Restart의 차이를 학습합니다.
 
@@ -24,5 +24,5 @@ Health Check
 ## 실행
 
 ```powershell
-python .\02_ch2_health-check-retry-restart\01_health-check-retry-restart.py
+python.\02_ch2_health-check-retry-restart\01_health-check-retry-restart.py
 ```

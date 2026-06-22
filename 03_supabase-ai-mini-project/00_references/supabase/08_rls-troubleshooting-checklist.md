@@ -1,4 +1,4 @@
-﻿# 08 RLS Troubleshooting Checklist
+# 08 RLS Troubleshooting Checklist
 
 RLS 때문에 데이터가 안 보일 때 확인하는 체크리스트입니다.
 
@@ -29,7 +29,7 @@ Supabase Table Editor에서 `learning_logs` 테이블의 RLS 상태를 확인합
 
 ```text
 RLS off -> 권한 제한이 거의 없음
-RLS on  -> policy가 있어야 접근 가능
+RLS on -> policy가 있어야 접근 가능
 ```
 
 ## 3. anon key 사용 예제인지 확인

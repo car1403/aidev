@@ -13,9 +13,9 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\05_rag-memory-and-vector-search
 .\.venv\Scripts\Activate.ps1
-Get-Content .\02_ch2_pgvector-basic\01_create-extension-and-tables.sql | docker exec -i rag-pgvector psql -U rag_user -d rag_db
-python .\02_ch2_pgvector-basic\01_insert-sample-vectors.py
-python .\02_ch2_pgvector-basic\02_search-similar-vectors.py
+Get-Content.\02_ch2_pgvector-basic\01_create-extension-and-tables.sql | docker exec -i rag-pgvector psql -U rag_user -d rag_db
+python.\02_ch2_pgvector-basic\01_insert-sample-vectors.py
+python.\02_ch2_pgvector-basic\02_search-similar-vectors.py
 ```
 
 ## 확인 질문

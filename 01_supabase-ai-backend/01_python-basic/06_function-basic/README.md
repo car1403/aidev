@@ -15,5 +15,5 @@
 ## 실행
 
 ```powershell
-python .\06_function-basic\01_function_basic.py
+python.\06_function-basic\01_function_basic.py
 ```

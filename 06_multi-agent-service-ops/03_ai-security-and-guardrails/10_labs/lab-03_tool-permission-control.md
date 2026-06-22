@@ -1,4 +1,4 @@
-﻿# Lab 03. Tool Permission Control
+# Lab 03. Tool Permission Control
 
 ## 목표
 
@@ -7,7 +7,7 @@ Agent 역할에 따라 실행 가능한 Tool을 제한합니다.
 ## 실습
 
 ```powershell
-python .\03_ch3_tool-permission-control\01_tool-permission-control.py
+python.\03_ch3_tool-permission-control\01_tool-permission-control.py
 ```
 
 ## 확장

@@ -20,16 +20,16 @@ Supabase 기반 AI 미니 프로젝트 필수 요구사항입니다.
 권장 API 예시:
 
 ```text
-GET    /health
-GET    /api/logs
-POST   /api/logs
-GET    /api/logs/{log_id}
-PUT    /api/logs/{log_id}
+GET /health
+GET /api/logs
+POST /api/logs
+GET /api/logs/{log_id}
+PUT /api/logs/{log_id}
 DELETE /api/logs/{log_id}
-GET    /api/dashboard/summary
-POST   /api/feedback
-POST   /api/chat
-POST   /api/chat/stream
+GET /api/dashboard/summary
+POST /api/feedback
+POST /api/chat
+POST /api/chat/stream
 ```
 
 ## 2. Frontend

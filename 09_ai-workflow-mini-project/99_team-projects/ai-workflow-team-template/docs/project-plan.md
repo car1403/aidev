@@ -6,10 +6,10 @@
 
 | 항목 | 내용 |
 | --- | --- |
-| 팀명 |  |
-| 팀원 |  |
-| 프로젝트 제목 |  |
-| 발표자 |  |
+| 팀명 | |
+| 팀원 | |
+| 프로젝트 제목 | |
+| 발표자 | |
 
 ## 2. 프로젝트 주제
 
@@ -27,10 +27,10 @@
 
 | 질문 | 답변 |
 | --- | --- |
-| 어떤 기술 지원 문제가 반복적으로 발생합니까? |  |
-| 현재 수동 처리의 불편함은 무엇입니까? |  |
-| 자동화하면 어떤 점이 좋아집니까? |  |
-| 주요 사용자는 누구입니까? |  |
+| 어떤 기술 지원 문제가 반복적으로 발생합니까? | |
+| 현재 수동 처리의 불편함은 무엇입니까? | |
+| 자동화하면 어떤 점이 좋아집니까? | |
+| 주요 사용자는 누구입니까? | |
 
 ## 4. 프로젝트 범위
 
@@ -38,34 +38,34 @@
 
 | 항목 | 포함 여부 | 설명 |
 | --- | --- | --- |
-| 노코드 워크플로우 | 포함 / 제외 |  |
-| RAG 또는 Knowledge 검색 | 포함 / 제외 |  |
-| 외부 서비스 연동 | 포함 / 제외 |  |
-| 멀티 에이전트 역할 분리 | 포함 / 제외 |  |
-| 운영 로그 저장 | 포함 / 제외 |  |
-| 예외 처리 | 포함 / 제외 |  |
+| 노코드 워크플로우 | 포함 / 제외 | |
+| RAG 또는 Knowledge 검색 | 포함 / 제외 | |
+| 외부 서비스 연동 | 포함 / 제외 | |
+| 멀티 에이전트 역할 분리 | 포함 / 제외 | |
+| 운영 로그 저장 | 포함 / 제외 | |
+| 예외 처리 | 포함 / 제외 | |
 
 ## 5. 사용 도구
 
 | 도구 | 사용 목적 |
 | --- | --- |
-| AIPP |  |
-| n8n |  |
-| Dify |  |
-| FastAPI |  |
-| Streamlit |  |
-| 기타 |  |
+| AIPP | |
+| n8n | |
+| Dify | |
+| FastAPI | |
+| Streamlit | |
+| 기타 | |
 
 ## 6. 최종 산출물
 
 | 산출물 | 작성 담당 | 완료 여부 |
 | --- | --- | --- |
-| `docs/no-code-workflow-design.md` |  |  |
-| `docs/rag-architecture.md` |  |  |
-| `docs/workflow-execution-result.md` |  |  |
-| `docs/ops-quality-plan.md` |  |  |
-| `docs/test-checklist.md` |  |  |
-| `presentation/final-presentation.md` |  |  |
+| `docs/no-code-workflow-design.md` | | |
+| `docs/rag-architecture.md` | | |
+| `docs/workflow-execution-result.md` | | |
+| `docs/ops-quality-plan.md` | | |
+| `docs/test-checklist.md` | | |
+| `presentation/final-presentation.md` | | |
 
 ## 7. 성공 기준
 

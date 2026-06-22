@@ -34,7 +34,7 @@
 
 ### 멀티 에이전트 아키텍처 설계서에 꼭 들어갈 내용
 
-`docs/multi-agent-architecture.md`에는 아래 기준을 수업 참여자가 직접 설명해야 합니다.
+`docs/multi-agent-architecture.md`에는 아래 기준을 직접 설명해야 합니다.
 
 - 아키텍처 구조가 비즈니스 요구사항인 응답 속도, 결정 일관성, 장애 격리 기준에 맞게 선택되었는가?
 - Planner, Executor, Critic, Memory Keeper, Reporter 같은 각 Agent의 역할, 책임 범위, 의존 관계가 명확한가?
@@ -45,7 +45,7 @@
 
 ### 배포 및 장애 복구 보고서에 꼭 들어갈 내용
 
-`docs/deployment-recovery-report.md`에는 아래 기준을 수업 참여자가 직접 시험하고 기록해야 합니다.
+`docs/deployment-recovery-report.md`에는 아래 기준을 직접 시험하고 기록해야 합니다.
 
 - Docker Compose 또는 선택 확장 배포 매니페스트가 작성되었는가?
 - 멀티 컨테이너 서비스 구성에 backend, frontend, worker, monitor의 역할과 port가 정리되었는가?
@@ -56,7 +56,7 @@
 
 ### 파이프라인 구현 결과 보고서에 꼭 들어갈 내용
 
-`docs/pipeline-result-report.md`에는 아래 기준을 수업 참여자가 직접 설명해야 합니다.
+`docs/pipeline-result-report.md`에는 아래 기준을 직접 설명해야 합니다.
 
 - `코드 커밋 -> 빌드 -> 테스트 -> 배포` 전체 단계가 다이어그램으로 표현되었는가?
 - 각 단계의 입력, 출력, 실패 시 처리 규칙이 정의되었는가?
@@ -121,20 +121,20 @@
 기본 서비스 구성은 다음과 같습니다.
 
 ```text
-backend  : Health Check와 장애 대응 API 제공
+backend : Health Check와 장애 대응 API 제공
 frontend : 사용자가 상태와 결과를 확인하는 화면
-worker   : 백그라운드에서 장애 감지와 복구 작업 수행
-monitor  : 로그, 이벤트, 서비스 상태를 보여주는 운영 대시보드
+worker : 백그라운드에서 장애 감지와 복구 작업 수행
+monitor : 로그, 이벤트, 서비스 상태를 보여주는 운영 대시보드
 ```
 
 Agent 역할 예시는 다음과 같습니다.
 
 ```text
 Supervisor Agent : 전체 장애 요청을 보고 담당 Agent 선택
-Diagnosis Agent  : 장애 원인과 유형 분석
-Recovery Agent   : Retry, Restart, Fallback 등 복구 전략 선택
+Diagnosis Agent : 장애 원인과 유형 분석
+Recovery Agent : Retry, Restart, Fallback 등 복구 전략 선택
 Validation Agent : 복구 결과 검증
-Reporter Agent   : 운영자에게 결과 요약
+Reporter Agent : 운영자에게 결과 요약
 ```
 
 Agent 간에는 다음 정보를 명확히 전달해야 합니다.
@@ -180,11 +180,11 @@ Agent 간 판단이 충돌하면 Critic 또는 Feedback Loop가 다시 검증하
 
 ```text
 07_multi-agent-service-mini-project
-├─ .venv
-├─ .gitignore
+├─.venv
+├─.gitignore
 ├─ README.md
 ├─ SETUP.md
-├─ .env.example
+├─.env.example
 ├─ requirements.txt
 ├─ 00_references
 ├─ 01_local-dev-basic
@@ -193,7 +193,7 @@ Agent 간 판단이 충돌하면 Critic 또는 Feedback Loop가 다시 검증하
 ├─ 04_auto-healing-project-practice
 ├─ 05_multi-agent-service-sample-assets
 └─ 99_team-projects
-   └─ multi-agent-service-team-template
+ └─ multi-agent-service-team-template
 ```
 
 ## 폴더를 읽는 방법
@@ -201,13 +201,13 @@ Agent 간 판단이 충돌하면 Critic 또는 Feedback Loop가 다시 검증하
 각 폴더의 역할은 다음과 같습니다.
 
 ```text
-00_references                        프로젝트 참고 자료
-01_local-dev-basic                   Docker/Docker Compose 로컬 실행 기초
-02_instructor-sample-project         수업용 샘플 Auto Healing 서비스
-03_team-project-guide                팀 프로젝트 주제, 역할, 일정 가이드
-04_auto-healing-project-practice     장애 대응 흐름 설계 실습
+00_references 프로젝트 참고 자료
+01_local-dev-basic Docker/Docker Compose 로컬 실행 기초
+02_instructor-sample-project 수업용 샘플 Auto Healing 서비스
+03_team-project-guide 팀 프로젝트 주제, 역할, 일정 가이드
+04_auto-healing-project-practice 장애 대응 흐름 설계 실습
 05_multi-agent-service-sample-assets 샘플 코드와 운영 참고 자료
-99_team-projects                     팀별 최종 프로젝트 작업 공간
+99_team-projects 팀별 최종 프로젝트 작업 공간
 ```
 
 초보자는 `02_instructor-sample-project`를 먼저 실행해서 서비스 4개가 함께 뜨는 감각을 잡고, 그 다음 `99_team-projects\multi-agent-service-team-template`을 복사해서 자기 팀 프로젝트를 시작하면 됩니다.
@@ -246,11 +246,11 @@ PowerShell 기준 기본 흐름은 다음과 같습니다.
 
 ```powershell
 cd C:\aidev\07_multi-agent-service-mini-project
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 python --version
 pip install -r requirements.txt
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 ```
 
 이미 `.venv`가 만들어져 있다면 다시 만들 필요는 없습니다. 그때는 아래처럼 활성화부터 시작하면 됩니다.
@@ -280,7 +280,7 @@ docker ps
 
 ```powershell
 cd C:\aidev\07_multi-agent-service-mini-project\02_instructor-sample-project
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 docker compose config
 docker compose up --build
 ```
@@ -289,8 +289,8 @@ docker compose up --build
 
 ```text
 Backend health : http://127.0.0.1:8000/health
-Frontend       : http://127.0.0.1:8801
-Monitor        : http://127.0.0.1:8802
+Frontend : http://127.0.0.1:8801
+Monitor : http://127.0.0.1:8802
 ```
 
 로그를 확인할 때는 다른 PowerShell을 열어 아래 명령을 사용합니다.
@@ -321,7 +321,7 @@ docker compose down
 
 ```powershell
 cd C:\aidev\07_multi-agent-service-mini-project
-Copy-Item .\99_team-projects\multi-agent-service-team-template .\99_team-projects\team-01-auto-healing-service -Recurse
+Copy-Item.\99_team-projects\multi-agent-service-team-template.\99_team-projects\team-01-auto-healing-service -Recurse
 ```
 
 팀 이름에 맞게 `team-01-auto-healing-service` 부분만 바꾸면 됩니다.
@@ -329,30 +329,30 @@ Copy-Item .\99_team-projects\multi-agent-service-team-template .\99_team-project
 복사한 뒤에는 아래 문서를 먼저 정리합니다.
 
 ```text
-docs/README.md                         프로젝트 설명, 실행 방법, 팀 역할
-docs/multi-agent-architecture.md       멀티 에이전트 아키텍처 설계서
-docs/deployment-recovery-report.md     배포 및 장애 복구 보고서
-docs/pipeline-result-report.md         파이프라인 구현 결과 보고서
-docs/test-checklist.md                 Health Check, 복구, 대시보드 검증 항목
-docs/handoff-context-design.md         Agent 간 업무 인계와 Context 설계
-docs/feedback-loop-review.md           복구 결과 검증과 재시도 설계
-docs/security-runbook.md               보안 운영 Runbook
-docs/audit-policy-log.md               감사 로그와 정책 위반 추적 설계
-docs/guardrails-validation.md          Guardrails 검증 기준
-docs/langsmith-tracing-plan.md         LangSmith식 실행 추적 계획
-backend/README.md       API와 장애 이벤트 처리 설명
-worker/README.md        장애 감지와 복구 작업 설명
-monitor/README.md       운영 대시보드 설명
-docker/README.md        Docker Compose 구성 설명
+docs/README.md 프로젝트 설명, 실행 방법, 팀 역할
+docs/multi-agent-architecture.md 멀티 에이전트 아키텍처 설계서
+docs/deployment-recovery-report.md 배포 및 장애 복구 보고서
+docs/pipeline-result-report.md 파이프라인 구현 결과 보고서
+docs/test-checklist.md Health Check, 복구, 대시보드 검증 항목
+docs/handoff-context-design.md Agent 간 업무 인계와 Context 설계
+docs/feedback-loop-review.md 복구 결과 검증과 재시도 설계
+docs/security-runbook.md 보안 운영 Runbook
+docs/audit-policy-log.md 감사 로그와 정책 위반 추적 설계
+docs/guardrails-validation.md Guardrails 검증 기준
+docs/langsmith-tracing-plan.md LangSmith식 실행 추적 계획
+backend/README.md API와 장애 이벤트 처리 설명
+worker/README.md 장애 감지와 복구 작업 설명
+monitor/README.md 운영 대시보드 설명
+docker/README.md Docker Compose 구성 설명
 ```
 
 코드는 아래 파일부터 작은 단위로 수정합니다.
 
 ```text
-backend/main.py   Health Check, 장애 이벤트 API
-worker/main.py    장애 감지, Retry, Restart, Fallback 로직
-monitor/app.py    운영 이벤트와 상태 표시
-frontend/app.py   사용자 확인 화면
+backend/main.py Health Check, 장애 이벤트 API
+worker/main.py 장애 감지, Retry, Restart, Fallback 로직
+monitor/app.py 운영 이벤트와 상태 표시
+frontend/app.py 사용자 확인 화면
 docker-compose.yml 서비스 구성과 포트
 ```
 
@@ -360,7 +360,7 @@ docker-compose.yml 서비스 구성과 포트
 
 ```powershell
 cd C:\aidev\07_multi-agent-service-mini-project\99_team-projects\multi-agent-service-team-template
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 docker compose config
 docker compose up --build
 ```
@@ -369,8 +369,8 @@ docker compose up --build
 
 ```text
 Backend health : http://127.0.0.1:8000/health
-Frontend       : http://127.0.0.1:8801
-Monitor        : http://127.0.0.1:8802
+Frontend : http://127.0.0.1:8801
+Monitor : http://127.0.0.1:8802
 ```
 
 ## 최종 산출물
@@ -473,7 +473,7 @@ docker ps
 docker compose down
 ```
 
-`Copy-Item .env.example .env`에서 이미 파일이 있다고 나오면 기존 `.env`를 그대로 사용하거나, 필요한 경우 내용을 확인한 뒤 다시 만듭니다.
+`Copy-Item.env.example.env`에서 이미 파일이 있다고 나오면 기존 `.env`를 그대로 사용하거나, 필요한 경우 내용을 확인한 뒤 다시 만듭니다.
 
 컨테이너가 정상적으로 뜨지 않으면 로그를 먼저 확인합니다.
 

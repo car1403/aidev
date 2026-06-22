@@ -1,4 +1,4 @@
-﻿# 02_ch2_policy-based-response-validation
+# 02_ch2_policy-based-response-validation
 
 정책 기반 응답 검증은 Agent가 만든 응답이 서비스 운영 정책에 맞는지 확인하는 과정입니다.
 
@@ -25,5 +25,5 @@ Agent 응답 생성
 ## 실행
 
 ```powershell
-python .\02_ch2_policy-based-response-validation\01_policy-response-validator.py
+python.\02_ch2_policy-based-response-validation\01_policy-response-validator.py
 ```

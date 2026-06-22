@@ -14,42 +14,42 @@
 
 ```text
 02_advanced-prompting-and-reasoning
-├─ .env.example
+├─.env.example
 ├─ 01_ch1_prompt-design-patterns
-│  ├─ 01_role-and-context-prompt.py
-│  └─ 02_few-shot-style-prompt.py
+│ ├─ 01_role-and-context-prompt.py
+│ └─ 02_few-shot-style-prompt.py
 ├─ 02_ch2_structured-output-json
-│  ├─ 01_json-output-request.py
-│  └─ 02_structured-output-pydantic.py
+│ ├─ 01_json-output-request.py
+│ └─ 02_structured-output-pydantic.py
 ├─ 03_ch3_reasoning-and-react-basics
-│  ├─ 01_plan-act-review-pattern.py
-│  └─ 02_react-style-without-tools.py
+│ ├─ 01_plan-act-review-pattern.py
+│ └─ 02_react-style-without-tools.py
 └─ 04_ch4_prompt-safety-and-evaluation
-   ├─ 01_prompt-injection-defense.py
-   └─ 02_prompt-version-evaluation.py
+ ├─ 01_prompt-injection-defense.py
+ └─ 02_prompt-version-evaluation.py
 ```
 
 ## 실습 시작 순서
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\02_advanced-prompting-and-reasoning
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install openai python-dotenv pydantic
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 ```
 
 ## 실행 순서
 
 ```powershell
-python .\01_ch1_prompt-design-patterns\01_role-and-context-prompt.py
-python .\01_ch1_prompt-design-patterns\02_few-shot-style-prompt.py
-python .\02_ch2_structured-output-json\01_json-output-request.py
-python .\02_ch2_structured-output-json\02_structured-output-pydantic.py
-python .\03_ch3_reasoning-and-react-basics\01_plan-act-review-pattern.py
-python .\03_ch3_reasoning-and-react-basics\02_react-style-without-tools.py
-python .\04_ch4_prompt-safety-and-evaluation\01_prompt-injection-defense.py
-python .\04_ch4_prompt-safety-and-evaluation\02_prompt-version-evaluation.py
+python.\01_ch1_prompt-design-patterns\01_role-and-context-prompt.py
+python.\01_ch1_prompt-design-patterns\02_few-shot-style-prompt.py
+python.\02_ch2_structured-output-json\01_json-output-request.py
+python.\02_ch2_structured-output-json\02_structured-output-pydantic.py
+python.\03_ch3_reasoning-and-react-basics\01_plan-act-review-pattern.py
+python.\03_ch3_reasoning-and-react-basics\02_react-style-without-tools.py
+python.\04_ch4_prompt-safety-and-evaluation\01_prompt-injection-defense.py
+python.\04_ch4_prompt-safety-and-evaluation\02_prompt-version-evaluation.py
 ```
 
 ## 수업 중 확인 질문

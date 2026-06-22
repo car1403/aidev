@@ -22,7 +22,7 @@ Python 3.11 이상
 각 단원 폴더에서 가상 환경을 만드는 방식을 권장합니다.
 
 ```powershell
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
@@ -40,7 +40,7 @@ docker ps
 
 Docker Desktop이 실행 중이어야 합니다.
 
-Docker를 처음 설치한 수업 참여자는 아래 문서를 먼저 확인합니다.
+Docker를 처음 설치했다면 아래 문서를 먼저 확인합니다.
 
 ```text
 00_references/09_docker-desktop-install-for-beginners.md
@@ -68,10 +68,10 @@ OPENAI_API_KEY=your-openai-api-key
 
 ```powershell
 docker run -d `
-  --name ollama-llm `
-  -p 11434:11434 `
-  -v ollama-data:/root/.ollama `
-  ollama/ollama:latest
+ --name ollama-llm `
+ -p 11434:11434 `
+ -v ollama-data:/root/.ollama `
+ ollama/ollama:latest
 ```
 
 모델 다운로드:
@@ -88,13 +88,13 @@ PostgreSQL은 PC에 직접 설치하지 않고, pgvector가 포함된 PostgreSQL
 
 ```powershell
 docker run -d `
-  --name rag-pgvector `
-  -e POSTGRES_DB=rag_db `
-  -e POSTGRES_USER=rag_user `
-  -e POSTGRES_PASSWORD=rag_password `
-  -p 5433:5432 `
-  -v rag-pgvector-data:/var/lib/postgresql/data `
-  pgvector/pgvector:pg16
+ --name rag-pgvector `
+ -e POSTGRES_DB=rag_db `
+ -e POSTGRES_USER=rag_user `
+ -e POSTGRES_PASSWORD=rag_password `
+ -p 5433:5432 `
+ -v rag-pgvector-data:/var/lib/postgresql/data `
+ pgvector/pgvector:pg16
 ```
 
 ## 자주 사용하는 포트

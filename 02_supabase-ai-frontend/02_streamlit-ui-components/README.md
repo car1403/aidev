@@ -1,4 +1,4 @@
-﻿# 02_streamlit-ui-components
+# 02_streamlit-ui-components
 
 Streamlit에서 자주 사용하는 UI 컴포넌트를 직접 다루는 단원입니다.
 
@@ -45,7 +45,7 @@ pandas는 데이터 분석 전체를 깊게 다루기보다, Streamlit에서 표
 
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
-streamlit run .\02_streamlit-ui-components\01_ch1_buttons-forms-and-controls\01_button-click.py
+streamlit run.\02_streamlit-ui-components\01_ch1_buttons-forms-and-controls\01_button-click.py
 ```
 
 필요 패키지는 다음과 같습니다.

@@ -18,15 +18,15 @@ Supabase Database/Auth -> Supabase Cloud
 ```text
 team-project
 ├─ backend
-│  ├─ main.py
-│  └─ requirements.txt
+│ ├─ main.py
+│ └─ requirements.txt
 ├─ frontend
-│  ├─ app.py
-│  └─ requirements.txt
+│ ├─ app.py
+│ └─ requirements.txt
 ├─ docs
-│  ├─ deployment-guide.md
-│  └─ dashboard-result.md
-└─ .env.example
+│ ├─ deployment-guide.md
+│ └─ dashboard-result.md
+└─.env.example
 ```
 
 `backend`와 `frontend`가 분리되어 있어야 Render와 Streamlit Community Cloud에서 각각 배포하기 쉽습니다.
@@ -149,19 +149,19 @@ FastAPI 호출 결과:
 
 | 항목 | 값 |
 | --- | --- |
-| Render Backend URL |  |
-| Streamlit Frontend URL |  |
-| Supabase Project URL |  |
-| Upstash 사용 여부 |  |
-| 배포 확인 날짜 |  |
-| 담당자 |  |
+| Render Backend URL | |
+| Streamlit Frontend URL | |
+| Supabase Project URL | |
+| Upstash 사용 여부 | |
+| 배포 확인 날짜 | |
+| 담당자 | |
 
 ## 9. 배포 오류와 해결 과정
 
 | 오류 상황 | 원인 | 해결 방법 |
 | --- | --- | --- |
 | 예: Streamlit에서 API 호출 실패 | API_BASE_URL이 로컬 주소로 남아 있음 | Streamlit Secrets를 Render URL로 수정 |
-|  |  |  |
+| | | |
 
 ## 10. 03에서 06으로 이어지는 부분
 

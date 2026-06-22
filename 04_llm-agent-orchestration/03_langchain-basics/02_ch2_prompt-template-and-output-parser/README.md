@@ -13,9 +13,9 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\03_langchain-basics
 .\.venv\Scripts\Activate.ps1
-python .\02_ch2_prompt-template-and-output-parser\01_prompt-template-basic.py
-python .\02_ch2_prompt-template-and-output-parser\02_chat-prompt-template.py
-python .\02_ch2_prompt-template-and-output-parser\03_structured-output-parser.py
+python.\02_ch2_prompt-template-and-output-parser\01_prompt-template-basic.py
+python.\02_ch2_prompt-template-and-output-parser\02_chat-prompt-template.py
+python.\02_ch2_prompt-template-and-output-parser\03_structured-output-parser.py
 ```
 
 ## 확인 질문

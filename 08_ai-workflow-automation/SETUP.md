@@ -32,9 +32,9 @@
 
 ```text
 Python 확인
--> .venv 활성화
+->.venv 활성화
 -> requirements.txt 설치
--> .env 생성
+->.env 생성
 -> n8n 실행 확인
 -> AIPP 접속 확인
 -> Dify 접속 확인
@@ -98,7 +98,7 @@ Python 명령이 동작하지 않으면 다음을 확인합니다.
 만약 `.venv`가 없다면 한 번만 생성합니다.
 
 ```powershell
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 ```
 
@@ -121,17 +121,17 @@ pip install -r requirements.txt
 설치가 끝난 뒤 간단히 확인합니다.
 
 ```powershell
-python .\01_workflow-concepts\01_ch1_ai-workflow-big-picture\01_ai_workflow_map.py
+python.\01_workflow-concepts\01_ch1_ai-workflow-big-picture\01_ai_workflow_map.py
 ```
 
 이 예제는 외부 API 없이 실행됩니다. 처음에는 이런 로컬 예제로 워크플로우 구조를 먼저 이해합니다.
 
-## 6. .env 파일 준비
+## 6..env 파일 준비
 
 `.env.example` 파일을 복사해 `.env`를 만듭니다.
 
 ```powershell
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 ```
 
 `.env` 파일에는 실제 API Key와 도구 주소를 입력합니다.
@@ -203,10 +203,10 @@ docker ps
 
 ```powershell
 docker run -d `
-  --name n8n-ai-workflow `
-  -p 5678:5678 `
-  -v n8n-data:/home/node/.n8n `
-  n8nio/n8n:latest
+ --name n8n-ai-workflow `
+ -p 5678:5678 `
+ -v n8n-data:/home/node/.n8n `
+ n8nio/n8n:latest
 ```
 
 브라우저에서 접속합니다.

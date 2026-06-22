@@ -67,7 +67,7 @@ Docker 기반 Redis 운영은 `C:\aidev\06_multi-agent-service-ops`에서 다룹
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\06_supabase-db-and-auth\05_ch5_conversation-history-and-service-logs\01_insert_conversation_and_log.py
+python.\06_supabase-db-and-auth\05_ch5_conversation-history-and-service-logs\01_insert_conversation_and_log.py
 ```
 
 ## 수업에서 강조할 점

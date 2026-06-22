@@ -58,7 +58,7 @@ student / 1234
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
 .\.venv\Scripts\Activate.ps1
-streamlit run .\05_state-session-and-data\03_ch3_auth-token-and-login-state\02_login-token-state.py
+streamlit run.\05_state-session-and-data\03_ch3_auth-token-and-login-state\02_login-token-state.py
 ```
 
 ## 확인할 내용
@@ -66,7 +66,7 @@ streamlit run .\05_state-session-and-data\03_ch3_auth-token-and-login-state\02_l
 - 올바른 계정으로 로그인하면 token이 저장되는가?
 - 잘못된 계정으로 로그인하면 실패 메시지가 표시되는가?
 - 로그아웃 버튼을 누르면 token이 제거되는가?
-- `/api/me` 호출 시 `Authorization: Bearer ...` 헤더가 포함되는가?
+- `/api/me` 호출 시 `Authorization: Bearer...` 헤더가 포함되는가?
 - 인증 실패 시 사용자에게 이해 가능한 메시지가 표시되는가?
 
 ## 보안 메모

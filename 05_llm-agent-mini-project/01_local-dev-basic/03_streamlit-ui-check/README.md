@@ -5,7 +5,7 @@
 ```powershell
 cd C:\aidev\05_llm-agent-mini-project\02_instructor-sample-project
 ..\.venv\Scripts\Activate.ps1
-streamlit run .\frontend\streamlit_app.py --server.port 8701
+streamlit run.\frontend\streamlit_app.py --server.port 8701
 ```
 
 브라우저에서 확인합니다.

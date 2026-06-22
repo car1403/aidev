@@ -8,7 +8,7 @@
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\05_workflow-ops-and-quality
-python .\07_ch7_resource-scaling-template-ops\01_resource_scaling_template_ops.py
+python.\07_ch7_resource-scaling-template-ops\01_resource_scaling_template_ops.py
 ```
 
 ## 작성할 내용

@@ -89,7 +89,7 @@ Agent가 어떤 외부 도구를 사용할 수 있는가?
 
 ```powershell
 cd C:\aidev\06_multi-agent-service-ops\01_multi-agent-collaboration
-python .\05_ch5_handoff-context-mcp\01_handoff_context_mcp.py
+python.\05_ch5_handoff-context-mcp\01_handoff_context_mcp.py
 ```
 
 ## 수업에서 확인할 질문

@@ -8,36 +8,36 @@
 
 ```text
 sample-schedule-agent
-├─ .env.example
+├─.env.example
 ├─ requirements.txt
 ├─ app
-│  ├─ graph.py
-│  ├─ mock_data.py
-│  ├─ schemas.py
-│  └─ tools.py
+│ ├─ graph.py
+│ ├─ mock_data.py
+│ ├─ schemas.py
+│ └─ tools.py
 ├─ docs
-│  ├─ agent-flow.md
-│  ├─ test-checklist.md
-│  └─ tool-spec.md
+│ ├─ agent-flow.md
+│ ├─ test-checklist.md
+│ └─ tool-spec.md
 └─ frontend
-   └─ streamlit_app.py
+ └─ streamlit_app.py
 ```
 
 ## 실행
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\99_agent-mini-project\sample-schedule-agent
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 python -m app.graph
 ```
 
 화면으로 확인하려면 다음 명령을 실행합니다.
 
 ```powershell
-streamlit run .\frontend\streamlit_app.py --server.port 8601
+streamlit run.\frontend\streamlit_app.py --server.port 8601
 ```
 
 ## 수업 포인트

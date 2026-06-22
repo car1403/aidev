@@ -2,11 +2,11 @@
 
 `02_supabase-ai-frontend` 과정의 개발 환경 설정 문서입니다.
 
-이 문서는 수업 참여자가 수업 시간에 그대로 따라 할 수 있도록 작성했습니다. 이 과정은 Streamlit 프론트엔드를 만들고, `01_supabase-ai-backend`의 Supabase 기반 FastAPI API를 호출하는 방식으로 진행합니다.
+이 문서는 수업 시간에 그대로 따라 할 수 있도록 작성했습니다. 이 과정은 Streamlit 프론트엔드를 만들고, `01_supabase-ai-backend`의 Supabase 기반 FastAPI API를 호출하는 방식으로 진행합니다.
 
 Docker, Docker Compose, AWS 배포는 여기서 설정하지 않습니다. 해당 내용은 `06_multi-agent-service-ops`에서 다룹니다.
 
-React는 필수 실습이 아닙니다. 이 과정은 Streamlit을 기본 UI 도구로 사용하고, React 기반 UI 구조는 진도와 난이도과 수업 진도에 따라 선택 확장으로 소개합니다.
+React는 필수 실습이 아닙니다. 이 과정은 Streamlit을 기본 UI 도구로 사용하고, React 기반 UI 구조는 진도와 난이도에 따라 선택 확장으로 소개합니다.
 
 ## 1. 작업 폴더로 이동
 
@@ -33,7 +33,7 @@ C:\aidev\02_supabase-ai-frontend
 각 과정 폴더는 자기 폴더 안에 `.venv`를 둡니다. 이 과정에서는 `02_supabase-ai-frontend\.venv` 하나를 사용합니다.
 
 ```powershell
-C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv .venv
+C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv.venv
 ```
 
 이미 `.venv`가 있다면 이 단계는 다시 실행하지 않아도 됩니다.
@@ -72,7 +72,7 @@ streamlit --version
 `.env.example`을 복사해서 `.env` 파일을 만듭니다.
 
 ```powershell
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 ```
 
 기본값은 로컬에서 실행 중인 `01_supabase-ai-backend` FastAPI 서버를 바라봅니다.
@@ -112,7 +112,7 @@ Swagger 문서 화면이 보이면 백엔드가 실행 중입니다.
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
 .\.venv\Scripts\Activate.ps1
-streamlit run .\03_api-integration\02_ch2_fastapi-backend-connect\01_fastapi-health-check.py
+streamlit run.\03_api-integration\02_ch2_fastapi-backend-connect\01_fastapi-health-check.py
 ```
 
 브라우저에서 다음 주소가 열립니다.

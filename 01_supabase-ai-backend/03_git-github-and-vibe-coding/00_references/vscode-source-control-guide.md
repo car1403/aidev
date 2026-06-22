@@ -179,8 +179,8 @@ git remote -v
 출력 예시:
 
 ```text
-origin  https://github.com/사용자명/저장소명.git (fetch)
-origin  https://github.com/사용자명/저장소명.git (push)
+origin https://github.com/사용자명/저장소명.git (fetch)
+origin https://github.com/사용자명/저장소명.git (push)
 ```
 
 ### 경우 2. 아직 GitHub 저장소가 없는 경우

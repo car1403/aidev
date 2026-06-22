@@ -16,5 +16,5 @@ Latency: 응답 시간은 얼마나 걸렸는가?
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\05_workflow-ops-and-quality
-python .\01_ch1_version-and-cost-management\01_version_cost_tracker.py
+python.\01_ch1_version-and-cost-management\01_version_cost_tracker.py
 ```

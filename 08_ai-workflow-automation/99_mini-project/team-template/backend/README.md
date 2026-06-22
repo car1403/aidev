@@ -5,8 +5,8 @@
 ## 예시 API
 
 ```text
-GET  /health
+GET /health
 POST /run
-GET  /events
-GET  /metrics
+GET /events
+GET /metrics
 ```

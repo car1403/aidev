@@ -4,11 +4,11 @@
 
 Codex는 OpenAI의 코딩 에이전트입니다. 코드 설명, 생성, 수정, 리뷰, 디버깅, 문서 작성 같은 개발 작업을 도와줍니다.
 
-중요한 점은 Codex가 모든 것을 대신해 주는 도구가 아니라, 수업 참여자가 코드를 이해하고 더 잘 실습하도록 돕는 학습 파트너라는 점입니다.
+중요한 점은 Codex가 모든 것을 대신해 주는 도구가 아니라, 직접 코드를 이해하고 더 잘 실습하도록 돕는 학습 파트너라는 점입니다.
 
 ## 1. 수업에서 Codex를 사용하는 이유
 
-수업 참여자는 Codex를 다음 용도로 사용할 수 있습니다.
+Codex는 다음 용도로 사용할 수 있습니다.
 
 ```text
 코드 설명 요청
@@ -134,7 +134,7 @@ Codex와 함께 사용할 때는 특히 아래 작업에 도움이 됩니다.
 git --version
 git status
 git diff
-git add .
+git add.
 git commit -m "수정 내용 설명"
 ```
 
@@ -242,7 +242,7 @@ pip로 Python 패키지 설치
 
 ```powershell
 python --version
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 python main.py

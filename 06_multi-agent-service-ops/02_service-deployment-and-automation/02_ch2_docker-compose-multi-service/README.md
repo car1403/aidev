@@ -1,4 +1,4 @@
-﻿# 02_ch2_docker-compose-multi-service
+# 02_ch2_docker-compose-multi-service
 
 Docker Compose로 여러 서비스를 한 번에 실행하는 방법을 학습합니다.
 
@@ -27,7 +27,7 @@ docker ps
 
 ```powershell
 cd C:\aidev\06_multi-agent-service-ops\02_service-deployment-and-automation\02_ch2_docker-compose-multi-service
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 docker compose config
 docker compose up --build
 ```

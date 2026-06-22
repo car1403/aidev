@@ -16,15 +16,15 @@ Action: 실제로 수행되는 작업
 Trigger: 새 고객 문의 접수
 Condition: 긴급도가 high인가?
 Action:
-  - high이면 운영팀 알림
-  - 아니면 일반 응답 생성
+ - high이면 운영팀 알림
+ - 아니면 일반 응답 생성
 ```
 
 ## 실행
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\01_workflow-concepts
-python .\03_ch3_trigger-condition-action\01_trigger_condition_action.py
+python.\03_ch3_trigger-condition-action\01_trigger_condition_action.py
 ```
 
 ## 학습 포인트

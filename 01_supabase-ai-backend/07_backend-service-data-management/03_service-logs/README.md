@@ -21,10 +21,10 @@ created_at
 
 ```json
 {
-  "endpoint": "/ai/chat",
-  "status_code": 200,
-  "duration_ms": 320,
-  "model": "mock-teacher"
+ "endpoint": "/ai/chat",
+ "status_code": 200,
+ "duration_ms": 320,
+ "model": "mock-teacher"
 }
 ```
 

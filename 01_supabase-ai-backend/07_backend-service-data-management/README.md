@@ -98,7 +98,7 @@ Docker 기반 Redis 운영, Redis 컨테이너 실행, Docker Compose 연동은 
 2. 대화 세션과 메시지를 분리해서 저장하는 이유를 확인합니다.
 3. 서비스 로그가 오류 분석과 운영 개선에 왜 필요한지 확인합니다.
 4. mock FastAPI 서버로 전체 API 구조를 먼저 실행합니다.
-5. Supabase 환경변수가 준비된 수업 참여자는 Supabase 연동 예제로 확장합니다.
+5. Supabase 환경변수가 준비되어 있다면 Supabase 연동 예제로 확장합니다.
 
 ## 실행 예시
 
@@ -107,9 +107,9 @@ Docker 기반 Redis 운영, Redis 컨테이너 실행, Docker Compose 연동은 
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\07_backend-service-data-management\01_user-profile-data\01_profile_schema_example.py
-python .\07_backend-service-data-management\02_conversation-history\01_conversation_schema_example.py
-python .\07_backend-service-data-management\03_service-logs\01_service_log_schema_example.py
+python.\07_backend-service-data-management\01_user-profile-data\01_profile_schema_example.py
+python.\07_backend-service-data-management\02_conversation-history\01_conversation_schema_example.py
+python.\07_backend-service-data-management\03_service-logs\01_service_log_schema_example.py
 ```
 
 mock FastAPI 서버 실행:

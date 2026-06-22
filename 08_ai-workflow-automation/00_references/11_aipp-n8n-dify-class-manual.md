@@ -49,7 +49,7 @@ AI는 어느 단계에서 호출되는가?
 
 AIPP 실습의 목표는 특정 메뉴를 외우는 것이 아니라, AI 워크플로우를 어떻게 설계해야 하는지 익히는 것입니다.
 
-수업 참여자는 AIPP 화면에서 다음 구조를 찾을 수 있어야 합니다.
+AIPP 화면에서 다음 구조를 찾을 수 있어야 합니다.
 
 ```text
 Project
@@ -101,7 +101,7 @@ Log
 
 ### 3.4 AIPP에서 확인할 질문
 
-수업 참여자는 실습 후 아래 질문에 답할 수 있어야 합니다.
+실습 후 아래 질문에 답할 수 있어야 합니다.
 
 ```text
 입력값은 어디서 정의했는가?
@@ -134,10 +134,10 @@ Docker Desktop을 실행한 뒤 PowerShell에서 n8n을 실행합니다.
 
 ```powershell
 docker run -d `
-  --name n8n-ai-workflow `
-  -p 5678:5678 `
-  -v n8n-data:/home/node/.n8n `
-  n8nio/n8n:latest
+ --name n8n-ai-workflow `
+ -p 5678:5678 `
+ -v n8n-data:/home/node/.n8n `
+ n8nio/n8n:latest
 ```
 
 브라우저에서 접속합니다.
@@ -189,16 +189,16 @@ PowerShell에서 Webhook 테스트 URL로 요청을 보냅니다.
 
 ```powershell
 $body = @{
-  user = "student01"
-  message = "ERP 로그인이 되지 않습니다. 매우 급합니다."
-  channel = "web"
+ user = "student01"
+ message = "ERP 로그인이 되지 않습니다. 매우 급합니다."
+ channel = "web"
 } | ConvertTo-Json
 
 Invoke-RestMethod `
-  -Method Post `
-  -Uri "http://localhost:5678/webhook-test/YOUR_WEBHOOK_PATH" `
-  -ContentType "application/json" `
-  -Body $body
+ -Method Post `
+ -Uri "http://localhost:5678/webhook-test/YOUR_WEBHOOK_PATH" `
+ -ContentType "application/json" `
+ -Body $body
 ```
 
 `YOUR_WEBHOOK_PATH`는 n8n 화면에서 복사한 테스트 URL로 바꿉니다.
@@ -330,7 +330,7 @@ Dify
 ### 운영 체크리스트
 
 ```text
-[ ] 수업 참여자가 도구 계정에 접속할 수 있는가?
+[ ] 도구 계정에 접속할 수 있는가?
 [ ] n8n Docker 실행이 가능한가?
 [ ] Dify 실습 환경이 준비되어 있는가?
 [ ] API Key 노출 위험을 설명했는가?

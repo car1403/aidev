@@ -1,4 +1,4 @@
-﻿# Lab 01. Failure Scenario Classification
+# Lab 01. Failure Scenario Classification
 
 ## 목표
 
@@ -7,7 +7,7 @@
 ## 실습
 
 ```powershell
-python .\01_ch1_failure-scenarios\01_failure-scenario-classifier.py
+python.\01_ch1_failure-scenarios\01_failure-scenario-classifier.py
 ```
 
 ## 확장

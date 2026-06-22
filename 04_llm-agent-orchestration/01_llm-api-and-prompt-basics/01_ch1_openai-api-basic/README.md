@@ -14,14 +14,14 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\01_llm-api-and-prompt-basics
 .\.venv\Scripts\Activate.ps1
-python .\01_ch1_openai-api-basic\01_check-env.py
-python .\01_ch1_openai-api-basic\02_openai-basic-response.py
-python .\01_ch1_openai-api-basic\03_openai-message-style.py
+python.\01_ch1_openai-api-basic\01_check-env.py
+python.\01_ch1_openai-api-basic\02_openai-basic-response.py
+python.\01_ch1_openai-api-basic\03_openai-message-style.py
 ```
 
 ## 확인 질문
 
 - 환경 변수는 왜 코드에 직접 적지 않을까요?
 - `gpt-4.1-mini`는 어떤 실습에 적합할까요?
-- API 호출 실패 시 수업 참여자는 무엇을 먼저 확인해야 할까요?
+- API 호출 실패 시 무엇을 먼저 확인해야 할까요?
 

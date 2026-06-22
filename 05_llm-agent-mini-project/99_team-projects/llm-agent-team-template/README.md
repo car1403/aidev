@@ -22,20 +22,20 @@
 llm-agent-team-template
 |-- README.md
 |-- backend
-|   |-- agent_state.py
-|   |-- graph.py
-|   |-- tools.py
-|   `-- requirements.txt
+| |-- agent_state.py
+| |-- graph.py
+| |-- tools.py
+| `-- requirements.txt
 |-- frontend
-|   `-- app.py
+| `-- app.py
 |-- docs
-|   |-- project-plan.md
-|   |-- agent-architecture.md
-|   |-- agent-design.md
-|   |-- agent-test-report.md
-|   `-- test-checklist.md
+| |-- project-plan.md
+| |-- agent-architecture.md
+| |-- agent-design.md
+| |-- agent-test-report.md
+| `-- test-checklist.md
 `-- presentation
-    `-- final-presentation.md
+ `-- final-presentation.md
 ```
 
 ## 필수 산출물
@@ -79,7 +79,7 @@ llm-agent-team-template
 ```powershell
 cd C:\aidev\05_llm-agent-mini-project\99_team-projects\llm-agent-team-template
 ..\..\.venv\Scripts\Activate.ps1
-pip install -r ..\..\requirements.txt
+pip install -r..\..\requirements.txt
 python backend\graph.py
 streamlit run frontend\app.py --server.port 8702
 ```

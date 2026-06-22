@@ -16,7 +16,7 @@ Streamlit 프론트엔드 -> Streamlit Community Cloud
 
 무료 서비스의 정책, 제한, 화면 메뉴 이름은 바뀔 수 있습니다. 수업 당일에는 각 서비스의 공식 화면에서 현재 무료 범위와 과금 조건을 다시 확인합니다.
 
-이 실습에서 중요한 것은 “완벽한 운영 배포”가 아니라, 수업 참여자가 다음 흐름을 직접 경험하는 것입니다.
+이 실습에서 중요한 것은 “완벽한 운영 배포”가 아니라, 직접 다음 흐름을 직접 경험하는 것입니다.
 
 ```text
 1. 코드를 GitHub에 올린다.
@@ -95,13 +95,13 @@ ai-chatbot-supabase-practice
 ```text
 deploy-practice
 ├─ backend
-│  ├─ main.py
-│  ├─ requirements.txt
-│  └─ ...
+│ ├─ main.py
+│ ├─ requirements.txt
+│ └─...
 └─ frontend
-   ├─ app.py
-   ├─ requirements.txt
-   └─ ...
+ ├─ app.py
+ ├─ requirements.txt
+ └─...
 ```
 
 초보자에게는 처음부터 모든 교육 폴더를 배포 대상으로 삼기보다, 최종 실습에 필요한 최소 파일만 복사해 배포용 폴더를 만드는 것이 이해하기 쉽습니다.
@@ -111,7 +111,7 @@ Git 명령 예시:
 ```powershell
 cd C:\aidev\deploy-practice
 git init
-git add .
+git add.
 git commit -m "Initial deployment practice"
 git branch -M main
 git remote add origin https://github.com/본인계정/ai-chatbot-supabase-practice.git
@@ -185,14 +185,14 @@ app = FastAPI()
 
 @app.get("/health")
 def health():
-    return {"status": "ok"}
+ return {"status": "ok"}
 ```
 
 로컬에서 먼저 실행합니다.
 
 ```powershell
 cd C:\aidev\deploy-practice\backend
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
@@ -285,7 +285,7 @@ frontend/requirements.txt
 
 ```powershell
 cd C:\aidev\deploy-practice\frontend
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 streamlit run app.py
@@ -378,7 +378,7 @@ https://본인앱이름.streamlit.app
 -> Upstash Redis
 ```
 
-수업 참여자는 아래 질문에 답할 수 있어야 합니다.
+아래 질문에 답할 수 있어야 합니다.
 
 ```text
 프론트엔드는 어디에 배포되었나요?
@@ -446,7 +446,7 @@ TOML 문법이 맞는가?
 
 ## 8. 최종 제출 체크리스트
 
-수업 참여자는 배포가 끝난 뒤 다음 내용을 제출합니다.
+배포가 끝난 뒤 다음 내용을 제출합니다.
 
 ```text
 1. Render 백엔드 URL

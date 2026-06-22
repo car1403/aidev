@@ -16,7 +16,7 @@
 
 ## 설명할 때의 기준
 
-수업 참여자에게 기술 용어를 먼저 던지기보다, 역할을 먼저 설명합니다.
+처음부터 기술 용어를 먼저 던지기보다, 역할을 먼저 설명합니다.
 
 예:
 
@@ -43,7 +43,7 @@ Docker:
 현재 폴더 위치
 .venv 활성화
 requirements.txt 설치
-.env와 .env.example 차이
+.env와.env.example 차이
 FastAPI 서버와 Streamlit 서버를 각각 실행하는 방식
 API_BASE_URL 포트 번호
 Supabase key 종류

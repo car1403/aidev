@@ -8,7 +8,7 @@
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\01_workflow-concepts
-python .\05_ch5_node-interaction-architecture\01_node_interaction_map.py
+python.\05_ch5_node-interaction-architecture\01_node_interaction_map.py
 ```
 
 ## 작성할 내용

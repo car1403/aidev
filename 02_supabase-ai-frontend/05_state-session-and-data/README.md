@@ -68,7 +68,7 @@ uvicorn backend-auth-session-sample:app --reload --host 127.0.0.1 --port 8000
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
 .\.venv\Scripts\Activate.ps1
-streamlit run .\05_state-session-and-data\03_ch3_auth-token-and-login-state\02_login-token-state.py
+streamlit run.\05_state-session-and-data\03_ch3_auth-token-and-login-state\02_login-token-state.py
 ```
 
 ## 실행 확인 기준

@@ -1,4 +1,4 @@
-﻿# 04 Auto Healing Workflow
+# 04 Auto Healing Workflow
 
 이 단원은 장애가 발생했을 때 AI 서비스가 스스로 상태를 진단하고, 재시도·재시작·대체 경로 같은 복구 절차를 수행한 뒤 결과를 검증하는 Auto Healing 워크플로우를 학습합니다.
 
@@ -31,7 +31,7 @@ Auto Healing은 단순히 `restart` 명령을 실행하는 것이 아닙니다. 
 ```powershell
 cd C:\aidev\06_multi-agent-service-ops
 .\.venv\Scripts\Activate.ps1
-cd .\04_auto-healing-workflow
+cd.\04_auto-healing-workflow
 ```
 
 ## Auto Healing 기본 흐름
@@ -74,8 +74,8 @@ AWS에서는 Auto Healing 개념이 다음 기능으로 확장됩니다.
 ## 실행 예제
 
 ```powershell
-python .\01_ch1_failure-scenarios\01_failure-scenario-classifier.py
-python .\02_ch2_health-check-retry-restart\01_health-check-retry-restart.py
-python .\03_ch3_recovery-pipeline\01_auto-healing-pipeline.py
-python .\04_ch4_recovery-result-validation\01_recovery-result-validation.py
+python.\01_ch1_failure-scenarios\01_failure-scenario-classifier.py
+python.\02_ch2_health-check-retry-restart\01_health-check-retry-restart.py
+python.\03_ch3_recovery-pipeline\01_auto-healing-pipeline.py
+python.\04_ch4_recovery-result-validation\01_recovery-result-validation.py
 ```

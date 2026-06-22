@@ -1,4 +1,4 @@
-﻿# Team Template
+# Team Template
 
 Docker Compose 기반 Auto Healing Multi-Agent 서비스입니다.
 
@@ -13,7 +13,7 @@ Docker Compose 기반 Auto Healing Multi-Agent 서비스입니다.
 
 ``powershell
 cd C:\aidev\06_multi-agent-service-ops\99_mini-project\team-template
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 docker compose up --build
 ``
 

@@ -17,7 +17,7 @@ Streamlit 프론트엔드 -> Streamlit Community Cloud
 Supabase Database/Auth -> Supabase Cloud
 ```
 
-이 배포는 “운영 자동화”가 아니라 “수업 참여자가 만든 미니 프로젝트를 외부 URL로 시연해 보는 선택 실습”입니다.
+이 배포는 “운영 자동화”가 아니라 “직접 만든 미니 프로젝트를 외부 URL로 시연해 보는 선택 실습”입니다.
 
 ## SSE 스트리밍 통합 실습 안내
 
@@ -156,22 +156,22 @@ Streamlit 화면
 
 ```text
 03_supabase-ai-mini-project
-├─ .venv
-├─ .gitignore
+├─.venv
+├─.gitignore
 ├─ README.md
 ├─ SETUP.md
-├─ .env.example
+├─.env.example
 ├─ requirements.txt
 ├─ 00_references
-│  └─ supabase
+│ └─ supabase
 ├─ 01_local-dev-basic
 ├─ 02_instructor-sample-project
 ├─ 03_team-project-guide
 ├─ 04_supabase-project-practice
 ├─ 05_supabase-sample-assets
 └─ 99_team-projects
-   ├─ team-template
-   └─ supabase-team-template
+ ├─ team-template
+ └─ supabase-team-template
 ```
 
 팀 프로젝트를 실제 배포 대상으로 정리할 때는 템플릿 내부 구조를 다음 기준으로 맞춥니다.
@@ -179,24 +179,24 @@ Streamlit 화면
 ```text
 team-project
 ├─ README.md
-├─ .env.example
+├─.env.example
 ├─ backend
-│  ├─ main.py
-│  └─ requirements.txt
+│ ├─ main.py
+│ └─ requirements.txt
 ├─ frontend
-│  ├─ app.py
-│  └─ requirements.txt
+│ ├─ app.py
+│ └─ requirements.txt
 ├─ docs
-│  ├─ project-plan.md
-│  ├─ api-spec.md
-│  ├─ ui-design.md
-│  ├─ supabase-schema.md
-│  ├─ streaming-response-design.md
-│  ├─ dashboard-result.md
-│  ├─ deployment-guide.md
-│  └─ test-checklist.md
+│ ├─ project-plan.md
+│ ├─ api-spec.md
+│ ├─ ui-design.md
+│ ├─ supabase-schema.md
+│ ├─ streaming-response-design.md
+│ ├─ dashboard-result.md
+│ ├─ deployment-guide.md
+│ └─ test-checklist.md
 └─ presentation
-   └─ final-presentation.md
+ └─ final-presentation.md
 ```
 
 배포할 때는 `backend`와 `frontend`가 각각 독립적으로 배포될 수 있어야 합니다. 그래서 `backend/requirements.txt`와 `frontend/requirements.txt`를 나누어 둡니다.
@@ -206,13 +206,13 @@ team-project
 각 폴더의 역할은 다음과 같습니다.
 
 ```text
-00_references                Supabase, env, RLS, 보안 개념 참고 자료
-01_local-dev-basic           Supabase env, 로컬 FastAPI/Streamlit 실행 감각을 익히는 예비 실습
+00_references Supabase, env, RLS, 보안 개념 참고 자료
+01_local-dev-basic Supabase env, 로컬 FastAPI/Streamlit 실행 감각을 익히는 예비 실습
 02_instructor-sample-project 수업용 Supabase 샘플 프로젝트
-03_team-project-guide        팀 프로젝트 운영 가이드
+03_team-project-guide 팀 프로젝트 운영 가이드
 04_supabase-project-practice Supabase 프로젝트와 테이블 준비 실습
-05_supabase-sample-assets    Supabase 연동 샘플 자료
-99_team-projects             팀별 최종 결과물을 만드는 공간
+05_supabase-sample-assets Supabase 연동 샘플 자료
+99_team-projects 팀별 최종 결과물을 만드는 공간
 ```
 
 초보자는 `00_references`를 전부 외우려고 하지 않아도 됩니다. 먼저 `01_local-dev-basic`에서 Supabase 환경변수, FastAPI 실행, Streamlit 실행 감각을 익히고, 프로젝트를 진행하면서 필요한 참고 자료로 다시 돌아오면 됩니다.
@@ -257,8 +257,8 @@ team-project
 
 ```text
 Supabase: 클라우드 프로젝트 사용
-FastAPI: 로컬 .venv에서 uvicorn 실행
-Streamlit: 로컬 .venv에서 streamlit run 실행
+FastAPI: 로컬.venv에서 uvicorn 실행
+Streamlit: 로컬.venv에서 streamlit run 실행
 .env: Supabase URL/key, GEMINI_API_KEY, API_BASE_URL 관리
 Docker: 사용하지 않음. 06_multi-agent-service-ops에서 학습
 ```
@@ -284,7 +284,7 @@ Docker: 사용하지 않음. 06_multi-agent-service-ops에서 학습
 99_team-projects/supabase-team-template/docs/deployment-guide.md
 ```
 
-수업 참여자가 기억해야 할 핵심은 다음입니다.
+직접 기억해야 할 핵심은 다음입니다.
 
 - `.env` 파일은 GitHub에 올리지 않습니다.
 - Supabase service role key가 필요하다면 Render 백엔드 환경변수에만 등록합니다.
@@ -300,11 +300,11 @@ PowerShell 기준 기본 흐름은 다음과 같습니다.
 
 ```powershell
 cd C:\aidev\03_supabase-ai-mini-project
-C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv .venv
+C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv.venv
 .\.venv\Scripts\Activate.ps1
 python --version
 pip install -r requirements.txt
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 ```
 
 이미 `.venv`가 만들어져 있다면 다시 만들 필요는 없습니다. 그때는 아래처럼 활성화부터 시작하면 됩니다.
@@ -322,7 +322,7 @@ cd C:\aidev\03_supabase-ai-mini-project
 
 ```powershell
 cd C:\aidev\03_supabase-ai-mini-project
-Copy-Item .\99_team-projects\supabase-team-template .\99_team-projects\team-01-learning-chatbot -Recurse
+Copy-Item.\99_team-projects\supabase-team-template.\99_team-projects\team-01-learning-chatbot -Recurse
 ```
 
 팀 이름에 맞게 `team-01-learning-chatbot` 부분만 바꾸면 됩니다.
@@ -330,13 +330,13 @@ Copy-Item .\99_team-projects\supabase-team-template .\99_team-projects\team-01-l
 복사한 뒤에는 아래 문서를 먼저 채웁니다.
 
 ```text
-docs/project-plan.md       프로젝트 주제, 사용자, 주요 기능
-docs/supabase-schema.md    Supabase 테이블 설계
-docs/api-spec.md           FastAPI 엔드포인트 설계
-docs/ui-design.md          화면 설계와 사용자 액션 흐름
-docs/dashboard-result.md   구현된 대시보드 결과 정리
+docs/project-plan.md 프로젝트 주제, 사용자, 주요 기능
+docs/supabase-schema.md Supabase 테이블 설계
+docs/api-spec.md FastAPI 엔드포인트 설계
+docs/ui-design.md 화면 설계와 사용자 액션 흐름
+docs/dashboard-result.md 구현된 대시보드 결과 정리
 docs/streaming-response-design.md SSE 스트리밍 응답 설계
-docs/test-checklist.md     테스트 체크리스트
+docs/test-checklist.md 테스트 체크리스트
 presentation/final-presentation.md 발표 자료 초안
 ```
 
@@ -428,7 +428,7 @@ streamlit run app.py --server.port 8502
 
 ## 최종 목표
 
-수업 참여자는 이 과정을 마친 뒤 다음을 설명하고 구현할 수 있어야 합니다.
+이 과정을 마친 뒤 다음을 설명하고 구현할 수 있어야 합니다.
 
 ```text
 Supabase 프로젝트와 Python 앱은 어떻게 연결되는가?
@@ -464,7 +464,7 @@ FastAPI를 거쳐 Supabase를 호출하는 방식과 Streamlit이 직접 Supabas
 | 대시보드 구현 결과물 | `docs/dashboard-result.md`, `frontend/app.py`, 선택 배포 URL | 포함/보강 |
 | 선택 배포 실습 | `00_references/08_free-deployment-guide.md`, `docs/deployment-guide.md` | 선택 확장. 필수 제출 아님 |
 
-수업 운영 시 수업 참여자에게는 처음부터 완성도 높은 대시보드를 요구하기보다, 아래 순서로 작게 성공하도록 안내합니다.
+수업 운영 시 처음부터 완성도 높은 대시보드를 요구하기보다, 아래 순서로 작게 성공하도록 안내합니다.
 
 ```text
 1. 로그 1개를 Supabase에 저장한다.

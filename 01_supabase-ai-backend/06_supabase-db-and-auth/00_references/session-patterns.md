@@ -1,4 +1,4 @@
-﻿# 세션 패턴
+# 세션 패턴
 
 ## 세션 키 예시
 
@@ -11,8 +11,8 @@ conversation:{user_id}
 
 ```json
 {
-  "user_id": 1,
-  "email": "alice@example.com"
+ "user_id": 1,
+ "email": "alice@example.com"
 }
 ```
 

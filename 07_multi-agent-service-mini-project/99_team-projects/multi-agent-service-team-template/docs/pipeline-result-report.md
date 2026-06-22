@@ -66,10 +66,10 @@ code commit
 
 | Event | Channel | Owner | Escalation |
 | --- | --- | --- | --- |
-| pipeline success |  |  |  |
-| pipeline failed |  |  |  |
-| deployment delayed |  |  |  |
-| service incident |  |  |  |
+| pipeline success | | | |
+| pipeline failed | | | |
+| deployment delayed | | | |
+| service incident | | | |
 
 알림 채널은 실제 연동하지 않아도 설계 수준으로 작성할 수 있습니다.
 
@@ -84,7 +84,7 @@ Email: 제출 결과 공유
 
 | Run | Build | Test | Deploy | Notification | Notes |
 | --- | --- | --- | --- | --- | --- |
-| 1 |  |  |  |  |  |
+| 1 | | | | | |
 
 ## 6. Diagram
 

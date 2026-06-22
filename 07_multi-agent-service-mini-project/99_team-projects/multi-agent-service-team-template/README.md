@@ -16,10 +16,10 @@ Docker Compose 기반 Auto Healing Multi-Agent 서비스 팀 프로젝트 템플
 ## 서비스 구성
 
 ```text
-backend   FastAPI API 서버, Health Check, Auto Healing 요청 처리
-frontend  Streamlit 사용자 화면
-worker    백그라운드 장애 감지와 복구 작업
-monitor   운영 상태와 이벤트 확인 화면
+backend FastAPI API 서버, Health Check, Auto Healing 요청 처리
+frontend Streamlit 사용자 화면
+worker 백그라운드 장애 감지와 복구 작업
+monitor 운영 상태와 이벤트 확인 화면
 ```
 
 ## 필수 산출물
@@ -44,7 +44,7 @@ docker ps
 
 ```powershell
 cd C:\aidev\07_multi-agent-service-mini-project\99_team-projects\multi-agent-service-team-template
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 docker compose config
 docker compose up --build
 ```
@@ -53,8 +53,8 @@ docker compose up --build
 
 ```text
 Backend health : http://127.0.0.1:8000/health
-Frontend       : http://127.0.0.1:8801
-Monitor        : http://127.0.0.1:8802
+Frontend : http://127.0.0.1:8801
+Monitor : http://127.0.0.1:8802
 ```
 
 ## 로그 확인
@@ -84,11 +84,11 @@ docker compose down
 ## 팀에서 수정할 주요 파일
 
 ```text
-backend/main.py        Health Check, 장애 이벤트 API
-worker/main.py         장애 감지, Retry, Restart, Fallback 로직
-frontend/app.py        사용자 입력과 실행 결과 화면
-monitor/app.py         운영 이벤트와 상태 대시보드
-docker-compose.yml     서비스 구성, 포트, healthcheck
+backend/main.py Health Check, 장애 이벤트 API
+worker/main.py 장애 감지, Retry, Restart, Fallback 로직
+frontend/app.py 사용자 입력과 실행 결과 화면
+monitor/app.py 운영 이벤트와 상태 대시보드
+docker-compose.yml 서비스 구성, 포트, healthcheck
 docs/test-checklist.md 테스트 체크리스트
 ```
 

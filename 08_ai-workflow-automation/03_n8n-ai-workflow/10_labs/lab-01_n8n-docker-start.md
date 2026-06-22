@@ -8,10 +8,10 @@ Docker로 n8n을 실행하고 브라우저에서 접속합니다.
 
 ```powershell
 docker run -it --rm `
-  --name n8n-ai-workflow `
-  -p 5678:5678 `
-  -v n8n-data:/home/node/.n8n `
-  n8nio/n8n:latest
+ --name n8n-ai-workflow `
+ -p 5678:5678 `
+ -v n8n-data:/home/node/.n8n `
+ n8nio/n8n:latest
 ```
 
 ## 확인

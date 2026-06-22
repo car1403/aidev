@@ -1,4 +1,4 @@
-﻿# 02_ch2_text-input-and-output
+# 02_ch2_text-input-and-output
 
 사용자 입력을 받고 입력값에 따라 화면 출력을 바꾸는 챕터입니다.
 
@@ -21,7 +21,7 @@
 ## 실행 예시
 
 ```powershell
-streamlit run .\01_streamlit-basic\02_ch2_text-input-and-output\01_text-input.py
+streamlit run.\01_streamlit-basic\02_ch2_text-input-and-output\01_text-input.py
 ```
 
 ## 확인할 내용

@@ -54,17 +54,17 @@ DIFY_BASE_URL
 실제 키는 `.env`에만 넣습니다.
 
 ```powershell
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 ```
 
 ## 체크리스트
 
 ```text
 [ ] Python 버전 확인
-[ ] .venv 활성화
+[ ].venv 활성화
 [ ] requirements.txt 설치
 [ ] Docker Desktop 실행
 [ ] Git 설치 확인
-[ ] .env 생성
+[ ].env 생성
 [ ] API Key는 코드에 직접 쓰지 않음
 ```

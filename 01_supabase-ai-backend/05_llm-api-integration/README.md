@@ -52,7 +52,7 @@
 
 ```text
 1. API key 없이 mock 응답 구조 이해
-2. .env에서 Gemini API key 설정 여부 확인
+2..env에서 Gemini API key 설정 여부 확인
 3. temperature, top_p, max_tokens 같은 파라미터 의미 확인
 4. 모델별 파라미터 차이와 `thinkingLevel` 같은 공급자별 설정 확인
 5. Gemini 싱글턴 호출 구조 실습
@@ -76,31 +76,31 @@ cd C:\aidev\01_supabase-ai-backend
 API key 설정 확인:
 
 ```powershell
-python .\05_llm-api-integration\02_api-key-and-billing\01_check_llm_env.py
+python.\05_llm-api-integration\02_api-key-and-billing\01_check_llm_env.py
 ```
 
 비용 없는 mock 싱글턴 호출:
 
 ```powershell
-python .\05_llm-api-integration\03_single-turn-call\01_mock_single_turn.py
+python.\05_llm-api-integration\03_single-turn-call\01_mock_single_turn.py
 ```
 
 Gemini 싱글턴 호출:
 
 ```powershell
-python .\05_llm-api-integration\03_single-turn-call\03_gemini_rest_single_turn.py
+python.\05_llm-api-integration\03_single-turn-call\03_gemini_rest_single_turn.py
 ```
 
 비용 없는 mock 멀티턴 호출:
 
 ```powershell
-python .\05_llm-api-integration\04_multi-turn-call\01_mock_multi_turn.py
+python.\05_llm-api-integration\04_multi-turn-call\01_mock_multi_turn.py
 ```
 
 Gemini 멀티턴 호출:
 
 ```powershell
-python .\05_llm-api-integration\04_multi-turn-call\04_gemini_rest_multi_turn.py
+python.\05_llm-api-integration\04_multi-turn-call\04_gemini_rest_multi_turn.py
 ```
 
 FastAPI mock LLM endpoint 실행:
@@ -140,7 +140,7 @@ http://127.0.0.1:8000/docs
 
 ```text
 API key는 코드에 직접 적지 않습니다.
-API key는 .env 파일에 저장합니다.
+API key는.env 파일에 저장합니다.
 .env 파일은 GitHub에 올리지 않습니다.
 수업 중 화면 공유에서 API key가 보이지 않게 합니다.
 실제 API 호출 전 과금 여부를 확인합니다.

@@ -1,4 +1,4 @@
-﻿# PostgreSQL Docker 실행
+# PostgreSQL Docker 실행
 
 ## image 받기
 
@@ -10,11 +10,11 @@ docker pull postgres
 
 ```powershell
 docker run --name aidev-postgres `
-  -e POSTGRES_USER=aidev `
-  -e POSTGRES_PASSWORD=aidev1234 `
-  -e POSTGRES_DB=aidev_db `
-  -p 5432:5432 `
-  -d postgres
+ -e POSTGRES_USER=aidev `
+ -e POSTGRES_PASSWORD=aidev1234 `
+ -e POSTGRES_DB=aidev_db `
+ -p 5432:5432 `
+ -d postgres
 ```
 
 ## 접속 확인

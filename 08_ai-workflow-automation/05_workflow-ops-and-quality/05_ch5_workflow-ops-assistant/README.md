@@ -18,5 +18,5 @@ Logs
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\05_workflow-ops-and-quality
-python .\05_ch5_workflow-ops-assistant\01_workflow_ops_assistant.py
+python.\05_ch5_workflow-ops-assistant\01_workflow_ops_assistant.py
 ```

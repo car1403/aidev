@@ -14,6 +14,6 @@ JSON 파일 읽기
 ## 실행
 
 ```powershell
-python .\07_file-data-basic\01_text_file_write_read.py
-python .\07_file-data-basic\02_json_basic.py
+python.\07_file-data-basic\01_text_file_write_read.py
+python.\07_file-data-basic\02_json_basic.py
 ```

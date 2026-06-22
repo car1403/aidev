@@ -34,10 +34,10 @@
 
 | Version | Change | Reason | Before Result | After Result |
 | --- | --- | --- | --- | --- |
-| v1 | 기본 Tool 호출 | 최초 구현 |  |  |
-| v2 | 분기 조건 추가 | 도구 선택 오류 감소 |  |  |
-| v3 | reflection node 추가 | 응답 불일치 개선 |  |  |
-| v4 | fallback 문장 추가 | 실패 상황에서 사용자 안내 개선 |  |  |
+| v1 | 기본 Tool 호출 | 최초 구현 | | |
+| v2 | 분기 조건 추가 | 도구 선택 오류 감소 | | |
+| v3 | reflection node 추가 | 응답 불일치 개선 | | |
+| v4 | fallback 문장 추가 | 실패 상황에서 사용자 안내 개선 | | |
 
 ## 5. Feedback Loop
 
@@ -65,20 +65,20 @@
 
 | Metric | Before Reflection | After Reflection | How To Measure |
 | --- | --- | --- | --- |
-| task_completion_rate |  |  | 전체 테스트 중 성공한 비율 |
-| tool_selection_accuracy |  |  | 필요한 Tool을 올바르게 선택한 비율 |
-| response_consistency_score |  |  | Tool 결과와 최종 응답이 일치한 비율 또는 1~5점 |
-| average_retry_count |  |  | 테스트 1건당 평균 재시도 횟수 |
+| task_completion_rate | | | 전체 테스트 중 성공한 비율 |
+| tool_selection_accuracy | | | 필요한 Tool을 올바르게 선택한 비율 |
+| response_consistency_score | | | Tool 결과와 최종 응답이 일치한 비율 또는 1~5점 |
+| average_retry_count | | | 테스트 1건당 평균 재시도 횟수 |
 
 ## 7. Test Cases
 
 | Case | Input | Expected Behavior | Result | Notes |
 | --- | --- | --- | --- | --- |
-| 정상 일정 요청 |  | 가능한 시간 제안 |  |  |
-| 정보 부족 요청 |  | 추가 질문 |  |  |
-| 일정 충돌 요청 |  | 대체 전략 제안 |  |  |
-| Tool 오류 상황 |  | fallback 적용 |  |  |
-| 응답 불일치 상황 |  | reflection 후 답변 재생성 |  |  |
+| 정상 일정 요청 | | 가능한 시간 제안 | | |
+| 정보 부족 요청 | | 추가 질문 | | |
+| 일정 충돌 요청 | | 대체 전략 제안 | | |
+| Tool 오류 상황 | | fallback 적용 | | |
+| 응답 불일치 상황 | | reflection 후 답변 재생성 | | |
 
 ## 8. Final Notes
 

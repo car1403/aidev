@@ -47,7 +47,7 @@
 -> Log / Review
 ```
 
-수업 참여자는 AIPP 화면에서 다음 질문을 계속 확인해야 합니다.
+AIPP 화면에서 다음 질문을 계속 확인합니다.
 
 ```text
 이 워크플로우는 어떤 이벤트로 시작하는가?
@@ -121,9 +121,9 @@ pip install -r requirements.txt
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\02_aipp-workflow
-python .\01_ch1_aipp-overview\01_aipp_workflow_concept.py
-python .\02_ch2_aipp-workflow-design\01_design_workflow_nodes.py
-python .\03_ch3_aipp-agent-tool-data-flow\01_agent_tool_data_flow.py
+python.\01_ch1_aipp-overview\01_aipp_workflow_concept.py
+python.\02_ch2_aipp-workflow-design\01_design_workflow_nodes.py
+python.\03_ch3_aipp-agent-tool-data-flow\01_agent_tool_data_flow.py
 ```
 
 ## 실습 체크리스트
@@ -141,7 +141,7 @@ python .\03_ch3_aipp-agent-tool-data-flow\01_agent_tool_data_flow.py
 
 ## 과제 방향
 
-과제에서는 수업 참여자가 직접 하나의 업무 시나리오를 선택하고 AIPP 워크플로우 설계 문서를 작성합니다.
+과제에서는 직접 직접 하나의 업무 시나리오를 선택하고 AIPP 워크플로우 설계 문서를 작성합니다.
 
 예시 주제:
 

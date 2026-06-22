@@ -1,4 +1,4 @@
-﻿# 02_ch2_supabase-table-and-crud
+# 02_ch2_supabase-table-and-crud
 
 이 단원은 Supabase Table Editor 또는 SQL Editor에서 테이블을 만들고, Python에서 CRUD를 실행하는 단계입니다.
 
@@ -15,20 +15,20 @@
 
 ```sql
 create table if not exists learning_notes (
-  id uuid primary key default gen_random_uuid(),
-  title text not null,
-  content text not null,
-  created_at timestamptz not null default now()
+ id uuid primary key default gen_random_uuid(),
+ title text not null,
+ content text not null,
+ created_at timestamptz not null default now()
 );
 ```
 
 이후 프로젝트에서 다음 테이블로 확장합니다.
 
 ```text
-profiles          사용자 프로필
-conversations     대화 세션
-messages          대화 메시지
-service_logs      서비스 실행 로그
+profiles 사용자 프로필
+conversations 대화 세션
+messages 대화 메시지
+service_logs 서비스 실행 로그
 ```
 
 ## 실행 예시
@@ -36,7 +36,7 @@ service_logs      서비스 실행 로그
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\06_supabase-db-and-auth\02_ch2_supabase-table-and-crud\01_learning_notes_crud.py
+python.\06_supabase-db-and-auth\02_ch2_supabase-table-and-crud\01_learning_notes_crud.py
 ```
 
 실행 전 Supabase에 `learning_notes` 테이블이 있어야 합니다.
@@ -47,8 +47,8 @@ python .\06_supabase-db-and-auth\02_ch2_supabase-table-and-crud\01_learning_note
 | --- | --- | --- |
 | `.insert({...})` | `insert into` | 새 데이터를 저장합니다. |
 | `.select("*")` | `select` | 저장된 데이터를 조회합니다. |
-| `.update({...}).eq("id", note_id)` | `update ... where` | 특정 데이터를 수정합니다. |
-| `.delete().eq("id", note_id)` | `delete ... where` | 특정 데이터를 삭제합니다. |
+| `.update({...}).eq("id", note_id)` | `update... where` | 특정 데이터를 수정합니다. |
+| `.delete().eq("id", note_id)` | `delete... where` | 특정 데이터를 삭제합니다. |
 
 초보자에게 중요한 기준은 `eq("id", note_id)` 같은 조건입니다. 수정/삭제를 할 때 조건을 빠뜨리면 여러 데이터가 한꺼번에 바뀔 수 있으므로 항상 어떤 행을 대상으로 하는지 먼저 확인합니다.
 

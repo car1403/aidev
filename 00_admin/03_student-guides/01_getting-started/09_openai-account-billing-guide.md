@@ -98,7 +98,7 @@ API 결제 흐름은 ChatGPT 구독과 다를 수 있습니다.
 3. Billing 또는 Usage 확인
 4. 결제 수단 또는 prepaid billing 설정
 5. API key 생성
-6. .env 파일에 API key 저장
+6..env 파일에 API key 저장
 ```
 
 주의:
@@ -107,7 +107,7 @@ API 결제 흐름은 ChatGPT 구독과 다를 수 있습니다.
 API key를 코드에 직접 적지 않습니다.
 API key를 README에 적지 않습니다.
 API key를 GitHub에 올리지 않습니다.
-API key는 .env 파일에만 저장합니다.
+API key는.env 파일에만 저장합니다.
 ```
 
 예시:
@@ -222,7 +222,7 @@ API key는 비밀번호처럼 다룹니다. README, 과제 문서, 발표 자료
 ```text
 [ ] 카드 번호를 화면 공유하지 않는다.
 [ ] API key를 채팅창에 붙여넣지 않는다.
-[ ] .env 파일을 제출하지 않는다.
+[ ].env 파일을 제출하지 않는다.
 [ ] 결제 화면은 본인만 확인한다.
 [ ] 학교/회사 계정은 관리자 정책을 따른다.
 [ ] 유료 기능은 승인 후 사용한다.
@@ -263,7 +263,7 @@ https://help.openai.com/en/articles/20001216-billing-payment
 [ ] ChatGPT 구독 결제와 OpenAI API 결제가 다르다는 것을 이해했다.
 [ ] Codex app 사용 결제와 API key 연동 결제가 별개라는 것을 이해했다.
 [ ] 카드 결제 전 자동 갱신, 포함 사용량, 초과 과금 여부를 확인해야 한다는 것을 이해했다.
-[ ] API key는 .env에만 저장해야 한다는 것을 이해했다.
+[ ] API key는.env에만 저장해야 한다는 것을 이해했다.
 [ ] API key를 GitHub에 올리면 안 된다는 것을 이해했다.
 [ ] 결제 화면과 카드 정보는 공유하지 않는다는 것을 이해했다.
 ```

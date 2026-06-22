@@ -1,4 +1,4 @@
-﻿# Lab 02. Docker Compose Up
+# Lab 02. Docker Compose Up
 
 ## 목표
 
@@ -8,7 +8,7 @@ backend, frontend, worker, monitor 서비스를 Docker Compose로 함께 실행�
 
 ```powershell
 cd C:\aidev\06_multi-agent-service-ops\02_service-deployment-and-automation\02_ch2_docker-compose-multi-service
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 docker compose up --build
 ```
 

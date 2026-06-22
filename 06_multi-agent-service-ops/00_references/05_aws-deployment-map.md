@@ -1,4 +1,4 @@
-﻿# 05 AWS Deployment Map
+# 05 AWS Deployment Map
 
 이 문서는 06 과정에서 다루는 Docker 기반 서비스를 AWS로 확장할 때의 큰 그림을 설명합니다.
 
@@ -9,7 +9,7 @@
 | Docker image | Amazon ECR |
 | Docker container | ECS Task, EC2 Container |
 | docker compose service | ECS Service |
-| .env | Parameter Store, Secrets Manager |
+|.env | Parameter Store, Secrets Manager |
 | container logs | CloudWatch Logs |
 | healthcheck | ALB Target Health Check, ECS Health Check |
 | GitHub Actions | CI/CD 자동 빌드와 배포 |

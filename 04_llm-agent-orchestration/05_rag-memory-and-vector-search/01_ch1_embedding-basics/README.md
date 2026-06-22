@@ -13,8 +13,8 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\05_rag-memory-and-vector-search
 .\.venv\Scripts\Activate.ps1
-python .\01_ch1_embedding-basics\01_vector-similarity-basic.py
-python .\01_ch1_embedding-basics\02_openai-embedding-basic.py
+python.\01_ch1_embedding-basics\01_vector-similarity-basic.py
+python.\01_ch1_embedding-basics\02_openai-embedding-basic.py
 ```
 
 ## 확인 질문

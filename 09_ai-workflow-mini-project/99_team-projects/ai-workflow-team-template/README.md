@@ -29,21 +29,21 @@ team03-it-support-automation
 
 ```text
 ai-workflow-team-template/
-  README.md
-  docs/
-    project-plan.md
-    no-code-workflow-design.md
-    rag-architecture.md
-    workflow-execution-result.md
-    ops-quality-plan.md
-    test-checklist.md
-    workflow-design.md
-  backend/
-    README.md
-  frontend/
-    README.md
-  presentation/
-    final-presentation.md
+ README.md
+ docs/
+ project-plan.md
+ no-code-workflow-design.md
+ rag-architecture.md
+ workflow-execution-result.md
+ ops-quality-plan.md
+ test-checklist.md
+ workflow-design.md
+ backend/
+ README.md
+ frontend/
+ README.md
+ presentation/
+ final-presentation.md
 ```
 
 `workflow-design.md`는 기존 통합 설계 문서입니다. 이번 프로젝트에서는 아래 세 문서를 우선 산출물로 작성합니다.

@@ -1,4 +1,4 @@
-﻿# Lab 02. Policy Response Validation
+# Lab 02. Policy Response Validation
 
 ## 목표
 
@@ -7,7 +7,7 @@ Agent 응답이 운영 정책에 맞는지 검사합니다.
 ## 실습
 
 ```powershell
-python .\02_ch2_policy-based-response-validation\01_policy-response-validator.py
+python.\02_ch2_policy-based-response-validation\01_policy-response-validator.py
 ```
 
 ## 확인 질문

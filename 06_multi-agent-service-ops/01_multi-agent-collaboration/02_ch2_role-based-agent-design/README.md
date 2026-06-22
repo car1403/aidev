@@ -1,4 +1,4 @@
-﻿# 02_ch2_role-based-agent-design
+# 02_ch2_role-based-agent-design
 
 역할(Role) 기반으로 Agent를 분리하는 방법을 학습합니다.
 
@@ -22,5 +22,5 @@ monitor: monitor 서비스로 분리 가능
 ## 실행
 
 ```powershell
-python .\02_ch2_role-based-agent-design\01_role-based-agent-design.py
+python.\02_ch2_role-based-agent-design\01_role-based-agent-design.py
 ```

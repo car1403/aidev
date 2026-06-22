@@ -13,8 +13,8 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\04_function-calling-and-tool-use
 .\.venv\Scripts\Activate.ps1
-python .\02_ch2_tool-use-with-external-api\01_mock-weather-tool.py
-python .\02_ch2_tool-use-with-external-api\02_http-api-tool-wrapper.py
+python.\02_ch2_tool-use-with-external-api\01_mock-weather-tool.py
+python.\02_ch2_tool-use-with-external-api\02_http-api-tool-wrapper.py
 ```
 
 ## 확인 질문

@@ -1,4 +1,4 @@
-﻿# 04_ch4_dashboard-layout
+# 04_ch4_dashboard-layout
 
 버튼, 폼, 표, 차트, sidebar, columns, tabs를 조합해 기본 대시보드를 만드는 챕터입니다.
 
@@ -14,7 +14,7 @@
 ## 실행 예시
 
 ```powershell
-streamlit run .\02_streamlit-ui-components\04_ch4_dashboard-layout\04_student-progress-dashboard.py
+streamlit run.\02_streamlit-ui-components\04_ch4_dashboard-layout\04_student-progress-dashboard.py
 ```
 
 ## 확인할 내용

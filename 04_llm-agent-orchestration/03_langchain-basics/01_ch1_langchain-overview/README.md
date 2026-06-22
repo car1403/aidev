@@ -13,7 +13,7 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\03_langchain-basics
 .\.venv\Scripts\Activate.ps1
-python .\01_ch1_langchain-overview\01_direct-call-vs-langchain.py
+python.\01_ch1_langchain-overview\01_direct-call-vs-langchain.py
 ```
 
 ## 확인 질문

@@ -25,5 +25,5 @@ Input Data
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\02_aipp-workflow
-python .\03_ch3_aipp-agent-tool-data-flow\01_agent_tool_data_flow.py
+python.\03_ch3_aipp-agent-tool-data-flow\01_agent_tool_data_flow.py
 ```

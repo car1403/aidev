@@ -1,4 +1,4 @@
-﻿# Sample Learning Log Dashboard
+# Sample Learning Log Dashboard
 
 Supabase 기반 학습 로그 대시보드 샘플 프로젝트입니다.
 
@@ -9,17 +9,17 @@ Supabase 기반 학습 로그 대시보드 샘플 프로젝트입니다.
 ```text
 sample-learning-log-dashboard
 ├─ README.md
-├─ .env.example
+├─.env.example
 ├─ backend
-│  ├─ main.py
-│  └─ requirements.txt
+│ ├─ main.py
+│ └─ requirements.txt
 ├─ frontend
-│  ├─ app.py
-│  └─ requirements.txt
+│ ├─ app.py
+│ └─ requirements.txt
 └─ docs
-   ├─ setup-supabase.md
-   ├─ api-test-guide.md
-   └─ comparison-with-docker-compose.md
+ ├─ setup-supabase.md
+ ├─ api-test-guide.md
+ └─ comparison-with-docker-compose.md
 ```
 
 ## 실행 준비
@@ -39,7 +39,7 @@ docs\setup-supabase.md
 `.env.example`을 복사해 `.env`를 만들고 실제 값을 입력합니다.
 
 ```powershell
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 ```
 
 ## Backend 실행

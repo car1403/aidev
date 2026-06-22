@@ -27,5 +27,5 @@ Tool: 외부 API나 기능 호출
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\04_dify-ai-workflow
-python .\03_ch3_dify-rag-agent-flow\01_dify_rag_agent_flow.py
+python.\03_ch3_dify-rag-agent-flow\01_dify_rag_agent_flow.py
 ```

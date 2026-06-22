@@ -16,6 +16,6 @@ continue
 ## 실행
 
 ```powershell
-python .\04_loop-basic\01_for_loop.py
-python .\04_loop-basic\02_while_loop.py
+python.\04_loop-basic\01_for_loop.py
+python.\04_loop-basic\02_while_loop.py
 ```

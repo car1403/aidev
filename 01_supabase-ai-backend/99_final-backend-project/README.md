@@ -2,9 +2,9 @@
 
 이 단원은 `01_supabase-ai-backend`의 최종 백엔드 프로젝트입니다.
 
-수업 참여자는 Python, FastAPI, Supabase, LLM API 연동, 사용자 데이터 관리, 서비스 로그, Codex 기반 코드 리뷰를 하나의 결과물로 정리합니다.
+Python, FastAPI, Supabase, LLM API 연동, 사용자 데이터 관리, 서비스 로그, Codex 기반 코드 리뷰를 하나의 결과물로 정리합니다.
 
-이 프로젝트는 `08_backend-mini-service-practice`에서 만든 작은 미니 서비스를 바탕으로, 수업 참여자가 직접 요구사항과 테이블, API, 로그, 보안 점검을 확장하는 단계입니다.
+이 프로젝트는 `08_backend-mini-service-practice`에서 만든 작은 미니 서비스를 바탕으로, 직접 요구사항과 테이블, API, 로그, 보안 점검을 확장하는 단계입니다.
 
 ## 프로젝트 주제 예시
 
@@ -89,7 +89,7 @@ Upstash Redis 기반 30초 캐시
 - Upstash Redis를 사용한다면 Supabase와 역할을 명확히 구분했는가?
 - 서비스 로그에 민감 정보가 들어가지 않는가?
 - Swagger UI 또는 테스트 결과를 제출했는가?
-- Codex가 생성한 코드를 수업 참여자가 직접 검토했는가?
+- Codex가 생성한 코드를 직접 검토했는가?
 
 ## 제출 전 체크리스트
 

@@ -1,4 +1,4 @@
-﻿# 02 Service Deployment and Automation
+# 02 Service Deployment and Automation
 
 이 단원은 AI 서비스를 로컬 Python 실행에서 Docker 기반 실행으로 옮기고, 여러 서비스를 Docker Compose로 묶어 실행하는 방법을 학습합니다.
 
@@ -45,7 +45,7 @@ docker ps
 
 `docker ps`가 실패하면 Docker Desktop이 실행 중인지 먼저 확인합니다.
 
-## Docker와 .venv의 차이
+## Docker와.venv의 차이
 
 `.venv`는 내 컴퓨터에서 Python 패키지를 분리하는 환경입니다.
 
@@ -74,7 +74,7 @@ Docker Compose: 여러 Docker 서비스를 한 번에 실행하는 구성 파일
 
 ```powershell
 cd C:\aidev\06_multi-agent-service-ops\02_service-deployment-and-automation\02_ch2_docker-compose-multi-service
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 docker compose up --build
 ```
 

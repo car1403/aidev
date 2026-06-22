@@ -1,4 +1,4 @@
-﻿# Lab 04. Recovery Result Validation
+# Lab 04. Recovery Result Validation
 
 ## 목표
 
@@ -7,7 +7,7 @@
 ## 실습
 
 ```powershell
-python .\04_ch4_recovery-result-validation\01_recovery-result-validation.py
+python.\04_ch4_recovery-result-validation\01_recovery-result-validation.py
 ```
 
 ## 확인 질문

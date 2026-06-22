@@ -13,8 +13,8 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\04_function-calling-and-tool-use
 .\.venv\Scripts\Activate.ps1
-python .\01_ch1_function-calling-basic\01_simple-calculator-tool.py
-python .\01_ch1_function-calling-basic\02_learning-log-summary-tool.py
+python.\01_ch1_function-calling-basic\01_simple-calculator-tool.py
+python.\01_ch1_function-calling-basic\02_learning-log-summary-tool.py
 ```
 
 ## 확인 질문

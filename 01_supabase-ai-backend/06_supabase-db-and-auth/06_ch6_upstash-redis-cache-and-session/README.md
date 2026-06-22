@@ -60,7 +60,7 @@ UPSTASH_REDIS_REST_TOKEN=your-upstash-redis-rest-token
 
 ```text
 01_check_upstash_env.py
--> .env에 Upstash Redis 값이 들어 있는지 확인합니다.
+->.env에 Upstash Redis 값이 들어 있는지 확인합니다.
 
 02_cache_set_get_ttl.py
 -> Redis에 값을 저장하고, TTL이 지나면 사라지는지 확인합니다.
@@ -85,11 +85,11 @@ UPSTASH_REDIS_REST_TOKEN=your-upstash-redis-rest-token
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\01_check_upstash_env.py
-python .\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\02_cache_set_get_ttl.py
-python .\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\03_rate_limit_example.py
-python .\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\04_session_state_example.py
-python .\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\05_cache_aside_mock.py
+python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\01_check_upstash_env.py
+python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\02_cache_set_get_ttl.py
+python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\03_rate_limit_example.py
+python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\04_session_state_example.py
+python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\05_cache_aside_mock.py
 ```
 
 ## 수업에서 설명할 핵심 개념

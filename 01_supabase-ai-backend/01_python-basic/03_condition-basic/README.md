@@ -15,5 +15,5 @@ else
 ## 실행
 
 ```powershell
-python .\03_condition-basic\01_if_basic.py
+python.\03_condition-basic\01_if_basic.py
 ```

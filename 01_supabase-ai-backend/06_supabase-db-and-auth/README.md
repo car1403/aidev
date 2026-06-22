@@ -1,4 +1,4 @@
-﻿# 06_supabase-db-and-auth
+# 06_supabase-db-and-auth
 
 이 단원은 FastAPI 백엔드에서 Supabase를 사용해 데이터 저장, 인증, 사용자별 접근 제어, 대화 이력, 서비스 로그를 다루는 과정입니다.
 
@@ -63,7 +63,7 @@
 
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 ```
 
 `.env`에 Supabase 값을 입력합니다.
@@ -103,13 +103,13 @@ Supabase Dashboard의 SQL Editor에서 실행합니다.
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\06_supabase-db-and-auth\01_ch1_supabase-project-and-env\01_check_supabase_env.py
+python.\06_supabase-db-and-auth\01_ch1_supabase-project-and-env\01_check_supabase_env.py
 ```
 
 Supabase CRUD 확인:
 
 ```powershell
-python .\06_supabase-db-and-auth\02_ch2_supabase-table-and-crud\01_learning_notes_crud.py
+python.\06_supabase-db-and-auth\02_ch2_supabase-table-and-crud\01_learning_notes_crud.py
 ```
 
 FastAPI + Supabase 실행:
@@ -131,25 +131,25 @@ Upstash Redis 환경변수 확인:
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\01_check_upstash_env.py
+python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\01_check_upstash_env.py
 ```
 
 Upstash Redis TTL 캐시 실습:
 
 ```powershell
-python .\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\02_cache_set_get_ttl.py
+python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\02_cache_set_get_ttl.py
 ```
 
 Upstash Redis 세션 상태 실습:
 
 ```powershell
-python .\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\04_session_state_example.py
+python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\04_session_state_example.py
 ```
 
 캐시 우선 조회 흐름 실습:
 
 ```powershell
-python .\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\05_cache_aside_mock.py
+python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\05_cache_aside_mock.py
 ```
 
 FastAPI 요청 제한 구조 확인:
@@ -206,7 +206,7 @@ C:\aidev\06_multi-agent-service-ops
 
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
-Get-Content .env
+Get-Content.env
 ```
 
 ### relation learning_notes does not exist

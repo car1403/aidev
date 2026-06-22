@@ -17,6 +17,6 @@ input
 ```powershell
 cd C:\aidev\01_python-basic
 .\.venv\Scripts\Activate.ps1
-python .\01_python-start\01_hello_python.py
-python .\01_python-start\02_input_output.py
+python.\01_python-start\01_hello_python.py
+python.\01_python-start\02_input_output.py
 ```

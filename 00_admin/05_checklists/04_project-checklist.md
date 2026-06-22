@@ -17,8 +17,8 @@
 [ ] README.md가 있다.
 [ ] 실행 방법이 작성되어 있다.
 [ ] requirements.txt가 있다.
-[ ] .env.example이 있다.
-[ ] 실제 .env는 제출하지 않는다.
+[ ].env.example이 있다.
+[ ] 실제.env는 제출하지 않는다.
 [ ] 주요 API가 동작한다.
 [ ] 화면에서 API 호출 결과가 보인다.
 ```

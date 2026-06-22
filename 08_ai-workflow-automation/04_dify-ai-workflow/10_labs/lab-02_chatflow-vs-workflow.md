@@ -8,7 +8,7 @@
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\04_dify-ai-workflow
-python .\02_ch2_dify-chatflow-workflow\01_chatflow_vs_workflow.py
+python.\02_ch2_dify-chatflow-workflow\01_chatflow_vs_workflow.py
 ```
 
 ## 할 일

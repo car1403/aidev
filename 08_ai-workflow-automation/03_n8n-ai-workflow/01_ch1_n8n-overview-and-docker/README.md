@@ -23,10 +23,10 @@ Trigger Node
 
 ```powershell
 docker run -it --rm `
-  --name n8n-ai-workflow `
-  -p 5678:5678 `
-  -v n8n-data:/home/node/.n8n `
-  n8nio/n8n:latest
+ --name n8n-ai-workflow `
+ -p 5678:5678 `
+ -v n8n-data:/home/node/.n8n `
+ n8nio/n8n:latest
 ```
 
 접속 주소:
@@ -39,5 +39,5 @@ http://localhost:5678
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\03_n8n-ai-workflow
-python .\01_ch1_n8n-overview-and-docker\01_n8n_node_map.py
+python.\01_ch1_n8n-overview-and-docker\01_n8n_node_map.py
 ```

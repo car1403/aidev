@@ -14,8 +14,8 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\02_advanced-prompting-and-reasoning
 .\.venv\Scripts\Activate.ps1
-python .\03_ch3_reasoning-and-react-basics\01_plan-act-review-pattern.py
-python .\03_ch3_reasoning-and-react-basics\02_react-style-without-tools.py
+python.\03_ch3_reasoning-and-react-basics\01_plan-act-review-pattern.py
+python.\03_ch3_reasoning-and-react-basics\02_react-style-without-tools.py
 ```
 
 ## 확인 질문

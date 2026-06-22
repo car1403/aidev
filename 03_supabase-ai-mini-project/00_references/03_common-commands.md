@@ -25,13 +25,13 @@ pip install -r requirements.txt
 ## 환경변수 파일 만들기
 
 ```powershell
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 ```
 
 ## Supabase 환경변수 확인
 
 ```powershell
-python .\01_local-dev-basic\01_supabase-env-check\01_check_env.py
+python.\01_local-dev-basic\01_supabase-env-check\01_check_env.py
 ```
 
 ## FastAPI 실행
@@ -73,7 +73,7 @@ netstat -ano | findstr :8501
 
 ```powershell
 cd C:\aidev\03_supabase-ai-mini-project
-Copy-Item .\99_team-projects\supabase-team-template .\99_team-projects\team-01-learning-chatbot -Recurse
+Copy-Item.\99_team-projects\supabase-team-template.\99_team-projects\team-01-learning-chatbot -Recurse
 ```
 
 ## Docker 관련 명령어

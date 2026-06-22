@@ -13,8 +13,8 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\06_langgraph-state-flow
 .\.venv\Scripts\Activate.ps1
-python .\02_ch2_conditional-routing\01_conditional-route-basic.py
-python .\02_ch2_conditional-routing\02_retry-and-reflection-flow.py
+python.\02_ch2_conditional-routing\01_conditional-route-basic.py
+python.\02_ch2_conditional-routing\02_retry-and-reflection-flow.py
 ```
 
 ## 확인 질문

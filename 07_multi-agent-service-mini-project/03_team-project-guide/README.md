@@ -2,7 +2,7 @@
 
 팀별 Auto Healing Multi-Agent Service 프로젝트 진행 문서입니다.
 
-이번 미니 프로젝트의 기준 주제는 **에러 자가 치유(Auto Healing) 워크플로우**입니다. 수업 참여자는 `06_multi-agent-service-ops`에서 배운 Multi-Agent 협업, Docker Compose, GitHub Actions, AWS 배포 설계, 모니터링, 장애 복구 흐름을 하나의 운영형 미니 프로젝트로 묶습니다.
+이번 미니 프로젝트의 기준 주제는 **에러 자가 치유(Auto Healing) 워크플로우**입니다. `06_multi-agent-service-ops`에서 배운 Multi-Agent 협업, Docker Compose, GitHub Actions, AWS 배포 설계, 모니터링, 장애 복구 흐름을 하나의 운영형 미니 프로젝트로 묶습니다.
 
 ## 프로젝트 큰 방향
 

@@ -1,8 +1,8 @@
-﻿# Test Checklist
+# Test Checklist
 
 ## Local Docker Compose
 
-- [ ] `Copy-Item .env.example .env` 실행
+- [ ] `Copy-Item.env.example.env` 실행
 - [ ] `docker compose up --build` 실행 성공
 - [ ] backend `/health` 확인
 - [ ] frontend 화면 접속

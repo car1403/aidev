@@ -2,7 +2,7 @@
 
 `03_supabase-ai-mini-project` 실행 환경 설정 안내입니다.
 
-이 문서는 수업 참여자가 수업 시간에 그대로 따라 할 수 있도록 작성했습니다. 이 과정은 Supabase 프로젝트를 데이터 저장소로 사용하고, 로컬 PC에서는 FastAPI와 Streamlit을 Python 가상환경으로 실행합니다.
+이 문서는 수업 시간에 그대로 따라 할 수 있도록 작성했습니다. 이 과정은 Supabase 프로젝트를 데이터 저장소로 사용하고, 로컬 PC에서는 FastAPI와 Streamlit을 Python 가상환경으로 실행합니다.
 
 Docker, Docker Compose, AWS 배포는 여기서 설정하지 않습니다. 해당 내용은 `06_multi-agent-service-ops`에서 다룹니다.
 
@@ -23,7 +23,7 @@ Get-Location
 ## 2. 가상환경 만들기
 
 ```powershell
-C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv .venv
+C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv.venv
 ```
 
 이미 `.venv`가 있다면 다시 만들 필요가 없습니다.
@@ -50,7 +50,7 @@ pip install -r requirements.txt
 ## 5. 환경 변수 파일 만들기
 
 ```powershell
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 ```
 
 `.env` 파일에 Supabase와 API 값을 입력합니다.
@@ -74,7 +74,7 @@ API_BASE_URL=http://127.0.0.1:8000
 - 03 미니 프로젝트의 기본 AI API는 Gemini API로 진행합니다.
 - Gemini 무료 범위와 호출 제한은 수업 시점의 공식 화면에서 확인합니다.
 - OpenAI API key는 기존 OpenAI 예제를 활용한 선택/비교 실습 때만 사용합니다.
-- 수업 참여자에게 제출받을 때도 `.env` 대신 `.env.example`만 확인합니다.
+- 제출받을 때도 `.env` 대신 `.env.example`만 확인합니다.
 
 ## 6. Supabase 준비
 
@@ -96,7 +96,7 @@ API_BASE_URL=http://127.0.0.1:8000
 ```powershell
 cd C:\aidev\03_supabase-ai-mini-project
 .\.venv\Scripts\Activate.ps1
-python .\01_local-dev-basic\01_supabase-env-check\01_check_env.py
+python.\01_local-dev-basic\01_supabase-env-check\01_check_env.py
 ```
 
 ## 8. FastAPI 실행 예시

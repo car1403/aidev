@@ -17,46 +17,46 @@
 
 ```text
 06_langgraph-state-flow
-├─ .env.example
+├─.env.example
 ├─ 01_ch1_langgraph-basic-state-node-edge
-│  ├─ 01_basic-state-graph.py
-│  └─ 02_multi-step-state-update.py
+│ ├─ 01_basic-state-graph.py
+│ └─ 02_multi-step-state-update.py
 ├─ 02_ch2_conditional-routing
-│  ├─ 01_conditional-route-basic.py
-│  └─ 02_retry-and-reflection-flow.py
+│ ├─ 01_conditional-route-basic.py
+│ └─ 02_retry-and-reflection-flow.py
 ├─ 03_ch3_tool-and-rag-node-flow
-│  ├─ 01_tool-node-style-flow.py
-│  ├─ 02_mock-rag-node-flow.py
-│  ├─ 03_llm-answer-node.py
-│  └─ 04_hybrid-memory-flow.py
+│ ├─ 01_tool-node-style-flow.py
+│ ├─ 02_mock-rag-node-flow.py
+│ ├─ 03_llm-answer-node.py
+│ └─ 04_hybrid-memory-flow.py
 └─ 04_ch4_debugging-with-langsmith
-   ├─ 01_tracing-env-check.py
-   └─ 02_planning-tracing-evaluation.py
+ ├─ 01_tracing-env-check.py
+ └─ 02_planning-tracing-evaluation.py
 ```
 
 ## 실습 시작 순서
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\06_langgraph-state-flow
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install langgraph langchain langchain-openai langchain-core openai python-dotenv
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 ```
 
 ## 실행 순서
 
 ```powershell
-python .\01_ch1_langgraph-basic-state-node-edge\01_basic-state-graph.py
-python .\01_ch1_langgraph-basic-state-node-edge\02_multi-step-state-update.py
-python .\02_ch2_conditional-routing\01_conditional-route-basic.py
-python .\02_ch2_conditional-routing\02_retry-and-reflection-flow.py
-python .\03_ch3_tool-and-rag-node-flow\01_tool-node-style-flow.py
-python .\03_ch3_tool-and-rag-node-flow\02_mock-rag-node-flow.py
-python .\03_ch3_tool-and-rag-node-flow\03_llm-answer-node.py
-python .\03_ch3_tool-and-rag-node-flow\04_hybrid-memory-flow.py
-python .\04_ch4_debugging-with-langsmith\01_tracing-env-check.py
-python .\04_ch4_debugging-with-langsmith\02_planning-tracing-evaluation.py
+python.\01_ch1_langgraph-basic-state-node-edge\01_basic-state-graph.py
+python.\01_ch1_langgraph-basic-state-node-edge\02_multi-step-state-update.py
+python.\02_ch2_conditional-routing\01_conditional-route-basic.py
+python.\02_ch2_conditional-routing\02_retry-and-reflection-flow.py
+python.\03_ch3_tool-and-rag-node-flow\01_tool-node-style-flow.py
+python.\03_ch3_tool-and-rag-node-flow\02_mock-rag-node-flow.py
+python.\03_ch3_tool-and-rag-node-flow\03_llm-answer-node.py
+python.\03_ch3_tool-and-rag-node-flow\04_hybrid-memory-flow.py
+python.\04_ch4_debugging-with-langsmith\01_tracing-env-check.py
+python.\04_ch4_debugging-with-langsmith\02_planning-tracing-evaluation.py
 ```
 
 ## 수업 중 확인 질문

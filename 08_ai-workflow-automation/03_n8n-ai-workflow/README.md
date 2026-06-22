@@ -78,10 +78,10 @@ docker ps
 
 ```powershell
 docker run -d `
-  --name n8n-ai-workflow `
-  -p 5678:5678 `
-  -v n8n-data:/home/node/.n8n `
-  n8nio/n8n:latest
+ --name n8n-ai-workflow `
+ -p 5678:5678 `
+ -v n8n-data:/home/node/.n8n `
+ n8nio/n8n:latest
 ```
 
 브라우저 접속:
@@ -164,16 +164,16 @@ n8n에서 복사한 테스트 URL을 사용해 PowerShell에서 요청을 보냅
 
 ```powershell
 $body = @{
-  user = "student01"
-  message = "ERP 로그인이 되지 않습니다. 매우 급합니다."
-  channel = "web"
+ user = "student01"
+ message = "ERP 로그인이 되지 않습니다. 매우 급합니다."
+ channel = "web"
 } | ConvertTo-Json
 
 Invoke-RestMethod `
-  -Method Post `
-  -Uri "http://localhost:5678/webhook-test/YOUR_WEBHOOK_PATH" `
-  -ContentType "application/json" `
-  -Body $body
+ -Method Post `
+ -Uri "http://localhost:5678/webhook-test/YOUR_WEBHOOK_PATH" `
+ -ContentType "application/json" `
+ -Body $body
 ```
 
 `YOUR_WEBHOOK_PATH`는 n8n 화면에서 복사한 Webhook Test URL로 바꿉니다.
@@ -214,10 +214,10 @@ Python 예제는 n8n 서버 없이도 실행됩니다. n8n 화면 실습 전에 
 cd C:\aidev\08_ai-workflow-automation
 .\.venv\Scripts\Activate.ps1
 cd C:\aidev\08_ai-workflow-automation\03_n8n-ai-workflow
-python .\01_ch1_n8n-overview-and-docker\01_n8n_node_map.py
-python .\02_ch2_trigger-condition-action-nodes\01_n8n_branching_workflow.py
-python .\03_ch3_ai-api-workflow-integration\01_ai_api_workflow_simulation.py
-python .\04_ch4_loop-forkjoin-data-transform\01_loop_forkjoin_transform.py
+python.\01_ch1_n8n-overview-and-docker\01_n8n_node_map.py
+python.\02_ch2_trigger-condition-action-nodes\01_n8n_branching_workflow.py
+python.\03_ch3_ai-api-workflow-integration\01_ai_api_workflow_simulation.py
+python.\04_ch4_loop-forkjoin-data-transform\01_loop_forkjoin_transform.py
 ```
 
 ## 실습 체크리스트
@@ -278,7 +278,7 @@ Body JSON 구조가 API 문서와 맞는가?
 
 ## 과제 방향
 
-수업 참여자는 n8n으로 다음 중 하나를 설계합니다.
+n8n으로 다음 중 하나를 설계합니다.
 
 ```text
 Webhook 기반 기술 지원 문의 접수

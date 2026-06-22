@@ -52,13 +52,13 @@
 
 ```json
 {
-  "error": {
-    "code": "LOG_NOT_FOUND",
-    "message": "요청한 로그를 찾을 수 없습니다.",
-    "detail": {
-      "log_id": 10
-    }
-  }
+ "error": {
+ "code": "LOG_NOT_FOUND",
+ "message": "요청한 로그를 찾을 수 없습니다.",
+ "detail": {
+ "log_id": 10
+ }
+ }
 }
 ```
 
@@ -85,15 +85,15 @@
 
 ```json
 {
-  "event_type": "ai_response",
-  "metadata": {
-    "model": "gpt",
-    "latency_ms": 1200,
-    "token_usage": {
-      "input": 100,
-      "output": 250
-    }
-  }
+ "event_type": "ai_response",
+ "metadata": {
+ "model": "gpt",
+ "latency_ms": 1200,
+ "token_usage": {
+ "input": 100,
+ "output": 250
+ }
+ }
 }
 ```
 

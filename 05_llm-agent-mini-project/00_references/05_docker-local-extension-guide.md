@@ -77,10 +77,10 @@ docker run hello-world
 
 ```powershell
 docker run -d `
-  --name ollama-llm `
-  -p 11434:11434 `
-  -v ollama-data:/root/.ollama `
-  ollama/ollama:latest
+ --name ollama-llm `
+ -p 11434:11434 `
+ -v ollama-data:/root/.ollama `
+ ollama/ollama:latest
 ```
 
 모델 다운로드:
@@ -97,13 +97,13 @@ PostgreSQL은 PC에 직접 설치하지 않습니다. `pgvector/pgvector:pg16` �
 
 ```powershell
 docker run -d `
-  --name rag-pgvector `
-  -e POSTGRES_DB=rag_db `
-  -e POSTGRES_USER=rag_user `
-  -e POSTGRES_PASSWORD=rag_password `
-  -p 5433:5432 `
-  -v rag-pgvector-data:/var/lib/postgresql/data `
-  pgvector/pgvector:pg16
+ --name rag-pgvector `
+ -e POSTGRES_DB=rag_db `
+ -e POSTGRES_USER=rag_user `
+ -e POSTGRES_PASSWORD=rag_password `
+ -p 5433:5432 `
+ -v rag-pgvector-data:/var/lib/postgresql/data `
+ pgvector/pgvector:pg16
 ```
 
 접속 확인:
@@ -197,7 +197,7 @@ GitHub Actions
 서비스 운영 자동화
 ```
 
-## 수업 참여자가 기억할 문장
+## 직접 기억할 문장
 
 ```text
 05에서 Docker는 프로젝트 확장 도구입니다.

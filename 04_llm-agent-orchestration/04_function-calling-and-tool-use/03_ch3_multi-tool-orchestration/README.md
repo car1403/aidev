@@ -13,8 +13,8 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\04_function-calling-and-tool-use
 .\.venv\Scripts\Activate.ps1
-python .\03_ch3_multi-tool-orchestration\01_multi-tool-router.py
-python .\03_ch3_multi-tool-orchestration\02_manual-tool-selection-flow.py
+python.\03_ch3_multi-tool-orchestration\01_multi-tool-router.py
+python.\03_ch3_multi-tool-orchestration\02_manual-tool-selection-flow.py
 ```
 
 ## 확인 질문

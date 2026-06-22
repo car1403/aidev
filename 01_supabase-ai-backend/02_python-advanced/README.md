@@ -9,7 +9,7 @@
 ```text
 함수 심화
 모듈과 패키지
-requirements.txt와 .venv
+requirements.txt와.venv
 예외 처리와 디버깅
 클래스와 객체지향 프로그래밍
 컴프리헨션과 이터레이터
@@ -28,7 +28,7 @@ HTTP API와 외부 데이터
 ├─ README.md
 ├─ SETUP.md
 ├─ requirements.txt
-├─ .gitignore
+├─.gitignore
 ├─ 00_references
 ├─ 01_function-advanced
 ├─ 02_module-package-venv
@@ -82,7 +82,7 @@ HTTP API와 외부 데이터
 
 ```powershell
 cd C:\aidev\02_python-advanced
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 python --version
 pip install -r requirements.txt
@@ -92,10 +92,10 @@ pip install -r requirements.txt
 
 ```text
 01_python-basic:
-  문법을 배우고 작은 프로그램을 만들기
+ 문법을 배우고 작은 프로그램을 만들기
 
 02_python-advanced:
-  코드를 함수, 모듈, 클래스, 테스트, 프로젝트 구조로 정리하기
+ 코드를 함수, 모듈, 클래스, 테스트, 프로젝트 구조로 정리하기
 ```
 
 ## 초보자에서 다음 단계로 넘어갈 때 중요한 생각

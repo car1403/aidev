@@ -1,6 +1,6 @@
 # 01. Before Class Checklist
 
-수업 시작 전 수업 참여자가 함께 확인합니다.
+수업 시작 전 직접 함께 확인합니다.
 
 ## 공통 환경
 
@@ -20,7 +20,7 @@ python --version
 pip --version
 ```
 
-## 과정별 .venv 확인
+## 과정별.venv 확인
 
 예: 01 과정
 
@@ -37,8 +37,8 @@ pip list
 [ ] Project URL 확인
 [ ] anon key 확인
 [ ] service role key 사용 위치 설명
-[ ] .env.example -> .env 복사
-[ ] .env는 제출하지 않는다고 안내
+[ ].env.example ->.env 복사
+[ ].env는 제출하지 않는다고 안내
 ```
 
 ## Docker 과정 확인

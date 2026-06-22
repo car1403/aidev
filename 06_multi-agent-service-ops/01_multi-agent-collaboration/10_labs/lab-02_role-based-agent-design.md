@@ -1,4 +1,4 @@
-﻿# Lab 02. Role-Based Agent Design
+# Lab 02. Role-Based Agent Design
 
 ## 목표
 
@@ -7,7 +7,7 @@
 ## 실습
 
 ```powershell
-python .\02_ch2_role-based-agent-design\01_role-based-agent-design.py
+python.\02_ch2_role-based-agent-design\01_role-based-agent-design.py
 ```
 
 ## 작성할 것

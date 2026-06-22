@@ -1,4 +1,4 @@
-﻿# 01 Agent Collaboration Design
+# 01 Agent Collaboration Design
 
 ## 작성할 것
 
@@ -31,11 +31,11 @@ allowed_tools:
 
 | Agent | 허용 Tool | 금지 Tool | 권한 이유 |
 | --- | --- | --- | --- |
-| Supervisor Agent |  |  |  |
-| Diagnosis Agent |  |  |  |
-| Recovery Agent |  |  |  |
-| Validation Agent |  |  |  |
-| Monitor Agent |  |  |  |
+| Supervisor Agent | | | |
+| Diagnosis Agent | | | |
+| Recovery Agent | | | |
+| Validation Agent | | | |
+| Monitor Agent | | | |
 
 ## 확인 질문
 

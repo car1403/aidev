@@ -26,7 +26,7 @@ Trigger
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\01_workflow-concepts
-python .\01_ch1_ai-workflow-big-picture\01_ai_workflow_map.py
+python.\01_ch1_ai-workflow-big-picture\01_ai_workflow_map.py
 ```
 
 ## 학습 포인트

@@ -14,7 +14,7 @@ Supabase 테이블과 FastAPI endpoint를 연결하는 실습을 진행합니다
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\07_backend-service-data-management\01_user-profile-data\01_profile_schema_example.py
+python.\07_backend-service-data-management\01_user-profile-data\01_profile_schema_example.py
 ```
 
 ## Lab 02 - 대화 이력 구조
@@ -27,7 +27,7 @@ python .\07_backend-service-data-management\01_user-profile-data\01_profile_sche
 실행:
 
 ```powershell
-python .\07_backend-service-data-management\02_conversation-history\01_conversation_schema_example.py
+python.\07_backend-service-data-management\02_conversation-history\01_conversation_schema_example.py
 ```
 
 ## Lab 03 - 서비스 로그 구조
@@ -40,7 +40,7 @@ python .\07_backend-service-data-management\02_conversation-history\01_conversat
 실행:
 
 ```powershell
-python .\07_backend-service-data-management\03_service-logs\01_service_log_schema_example.py
+python.\07_backend-service-data-management\03_service-logs\01_service_log_schema_example.py
 ```
 
 ## Lab 04 - Mock FastAPI 서비스 데이터 API
@@ -76,9 +76,9 @@ http://127.0.0.1:8003/docs
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\07_backend-service-data-management\01_user-profile-data\02_profile_crud_supabase.py
-python .\07_backend-service-data-management\02_conversation-history\02_save_conversation_message.py
-python .\07_backend-service-data-management\03_service-logs\02_insert_service_log.py
+python.\07_backend-service-data-management\01_user-profile-data\02_profile_crud_supabase.py
+python.\07_backend-service-data-management\02_conversation-history\02_save_conversation_message.py
+python.\07_backend-service-data-management\03_service-logs\02_insert_service_log.py
 ```
 
 실제 데이터가 Supabase에 저장되므로 수업 중 수업 중 함께 실행합니다.

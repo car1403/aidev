@@ -1,4 +1,4 @@
-﻿# 02_ch2_debugging-streamlit-errors
+# 02_ch2_debugging-streamlit-errors
 
 Streamlit 실행 중 발생하는 오류를 분석하고 해결하는 방법을 학습합니다.
 
@@ -21,6 +21,6 @@ Streamlit 실행 중 발생하는 오류를 분석하고 해결하는 방법을 
 ## 실행 예시
 
 ```powershell
-streamlit run .\90_ai-assisted-ui-review-and-debugging\02_ch2_debugging-streamlit-errors\02_session-state-fixed.py
+streamlit run.\90_ai-assisted-ui-review-and-debugging\02_ch2_debugging-streamlit-errors\02_session-state-fixed.py
 ```
 

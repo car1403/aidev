@@ -48,10 +48,10 @@
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\99_mini-project\sample-tech-support-workflow
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 ```
 
 Backend 실행:
@@ -79,7 +79,7 @@ Frontend: http://127.0.0.1:8901
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation
-Copy-Item .\99_mini-project\team-template .\99_mini-project\team-01-tech-support-workflow -Recurse
+Copy-Item.\99_mini-project\team-template.\99_mini-project\team-01-tech-support-workflow -Recurse
 ```
 
 팀명에 맞게 폴더 이름을 변경해도 됩니다.

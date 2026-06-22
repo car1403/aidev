@@ -19,9 +19,9 @@
 ## 수업 전 준비
 
 ```text
-[ ] .venv 확인
+[ ].venv 확인
 [ ] requirements.txt 설치
-[ ] .env 확인
+[ ].env 확인
 ```
 
 ## 강의 순서

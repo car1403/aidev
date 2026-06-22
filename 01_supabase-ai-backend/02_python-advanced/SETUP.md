@@ -18,7 +18,7 @@ pip --version
 ## 3. 가상환경 만들기
 
 ```powershell
-python -m venv .venv
+python -m venv.venv
 ```
 
 ## 4. 가상환경 활성화
@@ -36,11 +36,11 @@ pip install -r requirements.txt
 ## 6. 첫 예제 실행
 
 ```powershell
-python .\01_function-advanced\01_args_kwargs.py
+python.\01_function-advanced\01_args_kwargs.py
 ```
 
 ## 7. 테스트 실행
 
 ```powershell
-python -m pytest .\08_testing-code-quality
+python -m pytest.\08_testing-code-quality
 ```

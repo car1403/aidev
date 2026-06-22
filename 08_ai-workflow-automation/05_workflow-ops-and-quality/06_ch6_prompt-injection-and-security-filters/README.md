@@ -25,5 +25,5 @@ User Input
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\05_workflow-ops-and-quality
-python .\06_ch6_prompt-injection-and-security-filters\01_prompt_injection_security_filter.py
+python.\06_ch6_prompt-injection-and-security-filters\01_prompt_injection_security_filter.py
 ```

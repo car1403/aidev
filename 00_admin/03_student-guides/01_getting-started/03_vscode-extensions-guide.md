@@ -125,8 +125,8 @@ Markdown Preview Github Styling
 추천 대상:
 
 ```text
-README.md를 GitHub 화면처럼 깔끔하게 보고 싶은 수업 참여자
-복잡한 설정 없이 문서를 편하게 읽고 싶은 수업 참여자
+README.md를 GitHub 화면처럼 깔끔하게 보고 싶은 참여자
+복잡한 설정 없이 문서를 편하게 읽고 싶은 참여자
 ```
 
 장점:
@@ -150,8 +150,8 @@ Markdown Preview Enhanced
 추천 대상:
 
 ```text
-Markdown 문서 안에서 다이어그램, 수식, 고급 Preview 기능을 사용하고 싶은 수업 참여자
-문서 작성 기능을 더 강하게 사용하고 싶은 수업 참여자
+Markdown 문서 안에서 다이어그램, 수식, 고급 Preview 기능을 사용하고 싶은 참여자
+문서 작성 기능을 더 강하게 사용하고 싶은 참여자
 ```
 
 장점:
@@ -290,7 +290,7 @@ images/screen-01.png
 
 ```text
 Markdown PDF 확장이 설치되어 있는가?
-현재 열려 있는 파일이 .md 파일인가?
+현재 열려 있는 파일이.md 파일인가?
 파일이 저장되어 있는가?
 VS Code를 재시작해 보았는가?
 ```

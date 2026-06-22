@@ -1,4 +1,4 @@
-﻿# 04_ai-chatbot-interface
+# 04_ai-chatbot-interface
 
 Streamlit으로 AI 챗봇 화면을 구성하는 단원입니다.
 
@@ -43,7 +43,7 @@ Streamlit으로 AI 챗봇 화면을 구성하는 단원입니다.
 
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
-streamlit run .\04_ai-chatbot-interface\01_ch1_chat-ui-basic\01_chat-message-basic.py
+streamlit run.\04_ai-chatbot-interface\01_ch1_chat-ui-basic\01_chat-message-basic.py
 ```
 
 ## 실행 확인 기준

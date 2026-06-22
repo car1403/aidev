@@ -1,6 +1,6 @@
 # 09 Docker Desktop Install for Beginners
 
-이 문서는 Docker를 처음 설치하는 수업 참여자를 위한 안내입니다.
+이 문서는 Docker를 처음 설치하는 입문자를 위한 안내입니다.
 
 04 과정부터는 Docker Desktop을 사용합니다. 하지만 이 과정의 목표는 Docker 운영 전문가가 되는 것이 아닙니다. Docker를 이용해 로컬 Llama, pgvector PostgreSQL 같은 실습 도구를 쉽게 실행하는 것이 목표입니다.
 
@@ -176,7 +176,7 @@ GitHub Actions
 서비스 운영 자동화
 ```
 
-## 수업 참여자가 기억할 문장
+## 직접 기억할 문장
 
 ```text
 04에서 Docker는 운영 배포 도구가 아니라, 로컬 실습 도구입니다.

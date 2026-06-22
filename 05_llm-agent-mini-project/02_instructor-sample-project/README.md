@@ -18,20 +18,20 @@
 ```text
 02_instructor-sample-project
 ├─ README.md
-├─ .env.example
+├─.env.example
 ├─ requirements.txt
 ├─ app
-│  ├─ __init__.py
-│  ├─ graph.py
-│  ├─ mock_data.py
-│  ├─ schemas.py
-│  └─ tools.py
+│ ├─ __init__.py
+│ ├─ graph.py
+│ ├─ mock_data.py
+│ ├─ schemas.py
+│ └─ tools.py
 ├─ frontend
-│  └─ streamlit_app.py
+│ └─ streamlit_app.py
 └─ docs
-   ├─ agent-flow.md
-   ├─ tool-spec.md
-   └─ test-checklist.md
+ ├─ agent-flow.md
+ ├─ tool-spec.md
+ └─ test-checklist.md
 ```
 
 ## 설치
@@ -42,7 +42,7 @@
 cd C:\aidev\05_llm-agent-mini-project
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 ```
 
 ## 실행 1. CLI에서 그래프 실행
@@ -56,7 +56,7 @@ python -m app.graph
 ## 실행 2. Streamlit UI 실행
 
 ```powershell
-streamlit run .\frontend\streamlit_app.py --server.port 8701
+streamlit run.\frontend\streamlit_app.py --server.port 8701
 ```
 
 브라우저에서 확인합니다.

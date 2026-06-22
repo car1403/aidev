@@ -35,9 +35,9 @@ Python, FastAPI, Supabase, Gemini API를 중심으로 AI 백엔드 개발을 학
 
 ```text
 01_supabase-ai-backend
-├─ .venv
-├─ .gitignore
-├─ .env.example
+├─.venv
+├─.gitignore
+├─.env.example
 ├─ requirements.txt
 ├─ README.md
 ├─ SETUP.md
@@ -59,13 +59,13 @@ Python, FastAPI, Supabase, Gemini API를 중심으로 AI 백엔드 개발을 학
 각 단원은 보통 다음 흐름으로 구성됩니다.
 
 ```text
-README.md          단원 설명과 학습 순서
-00_references      개념 정리, 참고 자료, 보충 설명
-01_...             첫 번째 개념 예제
-02_...             두 번째 개념 예제
-10_labs            수업 중 직접 따라 하는 실습
-20_assignments     혼자 풀어 보는 과제
-99_...             단원 마무리 미니 프로젝트
+README.md 단원 설명과 학습 순서
+00_references 개념 정리, 참고 자료, 보충 설명
+01_... 첫 번째 개념 예제
+02_... 두 번째 개념 예제
+10_labs 수업 중 직접 따라 하는 실습
+20_assignments 혼자 풀어 보는 과제
+99_... 단원 마무리 미니 프로젝트
 ```
 
 숫자가 낮은 폴더부터 순서대로 진행하면 됩니다.
@@ -94,7 +94,7 @@ PowerShell 기준 기본 흐름은 다음과 같습니다.
 
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
-C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv .venv
+C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv.venv
 .\.venv\Scripts\Activate.ps1
 python --version
 pip install -r requirements.txt
@@ -116,8 +116,8 @@ Python 예제는 최상위 폴더에서 아래처럼 실행할 수 있습니다.
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\01_python-basic\01_python-start\01_hello_python.py
-python .\02_python-advanced\01_function-advanced\01_args_kwargs.py
+python.\01_python-basic\01_python-start\01_hello_python.py
+python.\02_python-advanced\01_function-advanced\01_args_kwargs.py
 ```
 
 FastAPI 예제는 보통 예제 파일이 있는 폴더로 이동한 뒤 실행합니다.

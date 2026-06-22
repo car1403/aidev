@@ -54,7 +54,7 @@ uvicorn backend-auth-session-sample:app --reload --host 127.0.0.1 --port 8000
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
 .\.venv\Scripts\Activate.ps1
-streamlit run .\05_state-session-and-data\04_ch4_user-data-and-conversation-history\02_conversation-history-api.py
+streamlit run.\05_state-session-and-data\04_ch4_user-data-and-conversation-history\02_conversation-history-api.py
 ```
 
 ## 확인할 내용

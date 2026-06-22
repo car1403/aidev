@@ -1,4 +1,4 @@
-﻿# Lab 03. Auto Healing Pipeline
+# Lab 03. Auto Healing Pipeline
 
 ## 목표
 
@@ -7,7 +7,7 @@
 ## 실습
 
 ```powershell
-python .\03_ch3_recovery-pipeline\01_auto-healing-pipeline.py
+python.\03_ch3_recovery-pipeline\01_auto-healing-pipeline.py
 ```
 
 ## 확장

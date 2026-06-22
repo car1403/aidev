@@ -178,7 +178,7 @@ docker ps
 ```powershell
 git clone https://github.com/langgenius/dify.git
 cd dify\docker
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 docker compose up -d
 ```
 
@@ -204,9 +204,9 @@ http://localhost/install
 cd C:\aidev\08_ai-workflow-automation
 .\.venv\Scripts\Activate.ps1
 cd C:\aidev\08_ai-workflow-automation\04_dify-ai-workflow
-python .\01_ch1_dify-overview\01_dify_app_map.py
-python .\02_ch2_dify-chatflow-workflow\01_chatflow_vs_workflow.py
-python .\03_ch3_dify-rag-agent-flow\01_dify_rag_agent_flow.py
+python.\01_ch1_dify-overview\01_dify_app_map.py
+python.\02_ch2_dify-chatflow-workflow\01_chatflow_vs_workflow.py
+python.\03_ch3_dify-rag-agent-flow\01_dify_rag_agent_flow.py
 ```
 
 ## 실습 체크리스트
@@ -264,7 +264,7 @@ docker compose version이 정상인가?
 
 ## 과제 방향
 
-수업 참여자는 Dify로 다음 중 하나를 설계합니다.
+Dify로 다음 중 하나를 설계합니다.
 
 ```text
 사내 문서 기반 기술 지원 챗봇

@@ -13,8 +13,8 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\01_llm-api-and-prompt-basics
 .\.venv\Scripts\Activate.ps1
-python .\03_ch3_openai-vs-llama-comparison\01_compare-basic-answer.py
-python .\03_ch3_openai-vs-llama-comparison\02_compare-prompt-style.py
+python.\03_ch3_openai-vs-llama-comparison\01_compare-basic-answer.py
+python.\03_ch3_openai-vs-llama-comparison\02_compare-prompt-style.py
 ```
 
 ## 기록할 내용

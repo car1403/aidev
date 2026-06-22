@@ -8,7 +8,7 @@ Dify Knowledge를 활용한 RAG 응답 흐름을 설계합니다.
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\04_dify-ai-workflow
-python .\03_ch3_dify-rag-agent-flow\01_dify_rag_agent_flow.py
+python.\03_ch3_dify-rag-agent-flow\01_dify_rag_agent_flow.py
 ```
 
 ## 할 일

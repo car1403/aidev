@@ -1,4 +1,4 @@
-﻿# 02_ch2_dataframe-table-basics
+# 02_ch2_dataframe-table-basics
 
 Streamlit에서 표를 보여주기 위해 필요한 pandas DataFrame 기초를 학습합니다.
 
@@ -14,7 +14,7 @@ Streamlit에서 표를 보여주기 위해 필요한 pandas DataFrame 기초를 
 ## 실행 예시
 
 ```powershell
-streamlit run .\02_streamlit-ui-components\02_ch2_dataframe-table-basics\01_list-dict-to-dataframe.py
+streamlit run.\02_streamlit-ui-components\02_ch2_dataframe-table-basics\01_list-dict-to-dataframe.py
 ```
 
 ## 확인할 내용

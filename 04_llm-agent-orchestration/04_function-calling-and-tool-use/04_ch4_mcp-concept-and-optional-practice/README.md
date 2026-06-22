@@ -13,7 +13,7 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\04_function-calling-and-tool-use
 .\.venv\Scripts\Activate.ps1
-python .\04_ch4_mcp-concept-and-optional-practice\01_mcp-concept-summary.py
+python.\04_ch4_mcp-concept-and-optional-practice\01_mcp-concept-summary.py
 ```
 
 ## 확인 질문

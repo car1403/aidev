@@ -12,9 +12,9 @@
 
 ```json
 {
-  "customer_name": "Jean",
-  "customer_tier": "premium",
-  "title": "AI 서비스 응답 지연",
-  "message": "프리미엄 고객입니다. AI 서비스 응답이 너무 느리고 장애가 의심됩니다."
+ "customer_name": "Jean",
+ "customer_tier": "premium",
+ "title": "AI 서비스 응답 지연",
+ "message": "프리미엄 고객입니다. AI 서비스 응답이 너무 느리고 장애가 의심됩니다."
 }
 ```

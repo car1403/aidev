@@ -40,7 +40,7 @@ Codex 설치와 로그인은 아래 문서를 참고합니다.
 ```text
 [ ] ChatGPT 구독 결제와 OpenAI API Platform 결제가 다르다는 것을 이해했다.
 [ ] API Key는 비밀번호처럼 보호해야 한다는 것을 이해했다.
-[ ] API Key는 코드에 직접 적지 않고 .env 파일에 넣어야 한다는 것을 이해했다.
+[ ] API Key는 코드에 직접 적지 않고.env 파일에 넣어야 한다는 것을 이해했다.
 [ ] 개인 결제가 필요한 실습은 진행자가 별도로 안내한다는 것을 확인했다.
 ```
 
@@ -80,16 +80,16 @@ pip 버전이 표시된다.
 
 Markdown 문서는 수업 교재처럼 사용합니다. `.md` 파일을 그냥 텍스트로만 보지 말고 Preview로 보는 습관을 들입니다.
 
-## 6. 01 과정 .venv 준비
+## 6. 01 과정.venv 준비
 
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
 
-이미 `.venv`가 있으면 `python -m venv .venv`를 다시 하지 않아도 됩니다.
+이미 `.venv`가 있으면 `python -m venv.venv`를 다시 하지 않아도 됩니다.
 
 프롬프트 앞에 `(.venv)`가 보이면 가상환경이 활성화된 상태입니다.
 
@@ -100,7 +100,7 @@ pip install -r requirements.txt
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\01_python-basic\01_python-start\01_hello_python.py
+python.\01_python-basic\01_python-start\01_hello_python.py
 ```
 
 정상 기준:
@@ -115,11 +115,11 @@ python .\01_python-basic\01_python-start\01_hello_python.py
 
 ```text
 1. 현재 폴더가 맞는가?
-2. .venv가 활성화되어 있는가?
+2..venv가 활성화되어 있는가?
 3. requirements.txt를 설치했는가?
 4. 파일 경로가 맞는가?
 5. 오류 메시지를 끝까지 읽었는가?
-6. API Key가 필요한 실습인데 .env 파일을 만들지 않은 것은 아닌가?
+6. API Key가 필요한 실습인데.env 파일을 만들지 않은 것은 아닌가?
 7. Codex 또는 OpenAI 계정 로그인이 필요한 실습인지 확인했는가?
 ```
 

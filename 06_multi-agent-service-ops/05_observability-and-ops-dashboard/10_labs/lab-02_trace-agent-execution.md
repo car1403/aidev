@@ -1,4 +1,4 @@
-﻿# Lab 02. Trace Agent Execution
+# Lab 02. Trace Agent Execution
 
 ## 목표
 
@@ -7,7 +7,7 @@
 ## 실습
 
 ```powershell
-python .\02_ch2_tracing-and-monitoring\01_trace-agent-execution.py
+python.\02_ch2_tracing-and-monitoring\01_trace-agent-execution.py
 ```
 
 ## 확인 질문

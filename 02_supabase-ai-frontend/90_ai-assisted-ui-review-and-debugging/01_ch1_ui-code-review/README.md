@@ -1,4 +1,4 @@
-﻿# 01_ch1_ui-code-review
+# 01_ch1_ui-code-review
 
 본인이 작성한 Streamlit UI 코드를 리뷰하는 방법을 학습합니다.
 
@@ -21,6 +21,6 @@
 ## 실행 예시
 
 ```powershell
-streamlit run .\90_ai-assisted-ui-review-and-debugging\01_ch1_ui-code-review\01_review-target-simple-app.py
+streamlit run.\90_ai-assisted-ui-review-and-debugging\01_ch1_ui-code-review\01_review-target-simple-app.py
 ```
 

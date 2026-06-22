@@ -26,5 +26,5 @@ Supervisor Agent
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\05_workflow-ops-and-quality
-python .\08_ch8_multi-agent-workflow-ops\01_multi_agent_workflow_ops.py
+python.\08_ch8_multi-agent-workflow-ops\01_multi_agent_workflow_ops.py
 ```

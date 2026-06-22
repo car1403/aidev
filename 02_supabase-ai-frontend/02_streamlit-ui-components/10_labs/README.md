@@ -1,4 +1,4 @@
-﻿# 10_labs
+# 10_labs
 
 수업 중 함께 진행하는 실습입니다.
 
@@ -13,7 +13,7 @@ lab-03-csv-dashboard.py
 ## 실행 예시
 
 ```powershell
-streamlit run .\02_streamlit-ui-components\10_labs\lab-01-survey-form.py
+streamlit run.\02_streamlit-ui-components\10_labs\lab-01-survey-form.py
 ```
 
 ## 실습 기준

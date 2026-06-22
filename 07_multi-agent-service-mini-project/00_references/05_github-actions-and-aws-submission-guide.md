@@ -31,13 +31,13 @@ workflow 파일 위치:
 실제 AWS 배포를 하지 않더라도 아래 항목을 문서로 정리합니다.
 
 ```text
-1. Docker image를 어디에 저장할 것인가?       예: Amazon ECR
-2. 어떤 AWS 서비스로 실행할 것인가?            예: App Runner 또는 ECS
-3. 환경변수와 secret은 어떻게 관리할 것인가?   예: Secrets Manager, Parameter Store
-4. Health Check 경로는 무엇인가?               예: /health
-5. 로그는 어디서 볼 것인가?                    예: CloudWatch Logs
-6. 장애 감지는 어떻게 할 것인가?               예: Health Check, Alarm
-7. 실습 후 어떤 리소스를 삭제할 것인가?         예: Service, image, log group
+1. Docker image를 어디에 저장할 것인가? 예: Amazon ECR
+2. 어떤 AWS 서비스로 실행할 것인가? 예: App Runner 또는 ECS
+3. 환경변수와 secret은 어떻게 관리할 것인가? 예: Secrets Manager, Parameter Store
+4. Health Check 경로는 무엇인가? 예: /health
+5. 로그는 어디서 볼 것인가? 예: CloudWatch Logs
+6. 장애 감지는 어떻게 할 것인가? 예: Health Check, Alarm
+7. 실습 후 어떤 리소스를 삭제할 것인가? 예: Service, image, log group
 ```
 
 ## App Runner와 ECS 선택 기준

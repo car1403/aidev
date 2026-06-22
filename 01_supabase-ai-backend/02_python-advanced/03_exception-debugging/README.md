@@ -5,6 +5,6 @@
 ## 실행
 
 ```powershell
-python .\03_exception-debugging\01_try_except.py
-python .\03_exception-debugging\02_raise_validation.py
+python.\03_exception-debugging\01_try_except.py
+python.\03_exception-debugging\02_raise_validation.py
 ```

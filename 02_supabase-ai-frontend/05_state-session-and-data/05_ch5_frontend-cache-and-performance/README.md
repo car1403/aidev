@@ -28,7 +28,7 @@ Streamlit 앱은 입력이 바뀔 때마다 다시 실행되므로, 동일한 �
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
 .\.venv\Scripts\Activate.ps1
-streamlit run .\05_state-session-and-data\05_ch5_frontend-cache-and-performance\01_cache-data-basic.py
+streamlit run.\05_state-session-and-data\05_ch5_frontend-cache-and-performance\01_cache-data-basic.py
 ```
 
 ## API 캐시 예제 백엔드

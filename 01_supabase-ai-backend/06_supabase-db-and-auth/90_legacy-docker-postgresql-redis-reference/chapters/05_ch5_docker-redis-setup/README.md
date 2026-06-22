@@ -1,4 +1,4 @@
-﻿# 05_ch5_docker-redis-setup
+# 05_ch5_docker-redis-setup
 
 Docker image로 Redis 컨테이너를 실행하고 기본 명령을 실습합니다.
 
@@ -7,8 +7,8 @@ Docker image로 Redis 컨테이너를 실행하고 기본 명령을 실습합니
 ```powershell
 docker pull redis
 docker run --name aidev-redis `
-  -p 6379:6379 `
-  -d redis
+ -p 6379:6379 `
+ -d redis
 docker exec -it aidev-redis redis-cli
 ```
 

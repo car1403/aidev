@@ -1,4 +1,4 @@
-﻿# 01_ch1_docker-service-packaging
+# 01_ch1_docker-service-packaging
 
 Python AI 서비스 코드를 Docker 이미지로 패키징하는 방법을 학습합니다.
 
@@ -32,7 +32,7 @@ http://127.0.0.1:8000/health
 ## Docker 이미지 빌드
 
 ```powershell
-docker build -t ai-service-packaging-demo .
+docker build -t ai-service-packaging-demo.
 ```
 
 ## Docker 컨테이너 실행

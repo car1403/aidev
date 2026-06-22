@@ -42,9 +42,9 @@ http://127.0.0.1:8000/docs
 
 ```json
 {
-  "title": "FastAPI CRUD",
-  "content": "메모 생성과 조회를 연습합니다.",
-  "tags": ["fastapi", "crud"]
+ "title": "FastAPI CRUD",
+ "content": "메모 생성과 조회를 연습합니다.",
+ "tags": ["fastapi", "crud"]
 }
 ```
 

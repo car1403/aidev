@@ -22,8 +22,8 @@ docker exec -it ollama-llm ollama list
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\01_llm-api-and-prompt-basics
 .\.venv\Scripts\Activate.ps1
-python .\02_ch2_ollama-docker-llama\01_ollama-health-check.py
-python .\02_ch2_ollama-docker-llama\02_ollama-generate.py
+python.\02_ch2_ollama-docker-llama\01_ollama-health-check.py
+python.\02_ch2_ollama-docker-llama\02_ollama-generate.py
 ```
 
 ## 확인 질문

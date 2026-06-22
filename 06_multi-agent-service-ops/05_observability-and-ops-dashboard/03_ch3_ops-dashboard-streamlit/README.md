@@ -1,4 +1,4 @@
-﻿# 03_ch3_ops-dashboard-streamlit
+# 03_ch3_ops-dashboard-streamlit
 
 Streamlit으로 간단한 운영 대시보드를 만드는 방법을 학습합니다.
 
@@ -13,7 +13,7 @@ Streamlit으로 간단한 운영 대시보드를 만드는 방법을 학습합�
 ## 실행
 
 ```powershell
-streamlit run .\03_ch3_ops-dashboard-streamlit\01_ops-dashboard.py --server.port 8803
+streamlit run.\03_ch3_ops-dashboard-streamlit\01_ops-dashboard.py --server.port 8803
 ```
 
 브라우저에서 확인합니다.

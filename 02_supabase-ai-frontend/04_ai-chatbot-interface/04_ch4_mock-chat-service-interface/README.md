@@ -38,7 +38,7 @@ uvicorn backend-ai-service-sample:app --reload --host 127.0.0.1 --port 8000
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
 .\.venv\Scripts\Activate.ps1
-streamlit run .\04_ai-chatbot-interface\04_ch4_mock-chat-service-interface\02_backend-chat-api-client.py
+streamlit run.\04_ai-chatbot-interface\04_ch4_mock-chat-service-interface\02_backend-chat-api-client.py
 ```
 
 ## 확인할 내용

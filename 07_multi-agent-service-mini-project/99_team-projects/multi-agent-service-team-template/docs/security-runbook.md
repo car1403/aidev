@@ -35,10 +35,10 @@ Prompt Injection:
 
 | Agent | 허용 작업 | 금지 작업 | 승인 필요 작업 |
 | --- | --- | --- | --- |
-| Supervisor Agent |  |  |  |
-| Diagnosis Agent |  |  |  |
-| Recovery Agent |  |  |  |
-| Validation Agent |  |  |  |
+| Supervisor Agent | | | |
+| Diagnosis Agent | | | |
+| Recovery Agent | | | |
+| Validation Agent | | | |
 
 ## 5. 운영자 알림 기준
 

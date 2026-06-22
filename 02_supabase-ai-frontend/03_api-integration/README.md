@@ -63,7 +63,7 @@ uvicorn backend-integration-sample:app --reload --host 127.0.0.1 --port 8000
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
 .\.venv\Scripts\Activate.ps1
-streamlit run .\03_api-integration\02_ch2_fastapi-backend-connect\01_fastapi-health-check.py
+streamlit run.\03_api-integration\02_ch2_fastapi-backend-connect\01_fastapi-health-check.py
 ```
 
 ## 실행 확인 기준
@@ -74,7 +74,7 @@ streamlit run .\03_api-integration\02_ch2_fastapi-backend-connect\01_fastapi-hea
 - 서버가 꺼져 있을 때 오류 메시지가 표시된다.
 - 로딩 상태와 응답 검증 메시지가 화면에 표시된다.
 
-## 수업 참여자가 꼭 구분해야 할 것
+## 직접 꼭 구분해야 할 것
 
 - Streamlit은 화면을 담당합니다.
 - FastAPI는 요청을 받고 Supabase와 통신합니다.

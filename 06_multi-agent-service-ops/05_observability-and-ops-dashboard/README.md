@@ -1,4 +1,4 @@
-﻿# 05 Observability and Ops Dashboard
+# 05 Observability and Ops Dashboard
 
 이 단원은 AI 서비스와 Multi-Agent 시스템의 실행 상태를 관찰하고 운영 대시보드로 확인하는 방법을 학습합니다.
 
@@ -30,7 +30,7 @@ Observability는 단순히 로그를 출력하는 것이 아닙니다. 서비스
 cd C:\aidev\06_multi-agent-service-ops
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-cd .\05_observability-and-ops-dashboard
+cd.\05_observability-and-ops-dashboard
 ```
 
 ## 관찰해야 할 정보
@@ -76,9 +76,9 @@ AWS에서는 운영 관찰 정보가 다음 서비스와 연결됩니다.
 ## 실행 예제
 
 ```powershell
-python .\01_ch1_logging-and-event-history\01_event-history-logger.py
-python .\02_ch2_tracing-and-monitoring\01_trace-agent-execution.py
-python .\02_ch2_tracing-and-monitoring\02_langsmith_trace_mapping.py
-streamlit run .\03_ch3_ops-dashboard-streamlit\01_ops-dashboard.py --server.port 8803
-python .\04_ch4_execution-status-management\01_execution-status-manager.py
+python.\01_ch1_logging-and-event-history\01_event-history-logger.py
+python.\02_ch2_tracing-and-monitoring\01_trace-agent-execution.py
+python.\02_ch2_tracing-and-monitoring\02_langsmith_trace_mapping.py
+streamlit run.\03_ch3_ops-dashboard-streamlit\01_ops-dashboard.py --server.port 8803
+python.\04_ch4_execution-status-management\01_execution-status-manager.py
 ```

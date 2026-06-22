@@ -29,19 +29,19 @@ allowed_tools:
 
 | Agent | 받는 Context | 다음 Agent에게 전달할 Context |
 | --- | --- | --- |
-| Supervisor Agent |  |  |
-| Diagnosis Agent |  |  |
-| Recovery Agent |  |  |
-| Validation Agent |  |  |
-| Reporter Agent |  |  |
+| Supervisor Agent | | |
+| Diagnosis Agent | | |
+| Recovery Agent | | |
+| Validation Agent | | |
+| Reporter Agent | | |
 
 ## 4. MCP/Tool 연결
 
 | Agent | 사용할 Tool | 필요한 권한 | 제한 사항 |
 | --- | --- | --- | --- |
-| Diagnosis Agent |  |  |  |
-| Recovery Agent |  |  |  |
-| Validation Agent |  |  |  |
+| Diagnosis Agent | | | |
+| Recovery Agent | | | |
+| Validation Agent | | | |
 
 ## 5. 민감 정보 처리
 

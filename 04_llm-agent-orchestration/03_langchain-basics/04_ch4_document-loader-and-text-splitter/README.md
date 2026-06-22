@@ -13,8 +13,8 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\03_langchain-basics
 .\.venv\Scripts\Activate.ps1
-python .\04_ch4_document-loader-and-text-splitter\01_load-text-document.py
-python .\04_ch4_document-loader-and-text-splitter\02_split-documents.py
+python.\04_ch4_document-loader-and-text-splitter\01_load-text-document.py
+python.\04_ch4_document-loader-and-text-splitter\02_split-documents.py
 ```
 
 ## 확인 질문

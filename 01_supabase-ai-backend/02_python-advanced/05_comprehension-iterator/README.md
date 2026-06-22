@@ -5,6 +5,6 @@
 ## 실행
 
 ```powershell
-python .\05_comprehension-iterator\01_comprehension.py
-python .\05_comprehension-iterator\02_generator_basic.py
+python.\05_comprehension-iterator\01_comprehension.py
+python.\05_comprehension-iterator\02_generator_basic.py
 ```

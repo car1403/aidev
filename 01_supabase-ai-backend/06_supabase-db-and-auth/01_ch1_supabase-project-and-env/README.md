@@ -1,4 +1,4 @@
-﻿# 01_ch1_supabase-project-and-env
+# 01_ch1_supabase-project-and-env
 
 이 단원은 Supabase 프로젝트를 만들고 Python/FastAPI에서 사용할 환경변수를 준비하는 단계입니다.
 
@@ -36,7 +36,7 @@ UPSTASH_REDIS_REST_TOKEN=your-upstash-redis-rest-token
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\06_supabase-db-and-auth\01_ch1_supabase-project-and-env\01_check_supabase_env.py
+python.\06_supabase-db-and-auth\01_ch1_supabase-project-and-env\01_check_supabase_env.py
 ```
 
 정상이라면 Supabase URL과 key 설정 여부가 출력됩니다.

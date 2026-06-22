@@ -1,4 +1,4 @@
-﻿# 04_fastapi-backend
+# 04_fastapi-backend
 
 Python으로 웹 API 서버를 만드는 FastAPI 백엔드 개발 단원입니다.
 
@@ -78,7 +78,7 @@ Invoke-RestMethod http://127.0.0.1:8000/health
 
 ```json
 {
-  "status": "ok"
+ "status": "ok"
 }
 ```
 
@@ -107,9 +107,9 @@ Swagger UI에서 `POST /users`를 열고 다음 JSON을 입력합니다.
 
 ```json
 {
-  "name": "Alice",
-  "email": "alice@example.com",
-  "age": 25
+ "name": "Alice",
+ "email": "alice@example.com",
+ "age": 25
 }
 ```
 

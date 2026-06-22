@@ -7,7 +7,7 @@ JSON 기반 CLI 주소록 미니 프로젝트입니다.
 ```powershell
 cd C:\aidev\02_python-advanced
 .\.venv\Scripts\Activate.ps1
-python .\99_advanced-mini-project\address_book.py
+python.\99_advanced-mini-project\address_book.py
 ```
 
 ## 사용하는 문법

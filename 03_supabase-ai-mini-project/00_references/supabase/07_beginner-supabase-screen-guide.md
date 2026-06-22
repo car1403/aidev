@@ -1,6 +1,6 @@
 # 07 Beginner Supabase Screen Guide
 
-Supabase를 처음 사용하는 수업 참여자를 위한 화면 확인 가이드입니다.
+Supabase를 처음 사용하는 입문자를 위한 화면 확인 가이드입니다.
 
 Supabase 화면 이름은 업데이트에 따라 조금씩 달라질 수 있습니다. 그래서 버튼 위치를 외우기보다, 아래 정보를 어디에서 찾는지 이해하는 것이 중요합니다.
 
@@ -106,7 +106,7 @@ Authentication 메뉴에서는 가입한 사용자를 확인합니다.
 ```text
 1. Project URL이 맞는가?
 2. anon key가 맞는가?
-3. .env 파일 위치가 맞는가?
+3..env 파일 위치가 맞는가?
 4. learning_logs 테이블이 있는가?
 5. 샘플 데이터가 있는가?
 6. RLS 정책 때문에 막힌 것은 아닌가?

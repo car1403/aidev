@@ -10,7 +10,7 @@ LangSmith 기반 실행 추적이 어떤 정보를 기록하는지 이해하고,
 
 ```powershell
 cd C:\aidev\06_multi-agent-service-ops\05_observability-and-ops-dashboard
-python .\02_ch2_tracing-and-monitoring\02_langsmith_trace_mapping.py
+python.\02_ch2_tracing-and-monitoring\02_langsmith_trace_mapping.py
 ```
 
 ## LangSmith에서 관찰하는 정보
@@ -34,9 +34,9 @@ metadata
 ```text
 trace_id
 -> supervisor_agent
-   -> ops_agent
-      -> health_check_tool
-   -> reviewer_agent
+ -> ops_agent
+ -> health_check_tool
+ -> reviewer_agent
 ```
 
 ## 실제 LangSmith 연동 시 체크리스트

@@ -38,7 +38,7 @@ uvicorn backend-auth-session-sample:app --reload --host 127.0.0.1 --port 8000
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
 .\.venv\Scripts\Activate.ps1
-streamlit run .\05_state-session-and-data\10_labs\lab-01-login-state-page.py
+streamlit run.\05_state-session-and-data\10_labs\lab-01-login-state-page.py
 ```
 
 ## 실습 진행 방식

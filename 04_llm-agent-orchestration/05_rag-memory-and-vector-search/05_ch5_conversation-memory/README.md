@@ -13,8 +13,8 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\05_rag-memory-and-vector-search
 .\.venv\Scripts\Activate.ps1
-python .\05_ch5_conversation-memory\01_short-term-memory.py
-python .\05_ch5_conversation-memory\02_save-conversation-memory.py
+python.\05_ch5_conversation-memory\01_short-term-memory.py
+python.\05_ch5_conversation-memory\02_save-conversation-memory.py
 ```
 
 ## 확인 질문

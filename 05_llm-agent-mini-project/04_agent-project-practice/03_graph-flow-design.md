@@ -1,4 +1,4 @@
-﻿# 03 Graph Flow Design
+# 03 Graph Flow Design
 
 LangGraph 흐름을 설계합니다.
 
@@ -18,9 +18,9 @@ START
 START
 -> analyze_request
 -> route
-   -> rag_search
-   -> tool_call
-   -> ask_clarifying_question
+ -> rag_search
+ -> tool_call
+ -> ask_clarifying_question
 -> evaluate_answer
 -> END
 ```

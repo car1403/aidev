@@ -13,8 +13,8 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\02_advanced-prompting-and-reasoning
 .\.venv\Scripts\Activate.ps1
-python .\02_ch2_structured-output-json\01_json-output-request.py
-python .\02_ch2_structured-output-json\02_structured-output-pydantic.py
+python.\02_ch2_structured-output-json\01_json-output-request.py
+python.\02_ch2_structured-output-json\02_structured-output-pydantic.py
 ```
 
 ## 확인 질문

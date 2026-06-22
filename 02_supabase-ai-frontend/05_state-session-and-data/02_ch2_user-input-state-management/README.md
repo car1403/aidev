@@ -1,4 +1,4 @@
-﻿# 02_ch2_user-input-state-management
+# 02_ch2_user-input-state-management
 
 사용자 입력값과 화면 선택값을 상태로 관리하는 방법을 학습합니다.
 
@@ -24,7 +24,7 @@
 
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
-streamlit run .\05_state-session-and-data\02_ch2_user-input-state-management\03_multi-step-form.py
+streamlit run.\05_state-session-and-data\02_ch2_user-input-state-management\03_multi-step-form.py
 ```
 
 ## 확인할 내용

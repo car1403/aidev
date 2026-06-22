@@ -26,5 +26,5 @@ Webhook Trigger
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\03_n8n-ai-workflow
-python .\02_ch2_trigger-condition-action-nodes\01_n8n_branching_workflow.py
+python.\02_ch2_trigger-condition-action-nodes\01_n8n_branching_workflow.py
 ```

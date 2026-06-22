@@ -7,8 +7,8 @@
 외부 API를 호출하기 전에 먼저 동기/비동기 흐름만 확인합니다.
 
 ```powershell
-python .\07_api-external-data\02_sync_flow_without_api.py
-python .\07_api-external-data\03_async_flow_without_api.py
+python.\07_api-external-data\02_sync_flow_without_api.py
+python.\07_api-external-data\03_async_flow_without_api.py
 ```
 
 두 파일을 실행한 뒤 총 실행 시간이 어떻게 다른지 비교합니다.
@@ -16,8 +16,8 @@ python .\07_api-external-data\03_async_flow_without_api.py
 `07_api-external-data`의 날씨 API 예제를 실행해 봅니다.
 
 ```powershell
-python .\07_api-external-data\04_weather_api_sync.py
-python .\07_api-external-data\05_weather_api_async.py
+python.\07_api-external-data\04_weather_api_sync.py
+python.\07_api-external-data\05_weather_api_async.py
 ```
 
 ## 확인 질문

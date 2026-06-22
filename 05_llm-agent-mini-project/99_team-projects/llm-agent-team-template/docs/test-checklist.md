@@ -9,7 +9,7 @@ cd C:\aidev\05_llm-agent-mini-project\99_team-projects\llm-agent-team-template
 ## 실행 확인
 
 - [ ] 상위 폴더 `.venv` 활성화 완료
-- [ ] `pip install -r ..\..\requirements.txt` 실행 완료
+- [ ] `pip install -r..\..\requirements.txt` 실행 완료
 - [ ] `python backend\graph.py` 실행 성공
 - [ ] `streamlit run frontend\app.py --server.port 8702` 실행 성공
 

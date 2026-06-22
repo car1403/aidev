@@ -22,10 +22,10 @@ action_taken:
 
 | 정책 | 위반 예시 | 처리 방식 |
 | --- | --- | --- |
-| Prompt Injection |  | block |
-| 민감 정보 보호 |  | redact |
-| Tool 권한 제한 |  | review |
-| 복구 명령 제한 |  | escalate |
+| Prompt Injection | | block |
+| 민감 정보 보호 | | redact |
+| Tool 권한 제한 | | review |
+| 복구 명령 제한 | | escalate |
 
 ## 3. decision 기준
 

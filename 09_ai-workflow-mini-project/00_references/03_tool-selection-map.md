@@ -13,11 +13,11 @@
 
 ```text
 n8n + FastAPI:
-  Webhook으로 문의를 받고 FastAPI 분석 API 호출
+ Webhook으로 문의를 받고 FastAPI 분석 API 호출
 
 n8n + Dify:
-  Webhook으로 문의를 받고 Dify API로 답변 생성
+ Webhook으로 문의를 받고 Dify API로 답변 생성
 
 AIPP + Dify:
-  AIPP에서 흐름을 설계하고 Dify로 AI 응답 구성
+ AIPP에서 흐름을 설계하고 Dify로 AI 응답 구성
 ```

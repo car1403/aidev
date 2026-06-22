@@ -1,4 +1,4 @@
-﻿# 03_ch3_supervisor-router-workflow
+# 03_ch3_supervisor-router-workflow
 
 Supervisor와 Router 기반 작업 분배 구조를 학습합니다.
 
@@ -19,5 +19,5 @@ Supervisor와 Router 기반 작업 분배 구조를 학습합니다.
 ## 실행
 
 ```powershell
-python .\03_ch3_supervisor-router-workflow\01_supervisor-router-workflow.py
+python.\03_ch3_supervisor-router-workflow\01_supervisor-router-workflow.py
 ```

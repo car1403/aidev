@@ -54,9 +54,9 @@ Workflow Template 운영 기준
 Multi-Agent Workflow 운영 구조
 ```
 
-## 수업 참여자에게 설명할 때의 핵심 메시지
+## 핵심 메시지
 
-수업 참여자에게는 다음 순서로 설명하면 이해가 쉽습니다.
+다음 순서로 설명하면 이해가 쉽습니다.
 
 ```text
 1. AI Workflow는 "업무 흐름을 노드로 나눈 자동화 구조"입니다.
@@ -74,7 +74,7 @@ Multi-Agent Workflow 운영 구조
 수업 전에 아래 항목을 확인합니다.
 
 ```text
-[ ] 08_ai-workflow-automation 최상위 .venv가 준비되어 있다.
+[ ] 08_ai-workflow-automation 최상위.venv가 준비되어 있다.
 [ ] requirements.txt 설치가 완료되어 있다.
 [ ] 01_workflow-concepts의 Python 예제를 실행해 보았다.
 [ ] n8n Docker 컨테이너 실행 방법을 확인했다.

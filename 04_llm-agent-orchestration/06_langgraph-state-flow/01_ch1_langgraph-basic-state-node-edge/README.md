@@ -13,8 +13,8 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\06_langgraph-state-flow
 .\.venv\Scripts\Activate.ps1
-python .\01_ch1_langgraph-basic-state-node-edge\01_basic-state-graph.py
-python .\01_ch1_langgraph-basic-state-node-edge\02_multi-step-state-update.py
+python.\01_ch1_langgraph-basic-state-node-edge\01_basic-state-graph.py
+python.\01_ch1_langgraph-basic-state-node-edge\02_multi-step-state-update.py
 ```
 
 ## 확인 질문

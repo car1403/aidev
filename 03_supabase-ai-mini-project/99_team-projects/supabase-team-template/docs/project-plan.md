@@ -7,7 +7,7 @@
 
 | Name | Role | Responsibility |
 | --- | --- | --- |
-|  |  |  |
+| | | |
 
 ## Project Direction
 
@@ -31,10 +31,10 @@
 
 | Log Type | Example | Why It Matters |
 | --- | --- | --- |
-| user_request |  |  |
-| ai_response |  |  |
-| error_log |  |  |
-| feedback |  |  |
+| user_request | | |
+| ai_response | | |
+| error_log | | |
+| feedback | | |
 
 ## Supabase Tables
 

@@ -20,6 +20,6 @@
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\05_llm-api-integration\04_multi-turn-call\01_mock_multi_turn.py
-python .\05_llm-api-integration\04_multi-turn-call\04_gemini_rest_multi_turn.py
+python.\05_llm-api-integration\04_multi-turn-call\01_mock_multi_turn.py
+python.\05_llm-api-integration\04_multi-turn-call\04_gemini_rest_multi_turn.py
 ```

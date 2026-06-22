@@ -25,10 +25,10 @@ action_taken
 ## decision 예시
 
 ```text
-allow    정상 허용
-block    차단
-redact   민감 정보 마스킹
-review   사람 검토 필요
+allow 정상 허용
+block 차단
+redact 민감 정보 마스킹
+review 사람 검토 필요
 escalate 운영자 알림
 ```
 
@@ -48,12 +48,12 @@ escalate 운영자 알림
 
 | 항목 | 내용 |
 | --- | --- |
-| 정책 이름 |  |
-| 위반 입력 예시 |  |
-| 탐지 기준 |  |
+| 정책 이름 | |
+| 위반 입력 예시 | |
+| 탐지 기준 | |
 | 처리 방식 | allow / block / redact / review / escalate |
-| 로그 항목 |  |
-| 운영자 확인 방법 |  |
+| 로그 항목 | |
+| 운영자 확인 방법 | |
 
 ## 운영 연결
 

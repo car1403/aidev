@@ -8,7 +8,7 @@ Agent 간 업무 인계(Handoff), Context 공유, Agent 간 Context 동기화, M
 
 ```powershell
 cd C:\aidev\06_multi-agent-service-ops\01_multi-agent-collaboration
-python .\05_ch5_handoff-context-mcp\01_handoff_context_mcp.py
+python.\05_ch5_handoff-context-mcp\01_handoff_context_mcp.py
 ```
 
 ## 작성할 내용

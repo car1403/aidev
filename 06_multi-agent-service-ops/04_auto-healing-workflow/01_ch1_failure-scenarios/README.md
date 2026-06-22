@@ -1,4 +1,4 @@
-﻿# 01_ch1_failure-scenarios
+# 01_ch1_failure-scenarios
 
 서비스 장애 유형을 분류하는 방법을 학습합니다.
 
@@ -17,5 +17,5 @@
 ```powershell
 cd C:\aidev\06_multi-agent-service-ops\04_auto-healing-workflow
 ..\.venv\Scripts\Activate.ps1
-python .\01_ch1_failure-scenarios\01_failure-scenario-classifier.py
+python.\01_ch1_failure-scenarios\01_failure-scenario-classifier.py
 ```

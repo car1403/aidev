@@ -1,4 +1,4 @@
-﻿# Lab 01. Prompt Injection Defense
+# Lab 01. Prompt Injection Defense
 
 ## 목표
 
@@ -7,7 +7,7 @@
 ## 실습
 
 ```powershell
-python .\01_ch1_prompt-injection-defense\01_prompt-injection-filter.py
+python.\01_ch1_prompt-injection-defense\01_prompt-injection-filter.py
 ```
 
 ## 확장

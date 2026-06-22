@@ -1,4 +1,4 @@
-﻿# 02_ch2_tracing-and-monitoring
+# 02_ch2_tracing-and-monitoring
 
 Agent 실행 흐름을 Trace 단위로 추적하는 방법을 학습합니다.
 
@@ -24,5 +24,5 @@ request_id
 ## 실행
 
 ```powershell
-python .\02_ch2_tracing-and-monitoring\01_trace-agent-execution.py
+python.\02_ch2_tracing-and-monitoring\01_trace-agent-execution.py
 ```

@@ -24,7 +24,7 @@ Python 3.11 이상
 ## 3. 가상환경 만들기
 
 ```powershell
-python -m venv .venv
+python -m venv.venv
 ```
 
 ## 4. 가상환경 활성화
@@ -44,7 +44,7 @@ pip install -r requirements.txt
 ## 6. 예제 실행
 
 ```powershell
-python .\01_python-start\01_hello_python.py
+python.\01_python-start\01_hello_python.py
 ```
 
 ## 7. 자주 만나는 문제

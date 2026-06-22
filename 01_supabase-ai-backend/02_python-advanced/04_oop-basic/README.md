@@ -5,6 +5,6 @@
 ## 실행
 
 ```powershell
-python .\04_oop-basic\01_class_basic.py
-python .\04_oop-basic\02_inheritance_basic.py
+python.\04_oop-basic\01_class_basic.py
+python.\04_oop-basic\02_inheritance_basic.py
 ```

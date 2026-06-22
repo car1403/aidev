@@ -27,10 +27,10 @@ DELETE: 데이터 삭제
 
 ```json
 {
-  "ticket_id": "TS-1001",
-  "title": "AI 서비스 응답 지연",
-  "message": "응답이 느립니다.",
-  "customer_tier": "premium"
+ "ticket_id": "TS-1001",
+ "title": "AI 서비스 응답 지연",
+ "message": "응답이 느립니다.",
+ "customer_tier": "premium"
 }
 ```
 
@@ -66,10 +66,10 @@ POST http://127.0.0.1:8900/analyze
 
 ```json
 {
-  "customer_name": "Jean",
-  "customer_tier": "premium",
-  "title": "AI 서비스 응답 지연",
-  "message": "응답이 느리고 장애가 의심됩니다."
+ "customer_name": "Jean",
+ "customer_tier": "premium",
+ "title": "AI 서비스 응답 지연",
+ "message": "응답이 느리고 장애가 의심됩니다."
 }
 ```
 
@@ -77,8 +77,8 @@ POST http://127.0.0.1:8900/analyze
 
 ```json
 {
-  "category": "technical_issue",
-  "urgency": "high",
-  "next_action": "send_ops_alert"
+ "category": "technical_issue",
+ "urgency": "high",
+ "next_action": "send_ops_alert"
 }
 ```

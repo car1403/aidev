@@ -115,7 +115,7 @@ Dify Knowledge + Streamlit 시연
 
 ```powershell
 cd C:\aidev\09_ai-workflow-mini-project
-Copy-Item .\99_team-projects\ai-workflow-team-template .\99_team-projects\team-01-tech-support-workflow -Recurse
+Copy-Item.\99_team-projects\ai-workflow-team-template.\99_team-projects\team-01-tech-support-workflow -Recurse
 ```
 
 복사 후 먼저 작성할 문서:

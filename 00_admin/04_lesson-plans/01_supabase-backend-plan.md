@@ -38,7 +38,7 @@ Redis와 Upstash의 역할을 이해한다.
 2. 함수, 모듈, 예외 처리, 클래스
 3. FastAPI /health API
 4. Pydantic 요청 검증
-5. Gemini API Key와 .env 설정
+5. Gemini API Key와.env 설정
 6. Gemini 2.5 Flash-Lite 기본 호출
 7. Supabase URL/key/env 설명
 8. Supabase CRUD

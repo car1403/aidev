@@ -26,5 +26,5 @@ App
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\04_dify-ai-workflow
-python .\01_ch1_dify-overview\01_dify_app_map.py
+python.\01_ch1_dify-overview\01_dify_app_map.py
 ```

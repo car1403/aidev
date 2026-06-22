@@ -36,7 +36,7 @@ docker ps
 
 `docker ps`가 실패하면 Docker Desktop이 실행 중인지 확인합니다.
 
-처음 설치한 수업 참여자는 기본 컨테이너 실행도 확인합니다.
+처음 설치했다면 기본 컨테이너 실행도 확인합니다.
 
 ```powershell
 docker run hello-world
@@ -48,7 +48,7 @@ Compose 실습 폴더에서 설정을 검증합니다.
 
 ```powershell
 cd C:\aidev\06_multi-agent-service-ops\02_service-deployment-and-automation\02_ch2_docker-compose-multi-service
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 docker compose config
 ```
 
@@ -66,7 +66,7 @@ GitHub Actions workflow는 저장소 최상위 `.github/workflows` 아래에 있
 
 ## AWS 확인
 
-AWS 배포 실습을 진행할 수업 참여자는 아래 명령을 확인합니다.
+AWS 배포 실습을 진행할 때는 아래 명령을 확인합니다.
 
 ```powershell
 aws --version

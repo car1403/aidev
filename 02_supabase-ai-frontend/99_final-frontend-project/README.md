@@ -1,6 +1,6 @@
 # 99_final-frontend-project
 
-이 폴더는 `02_supabase-ai-frontend`의 마지막 실습입니다. 수업 참여자가 Streamlit 화면을 만들고, FastAPI 백엔드 API를 호출하고, 서비스 로그를 확인한 뒤, 무료 배포 서비스에 올려보는 흐름을 간단한 예제로 경험합니다.
+이 폴더는 `02_supabase-ai-frontend`의 마지막 실습입니다. 직접 Streamlit 화면을 만들고, FastAPI 백엔드 API를 호출하고, 서비스 로그를 확인한 뒤, 무료 배포 서비스에 올려보는 흐름을 간단한 예제로 경험합니다.
 
 ## 최종 실습 주제
 
@@ -35,22 +35,22 @@ Streamlit 프론트엔드 -> Streamlit Community Cloud
 99_final-frontend-project
 ├─ README.md
 ├─ SETUP.md
-├─ .env.example
+├─.env.example
 ├─ backend
-│  ├─ main.py
-│  └─ requirements.txt
+│ ├─ main.py
+│ └─ requirements.txt
 ├─ frontend
-│  ├─ app.py
-│  ├─ requirements.txt
-│  └─ pages
-│     ├─ 01_chatbot.py
-│     ├─ 02_chat_history.py
-│     ├─ 03_service_logs.py
-│     └─ 04_deployment_check.py
+│ ├─ app.py
+│ ├─ requirements.txt
+│ └─ pages
+│ ├─ 01_chatbot.py
+│ ├─ 02_chat_history.py
+│ ├─ 03_service_logs.py
+│ └─ 04_deployment_check.py
 └─ docs
-   ├─ free-deployment-guide.md
-   ├─ connect-to-03-mini-project.md
-   └─ final-checklist.md
+ ├─ free-deployment-guide.md
+ ├─ connect-to-03-mini-project.md
+ └─ final-checklist.md
 ```
 
 ## 실행 순서
@@ -58,7 +58,7 @@ Streamlit 프론트엔드 -> Streamlit Community Cloud
 처음에는 로컬에서 백엔드와 프론트엔드를 각각 실행합니다.
 
 ```text
-1. .env 파일 준비
+1..env 파일 준비
 2. FastAPI 백엔드 실행
 3. Streamlit 프론트엔드 실행
 4. 챗봇 질문 전송

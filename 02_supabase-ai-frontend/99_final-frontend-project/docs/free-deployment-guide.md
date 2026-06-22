@@ -58,12 +58,12 @@ API_BASE_URL=https://내서비스이름.onrender.com
 ```text
 my-final-frontend-project
 ├─ backend
-│  ├─ main.py
-│  └─ requirements.txt
+│ ├─ main.py
+│ └─ requirements.txt
 └─ frontend
-   ├─ app.py
-   ├─ requirements.txt
-   └─ pages
+ ├─ app.py
+ ├─ requirements.txt
+ └─ pages
 ```
 
 현재 예제에서 복사할 폴더는 다음입니다.
@@ -276,7 +276,7 @@ UPSTASH_REDIS_REST_TOKEN
 
 ## 7. 제출할 내용
 
-수업 참여자는 배포 실습 후 다음 내용을 제출합니다.
+배포 실습 후 다음 내용을 제출합니다.
 
 1. Render 백엔드 URL
 2. Streamlit Community Cloud URL

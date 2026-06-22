@@ -1,4 +1,4 @@
-﻿# 02_ch2_routing-and-request
+# 02_ch2_routing-and-request
 
 라우팅과 요청 데이터 처리 방식을 학습합니다.
 
@@ -24,7 +24,7 @@ uvicorn 01_http-methods:app --reload
 파일명에 하이픈이 들어 있어 실행이 불편한 환경에서는 파일을 `main.py`로 복사해서 실행해도 됩니다.
 
 ```powershell
-Copy-Item .\01_http-methods.py .\main.py
+Copy-Item.\01_http-methods.py.\main.py
 uvicorn main:app --reload
 ```
 

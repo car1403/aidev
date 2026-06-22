@@ -17,36 +17,36 @@
 
 ```text
 05_rag-memory-and-vector-search
-├─ .env.example
+├─.env.example
 ├─ 01_ch1_embedding-basics
-│  ├─ 01_vector-similarity-basic.py
-│  └─ 02_openai-embedding-basic.py
+│ ├─ 01_vector-similarity-basic.py
+│ └─ 02_openai-embedding-basic.py
 ├─ 02_ch2_pgvector-basic
-│  ├─ 01_create-extension-and-tables.sql
-│  ├─ 01_insert-sample-vectors.py
-│  ├─ 02_sample-vector-search.sql
-│  └─ 02_search-similar-vectors.py
+│ ├─ 01_create-extension-and-tables.sql
+│ ├─ 01_insert-sample-vectors.py
+│ ├─ 02_sample-vector-search.sql
+│ └─ 02_search-similar-vectors.py
 ├─ 03_ch3_document-chunking-and-indexing
-│  ├─ 01_split-sample-document.py
-│  └─ 02_index-document-chunks.py
+│ ├─ 01_split-sample-document.py
+│ └─ 02_index-document-chunks.py
 ├─ 04_ch4_rag-retrieval-and-answering
-│  ├─ 01_retrieve-context.py
-│  ├─ 02_rag-answer.py
-│  ├─ 03_hybrid-search-rrf.py
-│  └─ 04_rag-quality-evaluation.py
+│ ├─ 01_retrieve-context.py
+│ ├─ 02_rag-answer.py
+│ ├─ 03_hybrid-search-rrf.py
+│ └─ 04_rag-quality-evaluation.py
 └─ 05_ch5_conversation-memory
-   ├─ 01_short-term-memory.py
-   └─ 02_save-conversation-memory.py
+ ├─ 01_short-term-memory.py
+ └─ 02_save-conversation-memory.py
 ```
 
 ## 실습 시작 순서
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\05_rag-memory-and-vector-search
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install openai python-dotenv psycopg[binary] langchain-text-splitters
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 ```
 
 pgvector 컨테이너는 최상위 [SETUP.md](../SETUP.md)의 안내에 따라 실행합니다.
@@ -56,23 +56,23 @@ pgvector 컨테이너는 최상위 [SETUP.md](../SETUP.md)의 안내에 따라 �
 먼저 API Key나 DB 없이 가능한 개념 예제를 실행합니다.
 
 ```powershell
-python .\01_ch1_embedding-basics\01_vector-similarity-basic.py
-python .\03_ch3_document-chunking-and-indexing\01_split-sample-document.py
-python .\04_ch4_rag-retrieval-and-answering\03_hybrid-search-rrf.py
-python .\04_ch4_rag-retrieval-and-answering\04_rag-quality-evaluation.py
-python .\05_ch5_conversation-memory\01_short-term-memory.py
+python.\01_ch1_embedding-basics\01_vector-similarity-basic.py
+python.\03_ch3_document-chunking-and-indexing\01_split-sample-document.py
+python.\04_ch4_rag-retrieval-and-answering\03_hybrid-search-rrf.py
+python.\04_ch4_rag-retrieval-and-answering\04_rag-quality-evaluation.py
+python.\05_ch5_conversation-memory\01_short-term-memory.py
 ```
 
 pgvector 컨테이너와 OpenAI API Key가 준비되면 DB 연동 예제를 실행합니다.
 
 ```powershell
-Get-Content .\02_ch2_pgvector-basic\01_create-extension-and-tables.sql | docker exec -i rag-pgvector psql -U rag_user -d rag_db
-python .\02_ch2_pgvector-basic\01_insert-sample-vectors.py
-python .\02_ch2_pgvector-basic\02_search-similar-vectors.py
-python .\03_ch3_document-chunking-and-indexing\02_index-document-chunks.py
-python .\04_ch4_rag-retrieval-and-answering\01_retrieve-context.py
-python .\04_ch4_rag-retrieval-and-answering\02_rag-answer.py
-python .\05_ch5_conversation-memory\02_save-conversation-memory.py
+Get-Content.\02_ch2_pgvector-basic\01_create-extension-and-tables.sql | docker exec -i rag-pgvector psql -U rag_user -d rag_db
+python.\02_ch2_pgvector-basic\01_insert-sample-vectors.py
+python.\02_ch2_pgvector-basic\02_search-similar-vectors.py
+python.\03_ch3_document-chunking-and-indexing\02_index-document-chunks.py
+python.\04_ch4_rag-retrieval-and-answering\01_retrieve-context.py
+python.\04_ch4_rag-retrieval-and-answering\02_rag-answer.py
+python.\05_ch5_conversation-memory\02_save-conversation-memory.py
 ```
 
 ## 수업 중 확인 질문

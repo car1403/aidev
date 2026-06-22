@@ -13,10 +13,10 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\06_langgraph-state-flow
 .\.venv\Scripts\Activate.ps1
-python .\03_ch3_tool-and-rag-node-flow\01_tool-node-style-flow.py
-python .\03_ch3_tool-and-rag-node-flow\02_mock-rag-node-flow.py
-python .\03_ch3_tool-and-rag-node-flow\03_llm-answer-node.py
-python .\03_ch3_tool-and-rag-node-flow\04_hybrid-memory-flow.py
+python.\03_ch3_tool-and-rag-node-flow\01_tool-node-style-flow.py
+python.\03_ch3_tool-and-rag-node-flow\02_mock-rag-node-flow.py
+python.\03_ch3_tool-and-rag-node-flow\03_llm-answer-node.py
+python.\03_ch3_tool-and-rag-node-flow\04_hybrid-memory-flow.py
 ```
 
 ## 확인 질문

@@ -20,7 +20,7 @@
 ```text
 team-template
 ├─ README.md
-├─ .env.example
+├─.env.example
 ├─ backend
 ├─ frontend
 ├─ docs

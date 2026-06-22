@@ -8,7 +8,7 @@
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\02_aipp-workflow
-python .\01_ch1_aipp-overview\01_aipp_workflow_concept.py
+python.\01_ch1_aipp-overview\01_aipp_workflow_concept.py
 ```
 
 ## 할 일

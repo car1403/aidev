@@ -1,4 +1,4 @@
-﻿# 99 Mini Project
+# 99 Mini Project
 
 06 과정에서 학습한 Multi-Agent 협업, Docker Compose, AI 보안/가드레일, Auto Healing, Observability를 통합하는 미니 프로젝트입니다.
 
@@ -28,7 +28,7 @@ Auto Healing Multi-Agent Service
 
 ```powershell
 cd C:\aidev\06_multi-agent-service-ops\99_mini-project\sample-auto-healing-agent
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 docker compose up --build
 ```
 

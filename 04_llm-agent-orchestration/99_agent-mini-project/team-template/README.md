@@ -9,29 +9,29 @@
 ```text
 team-template
 ├─ backend
-│  ├─ agent_state.py
-│  ├─ graph.py
-│  ├─ requirements.txt
-│  └─ tools.py
+│ ├─ agent_state.py
+│ ├─ graph.py
+│ ├─ requirements.txt
+│ └─ tools.py
 ├─ docs
-│  ├─ agent-design.md
-│  ├─ project-plan.md
-│  └─ test-checklist.md
+│ ├─ agent-design.md
+│ ├─ project-plan.md
+│ └─ test-checklist.md
 ├─ frontend
-│  └─ app.py
+│ └─ app.py
 └─ presentation
-   └─ final-presentation.md
+ └─ final-presentation.md
 ```
 
 ## 실행
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\99_agent-mini-project\team-template
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
-pip install -r .\backend\requirements.txt
-python .\backend\graph.py
-streamlit run .\frontend\app.py --server.port 8602
+pip install -r.\backend\requirements.txt
+python.\backend\graph.py
+streamlit run.\frontend\app.py --server.port 8602
 ```
 
 ## 팀 프로젝트 진행 순서

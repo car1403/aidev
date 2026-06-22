@@ -9,12 +9,12 @@ LangSmith식 trace/run/span 관점으로 Multi-Agent 실행 추적 계획을 작
 ```text
 trace_id
 -> supervisor_agent
-   -> diagnosis_agent
-      -> health_check_tool
-   -> recovery_agent
-      -> restart_or_fallback_tool
-   -> validation_agent
-   -> reporter_agent
+ -> diagnosis_agent
+ -> health_check_tool
+ -> recovery_agent
+ -> restart_or_fallback_tool
+ -> validation_agent
+ -> reporter_agent
 ```
 
 ## 2. Run 정보

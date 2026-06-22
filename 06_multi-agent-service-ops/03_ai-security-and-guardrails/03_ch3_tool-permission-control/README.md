@@ -1,4 +1,4 @@
-﻿# 03_ch3_tool-permission-control
+# 03_ch3_tool-permission-control
 
 Tool 실행 권한 제어는 Agent가 어떤 도구를 사용할 수 있는지 제한하는 구조입니다.
 
@@ -20,5 +20,5 @@ Agent 역할 확인
 ## 실행
 
 ```powershell
-python .\03_ch3_tool-permission-control\01_tool-permission-control.py
+python.\03_ch3_tool-permission-control\01_tool-permission-control.py
 ```

@@ -1,4 +1,4 @@
-﻿# 02_ch2_prompt-input-and-response
+# 02_ch2_prompt-input-and-response
 
 사용자 프롬프트를 입력받고 응답을 생성하는 기본 흐름을 학습합니다.
 
@@ -16,7 +16,7 @@
 ## 실행 예시
 
 ```powershell
-streamlit run .\04_ai-chatbot-interface\02_ch2_prompt-input-and-response\02_mock-ai-response.py
+streamlit run.\04_ai-chatbot-interface\02_ch2_prompt-input-and-response\02_mock-ai-response.py
 ```
 
 ## 확인할 내용

@@ -14,8 +14,8 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\06_langgraph-state-flow
 .\.venv\Scripts\Activate.ps1
-python .\04_ch4_debugging-with-langsmith\01_tracing-env-check.py
-python .\04_ch4_debugging-with-langsmith\02_planning-tracing-evaluation.py
+python.\04_ch4_debugging-with-langsmith\01_tracing-env-check.py
+python.\04_ch4_debugging-with-langsmith\02_planning-tracing-evaluation.py
 ```
 
 ## 확인 질문

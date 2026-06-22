@@ -8,9 +8,9 @@
 
 ```json
 {
-  "user_id": "student01",
-  "question": "FastAPI에서 Pydantic은 왜 사용하나요?",
-  "model": "mock-teacher"
+ "user_id": "student01",
+ "question": "FastAPI에서 Pydantic은 왜 사용하나요?",
+ "model": "mock-teacher"
 }
 ```
 
@@ -18,13 +18,13 @@
 
 ```json
 {
-  "item": {
-    "id": "qa-001",
-    "user_id": "student01",
-    "question": "FastAPI에서 Pydantic은 왜 사용하나요?",
-    "answer": "요청 검증과 응답 모델 정의를 쉽게 하기 위해 사용합니다.",
-    "model": "mock-teacher"
-  }
+ "item": {
+ "id": "qa-001",
+ "user_id": "student01",
+ "question": "FastAPI에서 Pydantic은 왜 사용하나요?",
+ "answer": "요청 검증과 응답 모델 정의를 쉽게 하기 위해 사용합니다.",
+ "model": "mock-teacher"
+ }
 }
 ```
 
@@ -44,5 +44,5 @@
 
 - URL은 리소스 중심으로 작성합니다.
 - 요청 데이터는 Pydantic 모델로 검증합니다.
-- 응답은 `{"item": ...}` 또는 `{"items": [...]}` 형태로 통일합니다.
+- 응답은 `{"item":...}` 또는 `{"items": [...]}` 형태로 통일합니다.
 - 오류 상황은 HTTP status code와 메시지로 명확히 표현합니다.

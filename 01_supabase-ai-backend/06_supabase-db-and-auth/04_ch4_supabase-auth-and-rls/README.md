@@ -12,10 +12,10 @@
 ## 핵심 개념
 
 ```text
-Auth      : 사용자가 누구인지 확인
-JWT       : 로그인 결과로 발급되는 토큰
-RLS       : 테이블 행 단위 접근 제어
-anon key  : 클라이언트에서 사용할 수 있는 공개용 key
+Auth : 사용자가 누구인지 확인
+JWT : 로그인 결과로 발급되는 토큰
+RLS : 테이블 행 단위 접근 제어
+anon key : 클라이언트에서 사용할 수 있는 공개용 key
 service role key : 서버에서만 사용해야 하는 강한 권한의 key
 ```
 
@@ -39,10 +39,10 @@ Supabase 테이블은 교실의 사물함과 비슷합니다.
 
 ```text
 Auth
--> 이 수업 참여자가 누구인지 확인합니다.
+-> 이 직접 누구인지 확인합니다.
 
 RLS
--> 이 수업 참여자가 어떤 사물함을 열 수 있는지 정합니다.
+-> 이 직접 어떤 사물함을 열 수 있는지 정합니다.
 ```
 
 로그인만 했다고 모든 데이터를 볼 수 있는 것은 아닙니다. 로그인은 "누구인지 확인"이고, RLS는 "어떤 행을 읽고 쓸 수 있는지 결정"하는 규칙입니다.
@@ -53,9 +53,9 @@ RLS
 
 ```sql
 create table if not exists profiles (
-  id uuid primary key references auth.users(id) on delete cascade,
-  display_name text not null,
-  created_at timestamptz not null default now()
+ id uuid primary key references auth.users(id) on delete cascade,
+ display_name text not null,
+ created_at timestamptz not null default now()
 );
 
 alter table profiles enable row level security;

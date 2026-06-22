@@ -66,16 +66,16 @@ SSE 또는 실시간 표시 화면:
 
 | Check Item | Result | Note |
 | --- | --- | --- |
-| FastAPI `/health` |  |  |
-| FastAPI `/docs` |  |  |
-| Streamlit main page |  |  |
-| Log create/list/detail |  |  |
-| Dashboard chart/table |  |  |
-| Feedback reflection |  |  |
-| SSE or refresh-based realtime display |  |  |
-| Render deployed backend `/health` |  | 선택 배포 시 작성 |
-| Streamlit Community Cloud deployed page |  | 선택 배포 시 작성 |
-| Upstash Redis environment variables |  | 선택 사용 시 작성 |
+| FastAPI `/health` | | |
+| FastAPI `/docs` | | |
+| Streamlit main page | | |
+| Log create/list/detail | | |
+| Dashboard chart/table | | |
+| Feedback reflection | | |
+| SSE or refresh-based realtime display | | |
+| Render deployed backend `/health` | | 선택 배포 시 작성 |
+| Streamlit Community Cloud deployed page | | 선택 배포 시 작성 |
+| Upstash Redis environment variables | | 선택 사용 시 작성 |
 
 ## 7. Free Deployment Result
 
@@ -83,12 +83,12 @@ SSE 또는 실시간 표시 화면:
 
 | Item | Value |
 | --- | --- |
-| Render Backend URL |  |
-| Streamlit Frontend URL |  |
-| Supabase Project URL |  |
-| Upstash Redis 사용 여부 |  |
-| 배포 확인 날짜 |  |
-| 배포 담당자 |  |
+| Render Backend URL | |
+| Streamlit Frontend URL | |
+| Supabase Project URL | |
+| Upstash Redis 사용 여부 | |
+| 배포 확인 날짜 | |
+| 배포 담당자 | |
 
 배포 후 사용자가 접근하는 전체 흐름을 적습니다.
 

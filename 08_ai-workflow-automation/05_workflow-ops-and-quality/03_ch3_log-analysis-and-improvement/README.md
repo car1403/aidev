@@ -16,5 +16,5 @@ Improvement Loop: 분석 결과를 다음 버전에 반영하는 흐름
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\05_workflow-ops-and-quality
-python .\03_ch3_log-analysis-and-improvement\01_workflow_log_analyzer.py
+python.\03_ch3_log-analysis-and-improvement\01_workflow_log_analyzer.py
 ```

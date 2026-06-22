@@ -28,9 +28,9 @@
 
 | Tool | Input | Output | Failure Case |
 | --- | --- | --- | --- |
-| check_calendar_tool |  |  |  |
-| find_available_slot_tool |  |  |  |
-| draft_schedule_message_tool |  |  |  |
+| check_calendar_tool | | | |
+| find_available_slot_tool | | | |
+| draft_schedule_message_tool | | | |
 
 ## 에이전트 흐름
 
@@ -66,8 +66,8 @@ Long-term Memory:
 
 | 이름 | 역할 |
 | --- | --- |
-|  | Agent Architecture |
-|  | Backend/Graph |
-|  | Tools/Data |
-|  | Frontend |
-|  | Test Report/Presentation |
+| | Agent Architecture |
+| | Backend/Graph |
+| | Tools/Data |
+| | Frontend |
+| | Test Report/Presentation |

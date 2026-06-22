@@ -8,7 +8,7 @@
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\01_workflow-concepts
-python .\03_ch3_trigger-condition-action\01_trigger_condition_action.py
+python.\03_ch3_trigger-condition-action\01_trigger_condition_action.py
 ```
 
 ## 실습 시나리오

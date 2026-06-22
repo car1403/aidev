@@ -14,8 +14,8 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\02_advanced-prompting-and-reasoning
 .\.venv\Scripts\Activate.ps1
-python .\01_ch1_prompt-design-patterns\01_role-and-context-prompt.py
-python .\01_ch1_prompt-design-patterns\02_few-shot-style-prompt.py
+python.\01_ch1_prompt-design-patterns\01_role-and-context-prompt.py
+python.\01_ch1_prompt-design-patterns\02_few-shot-style-prompt.py
 ```
 
 ## 확인 질문

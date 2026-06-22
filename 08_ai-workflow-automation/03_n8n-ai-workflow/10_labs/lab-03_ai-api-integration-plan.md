@@ -10,7 +10,7 @@ n8n에서 AI API를 호출하는 구조를 설계합니다.
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\03_n8n-ai-workflow
-python .\03_ch3_ai-api-workflow-integration\01_ai_api_workflow_simulation.py
+python.\03_ch3_ai-api-workflow-integration\01_ai_api_workflow_simulation.py
 ```
 
 ## 할 일

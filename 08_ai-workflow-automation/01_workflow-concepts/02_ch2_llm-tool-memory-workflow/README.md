@@ -28,7 +28,7 @@ LLM이 모든 일을 직접 처리하는 구조는 운영하기 어렵습니다.
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\01_workflow-concepts
-python .\02_ch2_llm-tool-memory-workflow\01_llm_tool_memory_flow.py
+python.\02_ch2_llm-tool-memory-workflow\01_llm_tool_memory_flow.py
 ```
 
 ## 학습 포인트

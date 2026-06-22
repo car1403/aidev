@@ -1,4 +1,4 @@
-﻿# Lab 01. Event History Logging
+# Lab 01. Event History Logging
 
 ## 목표
 
@@ -7,7 +7,7 @@
 ## 실습
 
 ```powershell
-python .\01_ch1_logging-and-event-history\01_event-history-logger.py
+python.\01_ch1_logging-and-event-history\01_event-history-logger.py
 ```
 
 ## 확장

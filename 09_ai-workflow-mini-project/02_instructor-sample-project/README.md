@@ -9,20 +9,20 @@
 ```text
 02_instructor-sample-project
 ├─ README.md
-├─ .env.example
+├─.env.example
 ├─ requirements.txt
 ├─ backend
-│  ├─ main.py
-│  ├─ workflow.py
-│  └─ schemas.py
+│ ├─ main.py
+│ ├─ workflow.py
+│ └─ schemas.py
 ├─ frontend
-│  └─ app.py
+│ └─ app.py
 └─ docs
-   ├─ aipp-workflow-plan.md
-   ├─ n8n-workflow-plan.md
-   ├─ dify-workflow-plan.md
-   ├─ ops-quality-checklist.md
-   └─ demo-script.md
+ ├─ aipp-workflow-plan.md
+ ├─ n8n-workflow-plan.md
+ ├─ dify-workflow-plan.md
+ ├─ ops-quality-checklist.md
+ └─ demo-script.md
 ```
 
 ## 실행
@@ -39,7 +39,7 @@ Backend:
 
 ```powershell
 cd C:\aidev\09_ai-workflow-mini-project\02_instructor-sample-project
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 uvicorn backend.main:app --reload --host 127.0.0.1 --port 8900
 ```
 
@@ -60,10 +60,10 @@ Frontend: http://127.0.0.1:8901
 ## API
 
 ```text
-GET  /health
+GET /health
 POST /analyze
-GET  /events
-GET  /metrics
+GET /events
+GET /metrics
 ```
 
 ## 샘플 문의

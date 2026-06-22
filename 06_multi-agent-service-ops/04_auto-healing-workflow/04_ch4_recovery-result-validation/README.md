@@ -1,4 +1,4 @@
-﻿# 04_ch4_recovery-result-validation
+# 04_ch4_recovery-result-validation
 
 복구 조치 후 결과를 검증하는 방법을 학습합니다.
 
@@ -16,5 +16,5 @@
 ## 실행
 
 ```powershell
-python .\04_ch4_recovery-result-validation\01_recovery-result-validation.py
+python.\04_ch4_recovery-result-validation\01_recovery-result-validation.py
 ```

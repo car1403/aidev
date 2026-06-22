@@ -1,4 +1,4 @@
-﻿# Lab 03. Ops Dashboard Streamlit
+# Lab 03. Ops Dashboard Streamlit
 
 ## 목표
 
@@ -7,7 +7,7 @@ Streamlit으로 운영 상태 대시보드를 실행합니다.
 ## 실습
 
 ```powershell
-streamlit run .\03_ch3_ops-dashboard-streamlit\01_ops-dashboard.py --server.port 8803
+streamlit run.\03_ch3_ops-dashboard-streamlit\01_ops-dashboard.py --server.port 8803
 ```
 
 ## 확인

@@ -16,5 +16,5 @@ Validation Error: 입력이나 출력 형식 오류
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\05_workflow-ops-and-quality
-python .\02_ch2_error-handling-and-exception-flow\01_exception_flow_runner.py
+python.\02_ch2_error-handling-and-exception-flow\01_exception_flow_runner.py
 ```

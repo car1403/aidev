@@ -1,6 +1,6 @@
 # 03_student-guides
 
-수업 참여자가 직접 보고 따라 하는 안내서입니다.
+직접 보고 따라 하는 안내서입니다.
 
 이 폴더는 수업 첫날부터 사용합니다. Python, VS Code, PowerShell, `.venv`, Markdown Preview 같은 기본 환경을 준비한 뒤 01~09 과정을 진행합니다.
 
@@ -21,7 +21,7 @@
 4. C:\aidev 폴더 열기
 5. README.md를 Markdown Preview로 보기
 6. PowerShell에서 python --version 확인
-7. 첫 과정 폴더에서 .venv 만들기
+7. 첫 과정 폴더에서.venv 만들기
 ```
 
 ## 핵심 요약

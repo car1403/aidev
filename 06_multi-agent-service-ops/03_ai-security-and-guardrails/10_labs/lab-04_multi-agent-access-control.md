@@ -1,4 +1,4 @@
-﻿# Lab 04. Multi-Agent Access Control
+# Lab 04. Multi-Agent Access Control
 
 ## 목표
 
@@ -7,7 +7,7 @@ Agent별 데이터 접근 권한을 설계합니다.
 ## 실습
 
 ```powershell
-python .\04_ch4_multi-agent-access-control\01_multi-agent-access-control.py
+python.\04_ch4_multi-agent-access-control\01_multi-agent-access-control.py
 ```
 
 ## 확인 질문

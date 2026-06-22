@@ -30,13 +30,13 @@ git diff -- 03_git-github-and-vibe-coding/10_labs/practice-files/learning-log.md
 
 ```text
 이 변경 내용에 API key, token, password 같은 민감정보가 포함되어 있는지 확인해 주세요.
-.env, .env.example, service role key 기준도 함께 점검해 주세요.
+.env,.env.example, service role key 기준도 함께 점검해 주세요.
 ```
 
 ## 4. Codex에게 README 개선 요청
 
 ```text
-이 README가 수업 참여자가 수업 중 따라 보기 충분한지 검토해 주세요.
+이 README가 수업 중 따라 보기 충분한지 검토해 주세요.
 부족한 실행 순서, 주의사항, 초보자 설명을 보강해 주세요.
 ```
 

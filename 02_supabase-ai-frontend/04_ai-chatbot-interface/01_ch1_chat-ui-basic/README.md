@@ -1,4 +1,4 @@
-﻿# 01_ch1_chat-ui-basic
+# 01_ch1_chat-ui-basic
 
 Streamlit의 기본 채팅 UI 컴포넌트를 학습합니다.
 
@@ -13,7 +13,7 @@ Streamlit의 기본 채팅 UI 컴포넌트를 학습합니다.
 ## 실행 예시
 
 ```powershell
-streamlit run .\04_ai-chatbot-interface\01_ch1_chat-ui-basic\01_chat-message-basic.py
+streamlit run.\04_ai-chatbot-interface\01_ch1_chat-ui-basic\01_chat-message-basic.py
 ```
 
 ## 확인할 내용

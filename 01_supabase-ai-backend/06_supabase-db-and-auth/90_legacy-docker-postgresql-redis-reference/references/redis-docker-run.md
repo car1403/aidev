@@ -1,4 +1,4 @@
-﻿# Redis Docker 실행
+# Redis Docker 실행
 
 ## image 받기
 
@@ -10,8 +10,8 @@ docker pull redis
 
 ```powershell
 docker run --name aidev-redis `
-  -p 6379:6379 `
-  -d redis
+ -p 6379:6379 `
+ -d redis
 ```
 
 ## 접속 확인

@@ -16,5 +16,5 @@ Structured Output: JSON 등 정해진 형식의 출력
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\05_workflow-ops-and-quality
-python .\04_ch4_data-quality-validation\01_data_quality_validator.py
+python.\04_ch4_data-quality-validation\01_data_quality_validator.py
 ```

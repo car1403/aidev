@@ -1,4 +1,4 @@
-﻿# 10_labs
+# 10_labs
 
 수업 중 함께 진행하는 실습 파일입니다.
 
@@ -20,6 +20,6 @@ lab-03-simple-dashboard.py
 ## 실행 예시
 
 ```powershell
-streamlit run .\01_streamlit-basic\10_labs\lab-01-profile-card-app.py
+streamlit run.\01_streamlit-basic\10_labs\lab-01-profile-card-app.py
 ```
 

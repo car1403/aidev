@@ -30,7 +30,7 @@ cd C:\aidev\02_supabase-ai-frontend
 
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
-C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv .venv
+C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
@@ -39,7 +39,7 @@ pip install -r requirements.txt
 
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend\99_final-frontend-project
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 ```
 
 처음 로컬 실행에서는 아래 값만 확인하면 됩니다.
@@ -71,8 +71,8 @@ http://127.0.0.1:8000/health
 
 ```json
 {
-  "ok": true,
-  "service": "final-frontend-project-backend"
+ "ok": true,
+ "service": "final-frontend-project-backend"
 }
 ```
 

@@ -34,9 +34,9 @@ Streamlit -> FastAPI -> 메모리 저장
 
 03:
 Streamlit -> FastAPI -> Supabase
-                    -> LLM API
-                    -> SSE 스트리밍
-                    -> 로그/피드백 대시보드
+ -> LLM API
+ -> SSE 스트리밍
+ -> 로그/피드백 대시보드
 ```
 
 ## 03으로 넘어가기 전 질문

@@ -1,4 +1,4 @@
-﻿# 03_ch3_conversation-history
+# 03_ch3_conversation-history
 
 `st.session_state`를 사용해 대화 이력을 저장하고 화면에 계속 표시하는 방법을 학습합니다.
 
@@ -14,7 +14,7 @@
 ## 실행 예시
 
 ```powershell
-streamlit run .\04_ai-chatbot-interface\03_ch3_conversation-history\02_append-chat-history.py
+streamlit run.\04_ai-chatbot-interface\03_ch3_conversation-history\02_append-chat-history.py
 ```
 
 ## 확인할 내용

@@ -2,7 +2,7 @@
 
 서비스 로그 조회 화면과 프론트엔드 통합 점검 방법을 학습합니다.
 
-이 챕터는 로그를 프론트엔드에서 직접 저장하는 수업이 아닙니다. 실제 서비스 로그 저장은 `01_supabase-ai-backend`와 Supabase가 담당합니다. Streamlit은 백엔드 API를 호출해 최근 로그를 조회하고, 현재 UI-백엔드-데이터 연결 상태를 수업 참여자가 눈으로 확인할 수 있게 보여줍니다.
+이 챕터는 로그를 프론트엔드에서 직접 저장하는 수업이 아닙니다. 실제 서비스 로그 저장은 `01_supabase-ai-backend`와 Supabase가 담당합니다. Streamlit은 백엔드 API를 호출해 최근 로그를 조회하고, 현재 UI-백엔드-데이터 연결 상태를 직접 눈으로 확인할 수 있게 보여줍니다.
 
 ## 학습 목표
 
@@ -50,7 +50,7 @@ uvicorn backend-auth-session-sample:app --reload --host 127.0.0.1 --port 8000
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
 .\.venv\Scripts\Activate.ps1
-streamlit run .\05_state-session-and-data\06_ch6_service-log-and-integration-check\01_service-log-dashboard.py
+streamlit run.\05_state-session-and-data\06_ch6_service-log-and-integration-check\01_service-log-dashboard.py
 ```
 
 ## 확인할 내용
@@ -59,7 +59,7 @@ streamlit run .\05_state-session-and-data\06_ch6_service-log-and-integration-che
 - 로그인 token 또는 수업용 token이 요청 header에 포함되는가?
 - 서비스 로그가 표로 표시되는가?
 - 오류가 발생했을 때 사용자가 이해할 수 있는 안내 메시지가 보이는가?
-- 실제 배포 전에 확인할 항목을 수업 참여자가 설명할 수 있는가?
+- 실제 배포 전에 확인할 항목을 설명할 수 있는가?
 
 ## 최종 배포 실습
 

@@ -2,7 +2,7 @@
 
 `README.md` 같은 `.md` 파일은 Markdown 문서입니다.
 
-이 수업의 설명서, 실습 안내, 과제 제출 문서, 발표 자료 초안은 대부분 Markdown으로 작성되어 있습니다. 수업 참여자는 코드를 실행하기 전에 먼저 README를 Preview로 읽고, 프로젝트를 진행하면서 직접 Markdown 문서를 작성할 수 있어야 합니다.
+이 수업의 설명서, 실습 안내, 과제 제출 문서, 발표 자료 초안은 대부분 Markdown으로 작성되어 있습니다. 코드를 실행하기 전에 먼저 README를 Preview로 읽고, 프로젝트를 진행하면서 직접 Markdown 문서를 작성할 수 있어야 합니다.
 
 ## 1. Markdown이란?
 
@@ -87,9 +87,9 @@ Preview에서는 아래처럼 계층이 나뉘어 보입니다.
 
 ```text
 1단계 큰 제목
-  2단계 중간 제목
-    3단계 작은 제목
-      4단계 더 작은 제목
+ 2단계 중간 제목
+ 3단계 작은 제목
+ 4단계 더 작은 제목
 ```
 
 수업 문서를 작성할 때는 보통 `#`, `##`, `###` 정도만 사용해도 충분합니다.
@@ -151,7 +151,7 @@ Preview에서는 아래처럼 계층이 나뉘어 보입니다.
 ```markdown
 - [ ] Python 설치 확인
 - [ ] VS Code 설치 확인
-- [ ] .venv 생성
+- [ ].venv 생성
 - [ ] requirements.txt 설치
 - [ ] README Preview 확인
 ```
@@ -179,7 +179,7 @@ PowerShell 명령어 예시:
 
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
@@ -233,7 +233,7 @@ Preview에서는 `README.md`처럼 보입니다.
 | --- | --- |
 | Python | 프로그래밍 언어 |
 | VS Code | 코드 편집기 |
-| .venv | 프로젝트별 가상환경 |
+|.venv | 프로젝트별 가상환경 |
 ```
 
 Preview에서는 표 형태로 보입니다.
@@ -244,7 +244,7 @@ Preview에서는 표 형태로 보입니다.
 | 단계 | 작업 | 명령어 |
 | --- | --- | --- |
 | 1 | 폴더 이동 | `cd C:\aidev\01_supabase-ai-backend` |
-| 2 | 가상환경 생성 | `python -m venv .venv` |
+| 2 | 가상환경 생성 | `python -m venv.venv` |
 | 3 | 가상환경 활성화 | `.\.venv\Scripts\Activate.ps1` |
 ```
 
@@ -318,9 +318,9 @@ Preview 화면에서는 링크를 클릭할 수 있습니다.
 
 ```text
 project-folder/
-  README.md
-  images/
-    screen-01.png
+ README.md
+ images/
+ screen-01.png
 ```
 
 그리고 README에는 아래처럼 작성합니다.
@@ -408,16 +408,16 @@ python main.py
 
 ```text
 project/
-  backend/
-  frontend/
-  docs/
-  README.md
+ backend/
+ frontend/
+ docs/
+ README.md
 ```
 
 ## 4. 설치 방법
 
 ```powershell
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
@@ -538,7 +538,7 @@ Markdown 파일 열기
 아래 항목을 확인합니다.
 
 ```text
-[ ] .md 파일을 만들 수 있다.
+[ ].md 파일을 만들 수 있다.
 [ ] 제목을 작성할 수 있다.
 [ ] 목록을 작성할 수 있다.
 [ ] 체크리스트를 작성할 수 있다.

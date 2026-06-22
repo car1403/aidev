@@ -2,7 +2,7 @@
 
 `.venv` 관련 오류 해결 문서입니다.
 
-## .venv 활성화가 안 될 때
+##.venv 활성화가 안 될 때
 
 ```powershell
 Set-ExecutionPolicy -Scope CurrentUser RemoteSigned

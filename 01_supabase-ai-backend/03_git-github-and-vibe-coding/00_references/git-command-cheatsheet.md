@@ -30,12 +30,12 @@ git diff
 
 ```powershell
 git add 파일명
-git add .
+git add.
 ```
 
 `git add 파일명`은 특정 파일만 올립니다.
 
-`git add .`은 현재 폴더 아래의 변경 파일을 한 번에 올립니다. 초보자는 `git status`와 `git diff`를 먼저 확인한 뒤 사용합니다.
+`git add.`은 현재 폴더 아래의 변경 파일을 한 번에 올립니다. 초보자는 `git status`와 `git diff`를 먼저 확인한 뒤 사용합니다.
 
 ## 커밋 만들기
 

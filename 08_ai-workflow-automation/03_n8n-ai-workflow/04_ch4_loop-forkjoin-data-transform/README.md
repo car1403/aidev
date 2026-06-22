@@ -16,9 +16,9 @@ Webhook Trigger
 -> Parse Data
 -> Loop Items
 -> Fork
-   -> RAG Search
-   -> AI Summary
-   -> Ticket Classify
+ -> RAG Search
+ -> AI Summary
+ -> Ticket Classify
 -> Join
 -> Aggregate Result
 -> Respond
@@ -39,5 +39,5 @@ Webhook Trigger
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\03_n8n-ai-workflow
-python .\04_ch4_loop-forkjoin-data-transform\01_loop_forkjoin_transform.py
+python.\04_ch4_loop-forkjoin-data-transform\01_loop_forkjoin_transform.py
 ```

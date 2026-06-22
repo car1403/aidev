@@ -41,24 +41,24 @@ Render + Upstash + Streamlit Community Cloud 무료 배포 시연
 ```text
 team-project
 ├─ README.md
-├─ .env.example
+├─.env.example
 ├─ backend
-│  ├─ main.py
-│  └─ requirements.txt
+│ ├─ main.py
+│ └─ requirements.txt
 ├─ frontend
-│  ├─ app.py
-│  └─ requirements.txt
+│ ├─ app.py
+│ └─ requirements.txt
 ├─ docs
-│  ├─ project-plan.md
-│  ├─ api-spec.md
-│  ├─ ui-design.md
-│  ├─ supabase-schema.md
-│  ├─ streaming-response-design.md
-│  ├─ dashboard-result.md
-│  ├─ deployment-guide.md
-│  └─ test-checklist.md
+│ ├─ project-plan.md
+│ ├─ api-spec.md
+│ ├─ ui-design.md
+│ ├─ supabase-schema.md
+│ ├─ streaming-response-design.md
+│ ├─ dashboard-result.md
+│ ├─ deployment-guide.md
+│ └─ test-checklist.md
 └─ presentation
-   └─ final-presentation.md
+ └─ final-presentation.md
 ```
 
 `backend`와 `frontend`를 나누는 이유는 배포 서비스가 서로 다르기 때문입니다.
@@ -138,7 +138,7 @@ my-supabase-mini-project
 ├─ docs
 ├─ presentation
 ├─ README.md
-└─ .env.example
+└─.env.example
 ```
 
 주의:
@@ -303,8 +303,8 @@ RLS 정책 때문에 조회/저장이 막힌 것은 아닌가?
 ```text
 1. Supabase 또는 Upstash에서 노출된 key를 재발급합니다.
 2. GitHub에서 key가 포함된 파일을 제거합니다.
-3. .gitignore에 .env가 포함되어 있는지 확인합니다.
-4. 앞으로는 .env.example만 공유합니다.
+3..gitignore에.env가 포함되어 있는지 확인합니다.
+4. 앞으로는.env.example만 공유합니다.
 ```
 
 ## 11. 06 과정과의 차이

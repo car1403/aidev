@@ -140,11 +140,11 @@ pip install -r requirements.txt
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\01_workflow-concepts
-python .\01_ch1_ai-workflow-big-picture\01_ai_workflow_map.py
-python .\02_ch2_llm-tool-memory-workflow\01_llm_tool_memory_flow.py
-python .\03_ch3_trigger-condition-action\01_trigger_condition_action.py
-python .\04_ch4_rag-data-processing-nodes\01_rag_data_processing_nodes.py
-python .\05_ch5_node-interaction-architecture\01_node_interaction_map.py
+python.\01_ch1_ai-workflow-big-picture\01_ai_workflow_map.py
+python.\02_ch2_llm-tool-memory-workflow\01_llm_tool_memory_flow.py
+python.\03_ch3_trigger-condition-action\01_trigger_condition_action.py
+python.\04_ch4_rag-data-processing-nodes\01_rag_data_processing_nodes.py
+python.\05_ch5_node-interaction-architecture\01_node_interaction_map.py
 ```
 
 ## 이후 단원과의 연결

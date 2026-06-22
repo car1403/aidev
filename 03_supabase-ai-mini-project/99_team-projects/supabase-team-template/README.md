@@ -17,20 +17,20 @@ Supabase 기반 팀 프로젝트 시작 템플릿입니다.
 ```text
 team-template
 |-- README.md
-|-- .env.example
+|--.env.example
 |-- backend
 |-- frontend
 |-- docs
-|   |-- project-plan.md
-|   |-- api-spec.md
-|   |-- ui-design.md
-|   |-- supabase-schema.md
-|   |-- dashboard-result.md
-|   |-- streaming-response-design.md
-|   |-- deployment-guide.md
-|   `-- test-checklist.md
+| |-- project-plan.md
+| |-- api-spec.md
+| |-- ui-design.md
+| |-- supabase-schema.md
+| |-- dashboard-result.md
+| |-- streaming-response-design.md
+| |-- deployment-guide.md
+| `-- test-checklist.md
 `-- presentation
-    `-- final-presentation.md
+ `-- final-presentation.md
 ```
 
 ## 필수 산출물
@@ -117,7 +117,7 @@ Streamlit Community Cloud
 배포할 때는 `backend`와 `frontend`가 각각 독립적으로 실행될 수 있어야 합니다.
 
 ```text
-backend/requirements.txt  -> Render에서 설치
+backend/requirements.txt -> Render에서 설치
 frontend/requirements.txt -> Streamlit Community Cloud에서 설치
 ```
 

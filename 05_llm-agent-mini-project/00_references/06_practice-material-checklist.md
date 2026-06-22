@@ -16,7 +16,7 @@
 ## 수업 중 확인할 실습 흐름
 
 ```text
-1. .venv 활성화
+1..venv 활성화
 2. requirements.txt 설치
 3. 수업용 샘플 CLI 실행
 4. Streamlit 화면 실행

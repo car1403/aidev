@@ -4,6 +4,6 @@
 
 ```powershell
 cd C:\aidev\07_multi-agent-service-mini-project\02_instructor-sample-project
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 docker compose config
 ```

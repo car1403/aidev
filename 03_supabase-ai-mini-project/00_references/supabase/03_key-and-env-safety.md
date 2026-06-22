@@ -1,4 +1,4 @@
-﻿# 03 Key And Env Safety
+# 03 Key And Env Safety
 
 Supabase 프로젝트에는 여러 key가 있습니다.
 
@@ -22,7 +22,7 @@ GitHub 저장소
 브라우저에서 실행되는 코드
 ```
 
-## .env
+##.env
 
 실제 key는 `.env` 파일에 넣습니다.
 
@@ -31,7 +31,7 @@ SUPABASE_URL=...
 SUPABASE_ANON_KEY=...
 ```
 
-## .env.example
+##.env.example
 
 공유용 예시 파일입니다.
 

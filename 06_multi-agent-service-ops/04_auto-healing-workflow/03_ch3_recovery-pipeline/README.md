@@ -1,4 +1,4 @@
-﻿# 03_ch3_recovery-pipeline
+# 03_ch3_recovery-pipeline
 
 Auto Healing 복구 파이프라인을 단계별로 설계합니다.
 
@@ -26,5 +26,5 @@ collect_status
 ## 실행
 
 ```powershell
-python .\03_ch3_recovery-pipeline\01_auto-healing-pipeline.py
+python.\03_ch3_recovery-pipeline\01_auto-healing-pipeline.py
 ```

@@ -17,10 +17,10 @@ Docker Compose: 여러 컨테이너를 함께 실행하는 설정
 
 ```powershell
 docker run -it --rm `
-  --name n8n-ai-workflow `
-  -p 5678:5678 `
-  -v n8n-data:/home/node/.n8n `
-  n8nio/n8n:latest
+ --name n8n-ai-workflow `
+ -p 5678:5678 `
+ -v n8n-data:/home/node/.n8n `
+ n8nio/n8n:latest
 ```
 
 접속:
@@ -36,7 +36,7 @@ Dify self-host는 Docker Compose 기반으로 실행하는 흐름이 일반적�
 ```powershell
 git clone https://github.com/langgenius/dify.git
 cd dify\docker
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 docker compose up -d
 ```
 

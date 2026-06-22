@@ -9,30 +9,30 @@
 ```text
 sample-tech-support-workflow
 ├─ README.md
-├─ .env.example
+├─.env.example
 ├─ requirements.txt
 ├─ backend
-│  ├─ main.py
-│  ├─ workflow.py
-│  └─ schemas.py
+│ ├─ main.py
+│ ├─ workflow.py
+│ └─ schemas.py
 ├─ frontend
-│  └─ app.py
+│ └─ app.py
 └─ docs
-   ├─ aipp-workflow-plan.md
-   ├─ n8n-workflow-plan.md
-   ├─ dify-workflow-plan.md
-   ├─ ops-quality-checklist.md
-   └─ demo-script.md
+ ├─ aipp-workflow-plan.md
+ ├─ n8n-workflow-plan.md
+ ├─ dify-workflow-plan.md
+ ├─ ops-quality-checklist.md
+ └─ demo-script.md
 ```
 
 ## 실행
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\99_mini-project\sample-tech-support-workflow
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 ```
 
 Backend:
@@ -50,10 +50,10 @@ streamlit run frontend/app.py --server.port 8901
 ## API
 
 ```text
-GET  /health
+GET /health
 POST /analyze
-GET  /events
-GET  /metrics
+GET /events
+GET /metrics
 ```
 
 ## 샘플 문의

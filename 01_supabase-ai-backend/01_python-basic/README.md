@@ -26,7 +26,7 @@ Python 실행 환경
 ├─ README.md
 ├─ SETUP.md
 ├─ requirements.txt
-├─ .gitignore
+├─.gitignore
 ├─ 00_references
 ├─ 01_python-start
 ├─ 02_variables-and-data-types
@@ -78,7 +78,7 @@ PowerShell에서 아래 순서로 실행합니다.
 
 ```powershell
 cd C:\aidev\01_python-basic
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 python --version
 pip install -r requirements.txt
@@ -91,7 +91,7 @@ pip install -r requirements.txt
 ```powershell
 cd C:\aidev\01_python-basic
 .\.venv\Scripts\Activate.ps1
-python .\01_python-start\01_hello_python.py
+python.\01_python-start\01_hello_python.py
 ```
 
 정상 실행되면 화면에 인사말과 간단한 계산 결과가 출력됩니다.
@@ -114,7 +114,7 @@ print("세 번째")
 
 ```python
 if True:
-    print("조건문 안쪽입니다.")
+ print("조건문 안쪽입니다.")
 ```
 
 ### 3. 오류 메시지는 힌트입니다
@@ -148,10 +148,10 @@ if True:
 
 ```text
 01_python-basic:
-  파이썬 문법과 작은 프로그램 작성
+ 파이썬 문법과 작은 프로그램 작성
 
 02_python-advanced:
-  함수 심화, 모듈, 예외 처리, 클래스, API, 테스트, 프로젝트 구조
+ 함수 심화, 모듈, 예외 처리, 클래스, API, 테스트, 프로젝트 구조
 ```
 
 따라서 이 과정에서는 어렵고 복잡한 설계보다 **기초 문법을 정확히 이해하고 작은 프로그램을 완성하는 경험**에 집중합니다.

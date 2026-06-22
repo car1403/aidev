@@ -2,7 +2,7 @@
 
 이 폴더는 04 과정에서 배운 내용을 하나의 미니 프로젝트로 통합하는 단계입니다.
 
-수업 참여자는 Prompt, Tool Calling, RAG 또는 Memory, LangGraph State Flow를 사용해 일정 조정 Agent를 만들고 실행 결과를 확인합니다.
+Prompt, Tool Calling, RAG 또는 Memory, LangGraph State Flow를 사용해 일정 조정 Agent를 만들고 실행 결과를 확인합니다.
 
 ## 프로젝트 목표
 
@@ -18,51 +18,51 @@
 ```text
 99_agent-mini-project
 ├─ sample-schedule-agent
-│  ├─ .env.example
-│  ├─ requirements.txt
-│  ├─ app
-│  │  ├─ graph.py
-│  │  ├─ mock_data.py
-│  │  ├─ schemas.py
-│  │  └─ tools.py
-│  └─ frontend
-│     └─ streamlit_app.py
+│ ├─.env.example
+│ ├─ requirements.txt
+│ ├─ app
+│ │ ├─ graph.py
+│ │ ├─ mock_data.py
+│ │ ├─ schemas.py
+│ │ └─ tools.py
+│ └─ frontend
+│ └─ streamlit_app.py
 └─ team-template
-   ├─ backend
-   │  ├─ agent_state.py
-   │  ├─ graph.py
-   │  ├─ requirements.txt
-   │  └─ tools.py
-   └─ frontend
-      └─ app.py
+ ├─ backend
+ │ ├─ agent_state.py
+ │ ├─ graph.py
+ │ ├─ requirements.txt
+ │ └─ tools.py
+ └─ frontend
+ └─ app.py
 ```
 
 ## 수업용 샘플 실행
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\99_agent-mini-project\sample-schedule-agent
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 python -m app.graph
 ```
 
 Streamlit 화면으로 확인하려면 다음 명령을 실행합니다.
 
 ```powershell
-streamlit run .\frontend\streamlit_app.py --server.port 8601
+streamlit run.\frontend\streamlit_app.py --server.port 8601
 ```
 
 ## 팀 템플릿 실행
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\99_agent-mini-project\team-template
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
-pip install -r .\backend\requirements.txt
-python .\backend\graph.py
-streamlit run .\frontend\app.py --server.port 8602
+pip install -r.\backend\requirements.txt
+python.\backend\graph.py
+streamlit run.\frontend\app.py --server.port 8602
 ```
 
 ## 산출물 기준

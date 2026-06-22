@@ -13,8 +13,8 @@
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\03_langchain-basics
 .\.venv\Scripts\Activate.ps1
-python .\03_ch3_chain-and-runnable\01_simple-runnable-chain.py
-python .\03_ch3_chain-and-runnable\02_batch-and-stream.py
+python.\03_ch3_chain-and-runnable\01_simple-runnable-chain.py
+python.\03_ch3_chain-and-runnable\02_batch-and-stream.py
 ```
 
 ## 확인 질문

@@ -10,7 +10,7 @@
 
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
-Get-Content .gitignore
+Get-Content.gitignore
 ```
 
 아래 항목이 있는지 확인합니다.
@@ -50,7 +50,7 @@ OPENAI_API_KEY
 
 ```text
 이 파일에 GitHub에 올리면 안 되는 민감정보가 있는지 확인해 주세요.
-.env와 .env.example 기준도 함께 설명해 주세요.
+.env와.env.example 기준도 함께 설명해 주세요.
 ```
 
 ## 정리 질문

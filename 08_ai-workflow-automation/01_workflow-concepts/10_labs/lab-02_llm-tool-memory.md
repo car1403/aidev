@@ -8,7 +8,7 @@ AI 워크플로우에서 LLM, Tool, Memory가 각각 맡아야 할 일을 구분
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\01_workflow-concepts
-python .\02_ch2_llm-tool-memory-workflow\01_llm_tool_memory_flow.py
+python.\02_ch2_llm-tool-memory-workflow\01_llm_tool_memory_flow.py
 ```
 
 ## 할 일

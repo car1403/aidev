@@ -22,14 +22,14 @@ n8n Webhook
 Method: POST
 URL: http://host.docker.internal:8000/analyze
 Body:
-  ticket_id
-  title
-  message
+ ticket_id
+ title
+ message
 ```
 
 ## 예제 실행
 
 ```powershell
 cd C:\aidev\08_ai-workflow-automation\03_n8n-ai-workflow
-python .\03_ch3_ai-api-workflow-integration\01_ai_api_workflow_simulation.py
+python.\03_ch3_ai-api-workflow-integration\01_ai_api_workflow_simulation.py
 ```

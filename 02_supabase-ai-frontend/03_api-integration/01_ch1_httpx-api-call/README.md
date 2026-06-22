@@ -1,4 +1,4 @@
-﻿# 01_ch1_httpx-api-call
+# 01_ch1_httpx-api-call
 
 `httpx`를 사용해 Python 코드에서 HTTP 요청을 보내는 기본 흐름을 학습합니다.
 
@@ -13,7 +13,7 @@
 ## 실행 예시
 
 ```powershell
-python .\03_api-integration\01_ch1_httpx-api-call\01_get-request.py
+python.\03_api-integration\01_ch1_httpx-api-call\01_get-request.py
 ```
 
 ## 확인할 내용

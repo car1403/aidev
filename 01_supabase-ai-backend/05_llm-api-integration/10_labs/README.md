@@ -17,9 +17,9 @@ Lab 05 - 실제 API 호출 전 보안/비용 체크
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\05_llm-api-integration\02_api-key-and-billing\01_check_llm_env.py
-python .\05_llm-api-integration\03_single-turn-call\01_mock_single_turn.py
-python .\05_llm-api-integration\04_multi-turn-call\01_mock_multi_turn.py
+python.\05_llm-api-integration\02_api-key-and-billing\01_check_llm_env.py
+python.\05_llm-api-integration\03_single-turn-call\01_mock_single_turn.py
+python.\05_llm-api-integration\04_multi-turn-call\01_mock_multi_turn.py
 ```
 
 FastAPI endpoint:

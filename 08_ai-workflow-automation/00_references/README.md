@@ -2,7 +2,7 @@
 
 `08_ai-workflow-automation` 과정을 시작하기 전에 읽는 사전 참고 자료입니다.
 
-이 폴더는 AIPP, n8n, Dify를 바로 사용하기 전에 수업 참여자가 먼저 알아야 할 개념, 실습 환경, 도구 선택 기준, 오류 해결 방법, 미니 프로젝트 방향을 정리합니다.
+이 폴더는 AIPP, n8n, Dify를 바로 사용하기 전에 먼저 알아야 할 개념, 실습 환경, 도구 선택 기준, 오류 해결 방법, 미니 프로젝트 방향을 정리합니다.
 
 ## 강의에서 읽는 순서
 
@@ -28,7 +28,7 @@
 | 01_course-big-picture.md | 08 과정 전체 흐름 이해 |
 | 02_ai-workflow-key-concepts.md | Trigger, Condition, Action, LLM, Tool, Memory 개념 정리 |
 | 03_aipp-n8n-dify-comparison.md | AIPP, n8n, Dify 역할 차이 비교 |
-| 04_environment-checklist.md | Python, .venv, Docker, API Key 준비 확인 |
+| 04_environment-checklist.md | Python,.venv, Docker, API Key 준비 확인 |
 | 05_docker-and-local-tools.md | n8n, Dify 같은 로컬 도구 실행 관점 이해 |
 | 06_api-and-webhook-basic.md | Webhook, HTTP API, JSON 기본 개념 |
 | 07_workflow-ops-quality-map.md | 운영, 로그, 비용, 오류 처리, 품질 관리 큰 그림 |

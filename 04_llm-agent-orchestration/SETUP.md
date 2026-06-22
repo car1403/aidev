@@ -34,7 +34,7 @@ Python 3.11 이상
 
 ## 3. Docker Desktop 확인
 
-04 과정은 Docker를 처음 사용하는 수업 참여자도 따라올 수 있도록 Docker Desktop 기준으로 진행합니다.
+04 과정은 Docker를 처음 사용하는 참여자도 따라올 수 있도록 Docker Desktop 기준으로 진행합니다.
 
 Docker Desktop은 Windows에서 Docker 컨테이너를 쉽게 실행할 수 있게 해주는 프로그램입니다. 04에서는 Docker를 깊게 운영 도구로 배우기보다, 로컬 Llama와 pgvector PostgreSQL을 실행하기 위한 실습 도구로 사용합니다.
 
@@ -116,7 +116,7 @@ docker rm 컨테이너ID
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\01_llm-api-and-prompt-basics
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install openai python-dotenv httpx
 ```
@@ -125,7 +125,7 @@ pip install openai python-dotenv httpx
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration
-python -m venv .venv
+python -m venv.venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
@@ -139,7 +139,7 @@ pip install -r requirements.txt
 처음 실행할 때는 다음처럼 복사합니다.
 
 ```powershell
-Copy-Item .env.example .env
+Copy-Item.env.example.env
 ```
 
 `.env` 파일에 실제 API Key를 입력합니다.
@@ -165,10 +165,10 @@ Docker Desktop이 실행 중인 상태에서 아래 명령을 실행합니다.
 
 ```powershell
 docker run -d `
-  --name ollama-llm `
-  -p 11434:11434 `
-  -v ollama-data:/root/.ollama `
-  ollama/ollama:latest
+ --name ollama-llm `
+ -p 11434:11434 `
+ -v ollama-data:/root/.ollama `
+ ollama/ollama:latest
 ```
 
 Llama 모델 다운로드:
@@ -188,7 +188,7 @@ Python 연결 확인:
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\01_llm-api-and-prompt-basics
 .\.venv\Scripts\Activate.ps1
-python .\02_ch2_ollama-docker-llama\01_ollama-health-check.py
+python.\02_ch2_ollama-docker-llama\01_ollama-health-check.py
 ```
 
 ## 7. pgvector PostgreSQL 실행
@@ -199,13 +199,13 @@ python .\02_ch2_ollama-docker-llama\01_ollama-health-check.py
 
 ```powershell
 docker run -d `
-  --name rag-pgvector `
-  -e POSTGRES_DB=rag_db `
-  -e POSTGRES_USER=rag_user `
-  -e POSTGRES_PASSWORD=rag_password `
-  -p 5433:5432 `
-  -v rag-pgvector-data:/var/lib/postgresql/data `
-  pgvector/pgvector:pg16
+ --name rag-pgvector `
+ -e POSTGRES_DB=rag_db `
+ -e POSTGRES_USER=rag_user `
+ -e POSTGRES_PASSWORD=rag_password `
+ -p 5433:5432 `
+ -v rag-pgvector-data:/var/lib/postgresql/data `
+ pgvector/pgvector:pg16
 ```
 
 `rag-pgvector-data` volume은 PostgreSQL 데이터를 보존하는 공간입니다. 컨테이너를 지웠다가 다시 만들어도 이 volume이 남아 있으면 이전 실습 데이터가 유지될 수 있습니다.
@@ -338,7 +338,7 @@ docker volume rm rag-pgvector-data
 4. docker --version 확인
 5. docker ps 확인
 6. docker run hello-world로 기본 컨테이너 실행 확인
-7. 01 단원 .venv 생성
+7. 01 단원.venv 생성
 8. Ollama 컨테이너 실행
 9. llama3.2 모델 다운로드
 10. Python에서 Ollama health check 실행

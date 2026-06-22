@@ -46,18 +46,18 @@ POST /qa
 
 Request Body:
 {
-  "user_id": "student01",
-  "question": "FastAPI에서 Pydantic은 왜 사용하나요?",
-  "model": "mock-teacher"
+ "user_id": "student01",
+ "question": "FastAPI에서 Pydantic은 왜 사용하나요?",
+ "model": "mock-teacher"
 }
 
 Response Body:
 {
-  "item": {
-    "id": "...",
-    "question": "...",
-    "answer": "...",
-    "model": "mock-teacher"
-  }
+ "item": {
+ "id": "...",
+ "question": "...",
+ "answer": "...",
+ "model": "mock-teacher"
+ }
 }
 ```

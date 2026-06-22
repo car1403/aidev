@@ -1,4 +1,4 @@
-﻿# 04_ch4_multi-agent-access-control
+# 04_ch4_multi-agent-access-control
 
 Multi-Agent 환경에서 Agent별 접근 권한을 설계하는 방법을 학습합니다.
 
@@ -25,5 +25,5 @@ admin_agent: 승인된 위험 작업 관리 가능
 ## 실행
 
 ```powershell
-python .\04_ch4_multi-agent-access-control\01_multi-agent-access-control.py
+python.\04_ch4_multi-agent-access-control\01_multi-agent-access-control.py
 ```

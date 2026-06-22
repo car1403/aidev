@@ -1,4 +1,4 @@
-﻿# 04_ch4_execution-status-management
+# 04_ch4_execution-status-management
 
 Agent 실행 상태를 관리하는 방법을 학습합니다.
 
@@ -24,5 +24,5 @@ cancelled: 취소
 ## 실행
 
 ```powershell
-python .\04_ch4_execution-status-management\01_execution-status-manager.py
+python.\04_ch4_execution-status-management\01_execution-status-manager.py
 ```

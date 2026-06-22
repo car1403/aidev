@@ -1,4 +1,4 @@
-﻿# 01_ch1_buttons-forms-and-controls
+# 01_ch1_buttons-forms-and-controls
 
 버튼, 체크박스, 슬라이더, 폼처럼 사용자의 행동을 받는 UI 컴포넌트를 학습합니다.
 
@@ -14,7 +14,7 @@
 ## 실행 예시
 
 ```powershell
-streamlit run .\02_streamlit-ui-components\01_ch1_buttons-forms-and-controls\01_button-click.py
+streamlit run.\02_streamlit-ui-components\01_ch1_buttons-forms-and-controls\01_button-click.py
 ```
 
 ## 확인할 내용

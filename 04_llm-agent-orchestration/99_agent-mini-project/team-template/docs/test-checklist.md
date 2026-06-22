@@ -6,7 +6,7 @@
 
 - [ ] `.venv`를 만들었습니다.
 - [ ] `.venv`를 활성화했습니다.
-- [ ] `pip install -r .\backend\requirements.txt`를 실행했습니다.
+- [ ] `pip install -r.\backend\requirements.txt`를 실행했습니다.
 - [ ] 필요한 `.env` 값을 설정했습니다.
 
 ## 기능 테스트
