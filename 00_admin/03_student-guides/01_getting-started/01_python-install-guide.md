@@ -1,8 +1,7 @@
-# 01. Python Install Guide
+﻿# 01. Python Install Guide
 
 Python은 이 과정에서 가장 기본이 되는 실행 도구입니다.
 
-01~03 과정에서는 Python으로 FastAPI 백엔드 서버, Streamlit 화면, Supabase 연동 예제를 실행합니다. 04~09 과정에서도 Python 기반 AI 서비스 코드, LLM Agent 예제, 워크플로우 자동화 예제를 계속 사용합니다.
 
 ## 1. Python 설치 여부 확인
 

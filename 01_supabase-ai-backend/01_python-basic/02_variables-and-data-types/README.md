@@ -1,4 +1,4 @@
-# 02_variables-and-data-types
+﻿# 02_variables-and-data-types
 
 변수와 기본 자료형을 학습합니다.
 
@@ -16,6 +16,6 @@
 ## 실행
 
 ```powershell
-python.\02_variables-and-data-types\01_variables_types.py
-python.\02_variables-and-data-types\02_string_practice.py
+python .\02_variables-and-data-types\01_variables_types.py
+python .\02_variables-and-data-types\02_string_practice.py
 ```

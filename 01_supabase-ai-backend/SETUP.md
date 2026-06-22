@@ -28,6 +28,59 @@
 | Codex 설치와 로그인 | [`../00_admin/03_student-guides/01_getting-started/08_codex-install-and-login-guide.md`](../00_admin/03_student-guides/01_getting-started/08_codex-install-and-login-guide.md) |
 | OpenAI 계정과 결제 안내 | [`../00_admin/03_student-guides/01_getting-started/09_openai-account-billing-guide.md`](../00_admin/03_student-guides/01_getting-started/09_openai-account-billing-guide.md) |
 
+## GitHub 계정과 Git 사용 준비
+
+이 과정에서는 Git과 GitHub를 사용해 코드 변경 이력을 관리합니다. GitHub는 코드를 온라인 저장소에 보관하고, 변경 이력을 확인하고, 여러 사람이 같은 프로젝트를 함께 관리할 수 있게 해 주는 서비스입니다.
+
+처음 시작하기 전에 아래 항목을 확인합니다.
+
+```text
+1. GitHub 계정이 있는가?
+2. Git이 설치되어 있는가?
+3. VS Code에서 GitHub 로그인이 가능한가?
+4. GitLens 같은 Git 보조 확장을 설치했는가?
+5. `.env`, API key, token 같은 민감정보를 GitHub에 올리지 않는 기준을 이해했는가?
+```
+
+GitHub 계정이 없다면 브라우저에서 아래 주소로 접속해 계정을 만듭니다.
+
+```text
+https://github.com
+```
+
+계정을 만들 때 확인할 내용:
+
+```text
+1. 이메일 주소를 사용할 수 있는가?
+2. GitHub 로그인 비밀번호를 따로 관리할 수 있는가?
+3. 이메일 인증을 완료했는가?
+4. 로그인 후 오른쪽 위 프로필 아이콘이 보이는가?
+```
+
+Git 설치 여부는 PowerShell에서 확인합니다.
+
+```powershell
+git --version
+```
+
+정상 예시:
+
+```text
+git version 2.x.x
+```
+
+GitHub 계정 생성과 Git 설치는 이 문서에서 간단히 확인만 합니다. 실제 커밋, 브랜치, push, VS Code Source Control 사용법은 아래 단원에서 단계적으로 실습합니다.
+
+```text
+03_git-github-and-vibe-coding
+```
+
+VS Code 화면에서 Git을 사용하는 자세한 방법은 아래 문서를 참고합니다.
+
+```text
+03_git-github-and-vibe-coding/00_references/vscode-source-control-guide.md
+```
+
 ## 1. 작업 위치로 이동
 
 PowerShell을 열고 과정 폴더로 이동합니다.

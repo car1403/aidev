@@ -9,7 +9,7 @@
 ```text
 함수 심화
 모듈과 패키지
-requirements.txt와.venv
+상위 과정 `.venv`와 공통 패키지 관리
 예외 처리와 디버깅
 클래스와 객체지향 프로그래밍
 컴프리헨션과 이터레이터
@@ -27,7 +27,6 @@ HTTP API와 외부 데이터
 02_python-advanced
 ├─ README.md
 ├─ SETUP.md
-├─ requirements.txt
 ├─.gitignore
 ├─ 00_references
 ├─ 01_function-advanced
@@ -67,26 +66,31 @@ HTTP API와 외부 데이터
 | 단원 | 내용 |
 | --- | --- |
 | 00_references | 고급 과정 로드맵, 프로젝트 사고방식, 오류/디버깅 가이드 |
-| 01_function-advanced | 가변 매개변수, 키워드 인자, 람다, `map`, `filter`, 재귀 기초 |
-| 02_module-package-venv | `import`, 표준 라이브러리, 직접 만든 모듈, 패키지 구조, `.venv` |
-| 03_exception-debugging | `try/except`, `else/finally`, `raise`, 안전한 입력 처리 |
-| 04_oop-basic | 클래스, 객체, 생성자, 인스턴스 변수, 메서드, 상속 |
-| 05_comprehension-iterator | list/dict comprehension, generator, iterable/iterator |
-| 06_data-processing-advanced | CSV, JSON, 날짜/시간, `pathlib` |
+| 01_function-advanced | `*args`, `**kwargs`, 언패킹, 함수 전달, 데코레이터, LLM 요청 데이터 구성 |
+| 02_module-package-venv | 표준 라이브러리 `import`, `from import`, 별칭 import, 직접 만든 모듈, 패키지 구조, 공통 `.venv`와 외부 패키지 확인 |
+| 03_exception-debugging | `try/except`, `ValueError`, 안전한 반복 입력, 파일/JSON 오류, `raise`, traceback 읽기 |
+| 04_oop-basic | 클래스, 객체, `__init__`, `self`, 메서드, `dataclass`, dict 변환, Service class 구조 |
+| 05_comprehension-iterator | list/dict comprehension, API 응답 목록 변환, id 기반 조회 구조, 스트리밍 이해용 `yield` |
+| 06_data-processing-advanced | `pathlib` 파일 경로, JSON 설정/응답 저장, CSV 서비스 로그, 날짜/시간 기록 |
 | 07_api-external-data | HTTP GET/POST, JSON 응답 처리, Open-Meteo 날씨 API 호출, `async/await` 기반 동시 요청 |
-| 08_testing-code-quality | `assert`, pytest 기초, 타입 힌트, 리팩토링 |
+| 08_testing-code-quality | `assert`, pytest 기초, 예외 테스트, API 응답 dict 구조 테스트, 리팩토링 확인 |
 | 09_project-structure | `main.py`, package, config, README, Git 관리 |
 | 99_advanced-mini-project | JSON 기반 CLI 주소록 미니 프로젝트 |
 
 ## 처음 시작하는 방법
 
+`02_python-advanced`는 `01_supabase-ai-backend`의 하위 단원이므로 별도의 `.venv`를 새로 만들지 않습니다. `01_supabase-ai-backend` 최상위에 이미 만든 `.venv`를 그대로 사용합니다.
+
 ```powershell
-cd C:\aidev\02_python-advanced
-python -m venv .venv
+cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
 python --version
+python -m pip install --upgrade pip
 pip install -r requirements.txt
+python .\02_python-advanced\01_function-advanced\01_args_kwargs_api_options.py
 ```
+
+`02_python-advanced`는 하위 단원이므로 별도의 `.venv`와 `requirements.txt`를 두지 않습니다. `pytest`, `httpx` 같은 고급 단원 패키지도 `01_supabase-ai-backend` 최상위 `requirements.txt`에서 함께 관리합니다.
 
 ## 01_python-basic과의 차이
 

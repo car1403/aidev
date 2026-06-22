@@ -1,4 +1,4 @@
-# 01_python-start
+﻿# 01_python-start
 
 파이썬 실행과 가장 기본적인 코드 작성 방법을 학습합니다.
 
@@ -15,8 +15,8 @@ input
 ## 실행
 
 ```powershell
-cd C:\aidev\01_python-basic
+cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python.\01_python-start\01_hello_python.py
-python.\01_python-start\02_input_output.py
+python .\01_python-basic\01_python-start\01_hello_python.py
+python .\01_python-basic\01_python-start\02_input_output.py
 ```

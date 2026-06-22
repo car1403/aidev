@@ -25,7 +25,6 @@ Python 실행 환경
 01_python-basic
 ├─ README.md
 ├─ SETUP.md
-├─ requirements.txt
 ├─.gitignore
 ├─ 00_references
 ├─ 01_python-start
@@ -63,35 +62,39 @@ Python 실행 환경
 | 00_references | 학습 로드맵, 파이썬 용어, 초보자 오류 가이드 |
 | 01_python-start | Python 실행, `print`, 주석, 입력과 출력 |
 | 02_variables-and-data-types | 변수, 숫자, 문자열, 불 자료형, 형 변환 |
-| 03_condition-basic | `if`, `elif`, `else`, 비교 연산자, 논리 연산자 |
-| 04_loop-basic | `for`, `while`, `range`, `break`, `continue` |
-| 05_data-structures-basic | 리스트, 튜플, 딕셔너리, 세트 기초 |
-| 06_function-basic | 함수 정의, 매개변수, 반환값, 코드 정리 |
-| 07_file-data-basic | 텍스트 파일, JSON 파일 기초 |
+| 03_condition-basic | `if`, `elif`, `else`, `match-case`, 비교 연산자, 논리 연산자 |
+| 04_loop-basic | `for`, `while`, `while True`, `range`, `break`, `continue` |
+| 05_data-structures-basic | 리스트, 튜플, 딕셔너리, 세트, 반복문과 자료구조, 중첩 API 응답 형태 |
+| 06_function-basic | 함수 정의, 매개변수, 반환값, 기본값, 키워드 인자, 자료구조 처리, 코드 정리 |
+| 07_file-data-basic | 파일 경로, 텍스트 파일, CSV, JSON, 설정 파일 기초 |
 | 10_labs | 단원별 실습 문제 |
 | 20_assignments | 기초 과제 |
-| 99_basic-mini-project | 파일 저장형 할 일 목록 미니 프로젝트 |
+| 99_basic-mini-project | 파일 저장형 학습 기록 관리 미니 프로젝트 |
 
 ## 처음 시작하는 방법
+
+`01_python-basic`은 `01_supabase-ai-backend`의 하위 단원이므로 별도의 `.venv`를 새로 만들지 않습니다. `01_supabase-ai-backend` 최상위에 이미 만든 `.venv`를 그대로 사용합니다.
 
 PowerShell에서 아래 순서로 실행합니다.
 
 ```powershell
-cd C:\aidev\01_python-basic
-python -m venv .venv
+cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
 python --version
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
 프롬프트 앞에 `(.venv)`가 보이면 가상환경이 활성화된 것입니다.
 
+`01_python-basic`은 Python 표준 라이브러리만 사용하므로 이 하위 폴더에는 별도의 `requirements.txt`를 두지 않습니다. 위 명령의 `requirements.txt`는 `01_supabase-ai-backend` 최상위의 공통 패키지 설치 파일입니다.
+
 ## 첫 예제 실행
 
 ```powershell
-cd C:\aidev\01_python-basic
+cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python.\01_python-start\01_hello_python.py
+python .\01_python-basic\01_python-start\01_hello_python.py
 ```
 
 정상 실행되면 화면에 인사말과 간단한 계산 결과가 출력됩니다.
