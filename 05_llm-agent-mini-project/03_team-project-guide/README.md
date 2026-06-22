@@ -2,7 +2,7 @@
 
 이 폴더는 `05_llm-agent-mini-project`의 팀 프로젝트 진행 문서입니다.
 
-이번 미니 프로젝트의 기준 주제는 **복합 API 연계 일정 조정 에이전트**입니다. 학생들은 `04_llm-agent-orchestration`에서 배운 Prompt, Tool Use, Function Calling, Memory, LangGraph를 연결해 사용자의 일정 조정 요청을 분석하고, 필요한 도구를 선택하고, 결과를 검증한 뒤 최종 제안을 생성하는 단일 에이전트를 구현합니다.
+이번 미니 프로젝트의 기준 주제는 **복합 API 연계 일정 조정 에이전트**입니다. 수업 참여자는 `04_llm-agent-orchestration`에서 배운 Prompt, Tool Use, Function Calling, Memory, LangGraph를 연결해 사용자의 일정 조정 요청을 분석하고, 필요한 도구를 선택하고, 결과를 검증한 뒤 최종 제안을 생성하는 단일 에이전트를 구현합니다.
 
 ## 프로젝트 큰 방향
 

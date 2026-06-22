@@ -1,4 +1,4 @@
-﻿# SETUP
+# SETUP
 
 `05_llm-agent-mini-project` 실행 환경 설정 안내입니다.
 
@@ -58,7 +58,7 @@ docker --version
 docker ps
 ```
 
-처음 설치한 학생은 아래 테스트도 실행합니다.
+처음 설치한 수업 참여자는 아래 테스트도 실행합니다.
 
 ```powershell
 docker run hello-world
@@ -190,7 +190,7 @@ psql 종료:
 \q
 ```
 
-## 8. 강사 샘플 프로젝트 실행
+## 8. 수업용 샘플 프로젝트 실행
 
 ```powershell
 cd C:\aidev\05_llm-agent-mini-project\02_instructor-sample-project

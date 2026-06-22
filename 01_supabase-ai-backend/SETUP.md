@@ -2,7 +2,7 @@
 
 `01_supabase-ai-backend` 과정의 개발 환경 설정 문서입니다.
 
-이 문서는 학생이 수업 시간에 그대로 따라 할 수 있도록 작성했습니다. 이 과정은 Python, FastAPI, Supabase, Gemini API, Upstash Redis를 사용해 AI 백엔드의 기본 구조를 학습합니다.
+이 문서는 수업 참여자가 수업 시간에 그대로 따라 할 수 있도록 작성했습니다. 이 과정은 Python, FastAPI, Supabase, Gemini API, Upstash Redis를 사용해 AI 백엔드의 기본 구조를 학습합니다.
 
 중요한 기준은 다음과 같습니다.
 

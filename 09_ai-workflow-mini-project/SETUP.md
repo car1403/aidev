@@ -15,10 +15,10 @@
 [ ] PowerShell
 [ ] Chrome 또는 Edge 브라우저
 [ ] Docker Desktop
-[ ] OpenAI API Key 또는 강사가 제공한 실습용 API Key
-[ ] AIPP 계정 또는 강사가 제공한 실습 계정
+[ ] OpenAI API Key 또는 수업에서 제공한 실습용 API Key
+[ ] AIPP 계정 또는 수업에서 제공한 실습 계정
 [ ] n8n 로컬 실행 환경
-[ ] Dify 계정 또는 강사가 제공한 실습 환경
+[ ] Dify 계정 또는 수업에서 제공한 실습 환경
 ```
 
 09 과정에서는 모든 팀이 AIPP, n8n, Dify를 모두 완성할 필요는 없습니다. 다만 팀 프로젝트에서 최소 1개 이상의 도구를 선택하고, 그 도구를 왜 선택했는지 설명할 수 있어야 합니다.
@@ -131,9 +131,9 @@ API Key는 코드, README, 발표 자료에 직접 적지 않습니다.
 개인정보나 회사 내부 문서는 실습용 더미 데이터로 대체합니다.
 ```
 
-## 7. 강사 샘플 프로젝트 실행
+## 7. 수업용 샘플 프로젝트 실행
 
-강사 샘플은 FastAPI backend와 Streamlit frontend로 구성되어 있습니다. PowerShell을 두 개 열어 실행하는 것을 권장합니다.
+수업용 샘플은 FastAPI backend와 Streamlit frontend로 구성되어 있습니다. PowerShell을 두 개 열어 실행하는 것을 권장합니다.
 
 ### 7.1 Backend 실행
 
@@ -173,9 +173,9 @@ Frontend: http://127.0.0.1:8901
 
 서버를 멈출 때는 각 PowerShell에서 `Ctrl + C`를 누릅니다.
 
-## 8. 강사 샘플에서 확인할 내용
+## 8. 수업용 샘플에서 확인할 내용
 
-샘플을 실행한 뒤 학생은 아래를 확인합니다.
+샘플을 실행한 뒤 수업 참여자는 아래를 확인합니다.
 
 ```text
 [ ] 문의 입력 화면이 열리는가?
@@ -230,7 +230,7 @@ Webhook Trigger
 
 ## 10. Dify가 필요한 팀을 위한 준비
 
-Dify를 사용하는 팀은 Dify Cloud 또는 강사가 제공한 Dify 환경을 먼저 사용합니다.
+Dify를 사용하는 팀은 Dify Cloud 또는 수업에서 제공한 Dify 환경을 먼저 사용합니다.
 
 확인할 항목:
 

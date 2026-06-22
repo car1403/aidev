@@ -2,11 +2,11 @@
 
 ## 과제 목표
 
-학생 질문을 받아 학습 계획을 추천하는 간단한 LangChain Chain을 설계합니다.
+학습 질문을 받아 학습 계획을 추천하는 간단한 LangChain Chain을 설계합니다.
 
 ## 요구 사항
 
-1. 입력: 학생 질문 또는 학습 주제
+1. 입력: 학습 질문 또는 학습 주제
 2. 처리: PromptTemplate 또는 ChatPromptTemplate 사용
 3. 출력: 단계별 학습 계획
 4. 가능하면 Pydantic Structured Output 적용

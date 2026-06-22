@@ -32,4 +32,4 @@ uvicorn main_mock:app --reload
 
 ## 수업 기준
 
-실제 Gemini API 호출은 강사가 무료 범위, 호출 제한, key 설정을 확인한 뒤 진행합니다. OpenAI API 호출은 선택/비교 실습으로 진행할 때만 별도로 확인합니다.
+실제 Gemini API 호출은 진행자가 무료 범위, 호출 제한, key 설정을 확인한 뒤 진행합니다. OpenAI API 호출은 선택/비교 실습으로 진행할 때만 별도로 확인합니다.

@@ -276,7 +276,7 @@ UPSTASH_REDIS_REST_TOKEN
 
 ## 7. 제출할 내용
 
-학생은 배포 실습 후 다음 내용을 제출합니다.
+수업 참여자는 배포 실습 후 다음 내용을 제출합니다.
 
 1. Render 백엔드 URL
 2. Streamlit Community Cloud URL

@@ -78,7 +78,7 @@ n8n Webhook
 
 ## 권장 실습 방식
 
-초보자 수업에서는 먼저 Dify Cloud 또는 강사가 준비한 Dify 환경을 사용합니다.
+초보자 수업에서는 먼저 Dify Cloud 또는 수업에서 준비한 Dify 환경을 사용합니다.
 
 로컬 self-host 방식은 Docker Compose, 여러 컨테이너, 볼륨, 포트 설정을 함께 다루므로 선택 실습으로 진행합니다. Docker Compose와 배포 운영은 `06_multi-agent-service-ops`에서 더 자세히 다룹니다.
 
@@ -194,7 +194,7 @@ http://localhost/install
 - 실제 설치 전에는 공식 Docker Compose 설치 문서를 확인합니다.
 - Windows에서는 Docker Desktop과 WSL2 설정이 중요합니다.
 - Dify는 여러 컨테이너와 볼륨을 사용하므로 디스크 공간과 포트 충돌을 확인합니다.
-- 로컬 self-host 실습이 어렵다면 Dify Cloud 또는 강사 제공 환경으로 먼저 진행합니다.
+- 로컬 self-host 실습이 어렵다면 Dify Cloud 또는 수업 제공 환경으로 먼저 진행합니다.
 
 ## Python 예제 실행 순서
 
@@ -264,7 +264,7 @@ docker compose version이 정상인가?
 
 ## 과제 방향
 
-학생은 Dify로 다음 중 하나를 설계합니다.
+수업 참여자는 Dify로 다음 중 하나를 설계합니다.
 
 ```text
 사내 문서 기반 기술 지원 챗봇

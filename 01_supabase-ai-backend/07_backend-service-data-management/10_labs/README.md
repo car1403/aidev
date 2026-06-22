@@ -81,4 +81,4 @@ python .\07_backend-service-data-management\02_conversation-history\02_save_conv
 python .\07_backend-service-data-management\03_service-logs\02_insert_service_log.py
 ```
 
-실제 데이터가 Supabase에 저장되므로 수업 중 강사와 함께 실행합니다.
+실제 데이터가 Supabase에 저장되므로 수업 중 수업 중 함께 실행합니다.

@@ -2,11 +2,11 @@
 
 `02_supabase-ai-frontend` 과정의 개발 환경 설정 문서입니다.
 
-이 문서는 학생이 수업 시간에 그대로 따라 할 수 있도록 작성했습니다. 이 과정은 Streamlit 프론트엔드를 만들고, `01_supabase-ai-backend`의 Supabase 기반 FastAPI API를 호출하는 방식으로 진행합니다.
+이 문서는 수업 참여자가 수업 시간에 그대로 따라 할 수 있도록 작성했습니다. 이 과정은 Streamlit 프론트엔드를 만들고, `01_supabase-ai-backend`의 Supabase 기반 FastAPI API를 호출하는 방식으로 진행합니다.
 
 Docker, Docker Compose, AWS 배포는 여기서 설정하지 않습니다. 해당 내용은 `06_multi-agent-service-ops`에서 다룹니다.
 
-React는 필수 실습이 아닙니다. 이 과정은 Streamlit을 기본 UI 도구로 사용하고, React 기반 UI 구조는 학생 수준과 수업 진도에 따라 선택 확장으로 소개합니다.
+React는 필수 실습이 아닙니다. 이 과정은 Streamlit을 기본 UI 도구로 사용하고, React 기반 UI 구조는 진도와 난이도과 수업 진도에 따라 선택 확장으로 소개합니다.
 
 ## 1. 작업 폴더로 이동
 

@@ -1,6 +1,6 @@
 # Course Alignment Checklist
 
-이 문서는 `06_multi-agent-service-ops`가 수업 이미지의 요구 내용을 어떻게 반영하는지 확인하는 학생용 체크리스트입니다.
+이 문서는 `06_multi-agent-service-ops`가 수업 이미지의 요구 내용을 어떻게 반영하는지 확인하는 수업용 체크리스트입니다.
 
 ## 1. 멀티 에이전트 협업 설계
 

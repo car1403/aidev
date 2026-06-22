@@ -1,6 +1,6 @@
 # Project Alignment Checklist
 
-이 문서는 `07_multi-agent-service-mini-project`가 이미지의 미니 프로젝트 기준과 `06_multi-agent-service-ops`에서 보강한 내용을 어떻게 반영하는지 확인하는 학생용 체크리스트입니다.
+이 문서는 `07_multi-agent-service-mini-project`가 이미지의 미니 프로젝트 기준과 `06_multi-agent-service-ops`에서 보강한 내용을 어떻게 반영하는지 확인하는 수업용 체크리스트입니다.
 
 ## 1. 프로젝트 방향
 

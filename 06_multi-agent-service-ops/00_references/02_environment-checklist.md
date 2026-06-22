@@ -36,7 +36,7 @@ docker ps
 
 `docker ps`가 실패하면 Docker Desktop이 실행 중인지 확인합니다.
 
-처음 설치한 학생은 기본 컨테이너 실행도 확인합니다.
+처음 설치한 수업 참여자는 기본 컨테이너 실행도 확인합니다.
 
 ```powershell
 docker run hello-world
@@ -66,14 +66,14 @@ GitHub Actions workflow는 저장소 최상위 `.github/workflows` 아래에 있
 
 ## AWS 확인
 
-AWS 배포 실습을 진행할 학생은 아래 명령을 확인합니다.
+AWS 배포 실습을 진행할 수업 참여자는 아래 명령을 확인합니다.
 
 ```powershell
 aws --version
 aws sts get-caller-identity
 ```
 
-AWS 실습은 비용이 발생할 수 있으므로 강사 안내가 있을 때만 진행합니다.
+AWS 실습은 비용이 발생할 수 있으므로 수업 안내가 있을 때만 진행합니다.
 
 ## VS Code 또는 Cursor 확인
 

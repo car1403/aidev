@@ -2,7 +2,7 @@
 
 이 문서는 `04_llm-agent-orchestration` 과정의 커리큘럼 반영 상태와 실습 운영 기준을 한곳에 정리한 참고 자료입니다.
 
-기존에는 최상위에 `CURRICULUM_REVIEW.md`, `LAB_ASSIGNMENT_REVIEW.md`를 따로 두었지만, 학생들이 수업 중 여러 문서를 오가며 확인하지 않도록 `00_references` 안의 참고 자료로 통합합니다.
+기존에는 최상위에 `CURRICULUM_REVIEW.md`, `LAB_ASSIGNMENT_REVIEW.md`를 따로 두었지만, 수업 참여자가 수업 중 여러 문서를 오가며 확인하지 않도록 `00_references` 안의 참고 자료로 통합합니다.
 
 ## 전체 판단
 
@@ -42,7 +42,7 @@ Docker Compose, AWS 배포, GitHub Actions, 운영 자동화는 06 과정에서 
 
 ## Lab 운영 기준
 
-각 단원의 실습은 별도 Markdown lab 문서보다 코드 실행과 강사 설명 중심으로 진행합니다.
+각 단원의 실습은 별도 Markdown lab 문서보다 코드 실행과 수업 설명 중심으로 진행합니다.
 
 수업 중에는 다음 순서로 진행합니다.
 
@@ -52,7 +52,7 @@ Docker Compose, AWS 배포, GitHub Actions, 운영 자동화는 06 과정에서 
 3. 단원 폴더의 Python 예제를 실행한다.
 4. 출력 결과를 함께 읽는다.
 5. 코드의 주석과 실행 흐름을 설명한다.
-6. 학생이 파라미터, 프롬프트, Tool 입력값을 바꿔본다.
+6. 수업 참여자가 파라미터, 프롬프트, Tool 입력값을 바꿔본다.
 7. 최종적으로 미니 프로젝트에 해당 개념을 연결한다.
 ```
 
@@ -70,7 +70,7 @@ Docker Compose, AWS 배포, GitHub Actions, 운영 자동화는 06 과정에서 
 
 ## 산출물 기준
 
-학생은 04 과정이 끝날 때 다음을 제출하거나 설명할 수 있어야 합니다.
+수업 참여자는 04 과정이 끝날 때 다음을 제출하거나 설명할 수 있어야 합니다.
 
 - Agent가 해결할 문제 정의
 - Agent State 필드 설계

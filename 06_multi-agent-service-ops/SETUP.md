@@ -1,4 +1,4 @@
-﻿# SETUP
+# SETUP
 
 `06_multi-agent-service-ops` 실행 환경 설정 문서입니다.
 
@@ -70,7 +70,7 @@ docker compose version
 docker ps
 ```
 
-처음 설치한 학생은 아래 테스트도 실행합니다.
+처음 설치한 수업 참여자는 아래 테스트도 실행합니다.
 
 ```powershell
 docker run hello-world
@@ -211,7 +211,7 @@ push 또는 pull request
 
 ## 11. AWS CLI와 배포 준비
 
-AWS 실습은 비용이 발생할 수 있으므로 강사 안내에 따라 진행합니다.
+AWS 실습은 비용이 발생할 수 있으므로 수업 안내에 따라 진행합니다.
 
 AWS CLI 확인:
 
@@ -252,7 +252,7 @@ Parameter Store 설정 값 관리
 - AWS 리소스는 실행 중이면 비용이 발생할 수 있습니다.
 - 실습 후 App Runner, ECS Service, Load Balancer, ECR image, CloudWatch Log Group을 정리합니다.
 - AWS Access Key는 코드, README, 발표 자료, GitHub Actions 로그에 노출하지 않습니다.
-- GitHub Actions에서 AWS에 접근할 때는 장기 Access Key보다 OIDC 기반 인증을 권장합니다. 이 과정에서는 먼저 개념을 이해하고, 실제 적용은 강사 안내에 따릅니다.
+- GitHub Actions에서 AWS에 접근할 때는 장기 Access Key보다 OIDC 기반 인증을 권장합니다. 이 과정에서는 먼저 개념을 이해하고, 실제 적용은 수업 안내에 따릅니다.
 - `.env`, `.venv`, 로그 파일, 개인 키 파일은 커밋하지 않습니다.
 
 ## 13. 첫 수업 추천 진행 순서

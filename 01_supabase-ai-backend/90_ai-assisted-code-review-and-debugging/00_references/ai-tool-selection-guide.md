@@ -55,5 +55,5 @@ Perplexity AI에게:
 FastAPI Depends 공식 문서 위치를 찾아주고 핵심 개념을 요약해 주세요.
 
 NotebookLM에게:
-이 단원의 README를 기반으로 학생 퀴즈 10개를 만들어 주세요.
+이 단원의 README를 기반으로 학습 퀴즈 10개를 만들어 주세요.
 ```

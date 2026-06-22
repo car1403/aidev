@@ -45,7 +45,7 @@ OPENAI_API_KEY
 | Redis 인증 실패 | Upstash token 누락 또는 오타 | 환경변수 이름과 값을 확인합니다. |
 | Supabase 권한 오류 | RLS 또는 service role 처리 위치 문제 | 프론트엔드가 아니라 백엔드 설정을 확인합니다. |
 
-## 학생용 배포 점검 질문
+## 수업용 배포 점검 질문
 
 ```text
 프론트엔드 주소는 무엇인가요?

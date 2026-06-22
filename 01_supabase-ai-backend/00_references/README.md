@@ -2,7 +2,7 @@
 
 `01_supabase-ai-backend`를 시작하기 전에 읽는 참고 자료입니다.
 
-이 폴더는 별도 수업 단원이 아니라, 학생과 강사가 수업 중 계속 찾아보는 기준 문서 모음입니다. Python, FastAPI, Supabase를 배우기 전에 AI 도구를 어떻게 사용할지, AI 답변을 어떻게 검증할지, API key를 어떻게 안전하게 관리할지 먼저 정리합니다.
+이 폴더는 별도 수업 단원이 아니라, 수업 참여자가 수업 중 계속 찾아보는 기준 문서 모음입니다. Python, FastAPI, Supabase를 배우기 전에 AI 도구를 어떻게 사용할지, AI 답변을 어떻게 검증할지, API key를 어떻게 안전하게 관리할지 먼저 정리합니다.
 
 ## 문서 목록
 
@@ -20,7 +20,7 @@ prompt-and-answer-validation-guide.md
 - 01~03 과정의 기본 LLM API는 Gemini입니다. OpenAI API는 선택/비교 실습용으로 다룹니다.
 - Codex, NotebookLM, Perplexity AI, ChatGPT/Claude/Gemini는 목적에 따라 다르게 사용합니다.
 
-## 학생 확인 질문
+## 확인 질문
 
 ```text
 AI가 만든 코드를 실행 전에는 어떤 기준으로 검토해야 하나요?

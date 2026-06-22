@@ -1,4 +1,4 @@
-﻿# 00 References
+# 00 References
 
 이 폴더는 `06_multi-agent-service-ops` 과정을 시작하기 전에 읽는 참고 자료입니다.
 
@@ -42,4 +42,4 @@
 | `08_observability-ops-dashboard.md` | 로그, Trace, 대시보드 관점을 정리합니다. |
 | `09_common-errors-for-beginners.md` | 초보자가 자주 만나는 오류를 해결합니다. |
 | `10_final-project-roadmap.md` | 99 미니 프로젝트 진행 순서를 확인합니다. |
-| `11_course-alignment-checklist.md` | 이미지 기준 과정 반영 여부를 학생용 체크리스트로 확인합니다. |
+| `11_course-alignment-checklist.md` | 이미지 기준 과정 반영 여부를 수업용 체크리스트로 확인합니다. |

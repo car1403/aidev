@@ -2,7 +2,7 @@
 
 이 폴더는 `03_supabase-ai-mini-project`의 팀 프로젝트 진행 가이드입니다.
 
-이번 미니 프로젝트의 기준 주제는 **실시간 로그 대시보드 인터페이스**입니다. 학생들은 `01_supabase-ai-backend`와 `02_supabase-ai-frontend`에서 배운 내용을 연결해, Supabase, FastAPI, Streamlit으로 로그를 저장, 조회, 시각화하는 작은 웹 서비스를 완성합니다.
+이번 미니 프로젝트의 기준 주제는 **실시간 로그 대시보드 인터페이스**입니다. 수업 참여자는 `01_supabase-ai-backend`와 `02_supabase-ai-frontend`에서 배운 내용을 연결해, Supabase, FastAPI, Streamlit으로 로그를 저장, 조회, 시각화하는 작은 웹 서비스를 완성합니다.
 
 ## 프로젝트 큰 방향
 

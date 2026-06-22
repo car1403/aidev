@@ -2,7 +2,7 @@
 
 03 과정에서는 Supabase를 먼저 사용합니다.
 
-Docker Compose도 중요한 기술이지만, 03 미니 프로젝트의 목표는 데이터베이스 운영보다 서비스 기능을 빠르게 완성하는 것입니다. 그래서 학생은 Supabase 프로젝트를 만들고, FastAPI와 Streamlit을 연결하는 흐름에 집중합니다.
+Docker Compose도 중요한 기술이지만, 03 미니 프로젝트의 목표는 데이터베이스 운영보다 서비스 기능을 빠르게 완성하는 것입니다. 그래서 수업 참여자는 Supabase 프로젝트를 만들고, FastAPI와 Streamlit을 연결하는 흐름에 집중합니다.
 
 ## 03 과정에서 사용하는 방식
 
@@ -12,7 +12,7 @@ Streamlit
 -> Supabase Database/Auth
 ```
 
-학생 PC에서는 다음만 실행합니다.
+개인 PC에서는 다음만 실행합니다.
 
 ```text
 FastAPI: uvicorn

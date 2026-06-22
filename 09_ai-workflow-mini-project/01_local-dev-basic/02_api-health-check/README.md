@@ -2,7 +2,7 @@
 
 ## 목표
 
-강사 샘플 backend의 `/health` API를 확인합니다.
+수업용 샘플 backend의 `/health` API를 확인합니다.
 
 ## 실행
 

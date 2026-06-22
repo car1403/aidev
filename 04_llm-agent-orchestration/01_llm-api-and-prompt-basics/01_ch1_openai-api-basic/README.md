@@ -23,5 +23,5 @@ python .\01_ch1_openai-api-basic\03_openai-message-style.py
 
 - 환경 변수는 왜 코드에 직접 적지 않을까요?
 - `gpt-4.1-mini`는 어떤 실습에 적합할까요?
-- API 호출 실패 시 학생은 무엇을 먼저 확인해야 할까요?
+- API 호출 실패 시 수업 참여자는 무엇을 먼저 확인해야 할까요?
 

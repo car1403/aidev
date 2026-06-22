@@ -1,6 +1,6 @@
-﻿# 02_instructor-sample-project
+# 02_instructor-sample-project
 
-강사와 함께 실행하는 일정 조정 에이전트 샘플 프로젝트입니다.
+수업 중 함께 실행하는 일정 조정 에이전트 샘플 프로젝트입니다.
 
 이 샘플은 실제 캘린더 API를 사용하지 않습니다. 초보자 수업에서는 먼저 Mock 일정 데이터를 사용해 에이전트 흐름을 이해합니다. 이후 팀 프로젝트에서 Google Calendar, Notion, 로컬 파일 저장, 04 방식의 pgvector docker run 등으로 확장할 수 있습니다.
 

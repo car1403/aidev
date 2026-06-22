@@ -36,7 +36,7 @@ git diff -- 03_git-github-and-vibe-coding/10_labs/practice-files/learning-log.md
 ## 4. Codex에게 README 개선 요청
 
 ```text
-이 README가 학생들이 수업 중 따라 보기 충분한지 검토해 주세요.
+이 README가 수업 참여자가 수업 중 따라 보기 충분한지 검토해 주세요.
 부족한 실행 순서, 주의사항, 초보자 설명을 보강해 주세요.
 ```
 

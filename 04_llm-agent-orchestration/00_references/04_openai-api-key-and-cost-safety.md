@@ -1,4 +1,4 @@
-﻿# 04 OpenAI API Key and Cost Safety
+# 04 OpenAI API Key and Cost Safety
 
 OpenAI API Key는 매우 중요합니다. API Key는 서비스 사용 권한을 가진 비밀번호와 비슷합니다.
 
@@ -61,7 +61,7 @@ API는 사용량에 따라 비용이 발생할 수 있습니다.
 
 ## 수업 운영 팁
 
-강사는 다음을 미리 안내하는 것이 좋습니다.
+수업 진행에서는 다음을 미리 안내하는 것이 좋습니다.
 
 ```text
 API Key는 개인별로 관리한다.

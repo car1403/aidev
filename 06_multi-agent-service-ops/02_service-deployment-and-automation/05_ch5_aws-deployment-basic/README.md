@@ -1,4 +1,4 @@
-﻿# 05_ch5_aws-deployment-basic
+# 05_ch5_aws-deployment-basic
 
 Docker 기반 AI 서비스를 AWS에 배포할 때 필요한 기본 개념을 학습합니다.
 
@@ -135,7 +135,7 @@ GitHub push
 -> App Runner 또는 ECS 배포 갱신
 ```
 
-실제 자동 배포에는 AWS 권한과 GitHub Secrets 설정이 필요합니다. 초보자 수업에서는 먼저 build 검증 workflow를 이해하고, AWS 자동 배포는 강사 안내에 따라 확장합니다.
+실제 자동 배포에는 AWS 권한과 GitHub Secrets 설정이 필요합니다. 초보자 수업에서는 먼저 build 검증 workflow를 이해하고, AWS 자동 배포는 수업 안내에 따라 확장합니다.
 
 ## 이후 확장
 

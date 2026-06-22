@@ -1,4 +1,4 @@
-﻿# 07_multi-agent-service-mini-project
+# 07_multi-agent-service-mini-project
 
 `06_multi-agent-service-ops` 과정에서 학습한 Multi-Agent 협업, Docker Compose, AI 보안/가드레일, Auto Healing, Observability를 하나의 미니 프로젝트로 구현하는 과정입니다.
 
@@ -34,7 +34,7 @@
 
 ### 멀티 에이전트 아키텍처 설계서에 꼭 들어갈 내용
 
-`docs/multi-agent-architecture.md`에는 아래 기준을 학생이 직접 설명해야 합니다.
+`docs/multi-agent-architecture.md`에는 아래 기준을 수업 참여자가 직접 설명해야 합니다.
 
 - 아키텍처 구조가 비즈니스 요구사항인 응답 속도, 결정 일관성, 장애 격리 기준에 맞게 선택되었는가?
 - Planner, Executor, Critic, Memory Keeper, Reporter 같은 각 Agent의 역할, 책임 범위, 의존 관계가 명확한가?
@@ -45,7 +45,7 @@
 
 ### 배포 및 장애 복구 보고서에 꼭 들어갈 내용
 
-`docs/deployment-recovery-report.md`에는 아래 기준을 학생이 직접 시험하고 기록해야 합니다.
+`docs/deployment-recovery-report.md`에는 아래 기준을 수업 참여자가 직접 시험하고 기록해야 합니다.
 
 - Docker Compose 또는 선택 확장 배포 매니페스트가 작성되었는가?
 - 멀티 컨테이너 서비스 구성에 backend, frontend, worker, monitor의 역할과 port가 정리되었는가?
@@ -56,7 +56,7 @@
 
 ### 파이프라인 구현 결과 보고서에 꼭 들어갈 내용
 
-`docs/pipeline-result-report.md`에는 아래 기준을 학생이 직접 설명해야 합니다.
+`docs/pipeline-result-report.md`에는 아래 기준을 수업 참여자가 직접 설명해야 합니다.
 
 - `코드 커밋 -> 빌드 -> 테스트 -> 배포` 전체 단계가 다이어그램으로 표현되었는가?
 - 각 단계의 입력, 출력, 실패 시 처리 규칙이 정의되었는가?
@@ -101,11 +101,11 @@
 
 ## 강의 진행용 핵심 흐름
 
-| 단계 | 수업 목표 | 학생 확인 결과 |
+| 단계 | 수업 목표 | 확인 결과 |
 | --- | --- | --- |
 | 1 | Docker Desktop과 Compose 확인 | `docker compose version` 출력 |
-| 2 | 강사 샘플 Compose 설정 검증 | `docker compose config` 통과 |
-| 3 | 강사 샘플 서비스 실행 | backend, frontend, worker, monitor 실행 |
+| 2 | 수업용 샘플 Compose 설정 검증 | `docker compose config` 통과 |
+| 3 | 수업용 샘플 서비스 실행 | backend, frontend, worker, monitor 실행 |
 | 4 | Health Check 확인 | `http://127.0.0.1:8000/health` 정상 응답 |
 | 5 | Auto Healing 요청 실행 | frontend에서 장애 메시지 입력 후 결과 확인 |
 | 6 | 운영 로그 확인 | `docker compose logs worker` 확인 |
@@ -203,7 +203,7 @@ Agent 간 판단이 충돌하면 Critic 또는 Feedback Loop가 다시 검증하
 ```text
 00_references                        프로젝트 참고 자료
 01_local-dev-basic                   Docker/Docker Compose 로컬 실행 기초
-02_instructor-sample-project         강사 샘플 Auto Healing 서비스
+02_instructor-sample-project         수업용 샘플 Auto Healing 서비스
 03_team-project-guide                팀 프로젝트 주제, 역할, 일정 가이드
 04_auto-healing-project-practice     장애 대응 흐름 설계 실습
 05_multi-agent-service-sample-assets 샘플 코드와 운영 참고 자료
@@ -217,7 +217,7 @@ Agent 간 판단이 충돌하면 Critic 또는 Feedback Loop가 다시 검증하
 ```text
 00_references 읽기
 -> 01_local-dev-basic에서 Docker/Docker Compose 환경 확인
--> 02_instructor-sample-project에서 강사 샘플 실행
+-> 02_instructor-sample-project에서 수업용 샘플 실행
 -> 03_team-project-guide에서 팀 주제/역할/일정 확정
 -> 04_auto-healing-project-practice에서 장애 대응 흐름 설계
 -> 99_team-projects/multi-agent-service-team-template 기반 팀 프로젝트 진행
@@ -228,7 +228,7 @@ Agent 간 판단이 충돌하면 Critic 또는 Feedback Loop가 다시 검증하
 1. `SETUP.md`를 보고 Python `.venv`와 Docker Desktop을 준비합니다.
 2. `docker --version`, `docker compose version`, `docker ps`로 Docker 실행 상태를 확인합니다.
 3. `docker compose config`로 Compose 설정을 먼저 확인합니다.
-4. `02_instructor-sample-project`에서 강사 샘플을 먼저 실행합니다.
+4. `02_instructor-sample-project`에서 수업용 샘플을 먼저 실행합니다.
 5. `http://127.0.0.1:8000/health`로 backend health check를 확인합니다.
 6. `http://127.0.0.1:8801`에서 frontend 화면을 확인합니다.
 7. `http://127.0.0.1:8802`에서 monitor 화면을 확인합니다.
@@ -274,9 +274,9 @@ docker ps
 
 `docker ps`가 실패하면 Docker Desktop을 먼저 실행한 뒤 다시 확인합니다.
 
-## 강사 샘플 실행 방법
+## 수업용 샘플 실행 방법
 
-강사 샘플은 backend, frontend, worker, monitor를 Docker Compose로 함께 실행합니다.
+수업용 샘플은 backend, frontend, worker, monitor를 Docker Compose로 함께 실행합니다.
 
 ```powershell
 cd C:\aidev\07_multi-agent-service-mini-project\02_instructor-sample-project

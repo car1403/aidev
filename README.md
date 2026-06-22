@@ -2,19 +2,19 @@
 
 이 저장소는 Python 기초부터 Supabase 기반 AI 서비스, LLM Agent, Docker 기반 운영, AI Workflow 자동화까지 단계적으로 학습하기 위한 실습형 강의 저장소입니다.
 
-학생은 각 과정 폴더의 README를 보면서 실습을 진행하고, 강사는 `00_admin`의 수업 운영 자료를 함께 사용해 강의를 진행합니다.
+각 과정 폴더의 README를 기준으로 실습을 진행하고, `00_admin`의 운영 안내 자료를 함께 확인하면서 설치, 실습, 프로젝트, 평가 흐름을 단계적으로 따라갑니다.
 
 ## 학습 대상
 
-이 저장소는 아래 학습자를 기준으로 구성되어 있습니다.
+이 저장소는 아래 목표를 가진 입문자와 실습 중심 학습 과정을 기준으로 구성되어 있습니다.
 
 ```text
-Python을 처음 배우는 학생
-FastAPI와 Streamlit으로 AI 서비스를 만들어 보고 싶은 학생
-Supabase로 데이터 저장, 인증, 대화 이력을 다루고 싶은 학생
-LLM API, Agent, RAG, Tool Calling을 단계적으로 배우고 싶은 학생
-Docker, Docker Compose, AWS, GitHub Actions 운영 흐름을 익히고 싶은 학생
-AIPP, n8n, Dify 같은 AI Workflow 도구를 실습하고 싶은 학생
+Python을 처음 배우는 경우
+FastAPI와 Streamlit으로 AI 서비스를 만들어 보고 싶은 경우
+Supabase로 데이터 저장, 인증, 대화 이력을 다루고 싶은 경우
+LLM API, Agent, RAG, Tool Calling을 단계적으로 배우고 싶은 경우
+Docker, Docker Compose, AWS, GitHub Actions 운영 흐름을 익히고 싶은 경우
+AIPP, n8n, Dify 같은 AI Workflow 도구를 실습하고 싶은 경우
 ```
 
 ## 전체 과정
@@ -34,7 +34,7 @@ AIPP, n8n, Dify 같은 AI Workflow 도구를 실습하고 싶은 학생
 
 ## 처음 시작하는 순서
 
-처음 수업을 시작하는 학생은 아래 순서대로 진행합니다.
+처음 수업을 시작할 때는 아래 순서대로 진행합니다.
 
 ```text
 1. 00_admin/README.md 읽기
@@ -203,7 +203,7 @@ README 읽기
 -> 발표와 코드 리뷰
 ```
 
-학생은 각 폴더의 README를 먼저 읽고, 강사는 `00_admin`의 체크리스트와 수업 계획서를 함께 사용합니다.
+각 폴더의 README를 먼저 읽고, `00_admin`의 체크리스트와 수업 계획서를 함께 사용합니다.
 
 ## 추천 시작 위치
 

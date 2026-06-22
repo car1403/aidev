@@ -2,7 +2,7 @@
 
 이 단원은 Supabase 미니 프로젝트를 로컬 Python 환경에서 실행하는 기본 방법을 학습합니다.
 
-`03_supabase-ai-mini-project`에서는 Docker로 PostgreSQL이나 Redis를 실행하지 않습니다. Supabase 클라우드 프로젝트를 데이터 저장소로 사용하고, 학생 PC에서는 FastAPI와 Streamlit만 실행합니다. Docker, Docker Compose, AWS 배포, 운영 자동화는 `06_multi-agent-service-ops`에서 학습합니다.
+`03_supabase-ai-mini-project`에서는 Docker로 PostgreSQL이나 Redis를 실행하지 않습니다. Supabase 클라우드 프로젝트를 데이터 저장소로 사용하고, 개인 PC에서는 FastAPI와 Streamlit만 실행합니다. Docker, Docker Compose, AWS 배포, 운영 자동화는 `06_multi-agent-service-ops`에서 학습합니다.
 
 ## 학습 목표
 
@@ -30,7 +30,7 @@ Streamlit: streamlit run으로 로컬 실행
 .env: Supabase URL/key와 API_BASE_URL 관리
 ```
 
-## 학생이 꼭 기억할 점
+## 수업 참여자가 꼭 기억할 점
 
 - Supabase 테이블은 Supabase 화면 또는 SQL Editor에서 준비합니다.
 - FastAPI는 Supabase에 저장/조회 요청을 보냅니다.

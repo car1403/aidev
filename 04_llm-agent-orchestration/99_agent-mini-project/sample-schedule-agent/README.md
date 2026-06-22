@@ -1,6 +1,6 @@
 # Sample Schedule Agent
 
-이 샘플은 04 과정에서 배운 LangGraph, Tool, State, Streamlit을 하나로 연결한 강사용 일정 조정 Agent 예제입니다.
+이 샘플은 04 과정에서 배운 LangGraph, Tool, State, Streamlit을 하나로 연결한 수업용 일정 조정 Agent 예제입니다.
 
 실제 캘린더 API를 사용하지 않고 Mock 데이터를 사용합니다. 초보자는 먼저 Mock 데이터로 Agent 흐름을 이해한 뒤, 필요할 때 외부 API나 RAG/Memory를 연결합니다.
 

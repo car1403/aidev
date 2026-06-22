@@ -26,8 +26,8 @@ Redis와 Upstash의 역할을 이해한다.
 [ ] C:\aidev 폴더 열기
 [ ] 01_supabase-ai-backend\.venv 준비
 [ ] requirements.txt 설치
-[ ] Supabase 계정 또는 강사용 프로젝트 준비
-[ ] Gemini API Key 또는 강사용 테스트 Key 준비
+[ ] Supabase 계정 또는 수업용 프로젝트 준비
+[ ] Gemini API Key 또는 수업용 테스트 Key 준비
 [ ] Upstash Redis는 필요한 챕터에서 선택적으로 준비
 ```
 

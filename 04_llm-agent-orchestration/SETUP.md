@@ -1,4 +1,4 @@
-﻿# SETUP
+# SETUP
 
 `04_llm-agent-orchestration` 과정의 환경 설정 안내입니다.
 
@@ -34,7 +34,7 @@ Python 3.11 이상
 
 ## 3. Docker Desktop 확인
 
-04 과정은 Docker를 처음 사용하는 학생도 따라올 수 있도록 Docker Desktop 기준으로 진행합니다.
+04 과정은 Docker를 처음 사용하는 수업 참여자도 따라올 수 있도록 Docker Desktop 기준으로 진행합니다.
 
 Docker Desktop은 Windows에서 Docker 컨테이너를 쉽게 실행할 수 있게 해주는 프로그램입니다. 04에서는 Docker를 깊게 운영 도구로 배우기보다, 로컬 Llama와 pgvector PostgreSQL을 실행하기 위한 실습 도구로 사용합니다.
 

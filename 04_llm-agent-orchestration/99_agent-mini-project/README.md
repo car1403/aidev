@@ -2,7 +2,7 @@
 
 이 폴더는 04 과정에서 배운 내용을 하나의 미니 프로젝트로 통합하는 단계입니다.
 
-학생은 Prompt, Tool Calling, RAG 또는 Memory, LangGraph State Flow를 사용해 일정 조정 Agent를 만들고 실행 결과를 확인합니다.
+수업 참여자는 Prompt, Tool Calling, RAG 또는 Memory, LangGraph State Flow를 사용해 일정 조정 Agent를 만들고 실행 결과를 확인합니다.
 
 ## 프로젝트 목표
 
@@ -37,7 +37,7 @@
       └─ app.py
 ```
 
-## 강사 샘플 실행
+## 수업용 샘플 실행
 
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\99_agent-mini-project\sample-schedule-agent
@@ -67,7 +67,7 @@ streamlit run .\frontend\app.py --server.port 8602
 
 ## 산출물 기준
 
-학생 팀은 최종 발표에서 다음 내용을 설명할 수 있어야 합니다.
+프로젝트 팀은 최종 발표에서 다음 내용을 설명할 수 있어야 합니다.
 
 - Agent가 해결하려는 문제
 - State 필드 설계

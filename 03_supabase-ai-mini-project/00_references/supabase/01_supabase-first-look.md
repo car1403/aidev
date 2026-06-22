@@ -25,7 +25,7 @@ RLS Policy
 
 `03_supabase-ai-mini-project`에서는 PostgreSQL을 내 PC의 Docker 컨테이너로 실행하지 않습니다.
 
-대신 Supabase 클라우드 프로젝트 안의 데이터베이스를 사용합니다. 학생은 Supabase 화면에서 테이블을 만들고, FastAPI는 Supabase API를 통해 데이터를 저장하고 조회합니다.
+대신 Supabase 클라우드 프로젝트 안의 데이터베이스를 사용합니다. 수업 참여자는 Supabase 화면에서 테이블을 만들고, FastAPI는 Supabase API를 통해 데이터를 저장하고 조회합니다.
 
 ## 장점
 

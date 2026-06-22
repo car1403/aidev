@@ -1,6 +1,6 @@
 # Sample Tech Support Workflow
 
-강사용 샘플 기술 지원 자동화 워크플로우입니다.
+수업용 샘플 기술 지원 자동화 워크플로우입니다.
 
 외부 AI API 없이 규칙 기반으로 동작하지만, 구조는 실제 AI Workflow 프로젝트처럼 구성했습니다.
 

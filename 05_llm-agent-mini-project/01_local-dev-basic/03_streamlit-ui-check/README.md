@@ -1,6 +1,6 @@
-﻿# 03 Streamlit UI Check
+# 03 Streamlit UI Check
 
-강사 샘플 프로젝트를 Streamlit 화면에서 실행합니다.
+수업용 샘플 프로젝트를 Streamlit 화면에서 실행합니다.
 
 ```powershell
 cd C:\aidev\05_llm-agent-mini-project\02_instructor-sample-project

@@ -82,7 +82,7 @@ streamlit run .\05_state-session-and-data\03_ch3_auth-token-and-login-state\02_l
 - 서비스 로그 조회 화면에서 API 호출 결과와 오류 상태를 확인할 수 있다.
 - 배포 전 점검 항목을 기준으로 프론트엔드 준비 상태를 설명할 수 있다.
 
-## 학생이 꼭 기억할 점
+## 수업 참여자가 꼭 기억할 점
 
 - Supabase Auth 검증은 백엔드에서 처리합니다.
 - Streamlit은 token을 저장하고 API 요청에 header로 붙이는 역할을 합니다.

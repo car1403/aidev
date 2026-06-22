@@ -134,7 +134,7 @@ pip install fastapi uvicorn pydantic
 
 ## 7. 하나씩 설치한 패키지를 requirements.txt에 기록하기
 
-패키지를 하나씩 설치했다면, 나중에 다른 학생이나 다른 PC에서도 같은 환경을 만들 수 있도록 `requirements.txt`에 기록하는 것이 좋습니다.
+패키지를 하나씩 설치했다면, 나중에 다른 참여자나 다른 PC에서도 같은 환경을 만들 수 있도록 `requirements.txt`에 기록하는 것이 좋습니다.
 
 현재 설치된 패키지 목록을 파일로 저장하려면 아래 명령을 사용합니다.
 
@@ -142,7 +142,7 @@ pip install fastapi uvicorn pydantic
 pip freeze > requirements.txt
 ```
 
-단, 이 명령은 현재 `.venv`에 설치된 모든 패키지를 기록합니다. 수업에서는 강사가 제공한 `requirements.txt`를 우선 사용하고, 팀 프로젝트나 개인 프로젝트에서 패키지를 추가했을 때만 신중하게 사용합니다.
+단, 이 명령은 현재 `.venv`에 설치된 모든 패키지를 기록합니다. 수업에서는 수업에서 제공한 `requirements.txt`를 우선 사용하고, 팀 프로젝트나 개인 프로젝트에서 패키지를 추가했을 때만 신중하게 사용합니다.
 
 ## 8. 설치된 패키지 확인
 
@@ -263,7 +263,7 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-추가 패키지가 필요하면 강사 안내에 따라 하나씩 설치합니다.
+추가 패키지가 필요하면 수업 안내에 따라 하나씩 설치합니다.
 
 예시:
 

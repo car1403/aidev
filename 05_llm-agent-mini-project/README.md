@@ -1,12 +1,12 @@
-﻿# 05_llm-agent-mini-project
+# 05_llm-agent-mini-project
 
 `04_llm-agent-orchestration` 과정에서 배운 Prompt, Function Calling, Tool Use, RAG, Memory, LangGraph를 하나의 팀 미니 프로젝트로 구현하는 과정입니다.
 
-이 과정의 기준은 `04_llm-agent-orchestration`입니다. 04에서 배운 로컬 LLM 실행 방식, Python Tool 설계, LangGraph 실행 흐름을 바탕으로 학생들이 팀별 Agent 앱을 완성합니다.
+이 과정의 기준은 `04_llm-agent-orchestration`입니다. 04에서 배운 로컬 LLM 실행 방식, Python Tool 설계, LangGraph 실행 흐름을 바탕으로 수업 참여자가 팀별 Agent 앱을 완성합니다.
 
 Docker는 04와 동일하게 Docker Desktop에서 `docker run`으로 필요한 컨테이너만 실행하는 수준으로 다룹니다. Docker Compose, AWS 배포, GitHub Actions, 서비스 운영 자동화는 `06_multi-agent-service-ops`에서 본격적으로 학습합니다.
 
-Docker Desktop 설치가 아직 되어 있지 않은 학생은 [00_references/05_docker-local-extension-guide.md](./00_references/05_docker-local-extension-guide.md)를 먼저 확인합니다. 05에서는 Docker를 필수로 쓰지 않지만, 로컬 Llama 또는 pgvector 기반 RAG/Memory를 붙이는 팀은 Docker 실행 환경이 필요합니다.
+Docker Desktop 설치가 아직 되어 있지 않은 수업 참여자는 [00_references/05_docker-local-extension-guide.md](./00_references/05_docker-local-extension-guide.md)를 먼저 확인합니다. 05에서는 Docker를 필수로 쓰지 않지만, 로컬 Llama 또는 pgvector 기반 RAG/Memory를 붙이는 팀은 Docker 실행 환경이 필요합니다.
 
 ## 과정 목표
 
@@ -75,7 +75,7 @@ Docker Desktop 설치가 아직 되어 있지 않은 학생은 [00_references/05
 
 ### 에이전트 아키텍처 설계서에 꼭 들어갈 내용
 
-`docs/agent-architecture.md`에는 아래 기준을 학생이 직접 설명해야 합니다.
+`docs/agent-architecture.md`에는 아래 기준을 수업 참여자가 직접 설명해야 합니다.
 
 - StateGraph의 Start, Decision, Tools, Reflection 또는 Review, End 노드가 에이전트의 사고 흐름인 `인지 -> 판단 -> 행동 -> 검증` 순서에 맞게 배치되었는가?
 - 분기 조건이 도구 필요 여부, 사용자 의도, 데이터 충분성, 오류 여부 같은 기준값 또는 정책으로 정의되었는가?
@@ -88,7 +88,7 @@ Docker Desktop 설치가 아직 되어 있지 않은 학생은 [00_references/05
 
 ### 에이전트 시험 결과 보고서에 꼭 들어갈 내용
 
-`docs/agent-test-report.md`에는 아래 기준을 학생이 직접 시험하고 기록해야 합니다.
+`docs/agent-test-report.md`에는 아래 기준을 수업 참여자가 직접 시험하고 기록해야 합니다.
 
 - 할루시네이션, 도구 선택 오류, 파라미터 누락, 응답 불일치 같은 판단 오류를 어떤 기준으로 감지하는가?
 - 오류 유형별 재시도 횟수, fallback 전략, 사용자에게 다시 질문하는 조건이 정리되었는가?
@@ -98,13 +98,13 @@ Docker Desktop 설치가 아직 되어 있지 않은 학생은 [00_references/05
 
 ### 수업 중 점검 기준
 
-강사와 학생은 프로젝트를 진행하면서 아래 질문을 반복해서 확인합니다.
+수업 참여자는 프로젝트를 진행하면서 아래 질문을 반복해서 확인합니다.
 
 - 프로젝트 흐름이 `사용자 요청 -> 요청 분석 -> 도구 선택 -> 도구 실행 -> 결과 검증 -> 재시도 또는 fallback -> 최종 응답`으로 이어지는가?
 - API Key가 없어도 Mock data 기반으로 최소 Agent 흐름을 실행할 수 있는가?
 - 실제 Calendar API를 붙이기 전에 Python 함수와 Mock 일정 데이터로 먼저 검증했는가?
 - State에 너무 많은 값을 넣지 않고, 필요한 값만 타입 힌트와 함께 정리했는가?
-- 최종 발표에서 Agent 구조, 오류 처리, 개선 전후 결과를 학생이 직접 설명할 수 있는가?
+- 최종 발표에서 Agent 구조, 오류 처리, 개선 전후 결과를 수업 참여자가 직접 설명할 수 있는가?
 
 ## 04 과정과의 연결
 
@@ -147,7 +147,7 @@ Docker Desktop 설치가 아직 되어 있지 않은 학생은 [00_references/05
 ```text
 00_references                Agent 프로젝트 참고 자료
 01_local-dev-basic           로컬 실행 환경과 기본 앱 실행 감각 확인
-02_instructor-sample-project 강사 샘플 Agent 프로젝트
+02_instructor-sample-project 수업용 샘플 Agent 프로젝트
 03_team-project-guide        팀 프로젝트 주제, 역할, 일정 가이드
 04_agent-project-practice    Agent 설계 문서 작성 실습
 05_llm-agent-sample-assets   Agent 샘플 자료와 참고 코드
@@ -181,7 +181,7 @@ Docker Desktop 설치가 아직 되어 있지 않은 학생은 [00_references/05
 ```text
 00_references 읽기
 -> 01_local-dev-basic에서 환경과 실행 방식 확인
--> 02_instructor-sample-project에서 강사 샘플 실행
+-> 02_instructor-sample-project에서 수업용 샘플 실행
 -> 03_team-project-guide에서 팀 주제/역할/일정 확정
 -> 04_agent-project-practice에서 Agent 설계 문서 작성
 -> 99_team-projects/llm-agent-team-template 기반 팀 프로젝트 진행
@@ -191,7 +191,7 @@ Docker Desktop 설치가 아직 되어 있지 않은 학생은 [00_references/05
 
 1. `SETUP.md`를 보고 `.venv`와 `.env`를 준비합니다.
 2. Docker 확장을 사용할 팀은 Docker Desktop과 `docker ps`를 확인합니다.
-3. `02_instructor-sample-project`에서 강사 샘플 Agent를 실행합니다.
+3. `02_instructor-sample-project`에서 수업용 샘플 Agent를 실행합니다.
 4. 샘플의 `docs/agent-flow.md`와 `docs/tool-spec.md`를 읽습니다.
 5. 팀 주제를 정하고 사용자 요청 예시를 3개 이상 작성합니다.
 6. Agent가 기억해야 할 값을 `Agent State`로 정리합니다.
@@ -203,7 +203,7 @@ Docker Desktop 설치가 아직 되어 있지 않은 학생은 [00_references/05
 
 ## 수업 운영 메모
 
-학생에게는 처음부터 실제 Calendar API를 붙이도록 요구하지 않습니다. 먼저 Mock data로 아래 흐름을 완성하도록 안내합니다.
+수업 참여자에게는 처음부터 실제 Calendar API를 붙이도록 요구하지 않습니다. 먼저 Mock data로 아래 흐름을 완성하도록 안내합니다.
 
 ```text
 1. 사용자 일정 요청을 State에 저장한다.
@@ -259,9 +259,9 @@ cd C:\aidev\05_llm-agent-mini-project
 
 이 과정에서는 `05_llm-agent-mini-project` 최상위의 `.venv` 하나를 사용합니다.
 
-## 강사 샘플 실행 방법
+## 수업용 샘플 실행 방법
 
-먼저 강사 샘플을 실행해 전체 흐름을 확인합니다.
+먼저 수업용 샘플을 실행해 전체 흐름을 확인합니다.
 
 ```powershell
 cd C:\aidev\05_llm-agent-mini-project\02_instructor-sample-project
@@ -354,7 +354,7 @@ pgvector 컨테이너        RAG 또는 장기 기억 데이터를 로컬 Vector
 
 여기서는 단일 컨테이너 실행까지만 사용합니다. 여러 서비스를 하나로 묶는 Docker Compose는 06에서 학습합니다.
 
-Docker를 처음 설치하는 학생은 아래 순서로 준비합니다.
+Docker를 처음 설치하는 수업 참여자는 아래 순서로 준비합니다.
 
 ```text
 1. Docker Desktop 설치
@@ -399,7 +399,7 @@ Agent 결과가 예상과 다르면 먼저 아래 순서로 확인합니다.
 
 ## 최종 목표
 
-학생은 이 과정을 마친 뒤 다음을 설명하고 구현할 수 있어야 합니다.
+수업 참여자는 이 과정을 마친 뒤 다음을 설명하고 구현할 수 있어야 합니다.
 
 ```text
 Agent State는 무엇을 저장해야 하는가?

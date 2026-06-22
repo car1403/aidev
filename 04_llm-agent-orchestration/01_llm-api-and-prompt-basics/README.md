@@ -1,6 +1,6 @@
 # 01 LLM API and Prompt Basics
 
-이 단원은 04 과정의 첫 번째 실습입니다. 학생은 클라우드 LLM인 OpenAI API와 Docker/Ollama로 실행하는 로컬 Llama를 비교하면서 LLM 호출 방식의 차이를 이해합니다.
+이 단원은 04 과정의 첫 번째 실습입니다. 수업 참여자는 클라우드 LLM인 OpenAI API와 Docker/Ollama로 실행하는 로컬 Llama를 비교하면서 LLM 호출 방식의 차이를 이해합니다.
 
 04 과정에서는 01~03 과정과 달리 Supabase를 사용하지 않습니다. 이 단원부터는 Agent 구조 학습을 위해 Docker Desktop과 `docker run` 기반 로컬 실습 환경을 함께 사용합니다.
 

@@ -2,7 +2,7 @@
 
 `03_supabase-ai-mini-project` 실행 환경 설정 안내입니다.
 
-이 문서는 학생이 수업 시간에 그대로 따라 할 수 있도록 작성했습니다. 이 과정은 Supabase 프로젝트를 데이터 저장소로 사용하고, 로컬 PC에서는 FastAPI와 Streamlit을 Python 가상환경으로 실행합니다.
+이 문서는 수업 참여자가 수업 시간에 그대로 따라 할 수 있도록 작성했습니다. 이 과정은 Supabase 프로젝트를 데이터 저장소로 사용하고, 로컬 PC에서는 FastAPI와 Streamlit을 Python 가상환경으로 실행합니다.
 
 Docker, Docker Compose, AWS 배포는 여기서 설정하지 않습니다. 해당 내용은 `06_multi-agent-service-ops`에서 다룹니다.
 
@@ -74,7 +74,7 @@ API_BASE_URL=http://127.0.0.1:8000
 - 03 미니 프로젝트의 기본 AI API는 Gemini API로 진행합니다.
 - Gemini 무료 범위와 호출 제한은 수업 시점의 공식 화면에서 확인합니다.
 - OpenAI API key는 기존 OpenAI 예제를 활용한 선택/비교 실습 때만 사용합니다.
-- 학생에게 제출받을 때도 `.env` 대신 `.env.example`만 확인합니다.
+- 수업 참여자에게 제출받을 때도 `.env` 대신 `.env.example`만 확인합니다.
 
 ## 6. Supabase 준비
 

@@ -4,10 +4,10 @@
 
 ## 현재 구성
 
-| 위치 | 역할 | 학생이 해야 할 일 |
+| 위치 | 역할 | 수업 참여자가 해야 할 일 |
 | --- | --- | --- |
 | `01_local-dev-basic` | Python, LangGraph, Streamlit 실행 확인 | 개발 환경과 기본 실행 흐름 확인 |
-| `02_instructor-sample-project` | 강사와 함께 실행하는 일정 조정 에이전트 | 샘플 Agent 흐름 실행 및 코드 읽기 |
+| `02_instructor-sample-project` | 수업 중 함께 실행하는 일정 조정 에이전트 | 샘플 Agent 흐름 실행 및 코드 읽기 |
 | `03_team-project-guide` | 팀 주제, 역할, 요구사항, 발표/제출 안내 | 팀 프로젝트 기준 문서 작성 |
 | `04_agent-project-practice` | State, Tool, Graph, UI 설계 연습 | 최종 구현 전 설계 연습 |
 | `05_llm-agent-sample-assets` | 추가 샘플 자산 보관 위치 | 필요한 샘플 데이터와 흐름도 참고 |
@@ -18,7 +18,7 @@
 ```text
 1. .venv 활성화
 2. requirements.txt 설치
-3. 강사 샘플 CLI 실행
+3. 수업용 샘플 CLI 실행
 4. Streamlit 화면 실행
 5. Agent State 구조 확인
 6. Tool 함수 입력과 출력 확인
@@ -39,7 +39,7 @@
 
 ## 제출 전 확인
 
-- [ ] 강사 샘플이 실행됩니다.
+- [ ] 수업용 샘플이 실행됩니다.
 - [ ] 팀 템플릿이 실행됩니다.
 - [ ] `docs/agent-architecture.md`가 작성되었습니다.
 - [ ] `docs/agent-test-report.md`가 작성되었습니다.

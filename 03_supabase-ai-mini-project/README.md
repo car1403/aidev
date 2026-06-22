@@ -1,4 +1,4 @@
-﻿# 03_supabase-ai-mini-project
+# 03_supabase-ai-mini-project
 
 이 과정은 `01_supabase-ai-backend`와 `02_supabase-ai-frontend`에서 배운 내용을 연결해, Supabase 기반 AI 미니 프로젝트를 완성하는 수업입니다.
 
@@ -17,7 +17,7 @@ Streamlit 프론트엔드 -> Streamlit Community Cloud
 Supabase Database/Auth -> Supabase Cloud
 ```
 
-이 배포는 “운영 자동화”가 아니라 “학생이 만든 미니 프로젝트를 외부 URL로 시연해 보는 선택 실습”입니다.
+이 배포는 “운영 자동화”가 아니라 “수업 참여자가 만든 미니 프로젝트를 외부 URL로 시연해 보는 선택 실습”입니다.
 
 ## SSE 스트리밍 통합 실습 안내
 
@@ -208,7 +208,7 @@ team-project
 ```text
 00_references                Supabase, env, RLS, 보안 개념 참고 자료
 01_local-dev-basic           Supabase env, 로컬 FastAPI/Streamlit 실행 감각을 익히는 예비 실습
-02_instructor-sample-project 강사용 Supabase 샘플 프로젝트
+02_instructor-sample-project 수업용 Supabase 샘플 프로젝트
 03_team-project-guide        팀 프로젝트 운영 가이드
 04_supabase-project-practice Supabase 프로젝트와 테이블 준비 실습
 05_supabase-sample-assets    Supabase 연동 샘플 자료
@@ -284,7 +284,7 @@ Docker: 사용하지 않음. 06_multi-agent-service-ops에서 학습
 99_team-projects/supabase-team-template/docs/deployment-guide.md
 ```
 
-학생이 기억해야 할 핵심은 다음입니다.
+수업 참여자가 기억해야 할 핵심은 다음입니다.
 
 - `.env` 파일은 GitHub에 올리지 않습니다.
 - Supabase service role key가 필요하다면 Render 백엔드 환경변수에만 등록합니다.
@@ -428,7 +428,7 @@ streamlit run app.py --server.port 8502
 
 ## 최종 목표
 
-학생은 이 과정을 마친 뒤 다음을 설명하고 구현할 수 있어야 합니다.
+수업 참여자는 이 과정을 마친 뒤 다음을 설명하고 구현할 수 있어야 합니다.
 
 ```text
 Supabase 프로젝트와 Python 앱은 어떻게 연결되는가?
@@ -464,7 +464,7 @@ FastAPI를 거쳐 Supabase를 호출하는 방식과 Streamlit이 직접 Supabas
 | 대시보드 구현 결과물 | `docs/dashboard-result.md`, `frontend/app.py`, 선택 배포 URL | 포함/보강 |
 | 선택 배포 실습 | `00_references/08_free-deployment-guide.md`, `docs/deployment-guide.md` | 선택 확장. 필수 제출 아님 |
 
-수업 운영 시 학생에게는 처음부터 완성도 높은 대시보드를 요구하기보다, 아래 순서로 작게 성공하도록 안내합니다.
+수업 운영 시 수업 참여자에게는 처음부터 완성도 높은 대시보드를 요구하기보다, 아래 순서로 작게 성공하도록 안내합니다.
 
 ```text
 1. 로그 1개를 Supabase에 저장한다.

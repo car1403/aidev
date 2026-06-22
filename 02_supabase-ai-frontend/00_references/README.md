@@ -14,13 +14,13 @@ frontend-security-and-deployment-notes.md
 ## 먼저 확인할 내용
 
 - 이 과정의 기본 UI 도구는 Streamlit입니다.
-- React는 필수 실습이 아니라 학생 수준과 진도에 따라 선택적으로 소개합니다.
+- React는 필수 실습이 아니라 진도와 난이도과 진도에 따라 선택적으로 소개합니다.
 - Streamlit은 Supabase DB에 직접 접속하지 않고 `01_supabase-ai-backend`의 FastAPI API를 호출합니다.
 - 프론트엔드 `.env`에는 `API_BASE_URL`만 둡니다.
 - Supabase `service_role` key, Upstash token, LLM API key는 프론트엔드에 두지 않습니다.
 - SSE 기반 실시간 응답 스트리밍은 `03_supabase-ai-mini-project`에서 백엔드, 프론트엔드, Supabase 저장 흐름을 함께 연결해 다룹니다.
 
-## 학생 확인 질문
+## 확인 질문
 
 ```text
 Streamlit은 전체 서비스에서 어떤 역할을 하나요?

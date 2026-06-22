@@ -4,7 +4,7 @@
 
 ## 로컬 실행이란?
 
-FastAPI와 Streamlit을 Docker 이미지로 만들지 않고, 학생 PC의 Python 가상환경에서 직접 실행하는 방식입니다. 데이터 저장소는 로컬 컨테이너가 아니라 Supabase 클라우드 프로젝트를 사용합니다.
+FastAPI와 Streamlit을 Docker 이미지로 만들지 않고, 개인 PC의 Python 가상환경에서 직접 실행하는 방식입니다. 데이터 저장소는 로컬 컨테이너가 아니라 Supabase 클라우드 프로젝트를 사용합니다.
 
 ```text
 FastAPI -> uvicorn으로 실행

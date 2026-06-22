@@ -1,6 +1,6 @@
 # 99_final-frontend-project
 
-이 폴더는 `02_supabase-ai-frontend`의 마지막 실습입니다. 학생이 Streamlit 화면을 만들고, FastAPI 백엔드 API를 호출하고, 서비스 로그를 확인한 뒤, 무료 배포 서비스에 올려보는 흐름을 간단한 예제로 경험합니다.
+이 폴더는 `02_supabase-ai-frontend`의 마지막 실습입니다. 수업 참여자가 Streamlit 화면을 만들고, FastAPI 백엔드 API를 호출하고, 서비스 로그를 확인한 뒤, 무료 배포 서비스에 올려보는 흐름을 간단한 예제로 경험합니다.
 
 ## 최종 실습 주제
 

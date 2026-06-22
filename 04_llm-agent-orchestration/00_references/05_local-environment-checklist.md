@@ -1,4 +1,4 @@
-﻿# 05 Local Environment Checklist
+# 05 Local Environment Checklist
 
 이 과정은 Python, Docker, OpenAI API, Streamlit, LangGraph 등을 사용합니다.
 
@@ -40,7 +40,7 @@ docker ps
 
 Docker Desktop이 실행 중이어야 합니다.
 
-Docker를 처음 설치한 학생은 아래 문서를 먼저 확인합니다.
+Docker를 처음 설치한 수업 참여자는 아래 문서를 먼저 확인합니다.
 
 ```text
 00_references/09_docker-desktop-install-for-beginners.md
