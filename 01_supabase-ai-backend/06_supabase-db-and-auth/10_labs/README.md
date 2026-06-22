@@ -1,4 +1,4 @@
-# 10_labs
+﻿# 10_labs
 
 이 폴더는 Supabase 중심 실습을 진행하는 공간입니다.
 
@@ -16,7 +16,7 @@
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python.\06_supabase-db-and-auth\01_ch1_supabase-project-and-env\01_check_supabase_env.py
+python.\06_supabase-db-and-auth\01_supabase-project-and-env\01_check_supabase_env.py
 ```
 
 ### Lab 02 - Supabase 테이블 생성
@@ -35,7 +35,7 @@ python.\06_supabase-db-and-auth\01_ch1_supabase-project-and-env\01_check_supabas
 실행:
 
 ```powershell
-python.\06_supabase-db-and-auth\02_ch2_supabase-table-and-crud\01_learning_notes_crud.py
+python.\06_supabase-db-and-auth\02_supabase-table-and-crud\01_learning_notes_crud.py
 ```
 
 ### Lab 04 - FastAPI와 Supabase 연결
@@ -49,7 +49,7 @@ python.\06_supabase-db-and-auth\02_ch2_supabase-table-and-crud\01_learning_notes
 실행:
 
 ```powershell
-cd C:\aidev\01_supabase-ai-backend\06_supabase-db-and-auth\03_ch3_fastapi-supabase-integration
+cd C:\aidev\01_supabase-ai-backend\06_supabase-db-and-auth\03_fastapi-supabase-integration
 ..\..\.venv\Scripts\Activate.ps1
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
@@ -70,7 +70,7 @@ http://127.0.0.1:8000/docs
 실행:
 
 ```powershell
-python.\06_supabase-db-and-auth\04_ch4_supabase-auth-and-rls\01_auth_rls_concept_check.py
+python.\06_supabase-db-and-auth\04_supabase-auth-and-rls\01_auth_rls_concept_check.py
 ```
 
 확인 질문:
@@ -92,7 +92,7 @@ python.\06_supabase-db-and-auth\04_ch4_supabase-auth-and-rls\01_auth_rls_concept
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\01_check_upstash_env.py
+python.\06_supabase-db-and-auth\06_upstash-redis-cache-and-session\01_check_upstash_env.py
 ```
 
 ### Lab 07 - Upstash Redis TTL 캐시
@@ -106,7 +106,7 @@ python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\01_check_
 실행:
 
 ```powershell
-python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\02_cache_set_get_ttl.py
+python.\06_supabase-db-and-auth\06_upstash-redis-cache-and-session\02_cache_set_get_ttl.py
 ```
 
 ### Lab 08 - 요청 횟수 제한 흐름
@@ -120,7 +120,7 @@ python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\02_cache_
 실행:
 
 ```powershell
-python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\03_rate_limit_example.py
+python.\06_supabase-db-and-auth\06_upstash-redis-cache-and-session\03_rate_limit_example.py
 ```
 
 ### Lab 09 - Redis 임시 세션 상태
@@ -134,7 +134,7 @@ python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\03_rate_l
 실행:
 
 ```powershell
-python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\04_session_state_example.py
+python.\06_supabase-db-and-auth\06_upstash-redis-cache-and-session\04_session_state_example.py
 ```
 
 ### Lab 10 - Cache-aside 패턴
@@ -148,7 +148,7 @@ python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\04_sessio
 실행:
 
 ```powershell
-python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\05_cache_aside_mock.py
+python.\06_supabase-db-and-auth\06_upstash-redis-cache-and-session\05_cache_aside_mock.py
 ```
 
 ### Lab 11 - FastAPI Rate Limit Dependency
@@ -162,7 +162,7 @@ python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\05_cache_
 실행:
 
 ```powershell
-cd C:\aidev\01_supabase-ai-backend\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session
+cd C:\aidev\01_supabase-ai-backend\06_supabase-db-and-auth\06_upstash-redis-cache-and-session
 ..\..\.venv\Scripts\Activate.ps1
 uvicorn 06_fastapi_rate_limit_dependency:app --reload --host 127.0.0.1 --port 8001
 ```

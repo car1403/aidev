@@ -1,36 +1,85 @@
 # Message Format Guide
 
-LLM API는 보통 message 목록을 사용해 대화를 표현합니다.
+LLM API는 보통 메시지 목록을 사용해 대화를 표현합니다.
 
-## role
+메시지 한 개는 대체로 `role`과 `content`로 구성됩니다.
+
+```python
+{"role": "user", "content": "FastAPI가 뭐야?"}
+```
+
+## role의 의미
 
 | role | 의미 |
 | --- | --- |
-| system | 모델의 역할과 규칙을 정합니다. |
-| user | 사용자의 질문입니다. |
-| assistant | 모델이 이전에 답변한 내용입니다. |
+| `system` | AI의 역할, 말투, 규칙을 정합니다. |
+| `user` | 사용자의 질문이나 요청입니다. |
+| `assistant` | AI가 이전에 답한 내용입니다. |
 
-## 싱글턴 예시
-
-```python
-messages = [
- {"role": "system", "content": "You are a helpful backend tutor."},
- {"role": "user", "content": "FastAPI가 무엇인가요?"},
-]
-```
-
-## 멀티턴 예시
+## Single-turn 메시지 예시
 
 ```python
 messages = [
- {"role": "system", "content": "You are a helpful backend tutor."},
- {"role": "user", "content": "FastAPI가 무엇인가요?"},
- {"role": "assistant", "content": "Python 웹 API 프레임워크입니다."},
- {"role": "user", "content": "그럼 Swagger는 어떤 역할인가요?"},
+    {
+        "role": "system",
+        "content": "너는 Python 백엔드를 쉽게 설명하는 튜터입니다.",
+    },
+    {
+        "role": "user",
+        "content": "FastAPI가 뭐야?",
+    },
 ]
 ```
 
-## 초보자가 기억할 점
+## Multi-turn 메시지 예시
 
-멀티턴은 모델이 자동으로 기억하는 것이 아니라, 우리가 이전 대화를 다시 보내는 구조입니다.
+```python
+messages = [
+    {
+        "role": "system",
+        "content": "너는 Python 백엔드를 쉽게 설명하는 튜터입니다.",
+    },
+    {
+        "role": "user",
+        "content": "FastAPI가 뭐야?",
+    },
+    {
+        "role": "assistant",
+        "content": "FastAPI는 Python으로 API 서버를 만들 때 사용하는 웹 프레임워크입니다.",
+    },
+    {
+        "role": "user",
+        "content": "그럼 Pydantic은 왜 같이 써?",
+    },
+]
+```
 
+## Gemini REST API에서 주의할 점
+
+Gemini REST API 예제에서는 메시지 role 이름이 OpenAI 형식과 조금 다를 수 있습니다. 예를 들어 이전 AI 응답은 `assistant` 대신 `model` 역할로 표현되는 경우가 있습니다.
+
+따라서 실습에서는 다음처럼 구분합니다.
+
+```text
+수업에서 이해할 공통 구조:
+  system / user / assistant
+
+Gemini REST API로 보낼 때:
+  user / model 등 provider가 요구하는 형식으로 변환
+```
+
+처음에는 공통 구조로 이해하고, 실제 provider에 보낼 때 변환한다고 생각하면 쉽습니다.
+
+## 저장 관점
+
+Supabase에 대화 이력을 저장할 때는 최소한 다음 정보가 있으면 좋습니다.
+
+```text
+conversation_id
+role
+content
+model
+created_at
+```
+
+나중에 사용자별 대화 이력을 조회하려면 `user_id`도 함께 저장합니다.

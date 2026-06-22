@@ -1,4 +1,4 @@
-# 00_references
+﻿# 00_references
 
 Supabase 중심 DB/인증/로그 실습을 위한 참고 자료입니다.
 
@@ -18,7 +18,7 @@ session-patterns.md
 Upstash Redis 실습은 아래 챕터에서 진행합니다.
 
 ```text
-../06_ch6_upstash-redis-cache-and-session
+../06_upstash-redis-cache-and-session
 ```
 
 ## Docker 자료 위치

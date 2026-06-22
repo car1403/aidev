@@ -1,4 +1,4 @@
-# 06_supabase-db-and-auth
+﻿# 06_supabase-db-and-auth
 
 이 단원은 FastAPI 백엔드에서 Supabase를 사용해 데이터 저장, 인증, 사용자별 접근 제어, 대화 이력, 서비스 로그를 다루는 과정입니다.
 
@@ -32,12 +32,12 @@
 ```text
 06_supabase-db-and-auth
 ├─ 00_references
-├─ 01_ch1_supabase-project-and-env
-├─ 02_ch2_supabase-table-and-crud
-├─ 03_ch3_fastapi-supabase-integration
-├─ 04_ch4_supabase-auth-and-rls
-├─ 05_ch5_conversation-history-and-service-logs
-├─ 06_ch6_upstash-redis-cache-and-session
+├─ 01_supabase-project-and-env
+├─ 02_supabase-table-and-crud
+├─ 03_fastapi-supabase-integration
+├─ 04_supabase-auth-and-rls
+├─ 05_conversation-history-and-service-logs
+├─ 06_upstash-redis-cache-and-session
 ├─ 10_labs
 ├─ 20_assignments
 └─ 90_legacy-docker-postgresql-redis-reference
@@ -47,12 +47,12 @@
 
 ```text
 00_references/supabase-first-notes.md
--> 01_ch1_supabase-project-and-env
--> 02_ch2_supabase-table-and-crud
--> 03_ch3_fastapi-supabase-integration
--> 04_ch4_supabase-auth-and-rls
--> 05_ch5_conversation-history-and-service-logs
--> 06_ch6_upstash-redis-cache-and-session
+-> 01_supabase-project-and-env
+-> 02_supabase-table-and-crud
+-> 03_fastapi-supabase-integration
+-> 04_supabase-auth-and-rls
+-> 05_conversation-history-and-service-logs
+-> 06_upstash-redis-cache-and-session
 -> 10_labs
 -> 20_assignments
 ```
@@ -103,19 +103,19 @@ Supabase Dashboard의 SQL Editor에서 실행합니다.
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python.\06_supabase-db-and-auth\01_ch1_supabase-project-and-env\01_check_supabase_env.py
+python.\06_supabase-db-and-auth\01_supabase-project-and-env\01_check_supabase_env.py
 ```
 
 Supabase CRUD 확인:
 
 ```powershell
-python.\06_supabase-db-and-auth\02_ch2_supabase-table-and-crud\01_learning_notes_crud.py
+python.\06_supabase-db-and-auth\02_supabase-table-and-crud\01_learning_notes_crud.py
 ```
 
 FastAPI + Supabase 실행:
 
 ```powershell
-cd C:\aidev\01_supabase-ai-backend\06_supabase-db-and-auth\03_ch3_fastapi-supabase-integration
+cd C:\aidev\01_supabase-ai-backend\06_supabase-db-and-auth\03_fastapi-supabase-integration
 ..\..\.venv\Scripts\Activate.ps1
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
@@ -131,31 +131,31 @@ Upstash Redis 환경변수 확인:
 ```powershell
 cd C:\aidev\01_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\01_check_upstash_env.py
+python.\06_supabase-db-and-auth\06_upstash-redis-cache-and-session\01_check_upstash_env.py
 ```
 
 Upstash Redis TTL 캐시 실습:
 
 ```powershell
-python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\02_cache_set_get_ttl.py
+python.\06_supabase-db-and-auth\06_upstash-redis-cache-and-session\02_cache_set_get_ttl.py
 ```
 
 Upstash Redis 세션 상태 실습:
 
 ```powershell
-python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\04_session_state_example.py
+python.\06_supabase-db-and-auth\06_upstash-redis-cache-and-session\04_session_state_example.py
 ```
 
 캐시 우선 조회 흐름 실습:
 
 ```powershell
-python.\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session\05_cache_aside_mock.py
+python.\06_supabase-db-and-auth\06_upstash-redis-cache-and-session\05_cache_aside_mock.py
 ```
 
 FastAPI 요청 제한 구조 확인:
 
 ```powershell
-cd C:\aidev\01_supabase-ai-backend\06_supabase-db-and-auth\06_ch6_upstash-redis-cache-and-session
+cd C:\aidev\01_supabase-ai-backend\06_supabase-db-and-auth\06_upstash-redis-cache-and-session
 ..\..\.venv\Scripts\Activate.ps1
 uvicorn 06_fastapi_rate_limit_dependency:app --reload --host 127.0.0.1 --port 8001
 ```
