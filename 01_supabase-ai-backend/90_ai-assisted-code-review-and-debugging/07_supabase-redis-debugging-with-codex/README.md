@@ -1,4 +1,4 @@
-# 07_ch7_supabase-redis-debugging-with-codex
+﻿# 07_supabase-redis-debugging-with-codex
 
 Supabase와 Upstash Redis 실습에서 자주 발생하는 오류를 Codex와 함께 분석하는 단원입니다.
 
@@ -33,3 +33,4 @@ Supabase 실습에서 아래 오류가 발생했습니다.
 .env에는 어떤 변수명이 필요한지 알려주고,
 테이블 생성 여부와 컬럼명 확인 순서를 초보자 기준으로 설명해줘.
 ```
+

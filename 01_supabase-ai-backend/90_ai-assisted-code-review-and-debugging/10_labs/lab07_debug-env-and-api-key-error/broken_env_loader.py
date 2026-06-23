@@ -1,4 +1,4 @@
-"""환경변수 디버깅 실습용 예제.
+﻿"""환경변수 디버깅 실습용 예제.
 
 이 파일은 일부러 잘못된 변수명을 사용합니다.
 실제 key를 출력하는 습관이 왜 위험한지도 함께 점검합니다.
@@ -24,3 +24,4 @@ print("OpenAI key:", openai_key)
 
 if not supabase_url:
     raise RuntimeError("Supabase URL이 없습니다. 변수명을 확인해 주세요.")
+

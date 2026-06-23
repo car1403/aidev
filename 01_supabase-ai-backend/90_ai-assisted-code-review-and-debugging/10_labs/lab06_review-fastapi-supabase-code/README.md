@@ -1,4 +1,4 @@
-# Lab 06 - FastAPI Supabase 코드 리뷰
+﻿# Lab 06 - FastAPI Supabase 코드 리뷰
 
 ## 목표
 
@@ -36,3 +36,4 @@ sample_review_target.py
 4. Pydantic 검증 부족
 5. 초보자가 이해하기 어려운 부분
 ```
+

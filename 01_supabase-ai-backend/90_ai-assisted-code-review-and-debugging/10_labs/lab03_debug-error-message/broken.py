@@ -8,3 +8,4 @@ for score in scores:  # 목록이나 반복 가능한 데이터를 하나씩 꺼
 average = total / len(scores)  # 계산 결과나 입력값을 이후 코드에서 다시 쓰기 위해 변수에 저장합니다.
 print("Average:", average)  # 터미널에 값을 출력해 코드 실행 결과를 확인합니다.
 
+

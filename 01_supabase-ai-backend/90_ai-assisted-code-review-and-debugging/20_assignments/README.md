@@ -44,3 +44,4 @@ assignment05_security-cost-review-report
 - Upstash Redis token 노출 여부
 - 서비스 로그의 민감 정보 포함 가능성
 
+

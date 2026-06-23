@@ -9,3 +9,4 @@ else:  # 위 조건들이 모두 False일 때 실행할 대체 흐름입니다.
 print("Average:", average)  # 터미널에 값을 출력해 코드 실행 결과를 확인합니다.
 print("Result:", result)  # 터미널에 값을 출력해 코드 실행 결과를 확인합니다.
 
+

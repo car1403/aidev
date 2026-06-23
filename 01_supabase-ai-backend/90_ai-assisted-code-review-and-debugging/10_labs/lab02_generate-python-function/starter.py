@@ -1,4 +1,4 @@
-"""Lab 02 - Python 함수 생성 요청 starter.
+﻿"""Lab 02 - Python 함수 생성 요청 starter.
 
 이 파일은 Codex에게 명확한 요구사항을 전달하고,
 생성된 함수가 요구사항을 만족하는지 학생이 직접 검증하는 실습용입니다.
@@ -28,3 +28,4 @@ test_cases = [
 
 for test_case in test_cases:
     print(f"{test_case} -> {calculate_average(test_case)}")
+

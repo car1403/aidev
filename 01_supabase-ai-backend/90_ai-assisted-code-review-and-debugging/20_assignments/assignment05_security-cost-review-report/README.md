@@ -1,4 +1,4 @@
-# Assignment 05 - Security And Cost Review Report
+﻿# Assignment 05 - Security And Cost Review Report
 
 ## 목표
 
@@ -21,3 +21,4 @@ security-cost-review-report.md
 7. Upstash Redis token 사용 위치
 8. 서비스 로그에 민감 정보가 들어갈 가능성
 9. 개선한 내용 또는 개선 계획
+

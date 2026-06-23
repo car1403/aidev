@@ -1,4 +1,4 @@
-# AI Tool Selection Guide
+﻿# AI Tool Selection Guide
 
 AI 보조 개발에서는 하나의 도구만 사용하는 것보다, 목적에 맞는 도구를 선택하는 능력이 중요합니다.
 
@@ -57,3 +57,4 @@ FastAPI Depends 공식 문서 위치를 찾아주고 핵심 개념을 요약해 
 NotebookLM에게:
 이 단원의 README를 기반으로 학습 퀴즈 10개를 만들어 주세요.
 ```
+

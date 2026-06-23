@@ -1,4 +1,4 @@
-# Lab 08 - 미니 서비스 리뷰
+﻿# Lab 08 - 미니 서비스 리뷰
 
 ## 목표
 
@@ -31,3 +31,4 @@ C:\aidev\01_supabase-ai-backend\08_backend-mini-service-practice\04_implementati
 3. 오류 처리 보강 지점
 4. 최종 프로젝트로 확장할 때 개선할 구조
 ```
+

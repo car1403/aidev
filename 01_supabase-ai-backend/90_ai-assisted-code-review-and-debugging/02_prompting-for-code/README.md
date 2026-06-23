@@ -1,4 +1,4 @@
-﻿# 02_ch2_prompting-for-code
+﻿# 02_prompting-for-code
 
 코드 생성을 요청할 때 필요한 정보를 구조화하는 방법을 학습합니다.
 
@@ -28,4 +28,5 @@ Python 함수 calculate_average를 만들어줘.
 완료 기준:
 - calculate_average([90, 80, 70]) 결과가 80.0이어야 해.
 ```
+
 

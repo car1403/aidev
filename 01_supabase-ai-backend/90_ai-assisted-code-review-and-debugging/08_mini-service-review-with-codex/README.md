@@ -1,4 +1,4 @@
-# 08_ch8-mini-service-review-with-codex
+﻿# 08_mini-service-review-with-codex
 
 `08_backend-mini-service-practice`에서 만든 미니 서비스를 Codex와 함께 리뷰하는 단원입니다.
 
@@ -31,3 +31,4 @@
 4. 서비스 로그가 운영에 필요한 정보를 담고 있는가?
 5. 최종 프로젝트로 확장하려면 무엇을 개선해야 하는가?
 ```
+

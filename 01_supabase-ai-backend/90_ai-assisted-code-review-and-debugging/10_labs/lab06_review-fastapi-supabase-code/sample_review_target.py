@@ -1,4 +1,4 @@
-"""코드 리뷰 실습용 FastAPI + Supabase 예제.
+﻿"""코드 리뷰 실습용 FastAPI + Supabase 예제.
 
 이 파일은 일부러 개선할 부분을 남겨 둔 리뷰 대상 코드입니다.
 실제 서비스 코드로 사용하지 않습니다.
@@ -49,3 +49,4 @@ def delete_all_notes():
     # 실제 Supabase delete 코드에서 조건 없이 삭제하면 매우 위험합니다.
     # delete().eq("id", note_id)처럼 삭제 대상을 제한해야 합니다.
     return {"message": "조건 없는 삭제는 위험합니다."}
+
