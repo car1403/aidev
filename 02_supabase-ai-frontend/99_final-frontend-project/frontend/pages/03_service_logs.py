@@ -14,7 +14,7 @@ load_dotenv(PROJECT_ENV)
 
 
 def api_base_url() -> str:
-    """백엔드 API 기본 주소를 가져옵니다."""
+    """백엔드 API 기본 주소를 환경변수 또는 Streamlit Secrets에서 가져옵니다."""
     try:
         secret_value = st.secrets.get("API_BASE_URL")
     except Exception:
@@ -45,7 +45,7 @@ if st.button("서비스 로그 새로고침"):
 st.write(
     """
     이 화면은 03 미니 프로젝트에서 로그 대시보드로 확장됩니다.
-    03에서는 이 로그를 Supabase 테이블에 저장하고, 오류 유형, 처리 시간,
+    03에서는 로그를 Supabase 테이블에 저장하고, 오류 유형, 처리 시간,
     사용자 피드백까지 함께 시각화합니다.
     """
 )

@@ -13,7 +13,7 @@ load_dotenv(PROJECT_ENV)
 
 
 def api_base_url() -> str:
-    """백엔드 API 기본 주소를 가져옵니다."""
+    """백엔드 API 기본 주소를 환경변수 또는 Streamlit Secrets에서 가져옵니다."""
     try:
         secret_value = st.secrets.get("API_BASE_URL")
     except Exception:
@@ -44,7 +44,7 @@ checks = [
     "FastAPI 백엔드가 로컬에서 실행되는가?",
     "Streamlit 화면이 로컬에서 실행되는가?",
     "API_BASE_URL이 로컬에서는 http://127.0.0.1:8000 인가?",
-    "GitHub 저장소에 .env 파일을 올리지 않았는가?",
+    "GitHub 저장소에 .env 파일이 올라가지 않았는가?",
     "Render에 백엔드 환경변수를 등록했는가?",
     "Upstash REST URL과 Token을 Render 환경변수에 등록했는가?",
     "Streamlit Community Cloud Secrets에 배포된 Render URL을 등록했는가?",

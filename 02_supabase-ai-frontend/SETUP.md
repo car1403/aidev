@@ -58,6 +58,7 @@ pip --version
 Streamlit 화면, API 호출, 예제 백엔드 실행에 필요한 패키지를 설치합니다.
 
 ```powershell
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
@@ -72,7 +73,7 @@ streamlit --version
 `.env.example`을 복사해서 `.env` 파일을 만듭니다.
 
 ```powershell
-Copy-Item.env.example.env
+Copy-Item .env.example .env
 ```
 
 기본값은 로컬에서 실행 중인 `01_supabase-ai-backend` FastAPI 서버를 바라봅니다.
@@ -84,15 +85,31 @@ API_BASE_URL=http://127.0.0.1:8000
 주의할 점:
 
 - 프론트엔드 `.env`에는 `SUPABASE_SERVICE_ROLE_KEY`를 넣지 않습니다.
+- 실제 서비스 기준으로는 프론트엔드 `.env`에 `GEMINI_API_KEY`, `OPENAI_API_KEY`, `UPSTASH_REDIS_REST_TOKEN` 같은 민감한 값도 넣지 않습니다.
+- `04_ai-chatbot-interface`의 Gemini SDK 선택 실습에서만 로컬 학습용으로 `GEMINI_API_KEY`를 임시 사용할 수 있습니다. 이 값은 GitHub에 올리지 않고, 실제 서비스에서는 백엔드에서 처리합니다.
 - Supabase URL, anon key, service role key는 `01_supabase-ai-backend`에서 관리합니다.
 - 프론트엔드는 백엔드 API 주소만 알고 있으면 됩니다.
+
+이 파일은 기본 단원 실습용 환경변수입니다.
+
+```text
+C:\aidev\02_supabase-ai-frontend\.env
+```
+
+단, `99_final-frontend-project`는 최종 통합과 배포 흐름을 독립적으로 연습하기 위해 자기 폴더 안의 `.env`를 따로 사용합니다.
+
+```text
+C:\aidev\02_supabase-ai-frontend\99_final-frontend-project\.env
+```
+
+따라서 99 최종 프로젝트를 실행할 때는 `99_final-frontend-project\SETUP.md`의 안내에 따라 그 폴더 안에서 `.env.example`을 `.env`로 복사합니다.
 
 ## 6. 백엔드 먼저 실행하기
 
 API 연동 실습을 할 때는 백엔드 서버가 먼저 실행되어 있어야 합니다. PowerShell을 하나 더 열고 아래 명령을 실행합니다.
 
 ```powershell
-cd C:\aidev\01_supabase-ai-backend\06_supabase-db-and-auth\03_ch3_fastapi-supabase-integration
+cd C:\aidev\01_supabase-ai-backend\06_supabase-db-and-auth\03_fastapi-supabase-integration
 ..\..\.venv\Scripts\Activate.ps1
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
@@ -112,7 +129,7 @@ Swagger 문서 화면이 보이면 백엔드가 실행 중입니다.
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend
 .\.venv\Scripts\Activate.ps1
-streamlit run.\03_api-integration\02_ch2_fastapi-backend-connect\01_fastapi-health-check.py
+streamlit run .\03_api-integration\02_fastapi-backend-connect\01_fastapi-health-check.py
 ```
 
 브라우저에서 다음 주소가 열립니다.
@@ -130,8 +147,9 @@ http://localhost:8501
 3. `03_api-integration`에서 Supabase 백엔드 API 호출을 연습합니다.
 4. `04_ai-chatbot-interface`에서 챗봇 화면을 만듭니다.
 5. `05_state-session-and-data`에서 로그인 상태와 사용자별 대화 이력을 다룹니다.
-6. `05_state-session-and-data/06_ch6_service-log-and-integration-check`에서 서비스 로그 조회와 통합 점검을 연습합니다.
+6. `05_state-session-and-data/06_service-log-and-integration-check`에서 서비스 로그 조회와 통합 점검을 연습합니다.
 7. `90_ai-assisted-ui-review-and-debugging`에서 AI를 활용해 코드 리뷰와 디버깅을 연습합니다.
+8. `99_final-frontend-project`에서 Streamlit 화면, FastAPI 백엔드 호출, 대화 이력, 서비스 로그, 무료 배포 흐름을 하나로 연결합니다.
 
 ## 9. 오류 확인 순서
 
@@ -167,7 +185,7 @@ C:\aidev\03_supabase-ai-mini-project
 무료 배포 서비스 기반의 초보자용 배포 흐름은 이 과정의 마지막 통합 점검 단계에서 안내합니다.
 
 ```text
-C:\aidev\02_supabase-ai-frontend\05_state-session-and-data\06_ch6_service-log-and-integration-check\03_free-deployment-guide.md
+C:\aidev\02_supabase-ai-frontend\99_final-frontend-project\docs\free-deployment-guide.md
 ```
 
 이 문서에서는 다음 흐름을 다룹니다.

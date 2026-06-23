@@ -14,7 +14,7 @@ load_dotenv(PROJECT_ENV)
 
 
 def api_base_url() -> str:
-    """백엔드 API 기본 주소를 가져옵니다."""
+    """백엔드 API 기본 주소를 환경변수 또는 Streamlit Secrets에서 가져옵니다."""
     try:
         secret_value = st.secrets.get("API_BASE_URL")
     except Exception:
@@ -41,9 +41,9 @@ if st.button("대화 이력 새로고침"):
             df = pd.DataFrame(items)
             st.dataframe(df, use_container_width=True)
 
-            st.subheader("간단한 지표")
+            st.subheader("간단 지표")
             col1, col2 = st.columns(2)
             col1.metric("대화 수", len(df))
             col2.metric("평균 응답 시간(ms)", round(df["elapsed_ms"].mean(), 2))
 
-st.info("대화가 보이지 않으면 Chatbot 화면에서 질문을 먼저 보내세요.")
+st.info("대화가 보이지 않으면 Chatbot 화면에서 질문을 먼저 보내 보세요.")

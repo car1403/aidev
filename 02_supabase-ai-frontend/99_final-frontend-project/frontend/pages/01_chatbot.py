@@ -13,7 +13,7 @@ load_dotenv(PROJECT_ENV)
 
 
 def api_base_url() -> str:
-    """백엔드 API 기본 주소를 가져옵니다."""
+    """백엔드 API 기본 주소를 환경변수 또는 Streamlit Secrets에서 가져옵니다."""
     try:
         secret_value = st.secrets.get("API_BASE_URL")
     except Exception:
@@ -23,11 +23,11 @@ def api_base_url() -> str:
 
 st.set_page_config(page_title="Chatbot", layout="wide")
 st.title("Chatbot")
-st.caption("사용자 질문을 FastAPI 백엔드로 보내고 응답을 화면에 표시합니다.")
+st.caption("사용자 질문을 FastAPI 백엔드로 보내고 mock AI 응답을 화면에 표시합니다.")
 
 with st.form("chat_form"):
     user_name = st.text_input("사용자 이름", value="student")
-    message = st.text_area("질문", placeholder="예: 오늘 만든 Streamlit 화면을 어떻게 배포하나요?")
+    message = st.text_area("질문", placeholder="예: 오늘 만든 Streamlit 화면은 어떻게 배포하나요?")
     submitted = st.form_submit_button("질문 보내기")
 
 if submitted:
@@ -38,11 +38,7 @@ if submitted:
 
         with st.spinner("백엔드에 질문을 보내는 중입니다..."):
             try:
-                response = httpx.post(
-                    f"{api_base_url()}/api/chat",
-                    json=payload,
-                    timeout=10.0,
-                )
+                response = httpx.post(f"{api_base_url()}/api/chat", json=payload, timeout=10.0)
                 response.raise_for_status()
                 data = response.json()
             except Exception as exc:

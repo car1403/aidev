@@ -1,6 +1,6 @@
-﻿# 20_assignments
+# 20_assignments
 
-수업 후 제출 과제 안내입니다.
+`90_ai-assisted-ui-review-and-debugging` 과제 안내입니다.
 
 ## 제출 과제
 
@@ -17,4 +17,5 @@ assignment-03-refactoring-report.md
 - 답변을 그대로 복사하지 않고 본인의 판단을 기록합니다.
 - 수정 전후 실행 결과를 비교합니다.
 - 최종 앱이 정상 실행되어야 합니다.
-
+- API 호출, `session_state`, Authorization header, 캐시, 보안 키 노출 여부 중 최소 2개 항목을 점검합니다.
+- `04_ai-chatbot-interface` 또는 `05_state-session-and-data`에서 만든 파일을 리뷰 대상으로 선택하는 것을 권장합니다.

@@ -1,4 +1,4 @@
-﻿import streamlit as st  # Python 코드로 웹 화면을 만들기 위해 Streamlit을 st라는 별칭으로 가져옵니다.
+import streamlit as st  # Python 코드로 웹 화면을 만들기 위해 Streamlit을 st라는 별칭으로 가져옵니다.
 
 st.set_page_config(page_title="간단 대시보드", layout="wide")  # Streamlit 페이지의 브라우저 제목과 레이아웃 같은 기본 설정을 지정합니다.
 st.title("간단 대시보드 실습")  # Streamlit 화면의 가장 큰 제목을 표시합니다.

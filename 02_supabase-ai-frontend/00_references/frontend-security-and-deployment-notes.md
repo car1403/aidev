@@ -16,13 +16,25 @@ API_BASE_URL
 API_BASE_URL=http://127.0.0.1:8000
 ```
 
+기본 단원 실습에서는 다음 파일에 값을 적습니다.
+
+```text
+C:\aidev\02_supabase-ai-frontend\.env
+```
+
+`99_final-frontend-project`는 최종 통합과 배포 흐름을 독립적으로 연습하기 때문에 다음 파일을 따로 사용합니다.
+
+```text
+C:\aidev\02_supabase-ai-frontend\99_final-frontend-project\.env
+```
+
 Render에 백엔드를 배포한 뒤에는 다음처럼 바꿉니다.
 
 ```env
 API_BASE_URL=https://본인-render-service.onrender.com
 ```
 
-## 프론트엔드에 두면 안 되는 값
+## 실제 서비스용 프론트엔드에 두면 안 되는 값
 
 ```text
 SUPABASE_SERVICE_ROLE_KEY
@@ -35,6 +47,12 @@ OPENAI_API_KEY
 
 이 값들은 노출되면 비용, 데이터, 권한 문제가 생길 수 있습니다. 반드시 백엔드 또는 배포 서비스의 환경변수에 저장합니다.
 
+다만 `04_ai-chatbot-interface`에는 Gemini SDK 호출 흐름을 이해하기 위한 로컬 선택 실습이 있습니다. 이 선택 실습에서 `GEMINI_API_KEY`를 임시로 사용할 수는 있지만, 다음 기준을 지킵니다.
+
+- GitHub에 `.env`를 올리지 않습니다.
+- 배포용 Streamlit Secrets에 LLM API key를 넣지 않습니다.
+- 실제 서비스 구조에서는 FastAPI 백엔드가 Gemini/OpenAI API를 호출하고, Streamlit은 백엔드 API만 호출합니다.
+
 ## 배포 후 자주 틀리는 부분
 
 | 문제 | 원인 | 확인 방법 |
@@ -45,12 +63,31 @@ OPENAI_API_KEY
 | Redis 인증 실패 | Upstash token 누락 또는 오타 | 환경변수 이름과 값을 확인합니다. |
 | Supabase 권한 오류 | RLS 또는 service role 처리 위치 문제 | 프론트엔드가 아니라 백엔드 설정을 확인합니다. |
 
+## 02 과정의 배포 가이드 위치
+
+무료 배포 흐름은 99 최종 프론트엔드 프로젝트 문서에서 확인합니다.
+
+```text
+C:\aidev\02_supabase-ai-frontend\99_final-frontend-project\docs\free-deployment-guide.md
+```
+
+이 문서는 다음 흐름을 기준으로 합니다.
+
+```text
+FastAPI 백엔드 -> Render
+Redis 캐시/로그 보조 저장소 -> Upstash
+Streamlit 프론트엔드 -> Streamlit Community Cloud
+```
+
+Docker Compose, AWS, GitHub Actions 기반 운영 자동화는 `06_multi-agent-service-ops`에서 다룹니다.
+
 ## 수업용 배포 점검 질문
 
 ```text
 프론트엔드 주소는 무엇인가요?
 백엔드 주소는 무엇인가요?
 프론트엔드가 백엔드 주소를 어디에서 읽나요?
+99 최종 프로젝트는 어떤 .env 파일을 읽나요?
 Supabase service role key는 어디에 있나요?
 Upstash token은 어디에 있나요?
 API 호출이 실패하면 어떤 순서로 확인해야 하나요?

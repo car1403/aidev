@@ -42,3 +42,14 @@ AI 답변을 받을 때는 다음을 확인합니다.
 - 보안상 위험한 방식으로 토큰이나 비밀번호를 처리하지 않는가?
 - 내가 설명할 수 있는 수준의 수정인가?
 
+## 02 프론트엔드 과정에서 특히 확인할 항목
+
+- Streamlit 화면이 Supabase에 직접 접속하지 않고 FastAPI 백엔드를 호출하는가?
+- `API_BASE_URL`이 코드 여러 곳에 흩어져 있지 않은가?
+- `/api/chat/mock` 같은 수업용 API 경로가 문서와 코드에서 일치하는가?
+- `st.session_state` 초기화가 값 사용 전에 실행되는가?
+- access token을 화면에 그대로 출력하지 않는가?
+- Authorization header가 필요한 API 호출에 포함되는가?
+- Supabase service role key 또는 Gemini API key가 프론트엔드 코드에 들어 있지 않은가?
+- 백엔드 미실행, 인증 실패, 타임아웃을 사용자가 이해할 수 있는 메시지로 안내하는가?
+

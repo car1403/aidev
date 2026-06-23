@@ -20,6 +20,17 @@
 - API 실패 상황을 처리하는가?
 - 로그인 토큰을 화면에 그대로 노출하지 않는가?
 - 캐시가 사용자별 데이터에 잘못 적용되지 않는가?
+- `st.session_state` 초기화가 값 사용 전에 실행되는가?
+- 사용자별 데이터 캐시에는 token, user id, 필터 조건처럼 결과를 구분하는 값이 포함되는가?
+
+## API와 보안
+
+- `API_BASE_URL`이 `.env` 또는 설정값으로 관리되는가?
+- `/api/chat/mock`, `/health`, `/api/me`, `/api/conversations` 같은 호출 경로가 문서와 일치하는가?
+- Authorization header가 필요한 API에 `Bearer token` 형식이 포함되는가?
+- Supabase service role key가 프론트엔드에 들어 있지 않은가?
+- Gemini API key가 선택 실습 외의 프론트엔드 코드에 들어 있지 않은가?
+- 백엔드가 꺼져 있을 때 이해하기 쉬운 안내 메시지가 표시되는가?
 
 ## 제출 전 확인
 

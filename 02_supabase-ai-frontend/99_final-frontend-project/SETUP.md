@@ -1,8 +1,8 @@
-﻿# SETUP
+# SETUP
 
 이 문서는 `99_final-frontend-project`를 로컬 PC에서 실행하는 방법을 안내합니다.
 
-초보자는 백엔드와 프론트엔드를 한 번에 이해하려고 하기보다, 아래 순서대로 하나씩 실행하는 것이 좋습니다.
+처음에는 백엔드와 프론트엔드를 한 번에 이해하려고 하기보다 아래 순서대로 하나씩 확인합니다.
 
 ```text
 FastAPI 백엔드 실행
@@ -32,23 +32,41 @@ cd C:\aidev\02_supabase-ai-frontend
 cd C:\aidev\02_supabase-ai-frontend
 C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv .venv
 .\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
+이미 `.venv`와 패키지 설치가 끝났다면 다시 만들 필요는 없습니다.
+
 ## 3. 환경 변수 파일 만들기
+
+이 실습에서는 아래 위치의 `.env` 파일을 사용합니다.
+
+```text
+C:\aidev\02_supabase-ai-frontend\99_final-frontend-project\.env
+```
+
+즉, `C:\aidev\.env` 또는 `C:\aidev\02_supabase-ai-frontend\.env`를 사용하는 구조가 아닙니다.
+프로젝트마다 필요한 환경변수가 다를 수 있기 때문에, 이 최종 예제는 자기 폴더 안에 있는 `.env`를 기준으로 실행합니다.
 
 ```powershell
 cd C:\aidev\02_supabase-ai-frontend\99_final-frontend-project
-Copy-Item.env.example.env
+Copy-Item .env.example .env
 ```
 
 처음 로컬 실행에서는 아래 값만 확인하면 됩니다.
 
 ```env
 API_BASE_URL=http://127.0.0.1:8000
+APP_ENV=local
 ```
 
 Upstash Redis는 선택입니다. 값을 비워 두면 백엔드는 메모리에만 로그를 저장합니다.
+
+```env
+UPSTASH_REDIS_REST_URL=
+UPSTASH_REDIS_REST_TOKEN=
+```
 
 ## 4. FastAPI 백엔드 실행
 
@@ -71,8 +89,11 @@ http://127.0.0.1:8000/health
 
 ```json
 {
- "ok": true,
- "service": "final-frontend-project-backend"
+  "ok": true,
+  "service": "final-frontend-project-backend",
+  "env": "local",
+  "chat_count": 0,
+  "log_count": 0
 }
 ```
 
@@ -108,7 +129,14 @@ http://localhost:8501
 5. `Service Logs` 화면에서 API 호출 로그가 보이는지 확인합니다.
 6. `Deployment Check` 화면에서 배포 전 점검 항목을 확인합니다.
 
-## 7. 서버 종료
+## 7. 오류가 날 때 확인할 것
+
+- 백엔드 PowerShell이 실행 중인가?
+- `/health`가 브라우저에서 열리는가?
+- `.env`의 `API_BASE_URL`이 `http://127.0.0.1:8000`인가?
+- Streamlit을 `frontend` 폴더에서 실행했는가?
+- `.env` 파일을 GitHub에 올리지 않았는가?
+
+## 8. 서버 종료
 
 각 PowerShell에서 `Ctrl + C`를 누르면 실행 중인 서버가 종료됩니다.
-
