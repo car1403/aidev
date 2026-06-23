@@ -26,7 +26,7 @@ def health() -> dict[str, str | bool]:
         "status": "healthy",
         "service": "backend-mini-service",
         "storage": "supabase",
-        "llm": "mock",
+        "llm": "mock-first",
     }
 
 
@@ -76,7 +76,10 @@ def create_question(request: QuestionCreateRequest) -> dict[str, bool | dict]:
                     "user_id": request.user_id,
                     "question": request.question,
                     "answer": answer,
+                    "provider": request.provider,
                     "model": request.model,
+                    "actual_api_called": False,
+                    "llm_call_mode": "mock-first",
                 }
             )
             .execute()
@@ -101,7 +104,10 @@ def create_question(request: QuestionCreateRequest) -> dict[str, bool | dict]:
         metadata={
             "question_id": item["id"],
             "user_id": request.user_id,
+            "provider": request.provider,
             "model": request.model,
+            "actual_api_called": False,
+            "llm_call_mode": "mock-first",
             "storage": "supabase",
         },
     )

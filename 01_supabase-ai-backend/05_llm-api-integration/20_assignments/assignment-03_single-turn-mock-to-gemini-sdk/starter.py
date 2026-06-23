@@ -1,4 +1,4 @@
-"""Assignment 03 starter: Single-turn mock LLM 서비스."""
+"""Assignment 03 starter: Single-turn mock-first 서비스와 Gemini SDK 확장 설계."""
 
 from pprint import pprint
 
@@ -18,6 +18,7 @@ def build_prompt(memo_context: str, user_question: str) -> str:
 def call_mock_llm(prompt: str) -> dict:
     """실제 API 대신 mock 응답을 반환합니다."""
     # TODO: provider, model, actual_api_called, answer, usage를 포함하세요.
+    # README에는 이 함수가 Gemini SDK 호출 함수로 교체되는 위치라고 설명하세요.
     return {}
 
 

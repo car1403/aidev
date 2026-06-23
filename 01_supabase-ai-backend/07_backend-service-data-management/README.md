@@ -11,6 +11,7 @@
 - FastAPI는 화면이나 외부 클라이언트가 사용할 API 입구 역할을 합니다.
 - 사용자 정보, 대화 이력, 서비스 로그는 서로 다른 목적을 가지므로 테이블을 분리해서 설계합니다.
 - 먼저 mock 데이터로 API 구조를 확인한 뒤, Supabase 연동 코드로 확장합니다.
+- 앞 단원의 LLM 호출 흐름은 `mock-first -> Gemini SDK 기본 구현 -> REST 보충 -> OpenAI 선택 비교` 기준으로 이어집니다.
 
 ## 이 단원에서 다루는 데이터
 
@@ -134,8 +135,21 @@ SUPABASE_ANON_KEY=본인의 Supabase anon public key
 -> FastAPI 엔드포인트
 -> 사용자 프로필 조회
 -> 이전 대화 이력 조회
--> AI 응답 생성
+-> mock 응답 생성 또는 Gemini SDK 응답 생성
 -> 메시지 저장
 -> 서비스 로그 저장
 -> 응답 반환
 ```
+
+서비스 로그에는 LLM 호출 결과를 나중에 추적할 수 있도록 다음 값을 함께 남기는 것이 좋습니다.
+
+```json
+{
+  "provider": "gemini",
+  "model": "gemini-2.5-flash-lite",
+  "actual_api_called": false,
+  "llm_call_mode": "mock-first"
+}
+```
+
+실제 Gemini SDK endpoint와 연결하면 `actual_api_called`를 `true`로 바꾸고, 처리 시간과 오류 정보를 함께 저장합니다.

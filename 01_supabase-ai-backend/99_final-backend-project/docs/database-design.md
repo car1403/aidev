@@ -1,29 +1,56 @@
 # Database Design
 
-Supabase 테이블, 컬럼, 관계, RLS 정책을 작성합니다.
+최종 프로젝트에서 사용할 Supabase 테이블, 컬럼, 관계, 권한 기준을 작성합니다.
+
+이 프로젝트는 `08_backend-mini-service-practice`와 연결되므로 기본 테이블 이름은 `mini_questions`, `mini_service_logs`를 기준으로 정리합니다. 프로젝트 상황에 따라 이름을 바꿀 수 있지만, API 문서와 Python 코드의 이름은 반드시 일치해야 합니다.
 
 ## 필수 테이블
 
 ```text
-qa_items
+mini_questions
 -> 사용자 질문과 AI 답변 저장
 
-service_logs
--> API 처리 로그와 오류 로그 저장
+mini_service_logs
+-> API 처리 성공/실패와 오류 로그 저장
 ```
 
 ## 선택 테이블
 
 ```text
 profiles
--> 사용자 프로필
+-> 사용자 프로필 저장
 
 feedback
--> AI 답변 평가
+-> AI 답변 평가 저장
 
-conversations/messages
+conversations / messages
 -> 여러 메시지를 대화방 단위로 관리할 때 사용
 ```
+
+## `mini_questions` 설계 예시
+
+| 컬럼 | 타입 | 설명 |
+| --- | --- | --- |
+| id | uuid 또는 text | 질문 고유 ID |
+| user_id | text | 사용자 식별 값 |
+| question | text | 사용자 질문 |
+| answer | text | AI 응답 |
+| provider | text | LLM 제공자, 기본값은 `gemini` |
+| model | text | 사용한 모델명 |
+| actual_api_called | boolean | 실제 외부 LLM API 호출 여부 |
+| llm_call_mode | text | `mock-first`, `gemini-sdk`, `gemini-rest`, `openai-optional` 등 호출 방식 |
+| created_at | timestamptz | 생성 시각 |
+
+## `mini_service_logs` 설계 예시
+
+| 컬럼 | 타입 | 설명 |
+| --- | --- | --- |
+| id | uuid 또는 text | 로그 고유 ID |
+| event_type | text | 이벤트 종류 |
+| status | text | success 또는 error |
+| message | text | 로그 메시지 |
+| metadata | jsonb | endpoint, provider, model, actual_api_called, llm_call_mode, item_id 등 부가 정보 |
+| created_at | timestamptz | 생성 시각 |
 
 ## 작성할 내용
 
@@ -36,17 +63,15 @@ Primary Key:
 Foreign Key:
 Index:
 RLS 적용 여부:
-사용 예시:
+사용하는 API:
 ```
 
-## Supabase와 Upstash Redis 역할 구분
+## 설계 체크리스트
 
-| 데이터 | 저장 위치 | 이유 |
-| --- | --- | --- |
-| 질문/답변 | Supabase | 나중에 다시 조회해야 합니다. |
-| 서비스 로그 | Supabase | 오류 분석과 운영 기록에 필요합니다. |
-| 사용자 피드백 | Supabase | 품질 개선에 사용합니다. |
-| 30초 캐시 | Upstash Redis | 짧게 재사용하면 됩니다. |
-| 요청 횟수 제한 | Upstash Redis | 시간이 지나면 자동 초기화되어도 됩니다. |
-
-Upstash Redis는 선택 사항입니다. 사용하지 않는 경우에도 "왜 사용하지 않았는지"를 설명합니다.
+- [ ] API 문서의 필드와 테이블 컬럼이 일치합니다.
+- [ ] 질문/응답 데이터와 서비스 로그가 분리되어 있습니다.
+- [ ] mock-first 응답과 실제 Gemini SDK 응답을 구분할 수 있는 컬럼 기준이 있습니다.
+- [ ] `created_at`이 있어 최신순 조회가 가능합니다.
+- [ ] 로그의 `metadata`에는 민감 정보가 들어가지 않습니다.
+- [ ] 사용자별 데이터라면 `user_id` 또는 `owner_id` 기준을 고려했습니다.
+- [ ] RLS 적용 여부를 문서에 기록했습니다.

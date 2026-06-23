@@ -36,6 +36,6 @@ http://127.0.0.1:8005/docs
 ## 확인할 내용
 
 - Swagger UI에서 만든 질문이 Supabase에 저장되나요?
-- `mini_questions`에 `question`, `answer`, `model`이 저장되나요?
+- `mini_questions`에 `question`, `answer`, `provider`, `model`, `actual_api_called`, `llm_call_mode`가 저장되나요?
 - `mini_service_logs`에 `question_created` 로그가 저장되나요?
 - 오류가 발생하면 메시지를 보고 원인을 추적할 수 있나요?

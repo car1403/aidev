@@ -1,4 +1,4 @@
-"""Lab 05 solution: FastAPI mock LLM 엔드포인트."""
+"""Lab 05 starter: FastAPI mock-first LLM 엔드포인트."""
 
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
@@ -34,17 +34,11 @@ def health_check() -> dict:
 @app.post("/ai/chat", response_model=ChatResponse)
 def chat(request: ChatRequest) -> ChatResponse:
     """사용자의 질문을 받아 mock AI 응답을 반환합니다."""
-    if request.memo_context:
-        answer = (
-            f"메모 '{request.memo_context}'를 참고했습니다. "
-            f"질문 '{request.message}'에 대해 핵심부터 정리해 보겠습니다."
-        )
-    else:
-        answer = f"질문 '{request.message}'에 대해 핵심부터 정리해 보겠습니다."
-
+    # TODO: request.message와 request.memo_context를 활용해 answer를 만들어 보세요.
+    # 이후 실제 프로젝트에서는 이 위치에서 Gemini SDK 호출 함수로 연결합니다.
     return ChatResponse(
         provider="gemini",
         model="gemini-2.5-flash-lite",
         actual_api_called=False,
-        answer=answer,
+        answer="TODO",
     )

@@ -97,7 +97,8 @@ def main() -> None:
     print("핵심 정리")
     print("-" * 50)
     print("이 파일은 실제 API를 호출하지 않으므로 비용이 발생하지 않습니다.")
-    print("실제 Gemini 호출은 03_gemini_rest_single_turn.py에서 key가 있을 때만 실행합니다.")
+    print("실제 Gemini 호출은 02_gemini_sdk_single_turn.py에서 SDK 방식으로 먼저 실행합니다.")
+    print("HTTP 요청 구조를 더 자세히 보고 싶다면 03_gemini_rest_single_turn.py를 확인합니다.")
     print("OpenAI 호출은 선택/비교 실습용으로 유지합니다.")
 
 

@@ -2,7 +2,7 @@
 
 `05_llm-api-integration` 단원의 제출 과제 모음입니다.
 
-`10_labs`가 수업 중 단계별 연습이라면, 이 폴더는 같은 내용을 스스로 정리하고 제출하는 과제입니다. 모든 과제는 **실제 Gemini/OpenAI API 호출 전 mock 구조를 먼저 완성**하는 방향으로 진행합니다.
+`10_labs`가 단계별 연습이라면, 이 폴더는 같은 내용을 스스로 정리하고 제출하는 과제입니다. 모든 과제는 **실제 Gemini/OpenAI API 호출 전 mock 구조를 먼저 완성**하고, 이후 Gemini SDK로 확장 가능한 위치를 문서화하는 방향으로 진행합니다.
 
 01~03 과정의 기본 LLM 제공자는 Gemini이며 기본 모델 예시는 `gemini-2.5-flash-lite`입니다. OpenAI는 선택 비교용으로 다루며, 사용할 경우 예시 모델은 `gpt-4.1-mini`를 사용합니다.
 
@@ -12,9 +12,9 @@
 | --- | --- | --- | --- |
 | 1 | `assignment-01_llm-message-design` | `01_llm-api-concepts` | LLM 메시지 구조와 파라미터 설계 |
 | 2 | `assignment-02_api-key-and-cost-safety` | `02_api-key-and-billing` | API key, 비용, 실제 호출 전 안전 점검 |
-| 3 | `assignment-03_single-turn-mock-service` | `03_single-turn-call` | single-turn mock LLM 호출 함수 구현 |
-| 4 | `assignment-04_multi-turn-memory-design` | `04_multi-turn-call` | 대화 이력 기반 multi-turn 메시지 설계 |
-| 99 | `assignment-99_fastapi-llm-mini-service` | 단원 마무리 | FastAPI 기반 mock LLM 미니 서비스 |
+| 3 | `assignment-03_single-turn-mock-to-gemini-sdk` | `03_single-turn-call` | single-turn mock 함수와 Gemini SDK 확장 설계 |
+| 4 | `assignment-04_multi-turn-memory-and-sdk-design` | `04_multi-turn-call` | 대화 이력 기반 multi-turn 메시지와 Gemini SDK 변환 설계 |
+| 99 | `assignment-99_fastapi-llm-mini-service` | 단원 마무리 | FastAPI 기반 mock-first LLM 미니 서비스 |
 
 ## 공통 제출 파일
 
@@ -39,7 +39,8 @@ README.md
 5. 응답 데이터 예시
 6. 실제 API 호출 여부
 7. API key와 비용을 안전하게 관리한 방법
-8. 어려웠던 점과 해결 방법
+8. Gemini SDK로 확장할 위치
+9. 어려웠던 점과 해결 방법
 ```
 
 ## 공통 실행 준비
@@ -91,6 +92,7 @@ http://127.0.0.1:8000/docs
 
 서비스 확장성:
   이후 Supabase 대화 이력 저장과 연결하기 쉬운 데이터 구조인가?
+  Gemini SDK 호출로 확장할 함수 경계가 분리되어 있는가?
 
 문서화:
   README만 보고 실행과 테스트가 가능한가?

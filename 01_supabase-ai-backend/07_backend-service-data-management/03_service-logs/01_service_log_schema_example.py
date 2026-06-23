@@ -6,7 +6,7 @@
 핵심 아이디어:
 - event_type은 로그의 종류를 구분합니다.
 - message는 사람이 읽는 짧은 설명입니다.
-- metadata는 endpoint, 처리 시간, 모델명 같은 추가 정보를 JSON 형태로 담습니다.
+- metadata는 endpoint, 처리 시간, provider, 모델명, 실제 호출 여부 같은 추가 정보를 JSON 형태로 담습니다.
 """
 
 
@@ -17,7 +17,10 @@ service_log = {
         "endpoint": "/ai/chat",
         "status_code": 200,
         "duration_ms": 320,
+        "provider": "gemini",
         "model": "gemini-2.5-flash-lite",
+        "actual_api_called": False,
+        "llm_call_mode": "mock-first",
     },
 }
 
@@ -28,6 +31,10 @@ error_log = {
     "metadata": {
         "endpoint": "/ai/chat",
         "status_code": 500,
+        "provider": "gemini",
+        "model": "gemini-2.5-flash-lite",
+        "actual_api_called": True,
+        "llm_call_mode": "gemini-sdk",
         "error_type": "TimeoutError",
         "retryable": True,
     },
@@ -43,5 +50,5 @@ print(error_log)
 print("\n핵심:")
 print("event_type은 로그의 종류를 구분합니다.")
 print("message는 사람이 읽을 수 있는 설명입니다.")
-print("metadata는 endpoint, 처리 시간, 모델명 같은 추가 정보를 담습니다.")
+print("metadata는 endpoint, 처리 시간, provider, 모델명, 실제 호출 여부 같은 추가 정보를 담습니다.")
 print("API key, token, 비밀번호 같은 민감한 정보는 로그에 저장하지 않습니다.")

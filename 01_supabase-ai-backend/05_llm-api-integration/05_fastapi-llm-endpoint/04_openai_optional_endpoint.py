@@ -6,7 +6,7 @@ OPENAI_API_KEY가 있으면 실제 호출을 수행하므로 비용이 발생할
 실행:
     cd C:\aidev\01_supabase-ai-backend\05_llm-api-integration\05_fastapi-llm-endpoint
     ..\..\.venv\Scripts\Activate.ps1
-    uvicorn main_openai_optional:app --reload
+    uvicorn 04_openai_optional_endpoint:app --reload
 """
 
 from pathlib import Path
@@ -72,7 +72,7 @@ def chat(request: ChatRequest):
 
     if not is_real_api_key(api_key):
         # key가 없을 때도 서버가 오류로 죽지 않고 안내 응답을 반환하게 합니다.
-        # 이 구조는 수업, 데모, 로컬 개발에서 특히 유용합니다.
+        # 이 구조는 학습, 데모, 로컬 개발에서 특히 유용합니다.
         return {
             "provider": "openai",
             "model": model,

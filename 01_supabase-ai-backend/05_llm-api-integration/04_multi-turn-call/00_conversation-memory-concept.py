@@ -6,7 +6,7 @@ r"""간단한 대화 메모리 관리 예제입니다.
 실행:
     cd C:\aidev\01_supabase-ai-backend
     .\.venv\Scripts\Activate.ps1
-    python .\05_llm-api-integration\04_multi-turn-call\02_conversation_memory.py
+    python .\05_llm-api-integration\04_multi-turn-call\00_conversation-memory-concept.py
 """
 
 

@@ -28,11 +28,19 @@ class QuestionCreateRequest(BaseModel):
     )
 
     # 처음에는 실제 LLM이 아니라 mock 답변 생성 함수를 사용합니다.
-    # 나중에 실제 Gemini API를 연결하면 모델명을 바꿀 수 있습니다.
+    # 다만 모델 이름은 이후 실제 Gemini SDK로 교체할 때와 맞추기 위해 기본값을 Gemini 기준으로 둡니다.
     model: str = Field(
-        default="mock-teacher",
-        examples=["mock-teacher"],
+        default="gemini-2.5-flash-lite",
+        examples=["gemini-2.5-flash-lite"],
         description="답변 생성에 사용할 모델 이름",
+    )
+
+    # provider는 어떤 LLM 서비스 계열을 기준으로 설계했는지 표시합니다.
+    # 01~03 과정에서는 Gemini를 기본으로 사용하고, OpenAI는 선택 비교용으로 유지합니다.
+    provider: str = Field(
+        default="gemini",
+        examples=["gemini"],
+        description="답변 생성에 사용할 LLM 제공자",
     )
 
 
@@ -64,6 +72,9 @@ class QuestionItem(BaseModel):
     question: str
     answer: str
     model: str
+    provider: str = "gemini"
+    actual_api_called: bool = False
+    llm_call_mode: str = "mock-first"
     created_at: str | None = None
 
 

@@ -1,4 +1,4 @@
-"""Assignment 04 starter: Multi-turn 대화 이력 설계."""
+"""Assignment 04 starter: Multi-turn 대화 이력과 Gemini SDK 변환 설계."""
 
 from pprint import pprint
 
@@ -25,6 +25,7 @@ def build_messages_for_llm(recent_messages: list[dict]) -> list[dict]:
     }
 
     # TODO: system_message 뒤에 recent_messages를 붙여 반환하세요.
+    # README에는 이 구조를 Gemini contents 구조로 바꾸는 기준을 정리하세요.
     return []
 
 

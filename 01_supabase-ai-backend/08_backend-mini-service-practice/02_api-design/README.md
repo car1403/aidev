@@ -21,6 +21,7 @@ API 설계는 “어떤 주소로 요청을 받을지”, “어떤 데이터를
 | 요청/응답 구조를 먼저 정리 | 코드를 작성하기 전에 JSON 형태를 먼저 확인합니다. |
 | 오류 응답을 통일 | 어떤 오류든 `ok`, `error.code`, `error.message` 형식을 유지합니다. |
 | mock 구현과 실제 저장 구현을 분리 | 처음에는 mock API로 구조를 확인하고, 이후 Supabase로 연결합니다. |
+| LLM 호출 상태를 분리 | `provider`, `model`, `actual_api_called`, `llm_call_mode`로 mock-first와 Gemini SDK 호출을 구분합니다. |
 
 ## API 목록
 
@@ -47,7 +48,10 @@ API 설계는 “어떤 주소로 요청을 받을지”, “어떤 데이터를
     "user_id": "student01",
     "question": "FastAPI에서 Pydantic은 왜 사용하나요?",
     "answer": "요청 데이터 검증과 응답 구조 정의를 쉽게 하기 위해 사용합니다.",
-    "model": "mock-teacher"
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-lite",
+    "actual_api_called": false,
+    "llm_call_mode": "mock-first"
   }
 }
 ```
@@ -63,7 +67,10 @@ API 설계는 “어떤 주소로 요청을 받을지”, “어떤 데이터를
       "user_id": "student01",
       "question": "FastAPI에서 Pydantic은 왜 사용하나요?",
       "answer": "요청 데이터 검증과 응답 구조 정의를 쉽게 하기 위해 사용합니다.",
-      "model": "mock-teacher"
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-lite",
+      "actual_api_called": false,
+      "llm_call_mode": "mock-first"
     }
   ]
 }
@@ -107,4 +114,4 @@ API 요청 데이터
 -> FastAPI 엔드포인트 구현
 ```
 
-예를 들어 `POST /questions` 요청에 `user_id`, `question`, `model`이 필요하다면 Supabase 테이블에도 질문 기록을 저장할 컬럼이 필요합니다.
+예를 들어 `POST /questions` 요청에 `user_id`, `question`, `provider`, `model`이 필요하다면 Supabase 테이블에도 질문 기록을 저장할 컬럼이 필요합니다. 그리고 실제 LLM API를 호출했는지 구분하기 위해 `actual_api_called`, `llm_call_mode`도 함께 설계합니다.

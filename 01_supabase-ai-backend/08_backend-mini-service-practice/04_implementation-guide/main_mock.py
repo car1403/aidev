@@ -33,15 +33,15 @@ def health() -> dict[str, str | bool]:
         "status": "healthy",
         "service": "backend-mini-service",
         "storage": "memory",
-        "llm": "mock",
+        "llm": "mock-first",
     }
 
 
 @app.post("/questions", status_code=201)
 def create_question(request: QuestionCreateRequest) -> dict[str, bool | dict]:
-    """사용자 질문을 받고 mock AI 답변을 생성합니다."""
+    """사용자 질문을 받고 mock-first 답변을 생성합니다."""
 
-    # 1. mock LLM 함수로 답변을 만듭니다.
+    # 1. mock-first 함수로 답변을 만듭니다.
     answer = generate_mock_answer(request.question, request.model)
 
     # 2. 질문과 답변을 하나의 dict로 묶습니다.
@@ -51,6 +51,9 @@ def create_question(request: QuestionCreateRequest) -> dict[str, bool | dict]:
         "question": request.question,
         "answer": answer,
         "model": request.model,
+        "provider": request.provider,
+        "actual_api_called": False,
+        "llm_call_mode": "mock-first",
         "created_at": now_iso(),
     }
 
@@ -65,7 +68,10 @@ def create_question(request: QuestionCreateRequest) -> dict[str, bool | dict]:
             metadata={
                 "question_id": item["id"],
                 "user_id": request.user_id,
+                "provider": request.provider,
                 "model": request.model,
+                "actual_api_called": False,
+                "llm_call_mode": "mock-first",
                 "storage": "memory",
             },
         )

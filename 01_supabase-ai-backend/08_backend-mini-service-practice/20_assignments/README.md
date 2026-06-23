@@ -49,5 +49,6 @@ mini_service_logs
 - 요구사항, API 설계, DB 설계, 구현 결과가 서로 맞아야 합니다.
 - API 이름과 테이블 이름이 문서마다 다르면 안 됩니다.
 - mock 서버 실행 결과와 Supabase 저장 결과를 구분해서 정리합니다.
+- mock-first 응답과 이후 Gemini SDK 응답을 구분할 수 있도록 `provider`, `model`, `actual_api_called`, `llm_call_mode` 기준을 포함합니다.
 - 오류가 발생했다면 오류 메시지, 원인, 해결 과정을 함께 적습니다.
 - API Key, 비밀번호, 토큰 같은 민감 정보는 제출 자료에 포함하지 않습니다.

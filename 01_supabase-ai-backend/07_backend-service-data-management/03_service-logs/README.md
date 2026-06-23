@@ -4,6 +4,8 @@
 
 서비스 로그는 사용자가 직접 보는 데이터가 아니라, 서비스가 잘 동작하는지 확인하고 문제가 생겼을 때 원인을 찾기 위한 기록입니다. AI 서비스에서는 답변 내용만 저장하는 것보다 “어떤 요청이 성공했는지, 실패했는지, 얼마나 오래 걸렸는지”를 함께 남기는 것이 중요합니다.
 
+앞 단원인 `05_llm-api-integration`에서는 LLM 호출 흐름을 `mock-first -> Gemini SDK 기본 구현 -> REST 보충 -> OpenAI 선택 비교`로 정리했습니다. 따라서 이 챕터의 서비스 로그는 mock 응답과 Gemini SDK 응답을 모두 기록할 수 있는 구조로 설계합니다.
+
 ## 서비스 로그가 필요한 이유
 
 서비스 로그는 아래 상황에서 필요합니다.
@@ -50,7 +52,24 @@ create table if not exists service_logs (
   "endpoint": "/ai/chat",
   "status_code": 200,
   "duration_ms": 320,
-  "model": "gemini-2.5-flash-lite"
+  "provider": "gemini",
+  "model": "gemini-2.5-flash-lite",
+  "actual_api_called": false,
+  "llm_call_mode": "mock-first"
+}
+```
+
+실제 Gemini SDK endpoint에서 응답을 생성했다면 아래처럼 기록할 수 있습니다.
+
+```json
+{
+  "endpoint": "/ai/chat",
+  "status_code": 200,
+  "duration_ms": 840,
+  "provider": "gemini",
+  "model": "gemini-2.5-flash-lite",
+  "actual_api_called": true,
+  "llm_call_mode": "gemini-sdk"
 }
 ```
 
@@ -98,7 +117,7 @@ python .\07_backend-service-data-management\03_service-logs\03_error_log_example
 
 - `service_logs` 테이블에 성공 로그가 저장됩니다.
 - 오류 예제 실행 후 `practice.error` 로그가 저장됩니다.
-- `metadata`에 endpoint, status_code, duration_ms, error_type 같은 추가 정보가 저장됩니다.
+- `metadata`에 endpoint, status_code, duration_ms, provider, model, actual_api_called, error_type 같은 추가 정보가 저장됩니다.
 - 실제 API key나 민감한 사용자 정보가 로그에 그대로 저장되지 않습니다.
 
 ## 로그 작성 기준
@@ -119,3 +138,4 @@ AI 응답 생성 실패, endpoint=/ai/chat, error_type=TimeoutError
 - `metadata`를 JSON으로 저장하면 어떤 장점이 있나요?
 - 로그에 사용자의 질문 전체를 항상 저장하면 어떤 문제가 생길 수 있나요?
 - 이후 운영 대시보드를 만든다면 어떤 event_type을 먼저 보고 싶나요?
+- mock 응답과 Gemini SDK 응답을 같은 `service_logs` 테이블에 기록하려면 어떤 metadata가 필요할까요?

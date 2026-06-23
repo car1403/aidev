@@ -15,8 +15,9 @@ prompt-and-answer-validation-guide.md
 
 - AI 리터러시는 AI 답변을 그대로 믿는 것이 아니라 검토하고 실행해 보는 습관입니다.
 - Python, VS Code, `.venv`, `pip`, `requirements.txt`의 역할을 구분합니다.
-- Gemini API, OpenAI API, Upstash Redis, Supabase key는 비용과 보안 이슈가 있을 수 있으므로 `.env`와 환경변수로 관리합니다.
-- 01~03 과정의 기본 LLM API는 Gemini입니다. OpenAI API는 선택/비교 실습용으로 다룹니다.
+- Gemini API key, OpenAI API key, Upstash Redis token, Supabase key는 비용과 보안 이슈가 있을 수 있으므로 `.env`와 환경변수로 관리합니다.
+- 01~03 과정의 기본 LLM 실습 방식은 Gemini SDK입니다. Gemini REST 호출은 API 요청 구조를 이해하기 위한 보충 실습으로 다룹니다.
+- OpenAI API는 `gpt-4.1-mini` 기반 선택/비교 실습용으로 유지합니다.
 - Codex, NotebookLM, Perplexity AI, ChatGPT/Claude/Gemini는 목적에 따라 다르게 사용합니다.
 
 ## 확인 질문

@@ -4,6 +4,8 @@
 
 `01_user-profile-data`, `02_conversation-history`, `03_service-logs`에서는 각각 데이터를 따로 다루었습니다. 이번 챕터에서는 그 기능들을 하나의 백엔드 API 형태로 연결합니다.
 
+이 챕터의 endpoint는 LLM을 직접 호출하지 않습니다. 대신 앞 단원의 `05_llm-api-integration/05_fastapi-llm-endpoint/02_gemini_sdk_endpoint.py`에서 생성한 응답을 저장할 수 있도록 대화 메시지와 서비스 로그 구조를 준비합니다.
+
 ## 이 챕터에서 만드는 endpoint
 
 | Method | URL | 설명 |
@@ -102,11 +104,15 @@ http://127.0.0.1:8004/docs
 
 ```json
 {
-  "event_type": "message.created",
-  "message": "메시지가 저장되었습니다.",
+  "event_type": "ai.answer.created",
+  "message": "AI 응답 생성 결과가 저장되었습니다.",
   "metadata": {
-    "endpoint": "/conversations/{conversation_id}/messages",
-    "status_code": 201
+    "endpoint": "/ai/chat",
+    "status_code": 200,
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-lite",
+    "actual_api_called": false,
+    "llm_call_mode": "mock-first"
   }
 }
 ```
@@ -117,6 +123,7 @@ http://127.0.0.1:8004/docs
 - Supabase 서버에서는 실제 테이블에 데이터가 저장됩니다.
 - `conversation_id`를 기준으로 메시지가 연결됩니다.
 - 서비스 로그에는 민감 정보가 아니라 운영에 필요한 요약 정보만 저장됩니다.
+- LLM 응답 저장 로그에는 `provider`, `model`, `actual_api_called`, `llm_call_mode`가 포함됩니다.
 
 ## 정리 질문
 

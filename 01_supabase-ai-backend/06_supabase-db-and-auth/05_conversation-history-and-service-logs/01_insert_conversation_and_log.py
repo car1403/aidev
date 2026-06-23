@@ -197,8 +197,12 @@ def main() -> None:
                 "conversation_id": conversation_id,
                 "message_count": 2,
                 "storage": "supabase",
+                "provider": "gemini",
                 "actual_api_called": False,
-                "model": "mock",
+                "model": "gemini-2.5-flash-lite",
+                "llm_call_mode": "mock-first",
+                "project_default_call": "Gemini SDK",
+                "reference_endpoint": "05_llm-api-integration/05_fastapi-llm-endpoint/02_gemini_sdk_endpoint.py",
             },
         )
         print("\n[service log saved]")

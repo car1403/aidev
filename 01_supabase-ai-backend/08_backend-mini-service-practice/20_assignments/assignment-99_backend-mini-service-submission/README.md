@@ -30,12 +30,13 @@
 | Supabase 서버 실행 결과가 있다. | [ ] |
 | 질문 생성과 조회가 동작한다. | [ ] |
 | 서비스 로그가 저장된다. | [ ] |
+| `provider`, `model`, `actual_api_called`, `llm_call_mode` 기준이 문서와 코드에 반영되어 있다. | [ ] |
 | 오류 발생 시 원인을 확인할 수 있다. | [ ] |
 | 민감 정보가 제출 자료에 포함되지 않았다. | [ ] |
 
 ## 개선 아이디어 예시
 
-- 실제 Gemini API를 연결해 mock 답변을 교체합니다.
+- 실제 Gemini SDK를 연결해 mock-first 답변을 교체합니다.
 - 반복 질문에 Upstash Redis 캐시를 적용합니다.
 - 사용자 인증을 붙이고 user_id를 Supabase Auth와 연결합니다.
 - SSE 스트리밍은 `03_supabase-ai-mini-project`에서 통합 실습으로 확장합니다.

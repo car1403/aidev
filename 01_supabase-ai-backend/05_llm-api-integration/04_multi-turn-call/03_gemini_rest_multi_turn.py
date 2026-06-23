@@ -10,7 +10,7 @@ r"""Gemini REST 멀티턴 호출 예제입니다.
 실행:
     cd C:\aidev\01_supabase-ai-backend
     .\.venv\Scripts\Activate.ps1
-    python .\05_llm-api-integration\04_multi-turn-call\04_gemini_rest_multi_turn.py
+    python .\05_llm-api-integration\04_multi-turn-call\03_gemini_rest_multi_turn.py
 """
 
 from pathlib import Path

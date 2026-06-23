@@ -20,7 +20,7 @@ AI 질문 응답 백엔드 미니 서비스
 1. 사용자가 자신의 user_id와 질문을 API로 보냅니다.
 2. FastAPI 서버가 입력값을 검증합니다.
 3. 서버가 사용자 프로필 또는 기본 사용자 정보를 확인합니다.
-4. 서버가 mock LLM 함수로 답변을 생성합니다.
+4. 서버가 mock-first 함수로 답변을 생성합니다.
 5. 서버가 질문과 답변을 Supabase에 저장합니다.
 6. 서버가 처리 결과를 service_logs에 저장합니다.
 7. 서버가 사용자에게 JSON 응답을 반환합니다.
@@ -33,7 +33,7 @@ AI 질문 응답 백엔드 미니 서비스
 | F-01 | 서버 상태 확인 | 서버가 실행 중인지 확인합니다. | `GET /health`가 정상 응답을 반환합니다. |
 | F-02 | 질문 등록 | 사용자 질문을 API로 받습니다. | `POST /questions` 형태의 API가 요청을 받습니다. |
 | F-03 | 입력값 검증 | `user_id`, `question` 값을 검증합니다. | 빈 값이나 너무 긴 질문에 오류를 반환합니다. |
-| F-04 | AI 답변 생성 | mock LLM 함수로 답변을 생성합니다. | 외부 API 없이도 답변 문자열이 생성됩니다. |
+| F-04 | AI 답변 생성 | mock-first 함수로 답변을 생성합니다. | 외부 API 없이도 답변 문자열이 생성됩니다. |
 | F-05 | 질문/답변 저장 | 질문과 답변을 저장합니다. | Supabase 저장 구조와 연결될 수 있습니다. |
 | F-06 | 기록 조회 | 저장된 질문/답변 목록을 조회합니다. | 사용자별 기록 조회 API를 설계합니다. |
 | F-07 | 서비스 로그 저장 | 성공/실패/오류 기록을 남깁니다. | `event_type`, `message`, `metadata`가 저장됩니다. |
@@ -43,7 +43,7 @@ AI 질문 응답 백엔드 미니 서비스
 
 | 번호 | 기능 | 설명 |
 | --- | --- | --- |
-| O-01 | Gemini API 연동 | mock LLM 이후 실제 LLM 연동이 필요할 때 Gemini API를 사용합니다. |
+| O-01 | Gemini SDK 연동 | mock-first 이후 실제 LLM 연동이 필요할 때 Gemini SDK를 사용합니다. |
 | O-02 | OpenAI API 비교 | 기존 OpenAI 예제는 선택 비교용으로 유지합니다. |
 | O-03 | Upstash Redis 캐시 | 반복 질문에 대한 짧은 캐시를 적용할 수 있습니다. |
 | O-04 | 요청 제한 | 짧은 시간 동안 너무 많은 요청을 막기 위해 Redis 카운터를 사용할 수 있습니다. |
@@ -54,7 +54,7 @@ AI 질문 응답 백엔드 미니 서비스
 | --- | --- | --- | --- |
 | 사용자 프로필 | Supabase | 필수 | 사용자 id, 표시 이름, 선호 언어, 학습 수준 |
 | 질문 | Supabase | 필수 | 사용자가 입력한 질문 |
-| AI 답변 | Supabase | 필수 | mock 또는 실제 LLM이 만든 답변 |
+| AI 답변 | Supabase | 필수 | mock-first 또는 Gemini SDK가 만든 답변 |
 | 서비스 로그 | Supabase | 필수 | API 성공/실패, 오류, 처리 시간 |
 | 캐시 | Upstash Redis | 선택 | 짧은 시간 재사용할 응답 |
 | 요청 제한 상태 | Upstash Redis | 선택 | 사용자별 요청 횟수 카운터 |
@@ -90,7 +90,7 @@ AI 질문 응답 백엔드 미니 서비스
 | --- | --- |
 | `event_type` | `question_created`, `api_error`, `validation_error` |
 | `message` | `질문 답변 생성 성공` |
-| `metadata` | 요청 경로, 처리 시간, user_id, 오류 코드 |
+| `metadata` | 요청 경로, 처리 시간, user_id, 오류 코드, provider, model, actual_api_called, llm_call_mode |
 
 민감 정보는 로그에 저장하지 않습니다.
 

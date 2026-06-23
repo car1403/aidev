@@ -27,6 +27,7 @@ mini_service_logs
 - 컬럼 목록
 - 각 컬럼의 타입과 의미
 - `user_id`가 필요한 이유
+- `provider`, `model`, `actual_api_called`, `llm_call_mode`가 필요한 이유
 - `created_at`이 필요한 이유
 - 사용자별 조회와 최신순 조회에 필요한 인덱스
 
@@ -43,5 +44,6 @@ mini_service_logs
 
 - API 설계의 필드와 테이블 컬럼이 서로 맞습니다.
 - 질문/답변 저장 테이블과 서비스 로그 테이블이 분리되어 있습니다.
+- mock-first 응답과 Gemini SDK 응답을 구분할 수 있는 컬럼 기준이 포함되어 있습니다.
 - 인덱스가 필요한 이유가 설명되어 있습니다.
 - RLS는 이후 확장 기준으로 설명되어 있습니다.

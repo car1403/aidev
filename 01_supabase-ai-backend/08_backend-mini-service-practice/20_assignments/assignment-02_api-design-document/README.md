@@ -42,7 +42,8 @@ GET /service-logs
 {
   "user_id": "student01",
   "question": "FastAPI에서 Pydantic은 왜 사용하나요?",
-  "model": "mock-teacher"
+  "provider": "gemini",
+  "model": "gemini-2.5-flash-lite"
 }
 ```
 
@@ -50,5 +51,6 @@ GET /service-logs
 
 - API URL이 리소스 중심으로 작성되어 있습니다.
 - 요청/응답 JSON 예시가 있습니다.
+- 질문/답변 응답에 `provider`, `model`, `actual_api_called`, `llm_call_mode`가 포함되어 있습니다.
 - 오류 응답 형식이 `ok`, `error.code`, `error.message` 기준으로 정리되어 있습니다.
 - API와 Supabase 테이블 연결이 설명되어 있습니다.

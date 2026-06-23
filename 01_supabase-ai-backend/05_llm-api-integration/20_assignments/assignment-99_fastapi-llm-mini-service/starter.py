@@ -1,4 +1,4 @@
-"""Assignment 99 starter: FastAPI mock LLM 미니 서비스."""
+"""Assignment 99 starter: FastAPI mock-first LLM 미니 서비스."""
 
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
@@ -49,6 +49,7 @@ def chat(request: ChatRequest) -> ChatResponse:
     """single-turn mock 응답을 반환합니다."""
     # TODO: request.message와 request.memo_context를 활용해 answer를 만드세요.
     # TODO: user 메시지와 assistant 메시지를 messages_for_storage에 담으세요.
+    # README에는 이 위치가 Gemini SDK 호출 함수로 교체될 수 있음을 설명하세요.
     return ChatResponse(
         provider="gemini",
         model="gemini-2.5-flash-lite",
@@ -62,6 +63,7 @@ def chat(request: ChatRequest) -> ChatResponse:
 def chat_with_history(request: ChatWithHistoryRequest) -> ChatResponse:
     """multi-turn mock 응답을 반환합니다."""
     # TODO: request.history 뒤에 새 user/assistant 메시지를 이어 붙이세요.
+    # README에는 history를 Gemini contents 구조로 변환하는 기준을 설명하세요.
     return ChatResponse(
         provider="gemini",
         model="gemini-2.5-flash-lite",

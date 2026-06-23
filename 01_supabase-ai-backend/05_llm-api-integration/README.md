@@ -34,16 +34,16 @@
 └─ 20_assignments
 ```
 
-## 수업 흐름
+## 학습 흐름
 
 | 순서 | 폴더 | 핵심 내용 |
 | --- | --- | --- |
 | 1 | `01_llm-api-concepts` | LLM API 개념, message 구조, 주요 파라미터 이해 |
 | 2 | `02_api-key-and-billing` | API key, `.env`, placeholder key, 비용 안전 점검 |
-| 3 | `03_single-turn-call` | 질문 하나에 대한 mock/Gemini/OpenAI 호출 구조 |
-| 4 | `04_multi-turn-call` | 이전 대화 이력을 포함한 multi-turn 호출 구조 |
-| 5 | `05_fastapi-llm-endpoint` | FastAPI에서 LLM 요청/응답 endpoint 구성 |
-| 6 | `10_labs` | 수업 중 단계별 실습 |
+| 3 | `03_single-turn-call` | 질문 하나에 대한 mock/Gemini SDK/Gemini REST/OpenAI 호출 구조 |
+| 4 | `04_multi-turn-call` | 이전 대화 이력을 포함한 mock/Gemini SDK/Gemini REST/OpenAI multi-turn 호출 구조 |
+| 5 | `05_fastapi-llm-endpoint` | FastAPI에서 mock endpoint와 Gemini SDK 기본 endpoint 구성 |
+| 6 | `10_labs` | 단계별 실습 |
 | 7 | `20_assignments` | 제출 과제와 미니 서비스 설계 |
 
 ## 기본 모델 기준
@@ -88,8 +88,10 @@ python .\05_llm-api-integration\03_single-turn-call\01_mock_single_turn.py
 Gemini single-turn 호출:
 
 ```powershell
-python .\05_llm-api-integration\03_single-turn-call\03_gemini_rest_single_turn.py
+python .\05_llm-api-integration\03_single-turn-call\02_gemini_sdk_single_turn.py
 ```
+
+Gemini 실제 호출은 SDK 방식을 먼저 사용합니다. SDK 방식은 코드가 짧고 응답 텍스트를 쉽게 확인할 수 있어 초보자가 처음 실제 호출을 성공시키기에 좋습니다. REST 방식인 `03_gemini_rest_single_turn.py`는 URL, payload, 응답 JSON 구조를 직접 확인하는 보충 예제로 유지합니다.
 
 비용 없는 mock multi-turn 호출:
 
@@ -100,15 +102,17 @@ python .\05_llm-api-integration\04_multi-turn-call\01_mock_multi_turn.py
 Gemini multi-turn 호출:
 
 ```powershell
-python .\05_llm-api-integration\04_multi-turn-call\04_gemini_rest_multi_turn.py
+python .\05_llm-api-integration\04_multi-turn-call\02_gemini_sdk_multi_turn.py
 ```
+
+멀티턴 호출도 Gemini SDK 방식을 기본으로 사용합니다. REST 방식인 `03_gemini_rest_multi_turn.py`는 HTTP payload 구조를 직접 확인하는 보충 예제입니다.
 
 FastAPI mock LLM endpoint 실행:
 
 ```powershell
 cd C:\aidev\01_supabase-ai-backend\05_llm-api-integration\05_fastapi-llm-endpoint
 ..\..\.venv\Scripts\Activate.ps1
-uvicorn main_mock:app --reload
+uvicorn 01_mock_llm_endpoint:app --reload
 ```
 
 Gemini FastAPI endpoint 실행:
@@ -116,8 +120,10 @@ Gemini FastAPI endpoint 실행:
 ```powershell
 cd C:\aidev\01_supabase-ai-backend\05_llm-api-integration\05_fastapi-llm-endpoint
 ..\..\.venv\Scripts\Activate.ps1
-uvicorn main_gemini_optional:app --reload
+uvicorn 02_gemini_sdk_endpoint:app --reload
 ```
+
+FastAPI 프로젝트 구현도 `02_gemini_sdk_endpoint.py`를 기준으로 진행합니다. `03_gemini_rest_optional_endpoint.py`는 REST 요청 구조를 확인할 때 사용합니다.
 
 Swagger UI:
 

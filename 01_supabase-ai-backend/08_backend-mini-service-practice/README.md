@@ -2,7 +2,7 @@
 
 이 단원은 `01`부터 `07`까지 배운 내용을 작은 백엔드 서비스로 묶어 보는 실습 단계입니다.
 
-최종 백엔드 프로젝트로 가기 전에 FastAPI, Pydantic, Supabase, 서비스 로그, mock LLM 흐름을 하나의 작은 서비스 안에서 연결합니다. 처음에는 비용과 설정 부담을 줄이기 위해 mock LLM과 메모리 저장소로 시작하고, 이후 Supabase 테이블 저장 방식으로 확장합니다.
+최종 백엔드 프로젝트로 가기 전에 FastAPI, Pydantic, Supabase, 서비스 로그, mock-first LLM 흐름을 하나의 작은 서비스 안에서 연결합니다. 처음에는 비용과 설정 부담을 줄이기 위해 mock 함수와 메모리 저장소로 시작하고, 이후 Supabase 테이블 저장 방식으로 확장합니다.
 
 ## 핵심 요약
 
@@ -11,7 +11,8 @@
 - mock 서버로 전체 흐름을 먼저 확인합니다.
 - Supabase 서버로 실제 저장 흐름을 확인합니다.
 - 서비스 로그를 통해 성공, 실패, 오류 상황을 추적합니다.
-- 실제 LLM 연동은 Gemini API를 우선 기준으로 확장할 수 있고, OpenAI 예제는 선택 비교용으로 유지합니다.
+- 실제 LLM 연동은 앞 단원 기준에 맞춰 Gemini SDK를 기본 확장 방향으로 잡고, REST 호출은 구조 이해용 보충, OpenAI 예제는 선택 비교용으로 유지합니다.
+- 저장 데이터와 서비스 로그에는 `provider`, `model`, `actual_api_called`, `llm_call_mode`를 남겨 mock 응답과 실제 Gemini SDK 응답을 구분합니다.
 
 ## 구현 주제
 
@@ -24,7 +25,7 @@ AI 질문 응답 백엔드 미니 서비스
 ```text
 사용자 질문 요청
 -> FastAPI 요청 검증
--> mock LLM 답변 생성
+-> mock-first 답변 생성
 -> 질문/답변 저장
 -> 서비스 로그 저장
 -> JSON 응답 반환
@@ -80,7 +81,7 @@ mini_service_logs
 
 | 테이블 | 역할 |
 | --- | --- |
-| `mini_questions` | 사용자 질문과 mock AI 답변 저장 |
+| `mini_questions` | 사용자 질문과 AI 답변 저장, mock-first/Gemini SDK 호출 기준 기록 |
 | `mini_service_logs` | API 처리 성공/실패, 오류, 처리 정보 저장 |
 
 ## 실습 파일

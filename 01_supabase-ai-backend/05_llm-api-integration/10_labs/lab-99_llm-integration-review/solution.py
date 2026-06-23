@@ -1,4 +1,4 @@
-"""Lab 99 solution: LLM API 연동 흐름 종합 복습."""
+"""Lab 99 solution: mock-first LLM API 연동 흐름 종합 복습."""
 
 from fastapi import FastAPI
 from pydantic import BaseModel, Field

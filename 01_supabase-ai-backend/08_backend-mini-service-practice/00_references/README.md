@@ -25,14 +25,16 @@
 그래서 이 단원은 다음 순서로 진행합니다.
 
 ```text
-mock LLM + 메모리 저장소
+mock-first + 메모리 저장소
 -> FastAPI endpoint 구조 확인
 -> Supabase 테이블 준비
 -> Supabase 저장 코드 연결
--> 실제 LLM API 연동은 이후 확장
+-> Gemini SDK 연동은 이후 확장
 ```
 
 이렇게 하면 API 구조, 데이터 저장 구조, 외부 API 호출 구조를 단계별로 이해할 수 있습니다.
+
+앞 단원인 `05_llm-api-integration`에서는 `mock-first -> Gemini SDK 기본 구현 -> REST 보충 -> OpenAI 선택 비교` 흐름으로 LLM 호출을 정리했습니다. 이 미니 서비스에서는 그 흐름을 저장 구조에 반영하기 위해 `provider`, `model`, `actual_api_called`, `llm_call_mode` 값을 함께 다룹니다.
 
 ## API 이름 기준
 
@@ -51,7 +53,7 @@ mock LLM + 메모리 저장소
 
 | 테이블 | 저장 데이터 | 설명 |
 | --- | --- | --- |
-| `mini_questions` | 질문/답변 기록 | 사용자 질문, AI 답변, 모델명, 생성 시간 |
+| `mini_questions` | 질문/답변 기록 | 사용자 질문, AI 답변, provider, 모델명, 호출 여부, 생성 시간 |
 | `mini_service_logs` | 서비스 로그 | API 성공/실패, 오류, metadata |
 
 ## 요청/응답 기준
@@ -107,7 +109,7 @@ mock LLM + 메모리 저장소
 | --- | --- |
 | `event_type` | `question_created`, `validation_error`, `storage_error` |
 | `message` | `질문 답변 생성 성공` |
-| `metadata` | `user_id`, `question_id`, `endpoint`, `duration_ms` |
+| `metadata` | `user_id`, `question_id`, `endpoint`, `duration_ms`, `provider`, `model`, `actual_api_called`, `llm_call_mode` |
 
 로그에 저장하지 않아야 하는 값:
 

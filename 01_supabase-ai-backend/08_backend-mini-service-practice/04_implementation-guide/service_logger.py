@@ -1,7 +1,7 @@
 """서비스 로그 생성 보조 함수.
 
 서비스 로그는 API가 어떤 일을 처리했는지 나중에 확인하기 위한 기록입니다.
-성공/실패, endpoint, model, question_id 같은 정보를 metadata에 담습니다.
+성공/실패, endpoint, provider, model, actual_api_called, llm_call_mode, question_id 같은 정보를 metadata에 담습니다.
 """
 
 from datetime import datetime, timezone

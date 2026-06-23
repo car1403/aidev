@@ -7,7 +7,7 @@ r"""OpenAI 싱글턴 호출 예제입니다.
 실행:
     cd C:\aidev\01_supabase-ai-backend
     .\.venv\Scripts\Activate.ps1
-    python .\05_llm-api-integration\03_single-turn-call\02_openai_single_turn.py
+    python .\05_llm-api-integration\03_single-turn-call\04_openai_single_turn.py
 """
 
 from pathlib import Path

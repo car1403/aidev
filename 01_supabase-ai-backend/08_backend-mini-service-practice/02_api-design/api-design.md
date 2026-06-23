@@ -70,7 +70,9 @@
 
 사용자의 질문을 받고 AI 답변을 생성합니다.
 
-처음에는 외부 LLM API를 바로 호출하지 않고 mock LLM 함수로 답변을 생성합니다. 이렇게 하면 API 구조와 저장 흐름을 먼저 안정적으로 확인할 수 있습니다.
+처음에는 외부 LLM API를 바로 호출하지 않고 mock 함수로 답변을 생성합니다. 이렇게 하면 API 구조와 저장 흐름을 먼저 안정적으로 확인할 수 있습니다.
+
+단, 모델 기준은 앞 단원과 맞춰 `gemini-2.5-flash-lite`를 기본값으로 둡니다. 실제 Gemini SDK를 호출하지 않았다는 사실은 `actual_api_called: false`, `llm_call_mode: "mock-first"`로 구분합니다.
 
 ### Request Body
 
@@ -78,7 +80,8 @@
 {
   "user_id": "student01",
   "question": "FastAPI에서 Pydantic은 왜 사용하나요?",
-  "model": "mock-teacher"
+  "provider": "gemini",
+  "model": "gemini-2.5-flash-lite"
 }
 ```
 
@@ -88,7 +91,8 @@
 | --- | --- | --- | --- |
 | `user_id` | string | 필수 | 질문을 보낸 사용자 id |
 | `question` | string | 필수 | 사용자의 질문 내용 |
-| `model` | string | 선택 | 사용할 모델 이름, 기본값은 `mock-teacher` |
+| `provider` | string | 선택 | 사용할 LLM 제공자, 기본값은 `gemini` |
+| `model` | string | 선택 | 사용할 모델 이름, 기본값은 `gemini-2.5-flash-lite` |
 
 ### Response Body
 
@@ -100,7 +104,10 @@
     "user_id": "student01",
     "question": "FastAPI에서 Pydantic은 왜 사용하나요?",
     "answer": "Pydantic은 요청 데이터 검증과 응답 구조 정의를 쉽게 하기 위해 사용합니다.",
-    "model": "mock-teacher",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-lite",
+    "actual_api_called": false,
+    "llm_call_mode": "mock-first",
     "created_at": "2026-06-23T10:00:00Z"
   }
 }
@@ -112,7 +119,7 @@
 요청 수신
 -> user_id 검증
 -> question 검증
--> mock LLM 답변 생성
+-> mock-first 답변 생성
 -> 질문/답변 저장
 -> 서비스 로그 저장
 -> 응답 반환
@@ -146,7 +153,10 @@ GET /questions?user_id=student01&limit=10
       "user_id": "student01",
       "question": "FastAPI에서 Pydantic은 왜 사용하나요?",
       "answer": "Pydantic은 요청 데이터 검증과 응답 구조 정의를 쉽게 하기 위해 사용합니다.",
-      "model": "mock-teacher",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-lite",
+      "actual_api_called": false,
+      "llm_call_mode": "mock-first",
       "created_at": "2026-06-23T10:00:00Z"
     }
   ]
@@ -173,7 +183,10 @@ GET /questions?user_id=student01&limit=10
     "user_id": "student01",
     "question": "FastAPI에서 Pydantic은 왜 사용하나요?",
     "answer": "Pydantic은 요청 데이터 검증과 응답 구조 정의를 쉽게 하기 위해 사용합니다.",
-    "model": "mock-teacher",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-lite",
+    "actual_api_called": false,
+    "llm_call_mode": "mock-first",
     "created_at": "2026-06-23T10:00:00Z"
   }
 }
@@ -206,6 +219,10 @@ GET /questions?user_id=student01&limit=10
   "metadata": {
     "user_id": "student01",
     "question_id": "question-001",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-lite",
+    "actual_api_called": false,
+    "llm_call_mode": "mock-first",
     "duration_ms": 120
   }
 }
@@ -247,6 +264,10 @@ GET /questions?user_id=student01&limit=10
       "message": "질문 답변 생성 성공",
       "metadata": {
         "user_id": "student01",
+        "provider": "gemini",
+        "model": "gemini-2.5-flash-lite",
+        "actual_api_called": false,
+        "llm_call_mode": "mock-first",
         "duration_ms": 120
       },
       "created_at": "2026-06-23T10:00:00Z"

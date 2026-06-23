@@ -33,7 +33,8 @@ http://127.0.0.1:8004/docs
 {
   "user_id": "student01",
   "question": "FastAPI에서 Pydantic은 왜 사용하나요?",
-  "model": "mock-teacher"
+  "provider": "gemini",
+  "model": "gemini-2.5-flash-lite"
 }
 ```
 
@@ -42,4 +43,5 @@ http://127.0.0.1:8004/docs
 - `POST /questions` 실행 후 `id`가 생성되나요?
 - `GET /questions`에서 방금 만든 데이터가 보이나요?
 - `GET /service-logs`에서 `question_created` 로그가 보이나요?
+- 응답과 로그에 `provider`, `model`, `actual_api_called`, `llm_call_mode`가 보이나요?
 - 서버를 재시작하면 메모리 데이터가 사라지는지 이해했나요?

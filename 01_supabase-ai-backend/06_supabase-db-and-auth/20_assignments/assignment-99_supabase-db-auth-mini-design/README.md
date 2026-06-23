@@ -5,6 +5,7 @@
 ## 목표
 
 - Supabase DB, Auth/RLS, Upstash Redis를 하나의 서비스 설계로 통합할 수 있습니다.
+- LLM 응답 생성 흐름을 mock-first와 Gemini SDK 실제 호출 구조로 구분해 설계할 수 있습니다.
 - 이후 `99_final-backend-project` 또는 `03_supabase-ai-mini-project`로 이어질 수 있는 설계 문서를 작성합니다.
 
 ## 프로젝트 주제 예시
@@ -31,9 +32,10 @@
 5. Auth/RLS 적용 계획
 6. 대화 이력 또는 서비스 로그 저장 흐름
 7. Upstash Redis를 사용할 캐시/TTL/요청 제한 설계
-8. 환경변수 목록
-9. 예상 오류와 대응 방법
-10. 이후 미니 프로젝트로 확장할 부분
+8. mock 응답과 Gemini SDK 응답을 구분하는 metadata 설계
+9. 환경변수 목록
+10. 예상 오류와 대응 방법
+11. 이후 미니 프로젝트로 확장할 부분
 ```
 
 ## 제출 문서 권장 구조
@@ -47,8 +49,9 @@
 ## 4. API 설계
 ## 5. Auth/RLS 설계
 ## 6. Redis 캐시와 요청 제한 설계
-## 7. 오류 처리와 로그 저장
-## 8. 실행 및 검증 계획
+## 7. LLM 호출과 응답 저장 설계
+## 8. 오류 처리와 로그 저장
+## 9. 실행 및 검증 계획
 ```
 
 ## 확인 기준
@@ -57,3 +60,4 @@
 - 데이터 저장 위치가 Supabase와 Redis로 구분되어 있습니다.
 - 사용자별 데이터 접근 제어 계획이 포함되어 있습니다.
 - 구현 가능한 수준의 API 목록이 작성되어 있습니다.
+- `actual_api_called=false`인 mock 응답과 `actual_api_called=true`인 Gemini SDK 응답 저장 기준이 포함되어 있습니다.

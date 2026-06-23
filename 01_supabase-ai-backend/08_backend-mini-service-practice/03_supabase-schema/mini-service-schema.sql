@@ -13,7 +13,10 @@ create table if not exists mini_questions (
   user_id text not null,
   question text not null,
   answer text not null,
-  model text not null default 'mock-teacher',
+  provider text not null default 'gemini',
+  model text not null default 'gemini-2.5-flash-lite',
+  actual_api_called boolean not null default false,
+  llm_call_mode text not null default 'mock-first',
   created_at timestamptz not null default now()
 );
 

@@ -2,6 +2,8 @@
 
 서비스 데이터 관리를 위한 FastAPI endpoint의 요청/응답 구조를 설계하는 과제입니다.
 
+이 과제의 endpoint는 LLM을 직접 호출하는 단계가 아니라, 앞 단원의 Gemini SDK endpoint에서 생성한 응답을 저장하고 조회하기 위한 서비스 데이터 API입니다.
+
 ## 목표
 
 - endpoint별 HTTP Method와 URL을 설계할 수 있습니다.
@@ -30,6 +32,7 @@ POST /service-logs
 5. Response Body
 6. 오류 상황
 7. 연결되는 Supabase 테이블
+8. LLM 응답 저장과 연결될 경우 필요한 metadata
 ```
 
 ## 작성 예시
@@ -60,3 +63,4 @@ Response Body:
 - Request/Response JSON이 실제 구현 가능한 형태입니다.
 - 오류 상황을 최소 1개 이상 포함했습니다.
 - Supabase 테이블 연결이 명확합니다.
+- 서비스 로그 endpoint에 `provider`, `model`, `actual_api_called`, `llm_call_mode` 같은 metadata가 포함됩니다.

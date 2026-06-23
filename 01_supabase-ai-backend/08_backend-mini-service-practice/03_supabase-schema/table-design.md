@@ -21,21 +21,24 @@
 | `id` | `uuid` | 필수 | 질문/답변 기록의 고유 id |
 | `user_id` | `text` | 필수 | 질문을 보낸 사용자 id |
 | `question` | `text` | 필수 | 사용자가 보낸 질문 |
-| `answer` | `text` | 필수 | mock LLM 또는 실제 LLM이 생성한 답변 |
+| `answer` | `text` | 필수 | mock-first 또는 Gemini SDK가 생성한 답변 |
+| `provider` | `text` | 필수 | LLM 제공자, 기본값은 `gemini` |
 | `model` | `text` | 필수 | 답변 생성에 사용한 모델 이름 |
+| `actual_api_called` | `boolean` | 필수 | 실제 외부 LLM API 호출 여부 |
+| `llm_call_mode` | `text` | 필수 | `mock-first`, `gemini-sdk` 등 호출 방식 |
 | `created_at` | `timestamptz` | 필수 | 저장 시간 |
 
 ### 예시 데이터
 
-| user_id | question | answer | model |
-| --- | --- | --- | --- |
-| student01 | FastAPI에서 Pydantic은 왜 사용하나요? | 요청 검증과 응답 구조 정의를 쉽게 하기 위해 사용합니다. | mock-teacher |
+| user_id | question | answer | provider | model | actual_api_called | llm_call_mode |
+| --- | --- | --- | --- | --- | --- | --- |
+| student01 | FastAPI에서 Pydantic은 왜 사용하나요? | 요청 검증과 응답 구조 정의를 쉽게 하기 위해 사용합니다. | gemini | gemini-2.5-flash-lite | false | mock-first |
 
 ### 설계 이유
 
 - 질문과 답변은 나중에 다시 조회해야 하므로 Supabase에 저장합니다.
 - `user_id`가 있어야 사용자별 기록 조회가 가능합니다.
-- `model`을 저장하면 mock 답변과 실제 LLM 답변을 구분할 수 있습니다.
+- `provider`, `model`, `actual_api_called`, `llm_call_mode`를 함께 저장하면 mock-first 답변과 실제 Gemini SDK 답변을 구분할 수 있습니다.
 - `created_at`이 있어야 최신순 정렬이 가능합니다.
 
 ## 2. mini_service_logs
@@ -77,6 +80,10 @@
   "user_id": "student01",
   "question_id": "question-001",
   "endpoint": "POST /questions",
+  "provider": "gemini",
+  "model": "gemini-2.5-flash-lite",
+  "actual_api_called": false,
+  "llm_call_mode": "mock-first",
   "duration_ms": 120
 }
 ```
@@ -112,6 +119,7 @@
 
 - [ ] API 설계의 필드와 테이블 컬럼이 일치한다.
 - [ ] 질문/답변 저장 테이블이 있다.
+- [ ] LLM 제공자, 모델명, 실제 호출 여부, 호출 방식 컬럼이 있다.
 - [ ] 서비스 로그 저장 테이블이 있다.
 - [ ] 사용자별 조회를 위한 `user_id`가 있다.
 - [ ] 최신순 조회를 위한 `created_at`이 있다.

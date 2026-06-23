@@ -17,7 +17,7 @@
 ```text
 사용자 질문
 -> FastAPI endpoint
--> LLM 응답 생성 또는 mock 응답 생성
+-> mock 응답 생성 또는 Gemini SDK 응답 생성
 -> conversations 테이블에 대화방 정보 저장
 -> messages 테이블에 사용자/AI 메시지 저장
 -> service_logs 테이블에 실행 기록 저장
@@ -25,6 +25,19 @@
 ```
 
 이 챕터는 Supabase에 오래 보관할 데이터를 다룹니다. 캐시, TTL, 요청 횟수 제한 같은 임시 데이터는 다음 챕터의 Upstash Redis에서 다룹니다.
+
+## 05_llm-api-integration 변경 사항과의 연결
+
+앞 단원인 `05_llm-api-integration`에서는 LLM 호출 흐름을 아래 기준으로 정리했습니다.
+
+```text
+1. mock으로 요청/응답 구조를 먼저 확인합니다.
+2. 실제 프로젝트 기본 구현은 Gemini SDK 방식을 사용합니다.
+3. Gemini REST 방식은 HTTP 구조 확인용 보충 예제로 둡니다.
+4. OpenAI 방식은 선택 비교 예제로 둡니다.
+```
+
+따라서 이 챕터에서 Supabase에 저장하는 `messages`와 `service_logs`는 특정 호출 방식에만 묶이지 않도록 설계합니다. 예제 코드는 비용 없이 확인할 수 있도록 `actual_api_called=false`인 mock 응답을 저장하지만, 같은 구조는 `05_llm-api-integration/05_fastapi-llm-endpoint/02_gemini_sdk_endpoint.py`에서 생성한 Gemini SDK 응답에도 그대로 사용할 수 있습니다.
 
 ## 테이블 역할
 
@@ -101,6 +114,7 @@ conversation.created
 message.saved
 llm.mock_called
 llm.api_called
+llm.gemini_sdk_called
 error.supabase_insert_failed
 ```
 
@@ -110,6 +124,7 @@ error.supabase_insert_failed
 {
   "conversation_id": "uuid",
   "message_count": 2,
+  "provider": "gemini",
   "model": "gemini-2.5-flash-lite",
   "actual_api_called": false
 }

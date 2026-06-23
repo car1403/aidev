@@ -51,6 +51,7 @@ mini-service-schema.sql
 | 질문과 답변은 Supabase에 저장 | 나중에 다시 조회해야 하는 영구 데이터입니다. |
 | 서비스 로그도 Supabase에 저장 | 오류 분석과 실행 흐름 확인에 필요합니다. |
 | `user_id`를 둠 | 사용자별 조회와 향후 Auth/RLS 확장을 위해 필요합니다. |
+| LLM 호출 상태 컬럼을 둠 | `provider`, `model`, `actual_api_called`, `llm_call_mode`로 mock-first와 Gemini SDK 응답을 구분합니다. |
 | `metadata`는 `jsonb` 사용 | 로그마다 추가 정보가 다를 수 있기 때문입니다. |
 | `created_at`을 둠 | 최신순 조회와 실행 시점 확인에 필요합니다. |
 

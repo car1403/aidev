@@ -1,4 +1,4 @@
-"""Lab 04 solution: Multi-turn mock 대화 이력."""
+"""Lab 04 solution: Multi-turn mock-first 대화 이력과 Gemini SDK 확장 준비."""
 
 from pprint import pprint
 
@@ -25,6 +25,7 @@ def get_recent_messages(limit: int = 4) -> list[dict]:
 
 def call_mock_llm_with_history(messages: list[dict]) -> dict:
     """대화 이력을 참고해 mock 응답을 만듭니다."""
+    # 실제 프로젝트에서는 messages를 Gemini contents 구조로 변환한 뒤 SDK에 전달합니다.
     last_user_message = ""
 
     # 뒤에서부터 확인하면 가장 최근 사용자 메시지를 쉽게 찾을 수 있습니다.

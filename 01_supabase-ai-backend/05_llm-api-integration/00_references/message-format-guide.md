@@ -61,7 +61,7 @@ Gemini REST API 예제에서는 메시지 role 이름이 OpenAI 형식과 조금
 따라서 실습에서는 다음처럼 구분합니다.
 
 ```text
-수업에서 이해할 공통 구조:
+먼저 이해할 공통 구조:
   system / user / assistant
 
 Gemini REST API로 보낼 때:

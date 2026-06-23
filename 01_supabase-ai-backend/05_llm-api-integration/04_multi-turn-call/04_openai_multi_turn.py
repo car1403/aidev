@@ -6,7 +6,7 @@ OpenAI 예제는 선택/비교 실습용입니다.
 실행:
     cd C:\aidev\01_supabase-ai-backend
     .\.venv\Scripts\Activate.ps1
-    python .\05_llm-api-integration\04_multi-turn-call\03_openai_multi_turn.py
+    python .\05_llm-api-integration\04_multi-turn-call\04_openai_multi_turn.py
 """
 
 from pathlib import Path
@@ -15,7 +15,7 @@ import os
 from dotenv import load_dotenv
 
 
-# 실제 수업에서는 .env에 OPENAI_API_KEY를 넣은 뒤 이 예제를 실행합니다.
+# 실제 API 호출이 필요하면 .env에 OPENAI_API_KEY를 넣은 뒤 이 예제를 실행합니다.
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 load_dotenv(PROJECT_ROOT / ".env")
 

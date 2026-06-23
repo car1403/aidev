@@ -1,8 +1,8 @@
-# Assignment 99. FastAPI mock LLM 미니 서비스
+# Assignment 99. FastAPI mock-first LLM 미니 서비스
 
 `05_llm-api-integration` 단원의 최종 과제입니다.
 
-FastAPI로 mock LLM API 서버를 만들고, single-turn과 multi-turn 요청을 모두 처리합니다. 실제 API를 호출하지 않지만, 이후 Gemini 실제 호출, Supabase 대화 이력 저장, Streamlit 화면 연동으로 확장할 수 있는 구조로 설계합니다.
+FastAPI로 mock-first LLM API 서버를 만들고, single-turn과 multi-turn 요청을 모두 처리합니다. 실제 API 호출은 필수가 아니지만, 이후 Gemini SDK 실제 호출, Supabase 대화 이력 저장, Streamlit 화면 연동으로 확장할 수 있는 구조로 설계합니다.
 
 ## 제출 목표
 
@@ -11,6 +11,7 @@ FastAPI로 mock LLM API 서버를 만들고, single-turn과 multi-turn 요청을
 - `POST /ai/chat-with-history` 엔드포인트로 대화 이력 기반 mock 응답을 반환합니다.
 - 모든 응답에 `provider`, `model`, `actual_api_called`를 포함합니다.
 - 저장 가능한 메시지 목록을 `messages_for_storage`로 반환합니다.
+- mock 응답 생성 함수를 Gemini SDK 호출 함수로 교체할 수 있도록 함수 경계를 분리합니다.
 
 ## 제출 파일
 
@@ -39,4 +40,4 @@ http://127.0.0.1:8000/docs
 2. Pydantic 모델로 요청과 응답 구조가 정의되어 있습니다.
 3. 실제 API 호출 없이 mock 응답을 반환합니다.
 4. 대화 이력을 Supabase에 저장하기 좋은 구조로 반환합니다.
-5. README에 실제 API 호출로 확장할 때 주의할 점을 정리합니다.
+5. README에 Gemini SDK 호출로 확장할 위치와 API key/비용 주의사항을 정리합니다.

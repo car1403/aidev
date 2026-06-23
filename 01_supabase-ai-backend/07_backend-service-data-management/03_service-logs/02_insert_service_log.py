@@ -83,6 +83,10 @@ def main() -> None:
                 "status_code": 200,
                 "duration_ms": 10,
                 "source": "07_backend-service-data-management",
+                "provider": "gemini",
+                "model": "gemini-2.5-flash-lite",
+                "actual_api_called": False,
+                "llm_call_mode": "mock-first",
             },
         )
     except APIError as error:

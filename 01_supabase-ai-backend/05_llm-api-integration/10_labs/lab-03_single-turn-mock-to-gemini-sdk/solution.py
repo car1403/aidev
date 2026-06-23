@@ -1,4 +1,4 @@
-"""Lab 03 solution: Single-turn mock LLM 호출."""
+"""Lab 03 solution: Single-turn mock-first 호출과 Gemini SDK 확장 준비."""
 
 from pprint import pprint
 
@@ -19,6 +19,7 @@ def build_prompt(memo_context: str, user_question: str) -> str:
 
 def call_mock_llm(prompt: str) -> dict:
     """실제 API 대신 mock 응답을 반환합니다."""
+    # 실제 프로젝트에서는 이 함수 내부가 Gemini SDK generate_content 호출로 교체됩니다.
     answer = (
         "1. FastAPI는 POST 요청으로 클라이언트가 보낸 JSON 데이터를 받을 수 있습니다.\n"
         "2. Pydantic 모델을 사용하면 입력 데이터의 필드와 타입을 검증할 수 있습니다.\n"
