@@ -1,17 +1,36 @@
 # 08. Backend Mini Service Practice
 
-이 단원은 01~07에서 배운 내용을 작은 백엔드 서비스로 묶어 보는 실습 단계입니다.
+이 단원은 `01`부터 `07`까지 배운 내용을 작은 백엔드 서비스로 묶어 보는 실습 단계입니다.
 
-최종 프로젝트를 하기 전에, FastAPI, Supabase, LLM API, 사용자 데이터 저장, 서비스 로그를 작은 단위로 연결해 봅니다.
+최종 백엔드 프로젝트로 가기 전에 FastAPI, Pydantic, Supabase, 서비스 로그, mock LLM 흐름을 하나의 작은 서비스 안에서 연결합니다. 처음에는 비용과 설정 부담을 줄이기 위해 mock LLM과 메모리 저장소로 시작하고, 이후 Supabase 테이블 저장 방식으로 확장합니다.
 
-## 학습 목표
+## 핵심 요약
 
-- CRUD API와 LLM API 호출을 하나의 백엔드 흐름으로 연결합니다.
-- Supabase 테이블에 사용자 요청과 AI 응답을 저장합니다.
-- 서비스 로그를 남겨 오류와 실행 결과를 확인합니다.
-- Codex를 활용해 코드 리뷰와 리팩토링을 진행합니다.
+- 요구사항을 먼저 정리한 뒤 API를 설계합니다.
+- API 설계에 맞춰 Supabase 테이블을 설계합니다.
+- mock 서버로 전체 흐름을 먼저 확인합니다.
+- Supabase 서버로 실제 저장 흐름을 확인합니다.
+- 서비스 로그를 통해 성공, 실패, 오류 상황을 추적합니다.
+- 실제 LLM 연동은 Gemini API를 우선 기준으로 확장할 수 있고, OpenAI 예제는 선택 비교용으로 유지합니다.
 
-## 권장 구성
+## 구현 주제
+
+```text
+AI 질문 응답 백엔드 미니 서비스
+```
+
+사용자가 질문을 보내면 백엔드가 다음 일을 처리합니다.
+
+```text
+사용자 질문 요청
+-> FastAPI 요청 검증
+-> mock LLM 답변 생성
+-> 질문/답변 저장
+-> 서비스 로그 저장
+-> JSON 응답 반환
+```
+
+## 폴더 구성
 
 ```text
 08_backend-mini-service-practice
@@ -25,50 +44,56 @@
 └─ 20_assignments
 ```
 
-## 이번 단원의 구현 주제
+## 학습 순서
 
-이번 단원에서는 아래 주제로 작은 백엔드 서비스를 만듭니다.
+| 순서 | 폴더 | 내용 |
+| --- | --- | --- |
+| 1 | `00_references` | 미니 서비스 설계 기준과 체크리스트 확인 |
+| 2 | `01_requirements` | 서비스 목적, 기능 요구사항, 제외 범위 정리 |
+| 3 | `02_api-design` | `/questions`, `/service-logs` API 설계 |
+| 4 | `03_supabase-schema` | `mini_questions`, `mini_service_logs` 테이블 설계 |
+| 5 | `04_implementation-guide` | mock 서버와 Supabase 서버 구현 |
+| 6 | `10_labs` | 단계별 실습 진행 |
+| 7 | `20_assignments` | 요구사항, API, DB, 구현 결과 과제 정리 |
 
-```text
-AI 질문 응답 백엔드 미니 서비스
-```
+## API 기준
 
-사용자가 질문을 보내면 백엔드가 다음 일을 처리합니다.
-
-1. 요청 데이터를 검증합니다.
-2. mock LLM 또는 실제 LLM 호출 위치를 통해 답변을 만듭니다.
-3. 질문과 답변을 저장합니다.
-4. 서비스 로그를 저장합니다.
-5. JSON 응답을 반환합니다.
-
-## 미니 서비스 예시
+이번 단원에서는 다음 API 이름을 사용합니다.
 
 ```text
-사용자가 질문을 보낸다.
--> FastAPI가 요청을 검증한다.
--> LLM API가 답변 초안을 만든다.
--> Supabase에 질문과 답변을 저장한다.
--> 서비스 로그를 저장한다.
--> JSON 응답을 반환한다.
+GET /health
+POST /questions
+GET /questions
+GET /questions/{question_id}
+POST /service-logs
+GET /service-logs
 ```
 
-## 산출물
+## Supabase 테이블 기준
 
-- API 설계 문서
-- Supabase 테이블 설계
-- FastAPI endpoint
-- LLM API 호출 코드 또는 호출 설계
-- 실행 로그
-- Codex 코드 리뷰 기록
+이번 단원에서는 다음 테이블을 사용합니다.
+
+```text
+mini_questions
+mini_service_logs
+```
+
+| 테이블 | 역할 |
+| --- | --- |
+| `mini_questions` | 사용자 질문과 mock AI 답변 저장 |
+| `mini_service_logs` | API 처리 성공/실패, 오류, 처리 정보 저장 |
 
 ## 실습 파일
 
 ```text
 01_requirements/service-requirements.md
--> 미니 서비스 요구사항을 정리합니다.
+-> 미니 서비스 요구사항 정의서입니다.
 
 02_api-design/api-design.md
 -> endpoint, 요청/응답, 오류 형식을 설계합니다.
+
+03_supabase-schema/table-design.md
+-> Supabase 테이블 설계 기준을 설명합니다.
 
 03_supabase-schema/mini-service-schema.sql
 -> Supabase SQL Editor에서 실행할 테이블 생성 SQL입니다.
@@ -92,9 +117,26 @@ AI 질문 응답 백엔드 미니 서비스
 -> Supabase 테이블에 실제 저장하는 FastAPI 앱입니다.
 ```
 
-## 실행 순서
+## 실행 준비
 
-처음에는 외부 서비스 영향을 주지 않는 mock 서버부터 실행합니다.
+이 단원은 `01_supabase-ai-backend` 루트의 `.venv`를 사용합니다.
+
+```powershell
+cd C:\aidev\01_supabase-ai-backend
+.\.venv\Scripts\Activate.ps1
+```
+
+필요한 패키지는 앞 단원에서 `requirements.txt`로 설치되어 있어야 합니다.
+
+```powershell
+pip install -r requirements.txt
+```
+
+이미 설치했다면 다시 설치하지 않아도 됩니다. 새 터미널을 열었다면 가상환경 활성화는 다시 해야 합니다.
+
+## mock 서버 실행
+
+mock 서버는 Supabase URL이나 API Key 없이 실행할 수 있습니다.
 
 ```powershell
 cd C:\aidev\01_supabase-ai-backend\08_backend-mini-service-practice\04_implementation-guide
@@ -108,12 +150,59 @@ Swagger UI:
 http://127.0.0.1:8004/docs
 ```
 
-Supabase 연동 버전은 `.env`와 테이블 생성 SQL을 확인한 뒤 실행합니다.
+먼저 mock 서버에서 API 구조를 확인합니다.
+
+```text
+GET /health
+POST /questions
+GET /questions
+GET /questions/{question_id}
+GET /service-logs
+```
+
+## Supabase 서버 실행
+
+Supabase 서버는 다음 준비가 완료된 뒤 실행합니다.
+
+```text
+1. Supabase 프로젝트 준비
+2. .env에 Supabase URL과 Key 설정
+3. 03_supabase-schema/mini-service-schema.sql 실행
+4. mini_questions, mini_service_logs 테이블 생성 확인
+```
+
+실행 명령:
 
 ```powershell
+cd C:\aidev\01_supabase-ai-backend\08_backend-mini-service-practice\04_implementation-guide
+..\..\.venv\Scripts\Activate.ps1
 uvicorn main_supabase:app --reload --host 127.0.0.1 --port 8005
 ```
 
+Swagger UI:
+
+```text
+http://127.0.0.1:8005/docs
+```
+
+## 이번 단원에서 깊게 다루지 않는 것
+
+| 항목 | 다루는 위치 |
+| --- | --- |
+| SSE 실시간 응답 스트리밍 | `03_supabase-ai-mini-project` |
+| Streamlit 프론트엔드 통합 | `02_supabase-ai-frontend`, `03_supabase-ai-mini-project` |
+| Docker 기반 실행 | `04_llm-agent-orchestration` 이후 |
+| Docker Compose, AWS, GitHub Actions | `06_multi-agent-service-ops` |
+
+## 완료 기준
+
+- 요구사항 문서가 API 설계로 연결되어 있습니다.
+- API 설계가 Supabase 테이블 설계로 연결되어 있습니다.
+- mock 서버에서 질문 생성과 조회가 됩니다.
+- Supabase 서버에서 실제 데이터 저장과 조회가 됩니다.
+- 서비스 로그를 통해 API 처리 결과를 확인할 수 있습니다.
+- `10_labs`와 `20_assignments`의 점검 기준을 완료했습니다.
+
 ## 다음 단계
 
-이 단원을 마친 뒤 `99_final-backend-project`에서 백엔드 최종 프로젝트를 진행합니다.
+이 단원을 마친 뒤 `90_ai-assisted-code-review-and-debugging`에서 코드 리뷰와 디버깅 흐름을 점검하고, `99_final-backend-project`에서 백엔드 최종 프로젝트로 확장합니다.

@@ -24,10 +24,10 @@ Supabase는 PostgreSQL 데이터베이스를 기반으로 인증, 데이터 API,
 
 ## 과정 목표
 
-- AI 리터러시와 Vibe Coding의 기본 태도를 이해합니다.
+- AI 리터러시와 AI 답변 검증의 기본 태도를 이해합니다.
 - Python 개발환경, `.venv`, `pip`, `requirements.txt`를 사용할 수 있습니다.
 - Python 기본 문법과 고급 문법을 단계적으로 학습합니다.
-- Git/GitHub로 코드 변경 이력을 관리하고, Codex로 문서와 커밋 메시지를 개선할 수 있습니다.
+- Git/GitHub로 코드 변경 이력을 관리하고, VS Code에서 변경 파일과 커밋 흐름을 확인할 수 있습니다.
 - FastAPI로 REST API 서버를 만들고 Swagger UI에서 검증할 수 있습니다.
 - Pydantic으로 요청/응답 데이터를 검증할 수 있습니다.
 - Gemini API를 기본 LLM 실습 모델로 사용하고, API key, 토큰, 무료 범위/과금, 싱글턴/멀티턴 호출 차이를 이해합니다.
@@ -63,7 +63,7 @@ Supabase는 PostgreSQL 데이터베이스를 기반으로 인증, 데이터 API,
 ├─ 00_references
 ├─ 01_python-basic
 ├─ 02_python-advanced
-├─ 03_git-github-and-vibe-coding
+├─ 03_git-github
 ├─ 04_fastapi-backend
 ├─ 05_llm-api-integration
 ├─ 06_supabase-db-and-auth
@@ -93,16 +93,16 @@ README.md 단원 설명과 학습 순서
 
 | 단원 | 역할 |
 | --- | --- |
-| `00_references` | AI 리터러시, Vibe Coding, AI 도구 비교, 프롬프트 작성, 답변 검증, API key 보안 기준을 이해합니다. |
+| `00_references` | AI 리터러시, AI 도구 비교, 프롬프트 작성, 답변 검증, API key 보안 기준을 이해합니다. |
 | `01_python-basic` | 변수, 자료형, 입출력, 조건문, 반복문, 함수, 파일/JSON 기초를 학습합니다. |
 | `02_python-advanced` | 함수 심화, 모듈/패키지, 예외 처리, OOP, 테스트, 프로젝트 구조를 학습합니다. |
-| `03_git-github-and-vibe-coding` | Git/GitHub, 커밋/브랜치, README/문서 작성, Codex 활용 흐름을 학습합니다. |
+| `03_git-github` | Git/GitHub, 커밋/브랜치, VS Code Source Control, README/문서 작성, 민감정보 보호 기준을 학습합니다. |
 | `04_fastapi-backend` | FastAPI, REST API, HTTP Method, Pydantic, async, Swagger/Postman 테스트를 학습합니다. |
 | `05_llm-api-integration` | Gemini API를 기본으로 LLM API, 토큰/과금, 파라미터, 싱글턴/멀티턴 호출, FastAPI 연동을 학습합니다. OpenAI 예제는 선택 비교용으로 유지합니다. |
 | `06_supabase-db-and-auth` | RDBMS, ERD, SQL 기초, Supabase 프로젝트, 테이블, CRUD, Auth, RLS, Upstash Redis 캐시/TTL을 학습합니다. |
 | `07_backend-service-data-management` | 사용자 정보, 대화 이력, 서비스 로그, 피드백 데이터를 백엔드 관점에서 설계합니다. |
 | `08_backend-mini-service-practice` | FastAPI, Supabase, LLM API를 작은 백엔드 서비스로 묶어 봅니다. |
-| `90_ai-assisted-code-review-and-debugging` | Codex를 활용한 코드 설명, 디버깅, 리팩토링, 코드 리뷰를 연습합니다. |
+| `90_ai-assisted-code-review-and-debugging` | AI를 활용한 코드 설명, 디버깅, 리팩토링, 코드 리뷰를 연습합니다. |
 | `99_final-backend-project` | 01 과정의 최종 백엔드 프로젝트를 진행합니다. |
 
 ## 공통 실행 준비
@@ -207,7 +207,7 @@ Server-Sent Events(SSE) 기반 AI 응답 스트리밍은 `03_supabase-ai-mini-pr
 | AI 리터러시, Python 개발환경, `.venv`, 변수/자료형/입출력 | `00_references`, `01_python-basic` | 포함 |
 | 조건문, 반복문, 함수, 모듈/패키지 | `01_python-basic`, `02_python-advanced` | 포함 |
 | OOP, 예외 처리, 코드 개선/리팩토링 | `02_python-advanced`, `90_ai-assisted-code-review-and-debugging` | 포함 |
-| Git/GitHub, 커밋/브랜치, AI 활용 문서 작성 | `03_git-github-and-vibe-coding` | 추가 |
+| Git/GitHub, 커밋/브랜치, VS Code Source Control | `03_git-github` | 추가 |
 | FastAPI, HTTP Method, REST API endpoint | `04_fastapi-backend` | 포함 |
 | Pydantic 요청/응답 검증 | `04_fastapi-backend` | 포함 |
 | async/await, 외부 API 연동 | `04_fastapi-backend` | 포함 |

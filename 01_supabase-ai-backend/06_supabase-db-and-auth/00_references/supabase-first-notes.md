@@ -2,7 +2,9 @@
 
 `01_supabase-ai-backend`는 Supabase 중심으로 진행합니다.
 
-## 이 과정에서 사용하는 DB 기준
+처음부터 로컬 노트북에 PostgreSQL과 Redis를 직접 설치하고 운영하면 환경 오류가 많아질 수 있습니다. 이 과정에서는 먼저 Supabase와 Upstash Redis를 사용해 백엔드 서비스 구조를 이해하고, Docker 기반 운영은 이후 과정에서 따로 학습합니다.
+
+## 이 과정에서 사용하는 기준
 
 ```text
 주 DB: Supabase managed PostgreSQL
@@ -37,13 +39,12 @@ AWS 배포
 Auto Healing
 ```
 
-## 강의 설명 문장
+## 안내 문장
 
-초보자에게는 이렇게 안내하면 좋습니다.
+이 단원에서는 데이터베이스를 직접 설치하지 않고 Supabase를 사용합니다.
 
-```text
-이번 01 과정에서는 DB를 직접 설치하지 않고 Supabase를 사용합니다.
-Redis는 Docker로 띄우지 않고 Upstash Redis를 사용해 캐시와 TTL 개념을 먼저 배웁니다.
-Docker로 DB와 Redis를 직접 운영하는 방식은 나중에 06 운영 과정에서 배웁니다.
+Redis도 Docker로 띄우지 않고 Upstash Redis를 사용해 캐시와 TTL 개념을 먼저 익힙니다.
+
+Docker로 DB와 Redis를 직접 운영하는 방식은 이후 `06_multi-agent-service-ops`에서 다룹니다.
+
 지금은 FastAPI가 Supabase와 Upstash Redis에 연결되는 흐름에 집중합니다.
-```

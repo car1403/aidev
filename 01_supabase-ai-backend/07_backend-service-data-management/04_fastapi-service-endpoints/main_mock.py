@@ -1,7 +1,12 @@
 """백엔드 서비스 데이터 관리 mock FastAPI 예제.
 
 이 파일은 Supabase에 접속하지 않습니다.
-메모리 리스트를 사용해 사용자 프로필, 대화 메시지, 서비스 로그 API 구조를 먼저 익힙니다.
+메모리 dict/list를 사용해 사용자 프로필, 대화 메시지, 서비스 로그 API 구조를 먼저 연습합니다.
+
+mock 서버의 특징:
+- 서버가 실행되는 동안만 데이터가 유지됩니다.
+- 서버를 재시작하면 메모리 데이터가 사라집니다.
+- 실제 저장소 연결 전 API 요청/응답 구조를 빠르게 확인하기 좋습니다.
 """
 
 from __future__ import annotations
@@ -16,12 +21,14 @@ from pydantic import BaseModel, Field
 app = FastAPI(title="Backend Service Data Management Mock")
 
 
-# 실제 서비스에서는 이 데이터들이 Supabase 테이블에 저장됩니다.
+# 실제 서비스에서는 아래 데이터가 Supabase 테이블에 저장됩니다.
 # mock 예제에서는 서버가 실행되는 동안만 메모리에 유지됩니다.
 profiles: dict[str, dict] = {
     "student01": {
         "id": "student01",
         "display_name": "수강생 A",
+        "preferred_language": "ko",
+        "course_level": "beginner",
         "created_at": datetime.now(timezone.utc).isoformat(),
     }
 }
@@ -31,14 +38,14 @@ service_logs: list[dict] = []
 
 
 class ConversationCreate(BaseModel):
-    """새 대화방을 만들 때 필요한 요청 모델입니다."""
+    """새 대화를 만들 때 필요한 요청 모델입니다."""
 
     user_id: str = Field(min_length=1, examples=["student01"])
     title: str = Field(min_length=1, max_length=100, examples=["FastAPI 질문"])
 
 
 class MessageCreate(BaseModel):
-    """대화방에 메시지를 추가할 때 필요한 요청 모델입니다."""
+    """대화에 메시지를 추가할 때 필요한 요청 모델입니다."""
 
     role: str = Field(pattern="^(user|assistant|system)$", examples=["user"])
     content: str = Field(min_length=1, examples=["FastAPI에서 Pydantic은 왜 사용하나요?"])
@@ -60,7 +67,7 @@ def now_iso() -> str:
 
 @app.get("/health")
 def health() -> dict[str, str]:
-    """서버 상태 확인용 endpoint입니다."""
+    """서버 상태를 확인하는 endpoint입니다."""
 
     return {"status": "ok", "storage": "memory"}
 
@@ -70,14 +77,16 @@ def get_profile(user_id: str) -> dict[str, dict]:
     """사용자 프로필을 조회합니다."""
 
     profile = profiles.get(user_id)
+
     if not profile:
         raise HTTPException(status_code=404, detail="Profile not found.")
+
     return {"item": profile}
 
 
 @app.post("/conversations", status_code=201)
 def create_conversation(request: ConversationCreate) -> dict[str, dict]:
-    """새 대화방을 생성합니다."""
+    """새 대화 묶음을 생성합니다."""
 
     conversation_id = str(uuid4())
     item = {
@@ -86,13 +95,14 @@ def create_conversation(request: ConversationCreate) -> dict[str, dict]:
         "title": request.title,
         "created_at": now_iso(),
     }
+
     conversations[conversation_id] = item
     return {"item": item}
 
 
 @app.post("/conversations/{conversation_id}/messages", status_code=201)
 def add_message(conversation_id: str, request: MessageCreate) -> dict[str, dict]:
-    """대화방에 메시지를 추가합니다."""
+    """대화 묶음에 메시지를 추가합니다."""
 
     if conversation_id not in conversations:
         raise HTTPException(status_code=404, detail="Conversation not found.")
@@ -104,13 +114,14 @@ def add_message(conversation_id: str, request: MessageCreate) -> dict[str, dict]
         "content": request.content,
         "created_at": now_iso(),
     }
+
     messages.append(item)
     return {"item": item}
 
 
 @app.get("/conversations/{conversation_id}/messages")
 def list_messages(conversation_id: str) -> dict[str, list[dict]]:
-    """특정 대화방의 메시지를 조회합니다."""
+    """특정 대화 묶음에 속한 메시지를 조회합니다."""
 
     if conversation_id not in conversations:
         raise HTTPException(status_code=404, detail="Conversation not found.")
@@ -130,5 +141,6 @@ def create_service_log(request: ServiceLogCreate) -> dict[str, dict]:
         "metadata": request.metadata,
         "created_at": now_iso(),
     }
+
     service_logs.append(item)
     return {"item": item}

@@ -20,7 +20,7 @@ docker start aidev-postgres
 docker rm aidev-postgres
 ```
 
-## 수업 원칙
+## 학습 기준
 
 이 단원에서는 단일 컨테이너 실행을 먼저 익힙니다. `docker compose`는 여러 서비스를 한 번에 실행해야 하는 프로젝트 통합 단계에서 사용합니다.
 

@@ -1,38 +1,66 @@
 """미니 서비스에서 사용하는 Pydantic 모델 모음.
 
-Pydantic 모델은 FastAPI에서 요청 데이터를 검증하고,
-Swagger UI에 문서 형태로 보여주는 역할을 합니다.
+FastAPI는 Pydantic 모델을 이용해 요청 JSON을 검사합니다.
+예를 들어 question이 비어 있으면 API 함수가 실행되기 전에 검증 오류가 발생합니다.
 """
 
 from pydantic import BaseModel, Field
 
 
-class QaCreate(BaseModel):
-    """사용자가 질문을 보낼 때 사용하는 요청 모델입니다."""
+class QuestionCreateRequest(BaseModel):
+    """POST /questions 요청에서 사용하는 모델입니다."""
 
-    # user_id는 로그인 기능을 완성하기 전까지 문자열로 간단히 받습니다.
-    # 이후 Supabase Auth를 연결하면 auth.users.id와 연결할 수 있습니다.
-    user_id: str | None = Field(default=None, examples=["student01"])
-
-    # question은 비어 있으면 안 됩니다.
-    # max_length를 두면 너무 긴 요청으로 인한 비용/성능 문제를 줄일 수 있습니다.
-    question: str = Field(
+    # user_id는 질문을 보낸 사용자를 구분하는 값입니다.
+    # 실제 로그인 기능을 붙이면 Supabase Auth 사용자 id와 연결할 수 있습니다.
+    user_id: str = Field(
         min_length=1,
-        max_length=1000,
-        examples=["FastAPI에서 Pydantic은 왜 사용하나요?"],
+        examples=["student01"],
+        description="질문을 보낸 사용자 id",
     )
 
-    # 처음에는 mock 모델명을 사용합니다.
-    # 실제 LLM API를 연결하면 Gemini 모델명을 기본으로 사용합니다.
-    # OpenAI 모델명은 선택/비교 실습 때 사용할 수 있습니다.
-    model: str = Field(default="mock-teacher", examples=["mock-teacher"])
+    # question은 사용자가 입력한 질문입니다.
+    # max_length를 두면 너무 긴 입력으로 인한 비용과 처리 시간을 줄일 수 있습니다.
+    question: str = Field(
+        min_length=1,
+        max_length=500,
+        examples=["FastAPI에서 Pydantic은 왜 사용하나요?"],
+        description="사용자 질문",
+    )
+
+    # 처음에는 실제 LLM이 아니라 mock 답변 생성 함수를 사용합니다.
+    # 나중에 실제 Gemini API를 연결하면 모델명을 바꿀 수 있습니다.
+    model: str = Field(
+        default="mock-teacher",
+        examples=["mock-teacher"],
+        description="답변 생성에 사용할 모델 이름",
+    )
 
 
-class QaItem(BaseModel):
-    """질문/답변 저장 결과를 표현하는 응답 모델입니다."""
+class ServiceLogCreateRequest(BaseModel):
+    """POST /service-logs 요청에서 사용하는 모델입니다."""
+
+    event_type: str = Field(
+        min_length=1,
+        examples=["question_created"],
+        description="로그 종류",
+    )
+    message: str = Field(
+        min_length=1,
+        examples=["질문 답변 생성 성공"],
+        description="사람이 읽을 수 있는 로그 메시지",
+    )
+    metadata: dict = Field(
+        default_factory=dict,
+        examples=[{"user_id": "student01", "duration_ms": 120}],
+        description="로그에 함께 저장할 추가 정보",
+    )
+
+
+class QuestionItem(BaseModel):
+    """질문/답변 저장 결과를 표현하는 모델입니다."""
 
     id: str
-    user_id: str | None = None
+    user_id: str
     question: str
     answer: str
     model: str
@@ -49,13 +77,15 @@ class ServiceLogItem(BaseModel):
     created_at: str | None = None
 
 
-class ItemResponse(BaseModel):
-    """단일 객체 응답을 통일하기 위한 모델입니다."""
+class ErrorBody(BaseModel):
+    """오류 응답 안에 들어가는 error 객체입니다."""
 
-    item: dict
+    code: str
+    message: str
 
 
-class ListResponse(BaseModel):
-    """목록 응답을 통일하기 위한 모델입니다."""
+class ErrorResponse(BaseModel):
+    """오류 응답 구조입니다."""
 
-    items: list[dict]
+    ok: bool = False
+    error: ErrorBody

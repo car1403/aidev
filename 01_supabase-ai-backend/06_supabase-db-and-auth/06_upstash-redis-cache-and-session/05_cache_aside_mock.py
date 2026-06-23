@@ -1,34 +1,50 @@
-"""Redis cache-aside 패턴을 mock 데이터로 이해하는 예제.
-
-이 파일은 Supabase를 실제로 조회하지 않고, Supabase 조회 함수를 흉내 냅니다.
-초보자는 먼저 "캐시가 있으면 Redis, 없으면 DB"라는 흐름을 이해하는 것이 중요합니다.
-"""
+"""Redis cache-aside 패턴을 mock 데이터로 이해하는 예제입니다."""
 
 from __future__ import annotations
 
-from pathlib import Path
 import json
 import os
+from pathlib import Path
+from urllib.parse import quote
 
 import httpx
 from dotenv import load_dotenv
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-load_dotenv(PROJECT_ROOT / ".env")
+ENV_PATH = PROJECT_ROOT / ".env"
 
-UPSTASH_REDIS_REST_URL = os.getenv("UPSTASH_REDIS_REST_URL", "").rstrip("/")
-UPSTASH_REDIS_REST_TOKEN = os.getenv("UPSTASH_REDIS_REST_TOKEN")
+
+def is_placeholder(value: str | None) -> bool:
+    """예시 값인지 확인합니다."""
+
+    if value is None:
+        return False
+
+    return value.strip().startswith(("your-", "https://your-"))
+
+
+def get_upstash_env() -> tuple[str, str]:
+    """Upstash Redis REST URL과 token을 읽습니다."""
+
+    load_dotenv(ENV_PATH)
+
+    url = os.getenv("UPSTASH_REDIS_REST_URL", "").strip().rstrip("/")
+    token = os.getenv("UPSTASH_REDIS_REST_TOKEN", "").strip()
+
+    if not url or not token or is_placeholder(url) or is_placeholder(token):
+        raise RuntimeError("Upstash Redis 환경 변수가 준비되지 않았습니다. 01_check_upstash_env.py를 먼저 실행하세요.")
+
+    return url, token
 
 
 def upstash_command(*parts: str) -> dict:
-    """Upstash Redis REST API에 명령을 보냅니다."""
+    """Upstash Redis REST API로 Redis 명령을 실행합니다."""
 
-    if not UPSTASH_REDIS_REST_URL or not UPSTASH_REDIS_REST_TOKEN:
-        raise RuntimeError(".env에 Upstash Redis URL과 Token을 먼저 설정해 주세요.")
-
-    url = f"{UPSTASH_REDIS_REST_URL}/{'/'.join(parts)}"
-    headers = {"Authorization": f"Bearer {UPSTASH_REDIS_REST_TOKEN}"}
+    base_url, token = get_upstash_env()
+    encoded_parts = [quote(part, safe="") for part in parts]
+    url = f"{base_url}/{'/'.join(encoded_parts)}"
+    headers = {"Authorization": f"Bearer {token}"}
 
     response = httpx.get(url, headers=headers, timeout=10)
     response.raise_for_status()
@@ -38,17 +54,16 @@ def upstash_command(*parts: str) -> dict:
 def fetch_profile_from_supabase_mock(user_id: str) -> dict:
     """Supabase 조회를 흉내 내는 함수입니다."""
 
-    # 실제 서비스에서는 이 위치에서 supabase.table("profiles").select(...).execute()를 호출합니다.
-    print("Supabase에서 사용자 프로필을 조회했다고 가정합니다.")
+    print("Supabase에서 사용자 프로필을 조회한다고 가정합니다.")
     return {
         "user_id": user_id,
-        "display_name": "수강생 A",
+        "display_name": "사용자 A",
         "course": "01_supabase-ai-backend",
     }
 
 
 def get_profile_with_cache(user_id: str) -> dict:
-    """Redis 캐시를 먼저 확인하고, 없으면 Supabase에서 조회하는 흐름입니다."""
+    """Redis 캐시를 먼저 확인하고, 없으면 Supabase 조회 결과를 저장합니다."""
 
     cache_key = f"course:01:cache:profile:{user_id}"
 
@@ -60,11 +75,22 @@ def get_profile_with_cache(user_id: str) -> dict:
     print("Redis cache miss")
     profile = fetch_profile_from_supabase_mock(user_id)
 
-    # 조회 결과를 Redis에 60초 동안 저장합니다.
-    # 60초 안에 같은 사용자를 다시 조회하면 Supabase 조회를 생략할 수 있습니다.
+    # 조회 결과를 60초 동안 Redis에 저장합니다.
     upstash_command("set", cache_key, json.dumps(profile, ensure_ascii=False), "ex", "60")
     return profile
 
 
-profile = get_profile_with_cache("student01")
-print(profile)
+def main() -> None:
+    """cache-aside 흐름을 실행합니다."""
+
+    try:
+        profile = get_profile_with_cache("student01")
+        print(profile)
+    except (RuntimeError, httpx.HTTPError) as error:
+        print("[Upstash Redis 실행 오류]")
+        print(error)
+        print("\n.env의 UPSTASH_REDIS_REST_URL과 UPSTASH_REDIS_REST_TOKEN을 확인하세요.")
+
+
+if __name__ == "__main__":
+    main()

@@ -2,7 +2,7 @@
 
 `01_supabase-ai-backend` 과정의 개발 환경 설정 문서입니다.
 
-이 문서는 수업 시간에 그대로 따라 할 수 있도록 작성했습니다. 이 과정은 Python, FastAPI, Supabase, Gemini API, Upstash Redis를 사용해 AI 백엔드의 기본 구조를 학습합니다.
+이 문서는 처음 실행할 때 그대로 따라 할 수 있도록 작성했습니다. 이 과정은 Python, FastAPI, Supabase, Gemini API, Upstash Redis를 사용해 AI 백엔드의 기본 구조를 학습합니다.
 
 중요한 기준은 다음과 같습니다.
 
@@ -72,13 +72,13 @@ git version 2.x.x
 GitHub 계정 생성과 Git 설치는 이 문서에서 간단히 확인만 합니다. 실제 커밋, 브랜치, push, VS Code Source Control 사용법은 아래 단원에서 단계적으로 실습합니다.
 
 ```text
-03_git-github-and-vibe-coding
+03_git-github
 ```
 
 VS Code 화면에서 Git을 사용하는 자세한 방법은 아래 문서를 참고합니다.
 
 ```text
-03_git-github-and-vibe-coding/00_references/vscode-source-control-guide.md
+03_git-github/00_references/vscode-source-control-guide.md
 ```
 
 ## 1. 작업 위치로 이동
@@ -240,7 +240,7 @@ Dashboard에서 Redis database를 생성합니다.
 backend-practice-cache
 ```
 
-수업에서는 캐시, TTL, 요청 횟수 제한 정도만 사용합니다. 고급 운영 설정은 06 과정에서 다룹니다.
+이 과정에서는 캐시, TTL, 요청 횟수 제한 정도만 사용합니다. 고급 운영 설정은 06 과정에서 다룹니다.
 
 ### 6.3 REST API 정보 확인
 
@@ -281,7 +281,7 @@ OPENAI_API_KEY=your-openai-api-key
 OPENAI_MODEL=gpt-4.1-mini
 ```
 
-`GEMINI_API_KEY`는 01~03 과정에서 실제 LLM API 호출을 진행할 때 기본으로 사용합니다. Gemini의 무료 범위와 호출 제한은 수업 시점의 공식 화면에서 반드시 다시 확인합니다.
+`GEMINI_API_KEY`는 01~03 과정에서 실제 LLM API 호출을 진행할 때 기본으로 사용합니다. Gemini의 무료 범위와 호출 제한은 진행 시점의 공식 화면에서 반드시 다시 확인합니다.
 
 `OPENAI_API_KEY`는 필수가 아닙니다. 기존 OpenAI 예제 파일을 활용해 모델 공급자 차이를 비교하거나 추가 강의를 진행할 때만 설정합니다.
 
@@ -289,7 +289,7 @@ Python 기초, FastAPI 기본, Supabase CRUD, Upstash Redis 기본 실습만 할
 
 ## 8. 환경변수 보안 기준
 
-수업 중 꼭 지켜야 할 기준입니다.
+반드시 지켜야 할 기준입니다.
 
 ```text
 .env 파일은 GitHub에 올리지 않습니다.
@@ -365,13 +365,13 @@ RLS
 -> 이 사용자가 이 데이터에 접근해도 되는지 확인
 ```
 
-수업 초반에는 단순 CRUD를 먼저 실습하고, 이후 `06_supabase-db-and-auth/04_ch4_supabase-auth-and-rls`에서 Auth와 RLS를 자세히 다룹니다.
+처음에는 단순 CRUD를 먼저 실습하고, 이후 `06_supabase-db-and-auth/04_ch4_supabase-auth-and-rls`에서 Auth와 RLS를 자세히 다룹니다.
 
 ## 12. Upstash Redis 기본 개념
 
 Redis는 빠른 임시 저장소입니다. Supabase처럼 오래 보관해야 하는 데이터의 중심 저장소로 쓰기보다, 빠르게 쓰고 일정 시간이 지나면 사라져도 되는 데이터에 사용합니다.
 
-수업에서는 아래 기준으로 설명합니다.
+이 과정에서는 아래 기준으로 설명합니다.
 
 ```text
 Supabase

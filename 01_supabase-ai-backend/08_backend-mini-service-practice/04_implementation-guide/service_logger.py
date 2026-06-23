@@ -1,7 +1,7 @@
 """서비스 로그 생성 보조 함수.
 
-로그는 서비스가 어떤 일을 했는지 나중에 확인하기 위한 기록입니다.
-성공/실패, endpoint, model, 저장된 item id 같은 정보를 metadata에 담습니다.
+서비스 로그는 API가 어떤 일을 처리했는지 나중에 확인하기 위한 기록입니다.
+성공/실패, endpoint, model, question_id 같은 정보를 metadata에 담습니다.
 """
 
 from datetime import datetime, timezone
@@ -11,6 +11,7 @@ from uuid import uuid4
 def now_iso() -> str:
     """UTC 현재 시간을 ISO 문자열로 반환합니다."""
 
+    # UTC를 사용하면 서버 위치가 달라도 시간을 일관되게 비교할 수 있습니다.
     return datetime.now(timezone.utc).isoformat()
 
 

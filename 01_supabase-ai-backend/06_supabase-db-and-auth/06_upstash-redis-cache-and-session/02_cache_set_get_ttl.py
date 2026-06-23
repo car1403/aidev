@@ -1,69 +1,81 @@
-"""Upstash Redis에 값을 저장하고 TTL을 적용하는 예제.
+"""Upstash Redis에 값을 저장하고 TTL을 확인하는 예제입니다."""
 
-Redis는 key와 value를 사용합니다.
+from __future__ import annotations
 
-예를 들어 `cache:greeting`이라는 key에 "안녕하세요"라는 value를
-저장할 수 있습니다. TTL을 30초로 설정하면 30초 뒤에 값이 사라집니다.
-"""
-
-from pathlib import Path
 import os
+from pathlib import Path
+from urllib.parse import quote
 
 import httpx
 from dotenv import load_dotenv
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-load_dotenv(PROJECT_ROOT / ".env")
+ENV_PATH = PROJECT_ROOT / ".env"
 
 
-UPSTASH_REDIS_REST_URL = os.getenv("UPSTASH_REDIS_REST_URL", "").rstrip("/")
-UPSTASH_REDIS_REST_TOKEN = os.getenv("UPSTASH_REDIS_REST_TOKEN")
+def is_placeholder(value: str | None) -> bool:
+    """예시 값인지 확인합니다."""
+
+    if value is None:
+        return False
+
+    return value.strip().startswith(("your-", "https://your-"))
+
+
+def get_upstash_env() -> tuple[str, str]:
+    """Upstash Redis REST URL과 token을 읽습니다."""
+
+    load_dotenv(ENV_PATH)
+
+    url = os.getenv("UPSTASH_REDIS_REST_URL", "").strip().rstrip("/")
+    token = os.getenv("UPSTASH_REDIS_REST_TOKEN", "").strip()
+
+    if not url or not token or is_placeholder(url) or is_placeholder(token):
+        raise RuntimeError("Upstash Redis 환경 변수가 준비되지 않았습니다. 01_check_upstash_env.py를 먼저 실행하세요.")
+
+    return url, token
 
 
 def upstash_command(*parts: str) -> dict:
-    """Upstash Redis REST API에 Redis 명령을 보냅니다.
+    """Upstash Redis REST API로 Redis 명령을 실행합니다."""
 
-    Upstash REST API는 URL 경로에 Redis 명령을 적는 방식으로 사용할 수 있습니다.
-    예를 들어 SET cache:greeting hello EX 30 명령은 아래 주소로 호출됩니다.
+    base_url, token = get_upstash_env()
 
-    /set/cache:greeting/hello/ex/30
-    """
+    # Redis 명령 조각을 URL 경로에 넣기 위해 안전하게 인코딩합니다.
+    # 공백, 한글, JSON 문자열이 포함되어도 URL이 깨지지 않게 하기 위한 처리입니다.
+    encoded_parts = [quote(part, safe="") for part in parts]
+    url = f"{base_url}/{'/'.join(encoded_parts)}"
+    headers = {"Authorization": f"Bearer {token}"}
 
-    if not UPSTASH_REDIS_REST_URL or not UPSTASH_REDIS_REST_TOKEN:
-        raise RuntimeError(".env에 Upstash Redis URL과 Token을 먼저 설정해 주세요.")
-
-    # parts로 받은 Redis 명령 조각을 URL 경로로 조립합니다.
-    # 예: ("get", "course:01:greeting") -> /get/course:01:greeting
-    url = f"{UPSTASH_REDIS_REST_URL}/{'/'.join(parts)}"
-    headers = {"Authorization": f"Bearer {UPSTASH_REDIS_REST_TOKEN}"}
-
-    # Upstash REST API는 HTTP 요청으로 Redis 명령을 실행합니다.
-    # Docker Redis client를 직접 연결하지 않아도 되므로 초보 실습에 적합합니다.
     response = httpx.get(url, headers=headers, timeout=10)
     response.raise_for_status()
     return response.json()
 
 
-# 수업용 key에는 과정 이름을 앞에 붙여 다른 실습 데이터와 섞이지 않게 합니다.
-cache_key = "course:01:greeting"
-cache_value = "hello-upstash-redis"
-ttl_seconds = "30"
+def main() -> None:
+    """SET, GET, TTL 명령을 차례대로 실행합니다."""
+
+    cache_key = "course:01:greeting"
+    cache_value = "hello-upstash-redis"
+    ttl_seconds = "30"
+
+    try:
+        print("[Redis SET]")
+        print(upstash_command("set", cache_key, cache_value, "ex", ttl_seconds))
+
+        print("\n[Redis GET]")
+        print(upstash_command("get", cache_key))
+
+        print("\n[Redis TTL]")
+        print(upstash_command("ttl", cache_key))
+
+        print("\nResult: 30초가 지나면 이 key는 자동으로 사라집니다.")
+    except (RuntimeError, httpx.HTTPError) as error:
+        print("[Upstash Redis 실행 오류]")
+        print(error)
+        print("\n.env의 UPSTASH_REDIS_REST_URL과 UPSTASH_REDIS_REST_TOKEN을 확인하세요.")
 
 
-print("Redis SET 명령 실행")
-# SET key value EX seconds는 값을 저장하면서 TTL을 함께 설정하는 명령입니다.
-set_result = upstash_command("set", cache_key, cache_value, "ex", ttl_seconds)
-print(set_result)
-
-print("\nRedis GET 명령 실행")
-# GET key는 key에 저장된 값을 조회합니다.
-get_result = upstash_command("get", cache_key)
-print(get_result)
-
-print("\nRedis TTL 명령 실행")
-# TTL key는 key가 몇 초 뒤에 사라지는지 확인합니다.
-ttl_result = upstash_command("ttl", cache_key)
-print(ttl_result)
-
-print("\n30초가 지나면 이 key는 자동으로 사라집니다.")
+if __name__ == "__main__":
+    main()
