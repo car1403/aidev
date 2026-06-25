@@ -4,19 +4,16 @@
 
 Streamlit으로 운영 상태 대시보드를 실행합니다.
 
-## 실습
+## 실행
 
 ```powershell
-streamlit run.\03_ch3_ops-dashboard-streamlit\01_ops-dashboard.py --server.port 8803
+cd C:\aidev\06_multi-agent-service-ops\05_observability-and-ops-dashboard
+streamlit run .\03_ops-dashboard-streamlit\01_ops-dashboard.py --server.port 8803
 ```
 
-## 확인
+## 작성할 내용
 
-```text
-http://127.0.0.1:8803
-```
-
-## 확장
-
-- failed 이벤트를 추가하고 metric이 바뀌는지 확인
-- 서비스 목록에 frontend 추가
+- 표시한 지표
+- 최근 이벤트 목록
+- 실패 상태 표시 방식
+- 운영자가 다음 행동을 판단할 수 있는 정보

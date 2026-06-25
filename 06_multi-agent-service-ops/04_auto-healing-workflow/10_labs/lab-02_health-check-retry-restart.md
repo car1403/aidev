@@ -1,17 +1,20 @@
-# Lab 02. Health Check, Retry, Restart
+# Lab 02. Health Check Retry Restart
 
 ## 목표
 
-Health Check 실패 횟수에 따라 복구 조치를 선택합니다.
+Health Check 결과에 따라 retry, restart, fallback 중 어떤 전략을 선택할지 정합니다.
 
-## 실습
+## 실행
 
 ```powershell
-python.\02_ch2_health-check-retry-restart\01_health-check-retry-restart.py
+cd C:\aidev\06_multi-agent-service-ops\04_auto-healing-workflow
+python .\02_health-check-retry-restart\01_health-check-retry-restart.py
 ```
 
-## 확인 질문
+## 작성할 내용
 
-- 언제 retry가 적절한가?
-- 언제 restart가 필요한가?
-- 언제 운영자에게 escalte해야 하는가?
+- Health Check 실패 조건
+- Retry가 적합한 경우
+- Restart가 적합한 경우
+- Fallback이 필요한 경우
+- 최대 재시도 횟수

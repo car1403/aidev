@@ -1,36 +1,35 @@
-﻿# 08 Observability and Ops Dashboard
+# 08. Observability And Ops Dashboard
 
-Observability는 서비스 내부에서 무슨 일이 일어나는지 확인할 수 있게 만드는 운영 구조입니다.
+Observability는 서비스 내부에서 무슨 일이 일어나는지 확인할 수 있게 만드는 운영 관점입니다.
 
-## Logging, Tracing, Monitoring 차이
+## 기본 구성
 
-| 개념 | 의미 |
+| 항목 | 설명 |
 | --- | --- |
-| Logging | 발생한 이벤트를 기록 |
-| Tracing | 하나의 요청이 어떤 단계로 흘렀는지 추적 |
-| Monitoring | 현재 상태와 지표를 관찰 |
+| Log | 어떤 일이 발생했는지 기록 |
+| Event | 상태 변화나 중요한 실행 이력 |
+| Trace | 하나의 요청이 여러 단계를 거쳐 실행되는 흐름 |
+| Metric | 성공률, 실패율, 지연 시간 같은 숫자 |
+| Dashboard | 운영 상태를 화면으로 확인 |
 
-## 운영 대시보드에 보여줄 정보
+## 06에서 확인할 정보
 
-- 서비스 상태
-- Health Check 결과
-- 최근 이벤트 로그
-- Agent 실행 이력
-- 실패 이벤트 수
-- Auto Healing 조치 결과
+- 요청 ID
+- 실행 Agent
+- Tool 호출 결과
+- 장애 유형
+- 복구 전략
+- 복구 성공 여부
+- 실행 시간
+- 실패 메시지
 
-## Docker와 연결
+## LangSmith와의 관계
 
-```powershell
-docker compose ps
-docker compose logs backend
-docker compose logs -f worker
-```
+LangSmith는 Agent 실행 추적을 도와주는 도구입니다. 06에서는 먼저 로컬 로그와 Mock trace로 구조를 이해하고, 실제 LangSmith 연동은 선택 확장으로 다룹니다.
 
-## AWS와 연결
+중요한 것은 도구 이름보다 다음 질문에 답할 수 있는지입니다.
 
-- CloudWatch Logs
-- CloudWatch Dashboard
-- CloudWatch Alarm
-- AWS X-Ray 또는 OpenTelemetry
-- SNS 알림
+- 어떤 요청이 실패했는가?
+- 어느 Agent 단계에서 실패했는가?
+- 어떤 Tool이 호출되었는가?
+- 복구가 성공했는가?

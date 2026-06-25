@@ -1,31 +1,43 @@
-﻿# 03 Multi-Agent Service Map
+# 03. Multi-Agent Service Map
 
-Multi-Agent 서비스는 여러 Agent가 각자 역할을 나누어 협업하는 구조입니다.
+Multi-Agent 서비스를 운영 관점으로 보면 Agent 코드만 있는 것이 아닙니다. 요청을 받는 API, 화면, 백그라운드 작업자, 모니터링 화면이 함께 필요합니다.
 
-## 기본 Agent 역할
+## 기본 서비스 구성
 
 ```text
-supervisor_agent: 전체 요청 분석과 작업 분배
-planner_agent: 실행 계획 수립
-ops_agent: 서비스 상태 확인과 복구 조치 판단
-security_agent: 보안 정책과 권한 확인
-reviewer_agent: 결과 검증과 품질 확인
-monitor_agent: 실행 이력과 상태 추적
+frontend
+-> backend
+-> supervisor agent
+-> diagnosis agent
+-> recovery agent
+-> validation agent
+-> worker
+-> logs/events
+-> monitor
 ```
 
-## 서비스 구조와 Agent 연결
+## 서비스별 역할
 
-| 서비스 | 역할 | 연결되는 Agent |
-| --- | --- | --- |
-| backend | API 요청 수신, Supervisor 실행 | supervisor_agent, planner_agent |
-| worker | 오래 걸리는 작업, 복구 조치 실행 | ops_agent, security_agent |
-| monitor | 실행 상태와 로그 표시 | monitor_agent, reviewer_agent |
-| frontend | 사용자 요청 입력과 결과 표시 | 사용자 UI |
+| 서비스 | 역할 |
+| --- | --- |
+| frontend | 사용자가 요청을 입력하고 결과를 확인하는 화면 |
+| backend | API 요청을 받고 Agent 작업을 시작하는 서버 |
+| worker | 오래 걸리는 Agent 작업, 복구 작업, 재시도를 처리 |
+| monitor | 이벤트 로그, 장애 상태, 복구 결과를 확인하는 대시보드 |
 
-## 설계할 때 중요한 질문
+## Agent별 역할 예시
 
-- 어떤 Agent가 요청을 먼저 받는가?
-- 어떤 Agent가 Tool을 실행할 수 있는가?
-- 어떤 Agent는 조회만 가능한가?
-- 여러 Agent 결과를 누가 합치는가?
-- 실패하면 누가 재시도하거나 운영자에게 넘기는가?
+| Agent | 역할 |
+| --- | --- |
+| Supervisor Agent | 전체 요청을 보고 어떤 Agent가 처리할지 결정 |
+| Diagnosis Agent | 장애 원인과 오류 유형 분석 |
+| Recovery Agent | retry, restart, fallback 중 복구 전략 선택 |
+| Validation Agent | 복구 결과가 정상인지 확인 |
+| Reporter Agent | 최종 결과와 로그를 사람이 이해하기 쉽게 요약 |
+
+## 중요한 설계 기준
+
+- Agent 간 Context 형식을 맞춥니다.
+- 모든 Agent는 같은 `request_id`를 공유합니다.
+- Agent 실행 결과는 로그로 남깁니다.
+- 실패한 Agent만 다시 실행할 수 있도록 상태를 분리합니다.

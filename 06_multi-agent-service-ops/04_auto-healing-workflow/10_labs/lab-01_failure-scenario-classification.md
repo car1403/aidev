@@ -2,15 +2,21 @@
 
 ## 목표
 
-서비스 장애 메시지를 장애 유형으로 분류합니다.
+서비스 장애 유형을 분류하고 대응 전략을 연결합니다.
 
-## 실습
+## 실행
 
 ```powershell
-python.\01_ch1_failure-scenarios\01_failure-scenario-classifier.py
+cd C:\aidev\06_multi-agent-service-ops\04_auto-healing-workflow
+python .\01_failure-scenarios\01_failure-scenario-classifier.py
 ```
 
-## 확장
+## 작성할 내용
 
-- CPU 또는 memory 관련 장애 유형 추가
-- 장애 유형별 권장 조치 추가
+| 장애 유형 | 감지 기준 | 대응 전략 |
+| --- | --- | --- |
+| unhealthy | | |
+| timeout | | |
+| api_error | | |
+| rate_limit | | |
+| permission_error | | |

@@ -2,16 +2,21 @@
 
 ## 목표
 
-Agent 실행 상태가 pending에서 success 또는 failed로 바뀌는 흐름을 관리합니다.
+Agent 실행 상태 전이를 관리합니다.
 
-## 실습
+## 실행
 
 ```powershell
-python.\04_ch4_execution-status-management\01_execution-status-manager.py
+cd C:\aidev\06_multi-agent-service-ops\05_observability-and-ops-dashboard
+python .\04_execution-status-management\01_execution-status-manager.py
 ```
 
-## 확장
+## 작성할 내용
 
-- failed 상태 예시 추가
-- retry_count 필드 추가
-- cancelled 상태를 처리하는 함수 추가
+```text
+pending -> running -> success
+pending -> running -> failed -> retrying -> success
+pending -> running -> failed -> fallback
+```
+
+각 상태에서 기록할 로그를 정리합니다.

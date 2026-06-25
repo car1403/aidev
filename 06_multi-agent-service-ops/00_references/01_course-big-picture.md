@@ -1,41 +1,44 @@
-﻿# 01 Course Big Picture
+# 01. Course Big Picture
 
-`06_multi-agent-service-ops`는 04와 05에서 배운 LLM Agent를 실제 서비스 운영 구조로 확장하는 과정입니다.
+06 과정의 핵심은 **AI Agent 코드를 운영 가능한 서비스 구조로 확장하는 것**입니다.
 
-## 전체 흐름
+04와 05에서 만든 Agent 코드는 로컬에서 잘 동작하는 데 초점이 있었습니다. 06에서는 이 코드를 여러 서비스로 나누고, 컨테이너로 실행하고, 장애와 보안과 로그를 함께 다룹니다.
 
-```text
-멀티 에이전트 협업 설계
--> Docker 기반 서비스 패키징
--> Docker Compose 기반 멀티 서비스 실행
--> AI 보안과 가드레일 적용
--> Auto Healing 워크플로우 설계
--> 로그, 추적, 운영 대시보드 구성
--> 미니 프로젝트 통합
-```
-
-## 왜 이 과정이 필요한가?
-
-Agent 하나를 로컬에서 실행하는 것과 운영 가능한 AI 서비스를 만드는 것은 다릅니다.
-
-운영 가능한 AI 서비스에는 다음이 필요합니다.
-
-- 여러 Agent의 역할 분리
-- API 서버와 Worker 분리
-- Docker 기반 실행 환경
-- 서비스 상태 확인
-- 장애 대응 흐름
-- 보안 정책과 권한 제어
-- 로그와 실행 이력 관리
-- 배포와 운영 자동화
-
-## 최종적으로 만들 구조
+## 04, 05, 06 연결
 
 ```text
-backend: 사용자 요청과 Agent 실행 API
-frontend: 사용자 또는 운영자 화면
-worker: 백그라운드 Agent 작업 실행
-monitor: 상태, 로그, 이벤트 확인 화면
+04_llm-agent-orchestration
+-> Agent, Tool, RAG, Memory, LangGraph 원리
+
+05_llm-agent-mini-project
+-> 단일 Agent 미니 프로젝트 구현
+
+06_multi-agent-service-ops
+-> Multi-Agent 서비스를 Docker Compose, CI/CD, AWS, 보안, Auto Healing, 모니터링으로 확장
 ```
 
-이 구조는 Docker Compose로 로컬에서 먼저 실행하고, 나중에 AWS 같은 클라우드로 확장할 수 있습니다.
+## 06의 핵심 질문
+
+- 여러 Agent는 어떤 역할로 나뉘는가?
+- Agent 간에는 어떤 Context를 넘기는가?
+- 서비스를 Docker image로 어떻게 패키징하는가?
+- backend, frontend, worker, monitor는 Docker Compose에서 어떻게 함께 실행되는가?
+- 장애가 발생하면 어떻게 감지하고 복구하는가?
+- 운영 로그와 trace를 어떻게 남기는가?
+- GitHub Actions는 어떤 검증을 자동으로 해주는가?
+- AWS로 옮길 때 image, port, env, log는 어떻게 연결되는가?
+
+## 최종 목표
+
+06을 마치면 아래 구조를 설명하고 실행할 수 있어야 합니다.
+
+```text
+사용자 요청
+-> frontend
+-> backend
+-> supervisor agent
+-> diagnosis/recovery/validation agent
+-> worker
+-> logs/events
+-> monitor dashboard
+```

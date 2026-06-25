@@ -1,10 +1,32 @@
-﻿openai
+# OpenAI API 호출에 사용합니다.
+# 06 과정에서는 운영형 Agent 예제에서 기본 모델 gpt-4.1-mini를 사용할 수 있게 준비합니다.
+openai
+
+# .env 파일에 저장한 OPENAI_API_KEY, OPENAI_MODEL, API_BASE_URL 같은 환경 변수를 읽습니다.
 python-dotenv
+
+# Multi-Agent 상태 흐름과 실행 그래프를 구성할 때 사용합니다.
+# 04/05에서 배운 LangGraph 흐름을 06의 운영형 서비스 구조로 확장할 수 있습니다.
 langgraph
+
+# LangChain 기반 Agent/Tool 연결을 확장할 때 사용합니다.
+# 06에서는 필수 핵심이 아니라 LangGraph, LangSmith식 추적과 함께 이해하는 선택 확장 도구입니다.
 langchain
+
+# LangChain 방식으로 OpenAI 모델을 연결할 때 사용합니다.
 langchain-openai
+
+# API 요청/응답, Agent 상태, 이벤트 로그 데이터 구조를 명확히 정의합니다.
 pydantic
+
+# frontend와 monitor 대시보드를 Streamlit으로 만들 때 사용합니다.
 streamlit
+
+# backend API 서버를 만들 때 사용합니다.
 fastapi
+
+# FastAPI 앱을 실행하는 ASGI 서버입니다.
 uvicorn
+
+# backend/frontend/worker 간 HTTP 호출 또는 외부 API 호출 예제에 사용합니다.
 httpx

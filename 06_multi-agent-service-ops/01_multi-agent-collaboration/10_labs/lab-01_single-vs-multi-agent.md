@@ -1,17 +1,19 @@
-# Lab 01. Single Agent vs Multi-Agent
+# Lab 01. Single Vs Multi Agent
 
 ## 목표
 
-단일 Agent와 Multi-Agent 구조의 출력 차이를 비교합니다.
+단일 Agent와 Multi-Agent 구조의 차이를 실행 결과로 비교합니다.
 
-## 실습
+## 실행
 
 ```powershell
-python.\01_ch1_single-vs-multi-agent\01_single-agent-vs-multi-agent.py
+cd C:\aidev\06_multi-agent-service-ops\01_multi-agent-collaboration
+python .\01_single-vs-multi-agent\01_single-agent-vs-multi-agent.py
 ```
 
-## 확인 질문
+## 작성할 내용
 
-- 단일 Agent가 단순한 이유는 무엇인가?
-- Multi-Agent 구조에서 디버깅이 어려워질 수 있는 이유는 무엇인가?
-- 어떤 상황에서 Multi-Agent가 더 적합한가?
+1. 단일 Agent가 처리한 단계
+2. Multi-Agent에서 나뉜 역할
+3. Multi-Agent가 더 유리한 상황
+4. 운영 로그를 남긴다면 어떤 정보를 기록할지

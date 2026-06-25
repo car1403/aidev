@@ -2,15 +2,19 @@
 
 ## 목표
 
-하나의 요청이 여러 Agent 단계를 거치는 흐름을 추적합니다.
+하나의 요청이 여러 Agent 단계를 거치는 흐름을 trace로 정리합니다.
 
-## 실습
+## 실행
 
 ```powershell
-python.\02_ch2_tracing-and-monitoring\01_trace-agent-execution.py
+cd C:\aidev\06_multi-agent-service-ops\05_observability-and-ops-dashboard
+python .\02_tracing-and-monitoring\01_trace-agent-execution.py
 ```
 
-## 확인 질문
+## 작성할 내용
 
-- Trace와 Log는 무엇이 다른가?
-- 어떤 단계의 duration이 길면 무엇을 확인해야 하는가?
+- trace_id
+- span 목록
+- 각 span의 시작/종료 시간
+- 실패한 단계
+- 오래 걸린 단계

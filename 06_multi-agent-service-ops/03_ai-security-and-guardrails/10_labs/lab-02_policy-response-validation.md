@@ -2,16 +2,18 @@
 
 ## 목표
 
-Agent 응답이 운영 정책에 맞는지 검사합니다.
+Agent 응답이 정책을 위반하는지 검증합니다.
 
-## 실습
+## 실행
 
 ```powershell
-python.\02_ch2_policy-based-response-validation\01_policy-response-validator.py
+cd C:\aidev\06_multi-agent-service-ops\03_ai-security-and-guardrails
+python .\02_policy-based-response-validation\01_policy-response-validator.py
 ```
 
-## 확인 질문
+## 작성할 내용
 
-- 어떤 응답은 차단해야 하는가?
-- 어떤 응답은 수정해서 보여줄 수 있는가?
-- 정책 검증은 입력 검증과 어떻게 다른가?
+- 정책 목록
+- 위반 응답 예시
+- 안전한 대체 응답
+- 위반 로그 구조

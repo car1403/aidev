@@ -1,19 +1,26 @@
-# Lab 01. Docker Build and Run
+# Lab 01. Docker Build And Run
 
 ## 목표
 
-FastAPI 서비스를 Docker 이미지로 만들고 컨테이너로 실행합니다.
+FastAPI backend 서비스를 Docker image로 만들고 container로 실행합니다.
 
-## 실습
+## 실행
 
 ```powershell
-cd C:\aidev\06_multi-agent-service-ops\02_service-deployment-and-automation\01_ch1_docker-service-packaging
-docker build -t ai-service-packaging-demo.
-docker run --rm -p 8000:8000 ai-service-packaging-demo
+cd C:\aidev\06_multi-agent-service-ops\02_service-deployment-and-automation\01_docker-service-packaging
+docker build -t aidev-agent-backend:local .
+docker run --rm -p 8000:8000 aidev-agent-backend:local
 ```
 
-## 확인
+다른 PowerShell에서 확인:
 
-```text
-http://127.0.0.1:8000/health
+```powershell
+Invoke-RestMethod http://127.0.0.1:8000/health
 ```
+
+## 작성할 내용
+
+- build 성공 여부
+- container 실행 여부
+- `/health` 응답 결과
+- Dockerfile에서 이해한 부분

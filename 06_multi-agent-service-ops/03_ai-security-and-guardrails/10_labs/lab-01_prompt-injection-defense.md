@@ -2,16 +2,18 @@
 
 ## 목표
 
-위험한 사용자 입력을 탐지하고 차단하는 기본 흐름을 확인합니다.
+위험한 사용자 입력을 감지하고 차단 기준을 정리합니다.
 
-## 실습
+## 실행
 
 ```powershell
-python.\01_ch1_prompt-injection-defense\01_prompt-injection-filter.py
+cd C:\aidev\06_multi-agent-service-ops\03_ai-security-and-guardrails
+python .\01_prompt-injection-defense\01_prompt-injection-filter.py
 ```
 
-## 확장
+## 작성할 내용
 
-- 위험 패턴 2개 추가
-- 차단 사유를 로그 형태로 출력
-- 정상 입력이 과도하게 차단되지 않는지 확인
+- 차단한 입력 예시
+- 허용한 입력 예시
+- 차단 기준
+- 감사 로그에 남길 필드

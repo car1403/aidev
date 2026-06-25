@@ -1,45 +1,33 @@
-﻿# 10 Final Project Roadmap
+# 10. Final Project Roadmap
 
-06 과정의 마지막 미니 프로젝트는 Auto Healing Multi-Agent Service입니다.
+99 미니 프로젝트는 06 과정에서 배운 운영 요소를 하나로 연결하는 실습입니다.
 
-## 프로젝트 목표
+## 프로젝트 주제
+
+Auto Healing Multi-Agent Service
+
+## 권장 진행 순서
 
 ```text
-장애 메시지 입력
--> 장애 유형 분류
--> 복구 조치 선택
--> Docker Compose 서비스 상태 확인
--> 운영 이벤트 기록
--> 모니터 대시보드 표시
+1. sample-auto-healing-agent 실행
+2. Docker Compose 서비스 구조 확인
+3. backend/frontend/worker/monitor 역할 이해
+4. 장애 유형 정의
+5. retry/restart/fallback 전략 설계
+6. 보안/가드레일 정책 추가
+7. 이벤트 로그와 monitor 화면 확인
+8. GitHub Actions 검증 흐름 작성
+9. AWS 배포 체크리스트 작성
+10. 최종 발표 문서 정리
 ```
 
-## 필수 구현
+## 필수 산출물
 
-- backend API
-- frontend Streamlit 화면
-- worker 실행기
-- monitor 대시보드
-- Dockerfile
-- docker-compose.yml
-- `.env.example`
-- 테스트 체크리스트
-
-## 팀 프로젝트 확장 아이디어
-
-- 장애 유형 추가
-- Tool 권한 제어 추가
-- 보안 가드레일 추가
-- GitHub Actions build check 추가
-- AWS 배포 체크리스트 작성
-- CloudWatch 기반 운영 설계 작성
-
-## 발표에 포함할 내용
-
-1. 프로젝트 주제
-2. 서비스 구조
-3. Agent 역할
-4. Auto Healing 흐름
-5. Docker Compose 실행 화면
-6. 운영 대시보드
-7. 장애 대응 결과
-8. 개선 방향
+- Multi-Agent 아키텍처 설계서
+- Docker Compose 실행 결과
+- 장애 유형별 복구 보고서
+- 보안/가드레일 점검표
+- 로그/모니터링 대시보드 결과
+- GitHub Actions 실행 결과 또는 계획
+- AWS 배포 체크리스트
+- 최종 발표 문서

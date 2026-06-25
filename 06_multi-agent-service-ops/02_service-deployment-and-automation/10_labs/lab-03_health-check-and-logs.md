@@ -1,20 +1,21 @@
-﻿# Lab 03. Health Check and Logs
+# Lab 03. Health Check And Logs
 
 ## 목표
 
-서비스 상태와 로그를 확인합니다.
+서비스 상태를 `/health`와 Docker logs로 확인합니다.
 
-## 실습
+## 실행
 
 ```powershell
+Invoke-RestMethod http://127.0.0.1:8000/health
 docker compose ps
 docker compose logs backend
-docker compose logs worker
-docker compose logs monitor
+docker compose logs -f worker
 ```
 
-## 확인 질문
+## 작성할 내용
 
-- 어떤 서비스가 가장 먼저 실행되어야 하는가?
-- backend가 죽으면 frontend와 monitor에는 어떤 영향이 있는가?
-- Health Check는 왜 필요한가?
+- health 응답 내용
+- 실패 로그가 있다면 원인
+- worker가 남긴 이벤트
+- monitor에서 확인한 상태

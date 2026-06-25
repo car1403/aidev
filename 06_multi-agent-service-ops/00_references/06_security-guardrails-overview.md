@@ -1,41 +1,36 @@
-﻿# 06 Security Guardrails Overview
+# 06. Security And Guardrails Overview
 
-AI 서비스는 사용자의 자연어 입력을 처리하므로 일반 웹 서비스와 다른 보안 위험이 있습니다.
+AI 서비스는 자연어 입력을 받기 때문에 일반 API보다 입력 검증과 정책 검증이 더 중요합니다.
 
 ## 주요 위험
 
-- Prompt Injection
-- 민감 정보 노출
-- 권한 없는 Tool 실행
-- 위험 명령 실행
-- Agent별 권한 과다 부여
+| 위험 | 설명 |
+| --- | --- |
+| Prompt Injection | 기존 지시를 무시하게 만드는 공격 |
+| 민감 정보 노출 | API Key, 개인정보, 내부 로그가 응답에 포함되는 문제 |
+| Tool 권한 오남용 | Agent가 허용되지 않은 Tool을 실행하는 문제 |
+| 정책 위반 응답 | 금지된 내용이나 부정확한 운영 지시를 생성하는 문제 |
 
-## 기본 방어 구조
+## 기본 방어 흐름
 
 ```text
-입력 검증
--> Agent 역할 확인
+사용자 입력
+-> 입력 검증
+-> 정책 위반 여부 확인
+-> Agent 실행
 -> Tool 권한 확인
--> 응답 정책 검증
--> 이벤트 로그 기록
+-> 응답 검증
+-> 감사 로그 기록
 ```
 
-## Guardrail 예시
+## 06에서 다루는 항목
 
-- 특정 위험 문구 차단
-- 민감 정보 포함 응답 차단
-- 위험 명령어 포함 응답 수정
-- viewer_agent는 read-only Tool만 허용
-- ops_agent만 restart 요청 가능
-- admin_agent만 위험 작업 승인 가능
+- Prompt Injection 방어
+- 정책 기반 응답 검증
+- Tool 실행 권한 제어
+- Multi-Agent 환경의 접근 제어
+- 보안 운영 가이드라인
+- 감사 로그와 정책 위반 추적
+- Guardrails 통합 검증 설계
 
-## Docker/AWS와 연결
-
-| 위치 | 보안 관리 |
-| --- | --- |
-| `.env` | API Key, 비밀번호 관리 |
-| Docker Compose | 서비스별 환경 변수 분리 |
-| backend | 입력 검증, 권한 검사 |
-| worker | 위험 작업 실행 제한 |
-| AWS IAM | 서비스별 권한 분리 |
-| CloudWatch Logs | 보안 이벤트 기록 |
+처음에는 정규식, 금지어, 정책 테이블 같은 단순한 규칙부터 시작하고, 이후 Guardrails AI 같은 도구로 확장합니다.

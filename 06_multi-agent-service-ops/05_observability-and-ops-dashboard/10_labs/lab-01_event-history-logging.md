@@ -2,16 +2,18 @@
 
 ## 목표
 
-운영 이벤트를 구조화된 로그 형태로 기록합니다.
+Agent 실행 이벤트를 구조화된 로그로 기록합니다.
 
-## 실습
+## 실행
 
 ```powershell
-python.\01_ch1_logging-and-event-history\01_event-history-logger.py
+cd C:\aidev\06_multi-agent-service-ops\05_observability-and-ops-dashboard
+python .\01_logging-and-event-history\01_event-history-logger.py
 ```
 
-## 확장
+## 작성할 내용
 
-- failed 상태 이벤트 추가
-- event_type 목록 정리
-- 로그에 request_id 추가
+- 로그 필드 목록
+- 성공 이벤트 예시
+- 실패 이벤트 예시
+- 복구 이벤트 예시

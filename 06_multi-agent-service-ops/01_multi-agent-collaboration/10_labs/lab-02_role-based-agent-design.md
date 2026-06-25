@@ -1,17 +1,27 @@
-# Lab 02. Role-Based Agent Design
+# Lab 02. Role Based Agent Design
 
 ## 목표
 
-역할별 Agent 책임을 나누고 실행 순서를 확인합니다.
+Agent 역할을 분리하고 각 Agent의 입력/출력 기준을 정리합니다.
 
-## 실습
+## 실행
 
 ```powershell
-python.\02_ch2_role-based-agent-design\01_role-based-agent-design.py
+cd C:\aidev\06_multi-agent-service-ops\01_multi-agent-collaboration
+python .\02_role-based-agent-design\01_role-based-agent-design.py
 ```
 
-## 작성할 것
+## 작성할 내용
 
-- 새로운 Agent 역할 1개 추가
-- Agent 책임 설명 작성
-- 입력과 출력이 무엇인지 정리
+| Agent | Input | Output | 책임 |
+| --- | --- | --- | --- |
+| Supervisor | | | |
+| Diagnosis | | | |
+| Recovery | | | |
+| Validation | | | |
+
+## 확인 질문
+
+- 한 Agent가 너무 많은 책임을 갖고 있지는 않은가?
+- 다음 Agent에게 넘길 정보가 명확한가?
+- 실패 시 어느 단계부터 다시 실행할 수 있는가?

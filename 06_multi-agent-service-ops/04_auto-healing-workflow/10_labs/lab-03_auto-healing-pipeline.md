@@ -2,16 +2,24 @@
 
 ## 목표
 
-장애 분류부터 복구 조치 실행까지 파이프라인으로 연결합니다.
+장애 감지부터 복구 결과 기록까지의 전체 파이프라인을 설계합니다.
 
-## 실습
+## 실행
 
 ```powershell
-python.\03_ch3_recovery-pipeline\01_auto-healing-pipeline.py
+cd C:\aidev\06_multi-agent-service-ops\04_auto-healing-workflow
+python .\03_recovery-pipeline\01_auto-healing-pipeline.py
 ```
 
-## 확장
+## 작성할 내용
 
-- `permission_error` 장애 유형 추가
-- `notify_admin` 조치 추가
-- 이벤트 로그에 시간 정보 추가
+```text
+detect_failure
+-> classify_failure
+-> choose_recovery_action
+-> run_recovery
+-> validate_recovery
+-> write_event_log
+```
+
+각 단계의 입력값과 출력값을 정리합니다.
