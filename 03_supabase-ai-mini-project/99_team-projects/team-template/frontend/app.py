@@ -1,81 +1,111 @@
-import os  # 운영체제 환경변수에서 API 주소나 비밀 키를 읽기 위해 os 모듈을 가져옵니다.
+import json  # metadata 입력값을 JSON 딕셔너리로 변환하기 위해 사용합니다.
+import os  # 운영체제 환경변수에서 API 주소를 읽기 위해 사용합니다.
+from pathlib import Path  # 현재 파일 위치를 기준으로 03 과정 최상위 .env 경로를 계산하기 위해 사용합니다.
 
-import httpx  # FastAPI 같은 백엔드 API에 HTTP 요청을 보내기 위해 httpx 클라이언트를 가져옵니다.
-import pandas as pd  # 목록 데이터를 표와 차트로 다루기 위해 pandas를 pd라는 별칭으로 가져옵니다.
-import streamlit as st  # Python 코드로 웹 화면을 만들기 위해 Streamlit을 st라는 별칭으로 가져옵니다.
-from dotenv import load_dotenv  # .env 파일에 저장한 환경변수를 Python 실행 환경으로 불러오기 위해 가져옵니다.
+import httpx  # FastAPI 백엔드 API에 HTTP 요청을 보내기 위해 사용합니다.
+import pandas as pd  # 로그 목록을 표와 집계 데이터로 다루기 위해 사용합니다.
+import streamlit as st  # Python 코드로 웹 화면을 만들기 위해 사용합니다.
+from dotenv import load_dotenv  # .env 파일에 저장한 환경변수를 Python 실행 환경으로 불러오기 위해 사용합니다.
 
-load_dotenv()  # .env 파일의 값을 os.getenv로 읽을 수 있도록 현재 프로세스 환경변수에 등록합니다.
+COURSE_ROOT = Path(__file__).resolve().parents[3]  # frontend/app.py에서 03_supabase-ai-mini-project 최상위 폴더로 올라갑니다.
+load_dotenv(COURSE_ROOT / ".env")  # 하위 팀 폴더가 아니라 03 과정 최상위 .env를 읽습니다.
 
-API_BASE_URL = os.getenv("API_BASE_URL", "http://127.0.0.1:8000")  # 프론트엔드가 호출할 백엔드 서버의 기본 주소를 한 곳에서 관리합니다.
+API_BASE_URL = os.getenv("API_BASE_URL", "http://127.0.0.1:8000")  # Streamlit이 호출할 FastAPI 서버 주소입니다.
 
-st.set_page_config(page_title="Supabase 학습 로그", layout="wide")  # Streamlit 페이지의 브라우저 제목과 레이아웃 같은 기본 설정을 지정합니다.
-st.title("Supabase 학습 로그 대시보드")  # Streamlit 화면의 가장 큰 제목을 표시합니다.
-st.caption(f"API_BASE_URL: {API_BASE_URL}")  # 보조 설명이나 현재 설정값을 작은 글씨로 표시합니다.
-
-
-def load_logs():  # 반복해서 사용할 로직을 함수로 묶어 이름을 붙입니다.
-    response = httpx.get(f"{API_BASE_URL}/api/logs", timeout=5.0)  # GET 요청의 응답을 response 변수에 저장해 상태 코드와 JSON 데이터를 확인합니다.
-    response.raise_for_status()  # HTTP 상태 코드가 오류이면 예외를 발생시켜 실패를 명확히 처리합니다.
-    return response.json().get("items", [])  # 함수 실행 결과를 호출한 위치로 돌려줍니다.
+st.set_page_config(page_title="Service Log Dashboard", layout="wide")  # 페이지 제목과 화면 폭을 설정합니다.
+st.title("실시간 로그 대시보드 인터페이스")  # 프로젝트의 핵심 화면 제목을 표시합니다.
+st.caption(f"API_BASE_URL: {API_BASE_URL}")  # 현재 Streamlit이 호출하는 백엔드 주소를 화면에 표시합니다.
 
 
-def create_log(learner_name, topic, minutes, memo):  # 요청 본문으로 받은 데이터를 새 항목으로 저장합니다.
-    payload = {"learner_name": learner_name, "topic": topic, "minutes": minutes, "memo": memo}  # API 요청 본문으로 보낼 데이터를 딕셔너리 형태로 구성합니다.
-    response = httpx.post(f"{API_BASE_URL}/api/logs", json=payload, timeout=5.0)  # POST 요청의 응답을 response 변수에 저장해 성공 여부와 결과 데이터를 확인합니다.
-    response.raise_for_status()  # HTTP 상태 코드가 오류이면 예외를 발생시켜 실패를 명확히 처리합니다.
-    return response.json()  # 함수 실행 결과를 호출한 위치로 돌려줍니다.
+def load_logs() -> list[dict]:  # FastAPI에서 서비스 로그 목록을 가져오는 함수입니다.
+    response = httpx.get(f"{API_BASE_URL}/api/logs", timeout=5.0)  # 로그 목록 조회 API를 호출합니다.
+    response.raise_for_status()  # HTTP 오류 상태 코드가 오면 예외를 발생시킵니다.
+    return response.json().get("items", [])  # 응답 JSON에서 items 목록만 꺼내 반환합니다.
 
 
-def update_log(log_id, status):  # 경로 변수와 요청 본문을 사용해 기존 데이터를 수정합니다.
-    response = httpx.patch(f"{API_BASE_URL}/api/logs/{log_id}", json={"status": status}, timeout=5.0)  # PATCH 요청의 응답을 response 변수에 저장해 수정 결과를 확인합니다.
-    response.raise_for_status()  # HTTP 상태 코드가 오류이면 예외를 발생시켜 실패를 명확히 처리합니다.
-    return response.json()  # 함수 실행 결과를 호출한 위치로 돌려줍니다.
+def create_log(action: str, status: str, metadata: dict) -> dict:  # 새 서비스 로그를 저장하는 함수입니다.
+    payload = {"action": action, "status": status, "metadata": metadata}  # API 요청 본문을 구성합니다.
+    response = httpx.post(f"{API_BASE_URL}/api/logs", json=payload, timeout=5.0)  # 로그 생성 API를 호출합니다.
+    response.raise_for_status()  # HTTP 오류 상태 코드가 오면 예외를 발생시킵니다.
+    return response.json()  # 저장 결과를 반환합니다.
 
 
-with st.sidebar:  # 화면 왼쪽 사이드바 영역에 입력 컴포넌트를 배치합니다.
-    st.header("로그 등록")  # 이 줄은 예제의 핵심 동작을 단계별로 보여주기 위한 코드입니다.
-    learner_name = st.text_input("학습자", value="Student")  # 계산 결과나 입력값을 이후 코드에서 다시 쓰기 위해 변수에 저장합니다.
-    topic = st.text_input("학습 주제", value="Supabase Mini Project")  # 계산 결과나 입력값을 이후 코드에서 다시 쓰기 위해 변수에 저장합니다.
-    minutes = st.number_input("학습 시간(분)", min_value=1, max_value=600, value=30)  # 계산 결과나 입력값을 이후 코드에서 다시 쓰기 위해 변수에 저장합니다.
-    memo = st.text_area("메모", value="Supabase 방식으로 학습 로그를 저장합니다.")  # 계산 결과나 입력값을 이후 코드에서 다시 쓰기 위해 변수에 저장합니다.
+def update_log(log_id: str, status: str) -> dict:  # 기존 서비스 로그의 상태를 수정하는 함수입니다.
+    response = httpx.patch(f"{API_BASE_URL}/api/logs/{log_id}", json={"status": status}, timeout=5.0)  # 로그 상태 수정 API를 호출합니다.
+    response.raise_for_status()  # HTTP 오류 상태 코드가 오면 예외를 발생시킵니다.
+    return response.json()  # 수정 결과를 반환합니다.
 
-    if st.button("등록"):  # 조건식이 True일 때만 아래 들여쓰기 블록을 실행합니다.
-        try:  # 실패할 수 있는 코드를 실행하고, 오류가 나면 except 블록에서 처리합니다.
-            create_log(learner_name, topic, minutes, memo)  # 이 줄은 예제의 핵심 동작을 단계별로 보여주기 위한 코드입니다.
-            st.success("등록했습니다.")  # 작업이 성공했음을 초록색 성공 메시지로 표시합니다.
-        except httpx.HTTPError as error:  # 특정 예외가 발생했을 때 사용자에게 안내하거나 복구 동작을 수행합니다.
-            st.error(f"등록 실패: {error}")  # 오류 상황을 사용자에게 명확히 보여줍니다.
 
-    st.divider()  # 이 줄은 예제의 핵심 동작을 단계별로 보여주기 위한 코드입니다.
-    st.header("상태 변경")  # 이 줄은 예제의 핵심 동작을 단계별로 보여주기 위한 코드입니다.
-    log_id = st.number_input("로그 ID", min_value=1, value=1)  # 계산 결과나 입력값을 이후 코드에서 다시 쓰기 위해 변수에 저장합니다.
-    status = st.selectbox("새 상태", ["created", "doing", "done"])  # 계산 결과나 입력값을 이후 코드에서 다시 쓰기 위해 변수에 저장합니다.
+def parse_metadata(raw_text: str) -> dict:  # 화면에 입력한 JSON 문자열을 Python 딕셔너리로 바꾸는 함수입니다.
+    if not raw_text.strip():  # 아무것도 입력하지 않으면 빈 딕셔너리로 처리합니다.
+        return {}
+    parsed = json.loads(raw_text)  # 문자열을 JSON으로 해석합니다.
+    if not isinstance(parsed, dict):  # metadata는 객체 형태여야 하므로 리스트나 문자열이면 오류로 처리합니다.
+        raise ValueError("metadata는 JSON object 형식이어야 합니다.")
+    return parsed
 
-    if st.button("상태 저장"):  # 조건식이 True일 때만 아래 들여쓰기 블록을 실행합니다.
-        try:  # 실패할 수 있는 코드를 실행하고, 오류가 나면 except 블록에서 처리합니다.
-            update_log(log_id, status)  # 이 줄은 예제의 핵심 동작을 단계별로 보여주기 위한 코드입니다.
-            st.success("상태를 변경했습니다.")  # 작업이 성공했음을 초록색 성공 메시지로 표시합니다.
-        except httpx.HTTPError as error:  # 특정 예외가 발생했을 때 사용자에게 안내하거나 복구 동작을 수행합니다.
-            st.error(f"상태 변경 실패: {error}")  # 오류 상황을 사용자에게 명확히 보여줍니다.
 
-if st.button("백엔드 상태 확인"):  # 조건식이 True일 때만 아래 들여쓰기 블록을 실행합니다.
-    try:  # 실패할 수 있는 코드를 실행하고, 오류가 나면 except 블록에서 처리합니다.
-        response = httpx.get(f"{API_BASE_URL}/health", timeout=5.0)  # GET 요청의 응답을 response 변수에 저장해 상태 코드와 JSON 데이터를 확인합니다.
-        st.json(response.json())  # 딕셔너리나 JSON 응답을 보기 쉬운 구조로 화면에 표시합니다.
-    except httpx.HTTPError as error:  # 특정 예외가 발생했을 때 사용자에게 안내하거나 복구 동작을 수행합니다.
-        st.error(f"상태 확인 실패: {error}")  # 오류 상황을 사용자에게 명확히 보여줍니다.
+with st.sidebar:  # 화면 왼쪽 사이드바 영역입니다.
+    st.header("로그 등록")  # 새 로그 입력 영역 제목입니다.
+    action = st.text_input("작업 이름", value="chat_request")  # 어떤 작업이 실행되었는지 입력합니다.
+    status = st.selectbox("상태", ["success", "fail", "warning"])  # 로그 상태를 선택합니다.
+    metadata_text = st.text_area(  # 추가 정보를 JSON 문자열로 입력합니다.
+        "metadata(JSON)",
+        value='{"model": "gemini-2.5-flash-lite", "source": "streamlit"}',
+        height=120,
+    )
 
-try:  # 실패할 수 있는 코드를 실행하고, 오류가 나면 except 블록에서 처리합니다.
-    logs = load_logs()  # 계산 결과나 입력값을 이후 코드에서 다시 쓰기 위해 변수에 저장합니다.
-    df = pd.DataFrame(logs)  # 딕셔너리 데이터를 행과 열을 가진 DataFrame 표 구조로 변환합니다.
-    if df.empty:  # 조건식이 True일 때만 아래 들여쓰기 블록을 실행합니다.
-        st.info("등록된 학습 로그가 없습니다.")  # 다음 행동을 안내하는 정보 메시지를 표시합니다.
-    else:  # 위 조건들이 모두 False일 때 실행할 대체 흐름입니다.
-        col_count, col_minutes = st.columns(2)  # 메인 화면을 여러 열로 나누어 대시보드 요소를 배치합니다.
-        col_count.metric("로그 수", len(df))  # 이 줄은 예제의 핵심 동작을 단계별로 보여주기 위한 코드입니다.
-        col_minutes.metric("총 학습 시간", f"{int(df['minutes'].sum())}분")  # 이 줄은 예제의 핵심 동작을 단계별로 보여주기 위한 코드입니다.
-        st.dataframe(df, use_container_width=True)  # 표 형태의 데이터를 스크롤 가능한 DataFrame UI로 표시합니다.
-except httpx.HTTPError as error:  # 특정 예외가 발생했을 때 사용자에게 안내하거나 복구 동작을 수행합니다.
-    st.error(f"학습 로그를 불러올 수 없습니다: {error}")  # 오류 상황을 사용자에게 명확히 보여줍니다.
+    if st.button("로그 저장"):  # 버튼을 누르면 로그 저장 API를 호출합니다.
+        try:
+            metadata = parse_metadata(metadata_text)  # 사용자가 입력한 metadata를 딕셔너리로 변환합니다.
+            create_log(action, status, metadata)  # FastAPI를 통해 Supabase service_logs 테이블에 저장합니다.
+            st.success("서비스 로그를 저장했습니다.")  # 성공 메시지를 표시합니다.
+        except (ValueError, json.JSONDecodeError) as error:
+            st.error(f"metadata 형식을 확인해 주세요: {error}")  # JSON 입력 오류를 안내합니다.
+        except httpx.HTTPError as error:
+            st.error(f"로그 저장 실패: {error}")  # API 호출 오류를 안내합니다.
 
+    st.divider()  # 입력 영역과 상태 수정 영역을 나눕니다.
+    st.header("상태 수정")  # 기존 로그 상태 수정 영역 제목입니다.
+    log_id = st.text_input("로그 ID")  # Supabase의 uuid id를 입력합니다.
+    next_status = st.selectbox("변경할 상태", ["success", "fail", "warning"], key="next_status")  # 새 상태를 선택합니다.
+
+    if st.button("상태 변경"):  # 버튼을 누르면 상태 수정 API를 호출합니다.
+        if not log_id.strip():
+            st.warning("수정할 로그 ID를 입력해 주세요.")  # ID가 없으면 안내 메시지를 표시합니다.
+        else:
+            try:
+                update_log(log_id.strip(), next_status)  # FastAPI를 통해 Supabase 로그 상태를 수정합니다.
+                st.success("로그 상태를 변경했습니다.")  # 성공 메시지를 표시합니다.
+            except httpx.HTTPError as error:
+                st.error(f"상태 변경 실패: {error}")  # API 호출 오류를 안내합니다.
+
+if st.button("백엔드 상태 확인"):  # 백엔드와 Supabase 연결 상태를 확인하는 버튼입니다.
+    try:
+        response = httpx.get(f"{API_BASE_URL}/health", timeout=5.0)  # health check API를 호출합니다.
+        response.raise_for_status()  # HTTP 오류 상태 코드가 오면 예외를 발생시킵니다.
+        st.json(response.json())  # 응답 JSON을 화면에 표시합니다.
+    except httpx.HTTPError as error:
+        st.error(f"상태 확인 실패: {error}")  # API 호출 오류를 안내합니다.
+
+try:
+    logs = load_logs()  # FastAPI에서 서비스 로그 목록을 가져옵니다.
+    df = pd.DataFrame(logs)  # 로그 목록을 표 형태로 다루기 위해 DataFrame으로 변환합니다.
+
+    if df.empty:
+        st.info("등록된 서비스 로그가 없습니다.")  # 데이터가 없을 때 안내 메시지를 표시합니다.
+    else:
+        col_total, col_success, col_fail = st.columns(3)  # 주요 지표를 3개 열로 배치합니다.
+        col_total.metric("전체 로그 수", len(df))  # 전체 로그 개수를 표시합니다.
+        col_success.metric("성공 로그", int((df["status"] == "success").sum()))  # success 상태 로그 수를 표시합니다.
+        col_fail.metric("실패 로그", int((df["status"] == "fail").sum()))  # fail 상태 로그 수를 표시합니다.
+
+        st.subheader("서비스 로그 목록")  # 로그 표 제목입니다.
+        st.dataframe(df, use_container_width=True)  # 로그 데이터를 표로 표시합니다.
+
+        if "status" in df.columns:
+            st.subheader("상태별 로그 수")  # 간단한 차트 제목입니다.
+            st.bar_chart(df["status"].value_counts())  # 상태별 로그 개수를 막대 차트로 표시합니다.
+
+except httpx.HTTPError as error:
+    st.error(f"서비스 로그를 불러올 수 없습니다: {error}")  # API 호출 오류를 안내합니다.

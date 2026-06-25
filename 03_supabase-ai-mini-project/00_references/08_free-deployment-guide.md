@@ -1,4 +1,4 @@
-# 08_free-deployment-guide
+﻿# 08_free-deployment-guide
 
 이 문서는 `03_supabase-ai-mini-project` 팀 프로젝트를 무료 배포 서비스에 올려 시연하는 방법을 설명합니다.
 
@@ -41,7 +41,7 @@ Render + Upstash + Streamlit Community Cloud 무료 배포 시연
 ```text
 team-project
 ├─ README.md
-├─.env.example
+├─ .env.example
 ├─ backend
 │ ├─ main.py
 │ └─ requirements.txt
@@ -99,7 +99,7 @@ UPSTASH_REDIS_REST_TOKEN=
 첫 번째 PowerShell에서 백엔드를 실행합니다.
 
 ```powershell
-cd C:\aidev\03_supabase-ai-mini-project\99_team-projects\supabase-team-template\backend
+cd C:\aidev\03_supabase-ai-mini-project\99_team-projects\team-template\backend
 ..\..\..\.venv\Scripts\Activate.ps1
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
@@ -114,7 +114,7 @@ http://127.0.0.1:8000/docs
 두 번째 PowerShell에서 프론트엔드를 실행합니다.
 
 ```powershell
-cd C:\aidev\03_supabase-ai-mini-project\99_team-projects\supabase-team-template\frontend
+cd C:\aidev\03_supabase-ai-mini-project\99_team-projects\team-template\frontend
 ..\..\..\.venv\Scripts\Activate.ps1
 streamlit run app.py --server.port 8501
 ```
@@ -138,7 +138,7 @@ my-supabase-mini-project
 ├─ docs
 ├─ presentation
 ├─ README.md
-└─.env.example
+└─ .env.example
 ```
 
 주의:
@@ -303,8 +303,8 @@ RLS 정책 때문에 조회/저장이 막힌 것은 아닌가?
 ```text
 1. Supabase 또는 Upstash에서 노출된 key를 재발급합니다.
 2. GitHub에서 key가 포함된 파일을 제거합니다.
-3..gitignore에.env가 포함되어 있는지 확인합니다.
-4. 앞으로는.env.example만 공유합니다.
+3. .gitignore에 .env가 포함되어 있는지 확인합니다.
+4. 앞으로는 .env.example만 공유합니다.
 ```
 
 ## 11. 06 과정과의 차이

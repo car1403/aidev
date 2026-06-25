@@ -1,14 +1,17 @@
 import os  # 운영체제 환경변수에서 API 주소나 비밀 키를 읽기 위해 os 모듈을 가져옵니다.
+from pathlib import Path  # 현재 파일 위치를 기준으로 03 과정 최상위 .env 경로를 계산하기 위해 사용합니다.
 
 from dotenv import load_dotenv  # .env 파일에 저장한 환경변수를 Python 실행 환경으로 불러오기 위해 가져옵니다.
 from fastapi import FastAPI, HTTPException  # FastAPI 서버 생성, 라우팅, HTTP 오류 응답에 필요한 클래스를 가져옵니다.
 from pydantic import BaseModel, Field  # API 요청 데이터의 타입과 검증 규칙을 정의하기 위해 Pydantic 도구를 가져옵니다.
 from supabase import create_client  # Supabase REST API와 통신할 클라이언트 객체를 만들기 위해 가져옵니다.
 
-load_dotenv()  # .env 파일의 값을 os.getenv로 읽을 수 있도록 현재 프로세스 환경변수에 등록합니다.
+PROJECT_ENV = Path(__file__).resolve().parents[2] / ".env"  # 03_supabase-ai-mini-project 최상위 .env 파일 경로입니다.
+load_dotenv(PROJECT_ENV)  # 실행 위치가 backend 폴더여도 03 과정의 .env를 읽도록 명시합니다.
 
 SUPABASE_URL = os.getenv("SUPABASE_URL")  # Supabase 프로젝트 REST API 주소를 환경변수에서 읽어 저장합니다.
 SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY")  # Supabase API key를 환경변수에서 읽어 저장합니다. 실제 값은 .env에만 둡니다.
+SUPABASE_SERVICE_ROLE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY")  # 백엔드에서만 사용할 수 있는 강한 권한의 key입니다. 프론트엔드에 노출하지 않습니다.
 
 app = FastAPI(title="Supabase Learning Log API")  # FastAPI 서버 객체를 생성합니다. 이후 데코레이터로 API 경로를 이 객체에 등록합니다.
 
@@ -25,9 +28,10 @@ class LearningLogUpdate(BaseModel):  # Pydantic 모델을 정의합니다. FastA
 
 
 def get_supabase_client():  # Supabase 연결 객체를 만드는 함수입니다. 여러 API에서 같은 연결 방식을 재사용합니다.
-    if not SUPABASE_URL or not SUPABASE_ANON_KEY:  # Supabase 연결에 필요한 환경변수가 비어 있는지 검사합니다.
+    supabase_key = SUPABASE_SERVICE_ROLE_KEY or SUPABASE_ANON_KEY  # 백엔드에서는 service role key를 우선 사용하고, 없으면 anon key로 연결을 확인합니다.
+    if not SUPABASE_URL or not supabase_key:  # Supabase 연결에 필요한 환경변수가 비어 있는지 검사합니다.
         raise HTTPException(status_code=500, detail="Supabase environment variables are missing.")  # API 요청을 정상 처리할 수 없을 때 HTTP 오류 응답을 반환합니다.
-    return create_client(SUPABASE_URL, SUPABASE_ANON_KEY)  # 환경변수로 읽은 URL과 key를 사용해 Supabase 클라이언트를 생성합니다.
+    return create_client(SUPABASE_URL, supabase_key)  # 환경변수로 읽은 URL과 key를 사용해 Supabase 클라이언트를 생성합니다.
 
 
 @app.get("/health")  # HTTP GET 요청을 처리할 API 엔드포인트를 등록합니다.

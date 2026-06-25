@@ -1,18 +1,39 @@
-import os  # 운영체제 환경변수에서 API 주소나 비밀 키를 읽기 위해 os 모듈을 가져옵니다.
+import os  # 운영체제 환경변수에서 설정값을 읽기 위해 사용합니다.
+from pathlib import Path  # 현재 파일 위치를 기준으로 .env 파일 경로를 계산하기 위해 사용합니다.
 
-from fastapi import FastAPI  # FastAPI 서버 생성, 라우팅, HTTP 오류 응답에 필요한 클래스를 가져옵니다.
-
-APP_NAME = os.getenv("APP_NAME", "FastAPI App")  # 환경변수 값을 읽어 설정값으로 저장합니다. 코드에 비밀 값을 직접 쓰지 않기 위한 방식입니다.
-
-app = FastAPI(title=APP_NAME)  # FastAPI 서버 객체를 생성합니다. 이후 데코레이터로 API 경로를 이 객체에 등록합니다.
+from dotenv import load_dotenv  # .env 파일의 값을 Python 환경변수로 불러오기 위해 사용합니다.
+from fastapi import FastAPI  # FastAPI 서버 객체와 API 경로를 만들기 위해 사용합니다.
 
 
-@app.get("/health")  # HTTP GET 요청을 처리할 API 엔드포인트를 등록합니다.
-def health_check():  # 서버와 외부 연결 상태를 확인하는 health check 요청을 처리합니다.
-    return {"status": "ok", "app": APP_NAME}  # API 클라이언트가 받을 JSON 형태의 응답 데이터를 반환합니다.
+# 이 예제는 backend/app 폴더 안에서 실행되지만,
+# 환경변수 파일은 03_supabase-ai-mini-project 최상위에 둡니다.
+# parents[4]는 현재 파일(main.py)에서 03_supabase-ai-mini-project 폴더까지 올라가는 경로입니다.
+PROJECT_ENV = Path(__file__).resolve().parents[4] / ".env"
+load_dotenv(PROJECT_ENV)
+
+# APP_NAME은 선택 환경변수입니다.
+# .env에 값이 없으면 기본 이름인 "FastAPI App"을 사용합니다.
+APP_NAME = os.getenv("APP_NAME", "FastAPI App")
+
+# FastAPI 서버 객체를 생성합니다.
+# title 값은 Swagger UI(/docs) 화면 제목으로도 표시됩니다.
+app = FastAPI(title=APP_NAME)
 
 
-@app.get("/api/message")  # HTTP GET 요청을 처리할 API 엔드포인트를 등록합니다.
-def get_message():  # 저장된 데이터를 조회하는 요청을 처리합니다.
-    return {"message": "FastAPI is running locally."}  # API 클라이언트가 받을 JSON 형태의 응답 데이터를 반환합니다.
+@app.get("/health")
+def health_check():
+    """FastAPI 서버가 정상 실행 중인지 확인하는 가장 단순한 API입니다."""
+    return {
+        "status": "ok",
+        "app": APP_NAME,
+        "env_file": str(PROJECT_ENV),
+    }
 
+
+@app.get("/api/message")
+def get_message():
+    """Streamlit 화면에서 호출해 볼 수 있는 간단한 JSON 응답 API입니다."""
+    return {
+        "message": "FastAPI is running locally.",
+        "next_step": "04_local-full-stack에서 Supabase 저장과 Streamlit 화면을 연결합니다.",
+    }

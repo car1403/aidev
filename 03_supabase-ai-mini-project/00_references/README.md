@@ -2,13 +2,24 @@
 
 이 폴더는 `03_supabase-ai-mini-project`를 진행할 때 필요한 참고 자료를 모아 둔 곳입니다.
 
-03 과정에서는 Supabase 클라우드 프로젝트를 데이터 저장소로 사용하고, FastAPI와 Streamlit은 로컬 Python 가상환경에서 실행합니다. Docker, Docker Compose, AWS 배포, 운영 자동화는 이 과정에서 진행하지 않고 `06_multi-agent-service-ops`에서 학습합니다.
+03 과정은 Supabase, FastAPI, Streamlit을 연결해 실시간 로그 대시보드 형태의 미니 프로젝트를 완성하는 과정입니다. Docker, Docker Compose, AWS 배포, GitHub Actions 자동화는 이 과정에서 필수로 진행하지 않고 `06_multi-agent-service-ops`에서 다룹니다.
 
 ## 먼저 확인할 기준
 
-03 과정의 최종 프로젝트는 Supabase, FastAPI, Streamlit을 연결한 **실시간 로그 대시보드 인터페이스**입니다.
+03 과정의 최종 프로젝트는 아래 구조를 기준으로 진행합니다.
 
-이 폴더의 참고 자료를 보면서 다음 산출물을 준비합니다.
+```text
+Streamlit 화면
+-> FastAPI API
+-> Supabase Database/Auth
+-> Gemini API 기본 사용
+```
+
+OpenAI API는 선택/비교 실습으로 유지합니다. 무료 배포는 선택 확장입니다.
+
+## 산출물 기준
+
+팀 프로젝트는 아래 산출물을 기준으로 정리합니다.
 
 | 산출물 | 확인할 내용 |
 | --- | --- |
@@ -36,20 +47,19 @@
 
 ## 읽는 순서
 
-1. `README.md`에서 03 과정의 목표와 산출물을 확인합니다.
-2. `mini-project-deliverables-guide.md`에서 API, 화면, 데이터베이스, 대시보드 산출물 기준을 확인합니다.
-3. `01_local-run-first-look.md`에서 로컬 실행 흐름을 확인합니다.
-4. `02_project-architecture.md`에서 FastAPI, Streamlit, Supabase의 역할을 구분합니다.
-5. `04_env-port-guide.md`에서 `.env`와 포트 설정을 확인합니다.
-6. `03_common-commands.md`에서 자주 쓰는 실행 명령어를 확인합니다.
-7. `05_api-supabase-flow.md`에서 API와 Supabase 데이터 흐름을 확인합니다.
-8. `06_troubleshooting-for-beginners.md`에서 자주 만나는 오류 해결 방법을 확인합니다.
-9. `07_project-workflow-tips.md`에서 팀 프로젝트 진행 순서를 확인합니다.
-10. `08_free-deployment-guide.md`에서 무료 배포 시연 흐름을 확인합니다.
-11. `supabase` 폴더의 보안/RLS 자료를 확인합니다.
+1. [README.md](../README.md)에서 03 과정의 목표와 산출물을 확인합니다.
+2. [SETUP.md](../SETUP.md)에서 `.venv`, 패키지 설치, `.env` 준비 방법을 확인합니다.
+3. [01_local-run-first-look.md](./01_local-run-first-look.md)에서 로컬 실행 흐름을 이해합니다.
+4. [02_project-architecture.md](./02_project-architecture.md)에서 FastAPI, Streamlit, Supabase의 역할을 구분합니다.
+5. [04_env-port-guide.md](./04_env-port-guide.md)에서 환경변수와 포트 기준을 확인합니다.
+6. [03_common-commands.md](./03_common-commands.md)에서 자주 쓰는 명령어를 확인합니다.
+7. [05_api-supabase-flow.md](./05_api-supabase-flow.md)에서 API와 Supabase 데이터 흐름을 확인합니다.
+8. [mini-project-deliverables-guide.md](./mini-project-deliverables-guide.md)에서 산출물 작성 기준을 확인합니다.
+9. [06_troubleshooting-for-beginners.md](./06_troubleshooting-for-beginners.md)에서 자주 만나는 오류 해결 방법을 확인합니다.
+10. [07_project-workflow-tips.md](./07_project-workflow-tips.md)에서 프로젝트 진행 순서를 확인합니다.
+11. [08_free-deployment-guide.md](./08_free-deployment-guide.md)에서 선택 배포 흐름을 확인합니다.
+12. [supabase](./supabase) 폴더에서 key, RLS, Supabase 화면 사용법을 확인합니다.
 
-## 수업에서 사용하는 방법
+## 기억할 점
 
-수업 시작 시 이 폴더를 함께 열고, 오늘 실습에서 필요한 참고 문서만 선택해서 봅니다.
-
-처음부터 모든 문서를 외울 필요는 없습니다. 실습 중 막히는 지점이 생기면 이 폴더로 돌아와서 환경 변수, 포트, Supabase 흐름, 산출물 기준을 다시 확인하면 됩니다.
+처음부터 모든 문서를 외우려고 하지 않아도 됩니다. 실습 중에 막히는 지점이 생기면 이 폴더로 돌아와서 필요한 문서를 다시 확인하면 됩니다.

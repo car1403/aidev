@@ -1,2 +1,20 @@
+# 03_local-streamlit frontend 참고 패키지 목록
+#
+# 기본 설치는 03 과정 최상위 requirements.txt로 진행합니다.
+#
+#   C:\aidev\03_supabase-ai-mini-project\requirements.txt
+#
+# 이 파일은 해당 Streamlit 예제만 따로 실행하거나 배포할 때 필요한 패키지를
+# 확인하기 위한 참고용 파일입니다.
+
+# Python 코드로 웹 화면을 만들기 위한 Streamlit 프레임워크입니다.
+# 이 예제에서는 제목, 입력창, 버튼, 간단한 상태 표시를 연습합니다.
 streamlit==1.41.1
+
+# 표 형태 데이터를 만들고 화면에 표시할 때 사용하는 패키지입니다.
+# 이후 로그 목록과 대시보드 표를 보여줄 때도 사용합니다.
+pandas==2.2.3
+
+# 03_supabase-ai-mini-project 최상위 .env 파일을 읽기 위해 사용합니다.
+# API_BASE_URL, 화면 제목 같은 환경변수를 코드에서 읽을 수 있게 해줍니다.
 python-dotenv==1.0.1

@@ -1,11 +1,13 @@
 import os  # 운영체제 환경변수에서 API 주소나 비밀 키를 읽기 위해 os 모듈을 가져옵니다.
+from pathlib import Path  # 현재 파일 위치를 기준으로 프로젝트 루트의 .env 경로를 계산하기 위해 사용합니다.
 
 import httpx  # FastAPI 같은 백엔드 API에 HTTP 요청을 보내기 위해 httpx 클라이언트를 가져옵니다.
 import pandas as pd  # 목록 데이터를 표와 차트로 다루기 위해 pandas를 pd라는 별칭으로 가져옵니다.
 import streamlit as st  # Python 코드로 웹 화면을 만들기 위해 Streamlit을 st라는 별칭으로 가져옵니다.
 from dotenv import load_dotenv  # .env 파일에 저장한 환경변수를 Python 실행 환경으로 불러오기 위해 가져옵니다.
 
-load_dotenv()  # .env 파일의 값을 os.getenv로 읽을 수 있도록 현재 프로세스 환경변수에 등록합니다.
+PROJECT_ENV = Path(__file__).resolve().parents[3] / ".env"  # 03_supabase-ai-mini-project 최상위 .env 파일 경로입니다.
+load_dotenv(PROJECT_ENV)  # 실행 위치가 frontend 폴더여도 03 과정의 .env를 읽도록 명시합니다.
 
 API_BASE_URL = os.getenv("API_BASE_URL", "http://127.0.0.1:8000")  # 프론트엔드가 호출할 백엔드 서버의 기본 주소를 한 곳에서 관리합니다.
 

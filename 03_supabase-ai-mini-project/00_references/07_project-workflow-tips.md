@@ -1,38 +1,58 @@
-# Project Workflow Tips
+# 07 Project Workflow Tips
 
-팀 프로젝트를 진행할 때 도움이 되는 작업 방식입니다.
+이 문서는 03 팀 프로젝트를 진행할 때 권장하는 작업 방식을 정리합니다.
 
-## 역할 예시
+## 팀 구성
 
-- Backend 담당: FastAPI API와 Supabase 처리
-- Frontend 담당: Streamlit 화면과 API 호출
-- Data 담당: Supabase 테이블 설계와 SQL
-- QA 담당: 실행 확인과 발표 자료 정리
+팀 구성은 4~5명을 권장합니다.
 
-## 추천 작업 순서
+역할 예시는 다음과 같습니다.
 
-1. 주제 정하기
-2. 화면에 필요한 데이터 정하기
-3. Supabase 테이블 설계하기
-4. `.env` 설정 확인하기
-5. FastAPI 엔드포인트 만들기
-6. Streamlit 화면 만들기
-7. Supabase CRUD 동작 확인하기
-8. README 실행 방법 정리하기
-9. 발표 시연 준비하기
+- Backend: FastAPI API와 Supabase 처리
+- Frontend: Streamlit 화면과 API 호출
+- Data: Supabase 테이블 설계, SQL, RLS 확인
+- QA/Docs: 실행 확인, 테스트 체크리스트, 발표 자료 정리
 
-## 실행 담당자
+역할은 고정된 직책이 아니라 작업을 나누기 위한 기준입니다. 프로젝트 상황에 따라 함께 수정하고 검토합니다.
 
-팀원 중 한 명은 실행 방법을 계속 검증해야 합니다.
+## 권장 작업 순서
+
+1. 주제와 사용자를 정합니다.
+2. 화면에서 필요한 데이터를 정합니다.
+3. Supabase 테이블을 설계합니다.
+4. `.env` 설정을 확인합니다.
+5. FastAPI 엔드포인트를 작게 만듭니다.
+6. Streamlit 화면에서 API를 호출합니다.
+7. Supabase 저장/조회/수정이 되는지 확인합니다.
+8. 서비스 로그와 피드백 저장 흐름을 추가합니다.
+9. SSE 또는 자동 새로고침으로 실시간 표시 방식을 선택합니다.
+10. README와 docs 문서를 구현 결과에 맞게 정리합니다.
+11. 발표 시연을 준비합니다.
+
+## 실행 담당자가 꼭 확인할 것
+
+프로젝트 중 한 명은 실행 방법을 계속 검증해야 합니다.
 
 확인할 것:
 
-- Supabase 프로젝트와 테이블 준비
-- `.env` 값 설정
-- FastAPI 로컬 실행
-- Streamlit 로컬 실행
-- README만 보고 다른 팀원이 실행 가능한지
+- Supabase 프로젝트와 테이블이 준비되어 있는가?
+- `.env` 값이 정확한가?
+- 최상위 `.venv`가 활성화되어 있는가?
+- `pip install -r requirements.txt`가 완료되었는가?
+- FastAPI가 로컬에서 실행되는가?
+- Streamlit이 로컬에서 실행되는가?
+- README만 보고 다른 사람이 실행할 수 있는가?
 
 ## 범위 관리
 
-03 과정에서는 Docker나 AWS 배포까지 욕심내기보다, Supabase 테이블과 FastAPI/Streamlit 연결을 확실히 완성하는 것이 우선입니다.
+03 과정의 우선순위는 다음입니다.
+
+```text
+1. Supabase 테이블에 데이터 저장
+2. FastAPI로 데이터 조회/등록
+3. Streamlit으로 화면 표시
+4. 로그/피드백 기반 대시보드 구성
+5. SSE 또는 무료 배포는 선택 확장
+```
+
+Docker, AWS 운영 배포, GitHub Actions 자동화까지 확장하려고 하기보다, 먼저 Supabase 기반 서비스 흐름을 안정적으로 완성하는 것이 중요합니다.

@@ -1,4 +1,4 @@
-# Troubleshooting for Beginners
+﻿# Troubleshooting for Beginners
 
 03 과정에서 자주 만나는 오류와 확인 방법입니다.
 
@@ -49,11 +49,22 @@ API_BASE_URL=http://127.0.0.1:8000
 
 Supabase SQL Editor 또는 Table Editor에서 테이블을 만들었는지 확인합니다.
 
-기본 샘플은 `learning_logs` 테이블을 사용합니다. 테이블 설계 예시는 다음 문서를 참고합니다.
+03 과정에서는 실습 위치에 따라 사용하는 테이블이 다릅니다.
 
 ```text
-05_supabase-sample-assets/sample-learning-log-dashboard/docs/setup-supabase.md
-99_team-projects/supabase-team-template/docs/supabase-schema.md
+01_local-dev-basic, 02_instructor-sample-project
+-> learning_logs
+
+03_supabase-and-sse-practice, 99_team-projects/team-template
+-> service_logs, messages, feedbacks
+```
+
+테이블 설계 예시는 다음 문서를 참고합니다.
+
+```text
+03_supabase-and-sse-practice/01_supabase-project-and-schema/03_team-project-base-schema.sql
+05_project-templates/sql/supabase-base-schema.sql
+99_team-projects/team-template/docs/supabase-schema.md
 ```
 
 ## 5. RLS 때문에 데이터가 안 보이는 경우

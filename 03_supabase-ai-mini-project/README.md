@@ -156,22 +156,21 @@ Streamlit 화면
 
 ```text
 03_supabase-ai-mini-project
-├─.venv
-├─.gitignore
+├─ .venv
+├─ .gitignore
 ├─ README.md
 ├─ SETUP.md
-├─.env.example
+├─ .env.example
 ├─ requirements.txt
 ├─ 00_references
 │ └─ supabase
 ├─ 01_local-dev-basic
 ├─ 02_instructor-sample-project
-├─ 03_team-project-guide
-├─ 04_supabase-project-practice
-├─ 05_supabase-sample-assets
+├─ 03_supabase-and-sse-practice
+├─ 04_team-project-guide
+├─ 05_project-templates
 └─ 99_team-projects
- ├─ team-template
- └─ supabase-team-template
+ └─ team-template
 ```
 
 팀 프로젝트를 실제 배포 대상으로 정리할 때는 템플릿 내부 구조를 다음 기준으로 맞춥니다.
@@ -179,7 +178,7 @@ Streamlit 화면
 ```text
 team-project
 ├─ README.md
-├─.env.example
+├─ .env.example
 ├─ backend
 │ ├─ main.py
 │ └─ requirements.txt
@@ -194,7 +193,11 @@ team-project
 │ ├─ streaming-response-design.md
 │ ├─ dashboard-result.md
 │ ├─ deployment-guide.md
-│ └─ test-checklist.md
+│ ├─ test-checklist.md
+│ └─ final-submission-checklist.md
+├─ sql
+│ ├─ supabase-base-schema.sql
+│ └─ seed-sample-data.sql
 └─ presentation
  └─ final-presentation.md
 ```
@@ -209,9 +212,9 @@ team-project
 00_references Supabase, env, RLS, 보안 개념 참고 자료
 01_local-dev-basic Supabase env, 로컬 FastAPI/Streamlit 실행 감각을 익히는 예비 실습
 02_instructor-sample-project 수업용 Supabase 샘플 프로젝트
-03_team-project-guide 팀 프로젝트 운영 가이드
-04_supabase-project-practice Supabase 프로젝트와 테이블 준비 실습
-05_supabase-sample-assets Supabase 연동 샘플 자료
+03_supabase-and-sse-practice Supabase, FastAPI, Streamlit, 서비스 로그, SSE 단계별 실습
+04_team-project-guide 팀 프로젝트 운영 가이드
+05_project-templates 팀 프로젝트 문서, SQL, env, 체크리스트 템플릿
 99_team-projects 팀별 최종 결과물을 만드는 공간
 ```
 
@@ -222,7 +225,7 @@ team-project
 - Supabase 프로젝트를 데이터 저장소로 사용합니다.
 - FastAPI는 Supabase와 통신하는 백엔드 API 역할을 합니다.
 - Streamlit은 FastAPI API를 호출하는 화면 역할을 합니다.
-- 팀 프로젝트는 `99_team-projects/supabase-team-template`을 기준으로 시작합니다.
+- 팀 프로젝트는 `99_team-projects/team-template`을 기준으로 시작합니다.
 - 무료 배포 시연은 선택 확장으로 다룹니다.
 - Docker, Docker Compose, AWS, GitHub Actions 기반 운영 자동화는 06 과정에서 학습합니다.
 
@@ -231,10 +234,11 @@ team-project
 ```text
 00_references 읽기
 -> 01_local-dev-basic에서 Supabase env와 로컬 FastAPI/Streamlit 실행 감각 확인
--> 04_supabase-project-practice에서 Supabase 프로젝트/테이블/env 준비
--> 05_supabase-sample-assets/sample-learning-log-dashboard 참고
--> 03_team-project-guide로 팀 주제/역할/일정 확정
--> 99_team-projects/supabase-team-template 기반 팀 프로젝트 진행
+-> 02_instructor-sample-project에서 완성된 샘플 흐름 확인
+-> 03_supabase-and-sse-practice에서 Supabase, FastAPI, Streamlit, 로그, SSE 핵심 기능 실습
+-> 04_team-project-guide로 팀 주제/역할/일정 확정
+-> 05_project-templates에서 문서, SQL, env, 체크리스트 템플릿 확인
+-> 99_team-projects/team-template 기반 팀 프로젝트 진행
 ```
 
 초보자에게는 아래처럼 더 작게 나누어 진행하는 것을 권장합니다.
@@ -257,8 +261,8 @@ team-project
 
 ```text
 Supabase: 클라우드 프로젝트 사용
-FastAPI: 로컬.venv에서 uvicorn 실행
-Streamlit: 로컬.venv에서 streamlit run 실행
+FastAPI: 로컬 .venv에서 uvicorn 실행
+Streamlit: 로컬 .venv에서 streamlit run 실행
 .env: Supabase URL/key, GEMINI_API_KEY, API_BASE_URL 관리
 Docker: 사용하지 않음. 06_multi-agent-service-ops에서 학습
 ```
@@ -281,7 +285,7 @@ Docker: 사용하지 않음. 06_multi-agent-service-ops에서 학습
 
 ```text
 00_references/08_free-deployment-guide.md
-99_team-projects/supabase-team-template/docs/deployment-guide.md
+99_team-projects/team-template/docs/deployment-guide.md
 ```
 
 직접 기억해야 할 핵심은 다음입니다.
@@ -303,8 +307,9 @@ cd C:\aidev\03_supabase-ai-mini-project
 C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python --version
+python -m pip install --upgrade pip
 pip install -r requirements.txt
-Copy-Item.env.example.env
+Copy-Item .env.example .env
 ```
 
 이미 `.venv`가 만들어져 있다면 다시 만들 필요는 없습니다. 그때는 아래처럼 활성화부터 시작하면 됩니다.
@@ -318,11 +323,11 @@ cd C:\aidev\03_supabase-ai-mini-project
 
 ## 팀 프로젝트 시작 방법
 
-팀 프로젝트는 `99_team-projects\supabase-team-template`을 기준으로 시작합니다. `team-template`도 같은 Supabase 구조를 담은 호환용 템플릿입니다. 팀별로 작업 폴더를 만들 때는 `supabase-team-template`을 복사해서 사용합니다.
+팀 프로젝트는 `99_team-projects\team-template`을 기준으로 시작합니다. 팀별로 작업 폴더를 만들 때는 `team-template`을 복사해서 사용합니다.
 
 ```powershell
 cd C:\aidev\03_supabase-ai-mini-project
-Copy-Item.\99_team-projects\supabase-team-template.\99_team-projects\team-01-learning-chatbot -Recurse
+Copy-Item .\99_team-projects\team-template .\99_team-projects\team-01-learning-chatbot -Recurse
 ```
 
 팀 이름에 맞게 `team-01-learning-chatbot` 부분만 바꾸면 됩니다.
@@ -349,7 +354,7 @@ presentation/final-presentation.md 발표 자료 초안
 첫 번째 PowerShell에서는 FastAPI 백엔드를 실행합니다.
 
 ```powershell
-cd C:\aidev\03_supabase-ai-mini-project\99_team-projects\supabase-team-template\backend
+cd C:\aidev\03_supabase-ai-mini-project\99_team-projects\team-template\backend
 ..\..\..\.venv\Scripts\Activate.ps1
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
@@ -363,7 +368,7 @@ http://127.0.0.1:8000/docs
 두 번째 PowerShell에서는 Streamlit 프론트엔드를 실행합니다.
 
 ```powershell
-cd C:\aidev\03_supabase-ai-mini-project\99_team-projects\supabase-team-template\frontend
+cd C:\aidev\03_supabase-ai-mini-project\99_team-projects\team-template\frontend
 ..\..\..\.venv\Scripts\Activate.ps1
 streamlit run app.py --server.port 8501
 ```
@@ -455,9 +460,9 @@ FastAPI를 거쳐 Supabase를 호출하는 방식과 Streamlit이 직접 Supabas
 
 | 이미지 기준 | 03 과정 반영 위치 | 상태 |
 | --- | --- | --- |
-| 백엔드, DB, UI 통합 아키텍처 구현 및 실행 실습 | `01_local-dev-basic`, `02_instructor-sample-project`, `99_team-projects/supabase-team-template` | 포함 |
-| 실시간 데이터 스트리밍을 통한 로그 시각화 대시보드 최종 제작 | `04_supabase-project-practice/05_sse-streaming-ai-response`, `99_team-projects/*/streaming_response_design.md` | 포함 |
-| 사용자 피드백 데이터를 반영한 AI 답변 품질 고도화 및 서비스 최적화 | `docs/dashboard-result.md`, `docs/test-checklist.md`, `feedback` 테이블 설계 | 포함 |
+| 백엔드, DB, UI 통합 아키텍처 구현 및 실행 실습 | `01_local-dev-basic`, `02_instructor-sample-project`, `99_team-projects/team-template` | 포함 |
+| 실시간 데이터 스트리밍을 통한 로그 시각화 대시보드 최종 제작 | `03_supabase-and-sse-practice/05_sse-streaming-ai-response`, `99_team-projects/*/streaming-response-design.md` | 포함 |
+| 사용자 피드백 데이터를 반영한 AI 답변 품질 고도화 및 서비스 최적화 | `docs/dashboard-result.md`, `docs/test-checklist.md`, `feedbacks` 테이블 설계 | 포함 |
 | API 설계 문서 | `docs/api-spec.md` | 포함/보강 |
 | 화면 설계서 | `docs/ui-design.md` | 포함/보강 |
 | 데이터베이스 설계서 | `docs/supabase-schema.md` | 포함/보강 |

@@ -43,14 +43,24 @@ pip --version
 
 ## 4. 패키지 설치
 
+먼저 `pip` 자체를 최신 상태로 올립니다.
+
+```powershell
+python -m pip install --upgrade pip
+```
+
+그 다음 03 과정에서 사용할 공통 패키지를 설치합니다.
+
 ```powershell
 pip install -r requirements.txt
 ```
 
+`requirements.txt`에는 FastAPI, Streamlit, Supabase, Gemini SDK, OpenAI 선택 비교용 패키지 등이 포함되어 있습니다. 각 패키지가 어디에서 쓰이는지는 [requirements.txt](./requirements.txt)의 주석을 확인합니다.
+
 ## 5. 환경 변수 파일 만들기
 
 ```powershell
-Copy-Item.env.example.env
+Copy-Item .env.example .env
 ```
 
 `.env` 파일에 Supabase와 API 값을 입력합니다.
@@ -87,8 +97,9 @@ API_BASE_URL=http://127.0.0.1:8000
 샘플 테이블 안내는 다음 문서를 참고합니다.
 
 ```text
-05_supabase-sample-assets/sample-learning-log-dashboard/docs/setup-supabase.md
-99_team-projects/supabase-team-template/docs/supabase-schema.md
+03_supabase-and-sse-practice/01_supabase-project-and-schema/03_team-project-base-schema.sql
+05_project-templates/sql/supabase-base-schema.sql
+99_team-projects/team-template/docs/supabase-schema.md
 ```
 
 ## 7. 환경 변수 확인
@@ -96,13 +107,13 @@ API_BASE_URL=http://127.0.0.1:8000
 ```powershell
 cd C:\aidev\03_supabase-ai-mini-project
 .\.venv\Scripts\Activate.ps1
-python.\01_local-dev-basic\01_supabase-env-check\01_check_env.py
+python .\01_local-dev-basic\01_supabase-env-check\01_check_env.py
 ```
 
 ## 8. FastAPI 실행 예시
 
 ```powershell
-cd C:\aidev\03_supabase-ai-mini-project\99_team-projects\supabase-team-template\backend
+cd C:\aidev\03_supabase-ai-mini-project\99_team-projects\team-template\backend
 ..\..\..\.venv\Scripts\Activate.ps1
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
@@ -118,7 +129,7 @@ http://127.0.0.1:8000/docs
 새 PowerShell을 하나 더 열고 실행합니다.
 
 ```powershell
-cd C:\aidev\03_supabase-ai-mini-project\99_team-projects\supabase-team-template\frontend
+cd C:\aidev\03_supabase-ai-mini-project\99_team-projects\team-template\frontend
 ..\..\..\.venv\Scripts\Activate.ps1
 streamlit run app.py --server.port 8501
 ```

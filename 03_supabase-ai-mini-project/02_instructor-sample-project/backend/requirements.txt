@@ -1,5 +1,29 @@
+# 02_instructor-sample-project backend 참고 패키지 목록
+#
+# 기본 설치는 03 과정 최상위 requirements.txt로 진행합니다.
+#
+#   C:\aidev\03_supabase-ai-mini-project\requirements.txt
+#
+# 이 파일은 완성 샘플 백엔드만 따로 실행하거나 배포할 때 필요한 패키지를
+# 확인하기 위한 참고용 파일입니다.
+
+# FastAPI API 서버를 만들기 위한 핵심 웹 프레임워크입니다.
+# 이 샘플에서는 learning_logs 테이블을 조회하고 저장하는 API를 만듭니다.
 fastapi==0.115.6
+
+# FastAPI 앱을 로컬 개발 서버로 실행하기 위한 ASGI 서버입니다.
+# 예:
+#   uvicorn main:app --reload --host 127.0.0.1 --port 8000
 uvicorn[standard]==0.32.1
+
+# 03_supabase-ai-mini-project 최상위 .env 파일을 읽기 위해 사용합니다.
+# Supabase URL/key를 코드에 직접 쓰지 않도록 도와줍니다.
 python-dotenv==1.0.1
+
+# Python에서 Supabase 테이블에 insert/select/update 요청을 보내기 위한 패키지입니다.
+# 이 샘플에서는 learning_logs 테이블과 연결됩니다.
 supabase==2.10.0
+
+# FastAPI 요청 Body와 응답 구조를 검증하기 위한 패키지입니다.
+# 사용자가 입력한 학습 로그 데이터의 타입을 확인하는 데 사용합니다.
 pydantic==2.10.4

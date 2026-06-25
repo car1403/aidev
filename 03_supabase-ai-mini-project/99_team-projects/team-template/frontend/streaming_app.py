@@ -1,12 +1,14 @@
 import json
 import os
+from pathlib import Path
 
 import httpx
 import streamlit as st
 from dotenv import load_dotenv
 
 
-load_dotenv()
+COURSE_ROOT = Path(__file__).resolve().parents[3]
+load_dotenv(COURSE_ROOT / ".env")
 
 API_BASE_URL = os.getenv("API_BASE_URL", "http://127.0.0.1:8001")
 

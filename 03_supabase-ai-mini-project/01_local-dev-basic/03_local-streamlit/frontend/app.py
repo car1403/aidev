@@ -1,20 +1,40 @@
-import os  # 운영체제 환경변수에서 API 주소나 비밀 키를 읽기 위해 os 모듈을 가져옵니다.
+import os  # 운영체제 환경변수에서 설정값을 읽기 위해 사용합니다.
+from pathlib import Path  # 현재 파일 위치를 기준으로 .env 파일 경로를 계산하기 위해 사용합니다.
 
-import pandas as pd  # 목록 데이터를 표와 차트로 다루기 위해 pandas를 pd라는 별칭으로 가져옵니다.
-import streamlit as st  # Python 코드로 웹 화면을 만들기 위해 Streamlit을 st라는 별칭으로 가져옵니다.
+import pandas as pd  # 표 형태의 데이터를 만들고 Streamlit 화면에 표시하기 위해 사용합니다.
+import streamlit as st  # Python 코드로 웹 화면을 만들기 위해 사용합니다.
+from dotenv import load_dotenv  # .env 파일의 값을 Python 환경변수로 불러오기 위해 사용합니다.
 
-APP_TITLE = os.getenv("APP_TITLE", "Streamlit App")  # 환경변수 값을 읽어 설정값으로 저장합니다. 코드에 비밀 값을 직접 쓰지 않기 위한 방식입니다.
 
-st.set_page_config(page_title=APP_TITLE)  # Streamlit 페이지의 브라우저 제목과 레이아웃 같은 기본 설정을 지정합니다.
-st.title(APP_TITLE)  # Streamlit 화면의 가장 큰 제목을 표시합니다.
-st.write("Streamlit is running locally.")  # 문자열, 숫자, 객체를 Streamlit 화면에 출력합니다.
+# 이 예제는 frontend 폴더 안에서 실행되지만,
+# 환경변수 파일은 03_supabase-ai-mini-project 최상위에 둡니다.
+PROJECT_ENV = Path(__file__).resolve().parents[3] / ".env"
+load_dotenv(PROJECT_ENV)
 
-df = pd.DataFrame(  # 딕셔너리 데이터를 행과 열을 가진 DataFrame 표 구조로 변환합니다.
+# APP_TITLE은 선택 환경변수입니다.
+# .env에 값이 없으면 기본 제목을 사용합니다.
+APP_TITLE = os.getenv("APP_TITLE", "03 Supabase Mini Project")
+
+st.set_page_config(page_title=APP_TITLE, layout="wide")
+st.title(APP_TITLE)
+st.caption("Streamlit 화면이 로컬 Python 환경에서 정상 실행되는지 확인하는 기본 예제입니다.")
+
+st.info(f"환경변수 파일 기준: {PROJECT_ENV}")
+
+df = pd.DataFrame(
     {
-        "service": ["frontend", "local run"],  # 이 줄은 예제의 핵심 동작을 단계별로 보여주기 위한 코드입니다.
-        "status": ["running", "ready"],  # 이 줄은 예제의 핵심 동작을 단계별로 보여주기 위한 코드입니다.
+        "component": ["Streamlit", "FastAPI", "Supabase"],
+        "role": ["사용자가 보는 화면", "요청 검증과 API 응답", "사용자/로그/피드백 데이터 저장"],
+        "current_step": ["현재 실행 확인", "다음 단계에서 연결", "풀스택 단계에서 연결"],
     }
 )
 
-st.dataframe(df)  # 표 형태의 데이터를 스크롤 가능한 DataFrame UI로 표시합니다.
+st.dataframe(df, use_container_width=True)
 
+st.write(
+    """
+    이 단계에서는 아직 백엔드 API를 호출하지 않습니다.
+    먼저 Streamlit 화면이 정상적으로 열리는지 확인하고,
+    다음 `04_local-full-stack`에서 FastAPI와 Supabase를 함께 연결합니다.
+    """
+)
