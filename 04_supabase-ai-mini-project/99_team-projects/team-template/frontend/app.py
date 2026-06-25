@@ -1,6 +1,6 @@
 ﻿import json  # metadata 입력값을 JSON 딕셔너리로 변환하기 위해 사용합니다.
 import os  # 운영체제 환경변수에서 API 주소를 읽기 위해 사용합니다.
-from pathlib import Path  # 현재 파일 위치를 기준으로 03 과정 최상위 .env 경로를 계산하기 위해 사용합니다.
+from pathlib import Path  # 현재 파일 위치를 기준으로 04 과정 최상위 .env 경로를 계산하기 위해 사용합니다.
 
 import httpx  # FastAPI 백엔드 API에 HTTP 요청을 보내기 위해 사용합니다.
 import pandas as pd  # 로그 목록을 표와 집계 데이터로 다루기 위해 사용합니다.
@@ -8,7 +8,7 @@ import streamlit as st  # Python 코드로 웹 화면을 만들기 위해 사용
 from dotenv import load_dotenv  # .env 파일에 저장한 환경변수를 Python 실행 환경으로 불러오기 위해 사용합니다.
 
 COURSE_ROOT = Path(__file__).resolve().parents[3]  # frontend/app.py에서 04_supabase-ai-mini-project 최상위 폴더로 올라갑니다.
-load_dotenv(COURSE_ROOT / ".env")  # 하위 팀 폴더가 아니라 03 과정 최상위 .env를 읽습니다.
+load_dotenv(COURSE_ROOT / ".env")  # 하위 팀 폴더가 아니라 04 과정 최상위 .env를 읽습니다.
 
 API_BASE_URL = os.getenv("API_BASE_URL", "http://127.0.0.1:8000")  # Streamlit이 호출할 FastAPI 서버 주소입니다.
 

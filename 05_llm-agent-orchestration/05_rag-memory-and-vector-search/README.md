@@ -8,7 +8,7 @@
 문서 준비 -> 문서 청킹 -> 임베딩 생성 -> pgvector 저장 -> 관련 문서 검색 -> LLM 답변 생성 -> 대화 기억 저장
 ```
 
-04 과정부터는 Supabase가 아니라 Docker 기반 로컬 실습을 사용합니다. 이 단원에서는 Docker Desktop에서 `pgvector`가 포함된 PostgreSQL 컨테이너를 실행하고, 그 안에 벡터 데이터를 저장합니다. Docker Compose와 AWS 배포는 `07_multi-agent-service-ops`에서 본격적으로 다룹니다.
+05 과정부터는 Supabase가 아니라 Docker 기반 로컬 실습을 사용합니다. 이 단원에서는 Docker Desktop에서 `pgvector`가 포함된 PostgreSQL 컨테이너를 실행하고, 그 안에 벡터 데이터를 저장합니다. Docker Compose와 AWS 배포는 `07_multi-agent-service-ops`에서 본격적으로 다룹니다.
 
 ## 학습 목표
 

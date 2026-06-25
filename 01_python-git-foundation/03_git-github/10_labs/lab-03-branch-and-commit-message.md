@@ -9,7 +9,7 @@
 ## 1. 현재 브랜치 확인
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend
+cd C:\aidev\01_python-git-foundation
 git branch
 ```
 

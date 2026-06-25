@@ -82,7 +82,7 @@ HTTP API와 외부 데이터
 `02_python-advanced`는 `02_supabase-ai-backend`의 하위 단원이므로 별도의 `.venv`를 새로 만들지 않습니다. `02_supabase-ai-backend` 최상위에 이미 만든 `.venv`를 그대로 사용합니다.
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend
+cd C:\aidev\01_python-git-foundation
 .\.venv\Scripts\Activate.ps1
 python --version
 python -m pip install --upgrade pip

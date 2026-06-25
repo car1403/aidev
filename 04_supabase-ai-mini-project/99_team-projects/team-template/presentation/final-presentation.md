@@ -76,4 +76,4 @@ AI 답변 품질 개선에 반영할 방법:
 
 ## Future Improvements
 
-66 과정 이후 Docker, Docker Compose, AWS, GitHub Actions로 확장할 수 있는 방향을 적습니다.
+07 과정 이후 Docker, Docker Compose, AWS, GitHub Actions로 확장할 수 있는 방향을 적습니다.

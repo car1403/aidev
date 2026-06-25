@@ -55,7 +55,7 @@ Supabase 테이블 준비
 - Streamlit은 FastAPI API를 호출하는 화면 역할을 합니다.
 - SSE는 필수 구현이 아니라 선택 확장입니다.
 - 배포도 필수는 아니며, 로컬에서 FastAPI와 Streamlit이 정상 동작하면 기본 제출 기준을 충족합니다.
-- Docker, Docker Compose, AWS, GitHub Actions 기반 운영 자동화는 66 과정에서 본격적으로 다룹니다.
+- Docker, Docker Compose, AWS, GitHub Actions 기반 운영 자동화는 07 과정에서 본격적으로 다룹니다.
 
 ## 팀 프로젝트에 연결하는 방법
 

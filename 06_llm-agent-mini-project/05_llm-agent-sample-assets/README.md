@@ -31,4 +31,4 @@
 
 처음에는 Mock data와 로컬 실행만으로 충분합니다. OpenAI API, Ollama 기반 Llama, pgvector 기반 장기 기억은 프로젝트가 안정적으로 동작한 뒤 선택적으로 확장합니다.
 
-Docker Compose, AWS 배포, GitHub Actions, 운영 자동화는 66 과정에서 본격적으로 다룹니다.
+Docker Compose, AWS 배포, GitHub Actions, 운영 자동화는 07 과정에서 본격적으로 다룹니다.

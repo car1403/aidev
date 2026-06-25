@@ -1,6 +1,6 @@
 ﻿# 02 Instructor Sample Project
 
-이 폴더는 05 과정에서 먼저 실행해 보는 일정 조정 Agent 샘플 프로젝트입니다.
+이 폴더는 06 과정에서 먼저 실행해 보는 일정 조정 Agent 샘플 프로젝트입니다.
 
 실제 Calendar API는 사용하지 않습니다. 처음에는 Mock 일정 데이터를 사용해 Agent의 기본 흐름을 이해합니다. 이후 팀 프로젝트에서 필요하면 Google Calendar, Notion, 로컬 파일, pgvector RAG/Memory 같은 기능으로 확장할 수 있습니다.
 
@@ -36,7 +36,7 @@
 
 ## 실행 준비
 
-05 과정은 최상위 `.venv`를 사용합니다.
+06 과정은 최상위 `.venv`를 사용합니다.
 
 ```powershell
 cd C:\aidev\06_llm-agent-mini-project

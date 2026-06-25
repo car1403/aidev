@@ -1,6 +1,6 @@
 # Troubleshooting for Beginners
 
-03 과정에서 자주 만나는 오류와 확인 방법입니다.
+04 과정에서 자주 만나는 오류와 확인 방법입니다.
 
 ## 1. FastAPI가 실행되지 않는 경우
 
@@ -49,7 +49,7 @@ API_BASE_URL=http://127.0.0.1:8000
 
 Supabase SQL Editor 또는 Table Editor에서 테이블을 만들었는지 확인합니다.
 
-03 과정에서는 실습 위치에 따라 사용하는 테이블이 다릅니다.
+04 과정에서는 실습 위치에 따라 사용하는 테이블이 다릅니다.
 
 ```text
 01_local-dev-basic, 02_instructor-sample-project
@@ -97,7 +97,7 @@ http://127.0.0.1:8000
 
 ## 7. Docker 관련 질문이 나오는 경우
 
-03 과정에서는 Docker로 DB나 Redis를 실행하지 않습니다. Docker, Docker Compose, AWS 배포, 운영 자동화는 `07_multi-agent-service-ops`에서 다룹니다.
+04 과정에서는 Docker로 DB나 Redis를 실행하지 않습니다. Docker, Docker Compose, AWS 배포, 운영 자동화는 `07_multi-agent-service-ops`에서 다룹니다.
 
 ## 8. 오류 기록 템플릿
 

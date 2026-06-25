@@ -11,7 +11,7 @@
 PowerShell에서 실행합니다.
 
 ```powershell
-code C:\aidev\02_supabase-ai-backend
+code C:\aidev\01_python-git-foundation
 ```
 
 `code` 명령이 되지 않으면 VS Code를 직접 실행합니다.
@@ -19,7 +19,7 @@ code C:\aidev\02_supabase-ai-backend
 ```text
 File
 -> Open Folder
--> C:\aidev\02_supabase-ai-backend 선택
+-> C:\aidev\01_python-git-foundation 선택
 ```
 
 ## 2. Source Control 열기
@@ -133,7 +133,7 @@ Upstash Redis token이 들어간 문서
 커밋 전에 `.gitignore`가 있는지 확인합니다.
 
 ```text
-C:\aidev\02_supabase-ai-backend\.gitignore
+C:\aidev\01_python-git-foundation\.gitignore
 ```
 
 ## 10. 터미널로 같은 상태 확인
@@ -141,7 +141,7 @@ C:\aidev\02_supabase-ai-backend\.gitignore
 PowerShell에서 확인합니다.
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend
+cd C:\aidev\01_python-git-foundation
 git status
 ```
 

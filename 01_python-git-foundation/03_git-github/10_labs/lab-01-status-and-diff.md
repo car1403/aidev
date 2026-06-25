@@ -7,7 +7,7 @@
 ## 1. 작업 위치로 이동
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend
+cd C:\aidev\01_python-git-foundation
 ```
 
 ## 2. 현재 상태 확인

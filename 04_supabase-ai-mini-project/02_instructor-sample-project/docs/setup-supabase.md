@@ -57,7 +57,7 @@ values
 
 ## 4. .env 파일 준비
 
-이 샘플은 `02_instructor-sample-project` 폴더 안의 `.env`를 사용하지 않습니다. 03 과정 최상위 `.env`를 사용합니다.
+이 샘플은 `02_instructor-sample-project` 폴더 안의 `.env`를 사용하지 않습니다. 04 과정 최상위 `.env`를 사용합니다.
 
 ```text
 C:\aidev\04_supabase-ai-mini-project\.env

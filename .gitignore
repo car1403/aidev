@@ -21,7 +21,9 @@ dist/
 !.env.example
 
 # Editor and OS files
-.vscode/
+.vscode/*
+!.vscode/
+!.vscode/settings.json
 .idea/
 Thumbs.db
 .DS_Store

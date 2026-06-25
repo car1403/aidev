@@ -227,7 +227,7 @@ docker compose up --build
 
 ## GitHub Actions와 AWS 기준
 
-07에서 GitHub Actions와 AWS 실제 배포는 필수가 아닙니다. 다만 운영형 프로젝트로 확장할 수 있도록 아래 항목을 문서에 정리하는 것을 권장합니다.
+08에서 GitHub Actions와 AWS 실제 배포는 필수가 아닙니다. 다만 운영형 프로젝트로 확장할 수 있도록 아래 항목을 문서에 정리하는 것을 권장합니다.
 
 ```text
 GitHub Actions:

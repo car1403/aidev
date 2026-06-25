@@ -6,7 +6,7 @@
 
 ```text
 사용하는 가상환경 위치:
-C:\aidev\02_supabase-ai-backend\.venv
+C:\aidev\01_python-git-foundation\.venv
 ```
 
 ## 이 문서를 다시 보는 이유
@@ -18,8 +18,8 @@ C:\aidev\02_supabase-ai-backend\.venv
 핵심 기준은 아래와 같습니다.
 
 ```text
-1. 작업 위치는 C:\aidev\02_supabase-ai-backend 입니다.
-2. 가상환경은 C:\aidev\02_supabase-ai-backend\.venv 하나만 사용합니다.
+1. 작업 위치는 C:\aidev\01_python-git-foundation 입니다.
+2. 가상환경은 C:\aidev\01_python-git-foundation\.venv 하나만 사용합니다.
 3. 02_python-advanced 안에는 .venv를 만들지 않습니다.
 4. 02_python-advanced 안에는 별도 requirements.txt를 두지 않습니다.
 5. 필요한 패키지는 02_supabase-ai-backend 최상위 requirements.txt에서 관리합니다.
@@ -30,7 +30,7 @@ C:\aidev\02_supabase-ai-backend\.venv
 PowerShell에서 `02_supabase-ai-backend` 폴더로 이동합니다.
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend
+cd C:\aidev\01_python-git-foundation
 ```
 
 현재 위치를 확인합니다.
@@ -42,7 +42,7 @@ Get-Location
 결과가 아래와 비슷하면 됩니다.
 
 ```text
-C:\aidev\02_supabase-ai-backend
+C:\aidev\01_python-git-foundation
 ```
 
 ## 2. 기존 가상환경 활성화
@@ -161,7 +161,7 @@ python -m pytest .\02_python-advanced\08_testing-code-quality
 ## 8. 시작 전 체크리스트
 
 ```text
-[ ] 현재 위치가 C:\aidev\02_supabase-ai-backend 인가?
+[ ] 현재 위치가 C:\aidev\01_python-git-foundation 인가?
 [ ] PowerShell 앞에 (.venv)가 보이는가?
 [ ] python --version이 정상 출력되는가?
 [ ] pip --version이 정상 출력되는가?

@@ -1,0 +1,9 @@
+{
+  "terminal.integrated.profiles.windows": {
+    "PowerShell (venv)": {
+      "source": "PowerShell",
+      "args": ["-NoExit", "-Command", "& '.\\.venv\\Scripts\\Activate.ps1'"]
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell (venv)"
+}

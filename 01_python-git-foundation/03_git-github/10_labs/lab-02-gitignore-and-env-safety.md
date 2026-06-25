@@ -9,7 +9,7 @@
 과정 최상위의 `.gitignore` 파일을 확인합니다.
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend
+cd C:\aidev\01_python-git-foundation
 Get-Content.gitignore
 ```
 

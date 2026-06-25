@@ -79,7 +79,7 @@ SUPABASE_SERVICE_ROLE_KEY=your-supabase-service-role-key
 
 Table Editor는 테이블과 데이터를 눈으로 확인하는 곳입니다.
 
-03 과정에서는 실습 단계에 따라 사용하는 테이블이 다릅니다.
+04 과정에서는 실습 단계에 따라 사용하는 테이블이 다릅니다.
 
 | 위치 | 주로 확인하는 테이블 | 용도 |
 | --- | --- | --- |
@@ -155,6 +155,6 @@ Supabase 연결이 안 되거나 데이터가 보이지 않을 때는 아래 순
 
 ## 9. 기억할 기준
 
-03 과정의 최종 팀 프로젝트 기준 테이블은 `service_logs`, `messages`, `feedbacks`입니다.
+04 과정의 최종 팀 프로젝트 기준 테이블은 `service_logs`, `messages`, `feedbacks`입니다.
 
 `learning_logs`는 Supabase 연결을 처음 익히기 위한 입문용 샘플 테이블입니다. 따라서 최종 프로젝트 문서와 코드는 `service_logs` 중심으로 정리하는 것이 좋습니다.

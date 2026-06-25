@@ -41,7 +41,7 @@ AI 챗봇 요청/응답 관리 CLI
 이 폴더에서는 별도의 `.venv`를 만들지 않습니다. `02_supabase-ai-backend` 최상위에서 만든 공통 가상환경을 사용합니다.
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend
+cd C:\aidev\01_python-git-foundation
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```

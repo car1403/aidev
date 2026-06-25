@@ -164,7 +164,7 @@ docker rm
 docker volume rm
 ```
 
-아래 내용은 66 과정에서 다룹니다.
+아래 내용은 07 과정에서 다룹니다.
 
 ```text
 Dockerfile

@@ -2,7 +2,7 @@
 
 이 파일은 실제 API를 호출하지 않습니다.
 .env에 Gemini 또는 OpenAI key가 있는지 여부만 확인합니다.
-01~03 과정에서는 Gemini API를 기본으로 사용하고, OpenAI API는 선택/비교 실습용으로 둡니다.
+02~04 과정에서는 Gemini API를 기본으로 사용하고, OpenAI API는 선택/비교 실습용으로 둡니다.
 
 실행:
     cd C:\aidev\02_supabase-ai-backend

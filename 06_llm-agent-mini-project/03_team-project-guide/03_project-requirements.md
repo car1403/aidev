@@ -97,7 +97,7 @@ START
 65는 64에서 배운 LLM Agent 구현 내용을 팀 프로젝트로 연결하는 과정입니다.
 
 - Docker를 사용한다면 단일 컨테이너를 `docker run`으로 실행합니다.
-- Docker Compose, AWS 배포, GitHub Actions, 운영 자동화는 66 과정에서 다룹니다.
+- Docker Compose, AWS 배포, GitHub Actions, 운영 자동화는 07 과정에서 다룹니다.
 
 ## 8. 보안 기준
 

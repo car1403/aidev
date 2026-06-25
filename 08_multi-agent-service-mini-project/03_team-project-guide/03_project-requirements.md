@@ -19,7 +19,7 @@
 - `docs/deployment-recovery-report.md`
 - `docs/pipeline-result-report.md`
 
-위 3가지가 07 과정의 필수 산출물입니다. `docs/test-checklist.md`, 보안/감사/Guardrails 문서, LangSmith 추적 계획, 발표 자료는 선택 보조 산출물입니다.
+위 3가지가 08 과정의 필수 산출물입니다. `docs/test-checklist.md`, 보안/감사/Guardrails 문서, LangSmith 추적 계획, 발표 자료는 선택 보조 산출물입니다.
 
 ## 선택 확장
 

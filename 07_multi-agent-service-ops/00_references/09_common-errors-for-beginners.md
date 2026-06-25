@@ -1,6 +1,6 @@
 # 69. Common Errors For Beginners
 
-66 과정에서 자주 만나는 오류와 확인 방법입니다.
+07 과정에서 자주 만나는 오류와 확인 방법입니다.
 
 ## PowerShell 실행 정책 오류
 

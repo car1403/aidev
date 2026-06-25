@@ -22,7 +22,7 @@ VS Code에서 폴더 열기
 PowerShell에서 다음 명령을 실행합니다.
 
 ```powershell
-code C:\aidev\02_supabase-ai-backend
+code C:\aidev\01_python-git-foundation
 ```
 
 `code` 명령이 동작하지 않으면 VS Code를 직접 실행한 뒤 아래 메뉴를 사용합니다.
@@ -30,7 +30,7 @@ code C:\aidev\02_supabase-ai-backend
 ```text
 File
 -> Open Folder
--> C:\aidev\02_supabase-ai-backend 선택
+-> C:\aidev\01_python-git-foundation 선택
 ```
 
 중요한 점은 파일 하나만 여는 것이 아니라 과정 폴더 전체를 열어야 한다는 것입니다.
@@ -38,13 +38,13 @@ File
 잘못 연 예시:
 
 ```text
-C:\aidev\02_supabase-ai-backend\README.md 파일 하나만 열기
+C:\aidev\01_python-git-foundation\README.md 파일 하나만 열기
 ```
 
 올바르게 연 예시:
 
 ```text
-C:\aidev\02_supabase-ai-backend 폴더 전체 열기
+C:\aidev\01_python-git-foundation 폴더 전체 열기
 ```
 
 폴더 전체를 열어야 VS Code가 `.gitignore`, `requirements.txt`, 하위 실습 폴더, Git 변경 상태를 함께 이해할 수 있습니다.
@@ -385,7 +385,7 @@ Source Control로 변경 파일을 확인한다.
 
 ### Git 저장소가 아니라고 나오는 경우
 
-VS Code에서 잘못된 폴더를 열었을 수 있습니다. `C:\aidev\02_supabase-ai-backend` 폴더를 열었는지 확인합니다.
+VS Code에서 잘못된 폴더를 열었을 수 있습니다. `C:\aidev\01_python-git-foundation` 폴더를 열었는지 확인합니다.
 
 ### Publish Branch가 보이지 않는 경우
 
@@ -447,7 +447,7 @@ GitHub에 내 PC에 없는 최신 커밋이 있을 수 있습니다.
 아래 흐름은 VS Code 화면 중심으로 진행하는 전체 GitHub 연동 실습입니다.
 
 ```text
-1. C:\aidev\02_supabase-ai-backend 폴더를 VS Code로 연다.
+1. C:\aidev\01_python-git-foundation 폴더를 VS Code로 연다.
 2. Source Control을 연다.
 3. practice-files/learning-log.md를 수정한다.
 4. Source Control에서 변경 파일을 클릭해 diff를 본다.

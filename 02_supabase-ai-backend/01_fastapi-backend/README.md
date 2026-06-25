@@ -142,7 +142,7 @@ uvicorn main:app --reload
 ### Lab 01 실행
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab01_hello-fastapi
+cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab-01_fastapi-health-check
 uvicorn solution:app --reload
 ```
 

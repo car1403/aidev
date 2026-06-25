@@ -2,7 +2,7 @@
 
 `08_multi-agent-service-mini-project` 실행 환경 설정 안내입니다.
 
-07 과정은 `07_multi-agent-service-ops`에서 다룬 Docker Compose, Health Check, Auto Healing, Observability, GitHub Actions, AWS 배포 흐름을 팀 미니 프로젝트로 구현하는 단계입니다.
+08 과정은 `07_multi-agent-service-ops`에서 다룬 Docker Compose, Health Check, Auto Healing, Observability, GitHub Actions, AWS 배포 흐름을 팀 미니 프로젝트로 구현하는 단계입니다.
 
 ## 1. 작업 위치
 
@@ -22,7 +22,7 @@ cd C:\aidev\08_multi-agent-service-mini-project
 | GitHub Actions | Compose 설정과 Docker image build 자동 검증 |
 | AWS | 선택 확장 배포 구조 설계 또는 실습 |
 
-07의 핵심 실행 방식은 Docker Compose입니다. Python `.venv`는 보조 확인용으로 사용하고, 실제 서비스 실행은 `docker compose up --build`를 중심으로 진행합니다.
+08의 핵심 실행 방식은 Docker Compose입니다. Python `.venv`는 보조 확인용으로 사용하고, 실제 서비스 실행은 `docker compose up --build`를 중심으로 진행합니다.
 
 ## 3. Python 가상환경 준비
 
@@ -41,6 +41,8 @@ python --version
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
+
+VS Code에서 `C:\aidev\08_multi-agent-service-mini-project` 폴더 자체를 열면 `.vscode/settings.json` 설정에 따라 새 터미널에서 `.venv`가 자동 활성화됩니다. `C:\aidev` 루트를 열면 이 설정이 적용되지 않을 수 있습니다.
 
 `python -m pip install --upgrade pip`는 패키지 설치 도구인 `pip`를 최신 상태로 맞추는 명령입니다. 설치 오류를 줄이기 위해 가상환경을 만든 뒤 한 번 실행하는 것을 권장합니다.
 

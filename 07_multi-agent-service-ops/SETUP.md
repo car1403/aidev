@@ -41,6 +41,8 @@ python -m pip install --upgrade pip
 pip install -r .\requirements.txt
 ```
 
+VS Code에서 `C:\aidev\07_multi-agent-service-ops` 폴더 자체를 열면 `.vscode/settings.json` 설정에 따라 새 터미널에서 `.venv`가 자동 활성화됩니다. `C:\aidev` 루트를 열면 이 설정이 적용되지 않을 수 있습니다.
+
 PowerShell에서 실행 정책 오류가 나면 아래 명령을 한 번 실행합니다.
 
 ```powershell

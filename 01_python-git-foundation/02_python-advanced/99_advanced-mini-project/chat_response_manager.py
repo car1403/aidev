@@ -12,7 +12,7 @@ from pathlib import Path
 
 
 # 저장 파일 위치입니다.
-# C:\aidev\02_supabase-ai-backend 에서 실행하면 data/chat_records.json에 저장됩니다.
+# C:\aidev\01_python-git-foundation 에서 실행하면 data/chat_records.json에 저장됩니다.
 DATA_DIR = Path("data")
 CHAT_LOG_FILE = DATA_DIR / "chat_records.json"
 

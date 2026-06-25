@@ -75,13 +75,34 @@ Windows PowerShell에서는 아래 명령으로 `.venv`를 활성화합니다.
 
 ## 5. pip 업그레이드
 
+## 5. VS Code 터미널 자동 활성화
+
+`01`, `02`, `03`, `04`, `06`, `07`, `08` 과정에는 `.vscode/settings.json`이 포함되어 있습니다. 해당 과정 폴더를 VS Code로 직접 열면 새 PowerShell 터미널을 열 때 아래 명령이 자동 실행됩니다.
+
+```powershell
+& '.\.venv\Scripts\Activate.ps1'
+```
+
+자동 활성화를 사용하려면 먼저 과정 최상위에 `.venv`를 만들어 둡니다.
+
+```powershell
+cd C:\aidev\03_supabase-ai-frontend
+python -m venv .venv
+```
+
+그다음 VS Code에서 `C:\aidev\03_supabase-ai-frontend`처럼 과정 폴더 자체를 엽니다. `C:\aidev` 전체 루트를 열면 하위 과정의 `.vscode` 설정이 자동 적용되지 않을 수 있습니다.
+
+`05_llm-agent-orchestration`은 단원별 `.venv`를 우선 권장하므로 공통 자동 활성화 설정을 두지 않습니다. 05에서는 각 단원 폴더에서 `.venv`를 만들고 활성화합니다.
+
+## 6. pip 업그레이드
+
 가상환경을 만든 뒤에는 pip를 최신 상태로 맞춥니다.
 
 ```powershell
 python -m pip install --upgrade pip
 ```
 
-## 6. 패키지 설치 방법 1: requirements.txt로 한 번에 설치
+## 7. 패키지 설치 방법 1: requirements.txt로 한 번에 설치
 
 ```powershell
 pip install -r requirements.txt
@@ -89,7 +110,7 @@ pip install -r requirements.txt
 
 `requirements.txt`는 이 과정에서 필요한 패키지 목록입니다.
 
-## 7. 패키지 설치 방법 2: 하나씩 직접 설치
+## 8. 패키지 설치 방법 2: 하나씩 직접 설치
 
 필요한 패키지를 하나씩 직접 설치할 수도 있습니다.
 
@@ -111,20 +132,20 @@ pip install fastapi uvicorn pydantic
 | `pip install fastapi` | 특정 패키지 하나만 추가로 설치하고 싶을 때 사용합니다. |
 | `pip install fastapi uvicorn` | 몇 개의 패키지를 직접 골라 설치하고 싶을 때 사용합니다. |
 
-## 8. 설치된 패키지 확인
+## 9. 설치된 패키지 확인
 
 ```powershell
 pip list
 pip show fastapi
 ```
 
-## 9. .venv 비활성화
+## 10. .venv 비활성화
 
 ```powershell
 deactivate
 ```
 
-## 10. 자주 만나는 오류
+## 11. 자주 만나는 오류
 
 ### requirements.txt를 찾을 수 없습니다
 
@@ -165,7 +186,7 @@ python -m pip --version
 python -m pip install -r requirements.txt
 ```
 
-## 11. .venv를 GitHub에 올리면 안 되는 이유
+## 12. .venv를 GitHub에 올리면 안 되는 이유
 
 `.venv`는 개인 PC의 실행 환경입니다. 용량이 크고, 다른 사람 PC에서는 그대로 쓰기 어렵습니다.
 
@@ -186,7 +207,7 @@ GitHub에 올리지 않는 것:
 __pycache__
 ```
 
-## 12. 권장 사용 흐름
+## 13. 권장 사용 흐름
 
 ```powershell
 cd C:\aidev\02_supabase-ai-backend
@@ -208,7 +229,7 @@ pip install -r requirements.txt
 
 이미 `.venv`가 있는 과정은 새로 만들지 않고 활성화만 합니다.
 
-## 13. 최종 체크리스트
+## 14. 최종 체크리스트
 
 - [ ] 과정 폴더 최상위에서 `.venv`를 만들었다.
 - [ ] `.venv`를 활성화했다.

@@ -78,7 +78,7 @@ Python 실행 환경
 PowerShell에서 아래 순서로 실행합니다.
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend
+cd C:\aidev\01_python-git-foundation
 .\.venv\Scripts\Activate.ps1
 python --version
 python -m pip install --upgrade pip
@@ -92,7 +92,7 @@ pip install -r requirements.txt
 ## 첫 예제 실행
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend
+cd C:\aidev\01_python-git-foundation
 .\.venv\Scripts\Activate.ps1
 python .\01_python-basic\01_python-start\01_hello_python.py
 ```

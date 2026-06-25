@@ -2,7 +2,7 @@
 
 이 문서는 Supabase key와 `.env` 파일을 안전하게 다루는 방법을 설명합니다.
 
-03 과정에서는 Supabase, Gemini API, 선택적으로 OpenAI API와 Upstash Redis를 사용합니다. 이 값들은 코드에 직접 쓰지 않고 `.env` 파일에 보관합니다.
+04 과정에서는 Supabase, Gemini API, 선택적으로 OpenAI API와 Upstash Redis를 사용합니다. 이 값들은 코드에 직접 쓰지 않고 `.env` 파일에 보관합니다.
 
 ## 1. anon key
 
@@ -45,7 +45,7 @@ FastAPI backend
 
 실제 key는 `.env` 파일에 넣습니다.
 
-03 과정의 `.env` 위치는 다음 하나입니다.
+04 과정의 `.env` 위치는 다음 하나입니다.
 
 ```text
 C:\aidev\04_supabase-ai-mini-project\.env

@@ -10,7 +10,7 @@ Redis 캐시/세션 -> Upstash
 Streamlit 프론트엔드 -> Streamlit Community Cloud
 ```
 
-이 문서는 `13_supabase-ai-frontend`의 마지막 통합 실습에서 사용합니다. Docker, Docker Compose, AWS, GitHub Actions 기반 운영 자동화는 `17_multi-agent-service-ops`에서 더 깊게 다룹니다.
+이 문서는 `03_supabase-ai-frontend`의 마지막 통합 실습에서 사용합니다. Docker, Docker Compose, AWS, GitHub Actions 기반 운영 자동화는 `07_multi-agent-service-ops`에서 더 깊게 다룹니다.
 
 ## 1. 먼저 알아둘 점
 
@@ -44,18 +44,18 @@ Supabase 계정
 Python 설치
 VS Code 설치
 Git 설치
-12_supabase-ai-backend 실행 확인
-13_supabase-ai-frontend 실행 확인
+02_supabase-ai-backend 실행 확인
+03_supabase-ai-frontend 실행 확인
 Supabase 프로젝트와 테이블 준비
 ```
 
 확인할 파일:
 
 ```text
-C:\aidev\12_supabase-ai-backend\requirements.txt
-C:\aidev\12_supabase-ai-backend\.env.example
-C:\aidev\13_supabase-ai-frontend\requirements.txt
-C:\aidev\13_supabase-ai-frontend\.env.example
+C:\aidev\02_supabase-ai-backend\requirements.txt
+C:\aidev\02_supabase-ai-backend\.env.example
+C:\aidev\03_supabase-ai-frontend\requirements.txt
+C:\aidev\03_supabase-ai-frontend\.env.example
 ```
 
 주의:

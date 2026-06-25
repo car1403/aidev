@@ -2,7 +2,7 @@
 
 이 챕터에서는 Supabase 프로젝트를 만들고, Python/FastAPI 코드에서 사용할 환경 변수를 준비합니다.
 
-`12_supabase-ai-backend` 과정은 Supabase 중심으로 진행합니다. Docker로 PostgreSQL이나 Redis를 직접 실행하지 않습니다. 데이터베이스는 Supabase managed PostgreSQL을 사용하고, Redis가 필요한 실습은 Upstash Redis를 사용합니다. Docker, Docker Compose, 로컬 PostgreSQL/Redis 운영은 `C:\aidev\17_multi-agent-service-ops`에서 본격적으로 다룹니다.
+`02_supabase-ai-backend` 과정은 Supabase 중심으로 진행합니다. Docker로 PostgreSQL이나 Redis를 직접 실행하지 않습니다. 데이터베이스는 Supabase managed PostgreSQL을 사용하고, Redis가 필요한 실습은 Upstash Redis를 사용합니다. Docker, Docker Compose, 로컬 PostgreSQL/Redis 운영은 `C:\aidev\07_multi-agent-service-ops`에서 본격적으로 다룹니다.
 
 ## Supabase란 무엇인가요?
 
@@ -88,7 +88,7 @@ service role key:
 최상위 과정 폴더로 이동합니다.
 
 ```powershell
-cd C:\aidev\12_supabase-ai-backend
+cd C:\aidev\02_supabase-ai-backend
 ```
 
 `.env.example`을 `.env`로 복사합니다.
@@ -117,7 +117,7 @@ UPSTASH_REDIS_REST_TOKEN=your-upstash-redis-rest-token
 가상환경을 활성화합니다.
 
 ```powershell
-cd C:\aidev\12_supabase-ai-backend
+cd C:\aidev\02_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
 ```
 
@@ -141,12 +141,12 @@ key 전체 값은 출력하지 않습니다. 수업 중 화면 공유나 녹화 
 
 ### `.env` 파일을 찾지 못하는 경우
 
-스크립트는 `C:\aidev\12_supabase-ai-backend\.env`를 기준으로 값을 읽습니다.
+스크립트는 `C:\aidev\02_supabase-ai-backend\.env`를 기준으로 값을 읽습니다.
 
 확인 명령:
 
 ```powershell
-cd C:\aidev\12_supabase-ai-backend
+cd C:\aidev\02_supabase-ai-backend
 Get-Content .env
 ```
 

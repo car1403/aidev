@@ -1,6 +1,6 @@
 # 05. GitHub Actions And AWS Submission Guide
 
-07에서 GitHub Actions와 AWS 실제 배포는 필수가 아닙니다. 다만 운영형 서비스 프로젝트이므로, 자동 검증과 배포 확장 가능성을 문서에 정리하는 것을 권장합니다.
+08에서 GitHub Actions와 AWS 실제 배포는 필수가 아닙니다. 다만 운영형 서비스 프로젝트이므로, 자동 검증과 배포 확장 가능성을 문서에 정리하는 것을 권장합니다.
 
 ## GitHub Actions 권장 검증
 

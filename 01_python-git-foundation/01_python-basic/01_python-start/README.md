@@ -15,7 +15,7 @@ input
 ## 실행
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend
+cd C:\aidev\01_python-git-foundation
 .\.venv\Scripts\Activate.ps1
 python .\01_python-basic\01_python-start\01_hello_python.py
 python .\01_python-basic\01_python-start\02_input_output.py

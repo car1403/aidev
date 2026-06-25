@@ -46,6 +46,8 @@ C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv .venv
 
 PowerShell 줄 앞에 `(.venv)`가 보이면 활성화된 상태입니다.
 
+VS Code에서 `C:\aidev\03_supabase-ai-frontend` 폴더 자체를 열면 `.vscode/settings.json` 설정에 따라 새 터미널에서 `.venv`가 자동 활성화됩니다. `C:\aidev` 루트를 열면 이 설정이 적용되지 않을 수 있습니다.
+
 확인 명령:
 
 ```powershell

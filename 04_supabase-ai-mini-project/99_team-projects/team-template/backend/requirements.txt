@@ -1,6 +1,6 @@
 ﻿# team-template backend 패키지 목록
 #
-# 로컬 수업 실습에서는 03 과정 최상위 requirements.txt로 한 번에 설치합니다.
+# 로컬 수업 실습에서는 04 과정 최상위 requirements.txt로 한 번에 설치합니다.
 #
 #   C:\aidev\04_supabase-ai-mini-project\requirements.txt
 #
@@ -32,5 +32,5 @@ pydantic==2.10.4
 
 # Gemini API를 Python SDK 방식으로 호출하기 위한 Google Gen AI SDK입니다.
 # 팀 프로젝트에서 사용자 질문에 대한 AI 응답 생성 기능을 백엔드에 추가할 때 사용합니다.
-# 03 과정의 기본 AI API는 Gemini이며, 모델 예시는 gemini-2.5-flash-lite입니다.
+# 04 과정의 기본 AI API는 Gemini이며, 모델 예시는 gemini-2.5-flash-lite입니다.
 google-genai==1.2.0

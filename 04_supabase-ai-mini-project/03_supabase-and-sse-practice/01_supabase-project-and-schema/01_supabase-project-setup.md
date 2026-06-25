@@ -28,7 +28,7 @@ service_role key
 
 ## 3. .env 파일에 정리
 
-03 과정에서는 아래 파일을 사용합니다.
+04 과정에서는 아래 파일을 사용합니다.
 
 ```text
 C:\aidev\04_supabase-ai-mini-project\.env

@@ -6,13 +6,13 @@
 
 ```text
 사용하는 가상환경 위치:
-C:\aidev\02_supabase-ai-backend\.venv
+C:\aidev\01_python-git-foundation\.venv
 ```
 
 ## 1. 상위 과정 폴더로 이동
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend
+cd C:\aidev\01_python-git-foundation
 ```
 
 ## 2. 기존 가상환경 활성화

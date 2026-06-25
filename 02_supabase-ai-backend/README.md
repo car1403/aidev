@@ -129,7 +129,7 @@ cd C:\aidev\02_supabase-ai-backend
 Python/Git 기초 예제는 [01_python-git-foundation](../01_python-git-foundation/README.md)에서 진행합니다. 이 과정에서는 FastAPI 예제부터 실행합니다.
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab01_hello-fastapi
+cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab-01_fastapi-health-check
 uvicorn solution:app --reload
 ```
 

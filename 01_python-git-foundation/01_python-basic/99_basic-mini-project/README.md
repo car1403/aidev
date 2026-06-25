@@ -17,7 +17,7 @@ Python 기초 문법을 사용해 **파일 저장형 학습 기록 관리 프로
 ## 실행
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend
+cd C:\aidev\01_python-git-foundation
 .\.venv\Scripts\Activate.ps1
 python .\01_python-basic\99_basic-mini-project\learning_record_app.py
 ```

@@ -13,7 +13,7 @@ load_dotenv(PROJECT_ENV)
 
 # APP_TITLE은 선택 환경변수입니다.
 # .env에 값이 없으면 기본 제목을 사용합니다.
-APP_TITLE = os.getenv("APP_TITLE", "03 Supabase Mini Project")
+APP_TITLE = os.getenv("APP_TITLE", "04 Supabase Mini Project")
 
 st.set_page_config(page_title=APP_TITLE, layout="wide")
 st.title(APP_TITLE)

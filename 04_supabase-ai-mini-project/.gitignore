@@ -13,4 +13,6 @@ __pycache__/
 *.log
 
 # VS Code 개인 설정
-.vscode/
+.vscode/*
+!.vscode/
+!.vscode/settings.json

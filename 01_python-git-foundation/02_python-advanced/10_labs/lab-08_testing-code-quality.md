@@ -69,7 +69,7 @@ answer 값은 빈 문자열이면 안 됩니다.
 ## 실행 방법
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend
+cd C:\aidev\01_python-git-foundation
 python -m pytest .\02_python-advanced\08_testing-code-quality
 ```
 

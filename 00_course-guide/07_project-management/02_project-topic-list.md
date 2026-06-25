@@ -1,8 +1,8 @@
 # 02. Project Topic List
 
-이 문서는 01~07 과정에서 사용할 수 있는 프로젝트 주제 예시입니다.
+이 문서는 01~08 과정에서 사용할 수 있는 프로젝트 주제 예시입니다.
 
-## 03 Supabase Mini Project
+## 04 Supabase AI Mini Project
 
 ```text
 학습 기록 저장과 AI 피드백 서비스

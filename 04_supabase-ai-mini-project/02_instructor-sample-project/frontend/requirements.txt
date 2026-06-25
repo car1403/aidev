@@ -1,6 +1,6 @@
 ﻿# 02_instructor-sample-project frontend 참고 패키지 목록
 #
-# 기본 설치는 03 과정 최상위 requirements.txt로 진행합니다.
+# 기본 설치는 04 과정 최상위 requirements.txt로 진행합니다.
 #
 #   C:\aidev\04_supabase-ai-mini-project\requirements.txt
 #

@@ -40,7 +40,7 @@ OPENAI_MODEL=gpt-4.1-mini
 API_BASE_URL=http://127.0.0.1:8000
 ```
 
-03 과정의 기본 AI API는 Gemini입니다. OpenAI key는 선택/비교 실습을 진행할 때만 필요합니다.
+04 과정의 기본 AI API는 Gemini입니다. OpenAI key는 선택/비교 실습을 진행할 때만 필요합니다.
 
 ## 실행
 

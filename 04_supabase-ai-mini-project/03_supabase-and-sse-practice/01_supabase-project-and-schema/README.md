@@ -2,7 +2,7 @@
 
 이 단계에서는 팀 프로젝트에서 사용할 Supabase 프로젝트와 기본 테이블 구조를 준비합니다.
 
-03 과정의 앞부분인 `01_local-dev-basic`, `02_instructor-sample-project`에서는 Supabase 연결을 쉽게 익히기 위해 `learning_logs` 샘플 테이블을 사용했습니다. 이 단계부터는 팀 프로젝트 기준인 `profiles`, `conversations`, `messages`, `service_logs`, `feedbacks` 테이블로 넘어갑니다.
+04 과정의 앞부분인 `01_local-dev-basic`, `02_instructor-sample-project`에서는 Supabase 연결을 쉽게 익히기 위해 `learning_logs` 샘플 테이블을 사용했습니다. 이 단계부터는 팀 프로젝트 기준인 `profiles`, `conversations`, `messages`, `service_logs`, `feedbacks` 테이블로 넘어갑니다.
 
 ## 학습 목표
 

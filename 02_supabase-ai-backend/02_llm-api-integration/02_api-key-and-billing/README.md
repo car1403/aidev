@@ -1,4 +1,4 @@
-# 12_api-key-and-billing
+# 02_api-key-and-billing
 
 이 단원에서는 LLM API를 사용하기 전에 필요한 **API key**, **환경변수**, **비용/결제 주의사항**, **보안 관리 기준**을 학습합니다.
 
@@ -48,17 +48,17 @@ OpenAI
 
 ## 실행 준비
 
-가상환경은 `12_supabase-ai-backend` 폴더 아래의 `.venv`를 사용합니다.
+가상환경은 `02_supabase-ai-backend` 폴더 아래의 `.venv`를 사용합니다.
 
 ```powershell
-cd C:\aidev\12_supabase-ai-backend
+cd C:\aidev\02_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
 ```
 
 ## 통합 예제 실행
 
 ```powershell
-python .\15_llm-api-integration\12_api-key-and-billing\main.py
+python .\02_llm-api-integration\02_api-key-and-billing\main.py
 ```
 
 이 예제는 실제 Gemini 또는 OpenAI API를 호출하지 않습니다. `.env`에 key가 있는지 여부만 확인하므로 비용이 발생하지 않습니다.
@@ -101,7 +101,7 @@ Gemini API 가격/제한 확인:
 2. API key 생성 메뉴를 찾습니다.
 3. 새 API key를 생성합니다.
 4. 복사한 key를 코드에 직접 붙여 넣지 않습니다.
-5. C:\aidev\12_supabase-ai-backend\.env 파일에 저장합니다.
+5. C:\aidev\02_supabase-ai-backend\.env 파일에 저장합니다.
 ```
 
 ## 3. OpenAI API key 준비 흐름
@@ -138,7 +138,7 @@ OpenAI API 결제:
 
 ## 4. .env 파일 작성
 
-`C:\aidev\12_supabase-ai-backend\.env` 파일에 아래 형식으로 작성합니다.
+`C:\aidev\02_supabase-ai-backend\.env` 파일에 아래 형식으로 작성합니다.
 
 ```env
 GEMINI_API_KEY=your-gemini-api-key
@@ -164,7 +164,7 @@ OPENAI_MODEL=gpt-4.1-mini
 
 `.env` 파일은 GitHub에 올라가면 안 됩니다.
 
-`C:\aidev\12_supabase-ai-backend\.gitignore` 또는 상위 `.gitignore`에 아래 항목이 있는지 확인합니다.
+`C:\aidev\02_supabase-ai-backend\.gitignore` 또는 상위 `.gitignore`에 아래 항목이 있는지 확인합니다.
 
 ```gitignore
 .env
@@ -177,7 +177,7 @@ __pycache__/
 ## 6. 환경변수 확인 예제
 
 ```powershell
-python .\15_llm-api-integration\12_api-key-and-billing\11_check_llm_env.py
+python .\02_llm-api-integration\02_api-key-and-billing\01_check_llm_env.py
 ```
 
 출력 예시:
@@ -194,7 +194,7 @@ OPENAI_MODEL: gpt-4.1-mini
 ## 7. 안전한 설정 로더 예제
 
 ```powershell
-python .\15_llm-api-integration\12_api-key-and-billing\12_safe_config_loader.py
+python .\02_llm-api-integration\02_api-key-and-billing\02_safe_config_loader.py
 ```
 
 이 예제는 provider별 설정 상태를 객체로 정리합니다.

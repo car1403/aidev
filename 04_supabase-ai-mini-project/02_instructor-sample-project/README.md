@@ -36,7 +36,7 @@ C:\aidev\04_supabase-ai-mini-project\.venv
 C:\aidev\04_supabase-ai-mini-project\.env
 ```
 
-즉, `02_instructor-sample-project\.env`를 따로 만들지 않습니다. 03 과정 전체의 최상위 `.env`를 기준으로 실행합니다.
+즉, `02_instructor-sample-project\.env`를 따로 만들지 않습니다. 04 과정 전체의 최상위 `.env`를 기준으로 실행합니다.
 
 ## 구조
 

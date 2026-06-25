@@ -147,7 +147,7 @@ pytest 테스트를 최소 3개 작성합니다.
 README에는 아래 내용을 포함합니다.
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend
+cd C:\aidev\01_python-git-foundation
 .\.venv\Scripts\Activate.ps1
 python .\02_python-advanced\20_assignments\advanced_chat_manager\main.py
 python -m pytest .\02_python-advanced\20_assignments\advanced_chat_manager

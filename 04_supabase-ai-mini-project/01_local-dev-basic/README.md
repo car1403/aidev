@@ -43,7 +43,7 @@ C:\aidev\04_supabase-ai-mini-project\.env
 - Streamlit, FastAPI, Supabase의 연결 구조를 설명할 수 있다.
 - 백엔드와 프론트엔드를 각각 다른 PowerShell에서 실행할 수 있다.
 - 프론트엔드에는 Supabase `service_role` key나 LLM API key를 넣지 않는 이유를 설명할 수 있다.
-- 03 과정에서 Gemini가 기본 LLM이고 OpenAI는 선택/비교 실습이라는 기준을 설명할 수 있다.
+- 04 과정에서 Gemini가 기본 LLM이고 OpenAI는 선택/비교 실습이라는 기준을 설명할 수 있다.
 
 ## 학습 순서
 

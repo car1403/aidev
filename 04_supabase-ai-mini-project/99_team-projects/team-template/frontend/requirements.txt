@@ -1,6 +1,6 @@
 ﻿# team-template frontend 패키지 목록
 #
-# 로컬 수업 실습에서는 03 과정 최상위 requirements.txt로 한 번에 설치합니다.
+# 로컬 수업 실습에서는 04 과정 최상위 requirements.txt로 한 번에 설치합니다.
 #
 #   C:\aidev\04_supabase-ai-mini-project\requirements.txt
 #

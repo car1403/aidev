@@ -110,7 +110,7 @@ git log --oneline
 ## VS Code에서 GitHub 연동 흐름
 
 ```text
-1. VS Code에서 C:\aidev\02_supabase-ai-backend 폴더를 엽니다.
+1. VS Code에서 C:\aidev\01_python-git-foundation 폴더를 엽니다.
 2. 왼쪽 Source Control 아이콘을 클릭합니다.
 3. Git 저장소가 없으면 Initialize Repository를 누릅니다.
 4. GitHub 계정 로그인이 필요하면 Sign in to GitHub를 누릅니다.

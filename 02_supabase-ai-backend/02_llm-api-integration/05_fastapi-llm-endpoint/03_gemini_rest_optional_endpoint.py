@@ -1,6 +1,6 @@
 ﻿r"""FastAPI + Gemini REST optional endpoint 예제입니다.
 
-01~03 과정에서는 Gemini API를 기본 LLM 실습 모델로 사용합니다.
+02~04 과정에서는 Gemini API를 기본 LLM 실습 모델로 사용합니다.
 GEMINI_API_KEY가 없으면 실제 API를 호출하지 않고 안내 메시지를 반환합니다.
 GEMINI_API_KEY가 있으면 실제 호출을 수행하므로 무료 범위와 호출 제한을 먼저 확인합니다.
 

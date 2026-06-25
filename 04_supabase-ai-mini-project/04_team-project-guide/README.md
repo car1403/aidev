@@ -4,7 +4,7 @@
 
 `01_local-dev-basic`에서 로컬 실행 감각을 익히고, `02_instructor-sample-project`에서 완성된 샘플을 확인한 뒤, `03_supabase-and-sse-practice`에서 핵심 기능을 단계별로 연습합니다. 이 단원에서는 팀 프로젝트의 주제, 역할, 요구사항, 일정, 발표, 제출 기준을 정리합니다.
 
-## 03 과정 안에서의 위치
+## 04 과정 안에서의 위치
 
 ```text
 01_local-dev-basic
@@ -55,7 +55,7 @@ Streamlit 화면에서 대시보드로 시각화합니다.
 3. 사용자 피드백 데이터를 반영한 AI 답변 품질 고도화 및 서비스 최적화
 ```
 
-03 과정에서는 Supabase 클라우드 프로젝트와 로컬 FastAPI/Streamlit 실행을 기준으로 합니다.
+04 과정에서는 Supabase 클라우드 프로젝트와 로컬 FastAPI/Streamlit 실행을 기준으로 합니다.
 
 ```text
 가상환경:
@@ -65,7 +65,7 @@ C:\aidev\04_supabase-ai-mini-project\.venv
 C:\aidev\04_supabase-ai-mini-project\.env
 ```
 
-Docker, Docker Compose, AWS 배포, GitHub Actions 자동화는 `07_multi-agent-service-ops`에서 학습합니다. 03 과정의 배포는 선택 시연이며, 기본 제출 기준은 로컬에서 정상 동작하는 것입니다.
+Docker, Docker Compose, AWS 배포, GitHub Actions 자동화는 `07_multi-agent-service-ops`에서 학습합니다. 04 과정의 배포는 선택 시연이며, 기본 제출 기준은 로컬에서 정상 동작하는 것입니다.
 
 ## 필수 산출물
 

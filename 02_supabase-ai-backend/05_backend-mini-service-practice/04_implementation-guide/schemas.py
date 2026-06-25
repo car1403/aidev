@@ -36,7 +36,7 @@ class QuestionCreateRequest(BaseModel):
     )
 
     # provider는 어떤 LLM 서비스 계열을 기준으로 설계했는지 표시합니다.
-    # 01~03 과정에서는 Gemini를 기본으로 사용하고, OpenAI는 선택 비교용으로 유지합니다.
+    # 02~04 과정에서는 Gemini를 기본으로 사용하고, OpenAI는 선택 비교용으로 유지합니다.
     provider: str = Field(
         default="gemini",
         examples=["gemini"],

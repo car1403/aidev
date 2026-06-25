@@ -7,7 +7,7 @@ import streamlit as st  # Python 코드로 웹 화면을 만들기 위해 Stream
 from dotenv import load_dotenv  # .env 파일에 저장한 환경변수를 Python 실행 환경으로 불러오기 위해 가져옵니다.
 
 PROJECT_ENV = Path(__file__).resolve().parents[3] / ".env"  # 04_supabase-ai-mini-project 최상위 .env 파일 경로입니다.
-load_dotenv(PROJECT_ENV)  # 실행 위치가 frontend 폴더여도 03 과정의 .env를 읽도록 명시합니다.
+load_dotenv(PROJECT_ENV)  # 실행 위치가 frontend 폴더여도 04 과정의 .env를 읽도록 명시합니다.
 
 API_BASE_URL = os.getenv("API_BASE_URL", "http://127.0.0.1:8000")  # 프론트엔드가 호출할 백엔드 서버의 기본 주소를 한 곳에서 관리합니다.
 

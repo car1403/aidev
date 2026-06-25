@@ -9,7 +9,7 @@
 모든 실습은 `02_supabase-ai-backend` 최상위 폴더에서 실행합니다.
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend
+cd C:\aidev\01_python-git-foundation
 .\.venv\Scripts\Activate.ps1
 ```
 
