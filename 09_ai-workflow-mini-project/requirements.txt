@@ -1,7 +1,0 @@
-openai
-python-dotenv
-httpx
-pydantic
-streamlit
-fastapi
-uvicorn
