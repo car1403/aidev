@@ -1,15 +1,18 @@
 # 02 Role and Schedule
 
-## 팀 역할 예시
+이 문서는 팀 구성과 진행 일정을 정리하는 가이드입니다.
 
-- Agent 아키텍처 설계
-- StateGraph Node/Edge 설계
-- Tool 함수 구현
-- Memory 또는 Mock data 설계
-- Streamlit UI 구현
-- 시험 시나리오 작성
-- 에이전트 시험 결과 보고서 작성
-- 발표 자료 정리
+## 팀 구성
+
+권장 팀 구성은 4~5명입니다. 인원이 다르면 아래 역할을 겸해도 됩니다.
+
+| 역할 | 주요 작업 |
+| --- | --- |
+| Agent Architect | 전체 Agent 구조, StateGraph Node/Edge 설계 |
+| Tool Developer | Tool 함수와 Mock data 구현 |
+| UI Developer | Streamlit 화면 구현 |
+| Test Manager | 테스트 시나리오, 오류 유형, 결과 보고서 작성 |
+| Documentation Lead | README, 설계서, 발표 자료 정리 |
 
 ## 권장 일정
 
@@ -21,7 +24,7 @@
 - Node와 Edge 초안 작성
 - Tool 목록 정의
 - 분기 조건과 fallback 조건 정의
-- 에이전트 아키텍처 설계서 초안 작성
+- Agent Architecture 설계서 초안 작성
 
 체크포인트:
 
@@ -32,7 +35,7 @@ Tool 2개 이상 정의
 분기 조건 1개 이상 정의
 ```
 
-### Day 2: 구현과 기본 시험
+### Day 2: 구현과 기본 테스트
 
 - Tool 함수 구현
 - StateGraph 연결
@@ -54,16 +57,16 @@ Streamlit 실행 성공
 
 - 판단 오류 유형 정리
 - 재시도와 fallback 결과 기록
-- 자기 성찰 적용 전후 비교
-- 에이전트 시험 결과 보고서 작성
+- Self-Reflection 적용 전후 비교
+- Agent Test Report 작성
 - 발표 자료 작성
 - 최종 시연 리허설
 
 체크포인트:
 
 ```text
-에이전트 아키텍처 설계서 완성
-에이전트 시험 결과 보고서 완성
+Agent Architecture 설계서 완성
+Agent Test Report 완성
 성능 비교 수치 2개 이상 제시
 3분 시연 가능
 ```

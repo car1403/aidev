@@ -1,7 +1,23 @@
-﻿openai
-python-dotenv
-langgraph
-langchain-openai
-pydantic
-streamlit
+# OpenAI API 호출에 사용합니다.
+# 이 프로젝트에서는 실제 LLM 응답을 붙일 때 gpt-4.1-mini 예시를 기준으로 사용합니다.
+openai
 
+# .env 파일에 저장한 OPENAI_API_KEY, OPENAI_MODEL 같은 환경 변수를 읽기 위해 사용합니다.
+# API Key를 코드에 직접 쓰지 않기 위한 필수 패키지입니다.
+python-dotenv
+
+# Agent StateGraph를 만들기 위해 사용합니다.
+# Start, Decision, Tools, Review, End 같은 노드 흐름을 코드로 연결할 때 필요합니다.
+langgraph
+
+# LangChain 방식으로 OpenAI 모델을 연결할 때 사용합니다.
+# 05 프로젝트에서는 필수는 아니지만, 04에서 배운 LangChain/LangGraph 연결 흐름을 확장할 수 있게 남겨둡니다.
+langchain-openai
+
+# Agent State, Tool 입력값, 응답 데이터 구조를 명확히 정의할 때 사용합니다.
+# 잘못된 타입이나 누락된 필드를 초기에 확인하는 데 도움이 됩니다.
+pydantic
+
+# 간단한 웹 화면을 만들기 위해 사용합니다.
+# 최종 프로젝트에서 사용자 입력, 실행 버튼, 에이전트 결과 표시 화면을 구성합니다.
+streamlit

@@ -1,4 +1,4 @@
-﻿# SETUP
+# SETUP
 
 `04_llm-agent-orchestration` 과정의 환경 설정 안내입니다.
 
@@ -11,11 +11,13 @@
 - Python 3.11 이상
 - Docker Desktop
 - VS Code 또는 Cursor
-- OpenAI API Key
 
 선택 프로그램/서비스:
 
+- OpenAI API Key
 - LangSmith API Key
+
+OpenAI API Key는 OpenAI 호출 예제를 실행할 때만 필요합니다. 키가 아직 없으면 Docker Desktop, Ollama, Llama, pgvector 실습부터 먼저 진행해도 됩니다.
 
 ## 2. Python 확인
 
@@ -34,7 +36,7 @@ Python 3.11 이상
 
 ## 3. Docker Desktop 확인
 
-04 과정은 Docker를 처음 사용하는 참여자도 따라올 수 있도록 Docker Desktop 기준으로 진행합니다.
+04 과정은 Docker를 처음 사용하는 경우에도 따라올 수 있도록 Docker Desktop 기준으로 진행합니다.
 
 Docker Desktop은 Windows에서 Docker 컨테이너를 쉽게 실행할 수 있게 해주는 프로그램입니다. 04에서는 Docker를 깊게 운영 도구로 배우기보다, 로컬 Llama와 pgvector PostgreSQL을 실행하기 위한 실습 도구로 사용합니다.
 
@@ -118,6 +120,7 @@ docker rm 컨테이너ID
 cd C:\aidev\04_llm-agent-orchestration\01_llm-api-and-prompt-basics
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
 pip install openai python-dotenv httpx
 ```
 
@@ -127,6 +130,7 @@ pip install openai python-dotenv httpx
 cd C:\aidev\04_llm-agent-orchestration
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
@@ -136,10 +140,12 @@ pip install -r requirements.txt
 
 각 단원에는 `.env.example` 파일이 있습니다.
 
+OpenAI API Key는 OpenAI 모델 호출 실습에서 사용합니다. 로컬 Llama 실습만 먼저 진행한다면 이 단계는 건너뛰어도 됩니다.
+
 처음 실행할 때는 다음처럼 복사합니다.
 
 ```powershell
-Copy-Item.env.example.env
+Copy-Item .env.example .env
 ```
 
 `.env` 파일에 실제 API Key를 입력합니다.
@@ -188,7 +194,7 @@ Python 연결 확인:
 ```powershell
 cd C:\aidev\04_llm-agent-orchestration\01_llm-api-and-prompt-basics
 .\.venv\Scripts\Activate.ps1
-python.\02_ch2_ollama-docker-llama\01_ollama-health-check.py
+python .\02_ollama-docker-llama\01_ollama-health-check.py
 ```
 
 ## 7. pgvector PostgreSQL 실행
@@ -236,7 +242,19 @@ LANGSMITH_PROJECT=aidev-langgraph-practice
 
 처음에는 `LANGSMITH_TRACING=false`로 두고 실습해도 됩니다.
 
-## 9. 단원별 설치 요약
+## 9. LangChain 사용 기준
+
+LangChain은 모든 예제를 반드시 LangChain으로 작성하기 위한 도구가 아닙니다.
+
+이 과정에서는 다음 목적일 때 LangChain을 사용합니다.
+
+- 프롬프트 템플릿과 출력 파서를 일관된 구조로 관리할 때
+- 여러 처리 단계를 체인처럼 연결하는 감각을 익힐 때
+- RAG 문서 분할, Runnable, LangGraph와 연결되는 흐름을 이해할 때
+
+반대로 단순한 LLM 호출, 아주 작은 Tool 함수, 기본 API 호출은 Python 코드만으로 먼저 이해합니다. 이렇게 해야 LLM API 자체의 원리와 프레임워크가 해주는 일을 분리해서 볼 수 있습니다.
+
+## 10. 단원별 설치 요약
 
 ### 01_llm-api-and-prompt-basics
 
@@ -280,7 +298,7 @@ pip install langgraph langchain langchain-openai langchain-core openai python-do
 pip install -r requirements.txt
 ```
 
-## 10. 자주 사용하는 포트
+## 11. 자주 사용하는 포트
 
 | 포트 | 용도 |
 | --- | --- |
@@ -289,7 +307,7 @@ pip install -r requirements.txt
 | 8601 | 99 샘플 Streamlit 앱 |
 | 8602 | 팀 템플릿 Streamlit 앱 |
 
-## 11. 컨테이너 관리
+## 12. 컨테이너 관리
 
 실행 중인 컨테이너 확인:
 
@@ -327,7 +345,7 @@ docker volume rm rag-pgvector-data
 
 주의: `rag-pgvector-data`를 삭제하면 RAG 실습에서 저장한 벡터와 대화 메모리 데이터가 사라집니다.
 
-## 12. 첫 실행 추천 순서
+## 13. 첫 실행 추천 순서
 
 완전 초보자는 아래 순서로 실행하는 것이 좋습니다.
 
@@ -338,7 +356,7 @@ docker volume rm rag-pgvector-data
 4. docker --version 확인
 5. docker ps 확인
 6. docker run hello-world로 기본 컨테이너 실행 확인
-7. 01 단원.venv 생성
+7. 01 단원 .venv 생성
 8. Ollama 컨테이너 실행
 9. llama3.2 모델 다운로드
 10. Python에서 Ollama health check 실행
@@ -347,7 +365,7 @@ docker volume rm rag-pgvector-data
 13. 02~06 단원 순서대로 진행
 ```
 
-## 13. Docker Compose 안내
+## 14. Docker Compose 안내
 
 04 과정에서는 Docker Compose를 사용하지 않습니다.
 
@@ -361,7 +379,7 @@ pgvector 한 개 실행 -> docker run
 여러 서비스 운영 -> 06 과정에서 Docker Compose
 ```
 
-## 14. 오류가 날 때 먼저 볼 것
+## 15. 오류가 날 때 먼저 볼 것
 
 1. 현재 폴더가 맞는가?
 2. 가상환경이 활성화되어 있는가?

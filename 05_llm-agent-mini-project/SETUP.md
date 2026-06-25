@@ -88,6 +88,7 @@ python -m venv .venv
 ## 4. 패키지 설치
 
 ```powershell
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
@@ -98,7 +99,7 @@ pip install -r requirements.txt
 ## 5. 환경변수 만들기
 
 ```powershell
-Copy-Item.env.example.env
+Copy-Item .env.example .env
 ```
 
 `.env` 파일에 실제 값을 입력합니다.
@@ -201,7 +202,7 @@ python -m app.graph
 Streamlit UI 실행:
 
 ```powershell
-streamlit run.\frontend\streamlit_app.py --server.port 8701
+streamlit run .\frontend\streamlit_app.py --server.port 8701
 ```
 
 확인:
