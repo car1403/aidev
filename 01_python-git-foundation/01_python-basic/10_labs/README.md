@@ -6,7 +6,7 @@
 
 ## 실행 기준
 
-모든 실습은 `02_supabase-ai-backend` 최상위 폴더에서 실행합니다.
+모든 실습은 `01_python-git-foundation` 최상위 폴더에서 실행합니다.
 
 ```powershell
 cd C:\aidev\01_python-git-foundation

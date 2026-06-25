@@ -17,7 +17,7 @@ docs/agent-test-report.md
 
 필수 산출물은 `Agent Architecture 설계서`와 `Agent Test Report` 2가지입니다. 실행에 필요한 README, `.env.example`, backend/frontend 파일은 프로젝트 확인을 위해 함께 유지합니다.
 
-아래 문서는 선택 보조 산출물입니다. 작성하지 않아도 05 과정의 필수 제출 기준에는 영향을 주지 않습니다.
+아래 문서는 선택 보조 산출물입니다. 작성하지 않아도 06 과정의 필수 제출 기준에는 영향을 주지 않습니다.
 
 ```text
 docs/project-plan.md

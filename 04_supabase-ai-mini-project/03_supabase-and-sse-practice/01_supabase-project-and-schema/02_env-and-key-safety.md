@@ -29,7 +29,7 @@ GEMINI_API_KEY=replace-with-your-gemini-api-key
 ## 나쁜 예시
 
 ```env
-SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6...
+SUPABASE_SERVICE_ROLE_KEY=실제-service-role-key-값
 ```
 
 실제 key가 들어간 `.env.example`을 GitHub에 올리면 key가 노출됩니다.

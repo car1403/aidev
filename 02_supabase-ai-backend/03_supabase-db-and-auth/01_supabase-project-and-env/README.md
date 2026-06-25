@@ -124,7 +124,7 @@ cd C:\aidev\02_supabase-ai-backend
 환경 변수 점검 스크립트를 실행합니다.
 
 ```powershell
-python .\16_supabase-db-and-auth\11_supabase-project-and-env\11_check_supabase_env.py
+python .\03_supabase-db-and-auth\01_supabase-project-and-env\01_check_supabase_env.py
 ```
 
 정상적으로 설정되어 있으면 다음을 확인할 수 있습니다.
@@ -147,7 +147,7 @@ key 전체 값은 출력하지 않습니다. 수업 중 화면 공유나 녹화 
 
 ```powershell
 cd C:\aidev\02_supabase-ai-backend
-Get-Content .env
+dir .env
 ```
 
 ### 값이 `your-...`로 출력되는 경우

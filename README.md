@@ -56,6 +56,12 @@
 - Markdown 문서 보기: [06_markdown-preview-guide.md](./00_course-guide/03_student-guides/01_getting-started/06_markdown-preview-guide.md)
 - Codex 설치와 로그인: [08_codex-install-and-login-guide.md](./00_course-guide/03_student-guides/01_getting-started/08_codex-install-and-login-guide.md)
 
+## 문제 해결과 배포 전 점검
+
+수업 중 막히면 먼저 [환경과 오류 해결 허브](./00_course-guide/08_environment-and-troubleshooting/README.md)를 확인합니다. Supabase/RLS, API key와 비용, Streamlit 백엔드 연결, LangGraph, Docker Compose, AWS 선택 실습 문제를 바로 찾아갈 수 있습니다.
+
+자료를 압축하거나 다른 PC로 복사하기 전에는 [배포 전 패키징 체크리스트](./00_course-guide/05_checklists/06_distribution-packaging-checklist.md)를 확인합니다. `.env`, `.venv`, `__pycache__`, `.pytest_cache`, `site-packages`는 배포 자료에 포함하지 않습니다.
+
 ## 주요 기준
 
 - `01`은 Python/Git 기초를 별도 과정으로 분리해 초반 병목을 줄입니다.

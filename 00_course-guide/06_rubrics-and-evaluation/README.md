@@ -8,7 +8,7 @@
 | --- | --- |
 | `01_backend-rubric.md` | 01 백엔드 과정 |
 | `02_frontend-rubric.md` | 02 프론트엔드 과정 |
-| `03_mini-project-rubric.md` | 03 Supabase 미니 프로젝트 |
+| `03_mini-project-rubric.md` | 04 Supabase AI 미니 프로젝트 |
 | `04_agent-project-rubric.md` | 04~05 LLM Agent 과정과 미니 프로젝트 |
 | `06_final-presentation-rubric.md` | 07 최종 발표와 프로젝트 시연 |
 

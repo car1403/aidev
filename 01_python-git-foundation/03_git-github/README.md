@@ -121,7 +121,7 @@ git log --oneline
 9. 이후에는 Sync Changes 또는 Push/Pull로 GitHub와 동기화합니다.
 ```
 
-이미 `C:\aidev` 전체가 Git 저장소로 관리되고 있을 수 있습니다. 이 경우 `02_supabase-ai-backend` 안에서 새 저장소를 다시 만들지 않고, 현재 열려 있는 폴더가 Git으로 추적되는지 Source Control에서 먼저 확인합니다.
+이미 `C:\aidev` 전체가 Git 저장소로 관리되고 있을 수 있습니다. 이 경우 각 과정 폴더 안에서 새 저장소를 다시 만들지 않고, 현재 열려 있는 폴더가 Git으로 추적되는지 Source Control에서 먼저 확인합니다.
 
 가장 조심해야 할 점은 `.env`, `.venv`, 실제 API key, Supabase service role key, Upstash Redis token을 GitHub에 올리지 않는 것입니다.
 

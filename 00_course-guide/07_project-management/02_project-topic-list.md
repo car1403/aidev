@@ -12,7 +12,7 @@ SSE 기반 실시간 AI 응답 챗봇
 사용 로그 대시보드
 ```
 
-## 05 LLM Agent Mini Project
+## 06 LLM Agent Mini Project
 
 ```text
 문서 검색 기반 답변 Agent
@@ -22,7 +22,7 @@ FAQ 자동 응답 Agent
 복합 API 연결 의사결정 Agent
 ```
 
-## 07 Multi-Agent Service Mini Project
+## 08 Multi-Agent Service Mini Project
 
 ```text
 Auto Healing Workflow

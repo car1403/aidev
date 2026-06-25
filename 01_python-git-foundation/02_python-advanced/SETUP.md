@@ -2,7 +2,7 @@
 
 `02_python-advanced` 단원을 시작하기 전에 개발 환경을 다시 확인하는 복습용 안내입니다.
 
-이 단원은 `02_supabase-ai-backend` 과정 안에 포함된 하위 단원입니다. 따라서 `02_python-advanced` 폴더 안에 `.venv`를 새로 만들지 않습니다. 이미 `02_supabase-ai-backend` 최상위에 만든 `.venv`를 그대로 사용합니다.
+이 단원은 `01_python-git-foundation` 과정 안에 포함된 하위 단원입니다. 따라서 `02_python-advanced` 폴더 안에 `.venv`를 새로 만들지 않습니다. 이미 `01_python-git-foundation` 최상위에 만든 `.venv`를 그대로 사용합니다.
 
 ```text
 사용하는 가상환경 위치:
@@ -22,12 +22,12 @@ C:\aidev\01_python-git-foundation\.venv
 2. 가상환경은 C:\aidev\01_python-git-foundation\.venv 하나만 사용합니다.
 3. 02_python-advanced 안에는 .venv를 만들지 않습니다.
 4. 02_python-advanced 안에는 별도 requirements.txt를 두지 않습니다.
-5. 필요한 패키지는 02_supabase-ai-backend 최상위 requirements.txt에서 관리합니다.
+5. 필요한 패키지는 01_python-git-foundation 최상위 requirements.txt에서 관리합니다.
 ```
 
 ## 1. 상위 과정 폴더로 이동
 
-PowerShell에서 `02_supabase-ai-backend` 폴더로 이동합니다.
+PowerShell에서 `01_python-git-foundation` 폴더로 이동합니다.
 
 ```powershell
 cd C:\aidev\01_python-git-foundation
@@ -74,7 +74,7 @@ python -m pip install --upgrade pip
 
 `02_python-advanced`에서는 테스트와 외부 API 예제를 위해 `pytest`, `httpx`를 사용합니다.
 
-이 패키지들은 `02_supabase-ai-backend` 최상위의 `requirements.txt`에서 함께 관리합니다. 상위 과정의 공통 패키지가 아직 설치되지 않았다면 아래 명령으로 설치합니다.
+이 패키지들은 `01_python-git-foundation` 최상위의 `requirements.txt`에서 함께 관리합니다. 상위 과정의 공통 패키지가 아직 설치되지 않았다면 아래 명령으로 설치합니다.
 
 ```powershell
 pip install -r requirements.txt
@@ -88,7 +88,7 @@ python -c "import pytest, httpx; print('advanced packages ok')"
 
 ## 5. 02_python-advanced에서 사용하는 외부 패키지
 
-`02_python-advanced` 하위 폴더에는 별도의 `requirements.txt`가 없지만, 이 단원에서 사용하는 외부 패키지는 있습니다. 해당 패키지들은 이미 `02_supabase-ai-backend` 최상위 `requirements.txt`에 포함되어 있으므로, 아래 명령을 이전에 실행했다면 추가 설치하지 않아도 됩니다.
+`02_python-advanced` 하위 폴더에는 별도의 `requirements.txt`가 없지만, 이 단원에서 사용하는 외부 패키지는 있습니다. 해당 패키지들은 이미 `01_python-git-foundation` 최상위 `requirements.txt`에 포함되어 있으므로, 아래 명령을 이전에 실행했다면 추가 설치하지 않아도 됩니다.
 
 ```powershell
 pip install -r requirements.txt
@@ -173,12 +173,12 @@ python -m pytest .\02_python-advanced\08_testing-code-quality
 
 ### 02_python-advanced 폴더로 이동해서 실행해도 되나요?
 
-가능은 하지만 이 과정에서는 권장하지 않습니다. 모든 예제 실행은 `02_supabase-ai-backend` 최상위 폴더에서 하는 것으로 통일합니다.
+가능은 하지만 이 과정에서는 권장하지 않습니다. 모든 예제 실행은 `01_python-git-foundation` 최상위 폴더에서 하는 것으로 통일합니다.
 
 ### 02_python-advanced 안에 requirements.txt가 없는데 괜찮나요?
 
-괜찮습니다. 필요한 패키지는 `02_supabase-ai-backend` 최상위 `requirements.txt`에서 함께 관리합니다.
+괜찮습니다. 필요한 패키지는 `01_python-git-foundation` 최상위 `requirements.txt`에서 함께 관리합니다.
 
 ### .venv를 다시 만들면 안 되나요?
 
-이 과정에서는 다시 만들지 않습니다. 단원마다 `.venv`를 만들면 어떤 패키지가 어느 환경에 설치되었는지 헷갈릴 수 있습니다. `02_supabase-ai-backend\.venv` 하나를 계속 사용합니다.
+이 과정에서는 다시 만들지 않습니다. 단원마다 `.venv`를 만들면 어떤 패키지가 어느 환경에 설치되었는지 헷갈릴 수 있습니다. `01_python-git-foundation\.venv` 하나를 계속 사용합니다.

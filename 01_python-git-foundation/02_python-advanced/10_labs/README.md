@@ -34,5 +34,5 @@ lab-09_project-structure.md
 ```text
 각 Lab은 해당 번호의 단원 README와 예제 파일을 먼저 확인한 뒤 진행합니다.
 예를 들어 lab-05_comprehension-iterator.md는 05_comprehension-iterator 단원과 함께 봅니다.
-실습 파일은 별도 .venv를 만들지 않고 02_supabase-ai-backend의 공통 .venv에서 실행합니다.
+실습 파일은 별도 .venv를 만들지 않고 01_python-git-foundation의 공통 .venv에서 실행합니다.
 ```

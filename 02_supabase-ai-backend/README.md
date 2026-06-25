@@ -22,6 +22,21 @@ Supabase는 PostgreSQL 데이터베이스를 기반으로 인증, 데이터 API,
 
 이후 과정에서는 실제 노트북 로컬 환경에 직접 설치해서 다루는 방식으로 확장합니다. `05_llm-agent-orchestration`에서는 Docker Desktop을 이용해 PostgreSQL과 pgvector 같은 구성 요소를 실행하고, `07_multi-agent-service-ops`에서는 Docker Compose, Redis, AWS, GitHub Actions를 다루며 서비스 운영 환경을 학습합니다. 정리하면 02~04는 Supabase 기반으로 빠르게 개발 흐름을 익히고, 05 이후에는 로컬 설치와 운영 환경 구성까지 단계적으로 확장합니다.
 
+## 수강생 진행 기준
+
+- 필수: FastAPI 기본 API, Pydantic 검증, mock-first LLM 호출, Gemini SDK 기본 호출, Supabase 테이블/Auth/RLS 흐름을 실습합니다.
+- 선택: Gemini REST 보충, OpenAI 비교 예제, Upstash Redis 확장은 진도와 수업 상황에 따라 다룹니다.
+- 다음 과정으로 넘어가기 전: `uvicorn`으로 기본 API를 실행하고, `.env`를 제출하지 않는 보안 기준을 설명할 수 있어야 합니다.
+
+## 막혔을 때 바로 보기
+
+| 막히는 지점 | 확인 문서 |
+| --- | --- |
+| Supabase 프로젝트 생성, RLS, service role key 구분 | [Supabase 오류 해결](../00_course-guide/08_environment-and-troubleshooting/06_supabase-errors.md), [환경 변수와 key 관리](./03_supabase-db-and-auth/00_references/env-and-secret-management.md) |
+| Gemini/OpenAI API key, 비용, 호출 제한 | [API key and billing](./02_llm-api-integration/02_api-key-and-billing/README.md), [OpenAI 계정과 결제 안내](../00_course-guide/03_student-guides/01_getting-started/09_openai-account-billing-guide.md) |
+| FastAPI 실행 오류와 포트 충돌 | [FastAPI 오류 해결](../00_course-guide/08_environment-and-troubleshooting/04_fastapi-errors.md), [SETUP.md](./SETUP.md) |
+| `.env` 위치가 헷갈림 | [SETUP.md](./SETUP.md), [환경과 오류 해결 허브](../00_course-guide/08_environment-and-troubleshooting/README.md) |
+
 ## 과정 목표
 
 - AI 리터러시와 AI 답변 검증의 기본 태도를 이해합니다.

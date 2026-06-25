@@ -15,10 +15,10 @@
 ```powershell
 cd C:\aidev\05_llm-agent-orchestration\02_advanced-prompting-and-reasoning
 .\.venv\Scripts\Activate.ps1
-Get-Content .env
+Test-Path .env
 ```
 
-OpenAI API Key가 없다면 예제는 실제 호출을 건너뜁니다.
+`.env` 파일의 내용을 터미널에 그대로 출력하지 않습니다. OpenAI API Key가 없다면 예제는 실제 호출을 건너뜁니다.
 
 ## 실행 순서
 

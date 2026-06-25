@@ -16,7 +16,7 @@ assignment-01_advanced-python-project.md
 1. 01_function-advanced부터 09_project-structure까지의 예제를 먼저 실행합니다.
 2. 필요한 코드는 하나의 파일에 모두 넣지 않고 역할별로 나눕니다.
 3. 입력 검증, 예외 처리, 데이터 저장, 테스트를 반드시 포함합니다.
-4. 별도의 .venv를 만들지 않고 02_supabase-ai-backend의 공통 .venv를 사용합니다.
+4. 별도의 .venv를 만들지 않고 01_python-git-foundation의 공통 .venv를 사용합니다.
 5. 실행 방법과 파일 역할을 README에 정리합니다.
 ```
 

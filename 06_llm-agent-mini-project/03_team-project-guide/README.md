@@ -32,7 +32,7 @@ Docker Compose, AWS 배포, GitHub Actions, 서비스 운영 자동화는 `07_mu
 | Agent Architecture 설계서 | StateGraph Node, 분기 조건, Memory, Tool 호출 흐름, 공유 State 필드를 설명하는 문서 |
 | Agent Test Report | 판단 오류, 재시도, Fallback, Self-Reflection, 개선 전후 결과를 정리하는 문서 |
 
-05 과정의 필수 산출물은 위 2가지입니다. 실행 가능한 Agent 코드는 산출물 검증을 위한 기본 조건이며, 프로젝트 계획서, 테스트 체크리스트, 발표 자료는 선택 보조 산출물입니다.
+06 과정의 필수 산출물은 위 2가지입니다. 실행 가능한 Agent 코드는 산출물 검증을 위한 기본 조건이며, 프로젝트 계획서, 테스트 체크리스트, 발표 자료는 선택 보조 산출물입니다.
 
 ## 문서 목록
 

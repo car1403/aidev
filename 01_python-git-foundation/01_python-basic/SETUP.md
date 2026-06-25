@@ -2,7 +2,7 @@
 
 `01_python-basic` 단원 실행 환경 안내입니다.
 
-이 단원은 `02_supabase-ai-backend` 과정 안에 포함된 하위 단원입니다. 따라서 `01_python-basic` 폴더 안에 `.venv`를 새로 만들지 않습니다. 이미 `02_supabase-ai-backend` 최상위에 만든 `.venv`를 그대로 사용합니다.
+이 단원은 `01_python-git-foundation` 과정 안에 포함된 하위 단원입니다. 따라서 `01_python-basic` 폴더 안에 `.venv`를 새로 만들지 않습니다. 이미 `01_python-git-foundation` 최상위에 만든 `.venv`를 그대로 사용합니다.
 
 ```text
 사용하는 가상환경 위치:
@@ -40,7 +40,7 @@ Python 3.11 이상
 
 `01_python-basic`은 Python 표준 라이브러리만 사용합니다. 따라서 이 하위 폴더에는 별도의 `requirements.txt`를 두지 않습니다.
 
-공통 패키지 설치는 `02_supabase-ai-backend` 최상위 폴더의 `requirements.txt`에서 관리합니다. 이미 상위 과정 설정에서 설치했다면 여기서 추가로 설치할 것은 없습니다.
+공통 패키지 설치는 `01_python-git-foundation` 최상위 폴더의 `requirements.txt`에서 관리합니다. 이미 상위 과정 설정에서 설치했다면 여기서 추가로 설치할 것은 없습니다.
 
 ```powershell
 python -m pip install --upgrade pip

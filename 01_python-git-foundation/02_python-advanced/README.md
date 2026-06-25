@@ -79,7 +79,7 @@ HTTP API와 외부 데이터
 
 ## 처음 시작하는 방법
 
-`02_python-advanced`는 `02_supabase-ai-backend`의 하위 단원이므로 별도의 `.venv`를 새로 만들지 않습니다. `02_supabase-ai-backend` 최상위에 이미 만든 `.venv`를 그대로 사용합니다.
+`02_python-advanced`는 `01_python-git-foundation`의 하위 단원이므로 별도의 `.venv`를 새로 만들지 않습니다. `01_python-git-foundation` 최상위에 이미 만든 `.venv`를 그대로 사용합니다.
 
 ```powershell
 cd C:\aidev\01_python-git-foundation
@@ -90,7 +90,7 @@ pip install -r requirements.txt
 python .\02_python-advanced\01_function-advanced\01_args_kwargs_api_options.py
 ```
 
-`02_python-advanced`는 하위 단원이므로 별도의 `.venv`와 `requirements.txt`를 두지 않습니다. `pytest`, `httpx` 같은 고급 단원 패키지도 `02_supabase-ai-backend` 최상위 `requirements.txt`에서 함께 관리합니다.
+`02_python-advanced`는 하위 단원이므로 별도의 `.venv`와 `requirements.txt`를 두지 않습니다. `pytest`, `httpx` 같은 고급 단원 패키지도 `01_python-git-foundation` 최상위 `requirements.txt`에서 함께 관리합니다.
 
 ## 01_python-basic과의 차이
 

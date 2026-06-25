@@ -10,4 +10,5 @@
 03_after-class-checklist.md
 04_project-checklist.md
 05_final-presentation-checklist.md
+06_distribution-packaging-checklist.md
 ```

@@ -240,7 +240,7 @@ C:\aidev\07_multi-agent-service-ops
 
 ```powershell
 cd C:\aidev\02_supabase-ai-backend
-Get-Content .env
+dir .env
 ```
 
 ### relation learning_notes does not exist

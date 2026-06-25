@@ -73,7 +73,7 @@ Python 실행 환경
 
 ## 처음 시작하는 방법
 
-`01_python-basic`은 `02_supabase-ai-backend`의 하위 단원이므로 별도의 `.venv`를 새로 만들지 않습니다. `02_supabase-ai-backend` 최상위에 이미 만든 `.venv`를 그대로 사용합니다.
+`01_python-basic`은 `01_python-git-foundation`의 하위 단원이므로 별도의 `.venv`를 새로 만들지 않습니다. `01_python-git-foundation` 최상위에 이미 만든 `.venv`를 그대로 사용합니다.
 
 PowerShell에서 아래 순서로 실행합니다.
 
@@ -87,7 +87,7 @@ pip install -r requirements.txt
 
 프롬프트 앞에 `(.venv)`가 보이면 가상환경이 활성화된 것입니다.
 
-`01_python-basic`은 Python 표준 라이브러리만 사용하므로 이 하위 폴더에는 별도의 `requirements.txt`를 두지 않습니다. 위 명령의 `requirements.txt`는 `02_supabase-ai-backend` 최상위의 공통 패키지 설치 파일입니다.
+`01_python-basic`은 Python 표준 라이브러리만 사용하므로 이 하위 폴더에는 별도의 `requirements.txt`를 두지 않습니다. 위 명령의 `requirements.txt`는 `01_python-git-foundation` 최상위의 공통 패키지 설치 파일입니다.
 
 ## 첫 예제 실행
 

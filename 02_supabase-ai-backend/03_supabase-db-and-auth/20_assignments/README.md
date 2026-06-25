@@ -38,7 +38,7 @@ Docker, Docker Compose, 로컬 PostgreSQL, 로컬 Redis 운영은 이 과정의 
 잘못된 예:
 
 ```text
-SUPABASE_SERVICE_ROLE_KEY=eyJ...
+SUPABASE_SERVICE_ROLE_KEY=실제-service-role-key-값
 ```
 
 올바른 예:

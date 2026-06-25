@@ -43,7 +43,7 @@ from shop.order_calculator import calculate_total
 
 ## 실행 전 준비
 
-이 단원에서는 별도의 `.venv`를 만들지 않습니다. `02_supabase-ai-backend` 최상위의 공통 가상환경을 사용합니다.
+이 단원에서는 별도의 `.venv`를 만들지 않습니다. `01_python-git-foundation` 최상위의 공통 가상환경을 사용합니다.
 
 ```powershell
 cd C:\aidev\01_python-git-foundation
