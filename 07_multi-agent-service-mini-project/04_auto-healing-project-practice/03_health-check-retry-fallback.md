@@ -1,45 +1,63 @@
-﻿# 03 Health Check Retry Fallback
+# 03. Health Check Retry Fallback
+
+Health Check, Retry, Fallback은 Auto Healing 프로젝트에서 가장 기본이 되는 운영 흐름입니다.
+
+## Health Check
+
+Health Check는 서비스가 정상인지 확인하는 기준입니다.
+
+예시:
 
 ```text
-Health Check
--> Retry
--> Restart
--> Fallback
--> Escalate
+GET /health
+-> {"status": "ok"}
 ```
 
-각 단계에서 어떤 로그를 남길지 정리합니다.
+프로젝트에서는 최소한 backend에 `/health`가 있어야 합니다.
 
-## Feedback Loop 추가 설계
+## Retry
 
-복구 조치가 끝난 뒤 바로 성공으로 판단하지 않고, 결과를 검증한 뒤 필요하면 다시 시도합니다.
+Retry는 실패한 작업을 다시 시도하는 전략입니다.
+
+설계할 항목:
 
 ```text
-Health Check
--> Retry
--> Restart
--> Result Review
--> Feedback
--> Retry Again
--> Fallback
--> Escalate
+최대 재시도 횟수
+재시도 간격
+재시도할 오류 유형
+재시도하지 않을 오류 유형
+재시도 실패 시 다음 전략
 ```
 
-## 작성할 것
+예시:
 
 ```text
-복구 성공 기준:
-복구 실패 기준:
-검증 Agent:
-최대 재시도 횟수:
-재시도 중단 조건:
-fallback 조건:
-사람 검토로 넘길 조건:
-로그에 남길 정보:
+timeout 발생
+-> 1초 대기
+-> 1차 retry
+-> 실패
+-> 2초 대기
+-> 2차 retry
+-> 실패
+-> fallback 전환
 ```
 
-## 확인 질문
+## Fallback
 
-- 복구 명령이 실행되었다는 것과 실제 복구가 되었다는 것은 어떻게 다른가?
-- 재시도는 몇 번까지 허용할 것인가?
-- 반복 실패 시 운영자는 어떤 정보를 받아야 하는가?
+Fallback은 원래 경로가 실패했을 때 대체 경로를 사용하는 전략입니다.
+
+예시:
+
+- 실시간 LLM 호출 실패 시 캐시된 안내 문구 반환
+- 외부 API 실패 시 기본 데이터 사용
+- worker 자동 복구 실패 시 manual review 상태로 전환
+- 정책 위반 가능성이 있으면 실행하지 않고 안전 응답 반환
+
+## 실습 체크리스트
+
+- [ ] `/health` 확인 기준이 있다.
+- [ ] Retry 횟수와 간격이 정해져 있다.
+- [ ] Fallback 조건이 정해져 있다.
+- [ ] 실패한 복구 시도가 로그에 남는다.
+- [ ] 복구 성공 여부가 monitor에 표시된다.
+- [ ] 위험한 작업은 Guardrail에서 차단된다.

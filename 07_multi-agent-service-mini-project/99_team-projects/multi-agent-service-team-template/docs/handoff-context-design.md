@@ -1,53 +1,43 @@
 # Handoff Context Design
 
-Agent 간 업무 인계와 Context 공유 구조를 작성합니다.
+Agent 간 업무 인계 구조를 정리합니다.
 
-## 1. Agent 흐름
+## 1. Context 필드
 
-```text
-Supervisor Agent
--> Diagnosis Agent
--> Recovery Agent
--> Validation Agent
--> Reporter Agent
-```
-
-## 2. Handoff Context
-
-```text
-request_id:
-current_agent:
-next_agent:
-handoff_reason:
-handoff_context:
-previous_result:
-required_action:
-allowed_tools:
-```
-
-## 3. Agent별 Context
-
-| Agent | 받는 Context | 다음 Agent에게 전달할 Context |
+| 필드 | 의미 | 예시 |
 | --- | --- | --- |
-| Supervisor Agent | | |
-| Diagnosis Agent | | |
-| Recovery Agent | | |
-| Validation Agent | | |
-| Reporter Agent | | |
+| `incident_id` | 장애 이벤트 식별자 | `inc-001` |
+| `service_name` | 장애가 발생한 서비스 | `backend` |
+| `failure_type` | 장애 유형 | `timeout` |
+| `current_agent` | 현재 Agent | `diagnosis` |
+| `next_agent` | 다음 Agent | `recovery` |
+| `handoff_reason` | 인계 이유 | `timeout detected` |
+| `previous_result` | 이전 판단 결과 | `request exceeded threshold` |
+| `allowed_tools` | 허용 Tool | `health_check` |
+| `blocked_tools` | 차단 Tool | `delete_resource` |
+| `required_action` | 다음 작업 | `retry and validate` |
 
-## 4. MCP/Tool 연결
+## 2. Handoff 예시
 
-| Agent | 사용할 Tool | 필요한 권한 | 제한 사항 |
-| --- | --- | --- | --- |
-| Diagnosis Agent | | | |
-| Recovery Agent | | | |
-| Validation Agent | | | |
-
-## 5. 민감 정보 처리
-
-```text
-Context에 포함해도 되는 정보:
-Context에서 제외할 정보:
-마스킹할 정보:
-로그에 남기지 않을 정보:
+```json
+{
+  "incident_id": "inc-001",
+  "service_name": "backend",
+  "failure_type": "timeout",
+  "current_agent": "diagnosis",
+  "next_agent": "recovery",
+  "handoff_reason": "timeout detected",
+  "previous_result": "backend response exceeded threshold",
+  "allowed_tools": ["retry_request", "health_check"],
+  "blocked_tools": ["delete_resource"],
+  "required_action": "retry and validate"
+}
 ```
+
+## 3. 동기화 기준
+
+- 모든 Agent는 같은 `incident_id`를 사용합니다.
+- `service_name`이 중간에 바뀌면 이유를 기록합니다.
+- `failure_type`이 바뀌면 재분류 근거를 기록합니다.
+- `previous_result`가 비어 있으면 다음 Agent가 판단을 중단합니다.
+- 권한이 없는 Tool 요청은 Guardrail에서 차단합니다.

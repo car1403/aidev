@@ -1,49 +1,39 @@
 # Feedback Loop Review
 
-복구 결과 검증과 재시도 Feedback Loop를 설계합니다.
+복구 실패 후 재시도와 개선 흐름을 정리합니다.
 
-## 1. 기본 흐름
+## 1. Feedback Loop 흐름
 
 ```text
-장애 감지
--> 복구 전략 선택
--> 복구 실행
--> 결과 검증
--> 성공이면 종료
--> 실패하면 피드백 생성
--> 재시도
--> 반복 실패 시 fallback 또는 사람 검토
+복구 실행
+-> Health Check
+-> 성공 여부 판단
+-> 실패 원인 기록
+-> 재시도 또는 fallback
+-> 최종 결과 보고
 ```
 
-## 2. 검증 기준
+## 2. 재시도 기준
 
 ```text
-복구 성공 기준:
-복구 실패 기준:
-검증 Agent:
-검증 Tool:
 최대 재시도 횟수:
-재시도 중단 조건:
+재시도 간격:
+재시도할 오류:
+재시도하지 않을 오류:
+fallback 전환 조건:
+manual review 전환 조건:
 ```
 
-## 3. Feedback 항목
+## 3. 개선 기록
 
-```text
-실패 원인:
-보강할 조치:
-다음 재시도 전략:
-fallback 조건:
-운영자 알림 조건:
-```
+| 실행 | 실패 원인 | 수정 전략 | 결과 |
+| --- | --- | --- | --- |
+| 1차 | timeout | retry | 실패 |
+| 2차 | timeout | fallback | 성공 |
 
-## 4. 로그 항목
+## 4. 확인 기준
 
-```text
-request_id
-attempt_count
-recovery_action
-review_score
-review_result
-feedback
-final_status
-```
+- 실패 결과가 로그에 남는가?
+- 같은 실패를 무한 반복하지 않는가?
+- fallback 또는 manual review 기준이 있는가?
+- 최종 결과가 monitor에 표시되는가?

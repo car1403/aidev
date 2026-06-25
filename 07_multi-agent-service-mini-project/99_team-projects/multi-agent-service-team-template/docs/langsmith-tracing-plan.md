@@ -1,62 +1,43 @@
 # LangSmith Tracing Plan
 
-LangSmith식 trace/run/span 관점으로 Multi-Agent 실행 추적 계획을 작성합니다.
+LangSmith를 실제로 연동하지 않더라도, 실행 추적을 어떤 단위로 볼지 설계합니다.
 
-실제 LangSmith 연동은 선택 사항입니다. 이 문서는 어떤 정보를 추적해야 하는지 설계하는 용도입니다.
+## 1. 추적 단위
 
-## 1. Trace 구조
+| 단위 | 의미 |
+| --- | --- |
+| trace | 하나의 장애 처리 전체 흐름 |
+| run | Agent 하나의 실행 |
+| span | Tool 호출, API 요청, Health Check 같은 세부 작업 |
 
-```text
-trace_id
--> supervisor_agent
- -> diagnosis_agent
- -> health_check_tool
- -> recovery_agent
- -> restart_or_fallback_tool
- -> validation_agent
- -> reporter_agent
-```
-
-## 2. Run 정보
+## 2. Trace 예시
 
 ```text
-run_id:
-parent_run_id:
-name:
-run_type:
-inputs:
-outputs:
-status:
-duration_ms:
-error:
+trace: inc-001
+├─ run: Supervisor Agent
+├─ run: Diagnosis Agent
+│  └─ span: log read
+├─ run: Recovery Agent
+│  └─ span: retry request
+├─ run: Validation Agent
+│  └─ span: health check
+└─ run: Reporter Agent
 ```
 
-## 3. 추적할 메타데이터
+## 3. 기록할 정보
 
-```text
-request_id:
-user_id:
-service_name:
-agent_name:
-tool_name:
-attempt_count:
-recovery_action:
-final_status:
-```
+- `incident_id`
+- Agent 이름
+- 입력 Context
+- 선택한 Tool
+- 실행 결과
+- 오류 메시지
+- 실행 시간
+- 최종 상태
 
-## 4. 민감 정보 마스킹
+## 4. 확인 기준
 
-```text
-LangSmith 또는 외부 추적 도구에 저장하면 안 되는 정보:
-마스킹할 필드:
-저장 가능한 요약 정보:
-```
-
-## 5. 운영 활용
-
-```text
-실패한 Agent 실행 찾기:
-느린 Tool 호출 찾기:
-재시도 횟수 많은 요청 찾기:
-정책 위반 이벤트와 연결하기:
-```
+- 실패한 Agent를 찾을 수 있는가?
+- 시간이 오래 걸린 단계가 보이는가?
+- 같은 장애가 반복되는지 확인할 수 있는가?
+- 복구 전략 개선에 사용할 수 있는가?

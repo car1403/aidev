@@ -1,34 +1,36 @@
-# 05 Final Presentation
+# 05. Final Presentation
 
-발표에는 아래 내용을 포함합니다.
+최종 발표는 코드 설명보다 “문제, 구조, 실행, 검증”이 잘 보이도록 구성합니다.
 
-1. 프로젝트 주제
-2. 비즈니스 요구사항
-3. 장애 시나리오
-4. Multi-Agent 아키텍처
-5. Agent 역할과 책임 범위
-6. Handoff/Context 공유 구조
-7. Docker Compose 서비스 구조
-8. Auto Healing 흐름
-9. 장애 유형별 감지 메트릭
-10. 복구 전략과 fallback
-11. 배포 및 장애 복구 결과
-12. 파이프라인 흐름
-13. 알림과 에스컬레이션 기준
-14. 운영 대시보드 시연
-15. 개선 방향
+## 발표 흐름
 
-## 시연 체크
+1. 프로젝트 주제와 해결하려는 장애 설명
+2. 전체 서비스 구조 설명
+3. Agent 역할과 Handoff Context 설명
+4. 장애 이벤트 입력 시연
+5. 복구 전략 선택 흐름 시연
+6. Health Check와 결과 검증 시연
+7. monitor 로그와 대시보드 확인
+8. 보안/Guardrails/감사 로그 기준 설명
+9. GitHub Actions/AWS 확장 기준 설명
+10. 개선할 점과 다음 단계 정리
 
-- Docker Compose로 전체 서비스가 실행되는가?
-- backend `/health`가 정상 응답하는가?
-- 장애 이벤트를 입력하면 Agent 협업 흐름이 설명되는가?
-- worker 또는 monitor에서 복구 이벤트가 확인되는가?
-- 실패 시 fallback 또는 수동 에스컬레이션 기준이 설명되는가?
+## 발표 자료에 들어가면 좋은 그림
 
-## 발표에서 강조할 것
+```text
+사용자/장애 이벤트
+-> backend
+-> Supervisor Agent
+-> Diagnosis Agent
+-> Recovery Agent
+-> Validation Agent
+-> monitor
+```
 
-- 왜 이 아키텍처가 비즈니스 요구사항에 맞는가?
-- Agent 역할 분리가 왜 필요한가?
-- 장애를 어떻게 감지하고 어떤 기준으로 복구하는가?
-- 파이프라인에서 실패가 발생하면 어떻게 차단하고 알리는가?
+## 시연 전 확인
+
+- [ ] Docker Desktop이 실행 중이다.
+- [ ] `docker compose down` 후 다시 `up --build`를 실행해 보았다.
+- [ ] 시연할 장애 이벤트 입력값을 준비했다.
+- [ ] 실패 상황이 생겼을 때 보여줄 로그 명령을 준비했다.
+- [ ] 발표 자료의 URL과 실행 명령이 실제 프로젝트와 일치한다.
