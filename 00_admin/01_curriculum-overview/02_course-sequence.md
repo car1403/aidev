@@ -1,6 +1,6 @@
 # 02. Course Sequence
 
-이 문서는 수업 진행 순서를 설명합니다.
+이 문서는 과정 진행 순서를 설명합니다.
 
 ## 01~03 Supabase 기반 AI 서비스
 
@@ -14,10 +14,10 @@ Streamlit UI, API 호출, 챗봇 화면, 상태 관리
 03_supabase-ai-mini-project
 Supabase + FastAPI + Streamlit 통합 프로젝트
 SSE 기반 실시간 AI 응답 스트리밍 통합 실습
-선택 배포: FastAPI->Render, Redis->Upstash, Streamlit->Streamlit Community Cloud
+선택 배포: FastAPI -> Render, Redis -> Upstash, Streamlit -> Streamlit Community Cloud
 ```
 
-이 단계의 목표:
+목표:
 
 ```text
 사용자 입력
@@ -38,10 +38,10 @@ Prompt, Function Calling, MCP, Memory, RAG, LangGraph 흐름을 배웁니다.
 04에서 배운 내용을 바탕으로 Agent 미니 프로젝트를 만듭니다.
 ```
 
-이 단계의 목표:
+목표:
 
 ```text
-LLM이 혼자 답하는 구조
+LLM이 답변하는 구조
 -> Tool을 호출하는 구조
 -> Memory를 사용하는 구조
 -> RAG로 지식을 검색하는 구조
@@ -55,37 +55,17 @@ LLM이 혼자 답하는 구조
 Docker Compose, AWS, GitHub Actions, 모니터링, 보안, 가드레일, Auto Healing
 
 07_multi-agent-service-mini-project
-운영 관점의 Multi-Agent 미니 프로젝트
+운영 관점의 Multi-Agent Auto Healing 미니 프로젝트
 ```
 
-이 단계의 목표:
+목표:
 
 ```text
 서비스 패키징
--> 배포
--> CI/CD
+-> Docker Compose 실행
+-> CI/CD 흐름 이해
 -> 로그와 모니터링
 -> 장애 대응
 -> 보안 정책
-```
-
-## 08~09 AI Workflow Automation
-
-```text
-08_ai-workflow-automation
-AIPP, n8n, Dify를 사용해 AI Workflow를 설계합니다.
-
-09_ai-workflow-mini-project
-업무 자동화 Workflow 미니 프로젝트를 진행합니다.
-```
-
-이 단계의 목표:
-
-```text
-업무 시나리오
--> Trigger
--> Condition
--> Action
--> LLM/Tool/Memory/RAG
--> 운영/품질/보안
+-> Multi-Agent 운영 프로젝트
 ```

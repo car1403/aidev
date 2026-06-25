@@ -1,8 +1,6 @@
 # 04. Folder Map
 
-이 문서는 `C:\aidev` 폴더 구조를 설명합니다.
-
-## 최상위 구조
+이번 과정의 기본 폴더 구조입니다.
 
 ```text
 C:\aidev
@@ -13,50 +11,29 @@ C:\aidev
 ├─ 04_llm-agent-orchestration
 ├─ 05_llm-agent-mini-project
 ├─ 06_multi-agent-service-ops
-├─ 07_multi-agent-service-mini-project
-├─ 08_ai-workflow-automation
-└─ 09_ai-workflow-mini-project
+└─ 07_multi-agent-service-mini-project
 ```
 
-## 과정 폴더 공통 구조
+## 폴더별 역할
 
-대부분의 과정 폴더는 아래와 비슷한 구조를 가집니다.
-
-```text
-README.md
-SETUP.md
-requirements.txt
-.env.example
-.venv
-00_references
-01_...
-02_...
-10_labs
-20_assignments
-99_mini-project 또는 99_team-projects
-```
-
-## 파일 의미
-
-| 파일/폴더 | 의미 |
+| 폴더 | 역할 |
 | --- | --- |
-| `README.md` | 가장 먼저 읽는 설명서 |
-| `SETUP.md` | 환경 설정 안내 |
-| `requirements.txt` | 설치할 Python 패키지 목록 |
-| `.env.example` | 환경변수 예시 파일 |
-| `.env` | 실제 키를 넣는 개인 파일, 제출하지 않음 |
-| `.venv` | Python 가상환경, 제출하지 않음 |
-| `00_references` | 개념 참고 자료 |
-| `10_labs` | 수업 중 실습 |
-| `20_assignments` | 혼자 풀 과제 |
-| `99_*` | 미니 프로젝트 또는 팀 프로젝트 |
+| `00_admin` | 과정 안내, 설치, 체크리스트, 평가, 템플릿 |
+| `01_supabase-ai-backend` | Python/FastAPI/Supabase 백엔드 |
+| `02_supabase-ai-frontend` | Streamlit 프론트엔드 |
+| `03_supabase-ai-mini-project` | Supabase 기반 통합 미니 프로젝트 |
+| `04_llm-agent-orchestration` | LLM Agent, RAG, Tool, Memory |
+| `05_llm-agent-mini-project` | 단일 Agent 미니 프로젝트 |
+| `06_multi-agent-service-ops` | Multi-Agent 운영, Docker Compose, AWS, GitHub Actions |
+| `07_multi-agent-service-mini-project` | Multi-Agent Auto Healing 미니 프로젝트 |
 
-## 주의할 폴더
-
-아래 폴더는 GitHub에 올리지 않거나 제출하지 않습니다.
+## GitHub에 올리지 않는 것
 
 ```text
-.venv
 .env
+.venv
 __pycache__
+실제 API Key
+AWS Access Key
+개인정보가 포함된 데이터
 ```

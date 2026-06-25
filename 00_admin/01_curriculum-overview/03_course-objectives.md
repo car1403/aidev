@@ -1,89 +1,51 @@
 # 03. Course Objectives
 
-이 문서는 과정별 학습 목표입니다.
-
 ## 01_supabase-ai-backend
 
-이 과정을 마치면 다음을 할 수 있어야 합니다.
-
-```text
-Python 기본 문법을 사용한다.
-FastAPI 서버를 실행한다.
-Pydantic으로 요청 데이터를 검증한다.
-Supabase 테이블에 데이터를 저장하고 조회한다.
-Auth, RLS, service role key의 의미를 설명한다.
-```
+- Python 기본 문법을 이해합니다.
+- FastAPI로 백엔드 API를 만듭니다.
+- Gemini API를 기본 AI 모델로 호출합니다.
+- Supabase에 사용자 정보, 대화 이력, 서비스 로그를 저장합니다.
+- Upstash Redis의 역할과 활용 방식을 이해합니다.
 
 ## 02_supabase-ai-frontend
 
-```text
-Streamlit 화면을 만든다.
-사용자 입력을 받는다.
-FastAPI API를 호출한다.
-응답 결과를 화면에 표시한다.
-session_state로 상태를 관리한다.
-```
+- Streamlit으로 기본 UI를 만듭니다.
+- FastAPI 백엔드와 HTTP API로 연결합니다.
+- 사용자 입력, 응답 표시, 상태 관리를 구현합니다.
+- 챗봇 화면과 대화 이력 표시 흐름을 이해합니다.
 
 ## 03_supabase-ai-mini-project
 
-```text
-Supabase, FastAPI, Streamlit을 연결한다.
-사용자별 데이터와 대화 이력을 저장한다.
-AI 응답 API를 만든다.
-SSE 기반 실시간 응답 스트리밍을 구현하거나 설계한다.
-팀 프로젝트 문서와 발표 자료를 작성한다.
-```
+- FastAPI, Streamlit, Supabase를 하나의 프로젝트로 통합합니다.
+- SSE 기반 실시간 응답 스트리밍을 구현합니다.
+- 서비스 로그와 사용자 피드백을 저장합니다.
+- 선택 사항으로 Render, Upstash, Streamlit Community Cloud 배포 흐름을 이해합니다.
 
 ## 04_llm-agent-orchestration
 
-```text
-Docker Desktop 기반 LLM 실행 환경을 이해한다.
-Prompt 설계와 Structured Output을 사용한다.
-Function Calling과 Tool 호출 구조를 이해한다.
-PostgreSQL/pgvector 기반 Memory/RAG 구조를 사용한다.
-LangGraph 기반 Agent 흐름을 이해한다.
-```
+- Docker Desktop 기반 실습 환경을 준비합니다.
+- LLM Prompt, Function Calling, Tool Use를 이해합니다.
+- Memory, RAG, pgvector 구조를 이해합니다.
+- LangGraph 기반 Agent 상태 흐름을 설계합니다.
 
 ## 05_llm-agent-mini-project
 
-```text
-Agent 시나리오를 설계한다.
-Tool, Memory, RAG를 포함한 작은 Agent 서비스를 만든다.
-테스트와 발표 자료를 정리한다.
-```
+- 단일 Agent 기반 미니 프로젝트를 구현합니다.
+- Tool 선택, 오류 감지, 자기 점검, Feedback Loop를 적용합니다.
+- Agent 아키텍처 설계서와 시험 결과 보고서를 작성합니다.
 
 ## 06_multi-agent-service-ops
 
-```text
-Multi-Agent 협업 구조를 설계한다.
-Docker Compose로 여러 서비스를 함께 실행한다.
-GitHub Actions로 CI/CD 흐름을 이해한다.
-AWS 배포 구조를 이해한다.
-로그, 모니터링, Auto Healing, 보안 가드레일을 설계한다.
-```
+- Multi-Agent 협업 구조를 설계합니다.
+- Docker Compose로 여러 서비스를 실행합니다.
+- GitHub Actions로 CI/CD 기본 흐름을 이해합니다.
+- AWS 배포, CloudWatch, 운영 로그, 보안 가드레일을 이해합니다.
+- Auto Healing과 관측성 구조를 설계합니다.
 
 ## 07_multi-agent-service-mini-project
 
-```text
-Auto Healing Workflow 같은 운영형 미니 프로젝트를 만든다.
-서비스 장애 대응 흐름을 설계한다.
-운영 로그와 결과 검증 기준을 작성한다.
-```
-
-## 08_ai-workflow-automation
-
-```text
-AI Workflow의 Trigger, Condition, Action 구조를 이해한다.
-AIPP, n8n, Dify의 역할 차이를 설명한다.
-RAG/Data Node와 Workflow 운영 기준을 설계한다.
-Prompt Injection 방어와 품질 검증 기준을 작성한다.
-```
-
-## 09_ai-workflow-mini-project
-
-```text
-노코드/로코드 기반 AI Workflow 프로젝트를 설계한다.
-AIPP, n8n, Dify 중 하나 이상을 활용한다.
-운영/보안/품질/리소스 관리 기준을 작성한다.
-최종 발표와 시연을 진행한다.
-```
+- 06에서 배운 내용을 미니 프로젝트로 구현합니다.
+- Auto Healing Workflow 기반 Multi-Agent 서비스를 설계합니다.
+- 장애 감지, 복구 전략, Health Check, Feedback Loop를 구현합니다.
+- 배포 및 장애 복구 보고서, 파이프라인 구현 결과 보고서를 작성합니다.

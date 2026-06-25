@@ -1,30 +1,19 @@
-# 04_lesson-plans
+# 04 Lesson Plans
 
-01~09 과정별 수업 계획을 모아 둔 폴더입니다.
+이 폴더는 01~07 과정별 진행 계획을 정리합니다.
 
-각 문서는 수업 전에 확인하고 오늘의 목표를 안내할 때 사용합니다.
+## 과정별 계획서
 
-## 문서 목록
+| 과정 | 문서 |
+| --- | --- |
+| 01 Supabase AI Backend | `01_supabase-backend-plan.md` |
+| 02 Supabase AI Frontend | `02_supabase-frontend-plan.md` |
+| 03 Supabase Mini Project | `03_supabase-mini-project-plan.md` |
+| 04 LLM Agent Orchestration | `04_llm-agent-orchestration-plan.md` |
+| 05 LLM Agent Mini Project | `05_llm-agent-mini-project-plan.md` |
+| 06 Multi-Agent Service Ops | `06_multi-agent-service-ops-plan.md` |
+| 07 Multi-Agent Service Mini Project | `07_multi-agent-service-mini-project-plan.md` |
 
-```text
-01_supabase-backend-plan.md
-02_supabase-frontend-plan.md
-03_supabase-mini-project-plan.md
-04_llm-agent-orchestration-plan.md
-05_llm-agent-mini-project-plan.md
-06_multi-agent-service-ops-plan.md
-07_multi-agent-service-mini-project-plan.md
-08_ai-workflow-automation-plan.md
-09_ai-workflow-mini-project-plan.md
-```
+## 사용 기준
 
-## 공통 구성
-
-```text
-수업 목표
-수업 전 준비
-강의 순서
-실습 순서
-체크리스트
-다음 과정 연결
-```
+각 계획서는 과정 시작 전에 전체 흐름을 확인하고, 실습 중에는 체크리스트처럼 사용합니다.

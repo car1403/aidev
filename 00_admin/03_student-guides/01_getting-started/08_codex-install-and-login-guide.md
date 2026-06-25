@@ -178,7 +178,7 @@ Markdown 또는 문서 변환 도구 사용
 | --- | --- |
 | React 실습 | `npm install`, `npm run dev` 명령을 사용합니다. |
 | Vite 실행 | 프론트엔드 개발 서버를 실행합니다. |
-| n8n 또는 일부 워크플로우 도구 학습 | Node 기반 도구를 이해하는 데 도움이 됩니다. |
+| 문서/빌드 도구 사용 | 일부 문서 변환이나 빌드 도구가 Node.js를 사용합니다. |
 | 문서/빌드 도구 사용 | 일부 문서 변환이나 빌드 도구가 Node.js를 사용합니다. |
 
 자주 사용하는 명령:
@@ -236,7 +236,7 @@ pip로 Python 패키지 설치
 | 02 프론트엔드 실습 | Streamlit UI를 실행합니다. |
 | 03 미니 프로젝트 | 백엔드, DB, UI를 연결합니다. |
 | 04 이후 LLM Agent 실습 | LLM API, LangGraph, 도구 호출 코드를 실행합니다. |
-| 08~09 워크플로우 실습 | 로코드 방식으로 API 또는 테스트 서버를 만들 수 있습니다. |
+| 04~07 Agent/운영 실습 | LLM API, LangGraph, 운영 보조 코드를 실행합니다. |
 
 자주 사용하는 명령:
 
@@ -625,3 +625,4 @@ https://help.openai.com/en/articles/9039756-managing-billing-settings-on-chatgpt
 [ ] 카드 결제 전 자동 갱신, 포함 사용량, 초과 과금 여부를 확인해야 한다는 것을 이해했다.
 [ ] API key를 문서나 GitHub에 올리면 안 된다는 것을 이해했다.
 ```
+
