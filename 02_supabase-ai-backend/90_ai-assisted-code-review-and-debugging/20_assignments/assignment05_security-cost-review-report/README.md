@@ -17,10 +17,10 @@
 ## 점검 대상 예시
 
 ```text
-C:\aidev\02_supabase-ai-backend\05_llm-api-integration
-C:\aidev\02_supabase-ai-backend\06_supabase-db-and-auth
-C:\aidev\02_supabase-ai-backend\07_backend-service-data-management
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice
+C:\aidev\02_supabase-ai-backend\02_llm-api-integration
+C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth
+C:\aidev\02_supabase-ai-backend\04_backend-service-data-management
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice
 ```
 
 ## 제출 파일

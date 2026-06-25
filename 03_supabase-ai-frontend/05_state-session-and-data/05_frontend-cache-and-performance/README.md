@@ -44,7 +44,7 @@ streamlit run .\05_state-session-and-data\05_frontend-cache-and-performance\01_c
 API 캐시 예제는 백엔드 API가 필요합니다. 기본적으로는 `02_supabase-ai-backend`를 실행합니다.
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend\06_supabase-db-and-auth\03_fastapi-supabase-integration
+cd C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\03_fastapi-supabase-integration
 ..\..\.venv\Scripts\Activate.ps1
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```

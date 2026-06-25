@@ -26,13 +26,13 @@
 실제 수업에서는 다음 백엔드 단원과 연결합니다.
 
 ```text
-C:\aidev\02_supabase-ai-backend\06_supabase-db-and-auth\04_supabase-auth-and-rls
+C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\04_supabase-auth-and-rls
 ```
 
 API 서버 실행 예시는 다음과 같습니다.
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend\06_supabase-db-and-auth\03_fastapi-supabase-integration
+cd C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\03_fastapi-supabase-integration
 ..\..\.venv\Scripts\Activate.ps1
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```

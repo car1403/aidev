@@ -309,13 +309,13 @@ dir .env
 Supabase 환경변수 확인:
 
 ```powershell
-python .\06_supabase-db-and-auth\01_supabase-project-and-env\01_check_supabase_env.py
+python .\03_supabase-db-and-auth\01_supabase-project-and-env\01_check_supabase_env.py
 ```
 
 Upstash Redis 환경변수 확인:
 
 ```powershell
-python .\06_supabase-db-and-auth\06_upstash-redis-cache-and-session\01_check_upstash_env.py
+python .\03_supabase-db-and-auth\06_upstash-redis-cache-and-session\01_check_upstash_env.py
 ```
 
 ## 10. Supabase에서 테이블 만들기 기본 흐름
@@ -337,7 +337,7 @@ Dashboard에서 테이블을 만드는 기본 흐름은 다음과 같습니다.
 기본 실습 SQL은 아래 파일에서 확인합니다.
 
 ```text
-C:\aidev\02_supabase-ai-backend\06_supabase-db-and-auth\00_references\supabase-schema.sql
+C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\00_references\supabase-schema.sql
 ```
 
 단원별 실습에서는 필요한 SQL이나 테이블 구조를 각 README에서 다시 안내합니다.
@@ -358,7 +358,7 @@ RLS
 -> 이 사용자가 이 데이터에 접근해도 되는지 확인
 ```
 
-처음에는 단순 CRUD를 먼저 실습하고, 이후 `06_supabase-db-and-auth/04_supabase-auth-and-rls`에서 Auth와 RLS를 자세히 다룹니다.
+처음에는 단순 CRUD를 먼저 실습하고, 이후 `03_supabase-db-and-auth/04_supabase-auth-and-rls`에서 Auth와 RLS를 자세히 다룹니다.
 
 ## 12. Upstash Redis 기본 개념
 
@@ -379,13 +379,13 @@ Upstash Redis
 Upstash Redis TTL 예제 실행:
 
 ```powershell
-python .\06_supabase-db-and-auth\06_upstash-redis-cache-and-session\02_cache_set_get_ttl.py
+python .\03_supabase-db-and-auth\06_upstash-redis-cache-and-session\02_cache_set_get_ttl.py
 ```
 
 요청 횟수 제한 예제 실행:
 
 ```powershell
-python .\06_supabase-db-and-auth\06_upstash-redis-cache-and-session\03_rate_limit_example.py
+python .\03_supabase-db-and-auth\06_upstash-redis-cache-and-session\03_rate_limit_example.py
 ```
 
 ## 13. FastAPI 실행 기본형
@@ -393,7 +393,7 @@ python .\06_supabase-db-and-auth\06_upstash-redis-cache-and-session\03_rate_limi
 FastAPI 예제는 보통 예제 파일이 있는 폴더에서 실행합니다.
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend\04_fastapi-backend\10_labs\lab-01_fastapi-health-check
+cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab-01_fastapi-health-check
 uvicorn solution:app --reload
 ```
 

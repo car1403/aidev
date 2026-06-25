@@ -1,6 +1,6 @@
 ﻿# Lab 08 - 미니 서비스 종합 리뷰
 
-이 lab에서는 `08_backend-mini-service-practice`에서 만든 미니 서비스를 Codex와 함께 종합 리뷰합니다.
+이 lab에서는 `05_backend-mini-service-practice`에서 만든 미니 서비스를 Codex와 함께 종합 리뷰합니다.
 
 이전 lab이 파일 하나를 중심으로 진행되었다면, 이번 lab은 요구사항, API 설계, SQL 스키마, mock-first 구현, Supabase 구현, 로그 저장 흐름을 함께 확인합니다.
 
@@ -15,12 +15,12 @@
 ## 리뷰 대상
 
 ```text
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice\01_requirements\README.md
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice\02_api-design\README.md
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice\03_supabase-schema\mini-service-schema.sql
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice\04_implementation-guide\main_mock.py
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice\04_implementation-guide\main_supabase.py
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice\04_implementation-guide\schemas.py
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice\01_requirements\README.md
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice\02_api-design\README.md
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice\03_supabase-schema\mini-service-schema.sql
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice\04_implementation-guide\main_mock.py
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice\04_implementation-guide\main_supabase.py
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice\04_implementation-guide\schemas.py
 ```
 
 ## 실습 절차
@@ -37,7 +37,7 @@ C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice\04_implementati
 ## Codex 요청 예시
 
 ```text
-08_backend-mini-service-practice의 미니 서비스를 종합 리뷰해주세요.
+05_backend-mini-service-practice의 미니 서비스를 종합 리뷰해주세요.
 
 리뷰 대상:
 1. 요구사항 문서

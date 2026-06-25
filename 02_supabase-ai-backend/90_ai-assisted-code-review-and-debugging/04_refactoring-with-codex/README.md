@@ -52,7 +52,7 @@
 아래 파일을 리팩토링해 주세요.
 
 파일:
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice\04_implementation-guide\main_mock.py
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice\04_implementation-guide\main_mock.py
 
 현재 동작:
 - POST /questions로 질문을 등록합니다.

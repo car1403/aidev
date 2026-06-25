@@ -2,7 +2,7 @@
 
 최종 프로젝트에서 사용할 Supabase 테이블, 컬럼, 관계, 권한 기준을 작성합니다.
 
-이 프로젝트는 `08_backend-mini-service-practice`와 연결되므로 기본 테이블 이름은 `mini_questions`, `mini_service_logs`를 기준으로 정리합니다. 프로젝트 상황에 따라 이름을 바꿀 수 있지만, API 문서와 Python 코드의 이름은 반드시 일치해야 합니다.
+이 프로젝트는 `05_backend-mini-service-practice`와 연결되므로 기본 테이블 이름은 `mini_questions`, `mini_service_logs`를 기준으로 정리합니다. 프로젝트 상황에 따라 이름을 바꿀 수 있지만, API 문서와 Python 코드의 이름은 반드시 일치해야 합니다.
 
 ## 필수 테이블
 

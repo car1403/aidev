@@ -63,16 +63,16 @@
 관련 백엔드 단원은 다음과 같습니다.
 
 ```text
-C:\aidev\02_supabase-ai-backend\06_supabase-db-and-auth\03_fastapi-supabase-integration
-C:\aidev\02_supabase-ai-backend\06_supabase-db-and-auth\04_supabase-auth-and-rls
-C:\aidev\02_supabase-ai-backend\06_supabase-db-and-auth\05_conversation-history-and-service-logs
-C:\aidev\02_supabase-ai-backend\07_backend-service-data-management
+C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\03_fastapi-supabase-integration
+C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\04_supabase-auth-and-rls
+C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\05_conversation-history-and-service-logs
+C:\aidev\02_supabase-ai-backend\04_backend-service-data-management
 ```
 
 백엔드 실행 예시는 다음과 같습니다.
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend\06_supabase-db-and-auth\03_fastapi-supabase-integration
+cd C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\03_fastapi-supabase-integration
 ..\..\.venv\Scripts\Activate.ps1
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```

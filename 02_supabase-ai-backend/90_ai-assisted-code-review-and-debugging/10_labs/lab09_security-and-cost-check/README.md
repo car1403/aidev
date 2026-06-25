@@ -23,9 +23,9 @@
 ## 점검 대상 예시
 
 ```text
-C:\aidev\02_supabase-ai-backend\05_llm-api-integration
-C:\aidev\02_supabase-ai-backend\06_supabase-db-and-auth
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice
+C:\aidev\02_supabase-ai-backend\02_llm-api-integration
+C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice
 ```
 
 ## 실습 절차
@@ -46,9 +46,9 @@ C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice
 다음 백엔드 코드를 보안과 비용 관점에서 리뷰해주세요.
 
 리뷰 대상:
-05_llm-api-integration
-06_supabase-db-and-auth
-08_backend-mini-service-practice
+02_llm-api-integration
+03_supabase-db-and-auth
+05_backend-mini-service-practice
 
 중점 확인:
 1. API key, Supabase key, Redis token이 코드에 직접 적혀 있는가?

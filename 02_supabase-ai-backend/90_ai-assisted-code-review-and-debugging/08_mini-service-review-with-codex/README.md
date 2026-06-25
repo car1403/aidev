@@ -1,6 +1,6 @@
 ﻿# 08_mini-service-review-with-codex
 
-이 단원에서는 `08_backend-mini-service-practice`에서 만든 백엔드 미니 서비스를 Codex와 함께 종합 리뷰하는 방법을 학습합니다.
+이 단원에서는 `05_backend-mini-service-practice`에서 만든 백엔드 미니 서비스를 Codex와 함께 종합 리뷰하는 방법을 학습합니다.
 
 앞 단원에서는 파일 하나 또는 특정 오류를 중심으로 리뷰했습니다. 이번 단원에서는 요구사항, API 설계, Pydantic 모델, Supabase 저장, Upstash Redis 활용, 서비스 로그, 보안, 실행 확인까지 미니 서비스 전체 흐름을 하나의 기준으로 점검합니다.
 
@@ -20,12 +20,12 @@
 미니 서비스 리뷰는 한 파일만 보는 것이 아니라 관련 파일을 묶어서 확인합니다.
 
 ```text
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice\01_requirements\README.md
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice\02_api-design\README.md
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice\03_supabase-schema\mini-service-schema.sql
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice\04_implementation-guide\main_mock.py
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice\04_implementation-guide\main_supabase.py
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice\04_implementation-guide\schemas.py
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice\01_requirements\README.md
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice\02_api-design\README.md
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice\03_supabase-schema\mini-service-schema.sql
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice\04_implementation-guide\main_mock.py
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice\04_implementation-guide\main_supabase.py
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice\04_implementation-guide\schemas.py
 ```
 
 처음에는 모든 파일을 한 번에 리뷰하지 말고, 요구사항 문서와 API 설계 문서를 먼저 확인한 뒤 구현 파일을 보는 것이 좋습니다.
@@ -172,7 +172,7 @@ Supabase 구현 리뷰에서는 "저장된다"만 확인하지 말고 "올바른
 아래 예시는 미니 서비스 전체를 리뷰할 때 사용할 수 있는 요청입니다.
 
 ```text
-08_backend-mini-service-practice의 미니 서비스를 종합 리뷰해주세요.
+05_backend-mini-service-practice의 미니 서비스를 종합 리뷰해주세요.
 
 리뷰 대상:
 1. 01_requirements/README.md

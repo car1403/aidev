@@ -141,7 +141,7 @@ LLM API는 코드 한 줄로 호출할 수 있지만, 반복문이나 자동 테
 다음 FastAPI/Supabase 코드를 보안 관점에서 리뷰해주세요.
 
 파일 위치:
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice\04_implementation-guide\main_supabase.py
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice\04_implementation-guide\main_supabase.py
 
 코드 목적:
 사용자 질문, AI 응답, 서비스 로그를 Supabase에 저장하는 백엔드 예제입니다.

@@ -109,7 +109,7 @@ C:\aidev\03_supabase-ai-frontend\99_final-frontend-project\.env
 API 연동 실습을 할 때는 백엔드 서버가 먼저 실행되어 있어야 합니다. PowerShell을 하나 더 열고 아래 명령을 실행합니다.
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend\06_supabase-db-and-auth\03_fastapi-supabase-integration
+cd C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\03_fastapi-supabase-integration
 ..\..\.venv\Scripts\Activate.ps1
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```

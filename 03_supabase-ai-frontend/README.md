@@ -223,7 +223,7 @@ API 연동 단원에서는 PowerShell을 두 개 열어 진행합니다.
 첫 번째 PowerShell에서는 백엔드를 실행합니다.
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend\06_supabase-db-and-auth\03_fastapi-supabase-integration
+cd C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\03_fastapi-supabase-integration
 ..\..\.venv\Scripts\Activate.ps1
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```

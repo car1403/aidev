@@ -2,7 +2,7 @@
 
 이 단원은 `02_supabase-ai-backend`의 최종 백엔드 프로젝트입니다.
 
-Python, FastAPI, Pydantic, Gemini SDK, Supabase, Upstash Redis, 서비스 로그, Codex 기반 코드 리뷰를 하나의 결과물로 정리합니다. 앞에서 만든 `08_backend-mini-service-practice`의 미니 서비스를 바탕으로, 직접 요구사항을 정리하고 API, 데이터베이스, 환경 변수, 테스트 결과, 보안 점검 문서를 완성합니다.
+Python, FastAPI, Pydantic, Gemini SDK, Supabase, Upstash Redis, 서비스 로그, Codex 기반 코드 리뷰를 하나의 결과물로 정리합니다. 앞에서 만든 `05_backend-mini-service-practice`의 미니 서비스를 바탕으로, 직접 요구사항을 정리하고 API, 데이터베이스, 환경 변수, 테스트 결과, 보안 점검 문서를 완성합니다.
 
 ## 프로젝트 주제 예시
 

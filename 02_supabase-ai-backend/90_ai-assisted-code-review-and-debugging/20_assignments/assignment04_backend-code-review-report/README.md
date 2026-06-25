@@ -16,10 +16,10 @@
 ## 리뷰 대상 예시
 
 ```text
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice\04_implementation-guide\main_mock.py
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice\04_implementation-guide\main_supabase.py
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice\04_implementation-guide\schemas.py
-C:\aidev\02_supabase-ai-backend\07_backend-service-data-management\04_fastapi-service-endpoints
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice\04_implementation-guide\main_mock.py
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice\04_implementation-guide\main_supabase.py
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice\04_implementation-guide\schemas.py
+C:\aidev\02_supabase-ai-backend\04_backend-service-data-management\04_fastapi-service-endpoints
 ```
 
 ## 제출 파일

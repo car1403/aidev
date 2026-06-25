@@ -144,7 +144,7 @@ calculate_average 함수
 미니 서비스에서 질문 등록 API를 만들고 싶습니다.
 
 현재 상태:
-08_backend-mini-service-practice에서는 /questions API를 사용합니다.
+05_backend-mini-service-practice에서는 /questions API를 사용합니다.
 
 만들 기능:
 POST /questions
@@ -232,7 +232,7 @@ uvicorn main_mock:app --reload --host 127.0.0.1 --port 8004
 ModuleNotFoundError: No module named 'fastapi'
 
 현재 위치:
-C:\aidev\02_supabase-ai-backend\08_backend-mini-service-practice\04_implementation-guide
+C:\aidev\02_supabase-ai-backend\05_backend-mini-service-practice\04_implementation-guide
 
 기대 결과:
 서버가 실행되고 http://127.0.0.1:8004/docs 에 접속되어야 합니다.

@@ -39,12 +39,14 @@ Supabase는 PostgreSQL 데이터베이스를 기반으로 인증, 데이터 API,
 
 처음에는 아래 순서대로 진행하면 됩니다.
 
+> 참고: Python 기초, Python 심화, Git/GitHub는 `01_python-git-foundation`에서 먼저 다룹니다. 이 과정 안에서는 백엔드 학습 흐름을 다시 `01_fastapi-backend`부터 시작합니다.
+
 1. `SETUP.md`를 보고 `02_supabase-ai-backend` 폴더에 `.venv`를 만듭니다.
 2. PowerShell에서 `.venv`를 활성화합니다.
 3. `python -m pip install --upgrade pip`로 `pip`를 최신 버전으로 올립니다.
 4. `pip install -r requirements.txt`로 공통 패키지를 설치합니다.
 5. `00_references`를 읽고 수업 전체 방향과 API key 보안 기준을 확인합니다.
-6. `04_fastapi-backend`부터 순서대로 백엔드 예제 파일을 실행합니다.
+6. `01_fastapi-backend`부터 순서대로 백엔드 예제 파일을 실행합니다.
 7. 각 단원의 `10_labs`는 수업 중 실습으로, `20_assignments`는 개인 과제로 진행합니다.
 
 이 과정에서는 각 단원마다 `.venv`를 따로 만들지 않고, `02_supabase-ai-backend` 최상위의 `.venv` 하나를 사용합니다.
@@ -60,11 +62,11 @@ Supabase는 PostgreSQL 데이터베이스를 기반으로 인증, 데이터 API,
 ├─ README.md
 ├─ SETUP.md
 ├─ 00_references
-├─ 04_fastapi-backend
-├─ 05_llm-api-integration
-├─ 06_supabase-db-and-auth
-├─ 07_backend-service-data-management
-├─ 08_backend-mini-service-practice
+├─ 01_fastapi-backend
+├─ 02_llm-api-integration
+├─ 03_supabase-db-and-auth
+├─ 04_backend-service-data-management
+├─ 05_backend-mini-service-practice
 ├─ 90_ai-assisted-code-review-and-debugging
 └─ 99_final-backend-project
 ```
@@ -90,11 +92,11 @@ README.md 단원 설명과 학습 순서
 | 단원 | 역할 |
 | --- | --- |
 | `00_references` | AI 리터러시, AI 도구 비교, 프롬프트 작성, 답변 검증, API key 보안 기준을 이해합니다. |
-| `04_fastapi-backend` | FastAPI, REST API, HTTP Method, Pydantic, async, Swagger/Postman 테스트를 학습합니다. |
-| `05_llm-api-integration` | mock-first 흐름으로 비용 없이 먼저 구조를 익힌 뒤, Gemini SDK 기본 호출, Gemini REST 보충 호출, OpenAI 선택 비교, 토큰/과금, 파라미터, 싱글턴/멀티턴 호출, FastAPI 연동을 학습합니다. |
-| `06_supabase-db-and-auth` | RDBMS, ERD, SQL 기초, Supabase 프로젝트, 테이블, CRUD, Auth, RLS, Upstash Redis 캐시/TTL을 학습합니다. |
-| `07_backend-service-data-management` | 사용자 정보, 대화 이력, 서비스 로그, 피드백 데이터를 백엔드 관점에서 설계합니다. |
-| `08_backend-mini-service-practice` | FastAPI, Supabase, Gemini SDK 기본 호출, Upstash Redis 캐시를 작은 백엔드 서비스로 묶어 봅니다. |
+| `01_fastapi-backend` | FastAPI, REST API, HTTP Method, Pydantic, async, Swagger/Postman 테스트를 학습합니다. |
+| `02_llm-api-integration` | mock-first 흐름으로 비용 없이 먼저 구조를 익힌 뒤, Gemini SDK 기본 호출, Gemini REST 보충 호출, OpenAI 선택 비교, 토큰/과금, 파라미터, 싱글턴/멀티턴 호출, FastAPI 연동을 학습합니다. |
+| `03_supabase-db-and-auth` | RDBMS, ERD, SQL 기초, Supabase 프로젝트, 테이블, CRUD, Auth, RLS, Upstash Redis 캐시/TTL을 학습합니다. |
+| `04_backend-service-data-management` | 사용자 정보, 대화 이력, 서비스 로그, 피드백 데이터를 백엔드 관점에서 설계합니다. |
+| `05_backend-mini-service-practice` | FastAPI, Supabase, Gemini SDK 기본 호출, Upstash Redis 캐시를 작은 백엔드 서비스로 묶어 봅니다. |
 | `90_ai-assisted-code-review-and-debugging` | AI를 활용한 코드 설명, 디버깅, 리팩토링, 코드 리뷰를 연습합니다. |
 | `99_final-backend-project` | 02 과정의 최종 백엔드 프로젝트를 진행하며 `provider`, `model`, `actual_api_called`, `llm_call_mode` 같은 LLM 호출 상태를 함께 기록합니다. |
 
@@ -127,7 +129,7 @@ cd C:\aidev\02_supabase-ai-backend
 Python/Git 기초 예제는 [01_python-git-foundation](../01_python-git-foundation/README.md)에서 진행합니다. 이 과정에서는 FastAPI 예제부터 실행합니다.
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend\04_fastapi-backend\10_labs\lab01_hello-fastapi
+cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab01_hello-fastapi
 uvicorn solution:app --reload
 ```
 
@@ -193,16 +195,16 @@ Server-Sent Events(SSE) 기반 AI 응답 스트리밍은 `04_supabase-ai-mini-pr
 | OOP, 예외 처리, 테스트 | `../01_python-git-foundation/02_python-advanced` | 선행 과정 |
 | Git/GitHub, 커밋/브랜치, VS Code Source Control | `../01_python-git-foundation/03_git-github` | 선행 과정 |
 | AI 리터러시와 답변 검증 | `00_references` | 포함 |
-| FastAPI, HTTP Method, REST API endpoint | `04_fastapi-backend` | 포함 |
-| Pydantic 요청/응답 검증 | `04_fastapi-backend` | 포함 |
-| async/await, 외부 API 연동 | `04_fastapi-backend` | 포함 |
-| Swagger/Postman 테스트 | `04_fastapi-backend` | 포함 |
-| LLM API, mock-first, Gemini SDK 기본, Gemini REST 보충, OpenAI API 선택 비교, 토큰/과금, 파라미터 | `05_llm-api-integration` | 추가 |
-| 싱글턴/멀티턴 호출, FastAPI LLM 연동 | `05_llm-api-integration` | 추가 |
-| RDBMS, ERD, SQL, Supabase 프로젝트 | `06_supabase-db-and-auth` | 포함/보강 |
-| Supabase Auth, RLS, 사용자별 접근 제어 | `06_supabase-db-and-auth` | 포함 |
-| 사용자 정보, 대화 이력, 서비스 로그 | `07_backend-service-data-management` | 추가 |
-| Redis 세션/TTL | `06_supabase-db-and-auth/06_upstash-redis-cache-and-session` | Upstash Redis로 포함 |
+| FastAPI, HTTP Method, REST API endpoint | `01_fastapi-backend` | 포함 |
+| Pydantic 요청/응답 검증 | `01_fastapi-backend` | 포함 |
+| async/await, 외부 API 연동 | `01_fastapi-backend` | 포함 |
+| Swagger/Postman 테스트 | `01_fastapi-backend` | 포함 |
+| LLM API, mock-first, Gemini SDK 기본, Gemini REST 보충, OpenAI API 선택 비교, 토큰/과금, 파라미터 | `02_llm-api-integration` | 추가 |
+| 싱글턴/멀티턴 호출, FastAPI LLM 연동 | `02_llm-api-integration` | 추가 |
+| RDBMS, ERD, SQL, Supabase 프로젝트 | `03_supabase-db-and-auth` | 포함/보강 |
+| Supabase Auth, RLS, 사용자별 접근 제어 | `03_supabase-db-and-auth` | 포함 |
+| 사용자 정보, 대화 이력, 서비스 로그 | `04_backend-service-data-management` | 추가 |
+| Redis 세션/TTL | `03_supabase-db-and-auth/06_upstash-redis-cache-and-session` | Upstash Redis로 포함 |
 | Docker 기반 Redis 운영 | `07_multi-agent-service-ops` | 02에서는 제외 |
 | Streamlit/React UI | `03_supabase-ai-frontend` | 02에서는 제외 |
 | 배포 실습 | `04_supabase-ai-mini-project`, `07_multi-agent-service-ops` | 02에서는 제외 |

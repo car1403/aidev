@@ -69,7 +69,27 @@ PowerShell 실행 정책 오류가 나오면 다음 명령을 한 번 실행한 
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-## 4. 패키지 설치
+## 4. VS Code 터미널 자동 활성화 설정
+
+`01_python-git-foundation`에는 `.vscode/settings.json` 파일이 포함되어 있습니다. 이 파일은 VS Code의 새 PowerShell 터미널을 열 때 아래 명령을 자동으로 실행하도록 설정합니다.
+
+```powershell
+& '.\.venv\Scripts\Activate.ps1'
+```
+
+이 설정을 사용하면 VS Code에서 터미널을 새로 열 때마다 직접 `.\.venv\Scripts\Activate.ps1`을 입력하지 않아도 됩니다.
+
+중요한 기준:
+
+```text
+1. 먼저 .venv를 만들어 둡니다.
+2. VS Code에서 C:\aidev\01_python-git-foundation 폴더 자체를 엽니다.
+3. 새 터미널을 열었을 때 PowerShell 앞에 (.venv)가 보이는지 확인합니다.
+```
+
+`C:\aidev` 전체 폴더를 VS Code로 열면 `01_python-git-foundation\.vscode` 설정이 자동 적용되지 않을 수 있습니다. 자동 활성화를 사용하려면 각 과정 폴더를 VS Code 작업 폴더로 직접 여는 방식을 권장합니다.
+
+## 5. 패키지 설치
 
 기초 실습과 테스트에 필요한 패키지를 설치합니다.
 
@@ -84,7 +104,7 @@ pip install -r requirements.txt
 python -c "import pytest, dotenv; print('packages ok')"
 ```
 
-## 5. 예제 실행
+## 6. 예제 실행
 
 ```powershell
 python .\01_python-basic\01_python-start\01_hello_python.py
@@ -92,7 +112,7 @@ python .\02_python-advanced\01_function-advanced\01_args_kwargs_api_options.py
 python -m pytest .\02_python-advanced\08_testing-code-quality
 ```
 
-## 6. Git/GitHub 준비
+## 7. Git/GitHub 준비
 
 Git 설치 여부를 확인합니다.
 

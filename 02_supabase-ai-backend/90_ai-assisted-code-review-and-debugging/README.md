@@ -14,7 +14,7 @@
 - FastAPI, Pydantic, Supabase, Upstash Redis, LLM API 코드에서 자주 발생하는 문제를 점검할 수 있다.
 - API key, service role key, Redis token 같은 민감 정보가 노출되지 않았는지 확인할 수 있다.
 - Gemini SDK 기본 사용 흐름, REST 보충 예제, OpenAI 선택 사용 흐름을 구분하고 비용 위험을 점검할 수 있다.
-- `08_backend-mini-service-practice`에서 만든 미니 서비스를 Codex와 함께 종합 리뷰할 수 있다.
+- `05_backend-mini-service-practice`에서 만든 미니 서비스를 Codex와 함께 종합 리뷰할 수 있다.
 
 ## 학습 순서
 
@@ -72,13 +72,13 @@
 
 ## 다른 단원과의 연결
 
-- `01_python-basic`: 기초 문법 설명, 오류 원인 분석, 작은 함수 생성
-- `02_python-advanced`: 함수 분리, 모듈화, 객체지향 리팩토링
-- `04_fastapi-backend`: API 구조 생성, 테스트, 오류 해결
-- `05_llm-api-integration`: mock-first, Gemini SDK 기본 호출, REST 보충 호출, OpenAI 선택 호출 구분, 비용/토큰/예외 처리 점검
-- `06_supabase-db-and-auth`: Supabase 연동 코드 검토, Auth/RLS, Upstash Redis 세션과 캐시 점검
-- `07_backend-service-data-management`: 사용자 프로필, 대화 이력, 서비스 로그 설계 리뷰
-- `08_backend-mini-service-practice`: 미니 서비스 전체 코드 리뷰와 개선
+- `01_python-git-foundation/01_python-basic`: 기초 문법 설명, 오류 원인 분석, 작은 함수 생성
+- `01_python-git-foundation/02_python-advanced`: 함수 분리, 모듈화, 객체지향 리팩토링
+- `01_fastapi-backend`: API 구조 생성, 테스트, 오류 해결
+- `02_llm-api-integration`: mock-first, Gemini SDK 기본 호출, REST 보충 호출, OpenAI 선택 호출 구분, 비용/토큰/예외 처리 점검
+- `03_supabase-db-and-auth`: Supabase 연동 코드 검토, Auth/RLS, Upstash Redis 세션과 캐시 점검
+- `04_backend-service-data-management`: 사용자 프로필, 대화 이력, 서비스 로그 설계 리뷰
+- `05_backend-mini-service-practice`: 미니 서비스 전체 코드 리뷰와 개선
 - `03_supabase-ai-frontend`: Streamlit 화면 흐름, 사용자 경험, API 연동 피드백
 
 ## 백엔드 코드 리뷰 관점
@@ -109,7 +109,7 @@
 ## 추천 리뷰 요청 예시
 
 ```text
-08_backend-mini-service-practice/04_implementation-guide/main_mock.py를 리뷰해주세요.
+05_backend-mini-service-practice/04_implementation-guide/main_mock.py를 리뷰해주세요.
 
 리뷰 관점:
 1. FastAPI endpoint 구조가 실습 요구사항과 맞는가?

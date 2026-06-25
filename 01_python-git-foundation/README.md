@@ -16,12 +16,15 @@ Python 기초, Python 심화, Git/GitHub를 먼저 분리해서 학습하는 선
 
 1. [SETUP.md](./SETUP.md)를 보고 `01_python-git-foundation` 폴더에 `.venv`를 만듭니다.
 2. PowerShell에서 `.venv`를 활성화합니다.
-3. `pip install -r requirements.txt`로 기초 실습 패키지를 설치합니다.
-4. `01_python-basic`부터 예제를 실행합니다.
-5. `02_python-advanced`에서 함수, 모듈, 예외 처리, 테스트를 확장합니다.
-6. `03_git-github`에서 Git/GitHub와 VS Code Source Control을 실습합니다.
+3. 선택 사항으로 VS Code 터미널 자동 활성화 설정을 확인합니다.
+4. `pip install -r requirements.txt`로 기초 실습 패키지를 설치합니다.
+5. `01_python-basic`부터 예제를 실행합니다.
+6. `02_python-advanced`에서 함수, 모듈, 예외 처리, 테스트를 확장합니다.
+7. `03_git-github`에서 Git/GitHub와 VS Code Source Control을 실습합니다.
 
 이 과정에서는 단원별 `.venv`를 만들지 않고, `01_python-git-foundation` 최상위의 `.venv` 하나를 사용합니다.
+
+VS Code에서 `01_python-git-foundation` 폴더 자체를 열면 `.vscode/settings.json` 설정에 따라 새 터미널을 열 때 `.venv`가 자동 활성화됩니다. `C:\aidev` 전체 폴더를 열면 하위 과정의 `.vscode` 설정은 자동 적용되지 않으므로, 자동 활성화를 사용하려면 해당 과정 폴더를 VS Code로 여는 것이 좋습니다.
 
 ## 과정 구조
 
