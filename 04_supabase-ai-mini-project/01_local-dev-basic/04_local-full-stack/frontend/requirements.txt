@@ -1,0 +1,24 @@
+﻿# 04_local-full-stack frontend 참고 패키지 목록
+#
+# 기본 설치는 03 과정 최상위 requirements.txt로 진행합니다.
+#
+#   C:\aidev\04_supabase-ai-mini-project\requirements.txt
+#
+# 이 파일은 로컬 풀스택 프론트엔드 예제만 따로 확인할 때 필요한 패키지를
+# 설명하기 위한 참고용 파일입니다.
+
+# Python 코드로 대시보드 화면을 만들기 위한 Streamlit 프레임워크입니다.
+# 이 예제에서는 입력폼, 버튼, 테이블, 간단한 조회 화면을 만듭니다.
+streamlit==1.41.1
+
+# Supabase에서 조회한 로그 데이터를 표 형태로 정리하고 화면에 표시하기 위해 사용합니다.
+pandas==2.2.3
+
+# Streamlit 프론트엔드에서 FastAPI 백엔드 API를 호출하기 위해 사용합니다.
+# 예:
+#   httpx.get(f"{API_BASE_URL}/logs")
+httpx==0.27.2
+
+# 04_supabase-ai-mini-project 최상위 .env 파일을 읽기 위해 사용합니다.
+# API_BASE_URL 값을 코드에 직접 쓰지 않도록 도와줍니다.
+python-dotenv==1.0.1

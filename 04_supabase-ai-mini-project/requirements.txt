@@ -1,0 +1,131 @@
+﻿# 04_supabase-ai-mini-project 공통 패키지 목록
+#
+# 이 파일은 04_supabase-ai-mini-project 전체 과정에서 사용하는 공통 .venv에
+# 설치할 패키지를 모아 둔 파일입니다.
+#
+# 설치 위치:
+#   C:\aidev\04_supabase-ai-mini-project
+#
+# 설치 명령:
+#   python -m pip install --upgrade pip
+#   pip install -r requirements.txt
+#
+# 사용 기준:
+# - 하위 실습 폴더마다 .venv를 새로 만들지 않습니다.
+# - 04_supabase-ai-mini-project 최상위 .venv 하나를 사용합니다.
+# - 하위 backend/frontend 폴더의 requirements.txt는 배포 또는 개별 확인용 참고 파일입니다.
+# - 기본 AI API는 Gemini입니다.
+# - OpenAI는 선택/비교 실습용으로 유지합니다.
+
+
+# -----------------------------------------------------------------------------
+# FastAPI 백엔드 서버 실행 패키지
+# -----------------------------------------------------------------------------
+
+# FastAPI API 서버를 만들기 위한 핵심 웹 프레임워크입니다.
+# 사용 위치:
+# - 01_local-dev-basic/02_local-fastapi
+# - 01_local-dev-basic/04_local-full-stack/backend
+# - 02_instructor-sample-project/backend
+# - 99_team-projects/team-template/backend
+fastapi==0.115.6
+
+# FastAPI 앱을 로컬 개발 서버로 실행하는 ASGI 서버입니다.
+# 예:
+#   uvicorn main:app --reload --host 127.0.0.1 --port 8000
+# 사용 위치:
+# - 모든 FastAPI 백엔드 실행 실습
+uvicorn[standard]==0.32.1
+
+
+# -----------------------------------------------------------------------------
+# Streamlit 프론트엔드 화면 패키지
+# -----------------------------------------------------------------------------
+
+# Python 코드만으로 웹 화면을 만들기 위한 UI 프레임워크입니다.
+# 사용 위치:
+# - 01_local-dev-basic/03_local-streamlit
+# - 01_local-dev-basic/04_local-full-stack/frontend
+# - 02_instructor-sample-project/frontend
+# - 99_team-projects/team-template/frontend
+streamlit==1.41.1
+
+# 표 형태 데이터와 대시보드 데이터를 다루기 위한 패키지입니다.
+# Streamlit에서 st.dataframe, 차트, 요약 지표를 만들 때 자주 사용합니다.
+# 사용 위치:
+# - 프론트엔드 로그 목록 표시
+# - 서비스 로그 대시보드 표/차트 구성
+pandas==2.2.3
+
+
+# -----------------------------------------------------------------------------
+# HTTP API 호출 패키지
+# -----------------------------------------------------------------------------
+
+# Python에서 HTTP 요청을 보내기 위한 패키지입니다.
+# Streamlit 프론트엔드가 FastAPI 백엔드를 호출할 때 사용합니다.
+# SSE 실습에서는 스트리밍 응답을 읽는 구조를 이해할 때도 활용합니다.
+# 사용 위치:
+# - 01_local-dev-basic/04_local-full-stack/frontend
+# - 02_instructor-sample-project/frontend
+# - 99_team-projects/team-template/frontend
+httpx==0.27.2
+
+
+# -----------------------------------------------------------------------------
+# 환경변수(.env) 관리 패키지
+# -----------------------------------------------------------------------------
+
+# .env 파일에 저장한 Supabase URL, API key, Gemini key, API_BASE_URL 값을
+# Python 코드에서 os.getenv로 읽을 수 있게 해주는 패키지입니다.
+# 사용 위치:
+# - 01_local-dev-basic/01_supabase-env-check
+# - 모든 backend/frontend 실행 예제
+# - 99_team-projects/team-template
+python-dotenv==1.0.1
+
+
+# -----------------------------------------------------------------------------
+# Supabase 연동 패키지
+# -----------------------------------------------------------------------------
+
+# Python에서 Supabase 테이블에 insert/select/update 요청을 보내기 위한 패키지입니다.
+# 사용 위치:
+# - 01_local-dev-basic/04_local-full-stack/backend
+# - 02_instructor-sample-project/backend
+# - 03_supabase-and-sse-practice의 Supabase API 설계 흐름
+# - 99_team-projects/team-template/backend
+supabase==2.10.0
+
+
+# -----------------------------------------------------------------------------
+# 요청/응답 데이터 검증 패키지
+# -----------------------------------------------------------------------------
+
+# FastAPI 요청 Body와 응답 구조를 class 형태로 정의하고 검증하는 패키지입니다.
+# 사용 위치:
+# - FastAPI API 요청 모델
+# - 서비스 로그 생성/수정 모델
+# - 팀 프로젝트 API 설계 문서와 실제 코드 연결
+pydantic==2.10.4
+
+
+# -----------------------------------------------------------------------------
+# 선택 LLM API 패키지
+# -----------------------------------------------------------------------------
+
+# Gemini API를 Python SDK 방식으로 호출하기 위한 Google Gen AI SDK입니다.
+# 03 과정의 기본 AI API는 Gemini입니다.
+# 현재 입문 샘플은 Supabase/FastAPI/Streamlit 연결에 집중하지만,
+# 팀 프로젝트에서 AI 응답 생성 기능을 붙일 때 백엔드에서 사용할 수 있습니다.
+# 사용 위치:
+# - 03_supabase-and-sse-practice의 SSE AI 응답 확장
+# - 99_team-projects/team-template/backend에서 Gemini 응답 생성 기능을 추가할 때
+google-genai==1.2.0
+
+# OpenAI API를 Python에서 호출하기 위한 공식 패키지입니다.
+# 03 과정에서는 Gemini를 기본으로 사용하고, OpenAI는 선택/비교 실습으로 유지합니다.
+# 사용 위치:
+# - OpenAI 응답 비교 실습을 추가로 진행할 때
+# - 기존 OpenAI 예제를 팀 프로젝트에 선택적으로 연결할 때
+openai==1.57.4

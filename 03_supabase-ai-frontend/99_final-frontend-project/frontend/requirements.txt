@@ -1,0 +1,85 @@
+﻿# 99_final-frontend-project frontend 패키지 목록
+#
+# 이 파일은 03_supabase-ai-frontend의 최종 프론트엔드 프로젝트에서
+# Streamlit 화면을 실행하기 위해 필요한 패키지를 모아 둔 파일입니다.
+#
+# 설치 위치:
+#   C:\aidev\03_supabase-ai-frontend\99_final-frontend-project\frontend
+#
+# 설치 명령:
+#   python -m pip install --upgrade pip
+#   pip install -r requirements.txt
+#
+# 이 프론트엔드의 역할:
+# - Streamlit으로 개인화 AI 챗봇 화면을 구성합니다.
+# - 사용자가 입력한 이름과 질문을 FastAPI 백엔드로 보냅니다.
+# - 백엔드 응답, 대화 이력, 서비스 로그를 화면에 표시합니다.
+# - 배포 전에 확인해야 할 항목을 화면에서 점검합니다.
+#
+# 주의:
+# - 이 프론트엔드는 LLM API key, Supabase service role key, Upstash token 같은
+#   민감한 값을 직접 사용하지 않습니다.
+# - 민감한 값은 백엔드 환경변수나 배포 서비스의 환경변수에 넣어야 합니다.
+
+
+# -----------------------------------------------------------------------------
+# Streamlit 화면 구성 패키지
+# -----------------------------------------------------------------------------
+
+# Python 코드만으로 웹 화면을 빠르게 만들기 위한 UI 프레임워크입니다.
+# 이 프로젝트의 모든 화면은 Streamlit으로 작성되어 있습니다.
+# 사용 위치:
+# - frontend/app.py: 홈 화면, 백엔드 연결 상태 확인
+# - frontend/pages/01_chatbot.py: 챗봇 입력/응답 화면
+# - frontend/pages/02_chat_history.py: 대화 이력 조회 화면
+# - frontend/pages/03_service_logs.py: 서비스 로그 조회 화면
+# - frontend/pages/04_deployment_check.py: 배포 전 점검 화면
+# - Streamlit Community Cloud 배포
+streamlit==1.41.1
+
+
+# -----------------------------------------------------------------------------
+# 화면용 데이터 표시 패키지
+# -----------------------------------------------------------------------------
+
+# 표 형태의 데이터를 다루고 화면에 보기 좋게 표시하기 위한 패키지입니다.
+# Streamlit의 st.dataframe, st.bar_chart와 함께 사용하면
+# 대화 이력이나 로그 데이터를 초보자도 쉽게 확인할 수 있습니다.
+# 사용 위치:
+# - frontend/pages/02_chat_history.py: 대화 이력을 표로 표시
+# - frontend/pages/03_service_logs.py: 서비스 로그를 표와 차트로 표시
+pandas==2.2.3
+
+
+# -----------------------------------------------------------------------------
+# FastAPI 백엔드 호출 패키지
+# -----------------------------------------------------------------------------
+
+# Streamlit 프론트엔드에서 FastAPI 백엔드 API를 호출하기 위한 HTTP 클라이언트입니다.
+# 사용 위치:
+# - frontend/app.py: /health API를 호출해 백엔드 상태 확인
+# - frontend/pages/01_chatbot.py: /api/chat API 호출
+# - frontend/pages/02_chat_history.py: /api/chats API 호출
+# - frontend/pages/03_service_logs.py: /api/logs API 호출
+# - frontend/pages/04_deployment_check.py: /health API 호출
+httpx==0.28.1
+
+
+# -----------------------------------------------------------------------------
+# 환경 변수 관리 패키지
+# -----------------------------------------------------------------------------
+
+# 프로젝트 폴더 안의 .env 파일에서 API_BASE_URL 값을 읽기 위한 패키지입니다.
+# 이 최종 예제는 아래 파일을 기준으로 환경변수를 읽습니다.
+#
+#   C:\aidev\03_supabase-ai-frontend\99_final-frontend-project\.env
+#
+# 외부의 C:\aidev\.env 또는 C:\aidev\03_supabase-ai-frontend\.env를 읽는 구조가 아닙니다.
+# 사용 위치:
+# - frontend/app.py: API_BASE_URL 읽기
+# - frontend/pages/*.py: 각 화면에서 API_BASE_URL 읽기
+# - SETUP.md: .env.example을 .env로 복사하는 과정
+#
+# 배포 환경에서는 .env 파일 대신 Streamlit Community Cloud의 Secrets에
+# API_BASE_URL을 등록해서 사용합니다.
+python-dotenv==1.0.1

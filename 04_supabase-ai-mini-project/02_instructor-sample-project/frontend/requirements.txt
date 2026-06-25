@@ -1,0 +1,23 @@
+﻿# 02_instructor-sample-project frontend 참고 패키지 목록
+#
+# 기본 설치는 03 과정 최상위 requirements.txt로 진행합니다.
+#
+#   C:\aidev\04_supabase-ai-mini-project\requirements.txt
+#
+# 이 파일은 완성 샘플 프론트엔드만 따로 실행하거나 배포할 때 필요한 패키지를
+# 확인하기 위한 참고용 파일입니다.
+
+# Python 코드로 웹 화면을 만들기 위한 Streamlit 프레임워크입니다.
+# 이 샘플에서는 입력폼, 조회 버튼, 로그 목록 화면을 만듭니다.
+streamlit==1.41.1
+
+# FastAPI에서 받은 로그 목록을 표 형태로 정리하고 Streamlit에 표시하기 위해 사용합니다.
+pandas==2.2.3
+
+# Streamlit 프론트엔드에서 FastAPI 백엔드 API를 호출하기 위해 사용합니다.
+# API_BASE_URL을 기준으로 /logs, /health 같은 엔드포인트를 호출합니다.
+httpx==0.27.2
+
+# 04_supabase-ai-mini-project 최상위 .env 파일을 읽기 위해 사용합니다.
+# API_BASE_URL 값을 코드에 직접 쓰지 않도록 도와줍니다.
+python-dotenv==1.0.1

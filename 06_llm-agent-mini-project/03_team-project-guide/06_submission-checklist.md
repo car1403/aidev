@@ -1,0 +1,59 @@
+# 06 Submission Checklist
+
+최종 제출 전에 확인하는 체크리스트입니다.
+
+## 필수 제출 기준
+
+```text
+README.md
+.env.example
+backend/agent_state.py
+backend/tools.py
+backend/graph.py
+frontend/app.py
+docs/agent-architecture.md
+docs/agent-test-report.md
+```
+
+필수 산출물은 `Agent Architecture 설계서`와 `Agent Test Report` 2가지입니다. 실행에 필요한 README, `.env.example`, backend/frontend 파일은 프로젝트 확인을 위해 함께 유지합니다.
+
+아래 문서는 선택 보조 산출물입니다. 작성하지 않아도 05 과정의 필수 제출 기준에는 영향을 주지 않습니다.
+
+```text
+docs/project-plan.md
+docs/agent-design.md
+docs/test-checklist.md
+presentation/final-presentation.md
+```
+
+## Agent Architecture 설계서 확인
+
+- [ ] StateGraph의 각 Node가 `인지 -> 판단 -> 행동 -> 검증` 흐름에 맞게 배치되어 있습니다.
+- [ ] Start, Tools, Decision, Review 또는 Reflection, End 흐름이 설명되어 있습니다.
+- [ ] 분기 조건이 도구 필요 여부, 사용자 의도, 데이터 충분성, 오류 여부 같은 기준으로 정의되어 있습니다.
+- [ ] 예외 흐름과 fallback이 edge 또는 node로 문서화되어 있습니다.
+- [ ] Session Memory와 Long-term Memory 적용 여부가 설명되어 있습니다.
+- [ ] 컨텍스트 요약 전략이 설명되어 있습니다.
+- [ ] Tool Use 호출 흐름이 `선택 -> 호출 -> 결과 처리 -> 다음 노드 결정` 순서로 표현되어 있습니다.
+- [ ] 공유 State 필드가 타입 힌트와 함께 정의되어 있습니다.
+- [ ] `messages`, `tools_called`, `error_count`, `iteration` 같은 필드가 중복 없이 설계되어 있습니다.
+
+## Agent Test Report 확인
+
+- [ ] 할루시네이션, Tool 선택 오류, 파라미터 누락, 응답 불일치 기준이 정의되어 있습니다.
+- [ ] 오류 유형별 재시도 횟수와 대체 전략이 정리되어 있습니다.
+- [ ] 프롬프트, 파라미터, 휴리스틱 수정 이력이 버전별로 정리되어 있습니다.
+- [ ] `오류 감지 -> 원인 분석 -> 수정 전략 선택 -> 재실행 -> 검증` 흐름이 정리되어 있습니다.
+- [ ] Feedback Loop 각 단계의 입력과 출력이 정의되어 있습니다.
+- [ ] Self-Reflection 적용 전후 성능 비교가 있습니다.
+- [ ] 완료율, Tool 선택 정확도, 응답 일관성, 평균 재시도 횟수가 수치로 제시되어 있습니다.
+
+## 실행 검증
+
+- [ ] `.venv` 활성화 후 실행됩니다.
+- [ ] CLI 실행이 됩니다.
+- [ ] Streamlit 실행이 됩니다.
+- [ ] 기본 요청 처리가 됩니다.
+- [ ] 잘못된 요청 처리 또는 fallback이 됩니다.
+- [ ] `.env` 파일은 제출물에 포함하지 않았습니다.
+- [ ] 불필요한 `__pycache__` 폴더가 없습니다.
