@@ -101,7 +101,7 @@ pip install -r requirements.txt
 설치 확인:
 
 ```powershell
-python -c "import pytest, dotenv; print('packages ok')"
+python -c "import pytest, httpx; print('packages ok')"
 ```
 
 ## 6. 예제 실행
