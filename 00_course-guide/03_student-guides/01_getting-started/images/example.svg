@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
-  <title id="title">Markdown image example</title>
-  <desc id="desc">A simple placeholder image used by the Markdown preview guide.</desc>
-  <rect width="640" height="360" fill="#f3f4f6"/>
-  <rect x="40" y="40" width="560" height="280" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="320" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#111827">Markdown Image Example</text>
-  <text x="320" y="214" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#4b5563">./images/example.svg</text>
-</svg>

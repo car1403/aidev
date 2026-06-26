@@ -26,7 +26,7 @@ Git 설치 여부를 확인합니다.
 git --version
 ```
 
-Git이 설치되어 있지 않다면 `00_course-guide/03_student-guides`의 설치 안내 문서를 먼저 확인합니다.
+Git이 설치되어 있지 않다면 `00_course-guide/02_learning-guide`의 설치 안내 문서를 먼저 확인합니다.
 
 VS Code에서 과정 폴더를 엽니다.
 

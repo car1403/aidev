@@ -10,13 +10,13 @@ Python 설치, VS Code 설치, 확장 프로그램, PowerShell 사용법, Markdo
 
 | 필요한 내용 | 참고 문서 |
 | --- | --- |
-| Python 설치와 버전 확인 | [`../00_course-guide/03_student-guides/01_getting-started/01_python-install-guide.md`](../00_course-guide/03_student-guides/01_getting-started/01_python-install-guide.md) |
-| VS Code 설치 | [`../00_course-guide/03_student-guides/01_getting-started/02_vscode-install-guide.md`](../00_course-guide/03_student-guides/01_getting-started/02_vscode-install-guide.md) |
-| VS Code 확장 프로그램 설치 | [`../00_course-guide/03_student-guides/01_getting-started/03_vscode-extensions-guide.md`](../00_course-guide/03_student-guides/01_getting-started/03_vscode-extensions-guide.md) |
-| PowerShell 기본 사용법 | [`../00_course-guide/03_student-guides/01_getting-started/04_powershell-basic-guide.md`](../00_course-guide/03_student-guides/01_getting-started/04_powershell-basic-guide.md) |
-| `.venv`, `pip`, `requirements.txt` 사용법 | [`../00_course-guide/03_student-guides/01_getting-started/05_venv-and-pip-guide.md`](../00_course-guide/03_student-guides/01_getting-started/05_venv-and-pip-guide.md) |
-| Markdown 미리보기와 문서 작성법 | [`../00_course-guide/03_student-guides/01_getting-started/06_markdown-preview-guide.md`](../00_course-guide/03_student-guides/01_getting-started/06_markdown-preview-guide.md) |
-| 첫 실행 전 점검표 | [`../00_course-guide/03_student-guides/01_getting-started/07_first-run-checklist.md`](../00_course-guide/03_student-guides/01_getting-started/07_first-run-checklist.md) |
+| Python 설치와 버전 확인 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
+| VS Code 설치 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
+| VS Code 확장 프로그램 설치 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
+| PowerShell 기본 사용법 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
+| `.venv`, `pip`, `requirements.txt` 사용법 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
+| Markdown 미리보기와 문서 작성법 | [`../00_course-guide/02_learning-guide/getting-started.md`](../00_course-guide/02_learning-guide/getting-started.md) |
+| 첫 실행 전 점검표 | [`../00_course-guide/02_learning-guide/getting-started.md`](../00_course-guide/02_learning-guide/getting-started.md) |
 
 ## 1. 작업 위치로 이동
 

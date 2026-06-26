@@ -32,10 +32,10 @@ Supabase는 PostgreSQL 데이터베이스를 기반으로 인증, 데이터 API,
 
 | 막히는 지점 | 확인 문서 |
 | --- | --- |
-| Supabase 프로젝트 생성, RLS, service role key 구분 | [Supabase 오류 해결](../00_course-guide/08_environment-and-troubleshooting/06_supabase-errors.md), [환경 변수와 key 관리](./03_supabase-db-and-auth/00_references/env-and-secret-management.md) |
-| Gemini/OpenAI API key, 비용, 호출 제한 | [API key and billing](./02_llm-api-integration/02_api-key-and-billing/README.md), [OpenAI 계정과 결제 안내](../00_course-guide/03_student-guides/01_getting-started/09_openai-account-billing-guide.md) |
-| FastAPI 실행 오류와 포트 충돌 | [FastAPI 오류 해결](../00_course-guide/08_environment-and-troubleshooting/04_fastapi-errors.md), [SETUP.md](./SETUP.md) |
-| `.env` 위치가 헷갈림 | [SETUP.md](./SETUP.md), [환경과 오류 해결 허브](../00_course-guide/08_environment-and-troubleshooting/README.md) |
+| Supabase 프로젝트 생성, RLS, service role key 구분 | [Supabase 오류 해결](../00_course-guide/02_learning-guide/troubleshooting.md), [환경 변수와 key 관리](./03_supabase-db-and-auth/00_references/env-and-secret-management.md) |
+| Gemini/OpenAI API key, 비용, 호출 제한 | [API key and billing](./02_llm-api-integration/02_api-key-and-billing/README.md), [OpenAI 계정과 결제 안내](../00_course-guide/02_learning-guide/environment-guide.md) |
+| FastAPI 실행 오류와 포트 충돌 | [FastAPI 오류 해결](../00_course-guide/02_learning-guide/troubleshooting.md), [SETUP.md](./SETUP.md) |
+| `.env` 위치가 헷갈림 | [SETUP.md](./SETUP.md), [환경과 오류 해결 허브](../00_course-guide/02_learning-guide/troubleshooting.md) |
 
 ## 과정 목표
 

@@ -9,14 +9,14 @@
 처음 시작할 때는 아래 문서부터 확인하시면 됩니다.
 
 - [전체 운영 안내](./00_course-guide/README.md)
-- [처음 시작 가이드](./00_course-guide/03_student-guides/01_getting-started/README.md)
-- [GitHub 계정 준비 및 VS Code 설치](./00_course-guide/03_student-guides/01_getting-started/02_vscode-install-guide.md)
-- [VS Code 확장 프로그램과 GitHub Copilot Chat](./00_course-guide/03_student-guides/01_getting-started/03_vscode-extensions-guide.md)
-- [Python 가상환경(.venv)과 pip 사용법](./00_course-guide/03_student-guides/01_getting-started/05_venv-and-pip-guide.md)
-- [Markdown 문서 보기와 작성법](./00_course-guide/03_student-guides/01_getting-started/06_markdown-preview-guide.md)
-- [첫 실행 체크리스트](./00_course-guide/03_student-guides/01_getting-started/07_first-run-checklist.md)
-- [Codex 설치와 로그인 안내](./00_course-guide/03_student-guides/01_getting-started/08_codex-install-and-login-guide.md)
-- [OpenAI 계정과 결제 안내](./00_course-guide/03_student-guides/01_getting-started/09_openai-account-billing-guide.md)
+- [처음 시작 가이드](./00_course-guide/02_learning-guide/getting-started.md)
+- [GitHub 계정 준비 및 VS Code 설치](./00_course-guide/02_learning-guide/environment-guide.md)
+- [VS Code 확장 프로그램과 GitHub Copilot Chat](./00_course-guide/02_learning-guide/environment-guide.md)
+- [Python 가상환경(.venv)과 pip 사용법](./00_course-guide/02_learning-guide/environment-guide.md)
+- [Markdown 문서 보기와 작성법](./00_course-guide/02_learning-guide/getting-started.md)
+- [첫 실행 체크리스트](./00_course-guide/02_learning-guide/getting-started.md)
+- [Codex 설치와 로그인 안내](./00_course-guide/02_learning-guide/environment-guide.md)
+- [OpenAI 계정과 결제 안내](./00_course-guide/02_learning-guide/environment-guide.md)
 
 ## 과정 바로가기
 
@@ -48,19 +48,19 @@
 
 개발 환경 설정은 한 번에 완벽하게 끝내기보다, 필요한 시점에 다시 확인하면서 진행하면 됩니다.
 
-- Python 설치: [01_python-install-guide.md](./00_course-guide/03_student-guides/01_getting-started/01_python-install-guide.md)
-- GitHub 계정과 VS Code 설치: [02_vscode-install-guide.md](./00_course-guide/03_student-guides/01_getting-started/02_vscode-install-guide.md)
-- VS Code 확장 프로그램: [03_vscode-extensions-guide.md](./00_course-guide/03_student-guides/01_getting-started/03_vscode-extensions-guide.md)
-- 터미널 기본 명령어: [04_powershell-basic-guide.md](./00_course-guide/03_student-guides/01_getting-started/04_powershell-basic-guide.md)
-- 가상환경과 pip: [05_venv-and-pip-guide.md](./00_course-guide/03_student-guides/01_getting-started/05_venv-and-pip-guide.md)
-- Markdown 문서 보기: [06_markdown-preview-guide.md](./00_course-guide/03_student-guides/01_getting-started/06_markdown-preview-guide.md)
-- Codex 설치와 로그인: [08_codex-install-and-login-guide.md](./00_course-guide/03_student-guides/01_getting-started/08_codex-install-and-login-guide.md)
+- Python 설치: [01_python-install-guide.md](./00_course-guide/02_learning-guide/environment-guide.md)
+- GitHub 계정과 VS Code 설치: [02_vscode-install-guide.md](./00_course-guide/02_learning-guide/environment-guide.md)
+- VS Code 확장 프로그램: [03_vscode-extensions-guide.md](./00_course-guide/02_learning-guide/environment-guide.md)
+- 터미널 기본 명령어: [04_powershell-basic-guide.md](./00_course-guide/02_learning-guide/environment-guide.md)
+- 가상환경과 pip: [05_venv-and-pip-guide.md](./00_course-guide/02_learning-guide/environment-guide.md)
+- Markdown 문서 보기: [06_markdown-preview-guide.md](./00_course-guide/02_learning-guide/getting-started.md)
+- Codex 설치와 로그인: [08_codex-install-and-login-guide.md](./00_course-guide/02_learning-guide/environment-guide.md)
 
 ## 문제 해결과 배포 전 점검
 
-수업 중 막히면 먼저 [환경과 오류 해결 허브](./00_course-guide/08_environment-and-troubleshooting/README.md)를 확인합니다. Supabase/RLS, API key와 비용, Streamlit 백엔드 연결, LangGraph, Docker Compose, AWS 선택 실습 문제를 바로 찾아갈 수 있습니다.
+수업 중 막히면 먼저 [환경과 오류 해결 허브](./00_course-guide/02_learning-guide/troubleshooting.md)를 확인합니다. Supabase/RLS, API key와 비용, Streamlit 백엔드 연결, LangGraph, Docker Compose, AWS 선택 실습 문제를 바로 찾아갈 수 있습니다.
 
-자료를 압축하거나 다른 PC로 복사하기 전에는 [배포 전 패키징 체크리스트](./00_course-guide/05_checklists/06_distribution-packaging-checklist.md)를 확인합니다. `.env`, `.venv`, `__pycache__`, `.pytest_cache`, `site-packages`는 배포 자료에 포함하지 않습니다.
+자료를 압축하거나 다른 PC로 복사하기 전에는 [배포 전 패키징 체크리스트](./00_course-guide/03_project-and-evaluation/submission-checklist.md)를 확인합니다. `.env`, `.venv`, `__pycache__`, `.pytest_cache`, `site-packages`는 배포 자료에 포함하지 않습니다.
 
 ## 주요 기준
 

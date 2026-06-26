@@ -19,7 +19,7 @@
 
 | 막히는 지점 | 확인 문서 |
 | --- | --- |
-| Docker Compose 실행, 포트 충돌, `.env` 위치 | [Docker 오류 해결](../00_course-guide/08_environment-and-troubleshooting/07_docker-errors-for-later-courses.md), [SETUP.md](./SETUP.md) |
+| Docker Compose 실행, 포트 충돌, `.env` 위치 | [Docker 오류 해결](../00_course-guide/02_learning-guide/troubleshooting.md), [SETUP.md](./SETUP.md) |
 | `docker compose config` 또는 `up` 실패 | [Docker Compose multi service](./02_service-deployment-and-automation/02_docker-compose-multi-service/README.md), [compose up lab](./02_service-deployment-and-automation/10_labs/lab-02_docker-compose-up.md) |
 | GitHub Actions가 실패함 | [GitHub Actions Docker build](./02_service-deployment-and-automation/10_labs/lab-04_github-actions-docker-build.md), [SETUP.md](./SETUP.md) |
 | AWS 선택 실습의 비용 리스크 | [AWS deployment checklist](./02_service-deployment-and-automation/10_labs/lab-05_aws-deployment-checklist.md), [optional AWS deployment](./02_service-deployment-and-automation/10_labs/lab-06_aws-apprunner-ecs-optional-deployment.md) |
