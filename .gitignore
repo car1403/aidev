@@ -3,6 +3,7 @@
 venv/
 ENV/
 env/
+data/
 
 # Python cache and build artifacts
 __pycache__/
