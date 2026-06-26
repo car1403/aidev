@@ -58,8 +58,17 @@ PowerShell 줄 앞에 `(.venv)`가 보이면 활성화된 상태입니다.
 확인 명령:
 
 ```powershell
+echo $env:VIRTUAL_ENV
+python -c "import sys; print(sys.executable)"
 python --version
 pip --version
+```
+
+정상이라면 위 두 경로가 아래처럼 `01_python-git-foundation\.venv`를 가리켜야 합니다.
+
+```text
+C:\aidev\01_python-git-foundation\.venv
+C:\aidev\01_python-git-foundation\.venv\Scripts\python.exe
 ```
 
 ## 3. pip 업그레이드
@@ -163,8 +172,8 @@ python -m pytest .\02_python-advanced\08_testing-code-quality
 ```text
 [ ] 현재 위치가 C:\aidev\01_python-git-foundation 인가?
 [ ] PowerShell 앞에 (.venv)가 보이는가?
-[ ] python --version이 정상 출력되는가?
-[ ] pip --version이 정상 출력되는가?
+[ ] python -c "import sys; print(sys.executable)" 결과가 01_python-git-foundation\.venv\Scripts\python.exe인가?
+[ ] python --version과 pip --version이 정상 출력되는가?
 [ ] pytest와 httpx import 확인이 되는가?
 [ ] 02_python-advanced 안에 .venv를 새로 만들지 않았는가?
 ```

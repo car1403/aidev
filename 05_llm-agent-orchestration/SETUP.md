@@ -39,8 +39,15 @@ Docker Compose, AWS, GitHub Actions, 운영 자동화는 `07_multi-agent-service
 cd C:\aidev\05_llm-agent-orchestration\01_llm-api-and-prompt-basics
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
+python -c "import sys; print(sys.executable)"
 python -m pip install --upgrade pip
 pip install openai python-dotenv httpx
+```
+
+정상이라면 `python -c "import sys; print(sys.executable)"` 결과가 현재 단원 폴더 아래의 `.venv\Scripts\python.exe`를 가리켜야 합니다.
+
+```text
+C:\aidev\05_llm-agent-orchestration\01_llm-api-and-prompt-basics\.venv\Scripts\python.exe
 ```
 
 ## 4. 선택: 최상위 requirements.txt 사용
@@ -51,6 +58,7 @@ pip install openai python-dotenv httpx
 cd C:\aidev\05_llm-agent-orchestration
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
+python -c "import sys; print(sys.executable)"
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```

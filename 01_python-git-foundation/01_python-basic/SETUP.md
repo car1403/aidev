@@ -26,8 +26,17 @@ PowerShell 줄 앞에 `(.venv)`가 보이면 활성화된 상태입니다.
 ## 3. Python 확인
 
 ```powershell
+echo $env:VIRTUAL_ENV
+python -c "import sys; print(sys.executable)"
 python --version
 pip --version
+```
+
+정상이라면 위 두 경로가 아래처럼 `01_python-git-foundation\.venv`를 가리켜야 합니다.
+
+```text
+C:\aidev\01_python-git-foundation\.venv
+C:\aidev\01_python-git-foundation\.venv\Scripts\python.exe
 ```
 
 권장 버전:

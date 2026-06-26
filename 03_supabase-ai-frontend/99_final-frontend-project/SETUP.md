@@ -26,6 +26,20 @@ cd C:\aidev\03_supabase-ai-frontend
 .\.venv\Scripts\Activate.ps1
 ```
 
+활성화 후 현재 Python이 상위 과정의 `.venv`를 사용하는지 확인합니다.
+
+```powershell
+echo $env:VIRTUAL_ENV
+python -c "import sys; print(sys.executable)"
+```
+
+정상이라면 아래 경로를 가리켜야 합니다.
+
+```text
+C:\aidev\03_supabase-ai-frontend\.venv
+C:\aidev\03_supabase-ai-frontend\.venv\Scripts\python.exe
+```
+
 가상환경이 없다면 먼저 다음 명령으로 만듭니다.
 
 ```powershell

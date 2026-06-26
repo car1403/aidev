@@ -104,13 +104,22 @@ C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv .venv
 
 PowerShell 줄 앞에 `(.venv)`가 보이면 활성화된 상태입니다.
 
-VS Code에서 `C:\aidev\02_supabase-ai-backend` 폴더 자체를 열면 `.vscode/settings.json` 설정에 따라 새 터미널에서 `.venv`가 자동 활성화됩니다. `C:\aidev` 루트를 열면 이 설정이 적용되지 않을 수 있습니다.
+VS Code에서 `C:\aidev\02_supabase-ai-backend` 폴더 자체를 열면 `.vscode/settings.json` 설정에 따라 새 터미널에서 `.venv`가 자동 활성화됩니다. `C:\aidev` 루트를 열어 수업을 진행할 때는 새 터미널을 연 뒤 아래 확인 명령으로 현재 Python 경로가 이 과정의 `.venv`를 가리키는지 먼저 확인합니다.
 
 확인 명령:
 
 ```powershell
+echo $env:VIRTUAL_ENV
+python -c "import sys; print(sys.executable)"
 python --version
 pip --version
+```
+
+정상이라면 위 두 경로가 아래처럼 `02_supabase-ai-backend\.venv`를 가리켜야 합니다.
+
+```text
+C:\aidev\02_supabase-ai-backend\.venv
+C:\aidev\02_supabase-ai-backend\.venv\Scripts\python.exe
 ```
 
 가상환경을 처음 만들었거나 패키지를 설치하기 전에는 `pip`를 최신 버전으로 올립니다. `python -m pip` 형태로 실행하면 현재 활성화된 가상환경의 `pip`를 확실하게 사용합니다.

@@ -59,8 +59,17 @@ PowerShell 줄 앞에 `(.venv)`가 보이면 활성화된 상태입니다.
 확인 명령:
 
 ```powershell
+echo $env:VIRTUAL_ENV
+python -c "import sys; print(sys.executable)"
 python --version
 pip --version
+```
+
+정상이라면 위 두 경로가 아래처럼 `01_python-git-foundation\.venv`를 가리켜야 합니다.
+
+```text
+C:\aidev\01_python-git-foundation\.venv
+C:\aidev\01_python-git-foundation\.venv\Scripts\python.exe
 ```
 
 PowerShell 실행 정책 오류가 나오면 다음 명령을 한 번 실행한 뒤 다시 활성화합니다.
@@ -87,7 +96,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 3. 새 터미널을 열었을 때 PowerShell 앞에 (.venv)가 보이는지 확인합니다.
 ```
 
-`C:\aidev` 전체 폴더를 VS Code로 열면 `01_python-git-foundation\.vscode` 설정이 자동 적용되지 않을 수 있습니다. 자동 활성화를 사용하려면 각 과정 폴더를 VS Code 작업 폴더로 직접 여는 방식을 권장합니다.
+`C:\aidev` 전체 폴더를 VS Code로 열어 수업을 진행할 때는 루트 `.vscode/settings.json`에서 Python 확장의 자동 가상환경 활성화를 끕니다. 따라서 새 터미널을 연 뒤에는 위 확인 명령으로 현재 Python 경로가 이 과정의 `.venv`를 가리키는지 먼저 확인합니다.
 
 ## 5. 패키지 설치
 
