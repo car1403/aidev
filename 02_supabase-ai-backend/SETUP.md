@@ -26,6 +26,7 @@
 | Markdown 미리보기와 문서 작성법 | [`../00_course-guide/02_learning-guide/getting-started.md`](../00_course-guide/02_learning-guide/getting-started.md) |
 | 첫 실행 전 점검표 | [`../00_course-guide/02_learning-guide/getting-started.md`](../00_course-guide/02_learning-guide/getting-started.md) |
 | Codex 설치와 로그인 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
+| Gemini 계정, API Key, 결제/쿼터 안내 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
 | OpenAI 계정과 결제 안내 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
 
 ## Python/Git 선행 과정 확인
