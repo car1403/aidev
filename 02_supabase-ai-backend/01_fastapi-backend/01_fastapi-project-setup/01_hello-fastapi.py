@@ -1,11 +1,16 @@
 ﻿"""FastAPI 첫 번째 예제.
 
-이 파일은 학습 순서를 보여주기 위해 파일명에 번호와 하이픈을 사용합니다.
-실제 실행은 같은 폴더의 main.py를 사용합니다.
+이 파일은 첫 FastAPI 코드 구조를 읽어보기 위한 학습용 파일입니다.
+파일명에 번호와 하이픈(-)이 들어 있으므로
+`uvicorn 01_hello-fastapi:app --reload` 방식으로 실행하지 않습니다.
+
+실제 서버 실행은 같은 폴더의 `main.py`를 사용합니다.
 
 실행 방법:
     cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\01_fastapi-project-setup
     uvicorn main:app --reload
+
+위 명령의 `main`은 `main.py` 파일을 뜻하며, 이 파일명이 아닙니다.
 
 주의:
     파일명에 하이픈(-)이 들어 있으면 일부 환경에서 import가 불편할 수 있습니다.
