@@ -19,6 +19,16 @@ pip install -r requirements.txt
 
 `C:\aidev` 루트를 열면 하위 과정의 `.vscode/settings.json`이 자동 적용되지 않을 수 있습니다.
 
+## 선택 도구
+
+Postman은 FastAPI API를 직접 테스트할 때 사용할 수 있는 선택 도구입니다. 설치가 필요하면 아래 공식 다운로드 페이지를 사용합니다.
+
+```text
+https://www.postman.com/downloads/
+```
+
+Postman을 설치하지 않아도 FastAPI의 Swagger UI(`/docs`)와 PowerShell `Invoke-RestMethod`로 기본 API 테스트를 진행할 수 있습니다.
+
 ## Gemini와 OpenAI 계정
 
 이 과정의 02~04 과정에서는 Gemini API를 기본 LLM API로 사용합니다. OpenAI API는 선택/비교 실습에서 사용합니다.
