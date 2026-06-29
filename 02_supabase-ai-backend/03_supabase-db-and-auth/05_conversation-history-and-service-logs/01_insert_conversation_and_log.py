@@ -202,7 +202,7 @@ def main() -> None:
                 "model": "gemini-2.5-flash-lite",
                 "llm_call_mode": "mock-first",
                 "project_default_call": "Gemini SDK",
-                "reference_endpoint": "02_llm-api-integration/05_fastapi-llm-endpoint/02_gemini_sdk_endpoint.py",
+                "reference_endpoint": "02_llm-api-integration/05_fastapi-llm-endpoint/03_gemini_sdk_endpoint.py",
             },
         )
         print("\n[service log saved]")

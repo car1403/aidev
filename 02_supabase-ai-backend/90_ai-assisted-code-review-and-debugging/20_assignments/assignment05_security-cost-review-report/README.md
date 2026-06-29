@@ -9,7 +9,7 @@
 - API key, token, service role key 노출 위험을 찾을 수 있다.
 - `.env`와 `.env.example` 관리 상태를 점검할 수 있다.
 - 실제 LLM API 호출 위치와 비용 위험을 확인할 수 있다.
-- Gemini SDK 기본 사용 흐름, REST 보충 예제, OpenAI 선택 사용 흐름을 구분할 수 있다.
+- mock-first, Gemini SDK 최소/안내형 예제, OpenAI 선택 사용 흐름을 구분할 수 있다.
 - Supabase service role key 사용 위치를 확인할 수 있다.
 - Upstash Redis token과 TTL 설정을 점검할 수 있다.
 - 서비스 로그에 민감 정보가 들어갈 가능성을 확인할 수 있다.
@@ -42,7 +42,7 @@ security-cost-review-report.md
 2. key나 token을 print 또는 로그로 출력하는 부분이 있는가?
 3. .env와 .env.example이 안전하게 구분되어 있는가?
 4. 실제 LLM API 호출이 반복문이나 테스트에서 과도하게 실행될 수 있는가?
-5. Gemini SDK 기본 사용 흐름, REST 보충 예제, OpenAI 선택 사용 흐름이 구분되어 있는가?
+5. mock-first, Gemini SDK 최소/안내형 예제, OpenAI 선택 사용 흐름이 구분되어 있는가?
 6. Supabase service role key가 백엔드에서만 사용되는가?
 7. Upstash Redis token과 TTL 설정이 안전한가?
 8. 서비스 로그에 민감 정보가 들어갈 가능성이 있는가?
@@ -86,7 +86,7 @@ security-cost-review-report.md
 - 실제 LLM API 호출 위치:
 - 반복 호출 가능성:
 - Gemini SDK 기본 사용 흐름:
-- REST 보충 예제 사용 흐름:
+- Gemini SDK 안내형 예제 사용 흐름:
 - OpenAI 선택 사용 흐름:
 - 비용 제한 장치:
 

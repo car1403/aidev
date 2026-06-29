@@ -61,7 +61,7 @@ user_id 또는 IP 기준 key 생성
 3. LLM 호출 방식:
    - mock-first:
    - Gemini SDK:
-   - REST 보충:
+   - Gemini SDK 안내형:
    - OpenAI 선택:
 4. Supabase에 저장하는 테이블:
 5. 서비스 로그에 저장하는 내용:

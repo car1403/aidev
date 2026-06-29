@@ -2,7 +2,7 @@
 
 이 실습은 서비스 로그 구조를 이해하고 Supabase에 성공 로그와 오류 로그를 저장합니다.
 
-앞 단원의 LLM 호출 흐름은 `mock-first -> Gemini SDK 기본 구현 -> REST 보충 -> OpenAI 선택 비교`입니다. 따라서 서비스 로그에는 mock 응답인지, 실제 Gemini SDK 응답인지 구분할 수 있는 metadata가 함께 저장되어야 합니다.
+앞 단원의 LLM 호출 흐름은 `mock-first -> Gemini SDK 최소 예제 -> Gemini SDK 안내형 예제 -> OpenAI 선택 비교`입니다. 따라서 서비스 로그에는 mock 응답인지, 실제 Gemini SDK 응답인지 구분할 수 있는 metadata가 함께 저장되어야 합니다.
 
 ## 목표
 

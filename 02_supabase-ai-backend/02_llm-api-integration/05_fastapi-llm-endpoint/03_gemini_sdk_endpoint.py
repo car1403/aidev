@@ -1,6 +1,7 @@
-﻿r"""FastAPI + Gemini SDK endpoint 예제입니다.
+r"""FastAPI + Gemini SDK endpoint 예제입니다.
 
 이 파일은 05_fastapi-llm-endpoint 단원의 실제 프로젝트 기본 구현입니다.
+02_gemini_sdk_endpoint_small.py보다 요청 모델, 응답 모델, key 확인, 오류 안내를 더 포함합니다.
 
 흐름:
     사용자 요청
@@ -14,7 +15,7 @@
 실행:
     cd C:\aidev\02_supabase-ai-backend\02_llm-api-integration\05_fastapi-llm-endpoint
     ..\..\.venv\Scripts\Activate.ps1
-    uvicorn 02_gemini_sdk_endpoint:app --reload
+    uvicorn 03_gemini_sdk_endpoint:app --reload
 """
 
 from pathlib import Path

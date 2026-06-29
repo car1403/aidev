@@ -32,4 +32,4 @@ http://127.0.0.1:8000/docs
 2. `POST /ai/chat`이 단일 질문에 대한 mock 응답을 반환합니다.
 3. `POST /ai/chat-with-history`가 이전 대화 이력을 포함해 mock 응답을 반환합니다.
 4. 모든 응답에 `provider`, `model`, `actual_api_called`가 포함됩니다.
-5. README에 Gemini SDK로 확장할 위치를 설명합니다.
+5. README에 `mock -> Gemini SDK 최소 예제 -> Gemini SDK 안내형 예제 -> OpenAI 선택 비교` 흐름으로 확장할 위치를 설명합니다.

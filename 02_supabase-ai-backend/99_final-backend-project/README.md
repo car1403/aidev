@@ -106,7 +106,7 @@ Upstash Redis 기반 30초 응답 캐시
 - Pydantic 요청/응답 모델이 명확한가?
 - Supabase 테이블 구조가 서비스 요구사항과 맞는가?
 - `.env`와 API key를 안전하게 관리하는가?
-- Gemini SDK 기본 호출, REST 보충 호출, mock-first 호출 흐름이 구분되어 있는가?
+- mock-first 호출, Gemini SDK 최소/안내형 호출, OpenAI 선택 호출 흐름이 구분되어 있는가?
 - `provider`, `model`, `actual_api_called`, `llm_call_mode`로 LLM 호출 상태를 기록하는가?
 - OpenAI 호출은 선택 또는 비교 실습으로 분리되어 있는가?
 - Upstash Redis를 사용한다면 Supabase와 역할이 명확히 구분되는가?

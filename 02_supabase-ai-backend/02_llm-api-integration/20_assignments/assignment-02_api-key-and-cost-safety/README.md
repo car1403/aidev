@@ -14,7 +14,7 @@ LLM API는 실제 호출 시 비용이 발생할 수 있습니다. 따라서 API
 ## 제출 파일
 
 ```text
-main.py
+starter.py 또는 main.py
 README.md
 ```
 
@@ -23,7 +23,7 @@ README.md
 ```powershell
 cd C:\aidev\02_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\02_llm-api-integration\20_assignments\assignment-02_api-key-and-cost-safety\main.py
+python .\02_llm-api-integration\20_assignments\assignment-02_api-key-and-cost-safety\starter.py
 ```
 
 ## 완성 기준
@@ -32,3 +32,4 @@ python .\02_llm-api-integration\20_assignments\assignment-02_api-key-and-cost-sa
 2. placeholder key를 실제 key로 보지 않습니다.
 3. 실제 key가 있을 때도 전체 값을 출력하지 않습니다.
 4. Gemini와 OpenAI의 사용 목적 차이를 README에 설명합니다.
+5. 실제 호출 전 무료 한도, quota, billing 확인 위치를 README에 정리합니다.

@@ -34,7 +34,7 @@ mock-first + 메모리 저장소
 
 이렇게 하면 API 구조, 데이터 저장 구조, 외부 API 호출 구조를 단계별로 이해할 수 있습니다.
 
-앞 단원인 `02_llm-api-integration`에서는 `mock-first -> Gemini SDK 기본 구현 -> REST 보충 -> OpenAI 선택 비교` 흐름으로 LLM 호출을 정리했습니다. 이 미니 서비스에서는 그 흐름을 저장 구조에 반영하기 위해 `provider`, `model`, `actual_api_called`, `llm_call_mode` 값을 함께 다룹니다.
+앞 단원인 `02_llm-api-integration`에서는 `mock-first -> Gemini SDK 최소 예제 -> Gemini SDK 안내형 예제 -> OpenAI 선택 비교` 흐름으로 LLM 호출을 정리했습니다. 이 미니 서비스에서는 그 흐름을 저장 구조에 반영하기 위해 `provider`, `model`, `actual_api_called`, `llm_call_mode` 값을 함께 다룹니다.
 
 ## API 이름 기준
 

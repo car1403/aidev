@@ -1,4 +1,4 @@
-﻿# 04_multi-turn-call
+# 04_multi-turn-call
 
 이 단원에서는 **멀티턴 LLM 호출**을 학습합니다.
 
@@ -7,77 +7,42 @@
 ## 핵심 요약
 
 ```text
-싱글턴 호출
+싱글턴 호출:
   현재 질문 1개만 모델에 보냅니다.
 
-멀티턴 호출
+멀티턴 호출:
   이전 질문과 답변을 messages 또는 contents 목록에 함께 넣어 보냅니다.
 
-대화 메모리
+대화 메모리:
   사용자의 이전 질문과 AI 답변을 저장하고 다시 불러오는 구조입니다.
 
-Gemini SDK 중심 구조
+Gemini SDK 중심 구조:
   실제 프로젝트에서는 SDK 방식으로 먼저 구현합니다.
-  REST 방식은 HTTP 요청 구조를 이해하기 위한 보충 예제로 사용합니다.
 ```
 
-## 폴더 파일
+## 실행 흐름
 
-| 파일 | 역할 |
-| --- | --- |
-| `main.py` | 비용 없는 통합 mock 멀티턴 호출 예제 |
-| `00_conversation-memory-concept.py` | 대화 이력을 메모리에서 관리하는 개념 예제 |
-| `01_mock_multi_turn.py` | 가장 단순한 멀티턴 messages 구조 예제 |
-| `02_gemini_sdk_multi_turn.py` | 실제 프로젝트에서 기본으로 사용할 Gemini SDK 멀티턴 호출 예제 |
-| `03_gemini_rest_multi_turn.py` | Gemini REST API 기반 HTTP 구조 확인 보충 예제 |
-| `04_openai_multi_turn.py` | OpenAI API 선택/비교 멀티턴 호출 예제 |
-
-## 실행 준비
+| 순서 | 파일 | 역할 |
+| --- | --- | --- |
+| 1 | `01_mock_multi_turn.py` | 실제 API 호출 없이 멀티턴 messages 구조 확인 |
+| 2 | `02_gemini_sdk_multi_turn_small.py` | 예외 처리 없이 가장 작은 Gemini SDK 멀티턴 호출 확인 |
+| 3 | `03_gemini_sdk_multi_turn.py` | key 확인과 오류 안내가 포함된 Gemini SDK 멀티턴 호출 |
+| 4 | `04_openai_sdk_multi_turn.py` | OpenAI SDK 선택/비교 실습 |
 
 가상환경은 `02_supabase-ai-backend` 폴더 아래의 `.venv`를 사용합니다.
 
 ```powershell
 cd C:\aidev\02_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
+python .\02_llm-api-integration\04_multi-turn-call\01_mock_multi_turn.py
+python .\02_llm-api-integration\04_multi-turn-call\02_gemini_sdk_multi_turn_small.py
+python .\02_llm-api-integration\04_multi-turn-call\03_gemini_sdk_multi_turn.py
+python .\02_llm-api-integration\04_multi-turn-call\04_openai_sdk_multi_turn.py
 ```
 
-## 1. 비용 없는 통합 예제 실행
+처음에는 `01_mock_multi_turn.py`로 비용 없이 구조를 확인합니다. 실제 Gemini API 호출은 `02_gemini_sdk_multi_turn_small.py`에서 가장 작은 코드로 먼저 보고, 오류 처리와 안전장치는 `03_gemini_sdk_multi_turn.py`에서 확인합니다. OpenAI SDK 예제는 선택/비교 실습입니다.
 
-```powershell
-python .\02_llm-api-integration\04_multi-turn-call\main.py
-```
-
-이 예제는 실제 Gemini 또는 OpenAI API를 호출하지 않습니다.
-
-확인할 내용:
-
-```text
-1. system 메시지
-2. 이전 user 메시지
-3. 이전 assistant 메시지
-4. 최신 user 메시지
-5. mock 멀티턴 응답
-```
-
-## 2. 대화 메모리 구조 확인
-
-```powershell
-python .\02_llm-api-integration\04_multi-turn-call\00_conversation-memory-concept.py
-```
-
-이 예제는 대화 이력을 메모리 리스트에 저장하고, 최근 메시지만 잘라서 LLM API에 보낼 목록을 만듭니다.
-
-실제 서비스에서는 이 구조가 다음처럼 확장됩니다.
-
-```text
-메모리 리스트
--> Supabase conversations/messages 테이블
--> 사용자별 대화 이력 조회
--> 최근 메시지 또는 요약 메시지 구성
--> Gemini SDK 호출
-```
-
-## 3. 가장 단순한 mock 멀티턴 실행
+## 1. Mock 멀티턴 실행
 
 ```powershell
 python .\02_llm-api-integration\04_multi-turn-call\01_mock_multi_turn.py
@@ -94,60 +59,45 @@ user
 
 모델은 이 목록을 보고 마지막 질문이 무엇을 이어서 묻는지 추론합니다.
 
-## 4. Gemini SDK 멀티턴 호출
-
-Gemini SDK 예제는 이 단원의 실제 호출 중심 파일입니다.
-
-실행 전 `.env`에 아래 값이 필요합니다.
-
-```env
-GEMINI_API_KEY=your-real-gemini-api-key
-GEMINI_MODEL=gemini-2.5-flash-lite
-```
-
-실행:
+## 2. 가장 작은 Gemini SDK 멀티턴 호출
 
 ```powershell
-python .\02_llm-api-integration\04_multi-turn-call\02_gemini_sdk_multi_turn.py
+python .\02_llm-api-integration\04_multi-turn-call\02_gemini_sdk_multi_turn_small.py
 ```
 
-SDK 방식은 URL, header, JSON payload를 직접 조립하지 않아도 됩니다. 그래서 이후 프로젝트에서는 이 방식을 기본으로 사용합니다.
+이 파일은 예외 처리와 자세한 오류 안내를 일부러 넣지 않습니다. 수강생이 먼저 볼 것은 아래 구조입니다.
+
+```text
+1. .env에서 GEMINI_API_KEY를 읽습니다.
+2. genai.Client를 만듭니다.
+3. 이전 user/model 메시지를 contents 목록으로 만듭니다.
+4. client.models.generate_content(...)를 호출합니다.
+5. response.text를 출력합니다.
+```
+
+## 3. Gemini SDK 멀티턴 호출
+
+```powershell
+python .\02_llm-api-integration\04_multi-turn-call\03_gemini_sdk_multi_turn.py
+```
+
+이 파일은 실제 수업 중 사용하기 좋은 안내형 예제입니다.
+
+```text
+1. GEMINI_API_KEY가 실제 key인지 확인합니다.
+2. google-genai 패키지 설치 여부를 확인합니다.
+3. Gemini 503, 429, 400/401/403 오류를 이해하기 쉬운 메시지로 출력합니다.
+4. 이전 대화가 포함된 contents를 Gemini SDK로 보냅니다.
+```
 
 Gemini에서는 이전 AI 답변을 `role: "model"`로 표현합니다. OpenAI의 `role: "assistant"`와 비슷한 역할입니다.
 
-## 5. Gemini REST 멀티턴 호출
-
-REST 예제는 HTTP 구조를 직접 확인하기 위한 보충 예제입니다.
-
-```powershell
-python .\02_llm-api-integration\04_multi-turn-call\03_gemini_rest_multi_turn.py
-```
-
-이 파일에서는 다음 내용을 직접 확인할 수 있습니다.
-
-```text
-1. Gemini REST API URL
-2. API key를 query parameter로 전달하는 방식
-3. contents payload 구조
-4. generationConfig 설정
-5. 응답 JSON에서 텍스트를 꺼내는 방식
-```
-
-## 6. OpenAI 선택/비교 멀티턴 호출
+## 4. OpenAI SDK 선택/비교 멀티턴 호출
 
 OpenAI 예제는 필수가 아닙니다. 모델 공급자별 메시지 구조 차이를 비교할 때 사용합니다.
 
-실행 전 `.env`에 아래 값이 필요합니다.
-
-```env
-OPENAI_API_KEY=your-real-openai-api-key
-OPENAI_MODEL=gpt-4.1-mini
-```
-
-실행:
-
 ```powershell
-python .\02_llm-api-integration\04_multi-turn-call\04_openai_multi_turn.py
+python .\02_llm-api-integration\04_multi-turn-call\04_openai_sdk_multi_turn.py
 ```
 
 OpenAI API 결제는 ChatGPT/Codex 앱 결제와 별개입니다. 실제 호출 전 OpenAI Platform의 Billing 화면을 확인합니다.
@@ -162,6 +112,18 @@ OpenAI API 결제는 ChatGPT/Codex 앱 결제와 별개입니다. 실제 호출 
 -> Gemini SDK 호출
 -> assistant 응답 저장
 -> 응답 반환
+```
+
+## 대화 이력은 어디에 저장하나요?
+
+이 단원에서는 Python 코드 안의 목록으로 대화 이력을 표현합니다. 실제 서비스에서는 이 구조가 다음처럼 확장됩니다.
+
+```text
+메모리 리스트
+-> Supabase conversations/messages 테이블
+-> 사용자별 대화 이력 조회
+-> 최근 메시지 또는 요약 메시지 구성
+-> Gemini SDK 호출
 ```
 
 ## 멀티턴 호출이 필요한 경우

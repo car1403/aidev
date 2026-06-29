@@ -29,6 +29,7 @@ python .\02_llm-api-integration\10_labs\lab-04_multi-turn-mock-to-gemini-sdk\sta
 
 실제 프로젝트:
   Supabase 대화 이력 조회
-  -> Gemini contents 구조로 변환
-  -> Gemini SDK generate_content()
+  -> Gemini SDK가 받을 수 있는 contents 구조로 변환
+  -> 04_multi-turn-call/02_gemini_sdk_multi_turn_small.py로 최소 호출 확인
+  -> 04_multi-turn-call/03_gemini_sdk_multi_turn.py로 오류 안내 포함 구현 확인
 ```

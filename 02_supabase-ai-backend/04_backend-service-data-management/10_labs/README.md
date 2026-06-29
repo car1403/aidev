@@ -4,7 +4,7 @@
 
 앞쪽 챕터에서는 각각의 데이터 구조를 따로 확인했습니다. 이 폴더에서는 그 내용을 순서대로 실행하면서 “서비스에서 어떤 데이터를 어떤 테이블에 저장하는지”를 정리합니다.
 
-LLM 응답은 앞 단원의 `02_llm-api-integration` 기준에 맞춰 `mock-first -> Gemini SDK 기본 구현 -> REST 보충 -> OpenAI 선택 비교` 흐름으로 바라봅니다. 여기서는 LLM을 새로 호출하기보다, mock 응답과 Gemini SDK 응답이 같은 저장 구조와 로그 구조로 관리될 수 있는지를 확인합니다.
+LLM 응답은 앞 단원의 `02_llm-api-integration` 기준에 맞춰 `mock-first -> Gemini SDK 최소 예제 -> Gemini SDK 안내형 예제 -> OpenAI 선택 비교` 흐름으로 바라봅니다. 여기서는 LLM을 새로 호출하기보다, mock 응답과 Gemini SDK 응답이 같은 저장 구조와 로그 구조로 관리될 수 있는지를 확인합니다.
 
 ## 실습 전 준비
 

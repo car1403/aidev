@@ -54,9 +54,9 @@ messages = [
 ]
 ```
 
-## Gemini REST API에서 주의할 점
+## Provider별 메시지 형식 차이
 
-Gemini REST API 예제에서는 메시지 role 이름이 OpenAI 형식과 조금 다를 수 있습니다. 예를 들어 이전 AI 응답은 `assistant` 대신 `model` 역할로 표현되는 경우가 있습니다.
+LLM provider마다 내부 메시지 형식은 조금씩 다를 수 있습니다. 예를 들어 어떤 API에서는 이전 AI 응답을 `assistant`가 아니라 `model` 역할로 표현하는 경우가 있습니다.
 
 따라서 실습에서는 다음처럼 구분합니다.
 
@@ -64,11 +64,11 @@ Gemini REST API 예제에서는 메시지 role 이름이 OpenAI 형식과 조금
 먼저 이해할 공통 구조:
   system / user / assistant
 
-Gemini REST API로 보낼 때:
-  user / model 등 provider가 요구하는 형식으로 변환
+실제 provider에 보낼 때:
+  provider가 요구하는 SDK 또는 API 형식으로 변환
 ```
 
-처음에는 공통 구조로 이해하고, 실제 provider에 보낼 때 변환한다고 생각하면 쉽습니다.
+처음에는 공통 구조로 이해하고, 실제 provider에 보낼 때 SDK가 요구하는 형식으로 변환한다고 생각하면 쉽습니다.
 
 ## 저장 관점
 

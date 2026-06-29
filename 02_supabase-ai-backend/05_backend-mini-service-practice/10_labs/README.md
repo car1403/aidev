@@ -4,7 +4,7 @@
 
 실습은 요구사항 확인에서 시작해 API 설계, Supabase 스키마, mock 서버 실행, Supabase 서버 실행, 최종 점검 순서로 진행합니다. 각 실습은 앞 단원에서 만든 문서와 예제 파일을 다시 열어 보면서 진행합니다.
 
-LLM 답변 생성은 `02_llm-api-integration`의 변경 방향에 맞춰 `mock-first -> Gemini SDK 기본 구현 -> REST 보충 -> OpenAI 선택 비교` 흐름으로 바라봅니다. 이 단원에서는 실제 SDK 호출보다 저장 구조와 로그 구조를 먼저 완성합니다.
+LLM 답변 생성은 `02_llm-api-integration`의 변경 방향에 맞춰 `mock-first -> Gemini SDK 최소 예제 -> Gemini SDK 안내형 예제 -> OpenAI 선택 비교` 흐름으로 바라봅니다. 이 단원에서는 실제 SDK 호출보다 저장 구조와 로그 구조를 먼저 완성합니다.
 
 ## 실습 흐름
 

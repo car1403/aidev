@@ -33,11 +33,11 @@
 ```text
 1. mock으로 요청/응답 구조를 먼저 확인합니다.
 2. 실제 프로젝트 기본 구현은 Gemini SDK 방식을 사용합니다.
-3. Gemini REST 방식은 HTTP 구조 확인용 보충 예제로 둡니다.
+3. Gemini SDK 안내형 예제에서는 key 확인과 오류 안내를 함께 다룹니다.
 4. OpenAI 방식은 선택 비교 예제로 둡니다.
 ```
 
-따라서 이 챕터에서 Supabase에 저장하는 `messages`와 `service_logs`는 특정 호출 방식에만 묶이지 않도록 설계합니다. 예제 코드는 비용 없이 확인할 수 있도록 `actual_api_called=false`인 mock 응답을 저장하지만, 같은 구조는 `02_llm-api-integration/05_fastapi-llm-endpoint/02_gemini_sdk_endpoint.py`에서 생성한 Gemini SDK 응답에도 그대로 사용할 수 있습니다.
+따라서 이 챕터에서 Supabase에 저장하는 `messages`와 `service_logs`는 특정 호출 방식에만 묶이지 않도록 설계합니다. 예제 코드는 비용 없이 확인할 수 있도록 `actual_api_called=false`인 mock 응답을 저장하지만, 같은 구조는 `02_llm-api-integration/05_fastapi-llm-endpoint/03_gemini_sdk_endpoint.py`에서 생성한 Gemini SDK 응답에도 그대로 사용할 수 있습니다.
 
 ## 테이블 역할
 

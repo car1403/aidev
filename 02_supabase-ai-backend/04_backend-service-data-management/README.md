@@ -11,7 +11,7 @@
 - FastAPI는 화면이나 외부 클라이언트가 사용할 API 입구 역할을 합니다.
 - 사용자 정보, 대화 이력, 서비스 로그는 서로 다른 목적을 가지므로 테이블을 분리해서 설계합니다.
 - 먼저 mock 데이터로 API 구조를 확인한 뒤, Supabase 연동 코드로 확장합니다.
-- 앞 단원의 LLM 호출 흐름은 `mock-first -> Gemini SDK 기본 구현 -> REST 보충 -> OpenAI 선택 비교` 기준으로 이어집니다.
+- 앞 단원의 LLM 호출 흐름은 `mock-first -> Gemini SDK 최소 예제 -> Gemini SDK 안내형 예제 -> OpenAI 선택 비교` 기준으로 이어집니다.
 
 ## 이 단원에서 다루는 데이터
 

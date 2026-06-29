@@ -2,7 +2,7 @@
 
 Single-turn 호출은 사용자의 질문 하나에 대해 AI가 한 번 답하는 구조입니다.
 
-이 실습에서는 실제 Gemini API를 호출하지 않고, 요청 구조를 만든 뒤 mock 응답을 반환합니다. 이렇게 하면 비용 없이 LLM 연동 흐름을 먼저 이해할 수 있습니다. 이후 실제 호출이 필요할 때는 `03_single-turn-call/02_gemini_sdk_single_turn.py`의 구조로 확장합니다.
+이 실습에서는 실제 Gemini API를 호출하지 않고, 요청 구조를 만든 뒤 mock 응답을 반환합니다. 이렇게 하면 비용 없이 LLM 연동 흐름을 먼저 이해할 수 있습니다. 이후 실제 호출이 필요할 때는 `03_single-turn-call/02_gemini_sdk_single_turn_small.py`로 가장 작은 Gemini SDK 호출을 먼저 확인하고, 오류 처리까지 포함하려면 `03_single-turn-call/03_gemini_sdk_single_turn.py`의 구조로 확장합니다.
 
 ## 학습 목표
 

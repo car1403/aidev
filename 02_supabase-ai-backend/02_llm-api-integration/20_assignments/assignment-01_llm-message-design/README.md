@@ -14,7 +14,7 @@ LLM API를 호출하기 전에 메시지 구조와 파라미터를 명확히 설
 ## 제출 파일
 
 ```text
-main.py
+starter.py 또는 main.py
 README.md
 ```
 
@@ -23,7 +23,7 @@ README.md
 ```powershell
 cd C:\aidev\02_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\02_llm-api-integration\20_assignments\assignment-01_llm-message-design\main.py
+python .\02_llm-api-integration\20_assignments\assignment-01_llm-message-design\starter.py
 ```
 
 ## 완성 기준
@@ -32,3 +32,4 @@ python .\02_llm-api-integration\20_assignments\assignment-01_llm-message-design\
 2. 메모 컨텍스트와 사용자 질문이 모두 요청에 포함됩니다.
 3. 실제 API를 호출하지 않았다는 의미로 `actual_api_called`가 `False`입니다.
 4. 출력 결과만 보고 LLM API 요청 구조를 이해할 수 있습니다.
+5. README에 실제 Gemini SDK 호출 전에 왜 message 구조를 먼저 설계하는지 설명합니다.

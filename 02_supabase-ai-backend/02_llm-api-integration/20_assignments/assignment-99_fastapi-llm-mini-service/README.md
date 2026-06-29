@@ -16,7 +16,7 @@ FastAPI로 mock-first LLM API 서버를 만들고, single-turn과 multi-turn 요
 ## 제출 파일
 
 ```text
-main.py
+starter.py 또는 main.py
 README.md
 ```
 
@@ -25,7 +25,7 @@ README.md
 ```powershell
 cd C:\aidev\02_supabase-ai-backend\02_llm-api-integration\20_assignments\assignment-99_fastapi-llm-mini-service
 ..\..\..\.venv\Scripts\Activate.ps1
-uvicorn main:app --reload
+uvicorn starter:app --reload
 ```
 
 Swagger UI:
@@ -40,4 +40,5 @@ http://127.0.0.1:8000/docs
 2. Pydantic 모델로 요청과 응답 구조가 정의되어 있습니다.
 3. 실제 API 호출 없이 mock 응답을 반환합니다.
 4. 대화 이력을 Supabase에 저장하기 좋은 구조로 반환합니다.
-5. README에 Gemini SDK 호출로 확장할 위치와 API key/비용 주의사항을 정리합니다.
+5. README에 `05_fastapi-llm-endpoint/02_gemini_sdk_endpoint_small.py`와 `05_fastapi-llm-endpoint/03_gemini_sdk_endpoint.py`로 확장할 위치를 정리합니다.
+6. 이후 `assignment-100_llm-api-structure-refactor`에서 같은 기능을 구조 분리 방식으로 다시 정리할 수 있습니다.

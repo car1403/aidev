@@ -37,7 +37,7 @@
 - [ ] `.env` 파일을 GitHub에 올리지 않았다.
 - [ ] `SUPABASE_SERVICE_ROLE_KEY`를 프론트엔드 코드에 넣지 않았다.
 - [ ] `GEMINI_API_KEY`, `OPENAI_API_KEY`, `UPSTASH_REDIS_REST_TOKEN`을 출력하지 않았다.
-- [ ] Gemini SDK 기본 사용 흐름, REST 보충 예제, OpenAI 선택 사용 흐름을 구분했다.
+- [ ] mock-first, Gemini SDK 최소/안내형 예제, OpenAI 선택 사용 흐름을 구분했다.
 - [ ] 실제 LLM API 호출 예제와 mock-first 예제를 구분했다.
 - [ ] update/delete 코드에 `.eq(...)` 같은 조건이 들어 있다.
 - [ ] FastAPI endpoint의 오류 응답을 확인했다.

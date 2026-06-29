@@ -46,7 +46,7 @@ Lab 05부터 Lab 09까지는 실제 백엔드 과정과 연결됩니다.
 - Pydantic 모델과 응답 형식 점검
 - Supabase 테이블, 컬럼, 권한 확인
 - Upstash Redis token, key, TTL 확인
-- Gemini SDK 기본 사용 흐름, REST 보충 예제, OpenAI 선택 사용 흐름의 비용 위험 확인
+- mock-first, Gemini SDK 최소/안내형 예제, OpenAI 선택 사용 흐름의 비용 위험 확인
 - 미니 서비스 전체 흐름 리뷰
 
 ## 결과 정리 양식

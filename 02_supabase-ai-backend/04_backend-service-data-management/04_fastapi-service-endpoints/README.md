@@ -4,7 +4,7 @@
 
 `01_user-profile-data`, `02_conversation-history`, `03_service-logs`에서는 각각 데이터를 따로 다루었습니다. 이번 챕터에서는 그 기능들을 하나의 백엔드 API 형태로 연결합니다.
 
-이 챕터의 endpoint는 LLM을 직접 호출하지 않습니다. 대신 앞 단원의 `02_llm-api-integration/05_fastapi-llm-endpoint/02_gemini_sdk_endpoint.py`에서 생성한 응답을 저장할 수 있도록 대화 메시지와 서비스 로그 구조를 준비합니다.
+이 챕터의 endpoint는 LLM을 직접 호출하지 않습니다. 대신 앞 단원의 `02_llm-api-integration/05_fastapi-llm-endpoint/03_gemini_sdk_endpoint.py`에서 생성한 응답을 저장할 수 있도록 대화 메시지와 서비스 로그 구조를 준비합니다.
 
 ## 이 챕터에서 만드는 endpoint
 

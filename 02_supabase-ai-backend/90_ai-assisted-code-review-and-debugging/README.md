@@ -13,7 +13,7 @@
 - 코드 리뷰 결과를 치명도별로 분류할 수 있다.
 - FastAPI, Pydantic, Supabase, Upstash Redis, LLM API 코드에서 자주 발생하는 문제를 점검할 수 있다.
 - API key, service role key, Redis token 같은 민감 정보가 노출되지 않았는지 확인할 수 있다.
-- Gemini SDK 기본 사용 흐름, REST 보충 예제, OpenAI 선택 사용 흐름을 구분하고 비용 위험을 점검할 수 있다.
+- mock-first, Gemini SDK 최소/안내형 예제, OpenAI 선택 사용 흐름을 구분하고 비용 위험을 점검할 수 있다.
 - `05_backend-mini-service-practice`에서 만든 미니 서비스를 Codex와 함께 종합 리뷰할 수 있다.
 
 ## 학습 순서
@@ -75,7 +75,7 @@
 - `01_python-git-foundation/01_python-basic`: 기초 문법 설명, 오류 원인 분석, 작은 함수 생성
 - `01_python-git-foundation/02_python-advanced`: 함수 분리, 모듈화, 객체지향 리팩토링
 - `01_fastapi-backend`: API 구조 생성, 테스트, 오류 해결
-- `02_llm-api-integration`: mock-first, Gemini SDK 기본 호출, REST 보충 호출, OpenAI 선택 호출 구분, 비용/토큰/예외 처리 점검
+- `02_llm-api-integration`: mock-first, Gemini SDK 최소/안내형 호출, OpenAI 선택 호출 구분, 비용/토큰/예외 처리 점검
 - `03_supabase-db-and-auth`: Supabase 연동 코드 검토, Auth/RLS, Upstash Redis 세션과 캐시 점검
 - `04_backend-service-data-management`: 사용자 프로필, 대화 이력, 서비스 로그 설계 리뷰
 - `05_backend-mini-service-practice`: 미니 서비스 전체 코드 리뷰와 개선
@@ -90,7 +90,7 @@
 | 실행 안정성 | import 오류, 실행 위치, 가상환경, 패키지 누락 |
 | FastAPI 구조 | endpoint URL, HTTP Method, Pydantic 검증, 오류 응답 |
 | Supabase 저장 | 테이블명, 컬럼명, `.eq(...)` 조건, insert/update/delete 결과 확인 |
-| LLM API | Gemini SDK 기본 사용, REST 보충 예제, OpenAI 선택 사용, mock-first/실제 호출 구분, 비용 발생 가능성 |
+| LLM API | mock-first, Gemini SDK 최소/안내형 사용, OpenAI 선택 사용, 실제 호출 구분, 비용 발생 가능성 |
 | Upstash Redis | token 노출 여부, key 설계, TTL 설정, rate limit 적용 |
 | 보안 | `.env` 관리, service role key 노출 방지, 로그 민감 정보 제거 |
 | 미니 서비스 | 요구사항 충족, 응답 형식 통일, 서비스 로그 저장 여부 |

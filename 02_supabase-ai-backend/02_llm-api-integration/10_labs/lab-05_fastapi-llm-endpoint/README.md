@@ -2,7 +2,7 @@
 
 이번 실습에서는 LLM 호출 구조를 FastAPI 엔드포인트로 감쌉니다.
 
-먼저 실제 Gemini API를 호출하지 않고 mock 응답을 반환합니다. 다만 요청 모델과 응답 모델은 `05_fastapi-llm-endpoint/02_gemini_sdk_endpoint.py`로 확장하기 쉬운 형태로 구성합니다. 이 구조는 이후 Supabase 저장과 프론트엔드 연동으로 이어질 수 있습니다.
+먼저 실제 Gemini API를 호출하지 않고 mock 응답을 반환합니다. 다만 요청 모델과 응답 모델은 `05_fastapi-llm-endpoint/03_gemini_sdk_endpoint.py`로 확장하기 쉬운 형태로 구성합니다. 이 구조는 이후 Supabase 저장과 프론트엔드 연동으로 이어질 수 있습니다.
 
 ## 학습 목표
 
@@ -37,6 +37,7 @@ http://127.0.0.1:8000/docs
 실제 프로젝트:
   POST /ai/chat
   -> Pydantic 요청 검증
-  -> Gemini SDK 호출
+  -> 05_fastapi-llm-endpoint/02_gemini_sdk_endpoint_small.py로 최소 호출 확인
+  -> 05_fastapi-llm-endpoint/03_gemini_sdk_endpoint.py로 오류 안내 포함 구현 확인
   -> Supabase 대화 이력 저장으로 확장
 ```

@@ -41,7 +41,7 @@
 3. 응답 모델이 실제 반환 데이터와 일치하는가?
 4. Supabase insert/select/update/delete 코드에 조건 누락이 없는가?
 5. Upstash Redis key, TTL, token 사용이 적절한가?
-6. Gemini SDK 기본 사용, REST 보충 예제, OpenAI 선택 사용 흐름이 구분되는가?
+6. mock-first, Gemini SDK 최소/안내형 예제, OpenAI 선택 사용 흐름이 구분되는가?
 7. API key, service role key, Redis token이 노출될 위험은 없는가?
 8. 실제 LLM API 호출이 반복문 안에서 과도하게 실행될 가능성은 없는가?
 9. `provider`, `model`, `actual_api_called`, `llm_call_mode`로 mock-first와 실제 호출을 구분하는가?

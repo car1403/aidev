@@ -1,4 +1,4 @@
-﻿r"""OpenAI 싱글턴 호출 예제입니다.
+r"""OpenAI SDK 기반 싱글턴 호출 예제입니다.
 
 주의:
     이 파일은 OPENAI_API_KEY가 설정되어 있을 때 실제 API를 호출합니다.
@@ -7,7 +7,7 @@
 실행:
     cd C:\aidev\02_supabase-ai-backend
     .\.venv\Scripts\Activate.ps1
-    python .\02_llm-api-integration\03_single-turn-call\04_openai_single_turn.py
+    python .\02_llm-api-integration\03_single-turn-call\04_openai_sdk_single_turn.py
 """
 
 from pathlib import Path
