@@ -49,6 +49,26 @@ OpenAI를 사용할 때는 아래 항목을 확인합니다.
 4. OPENAI_API_KEY를 .env에만 저장하고 GitHub에 올리지 않는가?
 ```
 
+OpenAI API는 ChatGPT 구독과 별도로 과금/사용량이 관리될 수 있습니다. 수업에서 OpenAI 예제를 실행하기 전에는 아래 화면을 직접 확인합니다.
+
+```text
+1. OpenAI Platform에 로그인했는가?
+2. API Keys 화면에서 프로젝트용 API Key를 만들었는가?
+3. Billing/Usage 화면에서 결제 방식과 현재 사용량을 확인했는가?
+4. Limits 또는 Project settings에서 월 예산, 알림, rate limit을 확인했는가?
+5. 실습용 Key를 GitHub, README, 화면 캡처, 로그에 노출하지 않는가?
+```
+
+참고 공식 문서:
+
+- OpenAI Platform 로그인: https://platform.openai.com/
+- OpenAI API Key 관리: https://platform.openai.com/api-keys
+- OpenAI API 사용량 확인: https://platform.openai.com/usage
+- OpenAI API 결제/사용량 도움말: https://help.openai.com/en/collections/3675945-understanding-openai-api-billing-and-usage
+- OpenAI 사용량 대시보드 안내: https://help.openai.com/en/articles/10478918-api-usage-dashboard
+- OpenAI usage limit 안내: https://help.openai.com/en/articles/6643435-how-do-i-get-more-tokens-or-increase-my-monthly-usage-limits
+- OpenAI 프로젝트와 예산/한도 관리: https://help.openai.com/en/articles/9186755-managing-your-work-in-the-api-platform-with-projects
+
 API 가격, 무료 범위, rate limit, quota는 수시로 바뀔 수 있습니다. 수업 자료의 예시보다 각 서비스의 공식 콘솔과 공식 문서를 우선 기준으로 삼습니다.
 
 ## `.env`와 보안

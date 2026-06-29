@@ -51,6 +51,30 @@ def is_real_api_key(value: str | None) -> bool:
     return not any(word in normalized for word in placeholder_words)
 
 
+def print_gemini_error(error: Exception, model: str) -> None:
+    """Gemini API 호출 오류를 수업 중 이해하기 쉬운 메시지로 출력합니다."""
+
+    status_code = getattr(error, "status_code", None)
+    message = str(error)
+
+    print("Gemini API 호출에 실패했습니다.")
+    print(f"사용 모델: {model}")
+
+    if status_code == 503 or "UNAVAILABLE" in message or "high demand" in message:
+        print("원인: Gemini 서버가 일시적으로 바쁘거나 해당 모델 수요가 높은 상태입니다.")
+        print("해결: 잠시 뒤 다시 실행하거나, .env의 GEMINI_MODEL을 다른 사용 가능한 모델로 바꿔 봅니다.")
+    elif status_code == 429 or "RESOURCE_EXHAUSTED" in message:
+        print("원인: 호출 횟수 또는 quota/rate limit에 도달했을 수 있습니다.")
+        print("해결: Google AI Studio에서 현재 quota와 rate limit을 확인하고 잠시 뒤 다시 실행합니다.")
+    elif status_code in {400, 401, 403}:
+        print("원인: API key, 모델 이름, 권한 설정 중 하나가 잘못되었을 수 있습니다.")
+        print("해결: .env의 GEMINI_API_KEY와 GEMINI_MODEL 값을 다시 확인합니다.")
+    else:
+        print("원인: 외부 API 호출 중 예기치 않은 오류가 발생했습니다.")
+
+    print(f"원본 오류: {message}")
+
+
 def build_gemini_contents() -> list[dict[str, object]]:
     """Gemini SDK에 전달할 멀티턴 대화 이력을 만듭니다.
 
@@ -95,14 +119,18 @@ def main() -> None:
 
     client = genai.Client(api_key=api_key)
 
-    response = client.models.generate_content(
-        model=model,
-        contents=build_gemini_contents(),
-        config={
-            "temperature": 0.3,
-            "max_output_tokens": 400,
-        },
-    )
+    try:
+        response = client.models.generate_content(
+            model=model,
+            contents=build_gemini_contents(),
+            config={
+                "temperature": 0.3,
+                "max_output_tokens": 400,
+            },
+        )
+    except Exception as error:
+        print_gemini_error(error, model)
+        return
 
     print(response.text)
 
