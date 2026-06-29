@@ -1,8 +1,8 @@
-# 63_supabase-and-sse-practice
+# 03_supabase-and-sse-practice
 
 이 단원은 팀 프로젝트에 필요한 핵심 기능을 단계별로 실습하는 공간입니다.
 
-`61_local-dev-basic`에서는 로컬 실행 감각을 익히고, `62_instructor-sample-project`에서는 완성된 샘플을 먼저 확인했습니다. 이제 이 단원에서는 Supabase 테이블 설계, FastAPI API, Streamlit 화면, 서비스 로그, SSE 기반 실시간 응답 흐름을 작은 단계로 나누어 직접 구성합니다.
+`01_local-dev-basic`에서는 로컬 실행 감각을 익히고, `02_instructor-sample-project`에서는 완성된 샘플을 먼저 확인했습니다. 이제 이 단원에서는 Supabase 테이블 설계, FastAPI API, Streamlit 화면, 서비스 로그, SSE 기반 실시간 응답 흐름을 작은 단계로 나누어 직접 구성합니다.
 
 ## 이 단원에서 만드는 흐름
 
@@ -17,34 +17,34 @@ Supabase 테이블 준비
 ## 폴더 구성
 
 ```text
-63_supabase-and-sse-practice
+03_supabase-and-sse-practice
 ├─ README.md
-├─ 61_supabase-project-and-schema
-├─ 62_fastapi-supabase-api
-├─ 63_streamlit-dashboard-ui
-├─ 64_service-log-and-feedback
-└─ 65_sse-streaming-ai-response
+├─ 01_supabase-project-and-schema
+├─ 02_fastapi-supabase-api
+├─ 03_streamlit-dashboard-ui
+├─ 04_service-log-and-feedback
+└─ 05_sse-streaming-ai-response
 ```
 
 ## 학습 순서
 
-1. `61_supabase-project-and-schema`
+1. `01_supabase-project-and-schema`
    - Supabase 프로젝트, API key, `.env`, 테이블 구조를 정리합니다.
    - 처음에는 테이블을 많이 만들기보다 `profiles`, `conversations`, `messages`, `service_logs`, `feedbacks` 정도로 시작합니다.
 
-2. `62_fastapi-supabase-api`
+2. `02_fastapi-supabase-api`
    - FastAPI가 Supabase와 통신하는 백엔드 역할을 하도록 구성합니다.
    - Streamlit이 Supabase에 직접 접근하지 않고 FastAPI를 호출하는 구조를 익힙니다.
 
-3. `63_streamlit-dashboard-ui`
+3. `03_streamlit-dashboard-ui`
    - Streamlit에서 FastAPI API를 호출해 데이터를 화면에 표시합니다.
    - 로그 목록, 간단한 통계, 사용자 피드백 입력 화면을 구성합니다.
 
-4. `64_service-log-and-feedback`
+4. `04_service-log-and-feedback`
    - API 호출 결과, 오류, 사용자 피드백을 Supabase에 저장하는 흐름을 정리합니다.
    - 프로젝트 산출물에서 서비스 품질을 설명할 수 있도록 로그 기준을 문서화합니다.
 
-5. `65_sse-streaming-ai-response`
+5. `05_sse-streaming-ai-response`
    - FastAPI의 `StreamingResponse`와 Streamlit 화면 표시를 연결합니다.
    - AI 응답 chunk는 화면에 실시간 표시하고, 최종 assistant 응답만 Supabase에 저장하는 흐름을 설계합니다.
 
@@ -62,19 +62,19 @@ Supabase 테이블 준비
 이 단원의 각 단계는 `99_team-projects`의 팀 프로젝트 문서와 연결됩니다.
 
 ```text
-61_supabase-project-and-schema
+01_supabase-project-and-schema
 -> docs/supabase-schema.md
 
-62_fastapi-supabase-api
+02_fastapi-supabase-api
 -> docs/api-spec.md
 
-63_streamlit-dashboard-ui
+03_streamlit-dashboard-ui
 -> docs/ui-design.md
 
-64_service-log-and-feedback
+04_service-log-and-feedback
 -> docs/dashboard-result.md, docs/test-checklist.md
 
-65_sse-streaming-ai-response
+05_sse-streaming-ai-response
 -> docs/streaming-response-design.md
 ```
 

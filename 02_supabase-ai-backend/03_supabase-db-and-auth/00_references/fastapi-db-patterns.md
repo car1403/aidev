@@ -18,6 +18,8 @@ main.py
 
 기능이 많아지면 아래처럼 역할을 나누는 것이 좋습니다.
 
+기본적인 `main.py`, `routers`, `schemas`, `services`, `tests` 분리는 앞 단원의 `01_fastapi-backend/10_labs/lab-100_project-structure-refactor`에서 먼저 연습했습니다.
+
 ```text
 app
 ├─ main.py

@@ -76,7 +76,7 @@ Swagger UI:
 | 3 | `03_pydantic-and-response` | Pydantic 요청 검증, Response Model, 표준 응답 | Supabase 저장 전 데이터 모양 정리 |
 | 4 | `04_async-and-external-api` | `async def`, 외부 API 호출 구조, 스트리밍 응답 기초 | 이후 LLM API 호출과 SSE 이해 |
 | 5 | `05_error-handling-and-testing` | HTTPException, Depends, CORS, Swagger/Postman/TestClient | 프론트엔드 연동과 API 안정성 점검 |
-| 6 | `10_labs` | 단계별 실습 | 직접 구현 |
+| 6 | `10_labs` | 단계별 실습, 미니 API 서버, 프로젝트 구조 분리 | 직접 구현 |
 | 7 | `20_assignments` | 과제형 API 구현 | 미니 프로젝트 준비 |
 
 ## 실행 기본 명령
@@ -170,7 +170,7 @@ Invoke-RestMethod http://127.0.0.1:8000/health
 ### Path/Query Parameter 확인
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab02_path-query-params
+cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab-02_memo-routing-and-search
 uvicorn solution:app --reload
 ```
 
@@ -184,7 +184,7 @@ Invoke-RestMethod "http://127.0.0.1:8000/search?keyword=python&limit=5"
 ### Request Body 확인
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab03_request-body-validation
+cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab-03_memo-request-validation
 uvicorn solution:app --reload
 ```
 
@@ -243,7 +243,7 @@ Middleware와 CORS 예제:
 ### Response Model 확인
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab04_response-model
+cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab-04_memo-response-model
 uvicorn solution:app --reload
 ```
 
@@ -261,7 +261,7 @@ Invoke-RestMethod http://127.0.0.1:8000/users/1
 ### Async API 확인
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab05_async-external-api
+cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab-05_async-external-context
 uvicorn solution:app --reload
 ```
 
@@ -274,7 +274,7 @@ Invoke-RestMethod "http://127.0.0.1:8000/mock-external?keyword=fastapi"
 ### In Memory CRUD API 확인
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab06_in-memory-crud-api
+cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab-06_memo-crud-review
 uvicorn solution:app --reload
 ```
 
@@ -293,7 +293,7 @@ DELETE /memos/{memo_id}
 ### Mini API Server 확인
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab99_mini-api-server
+cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab-99_mini-memo-api-server
 uvicorn solution:app --reload
 ```
 
@@ -301,12 +301,39 @@ uvicorn solution:app --reload
 
 ```text
 GET /health
-GET /notes
-POST /notes
-GET /notes/{note_id}
+GET /memos
+GET /memos/search
+GET /memos/{memo_id}
+POST /memos
+POST /ai/draft-response
 ```
 
 이 실습은 FastAPI 단원의 마무리용 작은 API 서버입니다.
+
+### Project Structure Refactor 확인
+
+```powershell
+cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab-100_project-structure-refactor\solution
+uvicorn app.main:app --reload
+```
+
+확인할 것:
+
+```text
+app/main.py에서 FastAPI 앱을 생성한다.
+app/routers/memo_router.py에서 API 경로를 관리한다.
+app/schemas/memo_schema.py에서 Pydantic 모델을 관리한다.
+app/services/memo_service.py에서 메모 처리 로직을 관리한다.
+tests/test_memo_api.py에서 TestClient 테스트를 실행한다.
+```
+
+테스트 실행:
+
+```powershell
+python -m pytest
+```
+
+이 실습은 `02_project-structure.md`에서 설명한 프로젝트 구조를 직접 만들어 보는 단계입니다.
 
 ## 실행 검증 체크리스트
 

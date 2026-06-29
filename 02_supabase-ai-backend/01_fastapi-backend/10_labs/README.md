@@ -2,7 +2,9 @@
 
 이 폴더는 `01_fastapi-backend` 단원에서 수업 중 함께 진행하는 실습 모음입니다.
 
-앞의 `01_fastapi-project-setup`부터 `04_async-and-external-api`까지 배운 내용을 메모 API 흐름으로 반복 연습합니다. 각 lab은 `starter.py`를 먼저 열어 TODO를 채우고, 막히면 `solution.py`와 비교합니다.
+앞의 `01_fastapi-project-setup`부터 `04_async-and-external-api`까지 배운 내용을 메모 API 흐름으로 반복 연습합니다. 대부분의 lab은 `starter.py`를 먼저 열어 TODO를 채우고, 막히면 `solution.py`와 비교합니다.
+
+마지막 `lab-100_project-structure-refactor`는 실제 프로젝트 구조를 익히기 위해 `starter/app`, `solution/app`, `tests` 폴더를 사용합니다.
 
 ## 실습 목록
 
@@ -15,6 +17,7 @@
 | 5 | `lab-05_async-external-context` | `04_async-and-external-api` | async/await, 외부 API 데이터 연결 |
 | 6 | `lab-06_memo-crud-review` | `02~04 복습` | 메모 CRUD 전체 흐름 복습 |
 | 99 | `lab-99_mini-memo-api-server` | `01_fastapi-backend 마무리` | 작은 메모 API 서버 완성 |
+| 100 | `lab-100_project-structure-refactor` | `01_fastapi-project-setup` 구조 확장 | `app/main.py`, `routers`, `schemas`, `services`, `tests` 분리 |
 
 ## 공통 실행 방법
 
@@ -37,6 +40,19 @@ uvicorn starter:app --reload
 
 ```powershell
 uvicorn solution:app --reload
+```
+
+`lab-100_project-structure-refactor`는 폴더 구조가 다르므로 아래처럼 실행합니다.
+
+```powershell
+cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab-100_project-structure-refactor\solution
+uvicorn app.main:app --reload
+```
+
+테스트는 같은 위치에서 실행합니다.
+
+```powershell
+python -m pytest
 ```
 
 Swagger UI:
@@ -81,5 +97,5 @@ FastAPI 기본:
   await와 외부 API 호출 구조를 설명할 수 있습니다.
 
 마무리 실습:
-  작은 메모 API 서버를 스스로 완성할 수 있습니다.
+  작은 메모 API 서버를 스스로 완성하고, 프로젝트 폴더 구조로 분리할 수 있습니다.
 ```

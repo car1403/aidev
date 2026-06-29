@@ -1,6 +1,6 @@
 ﻿# 99_team-projects
 
-이 폴더는 03 미니 프로젝트의 최종 팀 프로젝트 작업 공간입니다.
+이 폴더는 04 미니 프로젝트의 최종 팀 프로젝트 작업 공간입니다.
 
 `01_local-dev-basic`에서 로컬 실행 감각을 익히고, `02_instructor-sample-project`에서 완성된 샘플을 확인한 뒤, `03_supabase-and-sse-practice`와 `04_team-project-guide`를 거쳐 이 폴더에서 실제 프로젝트를 진행합니다.
 
@@ -56,6 +56,8 @@ team-03-customer-support-log
 ```
 
 ## 팀 프로젝트 기본 구조
+
+팀 프로젝트 템플릿은 초보자 실행 편의를 위해 `backend/main.py` 단일 진입점으로 시작합니다. `02_supabase-ai-backend`의 `lab-100_project-structure-refactor`에서 연습한 `app/main.py`, `routers`, `schemas`, `services` 구조 분리는 프로젝트가 커질 때 선택 확장으로 적용합니다.
 
 ```text
 team-project
