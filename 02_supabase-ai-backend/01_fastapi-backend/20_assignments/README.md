@@ -2,7 +2,9 @@
 
 이 폴더는 `01_fastapi-backend` 단원의 제출 과제 모음입니다.
 
-수업 중 실습인 `10_labs`가 단계별 연습이라면, 이 폴더의 과제는 같은 내용을 스스로 정리해 제출하는 용도입니다. 모든 과제는 앞 단원에서 정리한 **메모 API 흐름**을 기준으로 구성합니다.
+수업 중 실습인 `10_labs`가 단계별 연습이라면, 이 폴더의 과제는 같은 내용을 스스로 정리해 제출하는 용도입니다. 대부분의 과제는 앞 단원에서 정리한 **메모 API 흐름**을 기준으로 구성합니다.
+
+마지막 `assignment-100_product-api-structure-refactor`는 `lab-100_project-structure-refactor`에서 배운 구조 분리를 다른 주제인 **상품 API**에 적용하는 과제입니다.
 
 ## 과제 목록
 
@@ -13,6 +15,7 @@
 | 3 | `assignment-03_memo-validation-response` | `03_pydantic-and-response` | 요청 검증, 응답 모델, 표준 응답 구조 |
 | 4 | `assignment-04_async-external-context` | `04_async-and-external-api` | 비동기 외부 API 호출, 메모 컨텍스트 결합 |
 | 99 | `assignment-99_fastapi-memo-mini-project` | `01_fastapi-backend 마무리` | 작은 메모 API 서버 완성 |
+| 100 | `assignment-100_product-api-structure-refactor` | `10_labs/lab-100` 이후 | 상품 등록/조회 API를 프로젝트 구조로 분리 |
 
 ## 공통 제출 파일
 
@@ -24,6 +27,18 @@ README.md
 ```
 
 `starter.py`는 시작용 참고 파일입니다. 제출할 때는 완성한 코드를 `main.py`로 정리합니다.
+
+단, `assignment-100_product-api-structure-refactor`는 구조 분리 과제이므로 아래 구조를 유지합니다.
+
+```text
+app/
+  main.py
+  routers/
+  schemas/
+  services/
+tests/
+README.md
+```
 
 ## 공통 README 작성 기준
 
@@ -51,6 +66,13 @@ pip install -r requirements.txt
 
 ```powershell
 uvicorn main:app --reload
+```
+
+구조 분리 과제인 `assignment-100_product-api-structure-refactor`는 아래처럼 실행합니다.
+
+```powershell
+uvicorn app.main:app --reload
+python -m pytest -s
 ```
 
 Swagger UI:

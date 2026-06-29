@@ -14,6 +14,7 @@ FastAPI에서는 여러 API에서 반복되는 공통 로직을 `Depends`로 분
 03_swagger-test-guide.md
 04_postman-test-guide.md
 05_simple-test-client.py
+app_for_test.py
 dependency_injection_depends.py
 global_exception_handler.py
 ```
@@ -36,6 +37,17 @@ global_exception_handler.py
 | Exception Handler | 예상한 오류를 같은 형식의 JSON 응답으로 바꿉니다. | 비즈니스 오류를 `error_code`, `message` 형태로 반환합니다. |
 | Middleware | 모든 요청과 응답 사이에 공통 처리를 끼워 넣습니다. | 요청 처리 시간을 헤더에 추가합니다. |
 | CORS | 브라우저가 다른 주소의 API를 호출할 수 있도록 허용합니다. | Streamlit 또는 프론트엔드 화면에서 FastAPI를 호출합니다. |
+
+## 자주 보는 HTTP 상태 코드
+
+| 상태 코드 | 이름 | 의미 | 이 단원에서 확인하는 예 |
+| --- | --- | --- | --- |
+| 200 | OK | 요청이 정상 처리되었습니다. | `/health`, `/items/1` 조회 성공 |
+| 201 | Created | 새 데이터가 생성되었습니다. | 이후 POST 생성 API에서 사용 |
+| 400 | Bad Request | 요청 조건이 잘못되었습니다. | 무료 상품 구매 요청처럼 서비스 규칙에 맞지 않는 요청 |
+| 404 | Not Found | 요청한 데이터를 찾을 수 없습니다. | `/items/999`처럼 없는 id 조회 |
+| 422 | Unprocessable Entity | 요청 JSON이 Pydantic 모델의 검증 조건과 맞지 않습니다. | 필수 필드 누락, 빈 문자열, 잘못된 타입 |
+| 500 | Internal Server Error | 서버 내부에서 예상하지 못한 오류가 발생했습니다. | 처리하지 못한 예외 |
 
 ## 수업 진행 팁
 

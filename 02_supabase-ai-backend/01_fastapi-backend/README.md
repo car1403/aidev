@@ -124,20 +124,20 @@ http://127.0.0.1:8000/docs
 
 ## 파일명과 실행 위치 주의
 
-FastAPI 예제 파일 중에는 학습 순서를 보여주기 위해 `01_hello-fastapi.py`처럼 번호와 하이픈이 들어간 파일이 있습니다. 이런 파일은 Python 파일로 읽을 수는 있지만, `uvicorn 파일명:app` 형태로 실행할 때 불편할 수 있습니다.
+FastAPI 예제 파일 중에는 학습 순서를 보여주기 위해 `01_hello-fastapi.py`처럼 번호와 하이픈이 들어간 파일이 있습니다. 이런 파일은 실제 프로젝트 파일명으로는 권장하지 않지만, 이 과정에서는 개념을 하나씩 확인할 수 있도록 일부 예제 파일 상단에 개별 실행 명령을 적어 두었습니다.
 
-따라서 서버 실행 실습은 보통 아래처럼 `starter.py`, `solution.py`, `main.py`처럼 import하기 쉬운 파일명으로 진행합니다.
+개별 예제 파일을 실행할 때는 파일 상단의 `실행:` 주석을 먼저 확인합니다. 통합 실습과 Lab은 아래처럼 `starter.py`, `solution.py`, `main.py`처럼 import하기 쉬운 파일명으로 진행합니다.
 
 ```powershell
 uvicorn solution:app --reload
 uvicorn main:app --reload
 ```
 
-하이픈이 들어간 파일은 코드 읽기와 개념 확인용으로 보고, 실제 서버 실행은 각 Lab의 `starter.py` 또는 `solution.py`를 기준으로 진행합니다.
+정리하면, 개념 예제는 파일 상단의 실행 명령을 따르고, 수업에서 하나의 API 서버로 합쳐 보는 실습은 각 챕터의 `main.py` 또는 Lab의 `starter.py`, `solution.py`를 기준으로 진행합니다.
 
 ## 예제 실행 방법
 
-각 챕터의 예제 파일명은 학습 순서를 보여주기 위해 번호와 하이픈을 포함할 수 있습니다. 실제 서버 실행에서는 import가 쉬운 `main.py`, `solution.py`, `starter.py` 같은 파일명을 사용하는 것을 권장합니다.
+각 챕터의 예제 파일명은 학습 순서를 보여주기 위해 번호와 하이픈을 포함할 수 있습니다. 개별 예제는 파일 상단의 실행 명령으로 확인하고, 통합 실행에서는 import가 쉬운 `main.py`, `solution.py`, `starter.py` 같은 파일명을 사용하는 것을 권장합니다.
 
 ### Lab 01 실행
 
@@ -233,7 +233,7 @@ Invoke-RestMethod http://127.0.0.1:8000/items/999
 
 Middleware와 CORS 예제:
 
-`02_middleware-cors.py`처럼 하이픈이 들어간 파일은 `uvicorn 02_middleware-cors:app --reload` 형태로 실행하기 어렵습니다. 이 파일은 먼저 코드 내용을 읽고, CORS 설정 구조를 이해하는 용도로 사용합니다. 직접 실행이 필요하면 파일명을 `middleware_cors_app.py`처럼 바꾼 복사본을 만들어 실행합니다.
+`02_middleware-cors.py`는 파일 상단의 실행 명령으로 서버를 실행해 `/health` 응답을 확인할 수 있습니다. 다만 CORS 효과는 브라우저에서 다른 origin의 프론트엔드가 FastAPI를 호출할 때 드러나므로, 이 단원에서는 설정 구조를 먼저 이해하고 실제 프론트엔드 연동은 `03_supabase-ai-frontend`에서 다시 확인합니다.
 
 확인할 것:
 
