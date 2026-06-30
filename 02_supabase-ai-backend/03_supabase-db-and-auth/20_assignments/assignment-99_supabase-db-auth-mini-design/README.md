@@ -6,7 +6,7 @@
 
 - Supabase DB, Supabase Auth/JWT, Upstash Redis TTL 캐시를 하나의 서비스 설계로 통합할 수 있습니다.
 - LLM 응답 생성 흐름을 mock-first와 Gemini SDK 실제 호출 구조로 구분해 설계할 수 있습니다.
-- 이후 `04_backend-service-data-management` 또는 미니 프로젝트로 이어질 수 있는 설계 문서를 작성합니다.
+- 이후 `90_ai-assisted-code-review-and-debugging`의 리뷰와 `99_final-backend-project`의 최종 프로젝트로 이어질 수 있는 설계 문서를 작성합니다.
 
 ## 프로젝트 주제 예시
 

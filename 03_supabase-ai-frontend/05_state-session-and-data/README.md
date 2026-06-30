@@ -66,7 +66,7 @@
 C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\03_fastapi-supabase-integration
 C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\04_supabase-auth-and-rls
 C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\05_conversation-history-and-service-logs
-C:\aidev\02_supabase-ai-backend\04_backend-service-data-management
+C:\aidev\02_supabase-ai-backend\99_final-backend-project
 ```
 
 백엔드 실행 예시는 다음과 같습니다.

@@ -30,8 +30,6 @@
 # - 01_fastapi-backend: FastAPI 설치, 라우팅, 요청/응답, 오류 처리 실습
 # - 02_llm-api-integration: FastAPI endpoint에서 mock/Gemini/OpenAI 응답 연결
 # - 03_supabase-db-and-auth: FastAPI와 Supabase 연동
-# - 04_backend-service-data-management: 사용자 정보, 대화 이력, 서비스 로그 API
-# - 05_backend-mini-service-practice: 백엔드 미니 서비스 구현
 # - 99_final-backend-project: 최종 백엔드 프로젝트
 fastapi==0.136.3
 
@@ -82,7 +80,7 @@ colorama==0.4.6
 # 사용 위치:
 # - 01_fastapi-backend/03_pydantic-and-response
 # - 02_llm-api-integration: LLM 요청/응답 모델 구성
-# - 05_backend-mini-service-practice: 질문 생성, 서비스 로그 응답 모델 구성
+# - 03_supabase-db-and-auth: Supabase 연동 요청/응답 모델 구성
 # - 99_final-backend-project: 최종 API 요청/응답 모델
 pydantic==2.13.4
 
@@ -161,8 +159,6 @@ idna==3.18
 # 사용 위치:
 # - 02_llm-api-integration: GEMINI_API_KEY, OPENAI_API_KEY 읽기
 # - 03_supabase-db-and-auth: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY 읽기
-# - 04_backend-service-data-management: 서비스 데이터 저장 환경 설정
-# - 05_backend-mini-service-practice: 미니 서비스 환경 변수 관리
 # - 90_ai-assisted-code-review-and-debugging: 환경 변수 오류 디버깅 lab
 python-dotenv==1.2.2
 
@@ -175,8 +171,6 @@ python-dotenv==1.2.2
 # 테이블 insert/select/update/delete, Auth 연동 흐름을 실습할 때 사용합니다.
 # 사용 위치:
 # - 03_supabase-db-and-auth: Supabase 프로젝트, 테이블, CRUD, Auth/RLS
-# - 04_backend-service-data-management: 사용자 프로필, 대화 이력, 서비스 로그 저장
-# - 05_backend-mini-service-practice: mini_questions, mini_service_logs 저장
 # - 99_final-backend-project: 최종 백엔드 프로젝트 데이터 저장
 supabase==2.10.0
 

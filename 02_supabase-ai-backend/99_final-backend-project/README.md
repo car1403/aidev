@@ -1,132 +1,112 @@
-﻿# 99. Final Backend Project
+# 99_final-backend-project
 
-이 단원은 `02_supabase-ai-backend`의 최종 백엔드 프로젝트입니다.
+이 단원은 `02_supabase-ai-backend`의 최종 프로젝트 안내입니다.
 
-Python, FastAPI, Pydantic, Gemini SDK, Supabase, Upstash Redis, 서비스 로그, Codex 기반 코드 리뷰를 하나의 결과물로 정리합니다. 앞에서 만든 `05_backend-mini-service-practice`의 미니 서비스를 바탕으로, 직접 요구사항을 정리하고 API, 데이터베이스, 환경 변수, 테스트 결과, 보안 점검 문서를 완성합니다.
-
-## 프로젝트 주제 예시
-
-```text
-Supabase 기반 AI 질문 응답 백엔드 서비스
-```
+새로운 대규모 예제를 추가로 배우는 단원이 아니라, `01_fastapi-backend`, `02_llm-api-integration`, `03_supabase-db-and-auth`에서 배운 내용을 작은 백엔드 서비스 하나로 정리합니다.
 
 ## 프로젝트 목표
 
-- FastAPI 기반 REST API를 설계하고 구현합니다.
-- Pydantic 모델로 요청/응답 데이터를 검증합니다.
-- Gemini SDK를 기본 LLM 연동 방식으로 사용합니다.
-- REST 호출 예제는 구조 이해용 보충으로만 다룹니다.
-- OpenAI API는 선택 또는 비교 실습으로만 다룹니다.
-- Supabase에 질문, 답변, 서비스 로그를 저장합니다.
-- Upstash Redis는 선택 기능으로 캐시, 세션, 요청 횟수 제한 중 하나에 적용할 수 있습니다.
-- Codex를 활용해 코드 리뷰, 디버깅, 보안/비용 점검 기록을 남깁니다.
+수강생은 아래 흐름을 설명하고 실행할 수 있어야 합니다.
+
+```text
+사용자 요청
+-> FastAPI endpoint
+-> Pydantic 검증
+-> mock 또는 Gemini 응답 생성
+-> Supabase 저장
+-> Swagger UI 테스트
+-> 오류/보안 점검 기록
+```
+
+## 추천 주제
+
+시간이 부족한 초보자 과정이므로 주제는 단순하게 잡습니다.
+
+```text
+AI 학습 메모 백엔드
+AI 질문 답변 기록 API
+상품 설명 생성 API
+간단한 상담 로그 API
+```
 
 ## 필수 포함 요소
 
-| 항목 | 설명 |
+| 항목 | 기준 |
 | --- | --- |
-| FastAPI | REST API endpoint를 구현합니다. |
-| Pydantic | 요청/응답 데이터를 검증합니다. |
-| Supabase | 사용자 데이터, 질문/응답, 서비스 로그를 저장합니다. |
-| Gemini SDK | 기본 LLM 연동 방식으로 사용합니다. |
-| REST 호출 | LLM API 구조를 이해하기 위한 보충 예제로만 사용합니다. |
-| Mock-first | 실제 API key가 없거나 비용을 아끼기 위해 먼저 검증하는 응답 흐름입니다. |
-| 서비스 로그 | 성공/실패, 오류, 모델명, 처리 결과를 Supabase에 저장합니다. |
-| 보안/비용 점검 | API key 노출, service role key 사용 위치, LLM 비용 제한을 확인합니다. |
-| Codex 리뷰 | 코드 설명, 오류 분석, 리팩토링, 리뷰 기록을 남깁니다. |
+| FastAPI | 서버가 실행되고 `GET /health`가 동작합니다. |
+| endpoint | 최소 3개 이상의 API가 있습니다. |
+| Pydantic | 요청 Body를 모델로 검증합니다. |
+| LLM 흐름 | mock 응답 또는 Gemini SDK 응답 중 하나를 사용합니다. |
+| Supabase | 최소 1개 테이블에 데이터를 저장하거나 조회합니다. |
+| 로그 | 요청/응답 또는 오류 기록을 남깁니다. |
+| Swagger 결과 | `/docs`에서 실행한 결과를 문서에 정리합니다. |
+| 보안 | `.env`는 제출하지 않고, `.env.example`만 제공합니다. |
 
 ## 선택 포함 요소
 
 | 항목 | 설명 |
 | --- | --- |
-| Supabase Auth/RLS | 사용자별 데이터 접근 제어를 확장합니다. |
-| Upstash Redis | TTL 캐시, 요청 횟수 제한, 임시 세션 상태 중 하나를 구현합니다. |
-| OpenAI API | Gemini SDK와 비교하거나 선택 기능으로 호출합니다. |
-| Feedback API | AI 답변에 대한 사용자 평가를 저장합니다. |
+| Gemini 실제 호출 | API key와 비용 제한을 확인한 뒤 적용합니다. |
+| Upstash Redis | 같은 질문에 대한 짧은 TTL 캐시를 적용합니다. |
+| Auth/JWT/RLS | 로그인 사용자별 데이터 접근 제어를 적용합니다. |
+| 구조 분리 | `app/main.py`, `app/schemas.py`, `app/repository.py`처럼 파일을 나눕니다. |
+| pytest | 핵심 API에 대한 테스트를 추가합니다. |
 
-## 제출 문서
-
-```text
-README.md
-docs/api-design.md
-docs/database-design.md
-docs/env-guide.md
-docs/service-data-flow.md
-docs/security-cost-check.md
-docs/test-result.md
-docs/codex-review-log.md
-```
-
-## 권장 구현 범위
-
-최소 구현:
+## 권장 endpoint 예시
 
 ```text
 GET /health
-POST /questions
-GET /questions
-GET /questions/{question_id}
+POST /items
+GET /items
+POST /ai/answer
+GET /logs
+```
+
+주제가 상품 설명 생성 API라면 예시는 이렇게 바꿀 수 있습니다.
+
+```text
+GET /health
+POST /products
+GET /products
+POST /products/{product_id}/ai-description
 GET /service-logs
 ```
 
-선택 구현:
+## 제출 폴더 예시
 
 ```text
-POST /feedback
-GET /profiles/{user_id}
-Upstash Redis 기반 요청 횟수 제한
-Upstash Redis 기반 30초 응답 캐시
+my-final-backend-project
+├─ README.md
+├─ .env.example
+├─ requirements.txt
+├─ app
+│  └─ main.py
+└─ docs
+   ├─ 01_project-plan.md
+   ├─ 02_api-design.md
+   ├─ 03_db-design.md
+   ├─ 04_env-security-checklist.md
+   ├─ 05_swagger-test-result.md
+   └─ 06_troubleshooting-log.md
 ```
 
-이 과정에서는 Docker 배포와 SSE 스트리밍을 필수로 요구하지 않습니다.
+처음에는 `app/main.py` 하나로 시작해도 됩니다. 시간이 남거나 코드가 길어질 때만 구조 분리를 선택 확장으로 진행합니다.
 
-- SSE 기반 실시간 응답 스트리밍은 `04_supabase-ai-mini-project`에서 백엔드, 프론트엔드, Supabase 저장 흐름을 함께 연결하며 다룹니다.
-- Docker, Docker Compose, AWS, GitHub Actions 기반 운영은 `07_multi-agent-service-ops`에서 본격적으로 다룹니다.
+## 진행 순서
 
-## 권장 프로젝트 흐름
-
-```text
-1. 요구사항 정리
-2. API 설계
-3. Supabase 테이블 설계
-4. mock-first로 FastAPI endpoint 구현
-5. Gemini SDK 연동 설계 또는 구현
-6. Supabase 저장 연결
-7. 서비스 로그 저장 연결
-8. Upstash Redis 선택 기능 설계 또는 구현
-9. 보안/비용 점검
-10. Codex 코드 리뷰
-11. Swagger UI 또는 TestClient 실행 결과 정리
-```
+1. `templates/01_project-plan.md`로 주제와 필수 기능을 정합니다.
+2. `templates/02_api-design.md`로 endpoint와 요청/응답 예시를 적습니다.
+3. `templates/03_db-design.md`로 Supabase 테이블을 정리합니다.
+4. `starter/app/main.py`를 복사해 `GET /health`부터 실행합니다.
+5. mock 응답으로 API 흐름을 먼저 완성합니다.
+6. 필요하면 Gemini SDK 호출을 연결합니다.
+7. Supabase 저장을 연결합니다.
+8. Swagger UI에서 실행 결과를 캡처하거나 문서로 정리합니다.
+9. `90_ai-assisted-code-review-and-debugging` 체크리스트로 리뷰합니다.
+10. `.env`가 제출되지 않는지 마지막으로 확인합니다.
 
 ## 평가 기준
 
-- API endpoint가 리소스 중심으로 설계되어 있는가?
-- HTTP Method가 의미에 맞게 사용되었는가?
-- Pydantic 요청/응답 모델이 명확한가?
-- Supabase 테이블 구조가 서비스 요구사항과 맞는가?
-- `.env`와 API key를 안전하게 관리하는가?
-- mock-first 호출, Gemini SDK 최소/안내형 호출, OpenAI 선택 호출 흐름이 구분되어 있는가?
-- `provider`, `model`, `actual_api_called`, `llm_call_mode`로 LLM 호출 상태를 기록하는가?
-- OpenAI 호출은 선택 또는 비교 실습으로 분리되어 있는가?
-- Upstash Redis를 사용한다면 Supabase와 역할이 명확히 구분되는가?
-- 서비스 로그에 민감 정보가 들어가지 않는가?
-- Swagger UI 또는 테스트 결과를 문서에 포함했는가?
-- Codex가 생성하거나 제안한 내용을 직접 검토했는가?
+자세한 기준은 [rubric/evaluation-rubric.md](./rubric/evaluation-rubric.md)를 참고합니다.
 
-## 제출 전 체크리스트
-
-- [ ] `.env`에는 실제 key를 넣고, `.env.example`에는 예시 값만 남겼습니다.
-- [ ] `SUPABASE_SERVICE_ROLE_KEY`를 프론트엔드나 README에 노출하지 않았습니다.
-- [ ] 실제 LLM API 호출 전 mock-first 버전으로 먼저 테스트했습니다.
-- [ ] Gemini SDK를 기본 LLM 연동 방식으로 사용하고, REST는 보충, OpenAI는 선택/비교 흐름으로 분리했습니다.
-- [ ] `provider`, `model`, `actual_api_called`, `llm_call_mode` 기준을 API 응답, Supabase 저장, 서비스 로그에 반영했습니다.
-- [ ] 실제 LLM API를 사용한다면 최대 출력 길이 같은 비용 제한을 설정했습니다.
-- [ ] Supabase update/delete 코드에는 조건이 있습니다.
-- [ ] 서비스 로그에 API key, token, 개인정보가 들어가지 않습니다.
-- [ ] Swagger UI 또는 TestClient 결과를 문서에 포함했습니다.
-- [ ] Codex 리뷰 결과를 그대로 붙이지 않고 본인 판단과 함께 기록했습니다.
-
-## 다음 과정 연결
-
-이 프로젝트 이후에는 `03_supabase-ai-frontend`에서 Streamlit 기반 화면을 만들고, `04_supabase-ai-mini-project`에서 백엔드, 프론트엔드, Supabase 저장 흐름을 통합합니다.
+핵심은 기능을 많이 넣는 것이 아니라, 작은 백엔드 서비스를 끝까지 설명하고 실행할 수 있는 것입니다.
