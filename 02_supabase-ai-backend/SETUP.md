@@ -237,7 +237,7 @@ Dashboard에서 Redis database를 생성합니다.
 backend-practice-cache
 ```
 
-이 과정에서는 캐시, TTL, 요청 횟수 제한 정도만 사용합니다. 고급 운영 설정은 07 과정에서 다룹니다.
+이 과정에서는 캐시와 TTL만 최소 예제로 사용합니다. 요청 횟수 제한, 세션 저장, 고급 운영 설정은 뒤 과정에서 다룹니다.
 
 ### 6.3 REST API 정보 확인
 
@@ -326,10 +326,10 @@ dir .env
 
 `.env` 파일을 VS Code에서 열어 `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`가 실제 값으로 입력되어 있는지 확인합니다. key 전체 값은 터미널이나 문서에 출력하지 않습니다.
 
-Upstash Redis 환경변수 확인:
+Upstash Redis 환경변수는 아래 예제를 실행하면서 함께 확인합니다.
 
 ```powershell
-python .\03_supabase-db-and-auth\06_upstash-redis-cache-and-session\01_check_upstash_env.py
+python .\03_supabase-db-and-auth\06_upstash-redis-cache-and-session\01_redis_set_get_ttl.py
 ```
 
 ## 10. Supabase에서 테이블 만들기 기본 흐름
@@ -376,7 +376,7 @@ RLS
 
 ## 12. Upstash Redis 기본 개념
 
-Redis는 빠른 임시 저장소입니다. Supabase처럼 오래 보관해야 하는 데이터의 중심 저장소로 쓰기보다, 빠르게 쓰고 일정 시간이 지나면 사라져도 되는 데이터에 사용합니다.
+Redis는 빠른 임시 저장소입니다. Supabase처럼 오래 보관해야 하는 데이터의 중심 저장소로 쓰기보다, 빠르게 쓰고 일정 시간이 지나면 사라져도 되는 데이터에 사용합니다. 이 과정에서는 시간상 TTL 기반 캐시만 최소 예제로 확인합니다.
 
 이 과정에서는 아래 기준으로 설명합니다.
 
@@ -387,19 +387,22 @@ Supabase
 
 Upstash Redis
 -> 짧게 보관할 임시 데이터
--> 캐시, TTL, 중복 요청 방지, 요청 횟수 제한, 임시 세션 상태
+-> 캐시, TTL
+-> 중복 요청 방지, 요청 횟수 제한, 임시 세션 상태는 뒤 과정에서 확장
 ```
 
 Upstash Redis TTL 예제 실행:
 
 ```powershell
-python .\03_supabase-db-and-auth\06_upstash-redis-cache-and-session\02_cache_set_get_ttl.py
+python .\03_supabase-db-and-auth\06_upstash-redis-cache-and-session\01_redis_set_get_ttl.py
 ```
 
-요청 횟수 제한 예제 실행:
+FastAPI Redis 캐시 예제 실행:
 
 ```powershell
-python .\03_supabase-db-and-auth\06_upstash-redis-cache-and-session\03_rate_limit_example.py
+cd C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\06_upstash-redis-cache-and-session
+..\..\.venv\Scripts\Activate.ps1
+uvicorn 02_fastapi_redis_cache:app --reload --host 127.0.0.1 --port 8004
 ```
 
 ## 13. FastAPI 실행 기본형

@@ -47,7 +47,7 @@ app
 
 `03_fastapi-supabase-integration`에서는 먼저 단일 `main.py` 중심으로 흐름을 익힙니다.
 
-이후 `99_final-backend-project`나 `04_supabase-ai-mini-project`로 확장할 때는 역할별 분리를 적용할 수 있습니다.
+이후 미니 프로젝트나 최종 프로젝트로 확장할 때는 역할별 분리를 적용할 수 있습니다.
 
 ## Supabase 호출 위치
 

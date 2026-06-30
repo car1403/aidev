@@ -1,7 +1,8 @@
-"""Lab 01 solution - Supabase 환경변수 확인.
+"""
+Lab 01 solution - Supabase 환경변수 확인.
 
 Supabase에 접속하기 전에는 URL과 key가 준비되어 있어야 합니다.
-이 예제는 키 값을 그대로 출력하지 않고, 일부만 마스킹해서 보여 줍니다.
+이 예제는 실제 key 값을 그대로 출력하지 않고, 앞뒤 일부만 마스킹해서 보여 줍니다.
 """
 
 from __future__ import annotations
@@ -15,14 +16,14 @@ PLACEHOLDER_WORDS = ("your-", "example", "localhost")
 
 
 def is_placeholder(value: str) -> bool:
-    """예제용 placeholder 값인지 확인합니다."""
+    """예시 placeholder 값인지 확인합니다."""
 
     lowered = value.lower()
     return any(word in lowered for word in PLACEHOLDER_WORDS)
 
 
 def mask_secret(value: str) -> str:
-    """민감한 key가 터미널에 그대로 노출되지 않도록 가립니다."""
+    """민감한 key가 화면에 그대로 노출되지 않도록 가립니다."""
 
     if len(value) <= 12:
         return "설정됨"

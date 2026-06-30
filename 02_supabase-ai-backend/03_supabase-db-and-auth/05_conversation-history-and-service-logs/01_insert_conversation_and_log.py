@@ -1,11 +1,45 @@
-﻿"""Supabase에 대화 이력과 서비스 로그를 저장하는 예제입니다.
+"""Supabase에 간단한 채팅 로그를 저장하는 최소 예제입니다.
 
-AI 백엔드 서비스에서는 답변을 생성하는 것만큼 기록을 남기는 것도 중요합니다.
-사용자가 어떤 대화를 했는지, 서버가 어떤 이벤트를 처리했는지 Supabase에 저장하면
-나중에 화면 조회, 오류 분석, 품질 개선에 활용할 수 있습니다.
+이 파일의 목적:
+    실제 LLM API를 호출하기 전에, "질문과 답변을 DB에 저장한다"는 흐름을
+    가장 단순한 형태로 확인합니다.
+
+    이 예제는 `simple_chat_logs` 테이블 1개만 사용합니다.
+    복잡한 `conversations`, `messages`, `service_logs` 구조로 가기 전에
+    한 행(row)에 질문/답변/상태를 저장하는 방식을 먼저 익힙니다.
+
+    `simple_chat_logs`에는 user_id를 넣지 않습니다.
+    아직 로그인 사용자 구분을 하지 않고, "질문/답변 저장"만 확인하는 최소 예제이기 때문입니다.
+    사용자별 대화 이력은 Auth/JWT를 연결한 뒤 확장 구조에서 다룹니다.
+
+실행 전 준비:
+    1. C:/aidev/02_supabase-ai-backend/.env 파일에 아래 값이 있어야 합니다.
+       - SUPABASE_URL
+       - SUPABASE_SERVICE_ROLE_KEY
+
+    2. Supabase Dashboard -> SQL Editor에서 아래 SQL을 실행합니다.
+
+       create table if not exists simple_chat_logs (
+         id uuid primary key default gen_random_uuid(),
+         user_message text not null,
+         assistant_message text,
+         provider text not null default 'gemini',
+         model text,
+         status text not null default 'success',
+         error_message text,
+         created_at timestamptz not null default now()
+       );
+
+실행:
+    cd C:/aidev/02_supabase-ai-backend
+    ./.venv/Scripts/Activate.ps1
+    python ./03_supabase-db-and-auth/05_conversation-history-and-service-logs/01_insert_conversation_and_log.py
+
+실행 결과:
+    - simple_chat_logs 테이블에 샘플 질문/답변 로그가 1건 저장됩니다.
+    - 최근 로그 목록을 다시 조회해서 터미널에 출력합니다.
+    - 이 파일은 실제 Gemini API를 호출하지 않습니다.
 """
-
-from __future__ import annotations
 
 import os
 from pathlib import Path
@@ -16,28 +50,43 @@ from postgrest.exceptions import APIError
 from supabase import Client, create_client
 
 
-# 이 파일은 다음 위치에 있습니다.
-# 02_supabase-ai-backend/03_supabase-db-and-auth/05_conversation-history-and-service-logs/01_insert_conversation_and_log.py
-# parents[2]는 02_supabase-ai-backend 폴더입니다.
+# 현재 파일은 아래 폴더 안에 있습니다.
+# C:/aidev/02_supabase-ai-backend/03_supabase-db-and-auth/05_conversation-history-and-service-logs
+#
+# Path(__file__).resolve()는 현재 파이썬 파일의 전체 경로를 구합니다.
+# parents[0] -> 05_conversation-history-and-service-logs
+# parents[1] -> 03_supabase-db-and-auth
+# parents[2] -> 02_supabase-ai-backend
+#
+# .env 파일은 02_supabase-ai-backend 폴더에 있으므로 parents[2]를 사용합니다.
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 ENV_PATH = PROJECT_ROOT / ".env"
 
 
 def is_placeholder(value: str | None) -> bool:
-    """예시 값인지 확인합니다."""
+    """환경 변수 값이 예시 값인지 확인합니다.
+
+    `.env.example`에는 `your-supabase-service-role-key` 같은 안내용 값이 들어 있습니다.
+    이런 값으로는 실제 Supabase에 연결할 수 없으므로 미리 걸러 냅니다.
+    """
 
     if value is None:
         return False
 
-    return value.strip().startswith(("your-", "https://your-"))
+    cleaned = value.strip().lower()
+    return cleaned.startswith(("your-", "https://your-")) or "example" in cleaned
 
 
 def get_required_env(name: str) -> str:
-    """필수 환경 변수를 읽고, 없으면 이해하기 쉬운 오류를 발생시킵니다."""
+    """필수 환경 변수를 읽습니다.
+
+    값이 없거나 예시 값이면 Supabase 요청을 보내기 전에 오류를 발생시킵니다.
+    이렇게 하면 "왜 연결이 안 되지?"를 더 빨리 찾을 수 있습니다.
+    """
 
     value = os.getenv(name)
     if value is None or not value.strip():
-        raise RuntimeError(f"{name} 값이 없습니다. C:\\aidev\\02_supabase-ai-backend\\.env 파일을 확인하세요.")
+        raise RuntimeError(f"{name} 값이 없습니다. C:/aidev/02_supabase-ai-backend/.env 파일을 확인하세요.")
 
     cleaned = value.strip()
     if is_placeholder(cleaned):
@@ -49,99 +98,86 @@ def get_required_env(name: str) -> str:
 def get_supabase() -> Client:
     """Supabase client를 생성합니다.
 
-    이 예제는 백엔드 서버 코드 관점의 실습이므로 service role key를 사용합니다.
-    service role key는 강한 권한을 가진 key이므로 화면 코드나 GitHub에 노출하면 안 됩니다.
+    이 예제는 백엔드 서버가 로그를 저장하는 상황을 가정합니다.
+    그래서 공개용 `SUPABASE_ANON_KEY`가 아니라 서버 전용
+    `SUPABASE_SERVICE_ROLE_KEY`를 사용합니다.
+
+    주의:
+    service role key는 RLS를 우회할 수 있는 강한 key입니다.
+    프론트엔드 코드, README, GitHub에 절대 노출하면 안 됩니다.
     """
 
+    # .env 파일의 값을 현재 Python 프로세스의 환경 변수로 불러옵니다.
     load_dotenv(ENV_PATH)
 
     url = get_required_env("SUPABASE_URL")
     service_role_key = get_required_env("SUPABASE_SERVICE_ROLE_KEY")
 
+    # create_client(url, key)는 Supabase에 요청을 보낼 수 있는 client 객체를 만듭니다.
     return create_client(url, service_role_key)
 
 
-def create_conversation(supabase: Client, title: str) -> dict:
-    """conversations 테이블에 새 대화방을 만듭니다."""
+def insert_chat_log(
+    supabase: Client,
+    user_message: str,
+    assistant_message: str,
+    provider: str = "mock",
+    model: str = "mock-model",
+    status_value: str = "success",
+    error_message: str | None = None,
+) -> dict:
+    """simple_chat_logs 테이블에 채팅 로그 1건을 저장합니다.
 
-    # user_id는 Auth를 본격 적용하기 전에는 비워 둘 수 있습니다.
-    # 실제 서비스에서는 로그인한 사용자의 id를 넣습니다.
-    result = supabase.table("conversations").insert({"title": title}).execute()
+    저장하는 값:
+    - user_message: 사용자가 입력한 질문
+    - assistant_message: AI가 답했다고 가정한 메시지
+    - provider: `mock`, `gemini` 같은 응답 생성 방식
+    - model: 사용 모델 이름
+    - status: 성공/실패 상태
+    - error_message: 실패했을 때 남길 오류 메시지
+    """
 
-    if not result.data:
-        raise RuntimeError("conversation 생성 결과가 비어 있습니다. 테이블과 권한을 확인하세요.")
-
-    return result.data[0]
-
-
-def add_message(supabase: Client, conversation_id: str, role: str, content: str) -> dict:
-    """messages 테이블에 user 또는 assistant 메시지를 추가합니다."""
-
-    # role은 user, assistant, system 중 하나여야 합니다.
-    # 이 제약은 supabase-schema.sql의 check 조건과 연결됩니다.
+    # Supabase Python client의 기본 사용 흐름입니다.
+    #
+    # 1. table("simple_chat_logs")
+    #    사용할 테이블을 선택합니다.
+    #
+    # 2. insert({...})
+    #    저장할 컬럼과 값을 딕셔너리로 전달합니다.
+    #
+    # 3. execute()
+    #    실제 요청을 Supabase로 보냅니다.
     result = (
-        supabase.table("messages")
+        supabase.table("simple_chat_logs")
         .insert(
             {
-                "conversation_id": conversation_id,
-                "role": role,
-                "content": content,
+                "user_message": user_message,
+                "assistant_message": assistant_message,
+                "provider": provider,
+                "model": model,
+                "status": status_value,
+                "error_message": error_message,
             }
         )
         .execute()
     )
 
     if not result.data:
-        raise RuntimeError("message 생성 결과가 비어 있습니다. conversation_id와 테이블 권한을 확인하세요.")
+        raise RuntimeError("simple_chat_logs 저장 결과가 비어 있습니다. 테이블과 권한을 확인하세요.")
 
+    # insert 결과는 리스트 형태로 돌아옵니다.
+    # 여기서는 1건만 저장했으므로 첫 번째 행만 반환합니다.
     return result.data[0]
 
 
-def add_service_log(supabase: Client, event_type: str, message: str, metadata: dict) -> dict:
-    """service_logs 테이블에 서비스 실행 로그를 저장합니다."""
-
-    # metadata는 jsonb 컬럼에 저장됩니다.
-    # 처리 시간, 모델 이름, 요청 id처럼 구조가 자주 바뀌는 값을 담기 좋습니다.
-    result = (
-        supabase.table("service_logs")
-        .insert(
-            {
-                "event_type": event_type,
-                "message": message,
-                "metadata": metadata,
-            }
-        )
-        .execute()
-    )
-
-    if not result.data:
-        raise RuntimeError("service log 생성 결과가 비어 있습니다. service_logs 테이블을 확인하세요.")
-
-    return result.data[0]
-
-
-def list_messages(supabase: Client, conversation_id: str) -> list[dict]:
-    """특정 대화방에 저장된 메시지 목록을 조회합니다."""
+def list_recent_chat_logs(supabase: Client, limit: int = 5) -> list[dict]:
+    """최근 채팅 로그를 조회합니다."""
 
     result = (
-        supabase.table("messages")
-        .select("*")
-        .eq("conversation_id", conversation_id)
-        .order("created_at")
-        .execute()
-    )
-
-    return result.data
-
-
-def list_recent_service_logs(supabase: Client, limit: int = 5) -> list[dict]:
-    """최근 서비스 로그를 조회합니다."""
-
-    result = (
-        supabase.table("service_logs")
-        .select("*")
-        .order("created_at", desc=True)
-        .limit(limit)
+        supabase.table("simple_chat_logs")
+        .select("*")  # 모든 컬럼을 조회합니다.
+        .order("created_at", desc=True)  # 최신 로그가 먼저 나오도록 정렬합니다.
+        .limit(limit)  # 너무 많은 데이터를 가져오지 않도록 개수를 제한합니다.
         .execute()
     )
 
@@ -149,72 +185,40 @@ def list_recent_service_logs(supabase: Client, limit: int = 5) -> list[dict]:
 
 
 def print_supabase_setup_help(error: APIError) -> None:
-    """Supabase 테이블이 없을 때 확인할 내용을 안내합니다."""
+    """Supabase 테이블 또는 연결 문제가 있을 때 확인할 내용을 출력합니다."""
 
     print("[Supabase 실행 오류]")
     print(error)
     print("\n확인할 내용:")
     print("1. Supabase Dashboard -> SQL Editor를 엽니다.")
-    print("2. 03_supabase-db-and-auth/00_references/supabase-schema.sql 내용을 실행합니다.")
-    print("3. Table Editor에서 conversations, messages, service_logs 테이블이 보이는지 확인합니다.")
-    print("4. 테이블을 만든 뒤 이 예제를 다시 실행합니다.")
+    print("2. simple_chat_logs 테이블 생성 SQL을 실행했는지 확인합니다.")
+    print("3. C:/aidev/02_supabase-ai-backend/.env에 SUPABASE_URL과 SUPABASE_SERVICE_ROLE_KEY가 있는지 확인합니다.")
+    print("4. Table Editor에서 simple_chat_logs 테이블이 보이는지 확인합니다.")
 
 
 def main() -> None:
-    """대화방, 메시지, 서비스 로그 저장 흐름을 차례대로 실행합니다."""
+    """샘플 질문/답변 로그를 저장하고 최근 로그를 조회합니다."""
 
     supabase = get_supabase()
 
+    # 01 예제는 실제 LLM을 호출하지 않습니다.
+    # 먼저 "질문과 답변을 로그 테이블에 저장한다"는 구조만 확인합니다.
+    user_message = "Supabase에는 어떤 데이터를 저장하면 좋나요?"
+    assistant_message = "나중에 다시 조회하거나 분석해야 하는 대화 이력과 서비스 로그를 저장하면 좋습니다."
+
     try:
-        conversation = create_conversation(supabase, title="Supabase 대화 이력 저장 실습")
-        conversation_id = conversation["id"]
-        print("[conversation created]")
-        pprint(conversation, width=100)
-
-        user_message = add_message(
-            supabase,
-            conversation_id=conversation_id,
-            role="user",
-            content="Supabase에는 어떤 데이터를 저장하면 좋나요?",
+        saved_log = insert_chat_log(
+            supabase=supabase,
+            user_message=user_message,
+            assistant_message=assistant_message,
         )
-        print("\n[user message saved]")
-        pprint(user_message, width=100)
+        print("[chat log saved]")
+        pprint(saved_log, width=100)
 
-        assistant_message = add_message(
-            supabase,
-            conversation_id=conversation_id,
-            role="assistant",
-            content="대화 이력, 서비스 로그, 사용자 피드백처럼 나중에 다시 볼 데이터는 Supabase에 저장하는 것이 좋습니다.",
-        )
-        print("\n[assistant message saved]")
-        pprint(assistant_message, width=100)
+        print("\n[recent chat logs]")
+        pprint(list_recent_chat_logs(supabase), width=100)
 
-        log = add_service_log(
-            supabase,
-            event_type="conversation.created",
-            message="대화 이력 저장 실습이 완료되었습니다.",
-            metadata={
-                "conversation_id": conversation_id,
-                "message_count": 2,
-                "storage": "supabase",
-                "provider": "gemini",
-                "actual_api_called": False,
-                "model": "gemini-2.5-flash-lite",
-                "llm_call_mode": "mock-first",
-                "project_default_call": "Gemini SDK",
-                "reference_endpoint": "02_llm-api-integration/05_fastapi-llm-endpoint/03_gemini_sdk_endpoint.py",
-            },
-        )
-        print("\n[service log saved]")
-        pprint(log, width=100)
-
-        print("\n[messages in this conversation]")
-        pprint(list_messages(supabase, conversation_id), width=100)
-
-        print("\n[recent service logs]")
-        pprint(list_recent_service_logs(supabase), width=100)
-
-        print("\nResult: 대화방, 메시지, 서비스 로그 저장 흐름을 확인했습니다.")
+        print("\nResult: simple_chat_logs 테이블에 채팅 로그 저장 흐름을 확인했습니다.")
     except APIError as error:
         print_supabase_setup_help(error)
 

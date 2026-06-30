@@ -9,9 +9,10 @@
 ```text
 주 DB: Supabase managed PostgreSQL
 인증: Supabase Auth
-접근 제어: Supabase RLS
+접근 제어: Supabase Auth/JWT를 먼저 이해하고, RLS는 이후 사용자별 데이터 접근 제어로 확장
 로그/대화 이력: Supabase table
-임시 캐시/TTL/요청 제한: Upstash Redis
+임시 캐시/TTL: Upstash Redis
+요청 제한/세션/cache-aside: 뒤 과정에서 확장
 ```
 
 ## Supabase와 Upstash Redis의 역할
@@ -23,7 +24,8 @@ Supabase
 
 Upstash Redis
 -> 짧게 보관할 임시 데이터
--> 캐시, TTL, 중복 요청 방지, 요청 횟수 제한, 임시 세션 상태
+-> TTL 기반 캐시
+-> 중복 요청 방지, 요청 횟수 제한, 임시 세션 상태는 뒤 과정에서 확장
 ```
 
 ## 이 과정에서 하지 않는 것

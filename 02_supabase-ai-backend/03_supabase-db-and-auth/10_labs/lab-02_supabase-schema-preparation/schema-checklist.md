@@ -1,33 +1,37 @@
-# Supabase Schema Checklist
+# Schema Checklist
 
-Supabase SQL Editor에서 스키마를 실행한 뒤 아래 항목을 확인합니다.
+Supabase SQL Editor에서 `supabase-schema.sql`을 실행한 뒤 아래 항목을 확인합니다.
 
-## learning_notes
+## 필수 테이블
 
-- `id` 컬럼이 기본키입니다.
-- `title` 컬럼이 비어 있으면 안 됩니다.
-- `content` 컬럼에 학습 메모 내용을 저장할 수 있습니다.
-- `created_at` 컬럼으로 생성 시간을 확인할 수 있습니다.
+| 확인 | 항목 |
+|---|---|
+| [ ] | `learning_notes` 테이블이 있습니다. |
+| [ ] | `learning_notes.id`가 `uuid` 기본키입니다. |
+| [ ] | `learning_notes.title`과 `learning_notes.content`가 있습니다. |
+| [ ] | `simple_chat_logs` 테이블이 있습니다. |
+| [ ] | `simple_chat_logs.user_message`가 있습니다. |
+| [ ] | `simple_chat_logs.assistant_message`가 있습니다. |
+| [ ] | `simple_chat_logs.status`와 `simple_chat_logs.error_message`가 있습니다. |
 
-## conversations
+## 참고 테이블
 
-- 사용자별 대화 묶음을 저장합니다.
-- 한 사용자가 여러 대화를 만들 수 있는 구조입니다.
-- 이후 챗봇 서비스에서 “대화 목록” 화면을 만들 때 사용합니다.
+| 확인 | 항목 |
+|---|---|
+| [ ] | `conversations` 테이블이 있습니다. |
+| [ ] | `messages` 테이블이 있습니다. |
+| [ ] | `service_logs` 테이블이 있습니다. |
 
-## messages
+## 보안 확인
 
-- 하나의 대화 안에 여러 메시지를 저장합니다.
-- `role` 컬럼으로 `user`, `assistant`, `system` 같은 메시지 역할을 구분합니다.
-- 이후 Streamlit 화면에서 이전 대화를 다시 보여 줄 때 사용합니다.
+| 확인 | 항목 |
+|---|---|
+| [ ] | SQL 파일에 실제 API key가 들어 있지 않습니다. |
+| [ ] | `.env` 파일은 GitHub에 올리지 않습니다. |
+| [ ] | `SUPABASE_SERVICE_ROLE_KEY`는 서버 코드에서만 사용합니다. |
 
-## service_logs
+## 오류가 날 때
 
-- API 호출, 오류, 사용자 행동 같은 서비스 로그를 저장합니다.
-- 이후 서비스 운영과 디버깅에서 “언제 어떤 일이 있었는지” 확인할 때 사용합니다.
+`PGRST205`, `Could not find the table` 오류가 나오면 테이블이 없거나 Supabase API schema cache가 아직 갱신되지 않은 상태일 수 있습니다.
 
-## 오류가 발생했을 때
-
-- `already exists`는 이미 테이블이 있다는 뜻입니다. 학습 중에는 큰 문제가 아닐 수 있습니다.
-- `permission denied`는 SQL 실행 권한이나 프로젝트 선택 상태를 확인해야 합니다.
-- `Could not find the table`은 Python 코드가 찾는 테이블이 아직 없다는 뜻입니다.
+먼저 SQL Editor에서 테이블이 생성되었는지 확인하고, 잠시 기다린 뒤 코드를 다시 실행합니다.
