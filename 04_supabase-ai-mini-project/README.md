@@ -1,8 +1,8 @@
 # 04_supabase-ai-mini-project
 
-`04_supabase-ai-mini-project`는 02 백엔드와 03 프론트엔드에서 배운 내용을 묶어 진행하는 24시간 단위 프로젝트입니다.
+`04_supabase-ai-mini-project`는 02 백엔드 과정과 03 프론트엔드 과정에서 배운 내용을 묶어 진행하는 24시간 단위 프로젝트입니다.
 
-주제는 **AI 서비스 로그 분석 및 운영 대시보드 구축**입니다. 수강생은 FastAPI 백엔드, Supabase DB, Redis 실시간 이벤트 전달, SSE 스트리밍, Streamlit 대시보드를 연결해 실시간 로그 대시보드 인터페이스를 구현합니다.
+주제는 **AI 서비스 로그 분석 및 운영 대시보드 구축**입니다. FastAPI backend, Supabase DB, Redis 이벤트 전달, SSE 스트리밍, Streamlit 대시보드를 연결해 실시간 로그 대시보드 인터페이스를 구현합니다.
 
 ## 프로젝트 목표
 
@@ -25,21 +25,21 @@
 └─ 03_project_structure
 ```
 
-## 단원 역할
+## 폴더 역할
 
 | 폴더 | 역할 |
 | --- | --- |
 | `00_references` | 프로젝트 개요, DB/Redis/SSE 역할, 배포 가이드, 참고 구조를 정리합니다. |
 | `01_supabase-and-sse-practice` | Supabase DB 저장, Redis 이벤트 전달, SSE 화면 표시를 작은 예제로 실행합니다. |
 | `02_project-deliverables` | API 설계서, 화면 설계서, DB 설계서, 대시보드 결과 보고서 샘플을 제공합니다. |
-| `03_project_structure` | 최종 프로젝트를 시작할 때 사용할 backend/frontend starter 구조입니다. |
+| `03_project_structure` | 최종 프로젝트를 시작할 때 사용할 backend/frontend/database/docs starter 구조입니다. |
 
 ## 필수 구현 범위
 
 | 항목 | 기준 |
 | --- | --- |
 | Supabase DB 저장 | 서비스 로그와 피드백 데이터를 테이블에 저장합니다. |
-| Redis 이벤트 전달 | 새 로그 이벤트를 Redis에 publish하고 SSE source로 사용합니다. |
+| Redis 이벤트 전달 | 새 로그 이벤트를 Redis로 publish하고 SSE source로 사용합니다. |
 | FastAPI SSE endpoint | `/stream/logs`에서 실시간 로그 이벤트를 전송합니다. |
 | Streamlit 대시보드 | 실시간 로그 영역, 최근 로그 테이블, 간단한 차트를 표시합니다. |
 | 산출물 작성 | API 설계 문서, 화면 설계서, 데이터베이스 설계서, 대시보드 구현 결과물을 작성합니다. |
@@ -49,8 +49,8 @@
 | 항목 | 설명 |
 | --- | --- |
 | 실제 배포 | FastAPI -> Render, Redis -> Upstash, Streamlit -> Streamlit Community Cloud 흐름을 적용합니다. |
-| AI 로그 요약 | 로그 목록을 기반으로 장애 원인 또는 개선 포인트를 요약합니다. |
-| 고급 Redis Stream | Pub/Sub 대신 Redis Stream을 사용해 이벤트를 보존합니다. |
+| AI 로그 요약 | 로그 목록을 기반으로 운영 원인 또는 개선 포인트를 요약합니다. |
+| 고급 Redis Stream | Pub/Sub 대신 Redis Stream으로 이벤트를 보존합니다. |
 | 사용자별 권한 | Supabase Auth/RLS를 적용해 사용자별 로그 조회를 제한합니다. |
 
 ## 제외 범위

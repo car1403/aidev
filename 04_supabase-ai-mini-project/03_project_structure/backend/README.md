@@ -1,6 +1,6 @@
 # Backend Starter
 
-최종 프로젝트용 FastAPI backend starter입니다. 기본 코드는 `/health`만 제공합니다.
+이 폴더는 최종 프로젝트의 FastAPI backend starter입니다. 기본 코드는 `/health`만 제공합니다.
 
 ## 실행
 
@@ -10,15 +10,19 @@ C:\aidev\04_supabase-ai-mini-project\.venv\Scripts\Activate.ps1
 uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
+Swagger:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
 ## 기본 API
 
 | Method | URL | 설명 |
 | --- | --- | --- |
 | GET | `/health` | backend 상태 확인 |
 
-## 구현할 API
-
-아래 API는 학생들이 직접 구현합니다.
+## 학생 구현 API
 
 | Method | URL | 구현 위치 |
 | --- | --- | --- |

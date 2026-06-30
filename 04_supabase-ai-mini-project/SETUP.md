@@ -1,8 +1,8 @@
 # SETUP
 
-`04_supabase-ai-mini-project` 과정의 개발 환경 설정 문서입니다.
+이 문서는 `04_supabase-ai-mini-project` 개발 환경 설정 문서입니다.
 
-이 과정은 `04_supabase-ai-mini-project` 최상위 `.venv` 하나를 사용합니다. 하위 `backend`, `frontend` 폴더 안에 별도 `.venv`를 만들지 않습니다.
+04 과정은 과정 최상위 `.venv` 하나를 사용합니다. 하위 `backend`, `frontend` 폴더 안에 별도 `.venv`를 만들지 않습니다.
 
 ## 1. 작업 폴더로 이동
 
@@ -17,7 +17,7 @@ Get-Location
 python -m venv .venv
 ```
 
-## 3. 가상환경 활성화와 확인
+## 3. 가상환경 활성화 확인
 
 ```powershell
 .\.venv\Scripts\Activate.ps1
@@ -26,7 +26,7 @@ python --version
 pip --version
 ```
 
-정상이라면 Python 경로가 아래처럼 보입니다.
+정상이라면 Python 경로가 다음처럼 보입니다.
 
 ```text
 C:\aidev\04_supabase-ai-mini-project\.venv\Scripts\python.exe
@@ -45,7 +45,7 @@ pip install -r requirements.txt
 Copy-Item .env.example .env
 ```
 
-필수 환경변수:
+필수 환경 변수:
 
 ```env
 API_BASE_URL=http://127.0.0.1:8000
@@ -54,17 +54,23 @@ SUPABASE_SERVICE_ROLE_KEY=your-supabase-service-role-key
 REDIS_URL=redis://localhost:6379
 ```
 
-수업 중 Redis 서버가 준비되지 않았다면 예제는 메모리 큐 fallback으로 동작합니다. 다만 04 과정의 기본 개념은 **DB는 영구 저장소, Redis는 실시간 이벤트 전달, SSE는 화면 표시 통로**라는 역할 구분입니다.
+수업 중 Redis 서버가 준비되지 않았다면 예제는 메모리 fallback으로 동작할 수 있습니다. 다만 04 과정의 기본 개념은 **DB는 영구 저장소, Redis는 실시간 이벤트 전달, SSE는 화면 표시 통로**라는 역할 구분입니다.
 
 ## 6. Supabase 테이블 만들기
 
-`01_supabase-and-sse-practice/schema.sql` 또는 `03_project_structure/schema.sql`을 Supabase SQL Editor에서 실행합니다.
-
-처음 실행 실습은 아래 파일을 사용합니다.
+작은 실행 예제는 다음 SQL을 사용합니다.
 
 ```text
 C:\aidev\04_supabase-ai-mini-project\01_supabase-and-sse-practice\schema.sql
 ```
+
+최종 프로젝트 starter는 다음 SQL을 사용합니다.
+
+```text
+C:\aidev\04_supabase-ai-mini-project\03_project_structure\database\schema.sql
+```
+
+Supabase SQL Editor에서 필요한 SQL을 실행한 뒤 Table Editor에서 테이블이 생성되었는지 확인합니다.
 
 ## 7. 01 실습 실행
 
@@ -115,9 +121,9 @@ streamlit run .\app.py
 
 1. 현재 Python이 `04_supabase-ai-mini-project\.venv`를 가리키는지 확인합니다.
 2. `pip install -r requirements.txt`를 실행했는지 확인합니다.
-3. 백엔드가 `http://127.0.0.1:8000/docs`에서 열리는지 확인합니다.
-4. Streamlit의 `API_BASE_URL`이 백엔드 주소와 같은지 확인합니다.
-5. Supabase 환경변수와 테이블 생성 여부를 확인합니다.
+3. backend가 `http://127.0.0.1:8000/docs`에서 열리는지 확인합니다.
+4. Streamlit의 `API_BASE_URL`과 backend 주소가 같은지 확인합니다.
+5. Supabase 환경 변수와 테이블 생성 여부를 확인합니다.
 6. Redis가 꺼져 있어도 메모리 fallback으로 기본 SSE가 보이는지 확인합니다.
 7. 8000 또는 8501 포트가 이미 사용 중이면 기존 프로세스를 종료합니다.
 

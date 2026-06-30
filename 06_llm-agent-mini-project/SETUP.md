@@ -1,84 +1,116 @@
 # SETUP
 
-`06_llm-agent-mini-project`의 로컬 실행 준비 문서입니다.
+이 문서는 `06_llm-agent-mini-project`를 시작하기 위한 최소 환경 설정 안내입니다.
 
-## 1. 작업 위치
+06 과정은 팀 프로젝트 과정입니다. 복잡한 운영 환경을 먼저 만들기보다, 로컬에서 LangGraph 기반 Agent 흐름을 실행하고 산출물을 완성하는 것을 우선합니다.
+
+## 1. 폴더 열기
+
+VS Code에서 과정 폴더를 엽니다.
 
 ```powershell
 cd C:\aidev\06_llm-agent-mini-project
+code .
 ```
 
-## 2. Python 가상환경 만들기
-
-이 과정은 최상위 `.venv` 하나를 사용합니다. 팀 템플릿 하위 폴더마다 별도 `.venv`를 만들지 않습니다.
+## 2. 가상환경 만들기
 
 ```powershell
+cd C:\aidev\06_llm-agent-mini-project
 python -m venv .venv
-```
-
-이미 `.venv`가 있다면 다시 만들 필요는 없습니다.
-
-## 3. 가상환경 활성화
-
-```powershell
 .\.venv\Scripts\Activate.ps1
-```
-
-PowerShell 앞에 `(.venv)`가 보이면 활성화된 상태입니다.
-
-VS Code에서 `C:\aidev\06_llm-agent-mini-project` 폴더 자체를 열면 `.vscode/settings.json` 설정에 따라 새 터미널에서 `.venv`가 자동 활성화됩니다. `C:\aidev` 루트를 열어 수업을 진행할 때는 새 터미널을 연 뒤 아래 확인 명령으로 현재 Python 경로가 이 과정의 `.venv`를 가리키는지 먼저 확인합니다.
-
-활성화 후 현재 Python이 이 과정의 `.venv`를 사용하는지 확인합니다.
-
-```powershell
-echo $env:VIRTUAL_ENV
-python -c "import sys; print(sys.executable)"
-```
-
-정상이라면 아래 경로를 가리켜야 합니다.
-
-```text
-C:\aidev\06_llm-agent-mini-project\.venv
-C:\aidev\06_llm-agent-mini-project\.venv\Scripts\python.exe
-```
-
-## 4. 패키지 설치
-
-```powershell
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-## 5. 환경변수 파일 만들기
+Python이 현재 과정의 `.venv`를 사용하는지 확인합니다.
+
+```powershell
+python -c "import sys; print(sys.executable)"
+```
+
+정상이라면 다음과 비슷한 경로가 나옵니다.
+
+```text
+C:\aidev\06_llm-agent-mini-project\.venv\Scripts\python.exe
+```
+
+## 3. 환경 변수 준비
 
 ```powershell
 Copy-Item .env.example .env
 ```
 
-OpenAI API Key가 없어도 Mock data 기반 Agent 흐름은 일부 실행할 수 있습니다. 실제 LLM 호출을 진행할 때만 `.env`에 값을 넣습니다.
+`.env`에는 실제 API Key를 작성합니다. `.env`는 GitHub에 올리지 않습니다.
 
 ```env
-OPENAI_API_KEY=
-OPENAI_MODEL=gpt-4.1-mini
+OPENAI_API_KEY=your-openai-api-key
+OPENAI_MODEL=gpt-4o-mini
 ```
 
-Ollama와 pgvector는 선택 확장입니다.
+OpenAI API Key 없이도 Mock data 기반 Agent 구조 설계와 테스트 문서 작성은 진행할 수 있습니다.
 
-## 6. 샘플 프로젝트 실행
+## 4. 프로젝트 starter 복사
+
+팀별 작업 폴더를 만들 때는 `02_project_structure`를 복사해서 시작할 수 있습니다.
 
 ```powershell
-cd C:\aidev\06_llm-agent-mini-project\02_instructor-sample-project
-..\.venv\Scripts\Activate.ps1
-Copy-Item .env.example .env
-python -m app.graph
+cd C:\aidev\06_llm-agent-mini-project
+Copy-Item .\02_project_structure .\team-schedule-agent -Recurse
 ```
 
-Streamlit UI가 있는 예제는 해당 README의 실행 명령을 따릅니다.
+복사한 뒤에는 팀 프로젝트 폴더 안에서 구현을 진행합니다.
 
-## 7. 제출 전 확인
+## 5. Backend 실행 흐름
 
-- [ ] 에이전트 아키텍처 설계서를 작성했다.
-- [ ] 에이전트 시험 결과 보고서를 작성했다.
-- [ ] Tool 선택, 오류 감지, 재시도 또는 fallback 흐름을 설명할 수 있다.
-- [ ] `.env`와 API Key를 제출하지 않았다.
-- [ ] Docker, 장기 기억, 발표 자료는 선택 보조 산출물로 구분했다.
+starter의 backend는 FastAPI 기반 구조를 가정합니다.
+
+```powershell
+cd C:\aidev\06_llm-agent-mini-project\team-schedule-agent\backend
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+브라우저에서 확인합니다.
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+## 6. Frontend 실행 흐름
+
+```powershell
+cd C:\aidev\06_llm-agent-mini-project\team-schedule-agent\frontend
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+Streamlit이 실행되면 브라우저에서 다음 주소를 확인합니다.
+
+```text
+http://localhost:8501
+```
+
+## 7. 선택 배포
+
+06 과정에서는 배포를 필수로 보지 않습니다. 시간이 남을 때 다음 서비스를 참고합니다.
+
+| 대상 | 무료 또는 저비용 선택지 |
+| --- | --- |
+| FastAPI backend | Render |
+| Streamlit frontend | Streamlit Community Cloud |
+| 환경 변수 | 각 배포 서비스의 Environment Variables 설정 |
+
+Docker Compose, AWS, GitHub Actions, 운영 자동화는 `07_multi-agent-service-ops`에서 다룹니다.
+
+## 8. 시작 전 체크리스트
+
+- [ ] `python -c "import sys; print(sys.executable)"` 결과가 06 과정 `.venv`를 가리킨다.
+- [ ] `.env`를 만들었고 GitHub에 올리지 않는다.
+- [ ] `02_project_structure`의 backend/frontend/docs 역할을 이해했다.
+- [ ] 필수 산출물 2종을 확인했다.
+- [ ] Mock data로 먼저 Agent 흐름을 구현한다.
