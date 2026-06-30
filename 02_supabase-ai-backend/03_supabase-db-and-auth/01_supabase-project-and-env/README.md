@@ -1,4 +1,4 @@
-# 11. Supabase 프로젝트와 환경 변수 준비
+# 01. Supabase 프로젝트와 환경 변수 준비
 
 이 챕터에서는 Supabase 프로젝트를 만들고, Python/FastAPI 코드에서 사용할 환경 변수를 준비합니다.
 
@@ -25,14 +25,13 @@ Python/FastAPI 코드에서 바로 연결할 수 있게 해주는 서비스
 | 인증 학습 가능 | Supabase Auth로 회원가입/로그인과 사용자별 데이터 접근 개념을 배웁니다. |
 | SQL과 API를 함께 학습 | SQL Editor, Table Editor, Python client, FastAPI endpoint를 함께 연결합니다. |
 
-나중에는 실제 노트북에 Docker와 PostgreSQL/Redis를 설치해서 운영하는 방식도 배웁니다. 하지만 이 과정의 11~13 구간에서는 Supabase와 Upstash Redis를 이용해 백엔드 데이터 흐름을 먼저 익힙니다.
+나중에는 실제 노트북에 Docker와 PostgreSQL/Redis를 설치해서 운영하는 방식도 배웁니다. 하지만 이 과정의 01~06 구간에서는 Supabase와 Upstash Redis를 이용해 백엔드 데이터 흐름을 먼저 익힙니다.
 
 ## 학습 목표
 
 - Supabase 프로젝트를 생성합니다.
 - Supabase Project URL, anon key, service role key의 차이를 이해합니다.
 - `.env.example`을 `.env`로 복사하고 필요한 값을 입력합니다.
-- Python 코드에서 환경 변수를 읽어 설정 상태를 안전하게 확인합니다.
 - placeholder 값을 실제 key로 착각하지 않도록 점검합니다.
 - 이후 챕터에서 사용할 Upstash Redis 환경 변수 위치도 함께 확인합니다.
 
@@ -105,14 +104,14 @@ SUPABASE_ANON_KEY=your-supabase-anon-key
 SUPABASE_SERVICE_ROLE_KEY=your-supabase-service-role-key
 ```
 
-Upstash Redis 값은 이 챕터에서 필수는 아닙니다. `16_upstash-redis-cache-and-session`에서 본격적으로 사용합니다.
+Upstash Redis 값은 이 챕터에서 필수는 아닙니다. `06_upstash-redis-cache-and-session`에서 본격적으로 사용합니다.
 
 ```env
 UPSTASH_REDIS_REST_URL=https://your-upstash-redis-url.upstash.io
 UPSTASH_REDIS_REST_TOKEN=your-upstash-redis-rest-token
 ```
 
-## 실행 방법
+## `.env` 확인 방법
 
 가상환경을 활성화합니다.
 
@@ -121,27 +120,36 @@ cd C:\aidev\02_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
 ```
 
-환경 변수 점검 스크립트를 실행합니다.
+`.env` 파일이 있는지 확인합니다.
 
 ```powershell
-python .\03_supabase-db-and-auth\01_supabase-project-and-env\01_check_supabase_env.py
+dir .env
 ```
 
-정상적으로 설정되어 있으면 다음을 확인할 수 있습니다.
+VS Code에서 `.env` 파일을 열고 아래 항목이 실제 값으로 입력되어 있는지 확인합니다.
 
 ```text
-SUPABASE_URL이 설정되어 있음
-SUPABASE_ANON_KEY가 마스킹되어 출력됨
-SUPABASE_SERVICE_ROLE_KEY가 마스킹되어 출력됨
+SUPABASE_URL
+SUPABASE_ANON_KEY
+SUPABASE_SERVICE_ROLE_KEY
 ```
 
-key 전체 값은 출력하지 않습니다. 수업 중 화면 공유나 녹화 상황에서 key가 노출되지 않도록 하기 위해서입니다.
+주의할 점:
+
+```text
+1. your-... 형태의 예시 값이면 아직 설정이 끝난 것이 아닙니다.
+2. SUPABASE_URL은 https:// 로 시작해야 합니다.
+3. SUPABASE_ANON_KEY와 SUPABASE_SERVICE_ROLE_KEY를 서로 바꾸어 넣지 않습니다.
+4. key 전체 값을 터미널, README, 채팅, 화면 공유에 노출하지 않습니다.
+```
+
+수업 중 코드로 확인해야 한다면 `10_labs/lab-01_supabase-env-check`의 `solution.py`를 사용합니다.
 
 ## 자주 만나는 문제
 
 ### `.env` 파일을 찾지 못하는 경우
 
-스크립트는 `C:\aidev\02_supabase-ai-backend\.env`를 기준으로 값을 읽습니다.
+이 과정의 Supabase 예제는 `C:\aidev\02_supabase-ai-backend\.env`를 기준으로 값을 읽습니다.
 
 확인 명령:
 
@@ -172,6 +180,6 @@ dir .env
 [ ] service role key를 확인했습니다.
 [ ] .env.example을 .env로 복사했습니다.
 [ ] .env에 Supabase 값을 입력했습니다.
-[ ] 11_check_supabase_env.py를 실행했습니다.
-[ ] key가 전체 노출되지 않고 마스킹되어 출력되는 것을 확인했습니다.
+[ ] your-... 예시 값을 실제 Supabase 값으로 바꾸었습니다.
+[ ] key 전체 값을 문서나 화면에 노출하지 않았습니다.
 ```

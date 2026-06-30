@@ -18,12 +18,6 @@ cd C:\aidev\02_supabase-ai-backend
 python .\03_supabase-db-and-auth\10_labs\lab-01_supabase-env-check\solution.py
 ```
 
-앞선 챕터 예제를 그대로 실행해도 됩니다.
-
-```powershell
-python .\03_supabase-db-and-auth\01_supabase-project-and-env\01_check_supabase_env.py
-```
-
 ## 확인 기준
 
 - 필수 환경변수가 모두 `설정됨`으로 표시됩니다.

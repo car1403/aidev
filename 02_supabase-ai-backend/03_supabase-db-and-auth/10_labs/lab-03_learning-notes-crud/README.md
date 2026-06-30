@@ -13,7 +13,17 @@
 ```powershell
 cd C:\aidev\02_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\03_supabase-db-and-auth\02_supabase-table-and-crud\01_learning_notes_crud.py
+python .\03_supabase-db-and-auth\02_supabase-table-and-crud\01_create_learning_note.py
+python .\03_supabase-db-and-auth\02_supabase-table-and-crud\02_list_learning_notes.py
+python .\03_supabase-db-and-auth\02_supabase-table-and-crud\03_get_learning_note.py
+python .\03_supabase-db-and-auth\02_supabase-table-and-crud\04_update_learning_note.py
+python .\03_supabase-db-and-auth\02_supabase-table-and-crud\05_delete_learning_note.py
+```
+
+전체 흐름을 한 번에 복습하려면 아래 통합본을 실행합니다.
+
+```powershell
+python .\03_supabase-db-and-auth\02_supabase-table-and-crud\06_learning_notes_crud_all.py
 ```
 
 ## 확인 기준

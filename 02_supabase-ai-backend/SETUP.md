@@ -321,8 +321,10 @@ dir .env
 Supabase 환경변수 확인:
 
 ```powershell
-python .\03_supabase-db-and-auth\01_supabase-project-and-env\01_check_supabase_env.py
+dir .env
 ```
+
+`.env` 파일을 VS Code에서 열어 `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`가 실제 값으로 입력되어 있는지 확인합니다. key 전체 값은 터미널이나 문서에 출력하지 않습니다.
 
 Upstash Redis 환경변수 확인:
 

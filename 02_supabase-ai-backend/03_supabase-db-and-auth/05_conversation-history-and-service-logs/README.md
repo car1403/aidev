@@ -157,8 +157,10 @@ Supabase 환경 변수를 확인합니다.
 ```powershell
 cd C:\aidev\02_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\03_supabase-db-and-auth\01_supabase-project-and-env\01_check_supabase_env.py
+dir .env
 ```
+
+`.env` 파일을 열어 `SUPABASE_URL`과 `SUPABASE_SERVICE_ROLE_KEY`가 실제 값인지 확인합니다.
 
 Supabase SQL Editor에서 `conversations`, `messages`, `service_logs` 테이블이 있는지 확인합니다.
 

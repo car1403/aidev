@@ -20,7 +20,7 @@ Markdown 문서로 아래 내용을 작성합니다.
 5. SUPABASE_ANON_KEY의 역할
 6. SUPABASE_SERVICE_ROLE_KEY의 역할
 7. 실제 key 값을 제출하지 않았다는 확인 문장
-8. 환경변수 확인 스크립트 실행 결과 요약
+8. `.env` 파일 준비 여부와 실제 key 값을 제출하지 않았다는 확인 문장
 ```
 
 ## 실행 참고
@@ -28,8 +28,10 @@ Markdown 문서로 아래 내용을 작성합니다.
 ```powershell
 cd C:\aidev\02_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\03_supabase-db-and-auth\01_supabase-project-and-env\01_check_supabase_env.py
+dir .env
 ```
+
+`.env` 파일은 직접 제출하지 않습니다. 문서에는 변수 이름과 역할만 작성하고 실제 key 값은 적지 않습니다.
 
 ## 확인 기준
 

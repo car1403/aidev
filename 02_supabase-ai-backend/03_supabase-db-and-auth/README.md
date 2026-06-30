@@ -19,7 +19,7 @@
 
 | 구분 | 결과물 | 설명 |
 |---|---|---|
-| Supabase 설정 | `.env` 환경변수 확인 스크립트 | URL/key가 정확히 들어갔는지 안전하게 확인합니다. |
+| Supabase 설정 | `.env` 환경변수 준비 | URL/key가 정확히 들어갔는지 확인합니다. |
 | DB 기초 | `learning_notes` CRUD 예제 | Python에서 Supabase 테이블에 생성/조회/수정/삭제를 실행합니다. |
 | API 연동 | FastAPI `notes` API | 백엔드 endpoint가 Supabase를 호출하는 구조를 익힙니다. |
 | 인증/보안 | Auth/RLS 설계 문서와 예제 | 로그인 사용자와 데이터 접근 정책의 관계를 이해합니다. |
@@ -107,13 +107,20 @@ Supabase Dashboard의 SQL Editor에서 실행합니다.
 ```powershell
 cd C:\aidev\02_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\03_supabase-db-and-auth\01_supabase-project-and-env\01_check_supabase_env.py
+dir .env
 ```
+
+`.env` 파일을 VS Code에서 열고 `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`가 실제 값으로 입력되어 있는지 확인합니다. key 전체 값은 터미널이나 문서에 출력하지 않습니다.
 
 Supabase CRUD 확인:
 
 ```powershell
-python .\03_supabase-db-and-auth\02_supabase-table-and-crud\01_learning_notes_crud.py
+python .\03_supabase-db-and-auth\02_supabase-table-and-crud\01_create_learning_note.py
+python .\03_supabase-db-and-auth\02_supabase-table-and-crud\02_list_learning_notes.py
+python .\03_supabase-db-and-auth\02_supabase-table-and-crud\03_get_learning_note.py
+python .\03_supabase-db-and-auth\02_supabase-table-and-crud\04_update_learning_note.py
+python .\03_supabase-db-and-auth\02_supabase-table-and-crud\05_delete_learning_note.py
+python .\03_supabase-db-and-auth\02_supabase-table-and-crud\06_learning_notes_crud_all.py
 ```
 
 FastAPI + Supabase 실행:
@@ -128,6 +135,20 @@ uvicorn main:app --reload --host 127.0.0.1 --port 8000
 
 ```text
 http://127.0.0.1:8000/docs
+```
+
+Supabase Auth FastAPI/Swagger 확인:
+
+```powershell
+cd C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\04_supabase-auth-and-rls
+..\..\.venv\Scripts\Activate.ps1
+uvicorn 01_fastapi_supabase_auth:app --reload --host 127.0.0.1 --port 8002
+```
+
+확인 주소:
+
+```text
+http://127.0.0.1:8002/docs
 ```
 
 대화 이력과 서비스 로그 저장:

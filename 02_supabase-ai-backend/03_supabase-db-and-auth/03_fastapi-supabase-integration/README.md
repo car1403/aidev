@@ -33,8 +33,10 @@
 ```powershell
 cd C:\aidev\02_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
-python .\03_supabase-db-and-auth\01_supabase-project-and-env\01_check_supabase_env.py
+dir .env
 ```
+
+VS Code에서 `.env`를 열고 `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`가 실제 값인지 확인합니다. key 전체 값은 터미널이나 문서에 출력하지 않습니다.
 
 ### 2. `learning_notes` 테이블 확인
 
@@ -158,8 +160,10 @@ service role key는 강한 권한을 가진 서버용 key입니다.
 
 ```powershell
 cd C:\aidev\02_supabase-ai-backend
-python .\03_supabase-db-and-auth\01_supabase-project-and-env\01_check_supabase_env.py
+dir .env
 ```
+
+`.env` 파일을 열어 `SUPABASE_URL`과 `SUPABASE_SERVICE_ROLE_KEY`가 실제 값인지 확인합니다.
 
 ### relation learning_notes does not exist
 

@@ -7,21 +7,36 @@
 ## 목표
 
 ```text
-app/main.py:
+starter/app/main.py:
   FastAPI 앱 생성과 router 연결
 
-app/routers/product_router.py:
+starter/app/routers/product_router.py:
   API 경로와 HTTP Method 정의
 
-app/schemas/product_schema.py:
+starter/app/schemas/product_schema.py:
   요청/응답 Pydantic 모델 정의
 
-app/services/product_service.py:
+starter/app/services/product_service.py:
   상품 데이터 조회, 검색, 생성 로직
 
-tests/test_product_api.py:
+starter/tests/test_product_api.py:
   TestClient로 API 동작 검증
 ```
+
+## 폴더 구조
+
+```text
+assignment-100_product-api-structure-refactor
+├─ README.md
+├─ starter
+│  ├─ app
+│  └─ tests
+└─ solution
+   ├─ app
+   └─ tests
+```
+
+먼저 `starter` 폴더의 TODO를 완성합니다. 수업 후 또는 복습할 때 `solution` 폴더와 비교합니다.
 
 ## 실행 방법
 
@@ -33,10 +48,10 @@ cd C:\aidev\02_supabase-ai-backend
 pip install -r requirements.txt
 ```
 
-과제 폴더로 이동해 서버를 실행합니다.
+starter 폴더로 이동해 서버를 실행합니다.
 
 ```powershell
-cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\20_assignments\assignment-100_product-api-structure-refactor
+cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\20_assignments\assignment-100_product-api-structure-refactor\starter
 uvicorn app.main:app --reload
 ```
 
@@ -53,6 +68,14 @@ python -m pytest -s
 ```
 
 처음에는 TODO가 남아 있어 테스트가 실패할 수 있습니다. 실패 메시지를 보고 `app/services`, `app/routers`, `app/schemas`를 하나씩 완성합니다.
+
+solution을 확인하려면 아래처럼 실행합니다.
+
+```powershell
+cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\20_assignments\assignment-100_product-api-structure-refactor\solution
+python -m pytest -s
+uvicorn app.main:app --reload
+```
 
 ## 구현 요구사항
 

@@ -1,7 +1,7 @@
 r"""LLM API 구조 분리 과제의 실행 시작점입니다.
 
 실행:
-    cd C:\aidev\02_supabase-ai-backend\02_llm-api-integration\20_assignments\assignment-100_llm-api-structure-refactor
+    cd C:\aidev\02_supabase-ai-backend\02_llm-api-integration\20_assignments\assignment-100_llm-api-structure-refactor\starter
     uvicorn app.main:app --reload
 """
 

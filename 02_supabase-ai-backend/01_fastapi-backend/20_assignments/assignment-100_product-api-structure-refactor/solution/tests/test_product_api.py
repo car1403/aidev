@@ -1,10 +1,8 @@
-r"""상품 API 구조 분리 과제 테스트입니다.
+r"""상품 API 구조 분리 과제 solution 테스트입니다.
 
 실행:
-    cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\20_assignments\assignment-100_product-api-structure-refactor
+    cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\20_assignments\assignment-100_product-api-structure-refactor\solution
     python -m pytest -s
-
-처음에는 TODO가 남아 있어 실패할 수 있습니다. 실패 메시지를 보고 코드를 완성합니다.
 """
 
 from fastapi.testclient import TestClient
