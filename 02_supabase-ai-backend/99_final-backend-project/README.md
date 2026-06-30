@@ -105,6 +105,22 @@ my-final-backend-project
 9. `90_ai-assisted-code-review-and-debugging` 체크리스트로 리뷰합니다.
 10. `.env`가 제출되지 않는지 마지막으로 확인합니다.
 
+## 참고 solution
+
+막혔을 때는 `solution` 폴더를 참고합니다. `solution`은 정답을 그대로 제출하라는 의미가 아니라, 작은 최종 프로젝트를 어떤 구조와 흐름으로 끝까지 연결할 수 있는지 보여 주는 기준 구현입니다.
+
+```text
+solution
+├─ README.md
+├─ schema.sql
+└─ app
+   ├─ core
+   ├─ routers
+   ├─ schemas
+   ├─ services
+   └─ main.py
+```
+
 ## 평가 기준
 
 자세한 기준은 [rubric/evaluation-rubric.md](./rubric/evaluation-rubric.md)를 참고합니다.

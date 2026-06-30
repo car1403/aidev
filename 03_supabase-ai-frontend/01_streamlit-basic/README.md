@@ -69,6 +69,14 @@ pip install -r requirements.txt
 - sidebar, columns, tabs가 화면에 구분되어 표시됩니다.
 - 터미널에 오류가 나오면 오류 메시지의 파일명과 줄 번호를 확인할 수 있습니다.
 
+## 필수와 선택 기준
+
+| 구분 | 내용 |
+| --- | --- |
+| 필수 | Streamlit 실행, 제목/본문 출력, 입력값 처리, sidebar/columns/tabs 기본 레이아웃 |
+| 선택 | 복잡한 페이지 구조, 커스텀 CSS, 외부 API 연결 |
+| 제외 | Supabase, Gemini, 로그인, SSE 스트리밍 |
+
 ## 학습할 때 보는 기준
 
 Streamlit은 일반적인 웹 프론트엔드처럼 HTML, CSS, JavaScript를 먼저 작성하지 않아도 Python 코드만으로 화면을 만들 수 있습니다. 그래서 이 과정에서는 복잡한 화면 기술보다 다음 질문에 집중합니다.

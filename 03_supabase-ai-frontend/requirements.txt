@@ -16,7 +16,8 @@
 # 이 과정의 기본 방향:
 # - Streamlit을 중심으로 AI 서비스 화면을 만듭니다.
 # - FastAPI 백엔드는 02_supabase-ai-backend에서 만든 API를 호출하는 방식으로 연결합니다.
-# - 03_api-integration과 99_final-frontend-project에는 수업 이해를 돕기 위한 간단한 sample backend가 포함될 수 있습니다.
+# - 03_api-integration에는 수업 이해를 돕기 위한 간단한 sample backend가 포함됩니다.
+# - 99_final-frontend-project에는 프론트 개발용 backend_mock과 실제 연결용 backend_service가 포함됩니다.
 # - Supabase service role key, Gemini API key, OpenAI API key 같은 민감한 값은 프론트엔드에 직접 넣지 않습니다.
 # - Docker, Docker Compose, AWS, GitHub Actions 기반 운영 자동화는 07_multi-agent-service-ops에서 본격적으로 다룹니다.
 
@@ -33,7 +34,7 @@
 # - 04_ai-chatbot-interface: 챗봇 입력 화면과 응답 표시 화면
 # - 05_state-session-and-data: st.session_state 기반 대화 상태 관리
 # - 90_ai-assisted-ui-review-and-debugging: Streamlit UI 오류 점검
-# - 99_final-frontend-project: 최종 프론트엔드 예제와 배포 실습
+# - 99_final-frontend-project: 최종 프론트엔드 solution과 제출물 작성
 streamlit==1.41.1
 
 
@@ -46,7 +47,7 @@ streamlit==1.41.1
 # 사용 위치:
 # - 02_streamlit-ui-components: 표와 차트 표시
 # - 05_state-session-and-data: 대화 이력과 사용자 상태 데이터 표시
-# - 99_final-frontend-project: 대화 이력, 서비스 로그를 표와 차트로 표시
+# - 99_final-frontend-project: 백엔드 응답을 표로 표시하는 최종 화면
 pandas==2.2.3
 
 
@@ -60,7 +61,7 @@ pandas==2.2.3
 # - 03_api-integration: Streamlit에서 sample backend 또는 01 백엔드 API 호출
 # - 04_ai-chatbot-interface: mock 챗봇 API 또는 선택형 Gemini 연동 API 호출
 # - 05_state-session-and-data: 사용자별 대화 이력, 서비스 로그 API 호출 흐름 이해
-# - 99_final-frontend-project: /health, /api/chat, /api/chats, /api/logs 호출
+# - 99_final-frontend-project: backend_mock 또는 backend_service의 /health, /auth, /chat, /conversations, /service-logs 호출
 httpx==0.28.1
 
 
@@ -74,7 +75,7 @@ httpx==0.28.1
 # - 03_api-integration: API_BASE_URL로 백엔드 주소 관리
 # - 04_ai-chatbot-interface: 선택형 API 연결 주소 관리
 # - 05_state-session-and-data: API 호출 주소와 실행 환경 분리
-# - 99_final-frontend-project: 프로젝트 폴더 안의 .env에서 API_BASE_URL 읽기
+# - 99_final-frontend-project: 최종 프론트엔드 starter에서 API_BASE_URL 읽기
 #
 # 주의:
 # - 프론트엔드 .env에는 공개되어도 되는 설정만 넣습니다.
@@ -83,11 +84,11 @@ python-dotenv==1.0.1
 
 
 # -----------------------------------------------------------------------------
-# 선택형 Gemini SDK 실습 패키지
+# 선택형 Gemini SDK 참고 실습 패키지
 # -----------------------------------------------------------------------------
 
 # Gemini API를 Python SDK 방식으로 호출하기 위한 Google Gen AI SDK입니다.
-# 02 과정에서는 실제 LLM 호출을 깊게 다루기보다,
+# 03 과정에서는 실제 LLM 호출을 깊게 다루기보다,
 # 02_supabase-ai-backend에서 배운 Gemini 호출 흐름을 프론트엔드 화면과 가볍게 연결해 봅니다.
 # 기본 예제 모델은 gemini-2.5-flash-lite를 기준으로 안내합니다.
 # 사용 위치:
@@ -106,23 +107,35 @@ google-genai==1.2.0
 # -----------------------------------------------------------------------------
 
 # FastAPI 웹 API 서버를 만들기 위한 핵심 프레임워크입니다.
-# 02 과정의 중심은 프론트엔드지만, API 연동을 이해하기 위해
+# 03 과정의 중심은 프론트엔드지만, API 연동을 이해하기 위해
 # 일부 단원에서 간단한 sample backend를 함께 실행합니다.
 # 사용 위치:
 # - 03_api-integration/sample_backend: Streamlit API 호출 연습용 백엔드
-# - 99_final-frontend-project/backend: 최종 프론트엔드 프로젝트용 간단 백엔드
+# - 99_final-frontend-project/backend_mock: 회원가입, 로그인, 챗봇, 대화 기록, 서비스 로그 제공용 mock backend
+# - 99_final-frontend-project/backend_service: Supabase/Gemini/Upstash 선택 확장 backend
 fastapi==0.115.6
 
 # FastAPI 앱을 로컬 개발 서버로 실행하기 위한 ASGI 서버입니다.
 # 예: uvicorn main:app --reload --host 127.0.0.1 --port 8000
 # 사용 위치:
 # - 03_api-integration/sample_backend 실행
-# - 99_final-frontend-project/backend 실행
+# - 99_final-frontend-project/backend_mock 또는 backend_service 실행
 uvicorn==0.32.1
 
 # FastAPI 요청 Body와 응답 구조를 정의하고 검증하는 패키지입니다.
 # 사용자가 입력한 데이터가 API에서 기대하는 구조와 맞는지 확인할 때 사용합니다.
 # 사용 위치:
 # - 03_api-integration/sample_backend: 간단한 요청/응답 모델
-# - 99_final-frontend-project/backend: /api/chat 요청/응답 모델
+# - 99_final-frontend-project/backend_mock 또는 backend_service: auth/chat/log 요청/응답 모델
 pydantic==2.10.4
+
+
+# -----------------------------------------------------------------------------
+# 테스트 패키지
+# -----------------------------------------------------------------------------
+
+# 제공용 backend의 API 흐름을 검증하기 위한 테스트 프레임워크입니다.
+# 사용 위치:
+# - 99_final-frontend-project/backend_mock/tests
+# - 99_final-frontend-project/backend_service/tests
+pytest==8.4.2

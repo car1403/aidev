@@ -91,6 +91,14 @@ streamlit run .\03_api-integration\02_fastapi-backend-connect\01_fastapi-health-
 - 서버가 꺼져 있을 때 오류 메시지가 표시됩니다.
 - 로딩 상태와 응답 검증 메시지가 화면에 표시됩니다.
 
+## 필수와 선택 기준
+
+| 구분 | 내용 |
+| --- | --- |
+| 필수 | `API_BASE_URL`, GET/POST 요청, JSON 응답 표시, timeout/status code 오류 처리, 로딩 상태 표시 |
+| 선택 | 샘플 백엔드 대신 02 백엔드 전체 연결, 응답 데이터 표/차트 확장 |
+| 제외 | Supabase DB 직접 접속, SSE 스트리밍, 배포 |
+
 ## 직접 꼭 구분해야 할 것
 
 - Streamlit은 화면을 담당합니다.

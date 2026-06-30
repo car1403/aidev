@@ -22,16 +22,22 @@ API_BASE_URL=http://127.0.0.1:8000
 C:\aidev\03_supabase-ai-frontend\.env
 ```
 
-`99_final-frontend-project`는 최종 통합과 배포 흐름을 독립적으로 연습하기 때문에 다음 파일을 따로 사용합니다.
+`99_final-frontend-project`의 Streamlit 앱도 수업 중에는 같은 과정 최상위 `.env`를 사용합니다.
 
 ```text
-C:\aidev\03_supabase-ai-frontend\99_final-frontend-project\.env
+C:\aidev\03_supabase-ai-frontend\.env
 ```
 
 Render에 백엔드를 배포한 뒤에는 다음처럼 바꿉니다.
 
 ```env
 API_BASE_URL=https://본인-render-service.onrender.com
+```
+
+`backend_service`의 Supabase/Gemini/Upstash 값은 프론트엔드 `.env`가 아니라 아래 backend 전용 `.env`에 둡니다.
+
+```text
+C:\aidev\03_supabase-ai-frontend\99_final-frontend-project\backend_service\.env
 ```
 
 ## 실제 서비스용 프론트엔드에 두면 안 되는 값
@@ -59,23 +65,24 @@ OPENAI_API_KEY
 | --- | --- | --- |
 | Streamlit에서 API 연결 실패 | `API_BASE_URL`이 로컬 주소로 남아 있음 | 배포 후 Render URL로 바꿉니다. |
 | 로그인은 되지만 데이터 조회 실패 | Authorization header 누락 | `Bearer token` 형식인지 확인합니다. |
-| Render 백엔드가 실행되지 않음 | Start Command 오류 | `uvicorn main:app --host 0.0.0.0 --port $PORT`를 확인합니다. |
+| Render 백엔드가 실행되지 않음 | Start Command 오류 | 99의 `backend_service`는 `uvicorn app.main:app --host 0.0.0.0 --port $PORT`를 사용합니다. |
 | Redis 인증 실패 | Upstash token 누락 또는 오타 | 환경변수 이름과 값을 확인합니다. |
 | Supabase 권한 오류 | RLS 또는 service role 처리 위치 문제 | 프론트엔드가 아니라 백엔드 설정을 확인합니다. |
 
-## 02 과정의 배포 가이드 위치
+## 03 과정의 배포 참고 위치
 
-무료 배포 흐름은 99 최종 프론트엔드 프로젝트 문서에서 확인합니다.
+무료 배포 흐름은 필수 구현이 아니라 선택 참고입니다. 수업 중 짧게 확인할 때는 아래 문서를 봅니다.
 
 ```text
-C:\aidev\03_supabase-ai-frontend\99_final-frontend-project\docs\free-deployment-guide.md
+C:\aidev\03_supabase-ai-frontend\05_state-session-and-data\06_service-log-and-integration-check\03_free-deployment-guide.md
+C:\aidev\03_supabase-ai-frontend\99_final-frontend-project\templates\06_deployment-checklist.md
 ```
 
 이 문서는 다음 흐름을 기준으로 합니다.
 
 ```text
 FastAPI 백엔드 -> Render
-Redis 캐시/로그 보조 저장소 -> Upstash
+Redis 캐시/세션 보조 저장소 -> Upstash
 Streamlit 프론트엔드 -> Streamlit Community Cloud
 ```
 

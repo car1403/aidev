@@ -136,3 +136,11 @@ streamlit run .\05_state-session-and-data\03_auth-token-and-login-state\02_login
 - 캐시 적용 전후의 화면 응답 차이를 설명할 수 있는가?
 - 서비스 로그 화면에서 API 호출 결과와 오류 상태를 확인할 수 있는가?
 - 배포 전 점검 항목을 기준으로 프론트엔드 준비 상태를 설명할 수 있는가?
+
+## 필수와 선택 기준
+
+| 구분 | 내용 |
+| --- | --- |
+| 필수 | `st.session_state`, 로그인 token 저장, Authorization header, 사용자 정보 조회, 대화 이력 조회, 서비스 로그 조회 |
+| 선택 | `st.cache_data` 성능 개선, 배포 전 점검 화면 확장, 추가 차트 |
+| 제외 | Supabase 직접 접속, service role key 사용, 복잡한 운영 모니터링 |
