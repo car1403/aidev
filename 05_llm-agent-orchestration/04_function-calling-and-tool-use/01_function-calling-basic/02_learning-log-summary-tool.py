@@ -1,3 +1,14 @@
+﻿r"""실행 안내
+
+실행 위치:
+    C:\aidev\05_llm-agent-orchestration\04_function-calling-and-tool-use\01_function-calling-basic
+
+실행 명령:
+    python .\02_learning-log-summary-tool.py
+
+준비:
+    각 단원 README의 가상환경, .env, Docker 실행 안내를 먼저 확인하세요.
+"""
 """학습 로그 데이터를 조회하는 도구를 Function Calling으로 연결하는 예제입니다."""
 
 from pathlib import Path

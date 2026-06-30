@@ -1,4 +1,15 @@
-﻿"""LangGraph 노드 안에서 OpenAI 모델을 호출해 답변을 생성하는 예제입니다."""
+﻿r"""실행 안내
+
+실행 위치:
+    C:\aidev\05_llm-agent-orchestration\06_langgraph-state-flow\03_tool-and-rag-node-flow
+
+실행 명령:
+    python .\03_llm-answer-node.py
+
+준비:
+    각 단원 README의 가상환경, .env, Docker 실행 안내를 먼저 확인하세요.
+"""
+"""LangGraph 노드 안에서 OpenAI 모델을 호출해 답변을 생성하는 예제입니다."""
 
 from pathlib import Path
 import os

@@ -1,4 +1,15 @@
-﻿"""여러 도구 이름을 받아 실제 함수로 연결하는 라우터 예제입니다."""
+﻿r"""실행 안내
+
+실행 위치:
+    C:\aidev\05_llm-agent-orchestration\04_function-calling-and-tool-use\03_multi-tool-orchestration
+
+실행 명령:
+    python .\01_multi-tool-router.py
+
+준비:
+    각 단원 README의 가상환경, .env, Docker 실행 안내를 먼저 확인하세요.
+"""
+"""여러 도구 이름을 받아 실제 함수로 연결하는 라우터 예제입니다."""
 
 import json
 

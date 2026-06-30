@@ -1,7 +1,7 @@
--- 주의:
+﻿-- 주의:
 -- 이 SQL은 실습을 처음부터 다시 시작하기 위해 기존 테이블을 삭제하고 다시 만듭니다.
 -- 이미 저장한 벡터, 문서 chunk, 대화 메모리 데이터가 있다면 사라질 수 있습니다.
--- 04 과정에서는 Docker run으로 실행한 rag-pgvector 컨테이너에 이 SQL을 적용합니다.
+-- 05 과정에서는 docker run으로 실행한 aidev-pgvector 컨테이너에 이 SQL을 적용합니다.
 
 CREATE EXTENSION IF NOT EXISTS vector;
 

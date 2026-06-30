@@ -1,4 +1,15 @@
-﻿"""OpenAI Embedding API로 텍스트를 벡터로 바꾸는 예제입니다."""
+﻿r"""실행 안내
+
+실행 위치:
+    C:\aidev\05_llm-agent-orchestration\05_rag-memory-and-vector-search\01_embedding-basics
+
+실행 명령:
+    python .\02_openai-embedding-basic.py
+
+준비:
+    각 단원 README의 가상환경, .env, Docker 실행 안내를 먼저 확인하세요.
+"""
+"""OpenAI Embedding API로 텍스트를 벡터로 바꾸는 예제입니다."""
 
 from pathlib import Path
 import os

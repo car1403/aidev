@@ -22,7 +22,7 @@
 ```powershell
 cd C:\aidev\05_llm-agent-orchestration\05_rag-memory-and-vector-search
 .\.venv\Scripts\Activate.ps1
-Get-Content .\02_pgvector-basic\01_create-extension-and-tables.sql | docker exec -i rag-pgvector psql -U rag_user -d rag_db
+Get-Content .\02_pgvector-basic\01_create-extension-and-tables.sql | docker exec -i aidev-pgvector psql -U agent_user -d agent_db
 python .\02_pgvector-basic\01_insert-sample-vectors.py
 python .\02_pgvector-basic\02_search-similar-vectors.py
 ```

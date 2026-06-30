@@ -1,4 +1,15 @@
-﻿"""조건 분기로 다음 노드를 선택하는 LangGraph 예제입니다."""
+﻿r"""실행 안내
+
+실행 위치:
+    C:\aidev\05_llm-agent-orchestration\06_langgraph-state-flow\02_conditional-routing
+
+실행 명령:
+    python .\01_conditional-route-basic.py
+
+준비:
+    각 단원 README의 가상환경, .env, Docker 실행 안내를 먼저 확인하세요.
+"""
+"""조건 분기로 다음 노드를 선택하는 LangGraph 예제입니다."""
 
 from typing import Literal, TypedDict
 

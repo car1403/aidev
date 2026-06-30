@@ -5,7 +5,7 @@
 핵심 흐름은 다음과 같습니다.
 
 ```text
-문서 준비 -> 문서 청킹 -> 임베딩 생성 -> pgvector 저장 -> 관련 문서 검색 -> LLM 답변 생성 -> 대화 기억 저장
+문서 준비 -> 문서 청킹 -> 임베딩 생성 -> pgvector 저장 -> 관련 문서 검색 -> LLM 답변 생성 -> 대화 기억 저장 -> Redis 캐시 확인
 ```
 
 05 과정부터는 Supabase가 아니라 Docker 기반 로컬 실습을 사용합니다. 이 단원에서는 Docker Desktop에서 `pgvector`가 포함된 PostgreSQL 컨테이너를 실행하고, 그 안에 벡터 데이터를 저장합니다. Docker Compose와 AWS 배포는 `07_multi-agent-service-ops`에서 본격적으로 다룹니다.
@@ -17,6 +17,7 @@
 - Docker로 실행한 pgvector PostgreSQL에 문서 벡터를 저장하고 검색합니다.
 - 문서 청킹 크기와 overlap이 검색 품질에 주는 영향을 확인합니다.
 - RAG, Hybrid Search, RRF, RAG 품질 평가의 기본 흐름을 실습합니다.
+- PostgreSQL Session Memory와 Redis Cache의 역할을 구분합니다.
 - Session Memory와 Long-term Memory의 차이를 구분합니다.
 
 ## 폴더 구성
@@ -50,7 +51,9 @@
 ├─ 05_conversation-memory
 │  ├─ README.md
 │  ├─ 01_short-term-memory.py
-│  └─ 02_save-conversation-memory.py
+│  ├─ 02_save-conversation-memory.py
+│  ├─ 03_load-recent-session-messages.py
+│  └─ 04_redis-session-cache.py
 ├─ 10_labs
 └─ 20_assignments
 ```
@@ -62,7 +65,7 @@ cd C:\aidev\05_llm-agent-orchestration\05_rag-memory-and-vector-search
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-pip install openai python-dotenv psycopg[binary] langchain-text-splitters
+pip install openai python-dotenv psycopg[binary] redis langchain-text-splitters
 Copy-Item .env.example .env
 ```
 
@@ -74,12 +77,12 @@ Docker Desktop을 켠 뒤 아래 명령을 실행합니다.
 
 ```powershell
 docker run -d `
-  --name rag-pgvector `
-  -e POSTGRES_DB=rag_db `
-  -e POSTGRES_USER=rag_user `
-  -e POSTGRES_PASSWORD=rag_password `
+  --name aidev-pgvector `
+  -e POSTGRES_DB=agent_db `
+  -e POSTGRES_USER=agent_user `
+  -e POSTGRES_PASSWORD=agent_password `
   -p 5433:5432 `
-  -v rag-pgvector-data:/var/lib/postgresql/data `
+  -v aidev-pgvector-data:/var/lib/postgresql/data `
   pgvector/pgvector:pg16
 ```
 
@@ -87,10 +90,29 @@ docker run -d `
 
 ```powershell
 docker ps
-docker exec -it rag-pgvector psql -U rag_user -d rag_db
+docker exec -it aidev-pgvector psql -U agent_user -d agent_db
 ```
 
 `psql` 화면에 들어가면 `\q`를 입력해서 빠져나옵니다.
+
+## Redis 컨테이너 실행
+
+세션 캐시와 짧은 기억 실습을 위해 Redis를 실행합니다.
+
+```powershell
+docker run -d `
+  --name aidev-redis `
+  -p 6379:6379 `
+  redis:7
+```
+
+동작 확인:
+
+```powershell
+docker exec -it aidev-redis redis-cli ping
+```
+
+정상이라면 `PONG`이 출력됩니다.
 
 ## 실행 순서
 
@@ -107,13 +129,15 @@ python .\05_conversation-memory\01_short-term-memory.py
 OpenAI API Key와 pgvector 컨테이너가 준비되면 DB 연동 예제를 실행합니다.
 
 ```powershell
-Get-Content .\02_pgvector-basic\01_create-extension-and-tables.sql | docker exec -i rag-pgvector psql -U rag_user -d rag_db
+Get-Content .\02_pgvector-basic\01_create-extension-and-tables.sql | docker exec -i aidev-pgvector psql -U agent_user -d agent_db
 python .\02_pgvector-basic\01_insert-sample-vectors.py
 python .\02_pgvector-basic\02_search-similar-vectors.py
 python .\03_document-chunking-and-indexing\02_index-document-chunks.py
 python .\04_rag-retrieval-and-answering\01_retrieve-context.py
 python .\04_rag-retrieval-and-answering\02_rag-answer.py
 python .\05_conversation-memory\02_save-conversation-memory.py
+python .\05_conversation-memory\03_load-recent-session-messages.py
+python .\05_conversation-memory\04_redis-session-cache.py
 ```
 
 ## 단원별 핵심 질문

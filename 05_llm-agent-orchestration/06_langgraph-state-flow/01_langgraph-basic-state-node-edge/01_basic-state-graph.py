@@ -1,4 +1,15 @@
-﻿"""LangGraph의 가장 기본적인 StateGraph 예제입니다."""
+﻿r"""실행 안내
+
+실행 위치:
+    C:\aidev\05_llm-agent-orchestration\06_langgraph-state-flow\01_langgraph-basic-state-node-edge
+
+실행 명령:
+    python .\01_basic-state-graph.py
+
+준비:
+    각 단원 README의 가상환경, .env, Docker 실행 안내를 먼저 확인하세요.
+"""
+"""LangGraph의 가장 기본적인 StateGraph 예제입니다."""
 
 from typing import TypedDict
 

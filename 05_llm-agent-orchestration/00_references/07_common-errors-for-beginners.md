@@ -1,4 +1,4 @@
-﻿# 07 Common Errors for Beginners
+# 07 Common Errors for Beginners
 
 이 문서는 초보자가 자주 만나는 오류를 정리합니다.
 
@@ -14,9 +14,11 @@
 확인:
 
 ```text
-.env 파일이 단원 폴더에 있는가?
+.env 파일이 현재 단원 폴더에 있는가?
 OPENAI_API_KEY=... 형태로 작성했는가?
 ```
+
+API Key가 없으면 OpenAI 호출 예제는 건너뛰고, Ollama 또는 mock 예제부터 진행할 수 있습니다.
 
 ## 2. ModuleNotFoundError
 
@@ -51,7 +53,13 @@ docker stop 컨테이너이름
 docker rm 컨테이너이름
 ```
 
-## 3-1. docker 명령을 찾을 수 없는 경우
+컨테이너를 삭제하고 싶지 않다면 다시 시작합니다.
+
+```powershell
+docker start 컨테이너이름
+```
+
+## 4. docker 명령을 찾을 수 없는 경우
 
 예시:
 
@@ -75,7 +83,7 @@ docker : The term 'docker' is not recognized
 5. 계속 실패하면 PC를 재부팅한다.
 ```
 
-## 3-2. Docker daemon 오류가 나는 경우
+## 5. Docker daemon 오류가 나는 경우
 
 예시:
 
@@ -106,7 +114,7 @@ wsl --status
 wsl --list --verbose
 ```
 
-## 4. 포트 충돌
+## 6. 포트 충돌
 
 예시:
 
@@ -119,14 +127,24 @@ port is already allocated
 ```powershell
 netstat -ano | findstr :11434
 netstat -ano | findstr :5433
+netstat -ano | findstr :6379
 ```
+
+기본 포트:
+
+| 포트 | 용도 |
+| --- | --- |
+| `11434` | Ollama |
+| `5433` | PostgreSQL + pgvector |
+| `6379` | Redis |
 
 해결:
 
 - 기존 프로그램을 종료한다.
-- 다른 포트를 사용한다.
+- 기존 컨테이너가 있다면 `docker start`로 재사용한다.
+- 다른 포트를 사용한다면 `.env`의 URL도 함께 바꾼다.
 
-## 5. Ollama 모델이 없다는 오류
+## 7. Ollama 모델이 없다는 오류
 
 원인:
 
@@ -138,17 +156,24 @@ netstat -ano | findstr :5433
 docker exec -it ollama-llm ollama pull llama3.2
 ```
 
-## 6. pgvector extension이 없다는 오류
+## 8. pgvector extension이 없다는 오류
 
 원인:
 
 - 일반 PostgreSQL 이미지를 사용했다.
 - `CREATE EXTENSION vector;`를 실행하지 않았다.
 
-해결:
+권장 컨테이너:
 
 ```powershell
-docker run -d --name rag-pgvector -e POSTGRES_DB=rag_db -e POSTGRES_USER=rag_user -e POSTGRES_PASSWORD=rag_password -p 5433:5432 -v rag-pgvector-data:/var/lib/postgresql/data pgvector/pgvector:pg16
+docker run -d `
+  --name aidev-pgvector `
+  -p 5433:5432 `
+  -e POSTGRES_DB=agent_db `
+  -e POSTGRES_USER=agent_user `
+  -e POSTGRES_PASSWORD=agent_password `
+  -v aidev-pgvector-data:/var/lib/postgresql/data `
+  pgvector/pgvector:pg16
 ```
 
 SQL:
@@ -157,15 +182,41 @@ SQL:
 CREATE EXTENSION IF NOT EXISTS vector;
 ```
 
-일반 `postgres` 이미지를 사용하면 pgvector 확장이 없어서 오류가 날 수 있습니다. 04 과정에서는 `pgvector/pgvector:pg16` 이미지를 사용합니다.
+일반 `postgres` 이미지를 사용하면 pgvector 확장이 없어서 오류가 날 수 있습니다. 05 과정에서는 `pgvector/pgvector:pg16` 이미지를 사용합니다.
 
-## 7. Streamlit 버튼을 누를 때마다 비용이 발생할 수 있음
+## 9. Redis 연결 오류
+
+예시:
+
+```text
+Error connecting to localhost:6379
+```
+
+확인:
+
+```powershell
+docker ps
+docker exec -it aidev-redis redis-cli ping
+```
+
+정상이라면 `PONG`이 출력됩니다.
+
+실행:
+
+```powershell
+docker run -d `
+  --name aidev-redis `
+  -p 6379:6379 `
+  redis:7
+```
+
+## 10. Streamlit 버튼을 누를 때마다 비용이 발생할 수 있음
 
 Streamlit은 버튼을 누르거나 입력값이 바뀔 때 스크립트를 다시 실행할 수 있습니다.
 
 LLM API 호출 코드는 버튼 클릭 안쪽에 두는 것이 좋습니다.
 
-## 8. 그래프가 예상과 다르게 흐르는 경우
+## 11. 그래프가 예상과 다르게 흐르는 경우
 
 확인할 것:
 
@@ -173,3 +224,4 @@ LLM API 호출 코드는 버튼 클릭 안쪽에 두는 것이 좋습니다.
 - Node가 dict를 반환하는가?
 - Conditional Edge 함수가 올바른 노드 이름을 반환하는가?
 - START와 END 연결이 빠지지 않았는가?
+- Retry 조건이 무한 반복을 만들지 않는가?

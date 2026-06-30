@@ -52,6 +52,6 @@ Agent를 만들 때는 두 기억을 모두 구분해서 설계해야 합니다.
 
 ## 이 단원에서 Docker를 쓰는 이유
 
-04 과정부터는 실제 서비스 운영에 가까운 환경을 경험하기 위해 Docker를 사용합니다. PostgreSQL과 pgvector를 노트북에 직접 설치하지 않고 컨테이너로 실행하면 설치 충돌을 줄이고, 같은 환경을 반복해서 만들 수 있습니다.
+05 과정에서는 Docker를 로컬 실습 도구 실행에 사용합니다. PostgreSQL과 pgvector를 노트북에 직접 설치하지 않고 컨테이너로 실행하면 설치 충돌을 줄이고, 같은 환경을 반복해서 만들 수 있습니다.
 
 Docker Compose, AWS 배포, GitHub Actions 자동화는 `07_multi-agent-service-ops`에서 별도로 다룹니다.

@@ -1,19 +1,22 @@
-# 69 Docker Desktop Install for Beginners
+# 09 Docker Desktop Install for Beginners
 
 이 문서는 Docker를 처음 설치하는 입문자를 위한 안내입니다.
 
-64 과정부터는 Docker Desktop을 사용합니다. 하지만 이 과정의 목표는 Docker 운영 전문가가 되는 것이 아닙니다. Docker를 이용해 로컬 Llama, pgvector PostgreSQL 같은 실습 도구를 쉽게 실행하는 것이 목표입니다.
+05 과정부터는 Docker Desktop을 사용합니다. 하지만 이 과정의 목표는 Docker 운영 전문가가 되는 것이 아닙니다. Docker를 이용해 로컬 Llama, PostgreSQL/pgvector, Redis 같은 실습 도구를 쉽게 실행하는 것이 목표입니다.
 
 ## 왜 Docker를 설치하나요?
 
-64 과정에서는 두 가지를 Docker로 실행합니다.
+05 과정에서는 다음 도구를 Docker로 실행합니다.
 
 ```text
 Ollama 컨테이너
 -> 내 PC에서 Llama 모델을 API처럼 호출하기 위해 사용
 
-pgvector PostgreSQL 컨테이너
+PostgreSQL + pgvector 컨테이너
 -> RAG 실습에서 벡터와 대화 메모리를 저장하기 위해 사용
+
+Redis 컨테이너
+-> 세션 메모리와 캐시를 실습하기 위해 사용
 ```
 
 Docker를 쓰면 개인 환경마다 PC 환경이 조금 달라도 같은 명령으로 같은 실습 환경을 만들 수 있습니다.
@@ -30,11 +33,11 @@ WSL 2:
 
 Image:
 - 컨테이너를 만들기 위한 템플릿
-- 예: ollama/ollama:latest, pgvector/pgvector:pg16
+- 예: ollama/ollama:latest, pgvector/pgvector:pg16, redis:7
 
 Container:
 - Image를 실제로 실행한 것
-- 예: ollama-llm, rag-pgvector
+- 예: ollama-llm, aidev-pgvector, aidev-redis
 
 Volume:
 - 컨테이너 밖에 데이터를 보관하는 저장 공간
@@ -97,8 +100,6 @@ docker rm 컨테이너ID
 
 ## 수업 전 체크리스트
 
-수업 전에 아래 항목을 확인합니다.
-
 - [ ] Docker Desktop이 설치되어 있다.
 - [ ] Docker Desktop을 실행할 수 있다.
 - [ ] PowerShell에서 `docker --version`이 동작한다.
@@ -149,9 +150,9 @@ wsl --list --verbose
 
 WSL 2가 준비되지 않았다는 메시지가 나오면 Docker 공식 WSL 문서를 확인하고, Windows 업데이트와 WSL 설치 상태를 먼저 점검합니다.
 
-## 64 과정에서 Docker를 사용하는 범위
+## 05 과정에서 Docker를 사용하는 범위
 
-64에서는 아래까지만 다룹니다.
+05에서는 아래까지만 다룹니다.
 
 ```text
 docker --version
@@ -179,6 +180,6 @@ GitHub Actions
 ## 직접 기억할 문장
 
 ```text
-64에서 Docker는 운영 배포 도구가 아니라, 로컬 실습 도구입니다.
-설치 후 docker ps가 정상 동작하면 64 수업을 시작할 준비가 된 것입니다.
+05에서 Docker는 운영 배포 도구가 아니라, 로컬 실습 도구입니다.
+설치 후 docker ps가 정상 동작하면 05 수업을 시작할 준비가 된 것입니다.
 ```

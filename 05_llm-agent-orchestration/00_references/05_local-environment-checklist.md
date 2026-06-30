@@ -1,6 +1,6 @@
-﻿# 05 Local Environment Checklist
+# 05 Local Environment Checklist
 
-이 과정은 Python, Docker, OpenAI API, Streamlit, LangGraph 등을 사용합니다.
+이 과정은 Python, Docker, OpenAI API, Ollama, PostgreSQL/pgvector, Redis, LangGraph를 사용합니다.
 
 수업 전에 아래 항목을 확인하면 실습 중 오류를 줄일 수 있습니다.
 
@@ -19,15 +19,16 @@ Python 3.11 이상
 
 ## 가상 환경
 
-각 단원 폴더에서 가상 환경을 만드는 방식을 권장합니다.
+05 과정은 단원별 가상 환경을 우선 권장합니다.
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
+python -c "import sys; print(sys.executable)"
+python -m pip install --upgrade pip
 ```
 
-단원별로 패키지가 다르기 때문에, 초보자 수업에서는 단원별 가상 환경이 오류 추적에 더 쉽습니다.
+`python -c "import sys; print(sys.executable)"` 결과가 현재 단원 폴더의 `.venv\Scripts\python.exe`를 가리키는지 확인합니다.
 
 ## Docker
 
@@ -56,22 +57,25 @@ docker run hello-world
 
 ## OpenAI API Key
 
-`.env` 파일에 다음 값이 있어야 합니다.
+OpenAI 호출 실습을 하려면 `.env` 파일에 다음 값이 있어야 합니다.
 
 ```text
 OPENAI_API_KEY=your-openai-api-key
+OPENAI_MODEL=gpt-4.1-mini
 ```
+
+API Key가 없어도 Ollama, mock Tool, 일부 LangGraph 예제는 진행할 수 있습니다.
 
 ## Ollama
 
-로컬 Llama 실습에서는 Ollama 컨테이너가 필요합니다.
+로컬 Llama 비교 실습에서는 Ollama 컨테이너를 선택적으로 사용합니다.
 
 ```powershell
 docker run -d `
- --name ollama-llm `
- -p 11434:11434 `
- -v ollama-data:/root/.ollama `
- ollama/ollama:latest
+  --name ollama-llm `
+  -p 11434:11434 `
+  -v ollama-data:/root/.ollama `
+  ollama/ollama:latest
 ```
 
 모델 다운로드:
@@ -82,27 +86,53 @@ docker exec -it ollama-llm ollama pull llama3.2
 
 ## pgvector
 
-RAG 실습에서는 pgvector PostgreSQL이 필요합니다.
+RAG와 장기 기억 실습에서는 PostgreSQL + pgvector 컨테이너를 사용합니다.
 
 PostgreSQL은 PC에 직접 설치하지 않고, pgvector가 포함된 PostgreSQL Docker 컨테이너로 실행합니다.
 
 ```powershell
 docker run -d `
- --name rag-pgvector `
- -e POSTGRES_DB=rag_db `
- -e POSTGRES_USER=rag_user `
- -e POSTGRES_PASSWORD=rag_password `
- -p 5433:5432 `
- -v rag-pgvector-data:/var/lib/postgresql/data `
- pgvector/pgvector:pg16
+  --name aidev-pgvector `
+  -p 5433:5432 `
+  -e POSTGRES_DB=agent_db `
+  -e POSTGRES_USER=agent_user `
+  -e POSTGRES_PASSWORD=agent_password `
+  -v aidev-pgvector-data:/var/lib/postgresql/data `
+  pgvector/pgvector:pg16
 ```
+
+접속 확인:
+
+```powershell
+docker exec -it aidev-pgvector psql -U agent_user -d agent_db
+```
+
+## Redis
+
+세션 메모리와 캐시 실습에서는 Redis 컨테이너를 사용합니다.
+
+```powershell
+docker run -d `
+  --name aidev-redis `
+  -p 6379:6379 `
+  redis:7
+```
+
+동작 확인:
+
+```powershell
+docker exec -it aidev-redis redis-cli ping
+```
+
+정상이라면 `PONG`이 출력됩니다.
 
 ## 자주 사용하는 포트
 
 | 포트 | 용도 |
 | --- | --- |
 | 11434 | Ollama |
-| 5433 | RAG용 pgvector PostgreSQL |
+| 5433 | PostgreSQL + pgvector |
+| 6379 | Redis |
 | 8601 | 99 샘플 Streamlit 앱 |
 
 ## 수업 전 최종 체크
@@ -113,7 +143,7 @@ docker run -d `
 - [ ] `docker --version`이 정상 동작한다.
 - [ ] `docker ps`가 오류 없이 실행된다.
 - [ ] `docker run hello-world`가 성공한다.
-- [ ] OpenAI API Key가 준비되어 있다.
+- [ ] OpenAI API Key 또는 Ollama 선택 실습 기준을 이해했다.
 - [ ] `.env` 파일을 만들 수 있다.
 - [ ] PowerShell에서 가상 환경을 활성화할 수 있다.
 - [ ] 브라우저에서 localhost 주소를 열 수 있다.

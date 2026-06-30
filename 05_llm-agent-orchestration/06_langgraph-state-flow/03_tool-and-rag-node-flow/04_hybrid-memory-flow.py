@@ -1,3 +1,14 @@
+﻿r"""실행 안내
+
+실행 위치:
+    C:\aidev\05_llm-agent-orchestration\06_langgraph-state-flow\03_tool-and-rag-node-flow
+
+실행 명령:
+    python .\04_hybrid-memory-flow.py
+
+준비:
+    각 단원 README의 가상환경, .env, Docker 실행 안내를 먼저 확인하세요.
+"""
 """Session Memory와 Vector Memory를 함께 사용하는 LangGraph 예제입니다.
 
 Session Memory는 현재 대화의 짧은 기억이고,
@@ -12,11 +23,11 @@ from langgraph.graph import END, START, StateGraph
 
 SESSION_MESSAGES = [
     "사용자는 FastAPI를 배우는 중입니다.",
-    "사용자는 Docker Compose는 06 과정에서 배우기로 했습니다.",
+    "사용자는 Docker Compose는 07 과정에서 배우기로 했습니다.",
 ]
 
 VECTOR_MEMORY = [
-    "04 과정에서는 docker run으로 Ollama와 pgvector를 실행합니다.",
+    "05 과정에서는 docker run으로 Ollama와 pgvector를 실행합니다.",
     "LangGraph는 Node, Edge, State로 에이전트 흐름을 구성합니다.",
     "RAG는 검색 결과를 context로 넣어 답변 품질을 높이는 구조입니다.",
 ]

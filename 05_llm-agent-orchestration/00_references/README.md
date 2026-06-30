@@ -2,14 +2,16 @@
 
 이 폴더는 `05_llm-agent-orchestration` 과정을 시작하기 전에 읽는 초보자용 참고 자료입니다.
 
-이 과정은 OpenAI API, 로컬 Llama, Prompt Engineering, LangChain, Function Calling, RAG, pgvector, LangGraph를 다룹니다. 이름만 보면 어렵게 느껴질 수 있지만, 전체 흐름은 하나입니다.
+이 과정은 OpenAI API, 로컬 Llama, Prompt Engineering, LangChain 최소 활용, Function Calling, Tool Use, MCP, RAG, PostgreSQL/pgvector, Redis, LangGraph를 다룹니다. 이름만 보면 어렵게 느껴질 수 있지만, 전체 흐름은 하나입니다.
 
 ```text
 LLM에게 질문한다
 -> 더 좋은 프롬프트를 만든다
 -> 프롬프트와 모델 호출을 체인으로 정리한다
 -> 필요한 도구를 호출하게 만든다
+-> 도구 연결 표준인 MCP를 맛본다
 -> 필요한 문서를 검색해서 답변하게 만든다
+-> 짧은 기억과 장기 기억을 나누어 저장한다
 -> 이 전체 흐름을 상태 그래프로 관리한다
 -> 미니 프로젝트로 완성한다
 ```
@@ -61,6 +63,7 @@ AI 서비스를 만들 때 필요한 판단 흐름을 직접 설계한다.
 - 사용자의 요청을 분석한다.
 - 필요한 도구를 선택한다.
 - 외부 데이터나 문서를 검색한다.
+- 세션 기억과 장기 기억을 구분한다.
 - 검색 결과를 근거로 답변한다.
 - 여러 단계를 상태로 관리한다.
 - 최종적으로 하나의 에이전트 서비스를 만든다.

@@ -1,4 +1,15 @@
-﻿"""현재 실행 중인 프로그램 안에서만 유지되는 단기 메모리 예제입니다."""
+﻿r"""실행 안내
+
+실행 위치:
+    C:\aidev\05_llm-agent-orchestration\05_rag-memory-and-vector-search\05_conversation-memory
+
+실행 명령:
+    python .\01_short-term-memory.py
+
+준비:
+    각 단원 README의 가상환경, .env, Docker 실행 안내를 먼저 확인하세요.
+"""
+"""현재 실행 중인 프로그램 안에서만 유지되는 단기 메모리 예제입니다."""
 
 conversation = []
 

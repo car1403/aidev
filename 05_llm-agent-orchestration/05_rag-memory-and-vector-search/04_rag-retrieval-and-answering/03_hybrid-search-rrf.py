@@ -1,3 +1,14 @@
+﻿r"""실행 안내
+
+실행 위치:
+    C:\aidev\05_llm-agent-orchestration\05_rag-memory-and-vector-search\04_rag-retrieval-and-answering
+
+실행 명령:
+    python .\03_hybrid-search-rrf.py
+
+준비:
+    각 단원 README의 가상환경, .env, Docker 실행 안내를 먼저 확인하세요.
+"""
 """키워드 검색과 벡터 검색 결과를 RRF로 결합하는 개념 예제입니다.
 
 실제 서비스에서는 키워드 검색 결과와 pgvector 검색 결과가 따로 나올 수 있습니다.

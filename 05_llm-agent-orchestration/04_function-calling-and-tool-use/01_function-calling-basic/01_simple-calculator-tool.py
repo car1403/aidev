@@ -1,4 +1,15 @@
-﻿"""OpenAI Function Calling으로 간단한 계산 도구를 호출하는 예제입니다."""
+﻿r"""실행 안내
+
+실행 위치:
+    C:\aidev\05_llm-agent-orchestration\04_function-calling-and-tool-use\01_function-calling-basic
+
+실행 명령:
+    python .\01_simple-calculator-tool.py
+
+준비:
+    각 단원 README의 가상환경, .env, Docker 실행 안내를 먼저 확인하세요.
+"""
+"""OpenAI Function Calling으로 간단한 계산 도구를 호출하는 예제입니다."""
 
 from pathlib import Path
 import json

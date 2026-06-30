@@ -1,3 +1,14 @@
+﻿r"""실행 안내
+
+실행 위치:
+    C:\aidev\05_llm-agent-orchestration\06_langgraph-state-flow\04_debugging-with-langsmith
+
+실행 명령:
+    python .\02_planning-tracing-evaluation.py
+
+준비:
+    각 단원 README의 가상환경, .env, Docker 실행 안내를 먼저 확인하세요.
+"""
 """Planning, Tracing, Evaluation을 한 번에 이해하는 mock 예제입니다.
 
 LangSmith를 실제로 연결하기 전에, 에이전트 실행을 어떤 관점으로 기록하고
