@@ -2,7 +2,7 @@
 
 실행:
     cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\05_error-handling-and-testing
-    uvicorn 01_http-exception:app --reload
+    python .\01_http-exception.py
 
 확인:
     http://127.0.0.1:8000/items/1
@@ -17,7 +17,7 @@ from fastapi import FastAPI, HTTPException
 
 
 # FastAPI 앱 객체입니다.
-# `uvicorn 01_http-exception:app --reload`에서 마지막 `app`이 이 변수입니다.
+# 아래 __main__ 블록의 uvicorn.run(app, ...)에서 사용하는 app이 이 변수입니다.
 app = FastAPI(title="HTTPException Practice")
 
 
@@ -59,3 +59,11 @@ def buy_item(item_id: int):
         raise HTTPException(status_code=400, detail="Free item cannot be purchased")
 
     return {"message": "purchase ready", "data": item}
+
+if __name__ == "__main__":
+    # 파일명에 하이픈(-)이 들어 있으면 uvicorn 파일명:app 방식이 헷갈릴 수 있습니다.
+    # 그래서 이 예제는 `python .\01_http-exception.py` 명령으로 직접 실행합니다.
+    # 서버가 실행되면 브라우저에서 http://127.0.0.1:8000/docs 를 열어 Swagger UI를 확인합니다.
+    import uvicorn
+
+    uvicorn.run(app, host="127.0.0.1", port=8000)

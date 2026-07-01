@@ -23,7 +23,7 @@ Postman 설치가 어렵다면 이 단원에서는 Swagger UI(`/docs`)와 PowerS
 
 ```powershell
 cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\05_error-handling-and-testing
-uvicorn 01_http-exception:app --reload
+python .\01_http-exception.py
 ```
 
 ## GET 요청

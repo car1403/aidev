@@ -4,7 +4,7 @@
 
 실행:
     cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\03_pydantic-and-response
-    uvicorn 02_request-validation:app --reload
+    python .\02_request-validation.py
 
 잘못된 요청이 들어오면 FastAPI는 자동으로 422 응답을 반환합니다.
 이 예제에서는 필수값, 문자열 길이, 목록 길이를 검증합니다.
@@ -15,7 +15,7 @@ from pydantic import BaseModel, Field
 
 
 # FastAPI 앱 객체입니다.
-# `uvicorn 02_request-validation:app --reload`에서 마지막 `app`이 이 변수입니다.
+# 아래 __main__ 블록의 uvicorn.run(app, ...)에서 사용하는 app이 이 변수입니다.
 app = FastAPI(title="Request Validation Practice")
 
 
@@ -47,3 +47,11 @@ def create_memo(memo: MemoCreate):
         "content_length": len(memo.content),
         "tag_count": len(memo.tags),
     }
+
+if __name__ == "__main__":
+    # 파일명에 하이픈(-)이 들어 있으면 uvicorn 파일명:app 방식이 헷갈릴 수 있습니다.
+    # 그래서 이 예제는 `python .\02_request-validation.py` 명령으로 직접 실행합니다.
+    # 서버가 실행되면 브라우저에서 http://127.0.0.1:8000/docs 를 열어 Swagger UI를 확인합니다.
+    import uvicorn
+
+    uvicorn.run(app, host="127.0.0.1", port=8000)

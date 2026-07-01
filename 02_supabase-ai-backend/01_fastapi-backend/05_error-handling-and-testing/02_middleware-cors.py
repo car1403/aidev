@@ -2,7 +2,7 @@
 
 실행:
     cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\05_error-handling-and-testing
-    uvicorn 02_middleware-cors:app --reload
+    python .\02_middleware-cors.py
 
 확인:
     http://127.0.0.1:8000/health
@@ -37,7 +37,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 
 # FastAPI 앱 객체입니다.
-# `uvicorn 02_middleware-cors:app --reload`에서 마지막 `app`이 이 변수입니다.
+# 아래 __main__ 블록의 uvicorn.run(app, ...)에서 사용하는 app이 이 변수입니다.
 app = FastAPI(title="CORS Middleware Practice")
 
 
@@ -72,3 +72,11 @@ def health_check():
     """프론트엔드에서 백엔드 연결 상태를 확인할 때 사용할 수 있습니다."""
 
     return {"status": "ok", "cors": "enabled"}
+
+if __name__ == "__main__":
+    # 파일명에 하이픈(-)이 들어 있으면 uvicorn 파일명:app 방식이 헷갈릴 수 있습니다.
+    # 그래서 이 예제는 `python .\02_middleware-cors.py` 명령으로 직접 실행합니다.
+    # 서버가 실행되면 브라우저에서 http://127.0.0.1:8000/docs 를 열어 Swagger UI를 확인합니다.
+    import uvicorn
+
+    uvicorn.run(app, host="127.0.0.1", port=8000)

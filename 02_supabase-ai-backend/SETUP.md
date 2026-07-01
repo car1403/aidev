@@ -89,7 +89,7 @@ C:\aidev\02_supabase-ai-backend
 
 ## 2. Python 가상환경 만들기
 
-가상환경은 이 과정에서 사용할 Python 패키지를 따로 보관하는 공간입니다. 각 과정 폴더는 자기 폴더 안의 `.venv` 하나를 사용합니다.
+가상환경은 이 과정에서 사용할 Python 패키지를 따로 보관하는 공간입니다. 이 과정은 `C:\aidev\02_supabase-ai-backend` 폴더 안의 `.venv` 하나를 사용합니다.
 
 ```powershell
 C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv .venv
@@ -105,7 +105,7 @@ C:\Users\jeanm\AppData\Local\Programs\Python\Python312\python.exe -m venv .venv
 
 PowerShell 줄 앞에 `(.venv)`가 보이면 활성화된 상태입니다.
 
-VS Code에서 `C:\aidev\02_supabase-ai-backend` 폴더 자체를 열면 `.vscode/settings.json` 설정에 따라 새 터미널에서 `.venv`가 자동 활성화됩니다. `C:\aidev` 루트를 열어 수업을 진행할 때는 새 터미널을 연 뒤 아래 확인 명령으로 현재 Python 경로가 이 과정의 `.venv`를 가리키는지 먼저 확인합니다.
+수업에서는 VS Code로 `C:\aidev\02_supabase-ai-backend` 폴더를 직접 열어 진행합니다. 이 폴더를 열면 `.vscode/settings.json` 설정에 따라 새 터미널에서 `.venv`가 자동 활성화됩니다. 새 터미널을 열 때마다 아래 확인 명령으로 현재 Python 경로가 이 과정의 `.venv`를 가리키는지 확인합니다.
 
 확인 명령:
 

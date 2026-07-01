@@ -16,12 +16,12 @@ FastAPI 앱 만들기
 
 | 파일 | 역할 |
 | --- | --- |
-| `main.py` | 실제로 실행하는 FastAPI 앱 파일 |
-| `01_hello-fastapi.py` | 첫 FastAPI 코드 구조를 읽어보는 학습용 파일 |
+| `main.py` | 기본 프로젝트 실행 흐름을 확인하는 FastAPI 앱 파일 |
+| `01_hello-fastapi.py` | 첫 FastAPI 코드 구조를 읽고 독립 실행해 보는 학습용 파일 |
 | `02_project-structure.md` | FastAPI 프로젝트 폴더 구조 설명 |
 | `03_uvicorn-run.md` | `uvicorn` 실행 명령 설명 |
 
-`01_hello-fastapi.py`는 파일명에 하이픈(`-`)이 들어 있습니다. 이런 파일명은 `uvicorn 파일명:app` 방식으로 실행할 때 불편할 수 있습니다. 따라서 실제 실행은 `main.py` 기준으로 진행합니다.
+`01_hello-fastapi.py`처럼 파일명에 하이픈(`-`)이 들어 있으면 `uvicorn 파일명:app` 방식으로 실행할 때 불편할 수 있습니다. 이런 단일 예제 파일은 `python .\01_hello-fastapi.py`처럼 직접 실행하고, 기본 프로젝트 실행 흐름은 `main.py` 기준으로 확인합니다.
 
 ## 실행 전 준비
 

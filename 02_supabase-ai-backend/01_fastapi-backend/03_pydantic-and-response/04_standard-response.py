@@ -4,7 +4,7 @@
 
 실행:
     cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\03_pydantic-and-response
-    uvicorn 04_standard-response:app --reload
+    python .\04_standard-response.py
 
 API가 많아질수록 응답 모양이 제각각이면 프론트엔드에서 처리하기 어렵습니다.
 이 예제에서는 success, message, data 형태로 응답을 통일합니다.
@@ -17,7 +17,7 @@ from pydantic import BaseModel
 
 
 # FastAPI 앱 객체입니다.
-# `uvicorn 04_standard-response:app --reload`에서 마지막 `app`이 이 변수입니다.
+# 아래 __main__ 블록의 uvicorn.run(app, ...)에서 사용하는 app이 이 변수입니다.
 app = FastAPI(title="Standard Response Practice")
 
 
@@ -66,3 +66,11 @@ def empty_response():
         message="no data yet",
         data=None,
     )
+
+if __name__ == "__main__":
+    # 파일명에 하이픈(-)이 들어 있으면 uvicorn 파일명:app 방식이 헷갈릴 수 있습니다.
+    # 그래서 이 예제는 `python .\04_standard-response.py` 명령으로 직접 실행합니다.
+    # 서버가 실행되면 브라우저에서 http://127.0.0.1:8000/docs 를 열어 Swagger UI를 확인합니다.
+    import uvicorn
+
+    uvicorn.run(app, host="127.0.0.1", port=8000)

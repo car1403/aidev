@@ -4,7 +4,7 @@
 
 실행:
     cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\04_async-and-external-api
-    uvicorn 03_ai-api-call-placeholder:app --reload
+    python .\03_ai-api-call-placeholder.py
 
 이 파일은 실제 Gemini 또는 OpenAI API를 호출하지 않습니다.
 API key 없이도 LLM API 흐름을 먼저 이해하기 위한 placeholder 예제입니다.
@@ -21,7 +21,7 @@ from pydantic import BaseModel, Field
 
 
 # FastAPI 앱 객체입니다.
-# `uvicorn 03_ai-api-call-placeholder:app --reload`에서 마지막 `app`이 이 변수입니다.
+# 아래 __main__ 블록의 uvicorn.run(app, ...)에서 사용하는 app이 이 변수입니다.
 app = FastAPI(title="AI API Placeholder Practice")
 
 
@@ -62,3 +62,11 @@ async def chat(request: ChatRequest):
             "answer": answer,
         },
     }
+
+if __name__ == "__main__":
+    # 파일명에 하이픈(-)이 들어 있으면 uvicorn 파일명:app 방식이 헷갈릴 수 있습니다.
+    # 그래서 이 예제는 `python .\03_ai-api-call-placeholder.py` 명령으로 직접 실행합니다.
+    # 서버가 실행되면 브라우저에서 http://127.0.0.1:8000/docs 를 열어 Swagger UI를 확인합니다.
+    import uvicorn
+
+    uvicorn.run(app, host="127.0.0.1", port=8000)

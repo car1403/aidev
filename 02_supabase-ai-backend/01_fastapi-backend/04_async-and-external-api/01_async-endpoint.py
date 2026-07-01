@@ -4,7 +4,7 @@
 
 실행:
     cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\04_async-and-external-api
-    uvicorn 01_async-endpoint:app --reload
+    python .\01_async-endpoint.py
 
 async def는 오래 걸리는 I/O 작업을 기다리는 동안 서버가 다른 요청을 처리할 수 있게 해줍니다.
 DB 조회, 외부 API 호출, 파일 읽기 같은 작업과 함께 자주 사용합니다.
@@ -18,7 +18,7 @@ from fastapi import FastAPI
 
 
 # FastAPI 앱 객체입니다.
-# `uvicorn 01_async-endpoint:app --reload`에서 마지막 `app`이 이 변수입니다.
+# 아래 __main__ 블록의 uvicorn.run(app, ...)에서 사용하는 app이 이 변수입니다.
 app = FastAPI(title="Async Endpoint Practice")
 
 
@@ -62,3 +62,11 @@ async def parallel_tasks():
     )
 
     return {"data": results}
+
+if __name__ == "__main__":
+    # 파일명에 하이픈(-)이 들어 있으면 uvicorn 파일명:app 방식이 헷갈릴 수 있습니다.
+    # 그래서 이 예제는 `python .\01_async-endpoint.py` 명령으로 직접 실행합니다.
+    # 서버가 실행되면 브라우저에서 http://127.0.0.1:8000/docs 를 열어 Swagger UI를 확인합니다.
+    import uvicorn
+
+    uvicorn.run(app, host="127.0.0.1", port=8000)

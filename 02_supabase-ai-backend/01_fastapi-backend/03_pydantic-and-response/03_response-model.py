@@ -4,7 +4,7 @@
 
 실행:
     cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\03_pydantic-and-response
-    uvicorn 03_response-model:app --reload
+    python .\03_response-model.py
 
 response_model은 API 응답으로 내보낼 데이터의 모양을 제한합니다.
 내부 데이터에 internal_note 같은 값이 있어도 응답 모델에 없으면 밖으로 나가지 않습니다.
@@ -17,7 +17,7 @@ from pydantic import BaseModel
 
 
 # FastAPI 앱 객체입니다.
-# `uvicorn 03_response-model:app --reload`에서 마지막 `app`이 이 변수입니다.
+# 아래 __main__ 블록의 uvicorn.run(app, ...)에서 사용하는 app이 이 변수입니다.
 app = FastAPI(title="Response Model Practice")
 
 
@@ -57,3 +57,11 @@ def get_memo(memo_id: int):
 
     # 실제 dict에는 internal_note가 들어 있지만, response_model 때문에 밖으로 나가지 않습니다.
     return memos[memo_id]
+
+if __name__ == "__main__":
+    # 파일명에 하이픈(-)이 들어 있으면 uvicorn 파일명:app 방식이 헷갈릴 수 있습니다.
+    # 그래서 이 예제는 `python .\03_response-model.py` 명령으로 직접 실행합니다.
+    # 서버가 실행되면 브라우저에서 http://127.0.0.1:8000/docs 를 열어 Swagger UI를 확인합니다.
+    import uvicorn
+
+    uvicorn.run(app, host="127.0.0.1", port=8000)

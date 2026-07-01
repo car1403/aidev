@@ -4,7 +4,7 @@
 
 실행:
     cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\03_pydantic-and-response
-    uvicorn 01_pydantic-models:app --reload
+    python .\01_pydantic-models.py
 
 Pydantic 모델은 API가 주고받는 데이터의 모양을 정의합니다.
 FastAPI는 이 모델을 사용해서 요청 JSON을 검증하고 Swagger 문서도 만듭니다.
@@ -15,7 +15,7 @@ from pydantic import BaseModel, Field
 
 
 # FastAPI 앱 객체입니다.
-# `uvicorn 01_pydantic-models:app --reload`에서 마지막 `app`이 이 변수입니다.
+# 아래 __main__ 블록의 uvicorn.run(app, ...)에서 사용하는 app이 이 변수입니다.
 app = FastAPI(title="Pydantic Model Practice")
 
 
@@ -49,3 +49,11 @@ def create_memo(memo: MemoCreate):
         "message": "memo data is valid",
         "data": memo.model_dump(),
     }
+
+if __name__ == "__main__":
+    # 파일명에 하이픈(-)이 들어 있으면 uvicorn 파일명:app 방식이 헷갈릴 수 있습니다.
+    # 그래서 이 예제는 `python .\01_pydantic-models.py` 명령으로 직접 실행합니다.
+    # 서버가 실행되면 브라우저에서 http://127.0.0.1:8000/docs 를 열어 Swagger UI를 확인합니다.
+    import uvicorn
+
+    uvicorn.run(app, host="127.0.0.1", port=8000)
