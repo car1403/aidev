@@ -1,4 +1,16 @@
-﻿"""역할 기반 Agent 설계를 연습하는 예제입니다."""
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\01_multi-agent-collaboration\02_role-based-agent-design
+
+Run command:
+    python .\01_role-based-agent-design.py
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
+"""역할 기반 Agent 설계를 연습하는 예제입니다."""
 
 from dataclasses import dataclass
 from typing import Callable

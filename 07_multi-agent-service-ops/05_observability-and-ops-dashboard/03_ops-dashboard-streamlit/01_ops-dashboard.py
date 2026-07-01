@@ -1,4 +1,16 @@
-﻿"""Streamlit 기반 운영 대시보드 예제입니다."""
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\05_observability-and-ops-dashboard\03_ops-dashboard-streamlit
+
+Run command:
+    streamlit run .\01_ops-dashboard.py
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
+"""Streamlit 기반 운영 대시보드 예제입니다."""
 
 from datetime import datetime
 

@@ -1,4 +1,16 @@
-﻿"""AI 서비스 운영 이벤트를 구조화해서 기록하는 예제입니다."""
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\05_observability-and-ops-dashboard\01_logging-and-event-history
+
+Run command:
+    python .\01_event-history-logger.py
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
+"""AI 서비스 운영 이벤트를 구조화해서 기록하는 예제입니다."""
 
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone

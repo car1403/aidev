@@ -1,4 +1,16 @@
-﻿"""단일 Agent와 Multi-Agent 구조를 비교하는 예제입니다."""
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\01_multi-agent-collaboration\01_single-vs-multi-agent
+
+Run command:
+    python .\01_single-agent-vs-multi-agent.py
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
+"""단일 Agent와 Multi-Agent 구조를 비교하는 예제입니다."""
 
 from dataclasses import dataclass
 

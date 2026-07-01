@@ -1,4 +1,16 @@
-﻿"""복구 조치 결과를 검증하고 최종 상태를 판정하는 예제입니다."""
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\04_auto-healing-workflow\04_recovery-result-validation
+
+Run command:
+    python .\01_recovery-result-validation.py
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
+"""복구 조치 결과를 검증하고 최종 상태를 판정하는 예제입니다."""
 
 from dataclasses import dataclass
 from typing import Literal

@@ -1,4 +1,16 @@
-﻿"""Auto Healing 파이프라인을 순서대로 실행하는 예제입니다."""
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\04_auto-healing-workflow\03_recovery-pipeline
+
+Run command:
+    python .\01_auto-healing-pipeline.py
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
+"""Auto Healing 파이프라인을 순서대로 실행하는 예제입니다."""
 
 from dataclasses import dataclass, field
 from typing import Literal

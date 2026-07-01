@@ -1,4 +1,16 @@
-﻿"""Prompt Injection 의심 입력을 탐지하고 차단하는 기본 예제입니다."""
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\03_ai-security-and-guardrails\01_prompt-injection-defense
+
+Run command:
+    python .\01_prompt-injection-filter.py
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
+"""Prompt Injection 의심 입력을 탐지하고 차단하는 기본 예제입니다."""
 
 from dataclasses import dataclass
 

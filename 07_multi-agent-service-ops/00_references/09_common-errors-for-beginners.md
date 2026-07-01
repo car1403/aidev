@@ -105,7 +105,7 @@ docker build --no-cache -t aidev-agent-backend:local .
 
 ## AWS 비용 걱정
 
-AWS 실습은 선택입니다. 실제 배포를 했다면 실습 후 리소스를 정리합니다.
+AWS 배포 실습은 필수입니다. 배포를 완료한 뒤에는 App Runner, ECR, CloudWatch 리소스를 정리하고 Billing Dashboard에서 비용을 확인합니다.
 
 확인할 리소스:
 

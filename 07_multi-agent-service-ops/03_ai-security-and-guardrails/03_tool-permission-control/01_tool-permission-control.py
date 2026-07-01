@@ -1,4 +1,16 @@
-﻿"""Agent 역할별 Tool 실행 권한을 제어하는 예제입니다."""
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\03_ai-security-and-guardrails\03_tool-permission-control
+
+Run command:
+    python .\01_tool-permission-control.py
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
+"""Agent 역할별 Tool 실행 권한을 제어하는 예제입니다."""
 
 from dataclasses import dataclass
 from typing import Callable

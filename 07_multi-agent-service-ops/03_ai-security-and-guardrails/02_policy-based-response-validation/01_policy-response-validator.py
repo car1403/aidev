@@ -1,4 +1,16 @@
-﻿"""Agent 응답이 운영 정책을 위반하는지 검사하는 예제입니다."""
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\03_ai-security-and-guardrails\02_policy-based-response-validation
+
+Run command:
+    python .\01_policy-response-validator.py
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
+"""Agent 응답이 운영 정책을 위반하는지 검사하는 예제입니다."""
 
 from dataclasses import dataclass
 from typing import Literal

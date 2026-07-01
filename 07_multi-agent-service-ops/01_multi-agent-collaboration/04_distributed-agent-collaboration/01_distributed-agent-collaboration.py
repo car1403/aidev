@@ -1,4 +1,16 @@
-﻿"""분산 Multi-Agent 협업 구조를 단순화해서 보여주는 예제입니다."""
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\01_multi-agent-collaboration\04_distributed-agent-collaboration
+
+Run command:
+    python .\01_distributed-agent-collaboration.py
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
+"""분산 Multi-Agent 협업 구조를 단순화해서 보여주는 예제입니다."""
 
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass

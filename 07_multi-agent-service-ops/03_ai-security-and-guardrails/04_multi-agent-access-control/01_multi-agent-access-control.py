@@ -1,4 +1,16 @@
-﻿"""Multi-Agent 환경에서 Agent별 데이터 접근 권한을 검사하는 예제입니다."""
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\03_ai-security-and-guardrails\04_multi-agent-access-control
+
+Run command:
+    python .\01_multi-agent-access-control.py
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
+"""Multi-Agent 환경에서 Agent별 데이터 접근 권한을 검사하는 예제입니다."""
 
 from dataclasses import dataclass
 

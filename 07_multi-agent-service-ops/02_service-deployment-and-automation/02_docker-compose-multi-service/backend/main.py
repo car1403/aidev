@@ -1,4 +1,16 @@
-﻿"""Docker Compose에서 실행할 backend API 서비스입니다."""
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\02_service-deployment-and-automation\02_docker-compose-multi-service\backend
+
+Run command:
+    uvicorn main:app --reload
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
+"""Docker Compose에서 실행할 backend API 서비스입니다."""
 
 from fastapi import FastAPI
 

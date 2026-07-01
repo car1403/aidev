@@ -1,4 +1,16 @@
-﻿"""Agent 실행 상태를 관리하는 예제입니다."""
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\05_observability-and-ops-dashboard\04_execution-status-management
+
+Run command:
+    python .\01_execution-status-manager.py
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
+"""Agent 실행 상태를 관리하는 예제입니다."""
 
 from dataclasses import dataclass, field
 from datetime import datetime

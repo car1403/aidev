@@ -1,30 +1,32 @@
 # 07_multi-agent-service-ops
 
-`07_multi-agent-service-ops`는 05~06에서 만든 Agent 코드를 서비스처럼 실행하고 운영하는 방법을 배우는 과정입니다. Docker Compose, Health Check, GitHub Actions, AWS 배포 설계, 보안 가드레일, 관측성(Observability), Auto Healing 흐름을 단계적으로 다룹니다.
+`07_multi-agent-service-ops`는 05~06 과정에서 만든 Agent 코드를 실제 서비스처럼 실행하고 운영하는 방법을 배우는 과정입니다.
 
-## 핵심 기준
+이 과정의 핵심은 하나의 작은 **Auto Healing Agent Service**를 기준으로 다음 흐름을 끝까지 연결하는 것입니다.
 
-- Docker Compose는 이 과정의 핵심 실행 도구입니다.
-- AWS 실제 배포는 비용이 발생할 수 있으므로 선택 실습입니다.
-- GitHub Actions는 자동 배포보다 먼저 문법 검사, compose 검증, 이미지 빌드 검증에 초점을 둡니다.
-- LangSmith 같은 외부 관측 도구는 선택 확장으로 두고, 기본은 로컬 로그와 Mock trace로 이해합니다.
+```text
+Multi-Agent 협업 설계
+-> Docker image 패키징
+-> Docker Compose 로컬 운영
+-> GitHub Actions 자동 검증
+-> AWS ECR/App Runner 배포
+-> CloudWatch Logs 확인
+-> 보안/가드레일 적용
+-> Auto Healing 장애 대응
+-> 운영 대시보드와 실행 이력 관리
+-> AWS 리소스 삭제와 비용 점검
+```
 
-## 수강생 진행 기준
+## 과정 목표
 
-- 필수: 역할 기반 Multi-Agent 설계, Docker Compose 구성, Health Check, 재시도/복구 흐름, 로그와 운영 대시보드 구조를 실습합니다.
-- 선택: AWS 실제 배포, LangSmith 외부 관측 도구, 고급 보안 자동화는 비용과 진도에 따라 다룹니다.
-- 다음 과정으로 넘어가기 전: 여러 서비스가 Compose로 함께 실행되는 구조와 장애 발생 시 감지, 복구, 검증 흐름을 설명할 수 있어야 합니다.
-
-## 막혔을 때 바로 보기
-
-| 막히는 지점 | 확인 문서 |
+| 영역 | 목표 |
 | --- | --- |
-| Docker Compose 실행, 포트 충돌, `.env` 위치 | [Docker 오류 해결](../00_course-guide/02_learning-guide/troubleshooting.md), [SETUP.md](./SETUP.md) |
-| `docker compose config` 또는 `up` 실패 | [Docker Compose multi service](./02_service-deployment-and-automation/02_docker-compose-multi-service/README.md), [compose up lab](./02_service-deployment-and-automation/10_labs/lab-02_docker-compose-up.md) |
-| GitHub Actions가 실패함 | [GitHub Actions Docker build](./02_service-deployment-and-automation/10_labs/lab-04_github-actions-docker-build.md), [SETUP.md](./SETUP.md) |
-| AWS 선택 실습의 비용 리스크 | [AWS deployment checklist](./02_service-deployment-and-automation/10_labs/lab-05_aws-deployment-checklist.md), [optional AWS deployment](./02_service-deployment-and-automation/10_labs/lab-06_aws-apprunner-ecs-optional-deployment.md) |
+| 멀티 에이전트 협업 설계 | 역할 기반 Agent 분리, Supervisor/Router, Handoff, Context 전달, Feedback Loop를 설계합니다. |
+| 서비스 배포 및 자동화 운영 | Docker, Docker Compose, GitHub Actions, AWS ECR/App Runner, CloudWatch를 사용해 서비스를 배포하고 확인합니다. |
+| AI 보안 및 가드레일 설계 | Prompt Injection, 정책 기반 응답 검증, Tool 권한 제어, Agent 접근 제어를 적용합니다. |
+| 단위 프로젝트 | 에러 자가 치유(Auto Healing) 워크플로우를 구현하고 운영 결과를 검증합니다. |
 
-## 과정 구조
+## 전체 구조
 
 ```text
 07_multi-agent-service-ops
@@ -38,29 +40,68 @@
 ├─ 03_ai-security-and-guardrails
 ├─ 04_auto-healing-workflow
 ├─ 05_observability-and-ops-dashboard
-└─ 99_mini-project
+├─ 90_ai-assisted-service-ops-review-and-debugging
+└─ 99_final-service-ops-project
 ```
 
-## 권장 진행 순서
+## 폴더 역할
 
-1. [SETUP.md](./SETUP.md)를 보고 Python `.venv`, Docker Desktop, Docker Compose를 확인합니다.
-2. [00_references](./00_references/README.md)에서 운영형 Agent 서비스의 큰 그림을 확인합니다.
-3. [01_multi-agent-collaboration](./01_multi-agent-collaboration/README.md)에서 역할 기반 Agent 협업을 설계합니다.
-4. [02_service-deployment-and-automation](./02_service-deployment-and-automation/README.md)에서 Docker와 GitHub Actions 흐름을 익힙니다.
-5. [03_ai-security-and-guardrails](./03_ai-security-and-guardrails/README.md)에서 정책, 권한, 안전 장치를 정리합니다.
-6. [04_auto-healing-workflow](./04_auto-healing-workflow/README.md)에서 장애 감지와 복구 전략을 설계합니다.
-7. [05_observability-and-ops-dashboard](./05_observability-and-ops-dashboard/README.md)에서 로그, trace, 운영 대시보드 흐름을 확인합니다.
-8. [99_mini-project](./99_mini-project/README.md)에서 운영형 미니 프로젝트로 정리합니다.
+| 폴더 | 역할 |
+| --- | --- |
+| `00_references` | 전체 운영 흐름, AWS 배포, 비용/삭제, 보안/관측성 기준을 정리합니다. |
+| `01_multi-agent-collaboration` | Supervisor, Ops Agent, Security Agent, Recovery Agent 같은 역할 기반 협업 구조를 학습합니다. |
+| `02_service-deployment-and-automation` | 간단한 FastAPI 서비스를 Docker, Compose, GitHub Actions, AWS로 전개합니다. |
+| `03_ai-security-and-guardrails` | Prompt Injection 방어, 정책 검증, Tool 권한, Agent 접근 제어를 다룹니다. |
+| `04_auto-healing-workflow` | 장애 감지, retry, restart, fallback, 복구 결과 검증 흐름을 학습합니다. |
+| `05_observability-and-ops-dashboard` | 로컬 로그, Mock trace, CloudWatch Logs, 운영 대시보드 흐름을 연결합니다. |
+| `90_ai-assisted-service-ops-review-and-debugging` | Docker, GitHub Actions, AWS, 보안, Auto Healing 오류를 AI와 함께 점검하는 가이드입니다. |
+| `99_final-service-ops-project` | Auto Healing Agent Service 최종 프로젝트입니다. |
 
-## 빠른 실행
+## 필수 실습 기준
 
-```powershell
-cd C:\aidev\07_multi-agent-service-ops
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-Copy-Item .env.example .env
-```
+07 과정에서 AWS 배포는 필수 실습입니다. 비용이 발생할 수 있으므로 예산 알림 설정, 실습 후 리소스 삭제, 비용 확인까지 필수 절차에 포함합니다.
 
-VS Code에서 `C:\aidev\07_multi-agent-service-ops` 폴더 자체를 열면 `.vscode/settings.json` 설정에 따라 새 터미널에서 `.venv`가 자동 활성화됩니다.
+필수로 확인해야 하는 항목:
+
+- Docker image build/run
+- Docker Compose 기반 backend/frontend/worker/monitor 실행
+- GitHub Actions에서 Python 문법 검사, Compose config 검증, Docker build 검증
+- AWS ECR repository 생성, image push
+- AWS App Runner 배포
+- 배포 URL의 `/health` 확인
+- CloudWatch Logs 확인
+- Prompt Injection, Tool 권한, Agent 접근 제어 기준 설명
+- Auto Healing 장애 감지와 복구 흐름 검증
+- AWS 리소스 삭제와 비용 점검
+
+## 비용과 보안 주의
+
+- OpenAI API, AWS 리소스는 비용이 발생할 수 있습니다.
+- AWS Budget 또는 비용 알림을 설정합니다.
+- AWS Access Key, OpenAI API Key, `.env` 파일은 GitHub에 올리지 않습니다.
+- 실습 후 App Runner service, ECR image/repository, CloudWatch Log Group 등 사용한 리소스를 정리합니다.
+- GitHub Actions에서 AWS에 연결할 때는 장기 Access Key보다 OIDC 기반 인증을 권장합니다. 수업에서는 먼저 Secret 기반 흐름을 이해하고, 운영 기준으로 OIDC를 설명합니다.
+
+## 완료 기준
+
+이 과정을 마치기 전에는 다음을 설명하거나 시연할 수 있어야 합니다.
+
+1. Multi-Agent 역할 분리와 협업 흐름
+2. Docker Compose로 여러 서비스를 함께 실행하는 방법
+3. GitHub Actions 자동 검증 결과 확인
+4. AWS ECR/App Runner 배포 흐름
+5. CloudWatch Logs에서 실행 로그를 찾는 방법
+6. Prompt Injection과 Tool 권한 제어 기준
+7. Health Check, Retry, Restart, Fallback 기반 Auto Healing 흐름
+8. AWS 리소스 삭제와 비용 확인 방법
+
+## 진행 순서
+
+1. [SETUP.md](./SETUP.md)를 보고 Python, Docker, GitHub, AWS 환경을 준비합니다.
+2. [00_references](./00_references/README.md)에서 전체 서비스 운영 흐름을 확인합니다.
+3. [01_multi-agent-collaboration](./01_multi-agent-collaboration/README.md)에서 역할 기반 Agent 협업 구조를 설계합니다.
+4. [02_service-deployment-and-automation](./02_service-deployment-and-automation/README.md)에서 Docker, GitHub Actions, AWS 배포를 실습합니다.
+5. [03_ai-security-and-guardrails](./03_ai-security-and-guardrails/README.md)에서 보안과 권한 제어를 적용합니다.
+6. [04_auto-healing-workflow](./04_auto-healing-workflow/README.md)에서 장애 대응 흐름을 구현합니다.
+7. [05_observability-and-ops-dashboard](./05_observability-and-ops-dashboard/README.md)에서 로그와 운영 대시보드를 확인합니다.
+8. [99_final-service-ops-project](./99_final-service-ops-project/README.md)에서 최종 프로젝트를 완성합니다.

@@ -1,4 +1,16 @@
-﻿"""Docker Compose frontend Streamlit 화면입니다."""
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\02_service-deployment-and-automation\02_docker-compose-multi-service\frontend
+
+Run command:
+    streamlit run .\app.py
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
+"""Docker Compose frontend Streamlit 화면입니다."""
 
 import httpx
 import streamlit as st

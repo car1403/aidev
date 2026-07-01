@@ -1,4 +1,16 @@
-﻿"""서비스 장애 메시지를 장애 유형으로 분류하는 예제입니다."""
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\04_auto-healing-workflow\01_failure-scenarios
+
+Run command:
+    python .\01_failure-scenario-classifier.py
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
+"""서비스 장애 메시지를 장애 유형으로 분류하는 예제입니다."""
 
 from dataclasses import dataclass
 from typing import Literal

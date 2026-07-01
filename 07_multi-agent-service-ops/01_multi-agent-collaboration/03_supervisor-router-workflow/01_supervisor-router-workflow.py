@@ -1,4 +1,16 @@
-﻿"""Supervisor/Router가 Agent 작업을 분배하는 예제입니다."""
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\01_multi-agent-collaboration\03_supervisor-router-workflow
+
+Run command:
+    python .\01_supervisor-router-workflow.py
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
+"""Supervisor/Router가 Agent 작업을 분배하는 예제입니다."""
 
 from typing import Literal, TypedDict
 

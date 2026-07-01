@@ -1,3 +1,15 @@
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\05_observability-and-ops-dashboard\02_tracing-and-monitoring
+
+Run command:
+    python .\02_langsmith_trace_mapping.py
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
 """LangSmith식 실행 추적 데이터 구조를 이해하기 위한 Mock 예제입니다.
 
 실제 LangSmith API를 호출하지 않고, 수업에서 trace/run/span 개념을

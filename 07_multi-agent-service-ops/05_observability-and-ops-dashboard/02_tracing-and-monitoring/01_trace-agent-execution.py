@@ -1,4 +1,16 @@
-﻿"""Agent 실행 흐름을 Trace로 기록하는 예제입니다."""
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\05_observability-and-ops-dashboard\02_tracing-and-monitoring
+
+Run command:
+    python .\01_trace-agent-execution.py
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
+"""Agent 실행 흐름을 Trace로 기록하는 예제입니다."""
 
 from dataclasses import dataclass, field
 from time import perf_counter, sleep

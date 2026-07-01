@@ -1,4 +1,16 @@
-﻿"""Docker 이미지로 패키징할 최소 FastAPI 서비스입니다."""
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\02_service-deployment-and-automation\01_docker-service-packaging\app
+
+Run command:
+    uvicorn app.main:app --reload
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
+"""Docker 이미지로 패키징할 최소 FastAPI 서비스입니다."""
 
 from fastapi import FastAPI
 

@@ -1,3 +1,15 @@
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\01_multi-agent-collaboration\06_feedback-loop-result-review
+
+Run command:
+    python .\01_feedback_loop_result_review.py
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
 """Agent 결과 검증과 Feedback Loop를 구현하는 예제입니다."""
 
 from dataclasses import dataclass, field

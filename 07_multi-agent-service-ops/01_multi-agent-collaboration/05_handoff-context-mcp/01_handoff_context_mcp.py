@@ -1,3 +1,15 @@
+r"""RUN GUIDE
+
+Run from:
+    C:\aidev\07_multi-agent-service-ops\01_multi-agent-collaboration\05_handoff-context-mcp
+
+Run command:
+    python .\01_handoff_context_mcp.py
+
+Purpose:
+    Small example file for the 07 service-ops course.
+"""
+
 """Agent 간 Handoff, Context 공유, MCP식 Tool 연결 구조 예제입니다."""
 
 from dataclasses import dataclass, field
