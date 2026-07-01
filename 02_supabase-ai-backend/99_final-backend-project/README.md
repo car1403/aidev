@@ -121,8 +121,8 @@ solution
    └─ main.py
 ```
 
-## 평가 기준
+## 최종 프로젝트 체크리스트
 
-자세한 기준은 [rubric/evaluation-rubric.md](./rubric/evaluation-rubric.md)를 참고합니다.
+제출 전에는 [checklist/final-project-checklist.md](./checklist/final-project-checklist.md)를 보면서 전체 프로젝트가 실행, API 설계, DB 연결, 보안, 문서화 기준을 충족하는지 확인합니다.
 
 핵심은 기능을 많이 넣는 것이 아니라, 작은 백엔드 서비스를 끝까지 설명하고 실행할 수 있는 것입니다.
