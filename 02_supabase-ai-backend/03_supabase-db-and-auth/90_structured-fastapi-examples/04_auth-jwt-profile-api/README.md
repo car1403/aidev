@@ -22,6 +22,15 @@ SUPABASE_ANON_KEY=...
 SUPABASE_SERVICE_ROLE_KEY=...
 ```
 
+이 예제는 `SUPABASE_ANON_KEY`와 `SUPABASE_SERVICE_ROLE_KEY`를 모두 사용합니다.
+
+| key | 이 예제에서의 역할 |
+|---|---|
+| `SUPABASE_ANON_KEY` | 로그인한 사용자의 JWT/RLS 흐름으로 profile 조회/수정을 확인할 때 사용합니다. |
+| `SUPABASE_SERVICE_ROLE_KEY` | 서버 측 Supabase client 생성과 Auth 처리에 사용합니다. |
+
+`SUPABASE_SERVICE_ROLE_KEY`는 RLS를 우회할 수 있는 서버 전용 관리자 key입니다. GitHub, README, 제출 문서, 화면 캡처에 노출하지 않습니다.
+
 ## 3. 서버 실행
 
 ```powershell
@@ -54,3 +63,24 @@ auth.uid() = id
 ```
 
 이 조건은 “현재 로그인한 사용자의 id와 profile 행의 id가 같을 때만 허용한다”는 뜻입니다.
+
+## pytest 기본 테스트
+
+```powershell
+python -m pytest tests
+```
+
+기본 테스트는 `tests/test_app_routes.py`만 실행합니다. 실제 Supabase Auth와 RLS 테이블을 호출하지 않고 `/auth/signup`, `/auth/signin`, `/me`, `/profile` 흐름을 검증하는 테스트는 Codex와 함께 만들어 보는 선택 실습으로 둡니다.
+
+참고 예시는 아래 파일에 있습니다.
+
+```text
+tests/reference_api_flow_example.py
+```
+
+이 파일 상단에는 Codex에게 보낼 수 있는 프롬프트 예시가 들어 있습니다. 실제로 실행하고 싶다면 아래처럼 복사합니다.
+
+```powershell
+Copy-Item .\tests\reference_api_flow_example.py .\tests\test_api_flow.py
+python -m pytest tests
+```

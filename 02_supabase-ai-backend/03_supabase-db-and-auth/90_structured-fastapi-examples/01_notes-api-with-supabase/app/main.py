@@ -10,5 +10,10 @@ from fastapi import FastAPI
 from app.routers.notes_router import router as notes_router
 
 
+# app은 FastAPI 애플리케이션의 시작 객체입니다.
+# uvicorn app.main:app 명령에서 마지막 app이 바로 이 변수입니다.
 app = FastAPI(title="Example 01 - Notes API With Supabase")
+
+# router를 분리하면 main.py는 앱 조립만 담당하고,
+# 실제 endpoint 코드는 app/routers/notes_router.py에서 관리할 수 있습니다.
 app.include_router(notes_router)

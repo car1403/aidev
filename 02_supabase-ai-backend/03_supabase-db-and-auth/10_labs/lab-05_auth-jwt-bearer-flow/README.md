@@ -16,7 +16,7 @@
 ```powershell
 cd C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\04_supabase-auth-and-rls
 ..\..\.venv\Scripts\Activate.ps1
-uvicorn 01_fastapi_supabase_auth:app --reload --host 127.0.0.1 --port 8002
+python -m uvicorn 01_fastapi_supabase_auth:app --reload --host 127.0.0.1 --port 8002
 ```
 
 Swagger UI:

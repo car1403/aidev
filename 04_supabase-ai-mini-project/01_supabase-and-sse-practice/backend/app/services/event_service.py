@@ -1,7 +1,7 @@
 import asyncio
 import json
 
-from app.core.config import REDIS_CHANNEL, REDIS_URL
+from app.core.config import REDIS_CHANNEL, REDIS_URL, is_redis_configured
 from app.services.memory_store import (
     publish_memory_event,
     subscribe_memory,
@@ -10,7 +10,9 @@ from app.services.memory_store import (
 
 
 async def publish_log_event(item: dict) -> None:
-    if REDIS_URL:
+    # Redis가 실제 값으로 설정되어 있으면 Redis pub/sub으로 이벤트를 보냅니다.
+    # 설정이 없으면 수업용 memory queue로 fallback합니다.
+    if is_redis_configured():
         try:
             import redis.asyncio as redis
 
@@ -54,7 +56,7 @@ async def memory_event_stream():
 
 
 async def event_stream():
-    if REDIS_URL:
+    if is_redis_configured():
         try:
             async for item in redis_event_stream():
                 yield item

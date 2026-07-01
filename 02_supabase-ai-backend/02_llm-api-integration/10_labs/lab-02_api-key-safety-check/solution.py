@@ -33,16 +33,14 @@ def load_env_file(path: Path) -> None:
 
 
 def is_real_api_key(value: str | None) -> bool:
-    """값이 비어 있거나 placeholder이면 실제 key로 보지 않습니다."""
-    if value is None:
+    """API key가 비어 있지 않고 예시 값도 아닌지 확인합니다."""
+
+    key = (value or "").strip()
+
+    if not key:
         return False
 
-    cleaned = value.strip()
-    if not cleaned:
-        return False
-
-    placeholder_prefixes = ("your-", "YOUR-", "sk-your", "AIza-your")
-    return not cleaned.startswith(placeholder_prefixes)
+    return not key.startswith(("your-", "your_", "sk-your", "AIza-your"))
 
 
 def mask_secret(value: str | None) -> str:

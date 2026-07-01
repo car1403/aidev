@@ -20,11 +20,18 @@ def now_text() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
-def get_supabase_client() -> Any | None:
-    url = os.getenv("SUPABASE_URL")
-    key = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
+def is_real_value(value: str | None) -> bool:
+    """환경변수가 비어 있지 않고 `.env.example`의 예시 값도 아닌지 확인합니다."""
 
-    if not url or not key or create_client is None:
+    cleaned = (value or "").strip()
+    return bool(cleaned) and not cleaned.startswith(("your-", "https://your-"))
+
+
+def get_supabase_client() -> Any | None:
+    url = os.getenv("SUPABASE_URL", "").strip().rstrip("/")
+    key = os.getenv("SUPABASE_SERVICE_ROLE_KEY", "").strip()
+
+    if not is_real_value(url) or not is_real_value(key) or create_client is None:
         return None
 
     return create_client(url, key)

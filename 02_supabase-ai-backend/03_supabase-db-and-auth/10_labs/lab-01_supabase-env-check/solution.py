@@ -12,14 +12,10 @@ import os
 from dotenv import load_dotenv
 
 
-PLACEHOLDER_WORDS = ("your-", "example", "localhost")
-
-
 def is_placeholder(value: str) -> bool:
-    """예시 placeholder 값인지 확인합니다."""
+    """환경변수 값이 .env.example에 있는 예시 값인지 확인합니다."""
 
-    lowered = value.lower()
-    return any(word in lowered for word in PLACEHOLDER_WORDS)
+    return value.strip().startswith(("your-", "https://your-"))
 
 
 def mask_secret(value: str) -> str:

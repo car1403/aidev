@@ -36,27 +36,13 @@ load_dotenv(ENV_PATH)
 app = FastAPI(title="FastAPI Upstash Redis Cache Practice")
 
 
-def is_placeholder(value: str | None) -> bool:
-    """실제 값이 아니라 예시 값인지 확인합니다."""
-
-    if value is None:
-        return False
-
-    return value.strip().startswith(("your-", "https://your-"))
-
-
 def get_upstash_env() -> tuple[str, str]:
-    """Upstash Redis REST URL과 token을 가져옵니다."""
+    """Upstash Redis REST URL과 token을 읽고, 비어 있거나 예시 값이면 오류를 냅니다."""
 
     rest_url = os.getenv("UPSTASH_REDIS_REST_URL", "").strip().rstrip("/")
     rest_token = os.getenv("UPSTASH_REDIS_REST_TOKEN", "").strip()
 
-    if (
-        not rest_url
-        or not rest_token
-        or is_placeholder(rest_url)
-        or is_placeholder(rest_token)
-    ):
+    if not rest_url or not rest_token:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=(
@@ -66,7 +52,20 @@ def get_upstash_env() -> tuple[str, str]:
             ),
         )
 
+    if rest_url.startswith(("your-", "https://your-")) or rest_token.startswith(("your-", "https://your-")):
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Upstash Redis 환경변수에 예시 값이 들어 있습니다. Upstash Console에서 실제 값을 복사해 넣어 주세요.",
+        )
+
     return rest_url, rest_token
+
+
+def is_configured_value(value: str | None) -> bool:
+    """health check에서 환경변수가 실제 값으로 설정되었는지 True/False로 확인합니다."""
+
+    cleaned = (value or "").strip()
+    return bool(cleaned) and not cleaned.startswith(("your-", "https://your-"))
 
 
 def redis_command(*parts: str) -> dict:
@@ -114,8 +113,8 @@ def health() -> dict[str, str | bool]:
     return {
         "status": "ok",
         "redis": "upstash",
-        "redis_url_configured": bool(rest_url and not is_placeholder(rest_url)),
-        "redis_token_configured": bool(rest_token and not is_placeholder(rest_token)),
+        "redis_url_configured": is_configured_value(rest_url),
+        "redis_token_configured": is_configured_value(rest_token),
     }
 
 

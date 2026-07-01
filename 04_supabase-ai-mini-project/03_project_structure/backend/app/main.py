@@ -12,7 +12,7 @@ r"""03_project_structure backend starter.
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.core.config import APP_NAME, CORS_ALLOW_ORIGINS, REDIS_URL, SUPABASE_URL
+from app.core.config import APP_NAME, CORS_ALLOW_ORIGINS, is_redis_configured, is_supabase_configured
 
 
 app = FastAPI(title=APP_NAME)
@@ -36,7 +36,7 @@ app.add_middleware(
 def health() -> dict:
     return {
         "status": "ok",
-        "supabase_configured": bool(SUPABASE_URL),
-        "redis_configured": bool(REDIS_URL),
+        "supabase_configured": is_supabase_configured(),
+        "redis_configured": is_redis_configured(),
         "message": "04 mini project starter backend is running",
     }

@@ -63,36 +63,22 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 ENV_PATH = PROJECT_ROOT / ".env"
 
 
-def is_placeholder(value: str | None) -> bool:
-    """환경 변수 값이 예시 값인지 확인합니다.
+def get_required_env(name: str) -> str:
+    """필수 환경 변수를 읽고, 비어 있거나 예시 값이면 오류를 냅니다.
 
     `.env.example`에는 `your-supabase-service-role-key` 같은 안내용 값이 들어 있습니다.
     이런 값으로는 실제 Supabase에 연결할 수 없으므로 미리 걸러 냅니다.
     """
 
-    if value is None:
-        return False
+    value = os.getenv(name, "").strip()
 
-    cleaned = value.strip().lower()
-    return cleaned.startswith(("your-", "https://your-")) or "example" in cleaned
-
-
-def get_required_env(name: str) -> str:
-    """필수 환경 변수를 읽습니다.
-
-    값이 없거나 예시 값이면 Supabase 요청을 보내기 전에 오류를 발생시킵니다.
-    이렇게 하면 "왜 연결이 안 되지?"를 더 빨리 찾을 수 있습니다.
-    """
-
-    value = os.getenv(name)
-    if value is None or not value.strip():
+    if not value:
         raise RuntimeError(f"{name} 값이 없습니다. C:/aidev/02_supabase-ai-backend/.env 파일을 확인하세요.")
 
-    cleaned = value.strip()
-    if is_placeholder(cleaned):
+    if value.startswith(("your-", "https://your-")):
         raise RuntimeError(f"{name} 값이 예시 값입니다. Supabase Dashboard에서 실제 값을 복사해 넣어 주세요.")
 
-    return cleaned
+    return value
 
 
 def get_supabase() -> Client:

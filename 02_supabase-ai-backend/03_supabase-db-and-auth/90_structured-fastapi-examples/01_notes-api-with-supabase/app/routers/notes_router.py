@@ -7,6 +7,8 @@ from app.schemas.note_schema import NoteCreate, NotePublic, NoteUpdate
 from app.services import notes_service
 
 
+# APIRouter는 관련 endpoint를 한 파일에 묶는 도구입니다.
+# main.py에서 app.include_router(router)를 호출하면 이 파일의 API들이 앱에 등록됩니다.
 router = APIRouter()
 
 
@@ -21,6 +23,8 @@ def health() -> dict[str, str | bool]:
 def list_notes() -> dict[str, int | list[NotePublic]]:
     """노트 목록을 조회합니다."""
 
+    # router는 HTTP 요청/응답 모양만 다루고,
+    # 실제 Supabase 조회는 service 계층에 맡깁니다.
     notes = notes_service.list_notes()
     return {"count": len(notes), "data": notes}
 
@@ -29,6 +33,8 @@ def list_notes() -> dict[str, int | list[NotePublic]]:
 def create_note(note: NoteCreate) -> NotePublic:
     """새 노트를 저장합니다."""
 
+    # note는 Pydantic이 검증한 요청 Body입니다.
+    # title/content가 비어 있으면 이 함수에 오기 전에 FastAPI가 422를 반환합니다.
     return notes_service.create_note(note)
 
 
@@ -38,6 +44,7 @@ def get_note(note_id: str) -> NotePublic:
 
     note = notes_service.get_note(note_id)
     if note is None:
+        # service가 None을 반환했다는 것은 해당 id의 행이 없다는 뜻입니다.
         raise HTTPException(status_code=404, detail="Note not found")
     return note
 
@@ -48,6 +55,7 @@ def update_note(note_id: str, note: NoteUpdate) -> NotePublic:
 
     updated = notes_service.update_note(note_id, note)
     if updated is None:
+        # 수정할 대상이 없을 때도 HTTP 의미에 맞게 404를 반환합니다.
         raise HTTPException(status_code=404, detail="Note not found")
     return updated
 
@@ -58,5 +66,6 @@ def delete_note(note_id: str) -> dict[str, str]:
 
     deleted = notes_service.delete_note(note_id)
     if not deleted:
+        # delete 결과가 비어 있으면 삭제된 행이 없다는 뜻입니다.
         raise HTTPException(status_code=404, detail="Note not found")
     return {"message": "deleted"}

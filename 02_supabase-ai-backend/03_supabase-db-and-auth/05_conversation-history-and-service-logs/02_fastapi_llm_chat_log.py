@@ -109,28 +109,18 @@ class ChatLogItem(BaseModel):
     created_at: str
 
 
-def is_real_value(value: str | None) -> bool:
-    """환경 변수 값이 실제 값인지 확인합니다.
+def get_required_env(name: str) -> str:
+    """필수 환경 변수를 읽고, 비어 있거나 예시 값이면 오류를 냅니다."""
 
-    `your-...`, `example`, `placeholder` 같은 값은 실습용 예시 값으로 보고 거부합니다.
-    """
+    value = os.getenv(name, "").strip()
 
     if not value:
-        return False
+        raise RuntimeError(f"{name} 값이 없습니다. C:/aidev/02_supabase-ai-backend/.env 파일을 확인하세요.")
 
-    normalized = value.strip().lower()
-    placeholder_words = ["your-", "your_", "api-key", "apikey", "example", "sample", "placeholder"]
-    return not any(word in normalized for word in placeholder_words)
+    if value.startswith(("your-", "https://your-")):
+        raise RuntimeError(f"{name} 값이 예시 값입니다. 실제 값을 .env에 입력하세요.")
 
-
-def get_required_env(name: str) -> str:
-    """필수 환경 변수를 읽습니다."""
-
-    value = os.getenv(name)
-    if not is_real_value(value):
-        raise RuntimeError(f"{name} 값이 없거나 예시 값입니다. .env 파일을 확인하세요.")
-
-    return value.strip()
+    return value
 
 
 def get_supabase() -> Client:

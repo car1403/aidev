@@ -10,5 +10,7 @@ from fastapi import FastAPI
 from app.routers.cache_router import router as cache_router
 
 
+# Redis 캐시 예제의 FastAPI 앱입니다.
+# endpoint 정의는 app/routers/cache_router.py에서 관리합니다.
 app = FastAPI(title="Example 03 - Cached AI Answer API")
 app.include_router(cache_router)

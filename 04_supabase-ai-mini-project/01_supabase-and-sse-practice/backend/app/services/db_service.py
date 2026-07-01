@@ -1,9 +1,10 @@
-from app.core.config import SUPABASE_SERVICE_ROLE_KEY, SUPABASE_URL
+from app.core.config import SUPABASE_SERVICE_ROLE_KEY, SUPABASE_URL, is_supabase_configured
 from app.services.memory_store import add_memory_log, recent_memory_logs
 
 
 def _client():
-    if not SUPABASE_URL or not SUPABASE_SERVICE_ROLE_KEY:
+    # Supabase 값이 없거나 .env.example의 예시 값이면 DB 대신 메모리 저장소를 사용합니다.
+    if not is_supabase_configured():
         return None
 
     try:

@@ -20,7 +20,7 @@ FastAPI는 Supabase Auth와 통신하는 API 서버 역할을 합니다.
 실행:
     cd C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\04_supabase-auth-and-rls
     ..\..\.venv\Scripts\Activate.ps1
-    uvicorn 01_fastapi_supabase_auth:app --reload --host 127.0.0.1 --port 8002
+    python -m uvicorn 01_fastapi_supabase_auth:app --reload --host 127.0.0.1 --port 8002
 
 Swagger 확인:
     http://127.0.0.1:8002/docs
@@ -58,7 +58,7 @@ ENV_PATH = PROJECT_ROOT / ".env"
 bearer_security = HTTPBearer(auto_error=False)
 
 # FastAPI 애플리케이션 객체입니다.
-# uvicorn 명령의 "01_fastapi_supabase_auth:app"에서 app이 바로 이 변수입니다.
+# python -m uvicorn 명령의 "01_fastapi_supabase_auth:app"에서 app이 바로 이 변수입니다.
 app = FastAPI(
     title="Supabase Auth FastAPI Example",
     description="Supabase Auth sign up/sign in과 Bearer token 확인 흐름을 Swagger에서 실습합니다.",
@@ -118,39 +118,28 @@ class SignInResponse(BaseModel):
     user: UserInfo
 
 
-def is_placeholder(value: str | None) -> bool:
-    """환경 변수 값이 실제 값이 아니라 예시 값인지 확인합니다.
-
-    .env.example에는 아래처럼 안내용 값이 들어 있습니다.
-
-    - https://your-project-ref.supabase.co
-    - your-supabase-anon-key
-
-    이런 값으로는 Supabase에 연결할 수 없으므로, 실행 전에 걸러 냅니다.
-    """
-
-    if value is None:
-        return False
-
-    cleaned = value.strip()
-    return cleaned.startswith(("your-", "https://your-")) or "example.com" in cleaned
-
-
 def read_required_env(name: str) -> str:
-    """필수 환경 변수를 읽습니다.
+    """필수 환경 변수를 읽고, 비어 있거나 예시 값이면 HTTP 500 오류를 냅니다.
 
-    값이 없거나 .env.example의 예시 값 그대로라면 수강생이 바로 원인을 알 수 있도록
-    500 오류와 함께 안내 메시지를 반환합니다.
+    .env.example에는 `your-supabase-anon-key` 같은 안내용 값이 들어 있습니다.
+    이런 값은 실제 접속 정보가 아니므로 Supabase 요청 전에 막습니다.
     """
 
-    value = os.getenv(name)
-    if value is None or not value.strip() or is_placeholder(value):
+    value = os.getenv(name, "").strip()
+
+    if not value:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"{name} 값이 없습니다. C:\\aidev\\02_supabase-ai-backend\\.env 파일을 확인하세요.",
+            detail=f"{name} 환경변수를 C:\\aidev\\02_supabase-ai-backend\\.env에 설정하세요.",
         )
 
-    return value.strip()
+    if value.startswith(("your-", "https://your-")):
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"{name}에 실제 값을 입력하세요. Supabase Dashboard에서 복사한 값을 사용해야 합니다.",
+        )
+
+    return value
 
 
 def get_supabase():

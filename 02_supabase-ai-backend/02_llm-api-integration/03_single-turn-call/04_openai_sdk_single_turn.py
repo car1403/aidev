@@ -22,15 +22,14 @@ load_dotenv(PROJECT_ROOT / ".env")
 
 
 def is_real_api_key(value: str | None) -> bool:
-    """placeholder가 아니라 실제 API key인지 확인합니다."""
+    """API key가 비어 있지 않고 예시 값도 아닌지 확인합니다."""
 
-    if not value:
+    key = (value or "").strip()
+
+    if not key:
         return False
 
-    normalized = value.strip().lower()
-    placeholder_words = ["your-", "your_", "api-key", "apikey", "example", "sample", "placeholder"]
-
-    return not any(word in normalized for word in placeholder_words)
+    return not key.startswith(("your-", "your_", "sk-your", "AIza-your"))
 
 
 def main() -> None:

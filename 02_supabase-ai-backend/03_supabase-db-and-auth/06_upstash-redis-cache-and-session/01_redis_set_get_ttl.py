@@ -33,34 +33,23 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 ENV_PATH = PROJECT_ROOT / ".env"
 
 
-def is_placeholder(value: str | None) -> bool:
-    """실제 값이 아니라 예시 값인지 확인합니다."""
-
-    if value is None:
-        return False
-
-    return value.strip().startswith(("your-", "https://your-"))
-
-
 def get_upstash_env() -> tuple[str, str]:
-    """`.env`에서 Upstash Redis 접속 정보를 읽습니다."""
+    """`.env`에서 Upstash Redis 접속 정보를 읽고, 예시 값이면 오류를 냅니다."""
 
     load_dotenv(ENV_PATH)
 
     rest_url = os.getenv("UPSTASH_REDIS_REST_URL", "").strip().rstrip("/")
     rest_token = os.getenv("UPSTASH_REDIS_REST_TOKEN", "").strip()
 
-    if (
-        not rest_url
-        or not rest_token
-        or is_placeholder(rest_url)
-        or is_placeholder(rest_token)
-    ):
+    if not rest_url or not rest_token:
         raise RuntimeError(
             "Upstash Redis 환경변수가 준비되지 않았습니다. "
             "C:\\aidev\\02_supabase-ai-backend\\.env 파일의 "
             "UPSTASH_REDIS_REST_URL, UPSTASH_REDIS_REST_TOKEN 값을 확인하세요."
         )
+
+    if rest_url.startswith(("your-", "https://your-")) or rest_token.startswith(("your-", "https://your-")):
+        raise RuntimeError("Upstash Redis 환경변수에 예시 값이 들어 있습니다. Upstash Console에서 실제 값을 복사해 넣어 주세요.")
 
     return rest_url, rest_token
 

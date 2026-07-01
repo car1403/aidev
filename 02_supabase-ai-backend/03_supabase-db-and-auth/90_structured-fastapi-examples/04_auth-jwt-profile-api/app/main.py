@@ -11,6 +11,8 @@ from app.routers.auth_router import router as auth_router
 from app.routers.profile_router import router as profile_router
 
 
+# Auth router는 회원가입/로그인/token 확인을 담당합니다.
+# Profile router는 로그인한 사용자의 프로필 조회/저장을 담당합니다.
 app = FastAPI(title="Example 04 - Auth JWT Profile API")
 app.include_router(auth_router)
 app.include_router(profile_router)

@@ -16,33 +16,35 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 ENV_PATH = PROJECT_ROOT / ".env"
 
 
-def is_placeholder(value: str | None) -> bool:
-    """예시 값인지 확인합니다."""
-
-    if value is None:
-        return False
-
-    return value.strip().startswith(("your-", "https://your-"))
-
-
 def read_required_env(name: str) -> str:
-    """필수 환경 변수를 읽고, 없으면 HTTP 500 오류를 발생시킵니다."""
+    """필수 환경 변수를 읽고, 비어 있거나 예시 값이면 HTTP 500 오류를 냅니다.
 
-    value = os.getenv(name)
-    if value is None or not value.strip():
+    FastAPI 예제에서는 환경변수 오류도 API 응답으로 보여 주는 편이 이해하기 쉽습니다.
+    그래서 RuntimeError 대신 HTTPException을 사용합니다.
+    """
+
+    value = os.getenv(name, "").strip()
+
+    if not value:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"{name} is missing. Check C:\\aidev\\02_supabase-ai-backend\\.env.",
+            detail=f"{name} 환경변수를 C:\\aidev\\02_supabase-ai-backend\\.env에 설정하세요.",
         )
 
-    cleaned = value.strip()
-    if is_placeholder(cleaned):
+    if value.startswith(("your-", "https://your-")):
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"{name} is still a placeholder value. Copy the real value from Supabase Dashboard.",
+            detail=f"{name}에 실제 값을 입력하세요. Supabase Dashboard에서 복사한 값을 사용해야 합니다.",
         )
 
-    return cleaned
+    return value
+
+
+def is_configured_env(name: str) -> bool:
+    """health check에서 환경변수가 실제 값으로 설정되었는지 True/False로 확인합니다."""
+
+    value = os.getenv(name, "").strip()
+    return bool(value) and not value.startswith(("your-", "https://your-"))
 
 
 # FastAPI가 실행될 때 .env 값을 미리 읽습니다.
@@ -107,14 +109,11 @@ def get_supabase() -> Client:
 def health() -> dict[str, bool | str]:
     """서버와 Supabase 환경 변수 설정 상태를 확인합니다."""
 
-    supabase_url = os.getenv("SUPABASE_URL")
-    service_role_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
-
     return {
         "status": "ok",
         "database": "supabase",
-        "supabase_url_configured": bool(supabase_url and not is_placeholder(supabase_url)),
-        "service_role_key_configured": bool(service_role_key and not is_placeholder(service_role_key)),
+        "supabase_url_configured": is_configured_env("SUPABASE_URL"),
+        "service_role_key_configured": is_configured_env("SUPABASE_SERVICE_ROLE_KEY"),
     }
 
 
