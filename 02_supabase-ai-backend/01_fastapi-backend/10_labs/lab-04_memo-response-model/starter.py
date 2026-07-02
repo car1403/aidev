@@ -1,4 +1,11 @@
-"""Lab 04 starter: 메모 응답 모델."""
+"""Lab 04 starter: 메모 응답 모델.
+
+??:
+    uvicorn starter:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn starter:app --reload
+"""
 
 from typing import Any
 

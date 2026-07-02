@@ -7,6 +7,8 @@
 실행:
     cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\03_pydantic-and-response
     uvicorn main:app --reload
+    # 위 명령에서 오류가 나면 아래처럼 실행합니다.
+    python -m uvicorn main:app --reload
 
 브라우저:
     http://127.0.0.1:8000/docs

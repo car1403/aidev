@@ -1,18 +1,22 @@
 """FastAPI 첫 번째 예제.
 
 이 파일은 첫 FastAPI 코드 구조를 읽어보기 위한 학습용 파일입니다.
-파일명에 번호와 하이픈(-)이 들어 있으므로
-`uvicorn 01_hello-fastapi:app --reload` 방식으로 실행하지 않습니다.
+파일명에 번호와 하이픈(-)이 들어 있지만, 수업에서는 uvicorn 실행 형태를 일관되게 확인합니다.
 
-이 파일을 독립적으로 실행할 때는 `python .\01_hello-fastapi.py` 명령을 사용합니다.
-기본 프로젝트 실행 흐름은 같은 폴더의 `main.py`로도 확인합니다.
+이 파일을 실행할 때는 `uvicorn 01_hello-fastapi:app --reload` 명령을 사용합니다.
+만약 실행 환경에서 해당 명령이 오류가 나면 `python -m uvicorn 01_hello-fastapi:app --reload`로 실행합니다.
+기본 프로젝트 실행 흐름은 같은 폴더의 `main.py`로도 비교해 확인합니다.
 
 실행 방법:
     cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\01_fastapi-project-setup
-    python .\01_hello-fastapi.py
+    uvicorn 01_hello-fastapi:app --reload
+    # 위 명령에서 오류가 나면 아래처럼 실행합니다.
+    python -m uvicorn 01_hello-fastapi:app --reload
 
 main.py 기준 실행:
     uvicorn main:app --reload
+    # 위 명령에서 오류가 나면 아래처럼 실행합니다.
+    python -m uvicorn main:app --reload
 
 주의:
     파일명에 하이픈(-)이 들어 있으면 일부 환경에서 import가 불편할 수 있습니다.
@@ -47,11 +51,3 @@ def health_check():
     """서버가 살아 있는지 확인하는 가장 기본적인 점검용 API입니다."""
 
     return {"status": "ok"}
-
-if __name__ == "__main__":
-    # 파일명에 하이픈(-)이 들어 있으면 uvicorn 파일명:app 방식이 헷갈릴 수 있습니다.
-    # 그래서 이 예제는 `python .\01_hello-fastapi.py` 명령으로 직접 실행합니다.
-    # 서버가 실행되면 브라우저에서 http://127.0.0.1:8000/docs 를 열어 Swagger UI를 확인합니다.
-    import uvicorn
-
-    uvicorn.run(app, host="127.0.0.1", port=8000)

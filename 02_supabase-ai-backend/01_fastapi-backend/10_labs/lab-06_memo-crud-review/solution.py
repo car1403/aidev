@@ -1,4 +1,11 @@
-"""Lab 06 solution: 메모 CRUD 복습."""
+"""Lab 06 solution: 메모 CRUD 복습.
+
+??:
+    uvicorn solution:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn solution:app --reload
+"""
 
 from typing import Any
 

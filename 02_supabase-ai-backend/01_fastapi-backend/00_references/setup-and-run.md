@@ -12,6 +12,8 @@ pip install fastapi uvicorn
 
 ```powershell
 uvicorn main:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn main:app --reload
 ```
 
 ## 접속 주소
@@ -26,6 +28,8 @@ ReDoc: http://127.0.0.1:8000/redoc
 
 ```text
 uvicorn main:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn main:app --reload
 ```
 
 - `main`: `main.py` 파일

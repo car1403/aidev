@@ -53,6 +53,8 @@ starter 폴더로 이동해 서버를 실행합니다.
 ```powershell
 cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\20_assignments\assignment-100_product-api-structure-refactor\starter
 uvicorn app.main:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn app.main:app --reload
 ```
 
 Swagger UI:
@@ -75,6 +77,8 @@ solution을 확인하려면 아래처럼 실행합니다.
 cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\20_assignments\assignment-100_product-api-structure-refactor\solution
 python -m pytest -s
 uvicorn app.main:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn app.main:app --reload
 ```
 
 ## 구현 요구사항

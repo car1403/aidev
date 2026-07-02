@@ -1,4 +1,11 @@
-"""Lab 99 solution: 작은 메모 API 서버 완성하기."""
+"""Lab 99 solution: 작은 메모 API 서버 완성하기.
+
+??:
+    uvicorn solution:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn solution:app --reload
+"""
 
 import asyncio
 from typing import Any

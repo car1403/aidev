@@ -1,4 +1,11 @@
-"""Assignment 01 starter: 메모 상태 확인과 라우팅 과제."""
+"""Assignment 01 starter: 메모 상태 확인과 라우팅 과제.
+
+??:
+    uvicorn starter:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn starter:app --reload
+"""
 
 from typing import Any
 

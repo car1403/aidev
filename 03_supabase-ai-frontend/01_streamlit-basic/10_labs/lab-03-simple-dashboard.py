@@ -1,3 +1,20 @@
+r"""Lab 03: 간단 대시보드 실습입니다.
+
+이 파일은 Streamlit의 sidebar, columns, metric을 사용해서
+학습 시간과 실습 상태를 한눈에 보는 작은 대시보드 화면을 만드는 실습입니다.
+
+이 실습에서 확인할 내용:
+    1. st.set_page_config로 페이지 제목과 레이아웃을 설정하는 방법
+    2. st.sidebar로 입력 영역을 왼쪽 사이드바에 배치하는 방법
+    3. st.columns로 메인 화면을 여러 열로 나누는 방법
+    4. st.metric으로 숫자나 상태값을 대시보드처럼 보여 주는 방법
+
+실행:
+    cd C:\aidev\03_supabase-ai-frontend
+    .\.venv\Scripts\Activate.ps1
+    streamlit run .\01_streamlit-basic\10_labs\lab-03-simple-dashboard.py
+"""
+
 import streamlit as st  # Python 코드로 웹 화면을 만들기 위해 Streamlit을 st라는 별칭으로 가져옵니다.
 
 st.set_page_config(page_title="간단 대시보드", layout="wide")  # Streamlit 페이지의 브라우저 제목과 레이아웃 같은 기본 설정을 지정합니다.

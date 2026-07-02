@@ -1,4 +1,11 @@
-"""Assignment 02 starter: 메모 CRUD API 과제."""
+"""Assignment 02 starter: 메모 CRUD API 과제.
+
+??:
+    uvicorn starter:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn starter:app --reload
+"""
 
 from typing import Any
 

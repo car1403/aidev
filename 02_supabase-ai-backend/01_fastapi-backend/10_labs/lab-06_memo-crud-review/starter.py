@@ -1,4 +1,11 @@
-"""Lab 06 starter: 메모 CRUD 복습."""
+"""Lab 06 starter: 메모 CRUD 복습.
+
+??:
+    uvicorn starter:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn starter:app --reload
+"""
 
 from typing import Any
 

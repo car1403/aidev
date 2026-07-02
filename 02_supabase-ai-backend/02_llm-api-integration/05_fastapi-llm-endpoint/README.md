@@ -20,9 +20,17 @@ cd C:\aidev\02_supabase-ai-backend
 .\.venv\Scripts\Activate.ps1
 cd .\02_llm-api-integration\05_fastapi-llm-endpoint
 uvicorn 01_mock_llm_endpoint:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn 01_mock_llm_endpoint:app --reload
 uvicorn 02_gemini_sdk_endpoint_small:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn 02_gemini_sdk_endpoint_small:app --reload
 uvicorn 03_gemini_sdk_endpoint:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn 03_gemini_sdk_endpoint:app --reload
 uvicorn 04_openai_sdk_endpoint:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn 04_openai_sdk_endpoint:app --reload
 ```
 
 한 번에 하나의 서버만 실행합니다. 다른 파일을 실행하려면 기존 서버를 `Ctrl + C`로 종료한 뒤 다음 명령을 실행합니다.
@@ -46,6 +54,8 @@ POST /ai/chat
 
 ```powershell
 uvicorn 01_mock_llm_endpoint:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn 01_mock_llm_endpoint:app --reload
 ```
 
 이 파일은 실제 Gemini 또는 OpenAI API를 호출하지 않습니다.
@@ -67,6 +77,8 @@ Swagger UI에서 `POST /ai/chat`을 열고 아래 JSON을 입력합니다.
 
 ```powershell
 uvicorn 02_gemini_sdk_endpoint_small:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn 02_gemini_sdk_endpoint_small:app --reload
 ```
 
 이 파일은 예외 처리와 자세한 오류 안내를 일부러 넣지 않습니다. 수강생이 먼저 볼 것은 아래 구조입니다.
@@ -94,6 +106,8 @@ uvicorn 02_gemini_sdk_endpoint_small:app --reload
 
 ```powershell
 uvicorn 03_gemini_sdk_endpoint:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn 03_gemini_sdk_endpoint:app --reload
 ```
 
 이 파일은 실제 수업 중 사용하기 좋은 안내형 예제입니다.
@@ -125,6 +139,8 @@ OpenAI 예제는 필수가 아닙니다. 모델 공급자별 endpoint 구현 차
 
 ```powershell
 uvicorn 04_openai_sdk_endpoint:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn 04_openai_sdk_endpoint:app --reload
 ```
 
 OpenAI API 결제는 ChatGPT/Codex 앱 결제와 별개입니다. 실제 호출 전 OpenAI Platform의 Billing 화면을 확인합니다.

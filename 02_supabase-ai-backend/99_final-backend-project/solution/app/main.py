@@ -4,6 +4,8 @@ r"""99_final-backend-project solution의 FastAPI 진입점입니다.
     cd C:\aidev\02_supabase-ai-backend\99_final-backend-project\solution
     ..\..\.venv\Scripts\Activate.ps1
     uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+    # 위 명령에서 오류가 나면 아래처럼 실행합니다.
+    python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 
 확인:
     http://127.0.0.1:8000/health

@@ -1,4 +1,11 @@
-"""Lab 02 solution: 메모 라우팅과 검색."""
+"""Lab 02 solution: 메모 라우팅과 검색.
+
+??:
+    uvicorn solution:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn solution:app --reload
+"""
 
 from typing import Any
 

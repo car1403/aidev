@@ -47,6 +47,8 @@ README.md
 ```powershell
 cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\20_assignments\assignment-99_fastapi-memo-mini-project
 uvicorn main:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn main:app --reload
 ```
 
 Swagger UI:

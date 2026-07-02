@@ -7,6 +7,8 @@ FastAPI 응답을 Upstash Redis에 잠깐 저장하는 최소 예제입니다.
 실행 명령:
     ..\..\.venv\Scripts\Activate.ps1
     uvicorn 02_fastapi_redis_cache:app --reload --host 127.0.0.1 --port 8004
+    # 위 명령에서 오류가 나면 아래처럼 실행합니다.
+    python -m uvicorn 02_fastapi_redis_cache:app --reload --host 127.0.0.1 --port 8004
 
 Swagger 확인:
     http://127.0.0.1:8004/docs

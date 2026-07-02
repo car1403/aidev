@@ -34,12 +34,16 @@ pip install -r requirements.txt
 ```powershell
 cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab-01_fastapi-health-check
 uvicorn starter:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn starter:app --reload
 ```
 
 정답 파일을 실행할 때는 다음처럼 실행합니다.
 
 ```powershell
 uvicorn solution:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn solution:app --reload
 ```
 
 `lab-100_project-structure-refactor`는 폴더 구조가 다르므로 아래처럼 실행합니다.
@@ -47,6 +51,8 @@ uvicorn solution:app --reload
 ```powershell
 cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab-100_project-structure-refactor\solution
 uvicorn app.main:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn app.main:app --reload
 ```
 
 테스트는 같은 위치에서 실행합니다.

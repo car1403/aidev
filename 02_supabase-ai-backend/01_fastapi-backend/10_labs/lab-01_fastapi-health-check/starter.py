@@ -1,6 +1,12 @@
 """Lab 01 starter: FastAPI 서버 시작하기.
 
 TODO를 채워서 가장 작은 FastAPI 서버를 완성합니다.
+
+??:
+    uvicorn starter:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn starter:app --reload
 """
 
 from fastapi import FastAPI

@@ -403,6 +403,8 @@ FastAPI Redis 캐시 예제 실행:
 cd C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\06_upstash-redis-cache-and-session
 ..\..\.venv\Scripts\Activate.ps1
 uvicorn 02_fastapi_redis_cache:app --reload --host 127.0.0.1 --port 8004
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn 02_fastapi_redis_cache:app --reload --host 127.0.0.1 --port 8004
 ```
 
 ## 13. FastAPI 실행 기본형
@@ -412,6 +414,8 @@ FastAPI 예제는 보통 예제 파일이 있는 폴더에서 실행합니다.
 ```powershell
 cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab-01_fastapi-health-check
 uvicorn solution:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn solution:app --reload
 ```
 
 브라우저에서 확인:
@@ -474,6 +478,8 @@ pip install -r requirements.txt
 
 ```powershell
 uvicorn solution:app --reload --port 8001
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn solution:app --reload --port 8001
 ```
 
 ## 15. Docker 학습 범위 안내

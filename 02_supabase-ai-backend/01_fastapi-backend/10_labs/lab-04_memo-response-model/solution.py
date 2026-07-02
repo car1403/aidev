@@ -1,4 +1,11 @@
-"""Lab 04 solution: 메모 응답 모델."""
+"""Lab 04 solution: 메모 응답 모델.
+
+??:
+    uvicorn solution:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn solution:app --reload
+"""
 
 from typing import Any
 

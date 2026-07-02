@@ -4,7 +4,9 @@
 
 실행:
     cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\02_routing-and-request
-    python .\02_path-parameters.py
+    uvicorn 02_path-parameters:app --reload
+    # 위 명령에서 오류가 나면 아래처럼 실행합니다.
+    python -m uvicorn 02_path-parameters:app --reload
 
 Path Parameter는 URL 경로 안에 들어가는 값입니다.
 
@@ -19,7 +21,7 @@ from fastapi import FastAPI, HTTPException
 
 
 # FastAPI 앱 객체입니다.
-# 아래 __main__ 블록의 uvicorn.run(app, ...)에서 사용하는 app이 이 변수입니다.
+# uvicorn 실행 명령의 마지막 `:app`은 아래 변수 이름 `app`과 연결됩니다.
 app = FastAPI(title="Path Parameter Practice")
 
 
@@ -60,11 +62,3 @@ def get_lesson(course_slug: str, lesson_no: int):
         "lesson_no": lesson_no,
         "message": f"{course_slug} course lesson {lesson_no}",
     }
-
-if __name__ == "__main__":
-    # 파일명에 하이픈(-)이 들어 있으면 uvicorn 파일명:app 방식이 헷갈릴 수 있습니다.
-    # 그래서 이 예제는 `python .\02_path-parameters.py` 명령으로 직접 실행합니다.
-    # 서버가 실행되면 브라우저에서 http://127.0.0.1:8000/docs 를 열어 Swagger UI를 확인합니다.
-    import uvicorn
-
-    uvicorn.run(app, host="127.0.0.1", port=8000)

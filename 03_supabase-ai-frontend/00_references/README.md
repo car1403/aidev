@@ -9,7 +9,16 @@
 ```text
 frontend-course-map.md
 frontend-security-and-deployment-notes.md
+streamlit-usage-guide.md
+streamlit-theme-guide.md
 ```
+
+| 문서 | 설명 |
+| --- | --- |
+| [frontend-course-map.md](./frontend-course-map.md) | 03 과정 전체 흐름과 단원 역할을 확인합니다. |
+| [frontend-security-and-deployment-notes.md](./frontend-security-and-deployment-notes.md) | 프론트엔드 보안 기준과 배포 시 주의점을 확인합니다. |
+| [streamlit-usage-guide.md](./streamlit-usage-guide.md) | Streamlit 설치, 실행, widget, session state, form, layout, API 호출, secrets 기준을 공식 문서 기반으로 정리한 참고 문서입니다. |
+| [streamlit-theme-guide.md](./streamlit-theme-guide.md) | Streamlit 테마 설정 파일 위치, 색상 옵션, 예제 실행 기준을 확인합니다. |
 
 ## 먼저 확인할 내용
 

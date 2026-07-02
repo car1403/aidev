@@ -66,12 +66,16 @@ pip install -r requirements.txt
 
 ```powershell
 uvicorn main:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn main:app --reload
 ```
 
 구조 분리 과제인 `assignment-100_product-api-structure-refactor`는 아래처럼 실행합니다.
 
 ```powershell
 uvicorn app.main:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn app.main:app --reload
 python -m pytest -s
 ```
 
@@ -86,6 +90,8 @@ http://127.0.0.1:8000/docs
 ```text
 실행 가능성:
   uvicorn main:app --reload로 실행되는가?
+  # 위 명령에서 오류가 나면 아래처럼 실행합니다.
+  python -m uvicorn main:app --reload로 실행되는가?
 
 API 설계:
   URL과 HTTP Method가 의미에 맞게 사용되었는가?

@@ -1,4 +1,11 @@
-"""Assignment 03 starter: 메모 요청 검증과 응답 모델 과제."""
+"""Assignment 03 starter: 메모 요청 검증과 응답 모델 과제.
+
+??:
+    uvicorn starter:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn starter:app --reload
+"""
 
 from typing import Any
 

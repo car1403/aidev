@@ -5,6 +5,8 @@ r"""최종 백엔드 프로젝트를 시작할 때 사용하는 가장 작은 Fa
 
 실행 명령:
     uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+    # 위 명령에서 오류가 나면 아래처럼 실행합니다.
+    python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 
 확인 주소:
     http://127.0.0.1:8000/health

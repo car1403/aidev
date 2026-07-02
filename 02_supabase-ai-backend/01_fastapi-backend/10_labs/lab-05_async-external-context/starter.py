@@ -1,4 +1,11 @@
-"""Lab 05 starter: 비동기 외부 API와 메모 컨텍스트 연결."""
+"""Lab 05 starter: 비동기 외부 API와 메모 컨텍스트 연결.
+
+??:
+    uvicorn starter:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn starter:app --reload
+"""
 
 from typing import Any
 

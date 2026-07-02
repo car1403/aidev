@@ -1,4 +1,11 @@
-"""Lab 05 solution: FastAPI mock-first LLM 엔드포인트."""
+"""Lab 05 solution: FastAPI mock-first LLM 엔드포인트.
+
+??:
+    uvicorn solution:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn solution:app --reload
+"""
 
 from fastapi import FastAPI
 from pydantic import BaseModel, Field

@@ -21,7 +21,7 @@ FastAPI 앱 만들기
 | `02_project-structure.md` | FastAPI 프로젝트 폴더 구조 설명 |
 | `03_uvicorn-run.md` | `uvicorn` 실행 명령 설명 |
 
-`01_hello-fastapi.py`처럼 파일명에 하이픈(`-`)이 들어 있으면 `uvicorn 파일명:app` 방식으로 실행할 때 불편할 수 있습니다. 이런 단일 예제 파일은 `python .\01_hello-fastapi.py`처럼 직접 실행하고, 기본 프로젝트 실행 흐름은 `main.py` 기준으로 확인합니다.
+`01_hello-fastapi.py`처럼 파일명에 하이픈(`-`)이 들어 있는 단일 예제 파일도 수업에서는 `uvicorn 파일명:app` 방식으로 실행 형태를 확인합니다. 만약 `uvicorn` 명령이 실행 정책이나 경로 문제로 막히면 `python -m uvicorn 파일명:app` 방식으로 실행합니다. 기본 프로젝트 실행 흐름은 `main.py` 기준으로도 함께 확인합니다.
 
 ## 실행 전 준비
 
@@ -51,6 +51,8 @@ cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\01_fastapi-project-setup
 
 ```powershell
 uvicorn main:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn main:app --reload
 ```
 
 명령의 의미는 다음과 같습니다.

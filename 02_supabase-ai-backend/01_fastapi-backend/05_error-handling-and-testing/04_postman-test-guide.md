@@ -23,7 +23,9 @@ Postman 설치가 어렵다면 이 단원에서는 Swagger UI(`/docs`)와 PowerS
 
 ```powershell
 cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\05_error-handling-and-testing
-python .\01_http-exception.py
+uvicorn 01_http-exception:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn 01_http-exception:app --reload
 ```
 
 ## GET 요청
@@ -67,6 +69,8 @@ POST Body를 확인할 때는 테스트용 앱을 실행합니다.
 ```powershell
 cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\05_error-handling-and-testing
 uvicorn app_for_test:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn app_for_test:app --reload
 ```
 
 Postman에서 새 요청을 만들고 아래처럼 입력합니다.

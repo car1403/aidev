@@ -3,6 +3,8 @@
 직접 서버 실행:
     cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\05_error-handling-and-testing
     uvicorn app_for_test:app --reload
+    # 위 명령에서 오류가 나면 아래처럼 실행합니다.
+    python -m uvicorn app_for_test:app --reload
 
 테스트 스크립트 실행:
     python 05_simple-test-client.py

@@ -1,4 +1,11 @@
-"""Lab 99 starter: mock-first LLM API 연동 흐름 종합 복습."""
+"""Lab 99 starter: mock-first LLM API 연동 흐름 종합 복습.
+
+??:
+    uvicorn starter:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn starter:app --reload
+"""
 
 from fastapi import FastAPI
 from pydantic import BaseModel, Field

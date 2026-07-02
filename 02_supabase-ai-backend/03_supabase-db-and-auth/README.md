@@ -132,6 +132,8 @@ FastAPI + Supabase 실행:
 cd C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\03_fastapi-supabase-integration
 ..\..\.venv\Scripts\Activate.ps1
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
 
 확인 주소:
@@ -168,6 +170,8 @@ FastAPI + LLM 채팅 로그 저장:
 cd C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\05_conversation-history-and-service-logs
 ..\..\.venv\Scripts\Activate.ps1
 uvicorn 02_fastapi_llm_chat_log:app --reload --host 127.0.0.1 --port 8003
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn 02_fastapi_llm_chat_log:app --reload --host 127.0.0.1 --port 8003
 ```
 
 확인 주소:
@@ -188,6 +192,8 @@ FastAPI + Redis 캐시 실습:
 cd C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\06_upstash-redis-cache-and-session
 ..\..\.venv\Scripts\Activate.ps1
 uvicorn 02_fastapi_redis_cache:app --reload --host 127.0.0.1 --port 8004
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn 02_fastapi_redis_cache:app --reload --host 127.0.0.1 --port 8004
 ```
 
 확인 주소:

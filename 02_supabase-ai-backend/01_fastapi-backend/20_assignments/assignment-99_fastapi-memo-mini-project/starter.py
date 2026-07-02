@@ -1,6 +1,12 @@
 """Assignment 99 starter: FastAPI 메모 미니 프로젝트.
 
 이 파일은 시작용 뼈대입니다. 완성한 코드는 main.py로 정리해 제출합니다.
+
+??:
+    uvicorn starter:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn starter:app --reload
 """
 
 import asyncio

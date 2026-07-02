@@ -1,4 +1,11 @@
-"""Lab 01 solution: FastAPI 서버 시작하기."""
+"""Lab 01 solution: FastAPI 서버 시작하기.
+
+??:
+    uvicorn solution:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn solution:app --reload
+"""
 
 from fastapi import FastAPI
 

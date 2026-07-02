@@ -37,6 +37,8 @@ SUPABASE_SERVICE_ROLE_KEY=...
 cd C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\90_structured-fastapi-examples\04_auth-jwt-profile-api
 ..\..\..\.venv\Scripts\Activate.ps1
 uvicorn app.main:app --reload --host 127.0.0.1 --port 8014
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8014
 ```
 
 Swagger UI:

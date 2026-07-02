@@ -48,6 +48,8 @@ pip install -r requirements.txt
 ```powershell
 cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\02_routing-and-request
 uvicorn main:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn main:app --reload
 ```
 
 Swagger UI:

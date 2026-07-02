@@ -13,6 +13,7 @@ Streamlit을 사용해 Python 코드만으로 간단한 웹 화면을 만드는 
 - 텍스트, 숫자, 선택 입력을 받고 입력값이 Python 변수에 저장되는 흐름을 설명할 수 있다.
 - 입력값을 바탕으로 간단한 결과 화면과 피드백 화면을 만들 수 있다.
 - `columns`, `tabs`, `sidebar`를 사용해 기본 레이아웃을 구성할 수 있다.
+- `.streamlit/config.toml`을 사용해 특정 Streamlit 앱의 기본 테마를 설정할 수 있다.
 - 이후 API 연동, 챗봇 UI, 대화 이력 화면으로 확장할 수 있는 기본 화면 구조를 이해한다.
 
 ## 학습 순서
@@ -21,6 +22,7 @@ Streamlit을 사용해 Python 코드만으로 간단한 웹 화면을 만드는 
 01_streamlit-project-setup
 -> 02_text-input-and-output
 -> 03_layout-and-pages
+-> 04_theme-and-config
 -> 10_labs
 -> 20_assignments
 ```
@@ -34,6 +36,7 @@ Streamlit을 사용해 Python 코드만으로 간단한 웹 화면을 만드는 
 ├─ 01_streamlit-project-setup
 ├─ 02_text-input-and-output
 ├─ 03_layout-and-pages
+├─ 04_theme-and-config
 ├─ 10_labs
 └─ 20_assignments
 ```
@@ -74,7 +77,7 @@ pip install -r requirements.txt
 | 구분 | 내용 |
 | --- | --- |
 | 필수 | Streamlit 실행, 제목/본문 출력, 입력값 처리, sidebar/columns/tabs 기본 레이아웃 |
-| 선택 | 복잡한 페이지 구조, 커스텀 CSS, 외부 API 연결 |
+| 선택 | 테마 설정, 복잡한 페이지 구조, 커스텀 CSS, 외부 API 연결 |
 | 제외 | Supabase, Gemini, 로그인, SSE 스트리밍 |
 
 ## 학습할 때 보는 기준
@@ -90,6 +93,19 @@ Streamlit은 일반적인 웹 프론트엔드처럼 HTML, CSS, JavaScript를 먼
 ```
 
 이 기준은 이후 `03_api-integration`, `04_ai-chatbot-interface`, `05_state-session-and-data`에서 계속 이어집니다.
+
+## 테마 설정
+
+Streamlit 앱의 배경색, 글자색, 강조색을 바꾸는 방법은 `04_theme-and-config`에서 확인합니다.
+
+```powershell
+cd C:\aidev\03_supabase-ai-frontend\01_streamlit-basic\04_theme-and-config
+..\..\.venv\Scripts\Activate.ps1
+streamlit run .\01_theme-preview.py
+```
+
+이 예제는 테마 설정 파일을 실습 폴더 안에 두었기 때문에 반드시 `04_theme-and-config` 폴더에서 실행합니다.
+자세한 설명은 [streamlit-theme-guide.md](../00_references/streamlit-theme-guide.md)를 참고합니다.
 
 ## 다음 단원 연결
 

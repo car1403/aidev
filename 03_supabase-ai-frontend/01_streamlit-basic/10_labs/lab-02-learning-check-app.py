@@ -1,3 +1,20 @@
+r"""Lab 02: 학습 점검 앱 실습입니다.
+
+이 파일은 사용자가 오늘 학습한 주제, 자신감 점수, 학습 요약을 입력하면
+조건에 따라 다른 피드백 메시지를 보여 주는 Streamlit 실습입니다.
+
+이 실습에서 확인할 내용:
+    1. st.selectbox로 학습 주제를 선택하는 방법
+    2. st.slider로 숫자 범위 값을 입력받는 방법
+    3. st.button을 눌렀을 때만 결과 영역을 표시하는 방법
+    4. if/elif/else 조건문으로 success, info, warning 메시지를 구분하는 방법
+
+실행:
+    cd C:\aidev\03_supabase-ai-frontend
+    .\.venv\Scripts\Activate.ps1
+    streamlit run .\01_streamlit-basic\10_labs\lab-02-learning-check-app.py
+"""
+
 import streamlit as st  # Python 코드로 웹 화면을 만들기 위해 Streamlit을 st라는 별칭으로 가져옵니다.
 
 st.title("학습 점검 앱")  # Streamlit 화면의 가장 큰 제목을 표시합니다.

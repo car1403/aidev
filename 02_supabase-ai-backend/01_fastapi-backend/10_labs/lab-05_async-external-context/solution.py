@@ -1,4 +1,11 @@
-"""Lab 05 solution: 비동기 외부 API와 메모 컨텍스트 연결."""
+"""Lab 05 solution: 비동기 외부 API와 메모 컨텍스트 연결.
+
+??:
+    uvicorn solution:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn solution:app --reload
+"""
 
 from typing import Any
 

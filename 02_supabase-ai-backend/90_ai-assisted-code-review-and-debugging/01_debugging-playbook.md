@@ -17,6 +17,8 @@ FastAPI 실행 예:
 
 ```powershell
 uvicorn main:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn main:app --reload
 ```
 
 수업 자료에서는 아래 방식도 자주 사용합니다. Windows에서 `uvicorn.exe`가 보안 정책에 막힐 때는 `python -m uvicorn` 방식이 더 안정적입니다.
@@ -73,6 +75,8 @@ C:\aidev\02_supabase-ai-backend\...
 
 실행 명령:
 uvicorn main:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn main:app --reload
 
 기대 결과:
 Swagger에서 POST /ai/chat이 동작해야 합니다.

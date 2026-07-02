@@ -105,6 +105,8 @@ python .\03_supabase-db-and-auth\05_conversation-history-and-service-logs\01_ins
 cd C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\05_conversation-history-and-service-logs
 ..\..\.venv\Scripts\Activate.ps1
 uvicorn 02_fastapi_llm_chat_log:app --reload --host 127.0.0.1 --port 8003
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn 02_fastapi_llm_chat_log:app --reload --host 127.0.0.1 --port 8003
 ```
 
 Swagger 주소:

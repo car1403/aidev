@@ -1,4 +1,11 @@
-"""Assignment 99 starter: FastAPI mock-first LLM 미니 서비스."""
+"""Assignment 99 starter: FastAPI mock-first LLM 미니 서비스.
+
+??:
+    uvicorn starter:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn starter:app --reload
+"""
 
 from fastapi import FastAPI
 from pydantic import BaseModel, Field

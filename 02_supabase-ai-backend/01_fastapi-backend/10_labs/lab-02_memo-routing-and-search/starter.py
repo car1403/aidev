@@ -1,6 +1,12 @@
 """Lab 02 starter: 메모 라우팅과 검색.
 
 Path Parameter와 Query Parameter를 사용해 메모 조회 API를 완성합니다.
+
+??:
+    uvicorn starter:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn starter:app --reload
 """
 
 from typing import Any

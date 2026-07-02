@@ -4,6 +4,8 @@
 
 이 과정은 Streamlit 프론트엔드를 만들고, FastAPI 백엔드를 호출하는 방식으로 진행합니다. 처음에는 샘플 백엔드를 사용하고, 이후 `02_supabase-ai-backend` 또는 `99_final-frontend-project`의 `backend_mock`/`backend_service`와 연결합니다. React, SSE, Docker, AWS 운영 자동화는 필수가 아닙니다.
 
+Streamlit 설치, 실행, widget, session state, form, layout, API 호출, secrets 관리의 전체 사용법은 [Streamlit 사용 가이드](./00_references/streamlit-usage-guide.md)를 참고합니다.
+
 ## 1. 작업 폴더로 이동
 
 ```powershell

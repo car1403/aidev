@@ -1,4 +1,11 @@
-"""Lab 03 solution: 메모 요청 Body 검증."""
+"""Lab 03 solution: 메모 요청 Body 검증.
+
+??:
+    uvicorn solution:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn solution:app --reload
+"""
 
 from fastapi import FastAPI, status
 from pydantic import BaseModel, Field

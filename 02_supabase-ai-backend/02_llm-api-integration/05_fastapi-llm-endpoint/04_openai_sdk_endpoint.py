@@ -7,6 +7,9 @@ OPENAI_API_KEY가 있으면 실제 호출을 수행하므로 비용이 발생할
     cd C:\aidev\02_supabase-ai-backend\02_llm-api-integration\05_fastapi-llm-endpoint
     ..\..\.venv\Scripts\Activate.ps1
     uvicorn 04_openai_sdk_endpoint:app --reload
+    # 위 명령에서 오류가 나면 아래처럼 실행합니다.
+    python -m uvicorn 04_openai_sdk_endpoint:app --reload
+
 """
 
 from pathlib import Path

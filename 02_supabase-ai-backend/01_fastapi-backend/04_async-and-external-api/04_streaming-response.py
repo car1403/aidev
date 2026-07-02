@@ -4,7 +4,9 @@
 
 실행:
     cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\04_async-and-external-api
-    python .\04_streaming-response.py
+    uvicorn 04_streaming-response:app --reload
+    # 위 명령에서 오류가 나면 아래처럼 실행합니다.
+    python -m uvicorn 04_streaming-response:app --reload
 
 이 파일은 스트리밍 응답의 개념을 보여주는 아주 작은 예제입니다.
 Server-Sent Events(SSE)를 이용한 실제 AI 응답 스트리밍 통합은
@@ -22,7 +24,7 @@ from fastapi.responses import StreamingResponse
 
 
 # FastAPI 앱 객체입니다.
-# 아래 __main__ 블록의 uvicorn.run(app, ...)에서 사용하는 app이 이 변수입니다.
+# uvicorn 실행 명령의 마지막 `:app`은 아래 변수 이름 `app`과 연결됩니다.
 app = FastAPI(title="Streaming Response Practice")
 
 
@@ -49,11 +51,3 @@ async def stream_text():
     # StreamingResponse는 generator가 yield하는 값을 클라이언트에 순서대로 전달합니다.
     # media_type="text/plain"은 일반 텍스트 응답이라는 뜻입니다.
     return StreamingResponse(generate_words(), media_type="text/plain")
-
-if __name__ == "__main__":
-    # 파일명에 하이픈(-)이 들어 있으면 uvicorn 파일명:app 방식이 헷갈릴 수 있습니다.
-    # 그래서 이 예제는 `python .\04_streaming-response.py` 명령으로 직접 실행합니다.
-    # 서버가 실행되면 브라우저에서 http://127.0.0.1:8000/docs 를 열어 Swagger UI를 확인합니다.
-    import uvicorn
-
-    uvicorn.run(app, host="127.0.0.1", port=8000)

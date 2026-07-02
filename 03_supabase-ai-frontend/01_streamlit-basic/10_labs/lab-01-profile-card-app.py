@@ -1,3 +1,20 @@
+r"""Lab 01: 프로필 카드 앱 실습입니다.
+
+이 파일은 Streamlit의 가장 기본적인 입력과 출력 흐름을 연습하기 위한 실습입니다.
+사용자가 이름, 관심 역할, 자기소개 문장을 입력하면 화면 아래에 간단한 프로필 카드처럼 보여 줍니다.
+
+이 실습에서 확인할 내용:
+    1. st.text_input으로 한 줄 텍스트를 입력받는 방법
+    2. st.selectbox로 정해진 목록 중 하나를 선택하는 방법
+    3. st.text_area로 여러 줄 문장을 입력받는 방법
+    4. if 조건문으로 입력값이 있을 때와 없을 때 화면을 다르게 보여 주는 방법
+
+실행:
+    cd C:\aidev\03_supabase-ai-frontend
+    .\.venv\Scripts\Activate.ps1
+    streamlit run .\01_streamlit-basic\10_labs\lab-01-profile-card-app.py
+"""
+
 import streamlit as st  # Python 코드로 웹 화면을 만들기 위해 Streamlit을 st라는 별칭으로 가져옵니다.
 
 st.title("프로필 카드 앱")  # Streamlit 화면의 가장 큰 제목을 표시합니다.

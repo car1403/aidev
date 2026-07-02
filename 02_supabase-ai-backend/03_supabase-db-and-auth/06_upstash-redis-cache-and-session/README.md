@@ -86,6 +86,8 @@ TTL은 Time To Live의 줄임말입니다. Redis에 저장한 값이 얼마나 �
 cd C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\06_upstash-redis-cache-and-session
 ..\..\.venv\Scripts\Activate.ps1
 uvicorn 02_fastapi_redis_cache:app --reload --host 127.0.0.1 --port 8004
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn 02_fastapi_redis_cache:app --reload --host 127.0.0.1 --port 8004
 ```
 
 Swagger를 엽니다.

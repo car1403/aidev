@@ -18,6 +18,8 @@
 cd C:\aidev\02_supabase-ai-backend\02_llm-api-integration\10_labs\lab-99_llm-integration-review
 ..\..\..\.venv\Scripts\Activate.ps1
 uvicorn starter:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn starter:app --reload
 ```
 
 Swagger UI:

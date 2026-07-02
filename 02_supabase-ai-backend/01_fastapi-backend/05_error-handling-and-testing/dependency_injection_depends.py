@@ -3,6 +3,8 @@
 실행:
     cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\05_error-handling-and-testing
     uvicorn dependency_injection_depends:app --reload
+    # 위 명령에서 오류가 나면 아래처럼 실행합니다.
+    python -m uvicorn dependency_injection_depends:app --reload
 
 확인:
     http://127.0.0.1:8000/me?token=student-token

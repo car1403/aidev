@@ -1,4 +1,11 @@
-"""Lab 03 starter: 메모 요청 Body 검증."""
+"""Lab 03 starter: 메모 요청 Body 검증.
+
+??:
+    uvicorn starter:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn starter:app --reload
+"""
 
 from fastapi import FastAPI, status
 from pydantic import BaseModel, Field

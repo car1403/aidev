@@ -16,6 +16,9 @@ r"""FastAPI + Gemini SDK endpoint 예제입니다.
     cd C:\aidev\02_supabase-ai-backend\02_llm-api-integration\05_fastapi-llm-endpoint
     ..\..\.venv\Scripts\Activate.ps1
     uvicorn 03_gemini_sdk_endpoint:app --reload
+    # 위 명령에서 오류가 나면 아래처럼 실행합니다.
+    python -m uvicorn 03_gemini_sdk_endpoint:app --reload
+
 """
 
 from pathlib import Path

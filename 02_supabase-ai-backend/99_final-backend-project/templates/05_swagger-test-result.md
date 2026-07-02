@@ -4,6 +4,8 @@
 
 ```powershell
 uvicorn app.main:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn app.main:app --reload
 ```
 
 ## 테스트 주소

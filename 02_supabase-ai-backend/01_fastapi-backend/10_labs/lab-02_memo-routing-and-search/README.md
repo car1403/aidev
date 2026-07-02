@@ -30,6 +30,8 @@ Path Parameter와 Query Parameter를 사용해 메모 조회 API를 구현합니
 ```powershell
 cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab-02_memo-routing-and-search
 uvicorn starter:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn starter:app --reload
 ```
 
 ## 확인 질문

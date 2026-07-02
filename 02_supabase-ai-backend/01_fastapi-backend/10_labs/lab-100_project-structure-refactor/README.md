@@ -63,6 +63,8 @@ starter 실행:
 ```powershell
 cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab-100_project-structure-refactor\starter
 uvicorn app.main:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn app.main:app --reload
 ```
 
 solution 실행:
@@ -70,6 +72,8 @@ solution 실행:
 ```powershell
 cd C:\aidev\02_supabase-ai-backend\01_fastapi-backend\10_labs\lab-100_project-structure-refactor\solution
 uvicorn app.main:app --reload
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn app.main:app --reload
 ```
 
 Swagger UI:

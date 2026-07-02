@@ -14,6 +14,8 @@
 cd C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\03_fastapi-supabase-integration
 ..\..\.venv\Scripts\Activate.ps1
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
+# 위 명령에서 오류가 나면 아래처럼 실행합니다.
+python -m uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
 
 브라우저에서 Swagger UI를 엽니다.

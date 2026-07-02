@@ -1,4 +1,11 @@
-"""Assignment 04 starter: 비동기 외부 API 컨텍스트 과제."""
+"""Assignment 04 starter: 비동기 외부 API 컨텍스트 과제.
+
+??:
+    uvicorn starter:app --reload
+
+? ???? ??? ??:
+    python -m uvicorn starter:app --reload
+"""
 
 from typing import Any
 
