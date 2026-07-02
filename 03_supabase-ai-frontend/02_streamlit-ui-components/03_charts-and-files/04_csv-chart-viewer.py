@@ -3,6 +3,11 @@ import streamlit as st  # Python 코드로 웹 화면을 만들기 위해 Stream
 
 st.title("CSV 차트 뷰어")  # Streamlit 화면의 가장 큰 제목을 표시합니다.
 
+st.info(
+    "연습용 CSV가 필요하면 "
+    "02_streamlit-ui-components/03_charts-and-files/sample_data/sample-service-logs.csv 파일을 업로드해 보세요."
+)  # 수강생이 바로 테스트할 수 있는 예제 파일 위치를 안내합니다.
+
 uploaded_file = st.file_uploader("CSV 파일을 업로드하세요", type=["csv"])  # 계산 결과나 입력값을 이후 코드에서 다시 쓰기 위해 변수에 저장합니다.
 
 if uploaded_file is not None:  # 조건식이 True일 때만 아래 들여쓰기 블록을 실행합니다.
