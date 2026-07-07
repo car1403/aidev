@@ -31,7 +31,7 @@ streamlit-theme-guide.md
 - 기본 단원 실습의 프론트엔드 `.env`에는 `API_BASE_URL`만 둡니다.
 - `99_final-frontend-project`도 기본적으로 03 과정 최상위 `.env`의 `API_BASE_URL`을 사용합니다.
 - Supabase `service_role` key, Upstash token, LLM API key는 실제 서비스용 프론트엔드에 두지 않습니다.
-- `04_ai-chatbot-interface`의 Gemini SDK 예제는 로컬 학습용 선택 실습이며, 실제 서비스에서는 백엔드가 LLM API를 호출합니다.
+- `05_ai-chatbot-interface`에서는 mock 응답과 백엔드 chat API 호출을 기준으로 챗봇 화면을 구성합니다.
 - SSE 기반 실시간 응답 스트리밍은 `04_supabase-ai-mini-project`에서 백엔드, 프론트엔드, Supabase 저장 흐름을 함께 연결해 다룹니다.
 
 ## 환경변수 기준

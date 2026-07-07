@@ -23,8 +23,8 @@ Streamlit으로 AI 서비스 화면을 만들고, FastAPI 백엔드를 호출하
 3. `01_streamlit-basic`에서 Streamlit 기본 실행과 화면 출력을 익힙니다.
 4. `02_streamlit-ui-components`에서 입력, 폼, 표, 차트를 연습합니다.
 5. `03_api-integration`에서 샘플 백엔드로 API 호출 흐름을 연습합니다.
-6. `04_ai-chatbot-interface`에서 mock 기반 챗봇 UI를 만듭니다.
-7. `05_state-session-and-data`에서 session state, token, Authorization header, 대화 이력 조회를 다룹니다.
+6. `04_state-session-and-data`에서 session state, token, Authorization header, 대화 이력 조회를 다룹니다.
+7. `05_ai-chatbot-interface`에서 mock 기반 챗봇 UI와 백엔드 chat API 연결을 다룹니다.
 8. `90_ai-assisted-ui-review-and-debugging`에서 오류 분석과 UI 리뷰를 정리합니다.
 9. `99_final-frontend-project`에서 `backend_mock`으로 개인화 AI 챗봇 통합 UX를 완성하고, 선택적으로 `backend_service`로 실제 Supabase/Gemini/배포 흐름을 확인합니다.
 
@@ -37,8 +37,8 @@ Streamlit으로 AI 서비스 화면을 만들고, FastAPI 백엔드를 호출하
 ├─ 01_streamlit-basic
 ├─ 02_streamlit-ui-components
 ├─ 03_api-integration
-├─ 04_ai-chatbot-interface
-├─ 05_state-session-and-data
+├─ 04_state-session-and-data
+├─ 05_ai-chatbot-interface
 ├─ 90_ai-assisted-ui-review-and-debugging
 └─ 99_final-frontend-project
 ```
@@ -53,8 +53,8 @@ Streamlit 전체 사용법이 필요하면 [Streamlit 사용 가이드](./00_ref
 | `01_streamlit-basic` | Streamlit 실행, 텍스트 출력, 입력값 처리, 기본 레이아웃을 학습합니다. |
 | `02_streamlit-ui-components` | 버튼, 폼, 표, 차트, 파일 업로드, 간단한 대시보드 구성을 학습합니다. |
 | `03_api-integration` | `httpx`로 FastAPI API를 호출하고, 로딩/오류/응답 검증을 화면에 표시합니다. |
-| `04_ai-chatbot-interface` | mock 응답 중심으로 챗봇 UI, 프롬프트 입력, 대화 미리보기를 구성합니다. |
-| `05_state-session-and-data` | `st.session_state`, 로그인 token, Authorization header, 대화 이력, 서비스 로그 조회를 다룹니다. |
+| `04_state-session-and-data` | `st.session_state`, 로그인 token, Authorization header, 대화 이력, 서비스 로그 조회를 다룹니다. |
+| `05_ai-chatbot-interface` | mock 응답 중심으로 챗봇 UI, 프롬프트 입력, 대화 미리보기, 챗봇 전용 백엔드 호출을 구성합니다. |
 | `90_ai-assisted-ui-review-and-debugging` | Streamlit 실행 오류, API 연결 실패, session state 문제를 AI와 함께 분석합니다. |
 | `99_final-frontend-project` | `backend_mock`으로 회원가입/로그인/챗봇/대화 기록/서비스 로그 UX를 통합하고, 선택적으로 `backend_service`로 Supabase/Gemini/배포 흐름을 연결합니다. |
 
@@ -63,7 +63,7 @@ Streamlit 전체 사용법이 필요하면 [Streamlit 사용 가이드](./00_ref
 | 구분 | 내용 |
 | --- | --- |
 | 필수 | Streamlit 기본 화면, UI 컴포넌트, `API_BASE_URL`, FastAPI 호출, 로딩/오류 표시, 챗봇 UI, 회원가입/로그인, session state, Authorization header |
-| 선택 | `backend_service` 실제 연결, React 구조 비교, 04의 로컬 Gemini SDK 참고 예제, 무료 배포 안내, 추가 차트/캐시 최적화 |
+| 선택 | `backend_service` 실제 연결, React 구조 비교, 백엔드 실제 LLM 응답 연결, 무료 배포 안내, 추가 차트/캐시 최적화 |
 | 제외 | Supabase DB 직접 접속, service role key 사용, LLM API key를 프론트엔드에 저장, SSE 본격 구현, Docker/AWS 운영 자동화 |
 
 SSE 기반 실시간 응답 스트리밍은 `04_supabase-ai-mini-project`에서 백엔드 SSE endpoint, Streamlit 표시, Supabase 최종 메시지 저장을 함께 연결하며 다룹니다. Docker, AWS, GitHub Actions 기반 운영 자동화는 `07_multi-agent-service-ops`에서 다룹니다.
@@ -75,6 +75,7 @@ SSE 기반 실시간 응답 스트리밍은 `04_supabase-ai-mini-project`에서 
 | 구분 | 사용 위치 | 역할 |
 | --- | --- | --- |
 | 샘플 백엔드 | `03_api-integration/00_sample_backend` | API 호출, 로딩, 오류 처리를 연습합니다. |
+| 챗봇 샘플 백엔드 | `05_ai-chatbot-interface/00_sample_backend` | `/api/chat/mock`, `/api/chat/gemini`으로 챗봇 UI 연동을 연습합니다. |
 | 02 과정 백엔드 | `02_supabase-ai-backend` | Supabase, Auth, Gemini가 포함된 실제 백엔드 흐름을 연결합니다. |
 | `backend_mock` | `99_final-frontend-project` | 최종 프론트 UX를 끊기지 않게 완성하기 위한 필수 제공 백엔드입니다. |
 | `backend_service` | `99_final-frontend-project` | Supabase/Gemini/Upstash/Render 배포를 연결하는 선택/심화 백엔드입니다. |
@@ -126,7 +127,7 @@ streamlit run .\01_streamlit-basic\01_streamlit-project-setup\01_hello-streamlit
 | Streamlit 기본 사용법 | [Streamlit 사용 가이드](./00_references/streamlit-usage-guide.md) |
 | 백엔드 연결 실패 | [03_api-integration](./03_api-integration/README.md), [02 Backend SETUP](../02_supabase-ai-backend/SETUP.md) |
 | `API_BASE_URL` 또는 `.env` 위치 | [SETUP.md](./SETUP.md), [프론트 보안 참고](./00_references/frontend-security-and-deployment-notes.md) |
-| token과 Authorization header | [05_state-session-and-data](./05_state-session-and-data/README.md) |
+| token과 Authorization header | [04_state-session-and-data](./04_state-session-and-data/README.md) |
 | 99 최종 프로젝트 실행 | [99 README](./99_final-frontend-project/README.md), [final checklist](./99_final-frontend-project/checklist/final-checklist.md) |
 | 배포 기준 | [deployment checklist](./99_final-frontend-project/templates/06_deployment-checklist.md) |
 | Streamlit 오류를 어떻게 물어볼지 모름 | [90_ai-assisted-ui-review-and-debugging](./90_ai-assisted-ui-review-and-debugging/README.md) |

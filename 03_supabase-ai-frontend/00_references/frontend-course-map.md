@@ -9,8 +9,8 @@
 -> 01_streamlit-basic
 -> 02_streamlit-ui-components
 -> 03_api-integration
--> 04_ai-chatbot-interface
--> 05_state-session-and-data
+-> 04_state-session-and-data
+-> 05_ai-chatbot-interface
 -> 90_ai-assisted-ui-review-and-debugging
 -> 99_final-frontend-project
 ```
@@ -23,8 +23,8 @@
 | `01_streamlit-basic` | Streamlit 앱은 어떻게 실행하고 화면은 어떻게 구성하나요? |
 | `02_streamlit-ui-components` | 버튼, 입력창, 테이블, 차트 같은 UI 요소를 어떻게 구성하나요? |
 | `03_api-integration` | Streamlit 화면에서 FastAPI API를 어떻게 호출하나요? |
-| `04_ai-chatbot-interface` | 사용자 질문과 AI 응답을 대화형 UI로 어떻게 표현하나요? |
-| `05_state-session-and-data` | 로그인 상태, 대화 이력, 서비스 로그를 화면에서 어떻게 관리하나요? |
+| `04_state-session-and-data` | 로그인 상태, 대화 이력, 서비스 로그를 화면에서 어떻게 관리하나요? |
+| `05_ai-chatbot-interface` | 사용자 질문과 AI 응답을 대화형 UI로 어떻게 표현하나요? |
 | `90_ai-assisted-ui-review-and-debugging` | AI 보조 도구로 UI 코드 오류와 개선점을 어떻게 찾나요? |
 | `99_final-frontend-project` | 회원가입/로그인, 챗봇, 대화 이력/로그 조회, 배포 점검을 하나의 UX로 어떻게 정리하나요? |
 
@@ -47,7 +47,7 @@
 -> 서비스 로그 조회
 ```
 
-초반 API 호출 연습은 `03_api-integration/00_sample_backend`로 진행합니다. 실제 Supabase/Auth/Gemini 흐름은 `02_supabase-ai-backend`와 연결하고, 99 최종 프로젝트에서는 `backend_mock`으로 필수 UX를 완성한 뒤 선택적으로 `backend_service`로 실제 서비스 연결과 배포를 확인합니다.
+초반 API 호출 연습은 `03_api-integration/00_sample_backend`로 진행합니다. 챗봇 화면 연동은 `05_ai-chatbot-interface/00_sample_backend`에서 mock/Gemini chat API로 확인합니다. 실제 Supabase/Auth/Gemini 흐름은 `02_supabase-ai-backend`와 연결하고, 99 최종 프로젝트에서는 `backend_mock`으로 필수 UX를 완성한 뒤 선택적으로 `backend_service`로 실제 서비스 연결과 배포를 확인합니다.
 
 ## 04 미니 프로젝트와의 연결
 

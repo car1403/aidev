@@ -31,8 +31,8 @@
 # 사용 위치:
 # - 01_streamlit-basic: Streamlit 실행, 텍스트, 버튼, 입력 컴포넌트 기초
 # - 02_streamlit-ui-components: 입력폼, 선택박스, 파일 업로드, 표와 차트 화면 구성
-# - 04_ai-chatbot-interface: 챗봇 입력 화면과 응답 표시 화면
-# - 05_state-session-and-data: st.session_state 기반 대화 상태 관리
+# - 05_ai-chatbot-interface: 챗봇 입력 화면과 응답 표시 화면
+# - 04_state-session-and-data: st.session_state 기반 대화 상태 관리
 # - 90_ai-assisted-ui-review-and-debugging: Streamlit UI 오류 점검
 # - 99_final-frontend-project: 최종 프론트엔드 solution과 제출물 작성
 streamlit==1.41.1
@@ -46,7 +46,7 @@ streamlit==1.41.1
 # Streamlit의 st.dataframe, st.table, st.bar_chart 등과 함께 자주 사용합니다.
 # 사용 위치:
 # - 02_streamlit-ui-components: 표와 차트 표시
-# - 05_state-session-and-data: 대화 이력과 사용자 상태 데이터 표시
+# - 04_state-session-and-data: 대화 이력과 사용자 상태 데이터 표시
 # - 99_final-frontend-project: 백엔드 응답을 표로 표시하는 최종 화면
 pandas==2.2.3
 
@@ -59,8 +59,8 @@ pandas==2.2.3
 # 프론트엔드는 직접 데이터베이스에 접근하기보다 백엔드 API를 호출하는 구조로 학습합니다.
 # 사용 위치:
 # - 03_api-integration: Streamlit에서 sample backend 또는 01 백엔드 API 호출
-# - 04_ai-chatbot-interface: mock 챗봇 API 또는 선택형 Gemini 연동 API 호출
-# - 05_state-session-and-data: 사용자별 대화 이력, 서비스 로그 API 호출 흐름 이해
+# - 05_ai-chatbot-interface: mock 챗봇 API 또는 백엔드 chat API 호출
+# - 04_state-session-and-data: 사용자별 대화 이력, 서비스 로그 API 호출 흐름 이해
 # - 99_final-frontend-project: backend_mock 또는 backend_service의 /health, /auth, /chat, /conversations, /service-logs 호출
 httpx==0.28.1
 
@@ -73,33 +73,14 @@ httpx==0.28.1
 # 프론트엔드에서는 주로 API_BASE_URL처럼 백엔드 주소를 읽을 때 사용합니다.
 # 사용 위치:
 # - 03_api-integration: API_BASE_URL로 백엔드 주소 관리
-# - 04_ai-chatbot-interface: 선택형 API 연결 주소 관리
-# - 05_state-session-and-data: API 호출 주소와 실행 환경 분리
+# - 05_ai-chatbot-interface: API_BASE_URL과 챗봇 백엔드 환경 분리
+# - 04_state-session-and-data: API 호출 주소와 실행 환경 분리
 # - 99_final-frontend-project: 최종 프론트엔드 starter에서 API_BASE_URL 읽기
 #
 # 주의:
 # - 프론트엔드 .env에는 공개되어도 되는 설정만 넣습니다.
 # - Supabase service role key, Upstash token, LLM API key는 프론트엔드에 넣지 않습니다.
 python-dotenv==1.0.1
-
-
-# -----------------------------------------------------------------------------
-# 선택형 Gemini SDK 참고 실습 패키지
-# -----------------------------------------------------------------------------
-
-# Gemini API를 Python SDK 방식으로 호출하기 위한 Google Gen AI SDK입니다.
-# 03 과정에서는 실제 LLM 호출을 깊게 다루기보다,
-# 02_supabase-ai-backend에서 배운 Gemini 호출 흐름을 프론트엔드 화면과 가볍게 연결해 봅니다.
-# 기본 예제 모델은 gemini-2.5-flash-lite를 기준으로 안내합니다.
-# 사용 위치:
-# - 04_ai-chatbot-interface: mock 응답 이후 선택형 Gemini 호출 예제
-# - 90_ai-assisted-ui-review-and-debugging: LLM 호출 오류 메시지와 환경 변수 점검 예시
-#
-# 주의:
-# - Gemini API key는 프론트엔드 화면 코드에 직접 넣지 않는 것이 원칙입니다.
-# - 실제 서비스 구조에서는 FastAPI 백엔드가 Gemini API를 호출하고,
-#   Streamlit은 백엔드 API만 호출하는 구조가 더 안전합니다.
-google-genai==1.2.0
 
 
 # -----------------------------------------------------------------------------
@@ -111,6 +92,7 @@ google-genai==1.2.0
 # 일부 단원에서 간단한 sample backend를 함께 실행합니다.
 # 사용 위치:
 # - 03_api-integration/sample_backend: Streamlit API 호출 연습용 백엔드
+# - 05_ai-chatbot-interface/00_sample_backend: mock/Gemini 챗봇 API 연습용 백엔드
 # - 99_final-frontend-project/backend_mock: 회원가입, 로그인, 챗봇, 대화 기록, 서비스 로그 제공용 mock backend
 # - 99_final-frontend-project/backend_service: Supabase/Gemini/Upstash 선택 확장 backend
 fastapi==0.115.6
@@ -119,6 +101,7 @@ fastapi==0.115.6
 # 예: uvicorn main:app --reload --host 127.0.0.1 --port 8000
 # 사용 위치:
 # - 03_api-integration/sample_backend 실행
+# - 05_ai-chatbot-interface/00_sample_backend 실행
 # - 99_final-frontend-project/backend_mock 또는 backend_service 실행
 uvicorn==0.32.1
 
@@ -126,8 +109,26 @@ uvicorn==0.32.1
 # 사용자가 입력한 데이터가 API에서 기대하는 구조와 맞는지 확인할 때 사용합니다.
 # 사용 위치:
 # - 03_api-integration/sample_backend: 간단한 요청/응답 모델
+# - 05_ai-chatbot-interface/00_sample_backend: chat 요청/응답 모델
 # - 99_final-frontend-project/backend_mock 또는 backend_service: auth/chat/log 요청/응답 모델
 pydantic==2.10.4
+
+
+# -----------------------------------------------------------------------------
+# 챗봇 샘플 백엔드용 Gemini SDK 패키지
+# -----------------------------------------------------------------------------
+
+# Gemini API를 Python SDK 방식으로 호출하기 위한 Google Gen AI SDK입니다.
+# 이 패키지는 Streamlit 화면에서 직접 사용하지 않습니다.
+# 사용 위치:
+# - 05_ai-chatbot-interface/00_sample_backend: /api/chat/gemini 선택 API
+# - 99_final-frontend-project/backend_service: 실제 Gemini 응답 생성
+#
+# 주의:
+# - GEMINI_API_KEY는 프론트엔드 최상위 .env에 넣지 않습니다.
+# - 04 챗봇 샘플에서는 05_ai-chatbot-interface/00_sample_backend/.env에만 둡니다.
+# - 실제 서비스 구조에서도 Streamlit은 백엔드 API만 호출합니다.
+google-genai==1.2.0
 
 
 # -----------------------------------------------------------------------------

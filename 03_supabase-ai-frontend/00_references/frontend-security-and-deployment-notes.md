@@ -53,7 +53,7 @@ OPENAI_API_KEY
 
 이 값들은 노출되면 비용, 데이터, 권한 문제가 생길 수 있습니다. 반드시 백엔드 또는 배포 서비스의 환경변수에 저장합니다.
 
-다만 `04_ai-chatbot-interface`에는 Gemini SDK 호출 흐름을 이해하기 위한 로컬 선택 실습이 있습니다. 이 선택 실습에서 `GEMINI_API_KEY`를 임시로 사용할 수는 있지만, 다음 기준을 지킵니다.
+`05_ai-chatbot-interface`에서도 Gemini/OpenAI API를 프론트엔드에서 직접 호출하지 않습니다. 챗봇 화면은 mock 응답 또는 백엔드 API 응답을 표시하는 역할만 맡고, 실제 서비스 구조에서는 FastAPI 백엔드가 Gemini/OpenAI API를 호출합니다.
 
 - GitHub에 `.env`를 올리지 않습니다.
 - 배포용 Streamlit Secrets에 LLM API key를 넣지 않습니다.
@@ -74,7 +74,7 @@ OPENAI_API_KEY
 무료 배포 흐름은 필수 구현이 아니라 선택 참고입니다. 수업 중 짧게 확인할 때는 아래 문서를 봅니다.
 
 ```text
-C:\aidev\03_supabase-ai-frontend\05_state-session-and-data\06_service-log-and-integration-check\03_free-deployment-guide.md
+C:\aidev\03_supabase-ai-frontend\04_state-session-and-data\06_service-log-and-integration-check\03_free-deployment-guide.md
 C:\aidev\03_supabase-ai-frontend\99_final-frontend-project\templates\06_deployment-checklist.md
 ```
 

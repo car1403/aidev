@@ -125,7 +125,47 @@ http://127.0.0.1:8000/health
 http://127.0.0.1:8000/docs
 ```
 
-### 7-2. 02 과정 백엔드
+### 7-2. 05 챗봇 샘플 백엔드
+
+`05_ai-chatbot-interface`에서 챗봇 UI와 백엔드 chat API를 연결할 때는 챗봇 전용 샘플 백엔드를 사용합니다.
+
+```powershell
+cd C:\aidev\03_supabase-ai-frontend\05_ai-chatbot-interface\00_sample_backend
+..\..\.venv\Scripts\Activate.ps1
+uvicorn main:app --reload --host 127.0.0.1 --port 8000
+```
+
+mock 응답만 사용할 때는 `.env`가 없어도 됩니다.
+
+Gemini 실제 호출 API(`/api/chat/gemini`)를 사용할 때만 이 백엔드 폴더 안에 백엔드 전용 `.env`를 만듭니다.
+
+```powershell
+cd C:\aidev\03_supabase-ai-frontend\05_ai-chatbot-interface\00_sample_backend
+Copy-Item .env.example .env
+```
+
+백엔드 전용 `.env` 예시:
+
+```env
+GEMINI_API_KEY=실제-Gemini-API-key
+GEMINI_MODEL=gemini-2.5-flash-lite
+```
+
+주의할 점:
+
+```text
+C:\aidev\03_supabase-ai-frontend\.env
+-> Streamlit 프론트엔드용
+-> API_BASE_URL만 둡니다.
+
+C:\aidev\03_supabase-ai-frontend\05_ai-chatbot-interface\00_sample_backend\.env
+-> 챗봇 FastAPI 백엔드용
+-> GEMINI_API_KEY를 둡니다.
+```
+
+프론트엔드 화면 코드는 `GEMINI_API_KEY`를 읽지 않습니다. Streamlit은 백엔드 API 주소만 알고, Gemini 호출은 FastAPI 백엔드가 처리합니다.
+
+### 7-3. 02 과정 백엔드
 
 실제 Supabase 저장과 인증 흐름은 `02_supabase-ai-backend`의 FastAPI 서버를 실행해 연결합니다.
 
@@ -135,7 +175,7 @@ cd C:\aidev\02_supabase-ai-backend\03_supabase-db-and-auth\03_fastapi-supabase-i
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-### 7-3. 99 최종 프로젝트 backend_mock
+### 7-4. 99 최종 프로젝트 backend_mock
 
 최종 프론트엔드 프로젝트의 필수 실습은 `backend_mock`으로 진행합니다. Supabase, Gemini, Redis 없이 바로 실행됩니다.
 
@@ -152,7 +192,7 @@ http://127.0.0.1:8000/health
 http://127.0.0.1:8000/docs
 ```
 
-### 7-4. 99 최종 프로젝트 backend_service
+### 7-5. 99 최종 프로젝트 backend_service
 
 실제 Supabase Auth, Supabase DB, Gemini, 선택형 Upstash Redis, Render 배포까지 확인할 때만 `backend_service`를 사용합니다.
 
@@ -170,8 +210,8 @@ uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 1. `01_streamlit-basic`: 화면 실행, 입력, 기본 레이아웃
 2. `02_streamlit-ui-components`: 버튼, 폼, 표, 차트
 3. `03_api-integration`: FastAPI 호출, 로딩/오류 처리
-4. `04_ai-chatbot-interface`: mock 기반 챗봇 UI
-5. `05_state-session-and-data`: session state, token, Authorization header, 대화 이력
+4. `04_state-session-and-data`: session state, token, Authorization header, 대화 이력
+5. `05_ai-chatbot-interface`: mock 기반 챗봇 UI와 챗봇 전용 백엔드 호출
 6. `90_ai-assisted-ui-review-and-debugging`: 오류 분석과 UI 리뷰
 7. `99_final-frontend-project`: `backend_mock` 기반 개인화 AI 챗봇 통합 UX 구현, 선택형 `backend_service` 배포 연결
 

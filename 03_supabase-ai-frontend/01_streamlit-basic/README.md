@@ -92,7 +92,7 @@ Streamlit은 일반적인 웹 프론트엔드처럼 HTML, CSS, JavaScript를 먼
 나중에 FastAPI 백엔드 응답을 어디에 표시할 수 있는가?
 ```
 
-이 기준은 이후 `03_api-integration`, `04_ai-chatbot-interface`, `05_state-session-and-data`에서 계속 이어집니다.
+이 기준은 이후 `03_api-integration`, `05_ai-chatbot-interface`, `04_state-session-and-data`에서 계속 이어집니다.
 
 ## 테마 설정
 

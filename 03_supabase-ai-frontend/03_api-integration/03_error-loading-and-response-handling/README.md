@@ -42,9 +42,9 @@ streamlit run .\03_api-integration\03_error-loading-and-response-handling\02_tim
 03_api-integration
 -> 로딩, 오류, 응답 검증
 
-04_ai-chatbot-interface
+05_ai-chatbot-interface
 -> mock/Gemini 응답을 화면에 표시
 
-05_state-session-and-data
+04_state-session-and-data
 -> 응답 결과와 오류 상태를 대화 이력과 로그에 누적
 ```

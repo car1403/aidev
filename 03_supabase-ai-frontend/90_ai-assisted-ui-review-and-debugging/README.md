@@ -1,6 +1,6 @@
 # 90_ai-assisted-ui-review-and-debugging
 
-이 단원은 `01_streamlit-basic`부터 `05_state-session-and-data`까지 만든 Streamlit 코드를 AI 보조 도구와 함께 점검하는 마무리 단원입니다.
+이 단원은 `01_streamlit-basic`부터 `04_state-session-and-data`까지 만든 Streamlit 코드를 AI 보조 도구와 함께 점검하는 마무리 단원입니다.
 
 새로운 큰 기능을 만드는 단원이 아니라, 실행 오류, API 연결 실패, session state 문제, 보안 키 노출 위험을 정리하고 고치는 방법을 연습합니다.
 
@@ -40,8 +40,8 @@ SUPABASE_SERVICE_ROLE_KEY=절대 프론트엔드에 넣지 않음
 | `01_streamlit-basic` | 실행 명령, 파일 경로, Streamlit 화면 표시 |
 | `02_streamlit-ui-components` | 입력값 반영, 폼 submit, 표/차트 표시 |
 | `03_api-integration` | 백엔드 실행 여부, `API_BASE_URL`, GET/POST, timeout, status code |
-| `04_ai-chatbot-interface` | chat UI, mock 응답, 백엔드 chat API 연결, LLM key 노출 여부 |
-| `05_state-session-and-data` | `st.session_state`, 로그인 token, Authorization header, 대화 이력/로그 조회 |
+| `05_ai-chatbot-interface` | chat UI, mock 응답, 백엔드 chat API 연결, LLM key 노출 여부 |
+| `04_state-session-and-data` | `st.session_state`, 로그인 token, Authorization header, 대화 이력/로그 조회 |
 | `99_final-frontend-project` | 최종 앱 실행, 테스트 결과, 보안 점검, 제출 문서 |
 
 ## 제출 산출물
