@@ -1,4 +1,4 @@
-﻿# 10_labs
+# 10_labs
 
 `02_python-advanced` 과정의 단원별 실습 모음입니다.
 
@@ -13,7 +13,6 @@ lab-03_exception.md
 lab-04_oop.md
 lab-05_comprehension-iterator.md
 lab-06_data-processing-advanced.md
-lab-07_api-external-data.md
 lab-08_testing-code-quality.md
 lab-09_project-structure.md
 ```

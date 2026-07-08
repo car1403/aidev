@@ -16,7 +16,7 @@ Python 실행 환경
 리스트와 딕셔너리
 함수 기초
 파일 저장과 읽기
-기초 미니 프로젝트
+기초 종합 과제
 ```
 
 ## 전체 구조
@@ -35,11 +35,12 @@ Python 실행 환경
 ├─ 06_function-basic
 ├─ 07_file-data-basic
 ├─ 10_labs
-├─ 20_assignments
-└─ 99_basic-mini-project
+└─ 20_assignments
 ```
 
-## 권장 학습 순서
+## 전체 자료 구성 순서
+
+아래 순서는 폴더가 배치된 전체 자료 순서입니다. 실제 수업에서는 바로 아래의 `필수/선택 기준`에 따라 필요한 부분을 먼저 진행합니다.
 
 ```text
 00_references
@@ -52,8 +53,18 @@ Python 실행 환경
 -> 07_file-data-basic
 -> 10_labs
 -> 20_assignments
--> 99_basic-mini-project
 ```
+
+## 필수/선택 기준
+
+`01_python-basic`에서는 기초 문법을 빠르게 훑는 것보다, 직접 실행하고 작은 프로그램으로 연결하는 경험이 더 중요합니다.
+
+| 구분 | 단원 | 기준 |
+| --- | --- | --- |
+| 필수 | `01_python-start` ~ `07_file-data-basic` | 핵심 예제를 실행하고 값과 조건을 바꿔 봅니다. |
+| 필수 | `10_labs` 일부 | 수업 중 핵심 문법을 직접 입력해 봅니다. |
+| 필수 | `20_assignments`의 종합 과제 | 주제와 요구 기능이 있는 작은 프로그램 1개를 완성합니다. |
+| 선택 | `20_assignments`의 단원별 과제 | 부족한 문법을 보충할 때 선택해서 풉니다. |
 
 ## 단원별 핵심 내용
 
@@ -61,15 +72,14 @@ Python 실행 환경
 | --- | --- |
 | 00_references | 학습 로드맵, 파이썬 용어, 초보자 오류 가이드 |
 | 01_python-start | Python 실행, `print`, 주석, 입력과 출력 |
-| 02_variables-and-data-types | 변수, 숫자, 문자열, 불 자료형, 형 변환 |
+| 02_variables-and-data-types | 변수, 숫자, 문자열, 불 자료형, 형 변환, 타입 힌트 기초 |
 | 03_condition-basic | `if`, `elif`, `else`, `match-case`, 비교 연산자, 논리 연산자 |
 | 04_loop-basic | `for`, `while`, `while True`, `range`, `break`, `continue` |
 | 05_data-structures-basic | 리스트, 튜플, 딕셔너리, 세트, 반복문과 자료구조, 중첩 API 응답 형태 |
 | 06_function-basic | 함수 정의, 매개변수, 반환값, 기본값, 키워드 인자, 자료구조 처리, 코드 정리 |
-| 07_file-data-basic | 파일 경로, 텍스트 파일, CSV, JSON, 설정 파일 기초 |
+| 07_file-data-basic | 파일 경로, JSON dict/list 저장과 읽기, 텍스트/CSV 보충 예제 |
 | 10_labs | 단원별 실습 문제 |
 | 20_assignments | 기초 과제 |
-| 99_basic-mini-project | 파일 저장형 학습 기록 관리 미니 프로젝트 |
 
 ## 처음 시작하는 방법
 
@@ -165,7 +175,7 @@ if True:
 2. 예제 `.py` 파일을 실행합니다.
 3. 예제 안의 값을 바꿔봅니다.
 4. `10_labs`의 실습을 풉니다.
-5. `99_basic-mini-project`에서 작은 프로그램을 완성합니다.
+5. 필수 과제를 먼저 완성하고, 시간이 충분하면 선택 과제로 확장합니다.
 
 ## 참고 방향
 

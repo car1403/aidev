@@ -18,16 +18,18 @@
 
 | 필요한 내용 | 참고 문서 |
 | --- | --- |
-| Python 설치와 버전 확인 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
-| VS Code 설치 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
-| VS Code 확장 프로그램 설치 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
-| PowerShell 기본 사용법 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
-| `.venv`, `pip`, `requirements.txt` 사용법 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
-| Markdown 미리보기와 문서 작성법 | [`../00_course-guide/02_learning-guide/getting-started.md`](../00_course-guide/02_learning-guide/getting-started.md) |
-| 첫 실행 전 점검표 | [`../00_course-guide/02_learning-guide/getting-started.md`](../00_course-guide/02_learning-guide/getting-started.md) |
-| Codex 설치와 로그인 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
-| Gemini 계정, API Key, 결제/쿼터 안내 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
-| OpenAI 계정과 결제 안내 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
+| Python 설치와 버전 확인 | [`../00_course-guide/02_setup-guides/01_python-install-guide.md`](../00_course-guide/02_setup-guides/01_python-install-guide.md) |
+| VS Code 설치 | [`../00_course-guide/02_setup-guides/02_vscode-install-guide.md`](../00_course-guide/02_setup-guides/02_vscode-install-guide.md) |
+| VS Code 확장 프로그램 설치 | [`../00_course-guide/02_setup-guides/03_vscode-extensions-guide.md`](../00_course-guide/02_setup-guides/03_vscode-extensions-guide.md) |
+| PowerShell 기본 사용법 | [`../00_course-guide/02_setup-guides/05_powershell-and-terminal-guide.md`](../00_course-guide/02_setup-guides/05_powershell-and-terminal-guide.md) |
+| `.venv`, `pip`, `requirements.txt` 사용법 | [`../00_course-guide/02_setup-guides/06_venv-pip-requirements-guide.md`](../00_course-guide/02_setup-guides/06_venv-pip-requirements-guide.md) |
+| Markdown 미리보기와 문서 작성법 | [`../00_course-guide/03_learning-support/getting-started.md`](../00_course-guide/03_learning-support/getting-started.md) |
+| 첫 실행 전 점검표 | [`../00_course-guide/03_learning-support/getting-started.md`](../00_course-guide/03_learning-support/getting-started.md) |
+| Gemini 계정, API Key, 결제/쿼터 안내 | [`../00_course-guide/02_setup-guides/08_gemini-openai-account-guide.md`](../00_course-guide/02_setup-guides/08_gemini-openai-account-guide.md) |
+| OpenAI 계정과 결제 안내 | [`../00_course-guide/02_setup-guides/08_gemini-openai-account-guide.md`](../00_course-guide/02_setup-guides/08_gemini-openai-account-guide.md) |
+| Supabase 계정과 프로젝트 | [`../00_course-guide/02_setup-guides/09_supabase-account-guide.md`](../00_course-guide/02_setup-guides/09_supabase-account-guide.md) |
+| Upstash Redis 계정과 REST API 정보 | [`../00_course-guide/02_setup-guides/10_upstash-redis-guide.md`](../00_course-guide/02_setup-guides/10_upstash-redis-guide.md) |
+| Codex와 ChatGPT 사용 준비 | [`../00_course-guide/02_setup-guides/17_codex-chatgpt-guide.md`](../00_course-guide/02_setup-guides/17_codex-chatgpt-guide.md) |
 
 ## Python/Git 선행 과정 확인
 

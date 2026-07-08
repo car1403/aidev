@@ -1,48 +1,57 @@
-﻿# 10. Labs
+# 10. Labs
 
-이 폴더는 Git 상태 확인, 변경 내용 비교, VS Code Source Control, `.gitignore`, 브랜치, 커밋 메시지 작성을 연습하는 실습 안내를 담고 있습니다.
+이 폴더는 VS Code Source Control을 사용해 Git/GitHub 흐름을 연습하는 실습 안내를 담고 있습니다.
+
+이번 단원의 실습은 명령어 암기가 아니라, **작은 프로젝트를 만들고 README를 작성한 뒤 GitHub에 올리고 팀 협업 흐름까지 경험하는 것**에 집중합니다.
 
 ## 실습 순서
 
 ```text
-lab-01-status-and-diff.md
-lab-01b-vscode-source-control.md
-lab-02-gitignore-and-env-safety.md
-lab-03-branch-and-commit-message.md
-lab-04-diff-review-checklist.md
+lab-01-vscode-source-control-flow.md
+lab-02-markdown-readme-writing.md
+lab-03-github-push-and-secret-check.md
+lab-04-team-branch-merge-flow.md
 ```
 
 ## 실습 전 준비
 
-PowerShell에서 과정 폴더로 이동합니다.
-
-```powershell
-cd C:\aidev\01_python-git-foundation
-```
-
-Git 설치 여부를 확인합니다.
-
-```powershell
-git --version
-```
-
-Git이 설치되어 있지 않다면 `00_course-guide/02_learning-guide`의 설치 안내 문서를 먼저 확인합니다.
-
 VS Code에서 과정 폴더를 엽니다.
+
+```text
+C:\aidev\01_python-git-foundation
+```
+
+PowerShell에서 열 수 있습니다.
 
 ```powershell
 code C:\aidev\01_python-git-foundation
 ```
 
-`code` 명령이 동작하지 않으면 VS Code를 직접 실행한 뒤 `File -> Open Folder`에서 `C:\aidev\01_python-git-foundation`를 선택합니다.
+`code` 명령이 안 되면 VS Code에서 직접 엽니다.
+
+```text
+File
+-> Open Folder
+-> C:\aidev\01_python-git-foundation
+```
 
 ## 실습 파일
 
-실습은 아래 폴더의 샘플 파일을 사용합니다.
+개인 실습은 아래 샘플 프로젝트를 사용합니다.
 
 ```text
-03_git-github/10_labs/practice-files
+03_git-github/10_labs/practice-files/git-practice-project
 ```
 
-민감정보가 들어간 실제 `.env` 파일을 실습 대상으로 사용하지 않습니다.
+팀 실습은 같은 샘플 프로젝트를 복사해서 팀 저장소에서 진행하거나, 강사가 제공한 팀 저장소에서 진행합니다.
 
+## 진행 기준
+
+```text
+1. VS Code Source Control을 열 수 있어야 합니다.
+2. 변경 파일을 클릭해 diff를 볼 수 있어야 합니다.
+3. stage와 commit을 할 수 있어야 합니다.
+4. README를 Markdown으로 작성할 수 있어야 합니다.
+5. GitHub에 push한 뒤 웹에서 확인할 수 있어야 합니다.
+6. 팀 실습에서는 branch, Pull Request, main 관리자 merge 흐름을 설명할 수 있어야 합니다.
+```

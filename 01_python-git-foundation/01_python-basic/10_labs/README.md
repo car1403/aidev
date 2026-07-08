@@ -29,7 +29,7 @@ mkdir .\01_python-basic\10_labs\practice
 | 4 | `lab04_loop-basic.md` | `for`, `while`, `continue`, `break`, `while True` |
 | 5 | `lab05_data-structures-basic.md` | `list`, `tuple`, `dict`, `set`, 중첩 자료구조 |
 | 6 | `lab06_function-basic.md` | 함수 정의, 매개변수, 반환값, 자료구조 처리 |
-| 7 | `lab07_file-data-basic.md` | `Path`, 텍스트, CSV, JSON, 설정 파일 |
+| 7 | `lab07_file-data-basic.md` | `Path`, JSON dict/list 저장과 읽기 |
 | 8 | `lab08_basic-mini-integration.md` | 조건문, 반복문, 자료구조, 함수, JSON 저장 통합 |
 
 ## 완료 기준

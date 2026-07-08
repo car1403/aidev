@@ -84,7 +84,7 @@ C:\aidev\02_supabase-ai-backend\.venv\Scripts\python.exe
 | 막히는 지점 | 확인 문서 |
 | --- | --- |
 | Python, `.venv`, 패키지 설치 | [SETUP.md](./SETUP.md) |
-| FastAPI 실행 오류와 포트 충돌 | [공통 트러블슈팅](../00_course-guide/02_learning-guide/troubleshooting.md), [01_fastapi-backend](./01_fastapi-backend/README.md) |
+| FastAPI 실행 오류와 포트 충돌 | [공통 트러블슈팅](../00_course-guide/03_learning-support/troubleshooting.md), [01_fastapi-backend](./01_fastapi-backend/README.md) |
 | Gemini/OpenAI API key, 비용, 호출 제한 | [API key and billing](./02_llm-api-integration/02_api-key-and-billing/README.md) |
 | Supabase 프로젝트, RLS, service role key 구분 | [Supabase DB and Auth](./03_supabase-db-and-auth/README.md), [환경 변수와 key 관리](./03_supabase-db-and-auth/00_references/env-and-secret-management.md) |
 | 오류 메시지를 어떻게 물어봐야 할지 모름 | [90_ai-assisted-code-review-and-debugging](./90_ai-assisted-code-review-and-debugging/README.md) |

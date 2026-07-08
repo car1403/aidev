@@ -13,7 +13,7 @@
 | 03_use_custom_module.py | 직접 만든 모듈 import | 같은 폴더의 `.py` 파일 가져오기 |
 | 04_from_custom_module_import.py | 직접 만든 함수만 import | 모듈 안의 특정 함수만 가져오기 |
 | 05_package_import.py | 패키지 import | 폴더 단위로 코드를 묶어서 가져오기 |
-| 06_check_external_package.py | 외부 패키지 확인 | 공통 `.venv`에 설치된 패키지 확인 |
+| 06_check_external_package.py | 외부 패키지 확인 | 공통 `.venv`에 설치된 pytest 확인 |
 
 ## import 방식 정리
 

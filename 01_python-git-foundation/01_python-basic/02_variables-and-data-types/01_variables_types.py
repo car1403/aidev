@@ -12,10 +12,18 @@ user_name = "Jean"
 user_age = 30
 is_beginner = True
 
+# 변수 이름 뒤에 : str, : int, : bool처럼 적는 것을 타입 힌트라고 합니다.
+# name: str = "kim"은 "name 변수는 문자열로 사용할 예정"이라는 뜻입니다.
+# 지금은 힌트처럼 이해하고, FastAPI/Pydantic을 배울 때 더 자주 만나게 됩니다.
+name: str = "kim"
+age: int = 20
+is_student: bool = True
+
 # 문자열, 숫자, True/False 값을 각각 출력합니다.
 print("이름:", user_name, "입니다.")
 print("나이:", user_age)
 print("초보자인가요?", is_beginner)
+print("타입 힌트 예시:", name, age, is_student)
 
 # type()은 값이나 변수의 자료형을 확인하는 함수입니다.
 # str은 문자열, int는 정수, bool은 참/거짓 값을 뜻합니다.

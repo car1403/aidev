@@ -6,13 +6,9 @@
 
 ```text
 파일 경로
-텍스트 파일 쓰기
-텍스트 파일 읽기
-여러 줄 텍스트 저장
-CSV 파일 쓰기와 읽기
 JSON 파일 쓰기
 JSON 파일 읽기
-설정 파일 관리
+list/dict 데이터를 파일에 저장하기
 ```
 
 ## 파일과 데이터를 배우는 이유
@@ -21,29 +17,39 @@ JSON 파일 읽기
 
 이 단원에서는 가장 기본적인 파일 저장 방식을 먼저 연습합니다. 이후에는 Supabase에 사용자 정보, 대화 이력, 서비스 로그를 저장하게 됩니다. 파일 저장을 먼저 이해하면 데이터가 “어떤 구조로 저장되고 다시 읽히는지”를 더 쉽게 이해할 수 있습니다.
 
-예외 처리는 다음 단계에서 따로 학습합니다. 이 단원은 파일 경로, 텍스트, CSV, JSON의 기본 흐름에 집중합니다.
+예외 처리는 다음 단계에서 따로 학습합니다. 이 단원은 뒤 과정과 바로 연결되는 `Path`와 JSON 저장 흐름에 먼저 집중합니다. 텍스트 파일, CSV, 설정 JSON은 보충 예제로 둡니다.
 
-## 예제 순서
+## 필수 예제
 
 | 파일 | 내용 |
 | --- | --- |
 | `01_path_basic.py` | `Path`를 사용해 폴더와 파일 경로를 다룹니다. |
+| `05_json_dict_basic.py` | dict 한 개를 JSON 파일로 저장하고 읽습니다. |
+| `06_json_list_logs.py` | list 안에 dict를 넣은 로그 데이터를 JSON 파일로 저장합니다. |
+
+## 선택 예제
+
+| 파일 | 내용 |
+| --- | --- |
 | `02_text_file_write_read.py` | 텍스트 파일에 문자열을 저장하고 다시 읽습니다. |
 | `03_text_file_lines_append.py` | 여러 줄 텍스트를 저장하고 뒤에 내용을 추가합니다. |
 | `04_csv_basic.py` | 표 형태 데이터를 CSV 파일로 저장하고 읽습니다. |
-| `05_json_dict_basic.py` | dict 한 개를 JSON 파일로 저장하고 읽습니다. |
-| `06_json_list_logs.py` | list 안에 dict를 넣은 로그 데이터를 JSON 파일로 저장합니다. |
 | `07_config_json_basic.py` | 설정값을 JSON 파일로 저장하고 프로그램에서 읽어옵니다. |
 
-## 실행
+## 필수 예제 실행
 
 ```powershell
 python .\07_file-data-basic\01_path_basic.py
+python .\07_file-data-basic\05_json_dict_basic.py
+python .\07_file-data-basic\06_json_list_logs.py
+```
+
+## 선택 예제 실행
+
+```powershell
 python .\07_file-data-basic\02_text_file_write_read.py
 python .\07_file-data-basic\03_text_file_lines_append.py
 python .\07_file-data-basic\04_csv_basic.py
-python .\07_file-data-basic\05_json_dict_basic.py
-python .\07_file-data-basic\06_json_list_logs.py
 python .\07_file-data-basic\07_config_json_basic.py
 ```
 
@@ -61,4 +67,4 @@ data
 └─ config.json
 ```
 
-이 파일들은 실습 결과물입니다. 내용을 직접 열어 보면 Python 자료구조가 파일 안에서 어떻게 표현되는지 확인할 수 있습니다.
+필수 예제만 실행하면 `student.json`, `service_logs.json` 중심으로 확인하면 됩니다. 선택 예제까지 실행하면 텍스트 파일, CSV, config JSON도 함께 생성됩니다. 내용을 직접 열어 보면 Python 자료구조가 파일 안에서 어떻게 표현되는지 확인할 수 있습니다.

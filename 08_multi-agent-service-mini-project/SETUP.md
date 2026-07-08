@@ -2,6 +2,20 @@
 
 `08_multi-agent-service-mini-project` 실행 환경 설정 안내입니다. 이 과정은 Docker Compose로 로컬 서비스를 실행하고, GitHub Actions로 자동 검증하며, AWS 배포 결과까지 확인하는 미니 프로젝트입니다.
 
+## 0. 공통 준비 문서
+
+아래 항목이 아직 준비되지 않았다면 먼저 공통 설치 가이드를 확인합니다.
+
+| 필요한 내용 | 문서 |
+| --- | --- |
+| Python과 `.venv` | [`../00_course-guide/02_setup-guides/01_python-install-guide.md`](../00_course-guide/02_setup-guides/01_python-install-guide.md), [`../00_course-guide/02_setup-guides/06_venv-pip-requirements-guide.md`](../00_course-guide/02_setup-guides/06_venv-pip-requirements-guide.md) |
+| Git/GitHub | [`../00_course-guide/02_setup-guides/04_git-github-setup-guide.md`](../00_course-guide/02_setup-guides/04_git-github-setup-guide.md) |
+| Docker Desktop | [`../00_course-guide/02_setup-guides/14_docker-desktop-guide.md`](../00_course-guide/02_setup-guides/14_docker-desktop-guide.md) |
+| AWS 계정과 비용 관리 | [`../00_course-guide/02_setup-guides/15_aws-account-and-cost-guide.md`](../00_course-guide/02_setup-guides/15_aws-account-and-cost-guide.md) |
+| GitHub Actions | [`../00_course-guide/02_setup-guides/16_github-actions-guide.md`](../00_course-guide/02_setup-guides/16_github-actions-guide.md) |
+| Codex와 ChatGPT 사용 준비 | [`../00_course-guide/02_setup-guides/17_codex-chatgpt-guide.md`](../00_course-guide/02_setup-guides/17_codex-chatgpt-guide.md) |
+| 문제 해결 | [`../00_course-guide/03_learning-support/troubleshooting.md`](../00_course-guide/03_learning-support/troubleshooting.md) |
+
 ## 1. 작업 위치
 
 ```powershell

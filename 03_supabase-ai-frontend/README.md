@@ -129,7 +129,7 @@ streamlit run .\01_streamlit-basic\01_streamlit-project-setup\01_hello-streamlit
 
 | 막히는 지점 | 확인 문서 |
 | --- | --- |
-| Streamlit 실행 오류 | [SETUP.md](./SETUP.md), [공통 트러블슈팅](../00_course-guide/02_learning-guide/troubleshooting.md) |
+| Streamlit 실행 오류 | [SETUP.md](./SETUP.md), [공통 트러블슈팅](../00_course-guide/03_learning-support/troubleshooting.md) |
 | Streamlit 기본 사용법 | [Streamlit 사용 가이드](./00_references/streamlit-usage-guide.md) |
 | 백엔드 연결 실패 | [03_api-integration](./03_api-integration/README.md), [02 Backend SETUP](../02_supabase-ai-backend/SETUP.md) |
 | `API_BASE_URL` 또는 `.env` 위치 | [SETUP.md](./SETUP.md), [프론트 보안 참고](./00_references/frontend-security-and-deployment-notes.md) |

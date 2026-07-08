@@ -4,13 +4,26 @@
 
 05 과정은 Docker를 사용하지만 Docker 운영 과정은 아닙니다. 여기서는 Agent 실습에 필요한 도구를 `docker run`으로 하나씩 실행합니다. Docker Compose, Dockerfile, AWS, GitHub Actions는 `07_multi-agent-service-ops`에서 본격적으로 다룹니다.
 
-## 0. 작업 위치
+## 0. 공통 준비 문서
+
+아래 항목이 아직 준비되지 않았다면 먼저 공통 설치 가이드를 확인합니다.
+
+| 필요한 내용 | 문서 |
+| --- | --- |
+| Python과 `.venv` | [`../00_course-guide/02_setup-guides/01_python-install-guide.md`](../00_course-guide/02_setup-guides/01_python-install-guide.md), [`../00_course-guide/02_setup-guides/06_venv-pip-requirements-guide.md`](../00_course-guide/02_setup-guides/06_venv-pip-requirements-guide.md) |
+| OpenAI 계정, API Key, 비용 | [`../00_course-guide/02_setup-guides/08_gemini-openai-account-guide.md`](../00_course-guide/02_setup-guides/08_gemini-openai-account-guide.md) |
+| Docker Desktop | [`../00_course-guide/02_setup-guides/14_docker-desktop-guide.md`](../00_course-guide/02_setup-guides/14_docker-desktop-guide.md) |
+| `.env`와 secret 보안 | [`../00_course-guide/02_setup-guides/07_env-and-secret-guide.md`](../00_course-guide/02_setup-guides/07_env-and-secret-guide.md) |
+| Codex와 ChatGPT 사용 준비 | [`../00_course-guide/02_setup-guides/17_codex-chatgpt-guide.md`](../00_course-guide/02_setup-guides/17_codex-chatgpt-guide.md) |
+| 문제 해결 | [`../00_course-guide/03_learning-support/troubleshooting.md`](../00_course-guide/03_learning-support/troubleshooting.md) |
+
+## 1. 작업 위치
 
 ```powershell
 cd C:\aidev\05_llm-agent-orchestration
 ```
 
-## 1. 가상환경 기준
+## 2. 가상환경 기준
 
 수업 기본 흐름은 단원별 `.venv`를 우선합니다.
 
@@ -48,7 +61,7 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-## 2. .env 작성
+## 3. .env 작성
 
 최상위 예시는 다음 파일입니다.
 
@@ -65,7 +78,7 @@ Copy-Item .env.example .env
 
 `.env` 파일에는 실제 API Key가 들어갈 수 있으므로 GitHub에 올리지 않습니다.
 
-## 3. Docker Desktop 확인
+## 4. Docker Desktop 확인
 
 Docker Desktop을 실행한 뒤 PowerShell에서 확인합니다.
 
@@ -76,7 +89,7 @@ docker ps
 
 `docker ps`가 오류 없이 실행되면 컨테이너를 실행할 준비가 된 것입니다.
 
-## 4. 선택: Ollama 컨테이너 실행
+## 5. 선택: Ollama 컨테이너 실행
 
 Ollama는 로컬 Llama 모델 비교 실습에 사용합니다. PC 사양이나 수업 시간에 따라 선택적으로 진행합니다.
 
@@ -101,7 +114,7 @@ docker exec -it ollama-llm ollama list
 docker start ollama-llm
 ```
 
-## 5. pgvector 컨테이너 실행
+## 6. pgvector 컨테이너 실행
 
 RAG, Vector DB, Long-term Memory 실습에서는 PostgreSQL + pgvector 컨테이너를 사용합니다.
 
@@ -128,7 +141,7 @@ docker exec -it aidev-pgvector psql -U agent_user -d agent_db
 \q
 ```
 
-## 6. Redis 컨테이너 실행
+## 7. Redis 컨테이너 실행
 
 Redis는 세션 메모리, 캐시, 짧은 상태 저장 실습에 사용합니다.
 
@@ -151,7 +164,7 @@ docker exec -it aidev-redis redis-cli ping
 PONG
 ```
 
-## 7. 포트 충돌 확인
+## 8. 포트 충돌 확인
 
 컨테이너 실행이 실패하면 이미 같은 포트를 사용하는 프로그램이 있을 수 있습니다.
 
@@ -169,7 +182,7 @@ netstat -ano | findstr :6379
 | `5433` | PostgreSQL + pgvector |
 | `6379` | Redis |
 
-## 8. 컨테이너 관리
+## 9. 컨테이너 관리
 
 실습을 잠시 멈출 때:
 

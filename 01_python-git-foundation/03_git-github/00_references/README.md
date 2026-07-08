@@ -1,30 +1,36 @@
-﻿# 00. References
+# 00. References
 
-이 폴더는 Git, GitHub, 커밋, 브랜치, `.gitignore`, README 작성, VS Code Source Control 사용법에 대한 보충 자료를 모아 둔 곳입니다.
+이 폴더는 `03_git-github` 실습 중 필요할 때 찾아보는 참고 문서 모음입니다.
+
+모든 문서를 외우려고 하지 않아도 됩니다. 실습 중 막히는 지점이 생기면 해당 문서를 열어 확인합니다.
 
 ## 문서 목록
 
-```text
-git-command-cheatsheet.md
-git-github-workflow-guide.md
-vscode-source-control-guide.md
-commit-message-guide.md
-gitignore-and-secret-guide.md
-git-review-checklist.md
-readme-writing-template.md
-```
-
-모든 문서를 한 번에 외우려고 하기보다, 실습 중 필요한 문서를 찾아보는 방식으로 사용합니다.
-
-## 문서별 역할
-
-| 문서 | 역할 |
+| 문서 | 언제 보나요? |
 | --- | --- |
-| `git-command-cheatsheet.md` | 자주 쓰는 Git 명령어를 빠르게 확인합니다. |
-| `git-github-workflow-guide.md` | 로컬 저장소와 GitHub 원격 저장소 흐름을 이해합니다. |
-| `vscode-source-control-guide.md` | VS Code 화면에서 Git 작업을 진행하는 방법을 익힙니다. |
-| `commit-message-guide.md` | 좋은 커밋 메시지 작성 기준을 확인합니다. |
-| `gitignore-and-secret-guide.md` | GitHub에 올리면 안 되는 파일과 민감정보 보호 기준을 확인합니다. |
-| `git-review-checklist.md` | 커밋 전 변경 내용, 보안, 문서 품질을 점검합니다. |
-| `readme-writing-template.md` | README 작성 기본 틀을 확인합니다. |
+| `vscode-source-control-guide.md` | VS Code에서 변경 파일 확인, stage, commit, push를 할 때 |
+| `markdown-readme-guide.md` | README에 제목, 표, 코드, 이미지, Mermaid 도표를 넣을 때 |
+| `gitignore-and-secret-guide.md` | `.env`, `.venv`, API key를 GitHub에 올리지 않도록 확인할 때 |
+| `commit-message-guide.md` | 커밋 메시지를 어떻게 써야 할지 고민될 때 |
+| `team-branch-workflow-guide.md` | 팀원이 branch에서 작업하고 main 관리자가 merge하는 흐름을 볼 때 |
+| `git-command-cheatsheet.md` | 문제가 생겼을 때 최소 명령어로 상태를 확인할 때 |
 
+## 추천 확인 순서
+
+```text
+처음 Git을 쓸 때
+-> vscode-source-control-guide.md
+
+README를 쓸 때
+-> markdown-readme-guide.md
+
+커밋하기 전
+-> gitignore-and-secret-guide.md
+-> commit-message-guide.md
+
+팀 프로젝트를 시작할 때
+-> team-branch-workflow-guide.md
+
+상태가 헷갈릴 때
+-> git-command-cheatsheet.md
+```

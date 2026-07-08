@@ -67,7 +67,7 @@ finally : 오류가 있든 없든 마지막에 항상 실행합니다.
 01_python-basic/07_file-data-basic
 -> 파일과 JSON을 읽을 때 생기는 오류를 처리합니다.
 
-01_python-basic/99_basic-mini-project
+01_python-basic/20_assignments/assignment07_basic-python-final.md
 -> 저장 파일이 없거나 데이터가 깨진 상황을 처리합니다.
 ```
 

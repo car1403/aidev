@@ -1,14 +1,13 @@
-# Lab 06. 데이터 처리 심화
+# Lab 06. JSON 데이터 처리
 
-이 실습에서는 JSON, CSV, 날짜/시간, 파일 경로를 이용해 작은 서비스 로그 데이터를 저장합니다.
+이 실습에서는 JSON, 날짜/시간, 파일 경로를 이용해 작은 서비스 로그 데이터를 저장합니다.
 
 ## 실습 목표
 
 ```text
 1. pathlib로 data 폴더와 파일 경로를 만들 수 있습니다.
 2. dict/list 데이터를 JSON 파일로 저장할 수 있습니다.
-3. 서비스 로그 목록을 CSV 파일로 저장할 수 있습니다.
-4. datetime으로 생성 시각을 기록할 수 있습니다.
+3. datetime으로 생성 시각을 기록할 수 있습니다.
 ```
 
 ## 실습 1. data 폴더 만들기
@@ -49,27 +48,7 @@ record = {
 4. 저장한 파일을 다시 읽어 question 값을 출력합니다.
 ```
 
-## 실습 3. CSV 서비스 로그 저장하기
-
-아래 로그 목록을 `service_logs.csv`로 저장합니다.
-
-```python
-logs = [
-    {"event_type": "chat.request", "message": "질문 수신", "status": "success"},
-    {"event_type": "chat.response", "message": "응답 생성", "status": "success"},
-]
-```
-
-요구사항:
-
-```text
-1. csv.DictWriter를 사용합니다.
-2. event_type, message, status 컬럼을 저장합니다.
-3. writeheader를 사용해 첫 줄에 컬럼명을 씁니다.
-4. writerows를 사용해 여러 로그를 한 번에 저장합니다.
-```
-
-## 실습 4. 로그 생성 시각 추가하기
+## 실습 3. 로그 생성 시각 추가하기
 
 각 로그에 `created_at` 값을 추가합니다.
 
@@ -90,8 +69,7 @@ created_at 값이 문자열로 저장되나요?
 
 ```text
 1. JSON 저장 예제가 있어야 합니다.
-2. CSV 저장 예제가 있어야 합니다.
-3. created_at 날짜/시간 값이 포함되어야 합니다.
-4. data 폴더를 코드에서 직접 생성해야 합니다.
-5. 실행 후 생성된 파일 내용을 확인한 결과를 README에 정리합니다.
+2. created_at 날짜/시간 값이 포함되어야 합니다.
+3. data 폴더를 코드에서 직접 생성해야 합니다.
+4. 실행 후 생성된 파일 내용을 확인한 결과를 README에 정리합니다.
 ```

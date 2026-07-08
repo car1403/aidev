@@ -15,8 +15,6 @@
 
 `datetime`과 `pathlib`를 사용해 오늘 날짜와 현재 폴더 경로를 출력합니다.
 
-예시 코드:
-
 ```python
 from pathlib import Path
 import datetime as dt
@@ -25,18 +23,9 @@ print("현재 폴더:", Path.cwd())
 print("오늘 날짜:", dt.date.today())
 ```
 
-확인할 내용:
-
-```text
-Path는 어디에서 import했나요?
-dt는 어떤 모듈의 별칭인가요?
-```
-
 ## 실습 2. 직접 만든 모듈 사용하기
 
 `my_text_tools.py` 파일을 만들고 문자열 처리 함수를 작성합니다.
-
-예시:
 
 ```python
 def make_title(text: str) -> str:
@@ -50,13 +39,6 @@ import my_text_tools
 
 result = my_text_tools.make_title("  hello python  ")
 print(result)
-```
-
-확인할 내용:
-
-```text
-같은 폴더에 있는 .py 파일을 import할 수 있나요?
-모듈 이름 뒤에 점(.)을 찍고 함수를 호출하는 이유는 무엇인가요?
 ```
 
 ## 실습 3. 패키지 만들기
@@ -87,26 +69,18 @@ def make_response(question: str, answer: str) -> dict:
     }
 ```
 
-확인할 내용:
-
-```text
-패키지는 왜 폴더로 구성하나요?
-__init__.py 파일은 어떤 역할을 하나요?
-검증 함수와 응답 생성 함수를 나누면 어떤 점이 좋나요?
-```
-
 ## 실습 4. 외부 패키지 확인하기
 
 공통 `.venv`가 활성화된 상태에서 아래 명령을 실행합니다.
 
 ```powershell
-python -c "import httpx; print(httpx.__version__)"
+python -c "import pytest; print(pytest.__version__)"
 ```
 
 확인할 내용:
 
 ```text
-httpx는 표준 라이브러리인가요, 외부 패키지인가요?
+pytest는 표준 라이브러리인가요, 외부 패키지인가요?
 이 패키지는 어느 requirements.txt에서 관리하나요?
 ```
 

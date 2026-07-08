@@ -1,4 +1,4 @@
-﻿# SETUP
+# SETUP
 
 `02_python-advanced` 단원을 시작하기 전에 개발 환경을 다시 확인하는 복습용 안내입니다.
 
@@ -11,7 +11,7 @@ C:\aidev\01_python-git-foundation\.venv
 
 ## 이 문서를 다시 보는 이유
 
-`01_python-basic`을 마친 뒤 `02_python-advanced`로 넘어오면 함수, 모듈, 외부 API, 비동기 처리, 테스트처럼 조금 더 구조적인 내용을 다룹니다. 이때 실행 위치나 가상환경이 헷갈리면 예제 코드가 정상이어도 실행 오류가 날 수 있습니다.
+`01_python-basic`을 마친 뒤 `02_python-advanced`로 넘어오면 함수, 모듈, 예외 처리, 테스트처럼 조금 더 구조적인 내용을 다룹니다. 이때 실행 위치나 가상환경이 헷갈리면 예제 코드가 정상이어도 실행 오류가 날 수 있습니다.
 
 그래서 이 문서는 새 환경을 만드는 문서가 아니라, 이미 만든 환경을 다시 확인하는 복습 문서입니다.
 
@@ -81,9 +81,9 @@ python -m pip install --upgrade pip
 
 ## 4. 패키지 설치 확인
 
-`02_python-advanced`에서는 테스트와 외부 API 예제를 위해 `pytest`, `httpx`를 사용합니다.
+`02_python-advanced`에서는 테스트 예제를 위해 `pytest`를 사용합니다.
 
-이 패키지들은 `01_python-git-foundation` 최상위의 `requirements.txt`에서 함께 관리합니다. 상위 과정의 공통 패키지가 아직 설치되지 않았다면 아래 명령으로 설치합니다.
+이 패키지는 `01_python-git-foundation` 최상위의 `requirements.txt`에서 함께 관리합니다. 상위 과정의 공통 패키지가 아직 설치되지 않았다면 아래 명령으로 설치합니다.
 
 ```powershell
 pip install -r requirements.txt
@@ -92,12 +92,12 @@ pip install -r requirements.txt
 설치 확인:
 
 ```powershell
-python -c "import pytest, httpx; print('advanced packages ok')"
+python -c "import pytest; print('advanced packages ok')"
 ```
 
 ## 5. 02_python-advanced에서 사용하는 외부 패키지
 
-`02_python-advanced` 하위 폴더에는 별도의 `requirements.txt`가 없지만, 이 단원에서 사용하는 외부 패키지는 있습니다. 해당 패키지들은 이미 `01_python-git-foundation` 최상위 `requirements.txt`에 포함되어 있으므로, 아래 명령을 이전에 실행했다면 추가 설치하지 않아도 됩니다.
+`02_python-advanced` 하위 폴더에는 별도의 `requirements.txt`가 없지만, 테스트 단원에서 사용하는 외부 패키지는 있습니다. 해당 패키지는 이미 `01_python-git-foundation` 최상위 `requirements.txt`에 포함되어 있으므로, 아래 명령을 이전에 실행했다면 추가 설치하지 않아도 됩니다.
 
 ```powershell
 pip install -r requirements.txt
@@ -107,28 +107,7 @@ pip install -r requirements.txt
 
 | 패키지 | 사용하는 위치 | 왜 필요한가 |
 | --- | --- | --- |
-| `httpx` | `07_api-external-data` | 외부 HTTP API를 호출하고 JSON 응답을 받아오는 실습에 사용합니다. 날씨 API처럼 로그인 없이 호출 가능한 공개 API 예제에서 사용합니다. |
-| `pytest` | `08_testing-code-quality` | 함수가 예상대로 동작하는지 자동으로 검사하는 테스트 도구입니다. `test_*.py` 파일을 실행해 코드 품질을 확인합니다. |
-
-### httpx
-
-`httpx`는 Python에서 HTTP 요청을 보내는 외부 패키지입니다. 웹 API에 `GET`, `POST` 요청을 보내고, 응답으로 받은 JSON 데이터를 Python 코드에서 처리할 수 있게 해 줍니다.
-
-이 과정에서는 다음 내용을 연습합니다.
-
-```text
-1. 외부 API URL로 요청 보내기
-2. 응답 상태 코드 확인
-3. JSON 응답을 dict/list로 변환하기
-4. 필요한 데이터만 꺼내 출력하기
-5. async/await 기반 비동기 API 호출 이해하기
-```
-
-설치 확인:
-
-```powershell
-python -c "import httpx; print(httpx.__version__)"
-```
+| `pytest` | `08_testing-code-quality`, `20_assignments` | 함수가 예상대로 동작하는지 자동으로 검사하는 테스트 도구입니다. `test_*.py` 파일을 실행해 코드 품질을 확인합니다. |
 
 ### pytest
 
@@ -174,7 +153,7 @@ python -m pytest .\02_python-advanced\08_testing-code-quality
 [ ] PowerShell 앞에 (.venv)가 보이는가?
 [ ] python -c "import sys; print(sys.executable)" 결과가 01_python-git-foundation\.venv\Scripts\python.exe인가?
 [ ] python --version과 pip --version이 정상 출력되는가?
-[ ] pytest와 httpx import 확인이 되는가?
+[ ] pytest import 확인이 되는가?
 [ ] 02_python-advanced 안에 .venv를 새로 만들지 않았는가?
 ```
 

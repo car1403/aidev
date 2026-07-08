@@ -4,6 +4,19 @@
 
 06 과정은 팀 프로젝트 과정입니다. 복잡한 운영 환경을 먼저 만들기보다, 로컬에서 LangGraph 기반 Agent 흐름을 실행하고 산출물을 완성하는 것을 우선합니다.
 
+## 0. 공통 준비 문서
+
+아래 항목이 아직 준비되지 않았다면 먼저 공통 설치 가이드를 확인합니다.
+
+| 필요한 내용 | 문서 |
+| --- | --- |
+| Python과 `.venv` | [`../00_course-guide/02_setup-guides/01_python-install-guide.md`](../00_course-guide/02_setup-guides/01_python-install-guide.md), [`../00_course-guide/02_setup-guides/06_venv-pip-requirements-guide.md`](../00_course-guide/02_setup-guides/06_venv-pip-requirements-guide.md) |
+| OpenAI 계정, API Key, 비용 | [`../00_course-guide/02_setup-guides/08_gemini-openai-account-guide.md`](../00_course-guide/02_setup-guides/08_gemini-openai-account-guide.md) |
+| Streamlit | [`../00_course-guide/02_setup-guides/11_streamlit-guide.md`](../00_course-guide/02_setup-guides/11_streamlit-guide.md) |
+| 무료 배포 서비스 | [`../00_course-guide/02_setup-guides/13_free-deployment-services-guide.md`](../00_course-guide/02_setup-guides/13_free-deployment-services-guide.md) |
+| Codex와 ChatGPT 사용 준비 | [`../00_course-guide/02_setup-guides/17_codex-chatgpt-guide.md`](../00_course-guide/02_setup-guides/17_codex-chatgpt-guide.md) |
+| 문제 해결 | [`../00_course-guide/03_learning-support/troubleshooting.md`](../00_course-guide/03_learning-support/troubleshooting.md) |
+
 ## 1. 폴더 열기
 
 VS Code에서 과정 폴더를 엽니다.

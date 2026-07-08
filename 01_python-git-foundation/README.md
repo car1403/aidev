@@ -47,6 +47,46 @@ VS Code에서 `01_python-git-foundation` 폴더 자체를 열면 `.vscode/settin
 | `02_python-advanced` | 함수 심화, 모듈/패키지, 예외 처리, OOP, 테스트, 프로젝트 구조를 학습합니다. |
 | `03_git-github` | Git/GitHub, 커밋/브랜치, VS Code Source Control, README/문서 작성, 민감정보 보호 기준을 학습합니다. |
 
+## 필수 학습 흐름
+
+이 과정은 이후 백엔드와 프론트엔드 실습을 따라가기 위한 기반 과정입니다. 모든 자료를 같은 깊이로 다루기보다, 다음 과정에서 바로 필요한 내용을 먼저 익힙니다.
+
+```text
+환경 설정과 Python 실행
+-> 변수, 자료형, 타입 힌트
+-> 조건문과 반복문
+-> list, dict 중심의 자료구조
+-> 함수와 파일/JSON 저장
+-> 모듈, 예외 처리, pytest 기초
+-> 프로젝트 구조 맛보기
+-> Git/GitHub, .gitignore, .env 보안
+```
+
+## 선택 학습 흐름
+
+아래 내용은 시간이 충분하거나 복습이 필요할 때 보충으로 다룹니다.
+
+| 구분 | 내용 |
+| --- | --- |
+| Python 심화 | 함수 심화, 모듈/패키지, 예외 처리, JSON 처리, pytest, 프로젝트 구조 복습 |
+| 선택 과제 | `02_python-advanced/20_assignments` 종합 과제 |
+| Git 심화 | VS Code Source Control, README 작성, Pull Request, 팀 브랜치 협업 |
+
+## 다음 과정으로 넘어가기 전 기준
+
+아래 내용을 스스로 설명하고 실행할 수 있으면 `02_supabase-ai-backend`로 넘어갈 준비가 된 것입니다.
+
+```text
+python 파일을 실행할 수 있다.
+.venv를 활성화하고 Python 경로를 확인할 수 있다.
+변수, 조건문, 반복문, list/dict, 함수를 사용해 작은 프로그램을 만들 수 있다.
+JSON 파일을 저장하고 다시 읽을 수 있다.
+try/except의 기본 의미를 설명할 수 있다.
+pytest를 실행해 간단한 테스트 결과를 확인할 수 있다.
+git status, git diff, git add, git commit의 역할을 설명할 수 있다.
+.env와 .venv를 GitHub에 올리면 안 되는 이유를 설명할 수 있다.
+```
+
 ## 공통 실행 준비
 
 자세한 환경 준비는 [SETUP.md](./SETUP.md)를 참고합니다.

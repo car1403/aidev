@@ -1,8 +1,10 @@
-﻿# Git Command Cheatsheet
+# Git Command Cheatsheet
 
-이 문서는 실습 중 자주 사용하는 Git 명령을 초보자 기준으로 정리한 자료입니다.
+이 문서는 실습 중 상태가 헷갈릴 때 확인하는 최소 Git 명령어 모음입니다.
 
-## 설치 확인
+이번 과정에서는 대부분 VS Code Source Control로 진행합니다. 아래 명령어는 “확인용”으로만 사용합니다.
+
+## Git 설치 확인
 
 ```powershell
 git --version
@@ -10,13 +12,53 @@ git --version
 
 Git이 설치되어 있으면 버전이 출력됩니다.
 
+버전이 출력되지 않으면 Git이 아직 설치되지 않았거나 PowerShell에서 Git을 찾지 못하는 상태입니다.
+
+먼저 공통 설치 문서의 Git 설치 안내를 확인합니다.
+
+```text
+../../../../00_course-guide/02_setup-guides/04_git-github-setup-guide.md
+```
+
 ## 현재 상태 확인
 
 ```powershell
 git status
 ```
 
-가장 자주 사용하는 명령입니다. 어떤 파일이 수정되었는지, 어떤 파일이 아직 Git에 추적되지 않는지 확인합니다.
+확인할 수 있는 것:
+
+```text
+현재 branch
+수정된 파일
+새로 생긴 파일
+stage된 파일
+commit할 내용이 있는지
+```
+
+## 현재 branch 확인
+
+```powershell
+git branch
+```
+
+`*` 표시가 붙은 branch가 현재 작업 중인 branch입니다.
+
+## 최근 commit 확인
+
+```powershell
+git log --oneline -5
+```
+
+최근 commit 5개를 한 줄씩 확인합니다.
+
+## GitHub 원격 저장소 확인
+
+```powershell
+git remote -v
+```
+
+GitHub 저장소 주소가 연결되어 있는지 확인합니다.
 
 ## 변경 내용 확인
 
@@ -24,69 +66,22 @@ git status
 git diff
 ```
 
-파일 내용이 어떻게 바뀌었는지 확인합니다. 커밋하기 전에 반드시 확인하는 습관을 들입니다.
+VS Code에서는 변경 파일을 클릭하면 같은 내용을 화면으로 볼 수 있습니다.
 
-## 파일을 커밋 준비 상태로 올리기
-
-```powershell
-git add 파일명
-git add.
-```
-
-`git add 파일명`은 특정 파일만 올립니다.
-
-`git add.`은 현재 폴더 아래의 변경 파일을 한 번에 올립니다. 초보자는 `git status`와 `git diff`를 먼저 확인한 뒤 사용합니다.
-
-## 커밋 만들기
-
-```powershell
-git commit -m "docs: update setup guide"
-```
-
-커밋은 작업 내용을 하나의 저장 지점으로 남기는 것입니다.
-
-## 최근 커밋 확인
-
-```powershell
-git log --oneline -5
-```
-
-최근 커밋 5개를 한 줄씩 확인합니다.
-
-## 브랜치 확인
-
-```powershell
-git branch
-```
-
-현재 어떤 브랜치에서 작업 중인지 확인합니다.
-
-## 새 브랜치 만들고 이동
-
-```powershell
-git switch -c practice/readme-update
-```
-
-새 기능이나 문서 수정은 별도 브랜치에서 작업하는 습관을 들입니다.
-
-## 원격 저장소 확인
-
-```powershell
-git remote -v
-```
-
-GitHub 저장소와 연결되어 있는지 확인합니다.
-
-## 실습 중 추천 순서
+## 꼭 기억할 것
 
 ```text
-git status
--> 파일 수정
--> git status
--> git diff
--> git add 파일명
--> git status
--> git commit -m "메시지"
+git status:
+  지금 상태를 봅니다.
+
+git branch:
+  지금 어느 branch인지 봅니다.
+
+git log --oneline -5:
+  최근 commit을 봅니다.
+
+git remote -v:
+  GitHub와 연결되어 있는지 봅니다.
 ```
 
-
+명령어로 바로 해결하려고 하기보다, 먼저 VS Code Source Control 화면에서 변경 파일과 branch를 확인합니다.

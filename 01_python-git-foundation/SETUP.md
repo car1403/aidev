@@ -10,13 +10,15 @@ Python 설치, VS Code 설치, 확장 프로그램, PowerShell 사용법, Markdo
 
 | 필요한 내용 | 참고 문서 |
 | --- | --- |
-| Python 설치와 버전 확인 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
-| VS Code 설치 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
-| VS Code 확장 프로그램 설치 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
-| PowerShell 기본 사용법 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
-| `.venv`, `pip`, `requirements.txt` 사용법 | [`../00_course-guide/02_learning-guide/environment-guide.md`](../00_course-guide/02_learning-guide/environment-guide.md) |
-| Markdown 미리보기와 문서 작성법 | [`../00_course-guide/02_learning-guide/getting-started.md`](../00_course-guide/02_learning-guide/getting-started.md) |
-| 첫 실행 전 점검표 | [`../00_course-guide/02_learning-guide/getting-started.md`](../00_course-guide/02_learning-guide/getting-started.md) |
+| Python 설치와 버전 확인 | [`../00_course-guide/02_setup-guides/01_python-install-guide.md`](../00_course-guide/02_setup-guides/01_python-install-guide.md) |
+| VS Code 설치 | [`../00_course-guide/02_setup-guides/02_vscode-install-guide.md`](../00_course-guide/02_setup-guides/02_vscode-install-guide.md) |
+| VS Code 확장 프로그램 설치 | [`../00_course-guide/02_setup-guides/03_vscode-extensions-guide.md`](../00_course-guide/02_setup-guides/03_vscode-extensions-guide.md) |
+| Git 설치와 버전 확인 | [`../00_course-guide/02_setup-guides/04_git-github-setup-guide.md`](../00_course-guide/02_setup-guides/04_git-github-setup-guide.md) |
+| PowerShell 기본 사용법 | [`../00_course-guide/02_setup-guides/05_powershell-and-terminal-guide.md`](../00_course-guide/02_setup-guides/05_powershell-and-terminal-guide.md) |
+| `.venv`, `pip`, `requirements.txt` 사용법 | [`../00_course-guide/02_setup-guides/06_venv-pip-requirements-guide.md`](../00_course-guide/02_setup-guides/06_venv-pip-requirements-guide.md) |
+| Markdown 미리보기와 문서 작성법 | [`../00_course-guide/03_learning-support/getting-started.md`](../00_course-guide/03_learning-support/getting-started.md) |
+| 첫 실행 전 점검표 | [`../00_course-guide/03_learning-support/getting-started.md`](../00_course-guide/03_learning-support/getting-started.md) |
+| Codex와 ChatGPT 사용 준비 | [`../00_course-guide/02_setup-guides/17_codex-chatgpt-guide.md`](../00_course-guide/02_setup-guides/17_codex-chatgpt-guide.md) |
 
 ## 1. 작업 위치로 이동
 
@@ -110,7 +112,7 @@ pip install -r requirements.txt
 설치 확인:
 
 ```powershell
-python -c "import pytest, httpx; print('packages ok')"
+python -c "import pytest; print('packages ok')"
 ```
 
 ## 6. 예제 실행
@@ -127,6 +129,12 @@ Git 설치 여부를 확인합니다.
 
 ```powershell
 git --version
+```
+
+버전이 출력되지 않으면 공통 환경 문서의 Git 설치 안내를 먼저 진행합니다.
+
+```text
+../00_course-guide/02_setup-guides/04_git-github-setup-guide.md
 ```
 
 GitHub 계정 준비와 VS Code Source Control 사용법은 `03_git-github`에서 단계적으로 실습합니다.

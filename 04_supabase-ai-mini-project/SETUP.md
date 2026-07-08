@@ -4,6 +4,20 @@
 
 04 과정은 과정 최상위 `.venv` 하나를 사용합니다. 하위 `backend`, `frontend` 폴더 안에 별도 `.venv`를 만들지 않습니다.
 
+## 0. 공통 준비 문서
+
+아래 항목이 아직 준비되지 않았다면 먼저 공통 설치 가이드를 확인합니다.
+
+| 필요한 내용 | 문서 |
+| --- | --- |
+| Python과 `.venv` | [`../00_course-guide/02_setup-guides/01_python-install-guide.md`](../00_course-guide/02_setup-guides/01_python-install-guide.md), [`../00_course-guide/02_setup-guides/06_venv-pip-requirements-guide.md`](../00_course-guide/02_setup-guides/06_venv-pip-requirements-guide.md) |
+| Supabase 계정과 프로젝트 | [`../00_course-guide/02_setup-guides/09_supabase-account-guide.md`](../00_course-guide/02_setup-guides/09_supabase-account-guide.md) |
+| Upstash Redis | [`../00_course-guide/02_setup-guides/10_upstash-redis-guide.md`](../00_course-guide/02_setup-guides/10_upstash-redis-guide.md) |
+| Streamlit | [`../00_course-guide/02_setup-guides/11_streamlit-guide.md`](../00_course-guide/02_setup-guides/11_streamlit-guide.md) |
+| Render, Streamlit Cloud, Supabase Cloud, Upstash 배포 | [`../00_course-guide/02_setup-guides/13_free-deployment-services-guide.md`](../00_course-guide/02_setup-guides/13_free-deployment-services-guide.md) |
+| Codex와 ChatGPT 사용 준비 | [`../00_course-guide/02_setup-guides/17_codex-chatgpt-guide.md`](../00_course-guide/02_setup-guides/17_codex-chatgpt-guide.md) |
+| 문제 해결 | [`../00_course-guide/03_learning-support/troubleshooting.md`](../00_course-guide/03_learning-support/troubleshooting.md) |
+
 ## 1. 작업 폴더로 이동
 
 ```powershell

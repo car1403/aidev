@@ -43,8 +43,8 @@ Redis 컨테이너       -> 세션 메모리와 캐시 실습
 
 | 막히는 지점 | 확인 문서 |
 | --- | --- |
-| OpenAI API key, 비용, 호출 제한 | [OpenAI 계정과 결제 안내](../00_course-guide/02_learning-guide/environment-guide.md), [OpenAI 기본 호출](./01_llm-api-and-local-llm/01_openai-api-basic/README.md) |
-| Docker Desktop 또는 `docker run` 오류 | [Docker 오류 해결](../00_course-guide/02_learning-guide/troubleshooting.md), [Docker Desktop 설치 안내](./00_references/09_docker-desktop-install-for-beginners.md) |
+| OpenAI API key, 비용, 호출 제한 | [Gemini/OpenAI 계정과 비용](../00_course-guide/02_setup-guides/08_gemini-openai-account-guide.md), [OpenAI 기본 호출](./01_llm-api-and-local-llm/01_openai-api-basic/README.md) |
+| Docker Desktop 또는 `docker run` 오류 | [Docker Desktop 설치 가이드](../00_course-guide/02_setup-guides/14_docker-desktop-guide.md), [Docker Desktop 설치 안내](./00_references/09_docker-desktop-install-for-beginners.md) |
 | pgvector 또는 Redis 연결 오류 | [SETUP.md](./SETUP.md), [공통 오류 정리](./00_references/07_common-errors-for-beginners.md) |
 | LangGraph 상태 흐름 이해가 어려움 | [LangGraph state flow](./06_langgraph-state-flow/README.md), [Tool/RAG node flow](./06_langgraph-state-flow/03_tool-and-rag-node-flow/README.md) |
 | 단원별 `.venv` 방식이 헷갈림 | [SETUP.md](./SETUP.md), [로컬 환경 체크리스트](./00_references/05_local-environment-checklist.md) |

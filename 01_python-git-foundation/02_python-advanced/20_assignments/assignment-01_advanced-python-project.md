@@ -11,9 +11,21 @@
 -> 질문 정리 및 검증
 -> 임시 답변 생성
 -> 응답 dict 생성
--> JSON 또는 CSV 저장
+-> JSON 저장
 -> pytest로 핵심 함수 검증
 ```
+
+## 해야 할 일
+
+| 순서 | 해야 할 일 | 설명 |
+| --- | --- | --- |
+| 1 | 질문 입력 흐름 만들기 | 사용자가 질문을 입력하면 앞뒤 공백을 정리합니다. |
+| 2 | 질문 검증 | 빈 질문이면 `ValueError`를 발생시키고 사용자에게 안내합니다. |
+| 3 | 임시 답변 생성 | 실제 LLM 대신 고정된 규칙으로 연습용 답변을 만듭니다. |
+| 4 | 응답 dict 생성 | `question`, `answer`, `model`, `created_at` 값을 가진 dict를 만듭니다. |
+| 5 | JSON 저장/읽기 | 응답 기록을 JSON 파일로 저장하고 다시 읽습니다. |
+| 6 | 테스트 작성 | 질문 정리, 빈 질문 검증, 응답 dict 구조를 pytest로 확인합니다. |
+| 7 | 프로젝트 구조 분리 | `main.py`, `app/services.py`, `app/storage.py`, `tests`처럼 역할을 나눕니다. |
 
 ## 과제 목표
 
@@ -56,7 +68,7 @@ app/services.py:
   질문 정리, 질문 검증, 임시 답변 생성 같은 핵심 로직을 둡니다.
 
 app/storage.py:
-  JSON 또는 CSV 파일 저장과 읽기 함수를 둡니다.
+  JSON 파일 저장과 읽기 함수를 둡니다.
 
 tests/test_services.py:
   pytest로 핵심 서비스 함수를 검증합니다.
@@ -135,11 +147,10 @@ pytest 테스트를 최소 3개 작성합니다.
 시간이 충분하면 아래 기능 중 하나를 추가합니다.
 
 ```text
-1. CSV 로그 저장 기능
-2. 질문 목록을 여러 개 처리하는 기능
-3. list comprehension으로 빈 질문을 제외하는 기능
-4. dict comprehension으로 질문 id 기반 조회 구조를 만드는 기능
-5. yield를 사용해 답변 단어를 하나씩 출력하는 스트리밍 흉내 기능
+1. 질문 목록을 여러 개 처리하는 기능
+2. list comprehension으로 빈 질문을 제외하는 기능
+3. dict comprehension으로 질문 id 기반 조회 구조를 만드는 기능
+4. dataclass를 사용해 응답 데이터를 표현하는 기능
 ```
 
 ## 실행 방법 작성 기준
@@ -160,7 +171,7 @@ python -m pytest .\02_python-advanced\20_assignments\advanced_chat_manager
 ```text
 1. 권장 프로젝트 구조와 비슷하게 파일이 나누어져 있어야 합니다.
 2. 함수가 최소 3개 이상 있어야 합니다.
-3. 클래스 또는 dataclass를 최소 1개 이상 사용해야 합니다.
+3. 클래스 또는 dataclass는 선택 사항입니다. 시간이 부족하면 함수와 dict 중심으로 작성해도 됩니다.
 4. ValueError 처리 또는 raise 예제가 있어야 합니다.
 5. JSON 저장 기능이 있어야 합니다.
 6. pytest 테스트가 최소 3개 이상 있어야 합니다.

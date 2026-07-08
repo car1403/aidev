@@ -1,20 +1,58 @@
-﻿# 03. Git GitHub
+# 03. Git GitHub
 
-이 단원은 Python 기초와 고급 문법을 배운 뒤, 코드 변경 이력을 안전하게 관리하고 GitHub에 공유하는 기본 흐름을 익히는 단계입니다.
+이 단원은 Git 명령어를 많이 외우는 시간이 아닙니다.
 
-Git은 내 PC에서 변경 이력을 관리하는 도구이고, GitHub는 인터넷에 있는 원격 저장소 서비스입니다. 이번 단원에서는 AI 코드 작성보다 Git/GitHub 사용법에 집중합니다. AI 기반 코드 리뷰, 디버깅, 리팩토링은 `90_ai-assisted-code-review-and-debugging`에서 본격적으로 다룹니다.
+이번 단원의 목표는 **VS Code Source Control 화면을 사용해 내가 만든 프로젝트를 GitHub에 올리고, 팀원이 branch로 작업한 내용을 main 관리자가 확인한 뒤 merge하는 흐름**을 익히는 것입니다.
+
+## 이 단원의 방향
+
+```text
+명령어 암기
+-> VS Code 화면에서 변경 파일 확인
+-> README 작성
+-> Commit
+-> GitHub Push
+-> 팀원별 branch 작업
+-> Pull Request
+-> main 관리자 merge
+-> 팀원들이 최신 main 받기
+```
+
+터미널 명령어는 아주 적게 사용합니다. 대부분의 작업은 VS Code 왼쪽의 **Source Control** 화면에서 진행합니다.
+
+## 시작 전 확인
+
+Git이 설치되어 있어야 VS Code Source Control과 GitHub 연동을 사용할 수 있습니다.
+
+PowerShell에서 먼저 확인합니다.
+
+```powershell
+git --version
+```
+
+버전이 출력되지 않으면 아래 공통 설치 문서의 **Git 설치와 확인** 섹션을 먼저 진행합니다.
+
+```text
+../../00_course-guide/02_setup-guides/04_git-github-setup-guide.md
+```
+
+GitHub 계정도 필요합니다. 계정이 없다면 아래 사이트에서 미리 준비합니다.
+
+```text
+https://github.com/
+```
 
 ## 학습 목표
 
 - Git과 GitHub의 차이를 설명할 수 있습니다.
-- `git status`, `git diff`, `git add`, `git commit`의 역할을 이해합니다.
-- 커밋과 브랜치의 기본 개념을 이해합니다.
-- VS Code Source Control 화면에서 변경 파일, diff, stage, commit 흐름을 진행할 수 있습니다.
-- VS Code에서 GitHub 계정 로그인, 원격 저장소 연결, Push, Pull, Sync Changes 흐름을 이해합니다.
-- GitLens 확장을 설치하고 파일 변경 이력, 커밋 이력, 라인별 변경 정보를 확인할 수 있습니다.
-- README와 커밋 메시지를 Git 작업 기준에 맞게 작성할 수 있습니다.
-- `.env`, `.venv`, API key, Supabase key 같은 민감정보를 GitHub에 올리면 안 되는 이유를 이해합니다.
-- 작업 전 상태 확인, 작업 후 변경 내용 확인, 커밋 전 검토 순서를 습관화합니다.
+- VS Code Source Control에서 변경 파일과 변경 내용을 확인할 수 있습니다.
+- VS Code에서 stage, commit, push, sync 흐름을 진행할 수 있습니다.
+- GitHub에 올라가는 README를 Markdown으로 작성할 수 있습니다.
+- README에 표, 코드 블록, 이미지 링크, Mermaid 도표를 넣을 수 있습니다.
+- `.env`, `.venv`, API key 같은 민감정보를 GitHub에 올리면 안 되는 이유를 설명할 수 있습니다.
+- 팀원이 각자 branch에서 작업하고 Pull Request를 만드는 흐름을 이해합니다.
+- main 관리자가 Pull Request를 확인하고 merge하는 기준을 이해합니다.
+- merge 후 팀원이 최신 main을 받아 다음 작업을 시작하는 흐름을 이해합니다.
 
 ## 폴더 구성
 
@@ -22,179 +60,141 @@ Git은 내 PC에서 변경 이력을 관리하는 도구이고, GitHub는 인터
 03_git-github
 ├─ README.md
 ├─ 00_references
+│  ├─ README.md
+│  ├─ vscode-source-control-guide.md
+│  ├─ markdown-readme-guide.md
+│  ├─ gitignore-and-secret-guide.md
+│  ├─ commit-message-guide.md
+│  ├─ team-branch-workflow-guide.md
+│  └─ git-command-cheatsheet.md
 ├─ 10_labs
+│  ├─ README.md
+│  ├─ lab-01-vscode-source-control-flow.md
+│  ├─ lab-02-markdown-readme-writing.md
+│  ├─ lab-03-github-push-and-secret-check.md
+│  ├─ lab-04-team-branch-merge-flow.md
 │  └─ practice-files
 └─ 20_assignments
+   └─ README.md
 ```
 
 ## 학습 순서
 
 ```text
 1. Git과 GitHub 역할 이해
-2. 현재 저장소 상태 확인
-3. 샘플 파일 수정
-4. 터미널에서 git status로 변경 파일 확인
-5. 터미널에서 git diff로 변경 내용 확인
-6. VS Code Source Control에서 같은 변경 내용을 화면으로 확인
-7. VS Code에서 stage, commit, branch 확인
-8. VS Code에서 GitHub 로그인과 원격 저장소 연결 흐름 이해
-9. GitLens로 파일 변경 이력과 커밋 이력 확인
-10. .gitignore와 .env 보안 기준 확인
-11. 커밋 메시지 작성 원칙 학습
-12. 개인 과제 제출
+2. VS Code Source Control 화면 열기
+3. 작은 Python 테스트 프로젝트 수정하기
+4. 변경 파일과 diff 확인하기
+5. Stage와 Commit 진행하기
+6. README.md 작성하기
+7. README에 표, 코드 블록, 이미지 링크, Mermaid 도표 넣기
+8. .gitignore와 민감정보 제외 기준 확인하기
+9. GitHub에 Push하기
+10. GitHub 웹에서 README와 커밋 확인하기
+11. 팀원이 자기 branch에서 작업하기
+12. 팀원이 Pull Request 만들기
+13. main 관리자가 PR 확인 후 merge하기
+14. 팀원이 최신 main을 받아 다음 작업 시작하기
 ```
+
+## 이 단원에서 사용하는 최소 명령어
+
+VS Code가 중심이지만, 문제가 생겼을 때 상태를 확인하기 위해 아래 명령어는 알아둡니다.
+
+```powershell
+git --version
+git status
+git branch
+git log --oneline -5
+git remote -v
+```
+
+명령어로 commit, branch, merge를 깊게 연습하지 않습니다. 실제 작업은 VS Code와 GitHub 웹 화면에서 진행합니다.
 
 ## 핵심 개념
 
 | 개념 | 초보자용 설명 |
 | --- | --- |
-| Git | 내 PC에서 코드 변경 이력을 관리하는 도구입니다. |
-| GitHub | 인터넷에 있는 코드 저장소 서비스입니다. |
-| Commit | 현재 작업 내용을 하나의 저장 지점으로 남기는 것입니다. |
-| Branch | 기존 코드에서 새로운 작업 흐름을 따로 만드는 것입니다. |
-| Pull Request | 내가 바꾼 내용을 팀에 검토 요청하는 방식입니다. |
-| Remote | GitHub에 있는 원격 저장소 주소입니다. 보통 `origin`이라는 이름을 사용합니다. |
-| Push | 내 PC의 커밋을 GitHub 원격 저장소로 올리는 작업입니다. |
-| Pull | GitHub 원격 저장소의 최신 변경 내용을 내 PC로 가져오는 작업입니다. |
-| Sync Changes | VS Code에서 Pull과 Push를 한 번에 처리하는 버튼입니다. |
-| `.gitignore` | Git이 추적하지 않아야 할 파일 목록입니다. `.env`, `.venv`, 임시 파일을 제외할 때 사용합니다. |
-| Diff | 이전 내용과 지금 내용의 차이를 보여주는 결과입니다. |
-| Source Control | VS Code 왼쪽 메뉴에서 Git 변경 상태를 화면으로 확인하고 커밋할 수 있는 기능입니다. |
-| GitLens | VS Code에서 Git 변경 이력, 커밋 기록, 라인별 수정 정보를 보기 쉽게 보여주는 확장 프로그램입니다. |
+| Git | 내 컴퓨터에서 파일 변경 이력을 관리하는 도구입니다. |
+| GitHub | Git으로 관리한 프로젝트를 인터넷에 올리고 팀과 공유하는 서비스입니다. |
+| Source Control | VS Code에서 Git 변경 파일을 보고 commit할 수 있는 화면입니다. |
+| Commit | 현재 변경 내용을 하나의 저장 지점으로 남기는 것입니다. |
+| Push | 내 컴퓨터의 commit을 GitHub에 올리는 것입니다. |
+| Pull | GitHub의 최신 내용을 내 컴퓨터로 받는 것입니다. |
+| Sync Changes | VS Code에서 Pull과 Push를 함께 처리하는 버튼입니다. |
+| Branch | main과 분리된 작업 공간입니다. 팀원은 보통 자기 branch에서 작업합니다. |
+| Pull Request | 내 branch 변경 내용을 main에 합쳐 달라고 요청하는 GitHub 기능입니다. |
+| main 관리자 | 팀원의 Pull Request를 확인하고 main branch에 merge하는 담당자입니다. |
+| Merge | branch의 변경 내용을 main에 합치는 작업입니다. |
+| `.gitignore` | GitHub에 올리면 안 되는 파일을 제외하는 규칙 파일입니다. |
 
-## 기본 명령
+## 개인 실습 흐름
 
-```powershell
-git --version
-git status
-git diff
-git add .
-git commit -m "docs: update learning note"
-git log --oneline
-```
-
-## 기본 작업 습관
+개인 실습에서는 `10_labs/practice-files/git-practice-project`를 사용합니다.
 
 ```text
-작업 전
--> git status로 현재 상태 확인
-
-작업 중
--> 파일 수정
--> 작은 단위로 자주 저장
-
-작업 후
--> git status로 변경 파일 확인
--> git diff로 실제 변경 내용 확인
-
-커밋 전
--> 민감정보가 들어가지 않았는지 확인
--> 커밋 메시지를 한 문장으로 정리
+1. main.py를 수정합니다.
+2. test_main.py 테스트를 실행합니다.
+3. README.md를 작성합니다.
+4. VS Code Source Control에서 변경 내용을 확인합니다.
+5. stage합니다.
+6. commit합니다.
+7. GitHub에 push합니다.
+8. GitHub 웹에서 README가 잘 보이는지 확인합니다.
 ```
 
-## 터미널 방식과 VS Code 방식
+## 팀 실습 흐름
 
-같은 Git 작업을 터미널과 VS Code 화면에서 함께 확인합니다.
-
-| 작업 | 터미널 명령 | VS Code 위치 |
-| --- | --- | --- |
-| 현재 상태 확인 | `git status` | 왼쪽 Source Control 아이콘 |
-| 변경 내용 확인 | `git diff` | 변경 파일 클릭 |
-| 커밋 준비 | `git add 파일명` | 파일 옆 `+` 버튼 |
-| 커밋 작성 | `git commit -m "메시지"` | Message 입력 후 Commit 버튼 |
-| 브랜치 확인 | `git branch` | 왼쪽 아래 브랜치 이름 |
-| 원격 저장소 확인 | `git remote -v` | Source Control의 Publish Branch / Sync Changes 상태 |
-| GitHub로 올리기 | `git push` | Push 또는 Sync Changes 버튼 |
-| GitHub 내용 받기 | `git pull` | Pull 또는 Sync Changes 버튼 |
-
-## VS Code에서 GitHub 연동 흐름
+팀 실습에서는 역할을 나눕니다.
 
 ```text
-1. VS Code에서 C:\aidev\01_python-git-foundation 폴더를 엽니다.
-2. 왼쪽 Source Control 아이콘을 클릭합니다.
-3. Git 저장소가 없으면 Initialize Repository를 누릅니다.
-4. GitHub 계정 로그인이 필요하면 Sign in to GitHub를 누릅니다.
-5. 브라우저가 열리면 GitHub 계정으로 로그인하고 VS Code 접근을 허용합니다.
-6. 변경 파일을 확인합니다.
-7. 커밋 메시지를 작성하고 Commit을 누릅니다.
-8. GitHub 원격 저장소가 아직 없으면 Publish Branch를 누릅니다.
-9. 이후에는 Sync Changes 또는 Push/Pull로 GitHub와 동기화합니다.
+main 관리자:
+  GitHub 저장소를 관리합니다.
+  팀원의 Pull Request를 확인합니다.
+  민감정보, 충돌, README 링크, 테스트 결과를 확인합니다.
+  문제가 없으면 main branch에 merge합니다.
+
+팀원:
+  최신 main을 받습니다.
+  자기 branch를 만듭니다.
+  VS Code에서 파일을 수정합니다.
+  commit하고 branch를 GitHub에 push합니다.
+  Pull Request를 만듭니다.
+  merge가 끝나면 다시 최신 main을 받습니다.
 ```
 
-이미 `C:\aidev` 전체가 Git 저장소로 관리되고 있을 수 있습니다. 이 경우 각 과정 폴더 안에서 새 저장소를 다시 만들지 않고, 현재 열려 있는 폴더가 Git으로 추적되는지 Source Control에서 먼저 확인합니다.
+## 실습 목록
 
-가장 조심해야 할 점은 `.env`, `.venv`, 실제 API key, Supabase service role key, Upstash Redis token을 GitHub에 올리지 않는 것입니다.
-
-## VS Code Git 권장 확장
-
-| 확장 | 설치 이름 | 도움이 되는 이유 |
-| --- | --- | --- |
-| GitLens | `GitLens - Git supercharged` | 파일별 변경 이력, 커밋 이력, 특정 줄을 누가 언제 수정했는지 확인할 수 있습니다. |
-| GitHub Pull Requests | `GitHub Pull Requests and Issues` | VS Code 안에서 GitHub Pull Request와 Issue를 확인할 수 있습니다. 팀 프로젝트 단계에서 유용합니다. |
-| Material Icon Theme | `Material Icon Theme` | 파일 종류별 아이콘을 보기 좋게 표시해 폴더 구조를 파악하기 쉽습니다. |
-
-GitLens 설치 방법:
-
-```text
-1. VS Code 왼쪽 Extensions 아이콘을 클릭합니다.
-2. 검색창에 GitLens를 입력합니다.
-3. GitLens - Git supercharged를 선택합니다.
-4. Install을 클릭합니다.
-5. 설치 후 VS Code를 다시 로드하라는 안내가 나오면 Reload를 누릅니다.
-```
-
-터미널로 설치할 수도 있습니다.
-
-```powershell
-code --install-extension eamodio.gitlens
-```
-
-GitLens의 유료 기능이나 계정 로그인 기능은 필수가 아닙니다. 처음에는 무료로 제공되는 파일 이력, 커밋 이력, 변경 정보 확인 기능만 사용합니다.
+| 실습 | 내용 |
+| --- | --- |
+| `10_labs/lab-01-vscode-source-control-flow.md` | VS Code Source Control로 변경 확인, stage, commit |
+| `10_labs/lab-02-markdown-readme-writing.md` | README에 표, 코드 블록, 이미지, Mermaid 도표 작성 |
+| `10_labs/lab-03-github-push-and-secret-check.md` | GitHub push와 `.env`, `.venv`, key 제외 확인 |
+| `10_labs/lab-04-team-branch-merge-flow.md` | 팀원 branch, Pull Request, main 관리자 merge, 최신 main 받기 |
 
 ## 참고 문서
 
 | 문서 | 용도 |
 | --- | --- |
-| `00_references/git-command-cheatsheet.md` | 자주 쓰는 Git 명령 요약 |
-| `00_references/git-github-workflow-guide.md` | 로컬 Git과 GitHub 흐름 설명 |
-| `00_references/vscode-source-control-guide.md` | VS Code 안에서 Git을 진행하는 방법 |
-| `00_references/commit-message-guide.md` | 좋은 커밋 메시지 작성법 |
-| `00_references/gitignore-and-secret-guide.md` | `.env`, API key, 개인정보 보호 기준 |
-| `00_references/git-review-checklist.md` | 커밋 전 diff, 보안, 문서 점검 기준 |
-| `00_references/readme-writing-template.md` | README 작성 템플릿 |
-
-## 실습
-
-| 실습 | 내용 |
-| --- | --- |
-| `10_labs/lab-01-status-and-diff.md` | `git status`, `git diff` 확인 |
-| `10_labs/lab-01b-vscode-source-control.md` | VS Code Source Control에서 변경 확인, stage, commit, GitHub 연동 흐름 확인 |
-| `10_labs/lab-02-gitignore-and-env-safety.md` | `.env`와 `.gitignore` 보안 실습 |
-| `10_labs/lab-03-branch-and-commit-message.md` | 브랜치와 커밋 메시지 작성 |
-| `10_labs/lab-04-diff-review-checklist.md` | 커밋 전 변경 내용과 보안 기준 점검 |
-
-## 이 단원에서 하지 않는 것
-
-이 단원은 Git/GitHub 기본 사용에 집중합니다.
-
-| 다루지 않는 내용 | 다루는 위치 |
-| --- | --- |
-| AI 기반 코드 리뷰와 디버깅 | `90_ai-assisted-code-review-and-debugging` |
-| AI 기반 코드 개선 흐름 | `90_ai-assisted-code-review-and-debugging` |
-| GitHub Actions 기반 CI/CD | `07_multi-agent-service-ops` |
-| Docker/AWS 배포 자동화 | `07_multi-agent-service-ops` |
+| `00_references/vscode-source-control-guide.md` | VS Code Source Control 사용법 |
+| `00_references/markdown-readme-guide.md` | GitHub README 작성법 |
+| `00_references/gitignore-and-secret-guide.md` | 민감정보와 제외 파일 관리 |
+| `00_references/commit-message-guide.md` | 커밋 메시지 작성 기준 |
+| `00_references/team-branch-workflow-guide.md` | 팀 브랜치 협업 흐름 |
+| `00_references/git-command-cheatsheet.md` | 최소 Git 확인 명령어 |
 
 ## 단원 완료 기준
 
-이 단원이 끝났을 때 아래 내용을 설명할 수 있어야 합니다.
+아래 내용을 직접 해보고 설명할 수 있으면 됩니다.
 
 ```text
-Git은 내 PC의 변경 이력을 관리한다.
-GitHub는 원격 저장소에서 코드를 공유한다.
-git status는 현재 상태를 확인한다.
-git diff는 실제 변경 내용을 확인한다.
-VS Code Source Control에서도 같은 변경 내용을 확인하고 커밋할 수 있다.
-.env와 API key는 GitHub에 올리면 안 된다.
-커밋 메시지는 무엇을 왜 바꾸었는지 짧게 설명해야 한다.
+VS Code Source Control에서 변경 파일을 확인할 수 있다.
+변경 파일을 클릭해 diff를 볼 수 있다.
+stage와 commit을 할 수 있다.
+GitHub에 push할 수 있다.
+README에 표, 코드 블록, 이미지 링크, Mermaid 도표를 넣을 수 있다.
+.env와 .venv를 GitHub에 올리면 안 되는 이유를 설명할 수 있다.
+팀원이 branch에서 작업하고 PR을 만드는 흐름을 설명할 수 있다.
+main 관리자가 PR을 확인하고 merge하는 기준을 설명할 수 있다.
+merge 후 팀원이 최신 main을 받는 이유를 설명할 수 있다.
 ```
-

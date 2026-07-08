@@ -9,7 +9,6 @@
 2. __init__과 self의 역할을 설명할 수 있습니다.
 3. 메서드로 객체의 상태를 바꿀 수 있습니다.
 4. dataclass 객체를 dict로 변환할 수 있습니다.
-5. Service class로 기능을 묶는 구조를 이해할 수 있습니다.
 ```
 
 ## 실습 1. 학습 노트 클래스 만들기
@@ -22,18 +21,6 @@
 1. title과 content를 저장합니다.
 2. print_summary() 메서드를 만듭니다.
 3. "제목 - 내용" 형태로 출력합니다.
-```
-
-예시:
-
-```python
-class LearningNote:
-    def __init__(self, title: str, content: str) -> None:
-        self.title = title
-        self.content = content
-
-    def print_summary(self) -> None:
-        print(f"{self.title} - {self.content}")
 ```
 
 ## 실습 2. 상태가 바뀌는 Task 만들기
@@ -62,19 +49,6 @@ class LearningNote:
 4. 이 dict가 JSON 저장이나 API 응답에 쓰일 수 있음을 메모합니다.
 ```
 
-## 실습 4. Service class 만들기
-
-`LearningNoteService` 클래스를 만들어 노트 목록을 관리합니다.
-
-요구사항:
-
-```text
-1. __init__에서 빈 리스트 self.notes를 만듭니다.
-2. add_note(title, content) 메서드를 만듭니다.
-3. list_notes() 메서드를 만듭니다.
-4. 노트 2개를 추가하고 전체 목록을 출력합니다.
-```
-
 ## 상속은 어떻게 이해하면 되나요?
 
 이번 실습에서는 상속 예제를 필수로 작성하지 않습니다. 다만 FastAPI/Pydantic에서 아래와 같은 문법을 볼 수 있습니다.
@@ -92,6 +66,5 @@ class UserCreate(BaseModel):
 1. 클래스 예제가 있어야 합니다.
 2. 메서드로 객체 상태를 변경하는 예제가 있어야 합니다.
 3. dataclass와 asdict 예제가 있어야 합니다.
-4. Service class 예제가 있어야 합니다.
-5. 상속은 필수 구현 대상이 아닙니다.
+4. 상속은 필수 구현 대상이 아닙니다.
 ```

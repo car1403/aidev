@@ -22,15 +22,29 @@ assignment03_menu_calculator.py
 
 ## 과제 목록
 
-| 순서 | 파일 | 핵심 내용 |
-| --- | --- | --- |
-| 1 | `assignment01_python-start-and-variables.md` | 출력, 입력, 변수, 자료형 |
-| 2 | `assignment02_condition-menu.md` | 조건문, `match-case`, 메뉴 처리 |
-| 3 | `assignment03_loop-calculator.md` | 반복문, `continue`, `break`, 계산기 |
-| 4 | `assignment04_data-structures.md` | `list`, `tuple`, `dict`, `set`, 중첩 데이터 |
-| 5 | `assignment05_functions.md` | 함수 분리, 매개변수, 반환값 |
-| 6 | `assignment06_file-json-csv.md` | 텍스트, CSV, JSON 저장 |
-| 7 | `assignment07_basic-python-final.md` | 기초 문법 종합 미니 프로그램 |
+| 구분 | 파일 | 주제 | 해야 할 일 |
+| --- | --- | --- | --- |
+| 필수 | `assignment07_basic-python-final.md` | 학습 기록 관리 프로그램 | 메뉴, 기록 추가/조회, 완료 필터, 총 학습 시간, JSON 저장/읽기 구현 |
+| 선택 | `assignment01_python-start-and-variables.md` | 자기소개와 학습 계획 출력 | 입력, 변수, 자료형, 타입 변환 연습 |
+| 선택 | `assignment02_condition-menu.md` | 조건문 메뉴 프로그램 | 조건문 또는 `match-case`로 메뉴 선택 처리 |
+| 선택 | `assignment03_loop-calculator.md` | 반복 계산기 | `while True`, `break`, `continue`로 반복 입력 처리 |
+| 선택 | `assignment04_data-structures.md` | 학생/학습 데이터 관리 | `list`, `dict`, 중첩 데이터 조회 |
+| 선택 | `assignment05_functions.md` | 함수로 코드 분리 | 계산, 검증, 출력 기능을 함수로 분리 |
+| 선택 | `assignment06_json-file-practice.md` | JSON 파일 저장 실습 | `Path`, JSON dict/list 저장과 읽기 연습 |
+
+## 필수 과제 진행 방식
+
+필수 과제는 단순 문법 문제가 아니라 작은 프로그램을 완성하는 과제입니다. 과제 문서에는 반드시 아래 항목이 분명해야 합니다.
+
+```text
+주제: 무엇을 만드는가?
+해야 할 일: 어떤 기능을 반드시 구현하는가?
+사용 문법: 어떤 Python 문법을 사용하는가?
+제출 파일: 어떤 파일명으로 제출하는가?
+완료 기준: 무엇이 되면 끝난 것으로 보는가?
+```
+
+선택 과제는 부족한 문법을 보충할 때 사용합니다. 모든 선택 과제를 한 번에 다 풀 필요는 없습니다.
 
 ## 공통 완료 기준
 

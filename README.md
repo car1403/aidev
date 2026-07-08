@@ -1,86 +1,132 @@
-﻿# AI Development Course
+# AI Development Course
 
-이 저장소는 Python 기초부터 Supabase 기반 AI 서비스, LLM Agent, Docker 기반 서비스 운영, 멀티 에이전트 미니 프로젝트까지 단계적으로 학습하기 위한 과정 자료입니다.
+Python 기반 웹 API 개발에서 시작해 Supabase AI 서비스, Streamlit 인터페이스, LLM Agent, Docker 기반 운영, 멀티 에이전트 워크플로우까지 단계적으로 확장하는 AI 개발 과정입니다.
 
-현재 과정은 `01`부터 `08`까지 진행합니다.
+이 과정은 `01`부터 `08`까지 이어지며, 각 단계는 이전 단계에서 만든 개념과 구조를 다음 단계의 프로젝트로 확장합니다.
 
-## 빠른 바로가기
+## 과정 구성
 
-처음 시작할 때는 아래 문서부터 확인하시면 됩니다.
-
-- [전체 운영 안내](./00_course-guide/README.md)
-- [처음 시작 가이드](./00_course-guide/02_learning-guide/getting-started.md)
-- [GitHub 계정 준비 및 VS Code 설치](./00_course-guide/02_learning-guide/environment-guide.md)
-- [VS Code 확장 프로그램과 GitHub Copilot Chat](./00_course-guide/02_learning-guide/environment-guide.md)
-- [Python 가상환경(.venv)과 pip 사용법](./00_course-guide/02_learning-guide/environment-guide.md)
-- [Markdown 문서 보기와 작성법](./00_course-guide/02_learning-guide/getting-started.md)
-- [첫 실행 체크리스트](./00_course-guide/02_learning-guide/getting-started.md)
-- [Codex 설치와 로그인 안내](./00_course-guide/02_learning-guide/environment-guide.md)
-- [OpenAI 계정과 결제 안내](./00_course-guide/02_learning-guide/environment-guide.md)
-
-## 과정 바로가기
-
-| 순서 | 과정 | 핵심 내용 | 바로가기 |
+| 순서 | 과정 | 핵심 내용 | 문서 |
 | --- | --- | --- | --- |
-| 00 | 운영 안내 | 개발 환경 준비, 문서 보는 법, 과정 진행 기준 | [README](./00_course-guide/README.md) |
-| 01 | Python/Git Foundation | Python 기초, Python 심화, Git/GitHub, VS Code Source Control | [README](./01_python-git-foundation/README.md) / [SETUP](./01_python-git-foundation/SETUP.md) |
-| 02 | Supabase AI Backend | FastAPI, Gemini API, Supabase, Upstash Redis, 백엔드 미니 서비스 | [README](./02_supabase-ai-backend/README.md) / [SETUP](./02_supabase-ai-backend/SETUP.md) |
-| 03 | Supabase AI Frontend | Streamlit UI, 챗봇 화면, API 연동, 상태 관리, 프론트엔드 배포 | [README](./03_supabase-ai-frontend/README.md) / [SETUP](./03_supabase-ai-frontend/SETUP.md) |
-| 04 | Supabase AI Mini Project | 백엔드, 프론트엔드, Supabase, SSE 스트리밍을 연결한 팀 프로젝트 | [README](./04_supabase-ai-mini-project/README.md) / [SETUP](./04_supabase-ai-mini-project/SETUP.md) |
-| 05 | LLM Agent Orchestration | Docker 기반 로컬 LLM 환경, LangGraph, Tool Use, Memory, RAG | [README](./05_llm-agent-orchestration/README.md) / [SETUP](./05_llm-agent-orchestration/SETUP.md) |
-| 06 | LLM Agent Mini Project | 단일 Agent 추론, 도구 선택, 자기 성찰, 결과 검증 프로젝트 | [README](./06_llm-agent-mini-project/README.md) / [SETUP](./06_llm-agent-mini-project/SETUP.md) |
-| 07 | Multi-Agent Service Ops | Docker Compose, AWS, GitHub Actions, 모니터링, 보안 가드레일 | [README](./07_multi-agent-service-ops/README.md) / [SETUP](./07_multi-agent-service-ops/SETUP.md) |
-| 08 | Multi-Agent Service Mini Project | 멀티 에이전트 협업, 장애 복구, 배포 파이프라인 프로젝트 | [README](./08_multi-agent-service-mini-project/README.md) / [SETUP](./08_multi-agent-service-mini-project/SETUP.md) |
+| 00 | Course Guide | 전체 과정 흐름, 설치 가이드, 공통 문제 해결 기준 | [README](./00_course-guide/README.md) |
+| 01 | Python/Git Foundation | Python 기본 문법, 함수, 파일/JSON, 테스트, Git/GitHub, VS Code Source Control | [README](./01_python-git-foundation/README.md) / [SETUP](./01_python-git-foundation/SETUP.md) |
+| 02 | Supabase AI Backend | FastAPI, Pydantic, Gemini API, Supabase DB/Auth/RLS, Upstash Redis, 백엔드 API | [README](./02_supabase-ai-backend/README.md) / [SETUP](./02_supabase-ai-backend/SETUP.md) |
+| 03 | Supabase AI Frontend | Streamlit UI, API 호출, 로그인 상태, 챗봇 화면, 멀티페이지/탭 구조 | [README](./03_supabase-ai-frontend/README.md) / [SETUP](./03_supabase-ai-frontend/SETUP.md) |
+| 04 | Supabase AI Mini Project | AI 서비스 로그 분석, Supabase 저장, Upstash Redis 이벤트 전달, SSE, 운영 대시보드 | [README](./04_supabase-ai-mini-project/README.md) / [SETUP](./04_supabase-ai-mini-project/SETUP.md) |
+| 05 | LLM Agent Orchestration | Prompt, Structured Output, Tool Use, MCP, RAG, Memory, LangGraph | [README](./05_llm-agent-orchestration/README.md) / [SETUP](./05_llm-agent-orchestration/SETUP.md) |
+| 06 | LLM Agent Mini Project | 복합 API 연계 일정 조정 Agent, 자기 성찰, 피드백 루프, 결과 검증 | [README](./06_llm-agent-mini-project/README.md) / [SETUP](./06_llm-agent-mini-project/SETUP.md) |
+| 07 | Multi-Agent Service Ops | 멀티 에이전트 협업, Docker Compose, GitHub Actions, AWS 배포, 모니터링, 보안 가드레일 | [README](./07_multi-agent-service-ops/README.md) / [SETUP](./07_multi-agent-service-ops/SETUP.md) |
+| 08 | Multi-Agent Service Mini Project | Auto Healing 워크플로우, 장애 복구, 배포 검증, 파이프라인 결과 보고 | [README](./08_multi-agent-service-mini-project/README.md) / [SETUP](./08_multi-agent-service-mini-project/SETUP.md) |
 
-## 학습 흐름
+## 진행 흐름
 
-1. [00_course-guide](./00_course-guide/README.md)에서 개발 환경과 문서 읽는 방법을 먼저 확인합니다.
-2. [01_python-git-foundation](./01_python-git-foundation/README.md)에서 Python과 Git/GitHub 기초를 먼저 분리해서 익힙니다.
-3. [02_supabase-ai-backend](./02_supabase-ai-backend/README.md)에서 FastAPI, Supabase, Gemini API 기반 백엔드 흐름을 익힙니다.
-4. [03_supabase-ai-frontend](./03_supabase-ai-frontend/README.md)에서 Streamlit UI와 백엔드 API 연동을 실습합니다.
-5. [04_supabase-ai-mini-project](./04_supabase-ai-mini-project/README.md)에서 백엔드, 프론트엔드, Supabase, SSE 스트리밍을 하나의 프로젝트로 연결합니다.
-6. [05_llm-agent-orchestration](./05_llm-agent-orchestration/README.md)부터는 Docker 기반 환경에서 Agent, Tool, Memory, RAG 구조를 다룹니다.
-7. [06_llm-agent-mini-project](./06_llm-agent-mini-project/README.md)에서 단일 Agent 프로젝트를 완성합니다.
-8. [07_multi-agent-service-ops](./07_multi-agent-service-ops/README.md)에서 Docker Compose, AWS, GitHub Actions, 운영 관측성을 학습합니다.
-9. [08_multi-agent-service-mini-project](./08_multi-agent-service-mini-project/README.md)에서 멀티 에이전트 서비스 운영 프로젝트로 마무리합니다.
+```text
+01 Python/Git Foundation
+-> 02 Supabase AI Backend
+-> 03 Supabase AI Frontend
+-> 04 Supabase AI Mini Project
+-> 05 LLM Agent Orchestration
+-> 06 LLM Agent Mini Project
+-> 07 Multi-Agent Service Ops
+-> 08 Multi-Agent Service Mini Project
+```
 
-## 환경 준비 링크
+각 단계의 역할은 다음과 같습니다.
 
-개발 환경 설정은 한 번에 완벽하게 끝내기보다, 필요한 시점에 다시 확인하면서 진행하면 됩니다.
+| 단계 | 역할 |
+| --- | --- |
+| `01` | Python 실행, 테스트, Git/GitHub 흐름을 준비합니다. |
+| `02` | FastAPI와 Supabase를 연결해 AI 백엔드 API를 만듭니다. |
+| `03` | Streamlit으로 백엔드 API를 호출하는 프론트엔드 화면을 만듭니다. |
+| `04` | 백엔드, DB, Redis 이벤트, SSE, 대시보드를 하나의 미니 프로젝트로 연결합니다. |
+| `05` | Prompt, Tool, RAG, Memory, LangGraph 기반 단일 Agent 구조를 학습합니다. |
+| `06` | 복합 API 연계 일정 조정 Agent 프로젝트를 구성합니다. |
+| `07` | 멀티 에이전트 구조를 Docker, GitHub Actions, AWS 운영 환경으로 확장합니다. |
+| `08` | Auto Healing 기반 멀티 에이전트 서비스 프로젝트로 마무리합니다. |
 
-- Python 설치: [01_python-install-guide.md](./00_course-guide/02_learning-guide/environment-guide.md)
-- GitHub 계정과 VS Code 설치: [02_vscode-install-guide.md](./00_course-guide/02_learning-guide/environment-guide.md)
-- VS Code 확장 프로그램: [03_vscode-extensions-guide.md](./00_course-guide/02_learning-guide/environment-guide.md)
-- 터미널 기본 명령어: [04_powershell-basic-guide.md](./00_course-guide/02_learning-guide/environment-guide.md)
-- 가상환경과 pip: [05_venv-and-pip-guide.md](./00_course-guide/02_learning-guide/environment-guide.md)
-- Markdown 문서 보기: [06_markdown-preview-guide.md](./00_course-guide/02_learning-guide/getting-started.md)
-- Codex 설치와 로그인: [08_codex-install-and-login-guide.md](./00_course-guide/02_learning-guide/environment-guide.md)
+## 주요 기술
 
-## 문제 해결과 배포 전 점검
+| 영역 | 기술 |
+| --- | --- |
+| Language | Python |
+| Backend | FastAPI, Pydantic, Uvicorn |
+| Frontend | Streamlit |
+| Database/Auth | Supabase, PostgreSQL, Auth, RLS, JWT |
+| LLM | Gemini API, OpenAI API |
+| Cache/Event | Upstash Redis, Redis |
+| Agent | LangChain, LangGraph, Tool Use, MCP, RAG, Memory |
+| DevOps | Docker, Docker Compose, GitHub Actions, AWS ECR/App Runner, CloudWatch |
+| AI Coding | Codex, ChatGPT, GitHub Copilot Chat |
 
-수업 중 막히면 먼저 [환경과 오류 해결 허브](./00_course-guide/02_learning-guide/troubleshooting.md)를 확인합니다. Supabase/RLS, API key와 비용, Streamlit 백엔드 연결, LangGraph, Docker Compose, AWS 선택 실습 문제를 바로 찾아갈 수 있습니다.
+## 설치와 환경 준비
 
-자료를 압축하거나 다른 PC로 복사하기 전에는 [배포 전 패키징 체크리스트](./00_course-guide/03_project-and-evaluation/submission-checklist.md)를 확인합니다. `.env`, `.venv`, `__pycache__`, `.pytest_cache`, `site-packages`는 배포 자료에 포함하지 않습니다.
+공통 설치와 계정 준비는 [00_course-guide/02_setup-guides](./00_course-guide/02_setup-guides/README.md)에서 확인합니다.
 
-## 주요 기준
+| 필요한 내용 | 문서 |
+| --- | --- |
+| Python 설치 | [Python 설치 가이드](./00_course-guide/02_setup-guides/01_python-install-guide.md) |
+| GitHub 계정과 VS Code 설치 | [VS Code 설치 가이드](./00_course-guide/02_setup-guides/02_vscode-install-guide.md) |
+| VS Code 확장 프로그램 | [VS Code 확장 프로그램](./00_course-guide/02_setup-guides/03_vscode-extensions-guide.md) |
+| Git/GitHub 설정 | [Git/GitHub 기본 설정](./00_course-guide/02_setup-guides/04_git-github-setup-guide.md) |
+| PowerShell과 터미널 | [PowerShell과 터미널](./00_course-guide/02_setup-guides/05_powershell-and-terminal-guide.md) |
+| `.venv`, `pip`, `requirements.txt` | [.venv, pip, requirements.txt](./00_course-guide/02_setup-guides/06_venv-pip-requirements-guide.md) |
+| `.env`와 secret 보안 | [.env와 secret 보안](./00_course-guide/02_setup-guides/07_env-and-secret-guide.md) |
+| Gemini/OpenAI 계정과 비용 | [Gemini/OpenAI 계정과 비용](./00_course-guide/02_setup-guides/08_gemini-openai-account-guide.md) |
+| Supabase | [Supabase 계정과 프로젝트](./00_course-guide/02_setup-guides/09_supabase-account-guide.md) |
+| Upstash Redis | [Upstash Redis](./00_course-guide/02_setup-guides/10_upstash-redis-guide.md) |
+| Streamlit | [Streamlit](./00_course-guide/02_setup-guides/11_streamlit-guide.md) |
+| Postman | [Postman](./00_course-guide/02_setup-guides/12_postman-guide.md) |
+| 무료 배포 서비스 | [무료 배포 서비스](./00_course-guide/02_setup-guides/13_free-deployment-services-guide.md) |
+| Docker Desktop | [Docker Desktop](./00_course-guide/02_setup-guides/14_docker-desktop-guide.md) |
+| AWS 계정과 비용 관리 | [AWS 계정과 비용 관리](./00_course-guide/02_setup-guides/15_aws-account-and-cost-guide.md) |
+| GitHub Actions | [GitHub Actions](./00_course-guide/02_setup-guides/16_github-actions-guide.md) |
+| Codex와 ChatGPT 사용 준비 | [Codex와 ChatGPT 사용 준비](./00_course-guide/02_setup-guides/17_codex-chatgpt-guide.md) |
 
-- `01`은 Python/Git 기초를 별도 과정으로 분리해 초반 병목을 줄입니다.
-- `02`부터 `04`까지는 Supabase 중심으로 진행합니다.
-- `05`부터 Docker 기반 로컬 실행 환경을 본격적으로 사용합니다.
-- `01`부터 `04`까지는 과정 최상위 `.venv` 하나를 기본으로 사용합니다. `05`는 단원별 의존성이 달라지므로 단원별 `.venv` 방식을 우선 권장하고, `06`부터 `08`까지는 다시 과정 최상위 `.venv` 하나를 기본으로 사용합니다.
-- `01`, `02`, `03`, `04`, `06`, `07`, `08` 과정에는 VS Code 터미널을 열 때 `.venv`가 자동 활성화되도록 `.vscode/settings.json`을 제공합니다. 자동 활성화를 쓰려면 `C:\aidev` 루트가 아니라 해당 과정 폴더 자체를 VS Code로 여는 것을 권장합니다.
-- Docker Compose, AWS, GitHub Actions는 [07_multi-agent-service-ops](./07_multi-agent-service-ops/README.md)에서 집중적으로 다룹니다.
-- Gemini는 초반 실습의 기본 LLM으로 사용하고, OpenAI 예제는 비교와 확장 학습용으로 유지합니다.
-- GitHub Copilot Chat은 VS Code 안에서 AI 보조 개발을 경험하기 위한 도구로 사용합니다.
+## 실행 기준
 
-## 문서 읽는 방법
+- `01`~`04`, `06`~`08`은 과정 최상위 `.venv` 하나를 기본으로 사용합니다.
+- `05`는 단원별 의존성이 달라질 수 있어 단원별 `.venv` 방식을 우선 권장합니다.
+- 각 과정의 실제 실행 명령은 해당 과정의 `SETUP.md`를 기준으로 합니다.
+- `.env`, API Key, token, password는 GitHub에 올리지 않습니다.
+- `.venv`, `__pycache__`, `.pytest_cache`, `site-packages`는 배포 또는 공유 대상에 포함하지 않습니다.
 
-각 과정 폴더에는 보통 다음 문서가 있습니다.
+## 프로젝트 산출물
 
-- `README.md`: 과정 목표, 학습 순서, 챕터 안내
-- `SETUP.md`: 설치, 실행, 환경 변수 설정
-- `00_references`: 참고 개념, 용어, 보충 자료
-- 각 챕터 폴더의 `README.md`: 해당 챕터의 실습 목표와 진행 방법
-- `10_labs`, `20_assignments`, `99_*`: 실습, 과제, 미니 프로젝트
+| 과정 | 프로젝트 주제 | 핵심 산출물 |
+| --- | --- | --- |
+| 04 | AI 서비스 로그 분석 및 운영 대시보드 구축 | API 설계서, 화면 설계서, DB 설계서, 대시보드 구현 결과물 |
+| 06 | 복합 API 연계 일정 조정 Agent | 에이전트 아키텍처 설계서, 에이전트 시험 결과 보고서 |
+| 08 | 에러 자가 치유(Auto Healing) 워크플로우 | 멀티 에이전트 아키텍처 설계서, 배포/장애 복구 보고서, 파이프라인 결과 보고서 |
 
-필요한 설명을 찾을 때는 이 README의 링크를 먼저 사용하고, 세부 실습은 각 과정의 `README.md`에서 해당 챕터로 이동하시면 됩니다.
+## 문제 해결
+
+공통 오류 해결 기준은 [문제 해결 가이드](./00_course-guide/03_learning-support/troubleshooting.md)에서 확인합니다.
+
+자주 확인할 항목:
+
+```text
+현재 폴더 위치
+.venv 활성화 여부
+python -c "import sys; print(sys.executable)" 결과
+requirements.txt 설치 여부
+.env 파일 위치
+API_BASE_URL 또는 서비스 URL
+포트 충돌
+Supabase, Upstash, Gemini/OpenAI key 설정
+Docker Desktop 실행 여부
+AWS 리소스와 비용 정리 여부
+```
+
+## 문서 구조
+
+각 과정 폴더는 보통 다음 구조를 가집니다.
+
+```text
+README.md       과정 목표와 진행 순서
+SETUP.md        설치, 환경 변수, 실행 방법
+00_references   개념 설명과 참고 자료
+10_labs         단계별 실습
+20_assignments  과제
+90_*            AI 보조 리뷰와 디버깅
+99_*            최종 또는 통합 프로젝트
+```
