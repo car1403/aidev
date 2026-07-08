@@ -50,7 +50,7 @@
 | `00_references` | 상태 관리와 인증 흐름을 이해하기 위한 참고 자료를 정리합니다. |
 | `00_sample_backend` | 회원가입, 로그인, token 발급, 보호 API를 연습하는 FastAPI 샘플 백엔드입니다. |
 | `01_streamlit-session-state` | `st.session_state`의 기본 사용법을 연습합니다. |
-| `02_user-input-state-management` | 입력값, 필터, 단계형 폼, 질문 초안을 상태로 관리합니다. |
+| `02_user-input-state-management` | 입력값, 필터, 단계 이동, 단계형 폼 상태를 관리합니다. |
 | `03_auth-token-and-login-state` | 로그인 응답 token 저장, 로그아웃, Authorization header 구성을 연습합니다. |
 | `04_user-data-and-conversation-history` | 사용자 정보와 사용자별 대화 이력을 백엔드 API로 조회하고 저장합니다. |
 | `05_frontend-cache-and-performance` | 반복 조회 결과를 캐시하고, 캐시 적용 시 주의할 점을 학습합니다. |
@@ -103,7 +103,7 @@ uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```powershell
 cd C:\aidev\03_supabase-ai-frontend
 .\.venv\Scripts\Activate.ps1
-streamlit run .\04_state-session-and-data\03_auth-token-and-login-state\01_signup-login-screen-change.py
+streamlit run .\04_state-session-and-data\03_auth-token-and-login-state\01_login-token-state.py
 ```
 
 ## 05 단원과의 연결

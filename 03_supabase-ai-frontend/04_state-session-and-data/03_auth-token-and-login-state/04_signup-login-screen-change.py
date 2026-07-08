@@ -11,7 +11,7 @@ r"""회원가입, 로그인, 로그인 후 화면 전환을 한 번에 확인하
 
     cd C:\aidev\03_supabase-ai-frontend
     .\.venv\Scripts\Activate.ps1
-    streamlit run .\04_state-session-and-data\03_auth-token-and-login-state\01_signup-login-screen-change.py
+    streamlit run .\04_state-session-and-data\03_auth-token-and-login-state\04_signup-login-screen-change.py
 
 이 예제의 핵심:
     - 회원가입은 POST /api/signup을 호출합니다.

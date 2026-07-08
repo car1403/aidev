@@ -16,11 +16,20 @@
 ## 예제 파일
 
 ```text
-01_signup-login-screen-change.py
-02_login-token-state.py
+01_login-token-state.py
+02_authorization-header.py
 03_logout-flow.py
-04_authorization-header.py
+04_signup-login-screen-change.py
 ```
+
+권장 진행 순서는 다음과 같습니다.
+
+| 순서 | 파일 | 학습 내용 |
+| --- | --- | --- |
+| 1 | `01_login-token-state.py` | 로그인 API 응답으로 받은 token을 `st.session_state`에 저장합니다. |
+| 2 | `02_authorization-header.py` | 저장한 token을 `Authorization: Bearer ...` header로 보내 보호된 API를 호출합니다. |
+| 3 | `03_logout-flow.py` | token을 지워 로그아웃 상태로 돌아가는 흐름을 확인합니다. |
+| 4 | `04_signup-login-screen-change.py` | 회원가입, 로그인, 화면 전환, 로그아웃을 하나의 화면 흐름으로 통합합니다. |
 
 ## 백엔드 연결 기준
 
@@ -60,13 +69,13 @@ student / 1234
 ```powershell
 cd C:\aidev\03_supabase-ai-frontend
 .\.venv\Scripts\Activate.ps1
-streamlit run .\04_state-session-and-data\03_auth-token-and-login-state\02_login-token-state.py
+streamlit run .\04_state-session-and-data\03_auth-token-and-login-state\01_login-token-state.py
 ```
 
-회원가입부터 로그인 후 화면 전환까지 한 번에 확인하려면 다음 예제를 먼저 실행합니다.
+회원가입부터 로그인 후 화면 전환까지 한 번에 확인하려면 마지막 통합 예제를 실행합니다.
 
 ```powershell
-streamlit run .\04_state-session-and-data\03_auth-token-and-login-state\01_signup-login-screen-change.py
+streamlit run .\04_state-session-and-data\03_auth-token-and-login-state\04_signup-login-screen-change.py
 ```
 
 ## 확인 내용
