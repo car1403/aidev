@@ -1,5 +1,0 @@
-# 01_supabase-and-sse-practice frontend 패키지
-streamlit==1.41.1
-httpx==0.28.1
-pandas==2.2.3
-python-dotenv==1.0.1

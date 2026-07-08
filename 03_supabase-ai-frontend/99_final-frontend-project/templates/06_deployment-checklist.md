@@ -5,10 +5,10 @@
 초보자 기준 추천 순서는 다음과 같습니다.
 
 ```text
-1. 로컬에서 backend_mock + Streamlit solution 실행 확인
+1. 로컬에서 backend_mock + Streamlit solution_tabs 또는 solution_multipage 실행 확인
 2. backend_service를 Supabase/Gemini와 연결해 로컬 실행 확인
 3. FastAPI backend_service를 Render에 배포
-4. Streamlit solution을 Streamlit Community Cloud에 배포
+4. 선택한 Streamlit solution을 Streamlit Community Cloud에 배포
 5. 선택: Upstash Redis를 연결해 캐시 확장
 ```
 
@@ -185,7 +185,7 @@ Render 환경변수에 아래 값을 등록합니다.
 
 Upstash 연결을 생략하면 매번 Gemini를 호출합니다.
 
-## 3. Streamlit solution -> Streamlit Community Cloud
+## 3. Streamlit solution_tabs/solution_multipage -> Streamlit Community Cloud
 
 Streamlit 접속:
 
@@ -214,9 +214,19 @@ main
 
 4. Main file path에 Streamlit 앱 파일 경로를 입력합니다.
 
+탭 기반 solution을 배포한다면:
+
 ```text
-03_supabase-ai-frontend/99_final-frontend-project/solution/app.py
+03_supabase-ai-frontend/99_final-frontend-project/solution_tabs/app.py
 ```
+
+멀티페이지 solution을 배포한다면:
+
+```text
+03_supabase-ai-frontend/99_final-frontend-project/solution_multipage/app.py
+```
+
+둘 중 하나만 선택합니다. `solution_multipage`를 선택해도 실행 시작 파일은 `pages/*.py`가 아니라 항상 `solution_multipage/app.py`입니다.
 
 ### 3-3. Python dependencies 확인
 

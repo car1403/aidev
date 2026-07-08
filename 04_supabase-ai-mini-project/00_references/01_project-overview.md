@@ -24,8 +24,8 @@
 | --- | --- |
 | 로그 생성 API | 사용자의 요청, AI 응답, 오류, 응답 시간 같은 이벤트를 저장합니다. |
 | 로그 조회 API | Supabase DB에 저장된 최근 로그와 요약 데이터를 조회합니다. |
-| Redis 이벤트 전달 | 새 로그가 생성될 때 Redis로 이벤트를 전달합니다. |
-| SSE 스트리밍 | Redis 이벤트를 FastAPI SSE endpoint로 프론트엔드에 전달합니다. |
+| Upstash Redis 이벤트 전달 | 새 로그가 생성될 때 Upstash Redis로 이벤트를 전달합니다. |
+| SSE 스트리밍 | Upstash Redis 이벤트를 FastAPI SSE endpoint로 프론트엔드에 전달합니다. |
 | Streamlit 대시보드 | 실시간 로그, 최근 로그 테이블, level별 차트를 표시합니다. |
 | 피드백 기록 | 사용자 피드백을 저장하고 AI 답변 품질 개선 기준을 정리합니다. |
 
@@ -40,7 +40,7 @@
 
 ## 수업 운영 기준
 
-`01_supabase-and-sse-practice`는 작게 실행해 보는 실습입니다. `03_project_structure`는 최종 프로젝트를 시작하기 위한 starter 구조입니다.
+`01_realtime-log-dashboard-practice`는 작게 실행해 보는 실습입니다. `03_project_structure`는 최종 프로젝트를 시작하기 위한 starter 구조입니다.
 
 ```text
 01 = 작게 실행해서 개념 확인

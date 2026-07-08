@@ -21,4 +21,4 @@ POST /feedback
 GET /feedback
 ```
 
-`01_supabase-and-sse-practice/backend/app/routers/log_router.py`를 참고하되, 팀 프로젝트 요구사항에 맞게 직접 구현합니다.
+`01_realtime-log-dashboard-practice/backend/app/routers/log_router.py`를 참고하되, 팀 프로젝트 요구사항에 맞게 직접 구현합니다.

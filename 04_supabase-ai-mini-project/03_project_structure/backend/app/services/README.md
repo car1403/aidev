@@ -24,7 +24,7 @@ redis_service.py
 - 실시간 이벤트 subscribe
 
 sse_service.py
-- Redis 이벤트를 SSE 형식으로 변환
+- Upstash Redis 이벤트를 SSE 형식으로 변환
 
 feedback_service.py
 - AI 답변 품질 피드백 저장

@@ -11,6 +11,8 @@
 -> 03_api-integration
 -> 04_state-session-and-data
 -> 05_ai-chatbot-interface
+-> 06_streamlit-multipage-app
+-> 07_streamlit-tabs-app
 -> 90_ai-assisted-ui-review-and-debugging
 -> 99_final-frontend-project
 ```
@@ -25,6 +27,8 @@
 | `03_api-integration` | Streamlit 화면에서 FastAPI API를 어떻게 호출하나요? |
 | `04_state-session-and-data` | 로그인 상태, 대화 이력, 서비스 로그를 화면에서 어떻게 관리하나요? |
 | `05_ai-chatbot-interface` | 사용자 질문과 AI 응답을 대화형 UI로 어떻게 표현하나요? |
+| `06_streamlit-multipage-app` | 왼쪽 메뉴 기반 멀티페이지 구조를 어떻게 만들고 화면별로 파일을 나누나요? |
+| `07_streamlit-tabs-app` | 탭 기반 화면을 어떻게 만들고 탭별 코드를 파일로 분리하나요? |
 | `90_ai-assisted-ui-review-and-debugging` | AI 보조 도구로 UI 코드 오류와 개선점을 어떻게 찾나요? |
 | `99_final-frontend-project` | 회원가입/로그인, 챗봇, 대화 이력/로그 조회, 배포 점검을 하나의 UX로 어떻게 정리하나요? |
 
@@ -65,7 +69,7 @@ Supabase 최종 메시지 저장
 
 03 과정에서는 SSE를 깊게 구현하기보다, 프론트엔드가 백엔드 API를 호출하고 응답을 화면에 표시하는 기본 흐름을 확실히 익히는 데 집중합니다.
 
-## 07 운영 과정과의 연결
+## 07_multi-agent-service-ops 과정과의 연결
 
 `03`에서는 무료 배포 서비스 기반의 간단한 배포 기준만 선택 참고로 안내합니다.
 

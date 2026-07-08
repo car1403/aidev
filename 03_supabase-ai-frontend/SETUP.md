@@ -212,8 +212,10 @@ uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 3. `03_api-integration`: FastAPI 호출, 로딩/오류 처리
 4. `04_state-session-and-data`: session state, token, Authorization header, 대화 이력
 5. `05_ai-chatbot-interface`: mock 기반 챗봇 UI와 챗봇 전용 백엔드 호출
-6. `90_ai-assisted-ui-review-and-debugging`: 오류 분석과 UI 리뷰
-7. `99_final-frontend-project`: `backend_mock` 기반 개인화 AI 챗봇 통합 UX 구현, 선택형 `backend_service` 배포 연결
+6. `06_streamlit-multipage-app`: `st.Page`, `st.navigation()` 기반 왼쪽 메뉴 구조, 화면 분리, 팀 개발 방식
+7. `07_streamlit-tabs-app`: `st.tabs()` 기반 탭 구조, 탭별 파일 분리 방식
+8. `90_ai-assisted-ui-review-and-debugging`: 오류 분석과 UI 리뷰
+9. `99_final-frontend-project`: `backend_mock` 기반 개인화 AI 챗봇 통합 UX 구현, 선택형 `backend_service` 배포 연결
 
 ## 9. 오류 확인 순서
 

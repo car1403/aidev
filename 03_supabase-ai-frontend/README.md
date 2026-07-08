@@ -25,8 +25,10 @@ Streamlit으로 AI 서비스 화면을 만들고, FastAPI 백엔드를 호출하
 5. `03_api-integration`에서 샘플 백엔드로 API 호출 흐름을 연습합니다.
 6. `04_state-session-and-data`에서 session state, token, Authorization header, 대화 이력 조회를 다룹니다.
 7. `05_ai-chatbot-interface`에서 mock 기반 챗봇 UI와 백엔드 chat API 연결을 다룹니다.
-8. `90_ai-assisted-ui-review-and-debugging`에서 오류 분석과 UI 리뷰를 정리합니다.
-9. `99_final-frontend-project`에서 `backend_mock`으로 개인화 AI 챗봇 통합 UX를 완성하고, 선택적으로 `backend_service`로 실제 Supabase/Gemini/배포 흐름을 확인합니다.
+8. `06_streamlit-multipage-app`에서 `st.Page`, `st.navigation()` 기반 왼쪽 메뉴 구조를 연습합니다.
+9. `07_streamlit-tabs-app`에서 `st.tabs()` 기반 탭 구조와 `tab_pages` 파일 분리를 연습합니다.
+10. `90_ai-assisted-ui-review-and-debugging`에서 오류 분석과 UI 리뷰를 정리합니다.
+11. `99_final-frontend-project`에서 `backend_mock`으로 개인화 AI 챗봇 통합 UX를 완성하고, 선택적으로 `backend_service`로 실제 Supabase/Gemini/배포 흐름을 확인합니다.
 
 이 과정에서는 하위 폴더마다 `.venv`를 따로 만들지 않고, `03_supabase-ai-frontend` 최상위의 `.venv` 하나를 사용합니다.
 
@@ -39,6 +41,8 @@ Streamlit으로 AI 서비스 화면을 만들고, FastAPI 백엔드를 호출하
 ├─ 03_api-integration
 ├─ 04_state-session-and-data
 ├─ 05_ai-chatbot-interface
+├─ 06_streamlit-multipage-app
+├─ 07_streamlit-tabs-app
 ├─ 90_ai-assisted-ui-review-and-debugging
 └─ 99_final-frontend-project
 ```
@@ -55,8 +59,10 @@ Streamlit 전체 사용법이 필요하면 [Streamlit 사용 가이드](./00_ref
 | `03_api-integration` | `httpx`로 FastAPI API를 호출하고, 로딩/오류/응답 검증을 화면에 표시합니다. |
 | `04_state-session-and-data` | `st.session_state`, 로그인 token, Authorization header, 대화 이력, 서비스 로그 조회를 다룹니다. |
 | `05_ai-chatbot-interface` | mock 응답 중심으로 챗봇 UI, 프롬프트 입력, 대화 미리보기, 챗봇 전용 백엔드 호출을 구성합니다. |
+| `06_streamlit-multipage-app` | Streamlit `st.Page`, `st.navigation()` 구조로 회원가입, 로그조회, Chat, 데이터베이스조회 화면을 나누고 팀 개발 방식을 연습합니다. |
+| `07_streamlit-tabs-app` | Streamlit `st.tabs()` 구조로 한 화면 안에서 탭을 전환하고, `tab_pages`로 탭별 코드를 분리하는 방식을 연습합니다. |
 | `90_ai-assisted-ui-review-and-debugging` | Streamlit 실행 오류, API 연결 실패, session state 문제를 AI와 함께 분석합니다. |
-| `99_final-frontend-project` | `backend_mock`으로 회원가입/로그인/챗봇/대화 기록/서비스 로그 UX를 통합하고, 선택적으로 `backend_service`로 Supabase/Gemini/배포 흐름을 연결합니다. |
+| `99_final-frontend-project` | `backend_mock`으로 회원가입/로그인/챗봇/대화 기록/서비스 로그 UX를 통합하고, 선택적으로 `backend_service`로 Supabase/Gemini/배포 흐름을 연결합니다. 완성 예제는 탭 방식 `solution_tabs`와 멀티페이지 방식 `solution_multipage` 중 선택해 확인합니다. |
 
 ## 필수와 선택 기준
 
@@ -128,10 +134,15 @@ streamlit run .\01_streamlit-basic\01_streamlit-project-setup\01_hello-streamlit
 | 백엔드 연결 실패 | [03_api-integration](./03_api-integration/README.md), [02 Backend SETUP](../02_supabase-ai-backend/SETUP.md) |
 | `API_BASE_URL` 또는 `.env` 위치 | [SETUP.md](./SETUP.md), [프론트 보안 참고](./00_references/frontend-security-and-deployment-notes.md) |
 | token과 Authorization header | [04_state-session-and-data](./04_state-session-and-data/README.md) |
+| Streamlit 왼쪽 메뉴 구조와 팀 개발 방식 | [06_streamlit-multipage-app](./06_streamlit-multipage-app/README.md) |
+| Streamlit tabs 구조와 탭별 파일 분리 | [07_streamlit-tabs-app](./07_streamlit-tabs-app/README.md) |
 | 99 최종 프로젝트 실행 | [99 README](./99_final-frontend-project/README.md), [final checklist](./99_final-frontend-project/checklist/final-checklist.md) |
 | 배포 기준 | [deployment checklist](./99_final-frontend-project/templates/06_deployment-checklist.md) |
 | Streamlit 오류를 어떻게 물어볼지 모름 | [90_ai-assisted-ui-review-and-debugging](./90_ai-assisted-ui-review-and-debugging/README.md) |
 
+## 04 미니 프로젝트 연결
+
+03 과정에서는 Streamlit 화면 구성, API 호출, 로그인 상태 관리, 챗봇 UI를 먼저 익힙니다. FastAPI backend, Supabase DB, Redis/SSE, Streamlit 대시보드를 함께 연결하는 실시간 로그 대시보드 통합 실습은 [04_supabase-ai-mini-project/01_realtime-log-dashboard-practice](../04_supabase-ai-mini-project/01_realtime-log-dashboard-practice/README.md)에서 진행합니다.
 ## 다음 과정으로 넘어가기 전
 
 - `streamlit run`으로 앱을 실행할 수 있어야 합니다.

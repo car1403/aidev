@@ -25,5 +25,5 @@ AI 서비스 로그 분석 및 운영 대시보드 구축
 
 - [ ] API 설계 문서가 실제 backend endpoint와 일치합니다.
 - [ ] 화면 설계서가 실제 Streamlit 화면과 일치합니다.
-- [ ] DB 설계서가 Supabase SQL 파일(`01_supabase-and-sse-practice/schema.sql` 또는 `03_project_structure/database/schema.sql`)과 일치합니다.
+- [ ] DB 설계서가 Supabase SQL 파일(`01_realtime-log-dashboard-practice/schema.sql` 또는 `03_project_structure/database/schema.sql`)과 일치합니다.
 - [ ] 대시보드 구현 결과물에 실행 방법과 시연 결과가 있습니다.

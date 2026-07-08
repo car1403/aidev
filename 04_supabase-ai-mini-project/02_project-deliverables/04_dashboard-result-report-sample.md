@@ -19,13 +19,23 @@ backend:
 ```powershell
 cd C:\aidev\04_supabase-ai-mini-project\03_project_structure\backend
 C:\aidev\04_supabase-ai-mini-project\.venv\Scripts\Activate.ps1
-uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-frontend:
+frontend는 선택한 구조에 맞게 실행합니다.
+
+왼쪽 메뉴 방식:
 
 ```powershell
-cd C:\aidev\04_supabase-ai-mini-project\03_project_structure\frontend
+cd C:\aidev\04_supabase-ai-mini-project\03_project_structure\frontend_multipage
+C:\aidev\04_supabase-ai-mini-project\.venv\Scripts\Activate.ps1
+streamlit run .\app.py
+```
+
+탭 방식:
+
+```powershell
+cd C:\aidev\04_supabase-ai-mini-project\03_project_structure\frontend_tabs
 C:\aidev\04_supabase-ai-mini-project\.venv\Scripts\Activate.ps1
 streamlit run .\app.py
 ```
